@@ -1,0 +1,19 @@
+{%extends "base.html"%}
+{%block title%} - Rejestracja {%endblock%}
+
+{%block main_content%}
+    {%if msg%}
+        <div>{{msg.content}}</div>
+    {%endif%}
+    <h1>Zarejestruj nowego uzytkownika</h1>
+    <h3>Pola wymagane:</h3>
+    <form action="" method="POST">
+        Login: {{form.login}}<br />
+        Haslo: {{form.haslo}}<br />
+        Powtorz haslo: {{form.re_haslo}}<br />
+        E-mail: {{form.e_mail}}<br />
+        Plec : {{form.plec}}<br />
+        <br />
+        <input type="submit" value="Zarejestruj" />
+    </form>
+{%endblock%}
