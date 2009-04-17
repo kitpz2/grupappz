@@ -1,0 +1,11 @@
+{%extends "base.html"%}
+
+{%block title%}Szczegoly profilu{%endblock%}
+
+{%block main_content%}
+    <h1>Profil uzytkownika: {{konto.user.username}}</h1>
+    <h3>Ostatnio zalogowany: {{konto.user.last_login.date|date:"m/d/Y"}}</h3>
+    <ul>
+        <li>Ostatnie </li>
+    </ul>
+{%endblock%}
