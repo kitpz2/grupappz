@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="ASS8-Klient_v1" />
+		<Option pch_mode="0" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/ASS8-Klient_v1" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Option projectLinkerOptionsRelation="2" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/ASS8-Klient_v1" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Option projectLinkerOptionsRelation="2" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="`wx-config --cflags`" />
+			<Add option="-Winvalid-pch" />
+			<Add option="-include wx_pch.h" />
+			<Add option="-DWX_PRECOMP" />
+			<Add option="-Wall" />
+		</Compiler>
+		<Linker>
+			<Add option="`wx-config --libs`" />
+		</Linker>
+		<Unit filename="ASS8_Klient_v1App.cpp" />
+		<Unit filename="ASS8_Klient_v1App.h" />
+		<Unit filename="ASS8_Klient_v1Main.cpp" />
+		<Unit filename="ASS8_Klient_v1Main.h" />
+		<Unit filename="NewFrame.cpp" />
+		<Unit filename="NewFrame.h" />
+		<Unit filename="pobieranie_plikow.cpp" />
+		<Unit filename="pobieranie_plikow.h" />
+		<Unit filename="wx_pch.h">
+			<Option compile="1" />
+			<Option weight="0" />
+		</Unit>
+		<Unit filename="wxsmith/ASS8_Klient_v1frame.wxs" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+			<lib_finder disable_auto="1" />
+			<wxsmith version="1">
+				<gui name="wxWidgets" src="ASS8_Klient_v1App.cpp" main="ASS8_Klient_v1Frame" init_handlers="necessary" language="CPP" />
+				<resources>
+					<wxFrame wxs="wxsmith/ASS8_Klient_v1frame.wxs" src="ASS8_Klient_v1Main.cpp" hdr="ASS8_Klient_v1Main.h" name="ASS8_Klient_v1Frame" language="CPP" />
+					<wxFrame wxs="wxsmith/NewFrame.wxs" src="NewFrame.cpp" hdr="NewFrame.h" name="NewFrame" language="CPP" />
+					<wxFrame wxs="wxsmith/pobieranie_plikow.wxs" src="pobieranie_plikow.cpp" hdr="pobieranie_plikow.h" name="pobieranie_plikow" language="CPP" />
+				</resources>
+			</wxsmith>
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
