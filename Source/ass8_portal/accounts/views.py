@@ -4,15 +4,8 @@ from django.http import Http404, HttpResponseRedirect
 from django.contrib.auth.models import User
 from django.contrib.auth import login, logout, authenticate
 from django.template import RequestContext
-from accounts.helpers import *
 from accounts.models import Konto
 from accounts.forms import *
-
-FRIEND_FUNCTION_MAP = {
-    'followers':get_followers,
-    'following':get_following,
-    'mutual':get_mutual,
-}
 
 MESSAGE_CODES = ('Warning', 'Information', 'Error')
 
@@ -85,7 +78,7 @@ def register(request):
 def profile_view(request, username):
     user = request.user
     u = get_object_or_404(User, username=username)
-    konto = get_object_or_404(Konto, user=u)
+    konto = Konto.objects.get(user=u)
     context = {
         'konto':konto,
         'user': user,
@@ -127,3 +120,49 @@ def search(request):
                 "form":f,"user":user, "users":accounts, "msg":msg})
     f=SearchForm()
     return render_to_response("accounts/search.html",{"form":f, 'user':user})
+
+@login_required
+def profile_edit(request, username):
+    user = request.user
+    if request.user.username != username:
+        msg = Message(2,"Mozesz zmieniac tylko swoj profil!")
+        konto = Konto.objects.get(user=user)
+        return render_to_response("accounts/detail.html", {"konto":konto,"user":user, "msg":msg})
+    f = EditForm()
+    konto = Konto.objects.get(user=request.user)
+    msg = Message(1,"Test")
+    return render_to_response("accounts/edit.html",{"form":f,"konto":konto,
+        "user":user, "msg":msg})
+
+@login_required
+def profile_save(request, username):
+    if request.user.username != username:
+        msg = Message(2,"Mozesz zapisywac tylko swoje konto!")
+        return render_to_response("accounts/edit.html", {"msg":msg})
+    if request.POST:
+        f = EditForm(request.POST)
+        konto = Konto.objects.get(user = request.user)
+        konto.user.first_name = request.POST["imie"]
+        konto.user.last_name = request.POST["nazwisko"]
+        konto.miasto = request.POST["miasto"]
+        konto.zainteresowania = request.POST["zainteresowania"]
+        konto.user.email = request.POST["e_mail"]
+        if request.POST["nowe_haslo"]:
+            if request.POST["stare_haslo"] != konto.user.password:
+                msg = Message(2,"Podales zle stare haslo")
+                return render_to_response("accounts/edit.html",
+                        {"form":f,"user":request.user, "msg":msg})
+            if request.POST["nowe_haslo"]!=request.POST["re_nowe_haslo"]:
+                msg = Message(2,"Nowe haslo i powtorzone nowe haslo musza byc                         takie same")
+                return render_to_response("accounts/edit.html",
+                    {"form":f,"user":request.user,"msg":msg})
+            konto.user.password=request.POST["nowe_haslo"]            
+        konto.save()
+        msg = Message(1,"Zmiany zostaly pomyslnie zapisane")
+        return render_to_response("accounts/edit.html",
+                {"form":f, "user":request.user,"konto":konto, "msg":msg})
+
+
+@login_required
+def profile_delete(request, username):
+    pass

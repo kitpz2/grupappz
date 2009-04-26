@@ -2,13 +2,23 @@
 {%block title%} {{block.super}} - Szczegoly profilu: {{user.user.username}} {%endblock%}
 
 {%block main_content%}
+    {%if msg%}
+        {%ifequal msg.type "Warning" %}
+            <div id="warning">{{msg.content}}<br /><a href="#" class="close">zamknij</a></div>
+        {%endifequal%}
+        {%ifequal msg.type "Information"%}
+            <div id="info">{{msg.content}}<br /><a href="#" class="close">zamknij</a></div>
+        {%endifequal%}    
+        {%ifequal msg.type "Error"%}
+            <div id="error">{{msg.content}}<br /><a href="#" class="close">zamknij</a></div>
+        {%endifequal%}
+    {%endif%}
     {%ifequal konto.user.username user.username%}
-    <a href="/accounts/detail/{{konto.user.username}}/edit/">Modyfikuj profil</a>
+    <a href="/accounts/edit/{{konto.user.username}}/">Modyfikuj profil</a>
     <a href="/friends/{{konto.user.username}}/">Zarzadzaj znajomymi</a>
-    <a href="/accounts/detail/{{konto.user.username}}/delete/">Usuń profil</a>
+    <a href="/accounts/delete/{{konto.user.username}}/">Usuń profil</a>
     {%else%}
     <!-- TODO: dodaj jesli nie dodany, usun jesli dodany do znajomych //-->
-    {%endifequal%}
     <a href="/friends/{{user.username}}/add/{{konto.user.username}}/">Dodaj do znajomych</a>
     {%endifequal%}
     <h1>Konto uzytkownika {{konto.user.username}}</h1>

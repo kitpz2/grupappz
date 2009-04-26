@@ -5,12 +5,12 @@ from django.template import RequestContext
 
 from friends.helpers import *
 from friends.models import UserLink
-form accounts.models import Konto
+from accounts.models import Konto
 
 FRIEND_FUNCTION_MAP = {
-    'followers':get_people_user_follows,
-    'following':get_people_following_user,
-    'mutual':get_mutual_followers,
+    'followers':get_followers,
+    'following':get_following,
+    'mutual':get_mutual,
 }
 
 def friends_manage(request, username):
@@ -23,3 +23,9 @@ def friends_manage(request, username):
     }
     return render_to_response("friends/index.html",
             context, context_instance = RequestContext(request))
+
+def add_friend(request):
+    pass
+    
+def del_friend(request):
+    pass

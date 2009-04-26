@@ -1,0 +1,30 @@
+{%extends "base.html"%}
+{%block title%} {{block.super}} - Edycja profilu {%endblock%}
+
+{%block main_content%}
+    {%if msg%}
+        {%ifequal msg.type "Warning" %}
+            <div id="warning">{{msg.content}}<br /><a href="#" class="close">zamknij</a></div>
+        {%endifequal%}
+        {%ifequal msg.type "Information"%}
+            <div id="info">{{msg.content}}<br /><a href="#" class="close">zamknij</a></div>
+        {%endifequal%}    
+        {%ifequal msg.type "Error"%}
+            <div id="error">{{msg.content}}<br /><a href="#" class="close">zamknij</a></div>
+        {%endifequal%}
+    {%endif%}
+    <h1>Edycja profilu</h1>    
+    <form action="/accounts/save/{{user.username}}/" method="POST">
+        <h2>Zmiana hasła:</h2>
+        <p><label for="id_stare_haslo">Stare haslo:</label> <input type="password" name="stare_haslo" id="id_stare_haslo" /></p>
+        <p><label for="id_nowe_haslo">Nowe haslo:</label> <input type="password" name="nowe_haslo" id="id_nowe_haslo" /></p>
+        <p><label for="id_re_nowe_haslo">Powtorz haslo:</label> <input type="password" name="re_nowe_haslo" id="id_re_nowe_haslo" /></p>
+        <h2>Dodatkowe dane osobowe:</h2>
+        <p><label for="id_imie">Imie:</label> <input type="text" name="imie" id="id_imie" value="{{user.first_name}}"/></p>
+        <p><label for="id_nazwisko">Nazwisko:</label> <input type="text" name="nazwisko" id="id_nazwisko" value="{{user.last_name}}" /></p>
+        <p><label for="id_miasto">Miasto:</label> <input type="text" name="miasto" id="id_miasto" value="{{konto.miasto}}"/></p>
+        <p><label for="id_zainteresowania">Zainteresowania:</label><br /><textarea id="id_zainteresowania" rows="10" cols="40" name="zainteresowania">{{konto.zainteresowania}}</textarea></p>
+        <p><label for="id_e_mail">e-mail:</label> <input type="text" name="e_mail" id="id_e_mail" value="{{user.email}}"/></p>        
+        <input type="submit" value="Zmien" />    
+    </form>
+{%endblock%}
