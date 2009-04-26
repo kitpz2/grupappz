@@ -14,15 +14,9 @@
         {%endifequal%}
     {%endif%}
     <h1>Zarejestruj nowego uzytkownika</h1>
-    <h2>Wypełnij wsyzstkie pola:</h2>
+    <h2>Wypełnij wszystkie pola:</h2>
     <form action="" method="POST">    
-        <table>
-            <tr><td>Login</td><td>{{form.login}}</td></tr>
-            <tr><td>Haslo</td><td>{{form.haslo}}</td></tr>
-            <tr><td>Powtorz haslo</td><td>{{form.re_haslo}}</td></tr>
-            <tr><td>E-mail</td><td>{{form.e_mail}}</td></tr>
-            <tr><td>Plec</td><td>{{form.plec}}</td></tr>
-        </table>
+        {{form.as_p}}
         <input type="submit" value="Zarejestruj" />    
     </form>
 {%endblock%}

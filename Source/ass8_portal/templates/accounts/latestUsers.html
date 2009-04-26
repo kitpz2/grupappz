@@ -21,7 +21,8 @@
     <h1>Ostatnio dodatni uzytkownicy:</h1>
     <table class="userList">
     {% for user in latestUsers %}
-    <tr><td><a href="/accounts/detail/{{user.user.username}}/">{{user.user.username}}</td><td>dołączył {{user.user.date_joined.date|date:"d/m/Y"}}</a></td></tr>
+    <tr><td><a href="/accounts/details/{{user.user.username}}/">{{user.user.username}}</td><td>dołączył {{user.user.date_joined.date|date:"d/m/Y"}}</a></td></tr>
     {%endfor%}
     </table>
+    <p></p>
 {%endblock%}

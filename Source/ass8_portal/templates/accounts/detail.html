@@ -2,6 +2,15 @@
 {%block title%} {{block.super}} - Szczegoly profilu: {{user.user.username}} {%endblock%}
 
 {%block main_content%}
+    {%ifequal konto.user.username user.username%}
+    <a href="/accounts/detail/{{konto.user.username}}/edit/">Modyfikuj profil</a>
+    <a href="/friends/{{konto.user.username}}/">Zarzadzaj znajomymi</a>
+    <a href="/accounts/detail/{{konto.user.username}}/delete/">Usuń profil</a>
+    {%else%}
+    <!-- TODO: dodaj jesli nie dodany, usun jesli dodany do znajomych //-->
+    {%endifequal%}
+    <a href="/friends/{{user.username}}/add/{{konto.user.username}}/">Dodaj do znajomych</a>
+    {%endifequal%}
     <h1>Konto uzytkownika {{konto.user.username}}</h1>
     <h2>Login: {{konto.user.username}}</h2>
     <h2>Dolaczyl: {{konto.user.date_joined.date|date:"d/m/Y"}}</h2>

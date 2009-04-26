@@ -11,5 +11,5 @@ urlpatterns = patterns('',
     (r'^$/', 'accounts.views.index'),
     (r'^admin/(.*)', admin.site.root),
     (r'^accounts/', include('accounts.urls')),
-
+    (r'^friends/',include('friends.urls')),
 )

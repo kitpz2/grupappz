@@ -44,12 +44,9 @@
         </div>   
         <div class="login_form">    
             <form action="" method="POST">
-            <table>
-                <tr><td>Login</td><td>{{form.login}}</td></tr>
-                <tr><td>Haslo</td><td>{{form.password}}</td></tr>
-            </table>
+            {{form.as_p}}
                 <input type="submit" value="Zaloguj" />            
-            </form>
+            </form>            
         </div>
         <p>Jesli nie masz konta <a href="/accounts/register/">zarejestruj sie</a>.</p>
     </div>

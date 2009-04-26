@@ -3,7 +3,7 @@
     <head>
         <meta http-equiv="Content-type" content="text/html; charset=utf-8" />		
         {%block extra_head%} {%endblock%}
-        <title>{%block title%}Another System Synchronizacji 8{%endblock%}</title>
+        <title>{%block title%}Alternatywny System Synchronizacji 8{%endblock%}</title>
         <link rel="stylesheet" type="text/css" href="/css/style.css" />
         {%block extra_style%} {%endblock%}        
         <script type="text/javascript" src="/js/jquery.js"></script>
@@ -36,7 +36,7 @@
     <div class="container">
         <!-- Header -->
         <div class="header">
-            ass.8 - system wymiany plikow by grupappz
+            <h1>Alternatywny System Synchronizacji.8 - banner</h1>
         </div>
         <!-- END Header -->
         
@@ -45,8 +45,14 @@
                 <li><a href="/">Czym jest ASS.8?</a></li>
                 <li><a href="/accounts/latest/">Ostatnio zarejestrowani</a></li>
                 <li><a href="/accounts/search/">Szukaj</a></li>
+                {%if user.is_authenticated%}
+                <li><a
+                    href="/accounts/details/{{user.username}}/">Profil</a></li>
+                <li><a href="/accounts/logout/">Wyloguj</a></li>
+                {%else%}                
                 <li><a href="/accounts/register/">Dołącz do nas</a></li>
                 <li><a href="/accounts/login/">Zaloguj</a></li>
+                {%endif%}
             </ul>                        
         </div>
         

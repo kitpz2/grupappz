@@ -32,21 +32,25 @@ def user_login(request):
         user = authenticate(username=username, password=password)
         if user:
             login(request, user)
-            return HttpResponseRedirect("accounts/details/"+username+"/")
-        msg = Message(2,"Zly login i/lub haslo")
+            return HttpResponseRedirect(request.GET.get("next") or
+                    "/accounts/details/"+username+"/")
+        msg = Message(2,"Zly login lub haslo")
     f = LoginForm()
     return render_to_response("accounts/logowanie.html", {
         "form":f,
         "msg": msg,
         })
-    
+
 def user_logout(request):
     if request.user.is_authenticated:
         logout(request)
     return HttpResponseRedirect("/")
 
 def index(request):
-    return render_to_response("index.html",{})
+    user = None
+    if request.user.is_authenticated:
+        user = request.user
+    return render_to_response("index.html",{"user":user})
 
 
 def register(request):
@@ -70,16 +74,8 @@ def register(request):
                             )
                 user.save()
                 konto = Konto(user = user, plec = request.POST["plec"])
-                if "miasto" in request.POST:
-                    konto.miasto =request.POST["miasto"]
-                if "zainteresowania" in request.POST:
-                    konto.zainteresowania =request.POST["zainteresowania"]
-                if "imie" in request.POST:
-                    konto.user.first_name=request.POST["imie"]
-                if "nazwisko" in request.POST:
-                    konto.user.last_name=request.POST["nazwisko"]
                 konto.save()
-                msg = Message(1,"Zakladanie konta zakonczone sukcesem")
+                msg = Message(1,"Rejestracja zakonczona sukcesem")
                 return render_to_response("accounts/detail.html",{"msg":msg, "konto":konto})                
     f = RegisterForm()
     return render_to_response("accounts/register.html", {"form":f})
@@ -87,26 +83,32 @@ def register(request):
 
 @login_required
 def profile_view(request, username):
-    user = get_object_or_404(User, username=username)
-    konto = get_object_or_404(Konto, user=user)
+    user = request.user
+    u = get_object_or_404(User, username=username)
+    konto = get_object_or_404(Konto, user=u)
     context = {
         'konto':konto,
+        'user': user,
     }
     return render_to_response("accounts/detail.html", context, context_instance
             = RequestContext(request))
 
 
 def latest_users(request):
+    user = None
+    if request.user.is_authenticated:
+        user = request.user
     tempUsers = User.objects.all().order_by('-date_joined')[:25]
     latestUsers = []
-    for user in tempUsers:
-        k = Konto.objects.get(user=user)
+    for u in tempUsers:
+        k = Konto.objects.get(user=u)
         latestUsers.append(k)
     return render_to_response("accounts/latestUsers.html",
-            {"latestUsers":latestUsers})
+            {"user":user,"latestUsers":latestUsers})
 
 @login_required
 def search(request):
+    user = request.user
     if request.POST:
         f = SearchForm(request.POST)
         if f.is_valid:
@@ -121,7 +123,7 @@ def search(request):
                 msg = Message(1, "Znaleziono 1 uzytkownika")
             else:
                 msg = Message(1,"Znaleziono "+repr(count)+" uzytkownikow")
-            return render_to_response("accounts/search.html",{"form":f,
-                "users":accounts, "msg":msg})
+            return render_to_response("accounts/search.html",{
+                "form":f,"user":user, "users":accounts, "msg":msg})
     f=SearchForm()
-    return render_to_response("accounts/search.html",{"form":f})
+    return render_to_response("accounts/search.html",{"form":f, 'user':user})
