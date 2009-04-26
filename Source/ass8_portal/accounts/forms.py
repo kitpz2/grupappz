@@ -13,8 +13,6 @@ class RegisterForm(forms.Form):
     re_haslo = forms.CharField(label="Powtorz haslo", widget=forms.PasswordInput)
     e_mail = forms.CharField(label="e-mail")
     plec = forms.ChoiceField(label="Plec", choices=plec_choice)
-    #nieobowiazkowe
-    #imie = forms.CharField(label="Imie", required=False)
-    #nazwisko = forms.CharField(label="Nazwisko", required=False)
-    #miasto = forms.CharField(label="Miasto", required=False)
-    #zainteresowania = forms.Textarea(label="Zainteresowania", required=False)
+
+class SearchForm(forms.Form):
+    search = forms.CharField(label="Szukaj")

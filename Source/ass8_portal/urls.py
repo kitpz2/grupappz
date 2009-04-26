@@ -5,6 +5,11 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
-   (r'^admin/(.*)', admin.site.root),
-   (r'^accounts/', include('accounts.urls')),
+    (r'^css/(?P<path>.*)$', 'django.views.static.serve', {'document_root': 'media/css'}),
+    (r'^js/(?P<path>.*)$', 'django.views.static.serve', {'document_root': 'media/js'}),
+    (r'^$', 'accounts.views.index'),
+    (r'^$/', 'accounts.views.index'),
+    (r'^admin/(.*)', admin.site.root),
+    (r'^accounts/', include('accounts.urls')),
+
 )

@@ -1,0 +1,27 @@
+{%extends "base.html"%}
+{%block title%} {{block.super}} - Ostatnio dodani uzytkownicy {%endblock%}
+{%block extra_style%}
+<style type="text/css">
+    table.userList
+    {
+        margin:0px;
+        padding-left:20px;	
+        padding-right:20px;	
+        
+    }
+    table.userList td
+    {
+        padding-left:20px;	
+        padding-right:20px;	
+    }
+</style>
+
+{%endblock%}
+{%block main_content%}
+    <h1>Ostatnio dodatni uzytkownicy:</h1>
+    <table class="userList">
+    {% for user in latestUsers %}
+    <tr><td><a href="/accounts/detail/{{user.user.username}}/">{{user.user.username}}</td><td>dołączył {{user.user.date_joined.date|date:"d/m/Y"}}</a></td></tr>
+    {%endfor%}
+    </table>
+{%endblock%}

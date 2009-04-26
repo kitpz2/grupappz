@@ -1,19 +1,28 @@
 {%extends "base.html"%}
-{%block title%} - Rejestracja {%endblock%}
+{%block title%} {{block.super}} - Rejestracja {%endblock%}
 
 {%block main_content%}
     {%if msg%}
-        <div>{{msg.content}}</div>
+        {%ifequal msg.type "Warning" %}
+            <div id="warning">{{msg.content}}<br /><a href="#" class="close">zamknij</a></div>
+        {%endifequal%}
+        {%ifequal msg.type "Information"%}
+            <div id="info">{{msg.content}}<br /><a href="#" class="close">zamknij</a></div>
+        {%endifequal%}    
+        {%ifequal msg.type "Error"%}
+            <div id="error">{{msg.content}}<br /><a href="#" class="close">zamknij</a></div>
+        {%endifequal%}
     {%endif%}
     <h1>Zarejestruj nowego uzytkownika</h1>
-    <h3>Pola wymagane:</h3>
-    <form action="" method="POST">
-        Login: {{form.login}}<br />
-        Haslo: {{form.haslo}}<br />
-        Powtorz haslo: {{form.re_haslo}}<br />
-        E-mail: {{form.e_mail}}<br />
-        Plec : {{form.plec}}<br />
-        <br />
-        <input type="submit" value="Zarejestruj" />
+    <h2>Wypełnij wsyzstkie pola:</h2>
+    <form action="" method="POST">    
+        <table>
+            <tr><td>Login</td><td>{{form.login}}</td></tr>
+            <tr><td>Haslo</td><td>{{form.haslo}}</td></tr>
+            <tr><td>Powtorz haslo</td><td>{{form.re_haslo}}</td></tr>
+            <tr><td>E-mail</td><td>{{form.e_mail}}</td></tr>
+            <tr><td>Plec</td><td>{{form.plec}}</td></tr>
+        </table>
+        <input type="submit" value="Zarejestruj" />    
     </form>
 {%endblock%}

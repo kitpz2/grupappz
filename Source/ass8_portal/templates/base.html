@@ -1,17 +1,63 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pl" lang="pl">
     <head>
-        <title>{%block title%}Another Sharing System 8{%endblock%}</title>
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8" />		
         {%block extra_head%} {%endblock%}
+        <title>{%block title%}Another System Synchronizacji 8{%endblock%}</title>
+        <link rel="stylesheet" type="text/css" href="/css/style.css" />
+        {%block extra_style%} {%endblock%}        
+        <script type="text/javascript" src="/js/jquery.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $(".close").click(function(){
+                    closeMsg();
+                });            
+                showMsg();        
+            });
+            function closeMsg()
+            {
+                $("#warning").fadeOut(800);
+                $("#info").fadeOut(800);
+                $("#error").fadeOut(800);
+            }
+            function showMsg()
+            {
+                $("#warning").fadeTo(800,0.9);
+                $("#info").fadeTo(800,0.9);
+                $("#error").fadeTo(800,0.9);
+            }
+        </script>
+        {%block extra_script%}{%endblock%}
     </head>
 
-    <body>
-        <ul>
-            <li><a href="">Ostatnio zarejestrowani</a></li>
-            <li><a href="">Profil</a></li>
-            <li><a href="">Szukaj</a></li>
-        </ul>
-        {%block main_content%} {%endblock%}
-        {%block extra_body%} {%endblock%}
+    <body>        
+    {%block extra_body%} {%endblock%}
+    <!-- Container -->
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            ass.8 - system wymiany plikow by grupappz
+        </div>
+        <!-- END Header -->
+        
+        <div class="navbar">
+            <ul>
+                <li><a href="/">Czym jest ASS.8?</a></li>
+                <li><a href="/accounts/latest/">Ostatnio zarejestrowani</a></li>
+                <li><a href="/accounts/search/">Szukaj</a></li>
+                <li><a href="/accounts/register/">Dołącz do nas</a></li>
+                <li><a href="/accounts/login/">Zaloguj</a></li>
+            </ul>                        
+        </div>
+        
+        <!-- Content -->
+        <div class="content">             
+                {%block main_content%} {%endblock%}           
+        </div>
+        <!-- END Content -->
+
+        <div class="footer">(c) <a href="http://www.grupappz.fsl.pl">grupappz</a> 2009 {% block footer %}{% endblock %}</div>
+    </div>
+    <!-- END Container -->
     </body>
 </html>
