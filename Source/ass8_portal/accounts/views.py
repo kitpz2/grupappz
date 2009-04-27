@@ -65,10 +65,12 @@ def register(request):
                             password = request.POST["haslo"], 
                             email=request.POST["e_mail"],
                             )
+                user.set_password(request.POST["haslo"])
                 user.save()
                 konto = Konto(user = user, plec = request.POST["plec"])
                 konto.save()
                 msg = Message(1,"Rejestracja zakonczona sukcesem")
+                login(request,user)
                 return render_to_response("accounts/detail.html",{"msg":msg, "konto":konto})                
     f = RegisterForm()
     return render_to_response("accounts/register.html", {"form":f})
@@ -130,9 +132,8 @@ def profile_edit(request, username):
         return render_to_response("accounts/detail.html", {"konto":konto,"user":user, "msg":msg})
     f = EditForm()
     konto = Konto.objects.get(user=request.user)
-    msg = Message(1,"Test")
     return render_to_response("accounts/edit.html",{"form":f,"konto":konto,
-        "user":user, "msg":msg})
+        "user":user})
 
 @login_required
 def profile_save(request, username):
@@ -165,4 +166,16 @@ def profile_save(request, username):
 
 @login_required
 def profile_delete(request, username):
-    pass
+    if request.user.username != username:
+        msg = Message(2,"Mozesz usunac tylko swoje konto!")
+        return render_to_response("accounts/detail.html",
+                 {"konto":konto,"user":user, "msg":msg})
+    u = User.objects.get(username=username)
+    konto = Konto.objects.get(user=u)
+    logout(request)
+    u.delete()
+    konto.delete()
+    msg = Message(1,"Twoje konto zostalo usuniete")
+    return render_to_response("index.html", {"user":request.user,
+            "msg":msg})
+
