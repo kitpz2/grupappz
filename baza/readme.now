@@ -1,0 +1,49 @@
+1. Jak uzywac skryptu?
+
+Nalezy miec mysqla i konto ktore umozliwia prace z baza. Zakladam ze mamy konto
+o nazwie root i na nim bedziemy pracowali. Robimy tak:
+
+w terminalualu:
+$ mysql -u root -p
+[haslo]
+
+source sciezka/do/pliku/baza.SQL
+
+show tables;
+
+powinno sie pokazac 14 tabel i juz mamy pusta baze do pracy :)
+aha baza jeszcze nie uwzglednia tabeli z plikami, ale to za chwile bedzie
+zeby sie nie zarobic, postaram sie wyeskportowac jakies dane z django zebysmy
+mieli wszyscy to samo
+
+
+2.Co jest w bazie i gdzie?
+na podstawie pliku Pawla podaje co gdzie jest notacja jest taka:
+
+nazwa_z_pliku_Pawla - tabela.nazwa_pola
+
+konto:
+login - auth_user.username
+haslo - auth_user.password
+email - auth_user.email
+maxWielkoscKonta - tego w bazie nie ma bo to statyczne pole w klasie klienta
+
+znajomi:
+id_konta1 - friends_userLink.from_user_id
+id_konta2 - friends_userLink.to_user_id
+typ_znajomosci - znow tego nie ma bo to jest latwo 'wyprowadzalne z danych w
+bazie' tzn jesli JA udostepniam pliki CIALKOWI to ja jestem from_user_id a
+CIALEK to_user_id, i znajomosc jest typu 'ja udostepniam cialkowi'
+jesli cialek udostepnia mi to oczywiscie na odwrot..
+jesli obaj sobie udostepniamy to robimy tak: JA jestem from_user_id, CIALEK jest
+to_user_id i wystarczy zrobic takie zapytanie aby sprawdzic czy jest to
+znajomosc w dwie strony:
+SELECT * from friends_userLink WHERE(from_user_id = CIALEK_id,
+to_user_id=JA_id);
+
+czyli wiedzac ze istnieje znajomosc JA -> CIALEK wystarczy sprawdzic czy
+istnieje znajomosc w druga strone i to mozna sobie pod jakies pole w klasie
+przypisac...
+
+pliki:
+poki co jeszcze nie ma... ale bedzie :)
