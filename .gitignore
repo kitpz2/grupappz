@@ -13,3 +13,4 @@ bin/
 *.pyc
 *.db
 settings.py
+*.psd
