@@ -1,7 +1,9 @@
 Jak odpalic portal majac django?
 
-Zakladam ze macie zainstalowane django i sciagnieta aktualna wersje z gita. W
-katalogu w ktorym jest portal (ass8_portal) wydajemy w terminalu polecenie:
+Zakladam ze macie zainstalowane django i sciagnieta aktualna wersje z gita. W katalogu w ktorym jest portal (ass8_portal) wydajemy w terminalu polecenie:
+# ./manage.py syncdb
+powinna sie utworzyc baza, zapytani o login i haslo admina podajemy cokolwiek co
+zapamietamy coby sie moc pozniej zalogowac... pozniej wystarczy zrobic:
 $ ./manage.py runserver
 
 a nastepnie w przegladarce laczymy sie na http://127.0.0.1:8000/
