@@ -1,19 +1,19 @@
 /* PAGE STRUCTURE */
 body
 {
-	background:#ffffff; 		
-	color:#000000; 
+	background:#496f40; 		
+	color:#fff; 
 }
 
 a, a:active, a:visited
 {
-	color:#000;
+	color:#66ba00;
 	text-decoration:none;
 }
 
 a:hover
 {
-	color:#000;
+	color:#66ba00;
 	text-decoration:underline;
 }
 
@@ -66,7 +66,7 @@ div.container
     min-width:760px; 
     padding:0px;
     border: 1px solid black;	
-	background:#496e40; 
+	background:#314a2c; 
     margin-left:auto;
     margin-right:auto;
 }
@@ -84,9 +84,10 @@ div.container a:hover
 div.header
 {     
 	text-align:center;
+    width:1024px;
 	height:150px;
 	margin: 0px;
-	padding-left:10px;	
+    padding: 0px;
     background:#6196A0; 
     overflow:hidden;    
 	border-bottom:1px solid black;
@@ -95,16 +96,20 @@ div.header
 div.navbar
 {	
 	text-align:right;		
-	width:100%;		
+	width:1024px;		
+    height:30px;
 	margin:0px;
 	padding:0px;	
 	background: #496e40;
+    background-image: url('/gfx/headers.jpg');
+    background-repeat: repeat;
 }
 
 div.navbar ul 
 {	
 	margin:0px;
 	padding:0px;
+    padding-top:3px;
 }
 
 div.navbar ul li
@@ -119,14 +124,12 @@ div.navbar ul li a,div.navbar ul li a:visited, div.navbar ul li a:active
 {
 	color:#fff;
 	padding-left:10px;
-	border-left:15px solid #000;
 	text-decoration:none;
 }
 
 div.navbar ul li a:hover
 {
-	color:#fff;
-	border-left:15px solid #fff;
+	color:#66ba00;
 	text-decoration:none;
 }
 
@@ -135,13 +138,13 @@ div.content
     min-height:200px; 
 	margin:0px;		
 	padding:0px;	
-	background:#fff;    
+    background:#314a2c;
 	border:none;
 }
 
 div.content h1
 {	
-	color:#496e40;
+	color:#66ba00;
 	margin:0px;
 	padding-left:10px;	
 	padding-right:10px;	
@@ -149,7 +152,7 @@ div.content h1
 
 div.content h2
 {	
-	color:#092e20;
+	color:#66ba00;
 	margin:0px;
 	padding-left:10px;	
 	padding-right:10px;	
@@ -157,7 +160,7 @@ div.content h2
 
 div.content h3
 {	
-	color:#092e20;
+	color:#66ba00;
 	margin:0px;
 	margin-bottom:5px;
 	font-size:12px;
@@ -168,8 +171,8 @@ div.content p
 {	
 	text-align:justify;
 	margin:0px;
-	margin-bottom:20px;
 	font-size:18px;
+    padding:0px;
 	padding-left:10px;
 	padding-right:10px;	
 }
@@ -177,10 +180,11 @@ div.content p
 div.footer 
 { 
 	text-align:center;	
-	height:20px;
-	background:#496e40; 
+	height:30px;
+    background-image: url('/gfx/headers.jpg');
+    background-repeat:repeat;
     color:#fff; 
-    padding:0px;    
+    padding:0px;   
 }
 
 div.footer a, div.footer a:visited, div.footer a:active

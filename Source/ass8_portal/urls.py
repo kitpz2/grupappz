@@ -7,6 +7,8 @@ admin.autodiscover()
 urlpatterns = patterns('',
     (r'^css/(?P<path>.*)$', 'django.views.static.serve', {'document_root': 'media/css'}),
     (r'^js/(?P<path>.*)$', 'django.views.static.serve', {'document_root': 'media/js'}),
+    (r'^gfx/(?P<path>.*)$','django.views.static.serve', {'document_root':
+        'media/gfx'}),
     (r'^$', 'accounts.views.index'),
     (r'^$/', 'accounts.views.index'),
     (r'^admin/(.*)', admin.site.root),
