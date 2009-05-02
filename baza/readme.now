@@ -46,4 +46,10 @@ istnieje znajomosc w druga strone i to mozna sobie pod jakies pole w klasie
 przypisac...
 
 pliki:
-poki co jeszcze nie ma... ale bedzie :)
+id_pliku - files_plik.id
+id_konta - files_plik.konto_id
+sciezka - files_plik.sciezka
+dataDodania - files_plik.dataDodania
+prawa_dotepu - files_plik.prawaDostepu - tu uwaga przyjalem ze to jesli liczba typu int np: 0-moj, 1-prywatny, 2-publiczny
+wielkosc - files_plik.wielskosc
+hash - files_plik.hashValue
