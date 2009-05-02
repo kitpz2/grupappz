@@ -83,4 +83,5 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'accounts',
     'friends',
+    'files',
 )

@@ -7,13 +7,6 @@ CREATE TABLE accounts_konto (
     zainteresowania text NOT NULL,
     plec varchar(1) NOT NULL
 );
-CREATE TABLE acounts_konto (
-    id integer NOT NULL PRIMARY KEY,
-    user_id integer NOT NULL REFERENCES auth_user (id),
-    miasto varchar(50) NOT NULL,
-    zainteresowania text NOT NULL,
-    plec varchar(1) NOT NULL
-);
 CREATE TABLE auth_group (
     id integer NOT NULL PRIMARY KEY,
     name varchar(80) NOT NULL UNIQUE
@@ -88,6 +81,15 @@ CREATE TABLE django_site (
     domain varchar(100) NOT NULL,
     name varchar(50) NOT NULL
 );
+CREATE TABLE files_plik (
+    id integer NOT NULL PRIMARY KEY,
+    konto_id integer NOT NULL REFERENCES accounts_konto (id),
+    sciezka varchar(255) NOT NULL,
+    dataDodania datetime NOT NULL,
+    prawaDostepu integer NOT NULL,
+    wielkosc integer NOT NULL,
+    hashValue varchar(50) NOT NULL
+);
 CREATE TABLE friends_userlink (
     id integer NOT NULL PRIMARY KEY,
     from_user_id integer NOT NULL REFERENCES accounts_konto (id),
@@ -96,10 +98,10 @@ CREATE TABLE friends_userlink (
     UNIQUE (to_user_id, from_user_id)
 );
 CREATE INDEX accounts_konto_user_id ON accounts_konto (user_id);
-CREATE INDEX acounts_konto_user_id ON acounts_konto (user_id);
 CREATE INDEX auth_message_user_id ON auth_message (user_id);
 CREATE INDEX auth_permission_content_type_id ON auth_permission (content_type_id);
 CREATE INDEX django_admin_log_content_type_id ON django_admin_log (content_type_id);
 CREATE INDEX django_admin_log_user_id ON django_admin_log (user_id);
+CREATE INDEX files_plik_konto_id ON files_plik (konto_id);
 CREATE INDEX friends_userlink_from_user_id ON friends_userlink (from_user_id);
 CREATE INDEX friends_userlink_to_user_id ON friends_userlink (to_user_id);
