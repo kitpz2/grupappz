@@ -18,6 +18,7 @@ class Message(object):
         return "%s : %s" % self.type, self.content
 
 def user_login(request):
+    requestKonto = Konto.objects.get(user = request.user)
     msg=None
     if request.POST:
         username = request.POST['login']
@@ -32,6 +33,7 @@ def user_login(request):
     return render_to_response("accounts/logowanie.html", {
         "form":f,
         "msg": msg,
+        "requestKonto":requestKonto,
         })
 
 def user_logout(request):
@@ -40,10 +42,11 @@ def user_logout(request):
     return HttpResponseRedirect("/")
 
 def index(request):
-    user = None
+    requestUser = None
     if request.user.is_authenticated:
-        user = request.user
-    return render_to_response("index.html",{"user":user})
+        requestUser = request.user
+    requestKonto = Konto.objects.get(user = requestUser)
+    return render_to_response("index.html",{"requestKonto":requestKonto})
 
 
 def register(request):
@@ -71,46 +74,43 @@ def register(request):
                 konto.save()
                 msg = Message(1,"Rejestracja zakonczona sukcesem")
                 login(request,user)
-                return render_to_response("accounts/detail.html",{"msg":msg, "konto":konto})                
+                return render_to_response("accounts/detail.html",{"msg":msg, "requestKonto":konto, "viewKonto":konto})                
     f = RegisterForm()
     return render_to_response("accounts/register.html", {"form":f})
 
 
 @login_required
-def profile_view(request, username):
-    user = request.user
-    u = get_object_or_404(User, username=username)
-    konto = Konto.objects.get(user=u)
+def profile_view(request, username):    
+    requestKonto = Konto.objects.get(user = request.user)
+    viewUser = get_object_or_404(User, username=username)
+    viewKonto = Konto.objects.get(user=viewUser)
     context = {
-        'konto':konto,
-        'user': user,
+        'requestKonto':requestKonto,
+        'viewKonto': viewKonto,
     }
-    return render_to_response("accounts/detail.html", context, context_instance
-            = RequestContext(request))
-
-
+    return render_to_response("accounts/detail.html", context)
+    
+@login_required
 def latest_users(request):
-    user = None
-    if request.user.is_authenticated:
-        user = request.user
+    requestKonto = Konto.objects.get(user=request.user)    
     tempUsers = User.objects.all().order_by('-date_joined')[:25]
     latestUsers = []
     for u in tempUsers:
         k = Konto.objects.get(user=u)
         latestUsers.append(k)
     return render_to_response("accounts/latestUsers.html",
-            {"user":user,"latestUsers":latestUsers})
+            {"requestKonto":requestKonto,"latestUsers":latestUsers})
 
 @login_required
 def search(request):
-    user = request.user
+    requestKonto = Konto.objects.get(user=request.user)    
     if request.POST:
         f = SearchForm(request.POST)
         if f.is_valid:
             accounts=[]
-            users = User.objects.filter(username__contains =
+            userList = User.objects.filter(username__contains =
                     request.POST["search"])
-            for user in users:
+            for user in userList:
                 k = Konto.objects.get(user=user)
                 accounts.append(k)                
             count =len(accounts)
@@ -119,63 +119,62 @@ def search(request):
             else:
                 msg = Message(1,"Znaleziono "+repr(count)+" uzytkownikow")
             return render_to_response("accounts/search.html",{
-                "form":f,"user":user, "users":accounts, "msg":msg})
+                "form":f,"requestKonto":requestKonto, "users":accounts, "msg":msg})
     f=SearchForm()
-    return render_to_response("accounts/search.html",{"form":f, 'user':user})
+    return render_to_response("accounts/search.html",{"form":f, 'requestKonto':requestKonto})
 
 @login_required
 def profile_edit(request, username):
-    user = request.user
-    if request.user.username != username:
+    requestKonto = Konto.objects.get(user=request.user)    
+    if requestKonto.user.username != username:
         msg = Message(2,"Mozesz zmieniac tylko swoj profil!")
-        konto = Konto.objects.get(user=user)
-        return render_to_response("accounts/detail.html", {"konto":konto,"user":user, "msg":msg})
+        konto = Konto.objects.get(user=requestKonto)
+        return render_to_response("accounts/detail.html", {"requestKonto":requestKonto,"viewKonto":requestKonto, "msg":msg})
     f = EditForm()
     konto = Konto.objects.get(user=request.user)
-    return render_to_response("accounts/edit.html",{"form":f,"konto":konto,
-        "user":user})
+    return render_to_response("accounts/edit.html",{"form":f,"requestKonto":requestKonto,
+        "editKonto":requestKonto})
 
 @login_required
 def profile_save(request, username):
-    if request.user.username != username:
+    requestKonto = Konto.objects.get(user=request.user)   
+    if requestKonto.user.username != username:
         msg = Message(2,"Mozesz zapisywac tylko swoje konto!")
-        return render_to_response("accounts/edit.html", {"msg":msg})
+        return render_to_response("accounts/edit.html", {"requestKonto":requestKonto,"editKonto":requestKonto, "msg":msg})
     if request.POST:
-        f = EditForm(request.POST)
-        konto = Konto.objects.get(user = request.user)
-        konto.user.first_name = request.POST["imie"]
-        konto.user.last_name = request.POST["nazwisko"]
-        konto.miasto = request.POST["miasto"]
-        konto.zainteresowania = request.POST["zainteresowania"]
-        konto.user.email = request.POST["e_mail"]
+        f = EditForm(request.POST)        
+        requestKonto.user.first_name = request.POST["imie"]
+        requestKonto.user.last_name = request.POST["nazwisko"]
+        requestKonto.miasto = request.POST["miasto"]
+        requestKonto.zainteresowania = request.POST["zainteresowania"]
+        requestKonto.user.email = request.POST["e_mail"]
         if request.POST["nowe_haslo"]:
-            if request.POST["stare_haslo"] != konto.user.password:
+            if request.POST["stare_haslo"] != requestKonto.user.password:
                 msg = Message(2,"Podales zle stare haslo")
                 return render_to_response("accounts/edit.html",
-                        {"form":f,"user":request.user, "msg":msg})
+                        {"requestKonto":requestKonto,"editKonto":requestKonto, "msg":msg})
             if request.POST["nowe_haslo"]!=request.POST["re_nowe_haslo"]:
                 msg = Message(2,"Nowe haslo i powtorzone nowe haslo musza byc                         takie same")
                 return render_to_response("accounts/edit.html",
-                    {"form":f,"user":request.user,"msg":msg})
-            konto.user.password=request.POST["nowe_haslo"]            
-        konto.save()
+                    {"requestKonto":requestKonto,"editKonto":requestKonto, "msg":msg})
+            requestKonto.user.password=request.POST["nowe_haslo"]            
+        requestKonto.save()
         msg = Message(1,"Zmiany zostaly pomyslnie zapisane")
         return render_to_response("accounts/edit.html",
-                {"form":f, "user":request.user,"konto":konto, "msg":msg})
+                {"form":f, "requestKonto":requestKonto,"editKonto":requestKonto, "msg":msg})                
 
 
 @login_required
 def profile_delete(request, username):
-    if request.user.username != username:
+    requestKonto = Konto.objects.get(user=request.user)
+    if requestKonto.user.username != username:
         msg = Message(2,"Mozesz usunac tylko swoje konto!")
         return render_to_response("accounts/detail.html",
-                 {"konto":konto,"user":user, "msg":msg})
-    u = User.objects.get(username=username)
-    konto = Konto.objects.get(user=u)
+                 {"requestKonto":requestKonto,"viewKonto":requestKonto, "msg":msg})    
+    
     logout(request)
-    u.delete()
+    requestKonto.user.delete()
     konto.delete()
     msg = Message(1,"Twoje konto zostalo usuniete")
-    return render_to_response("index.html", {"user":request.user,
-            "msg":msg})
+    return render_to_response("index.html", {"msg":msg})
 

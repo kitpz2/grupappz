@@ -14,7 +14,7 @@
         {%endifequal%}
     {%endif%}
     <h1>Edycja profilu</h1>    
-    <form action="/accounts/save/{{user.username}}/" method="POST">
+    <form action="/accounts/save/{{editKonto.user.username}}/" method="POST">
         <h2>Zmiana hasła:</h2>
         <p><label for="id_stare_haslo">Stare haslo:</label> <input type="password" name="stare_haslo" id="id_stare_haslo" /></p>
         <p><label for="id_nowe_haslo">Nowe haslo:</label> <input type="password" name="nowe_haslo" id="id_nowe_haslo" /></p>

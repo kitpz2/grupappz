@@ -38,16 +38,22 @@
             <div id="error">{{msg.content}}<br /><a href="#" class="close">zamknij</a></div>
         {%endifequal%}
     {%endif%}
-    <div class="login">
-        <div class="login_header">
-            Zaloguj się:
-        </div>   
-        <div class="login_form">    
-            <form action="" method="POST">
-            {{form.as_p}}
-                <input type="submit" value="Zaloguj" />            
-            </form>            
+    {% if requestKonto.user.is_authenticated%}
+    <h1>Jesteś już zalogowany.</h1>
+    <a href="/accounts/details/{{requestKonto.user.username}}/">Strona profilu</a>
+    {%else%}
+        <div class="login">
+            <div class="login_header">
+                Zaloguj się:
+            </div>   
+            <div class="login_form">    
+                <form action="" method="POST">
+                {{form.as_p}}
+                    <input type="submit" value="Zaloguj" />            
+                </form>            
+            </div>
+            <p>Jesli nie masz konta <a href="/accounts/register/">zarejestruj sie</a>.</p>
         </div>
-        <p>Jesli nie masz konta <a href="/accounts/register/">zarejestruj sie</a>.</p>
-    </div>
+    {%endif%}
 {%endblock%}
+

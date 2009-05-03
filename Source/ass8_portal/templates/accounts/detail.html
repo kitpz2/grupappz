@@ -1,5 +1,5 @@
 {%extends "base.html"%}
-{%block title%} {{block.super}} - Szczegoly profilu: {{user.user.username}} {%endblock%}
+{%block title%} {{block.super}} - Szczegoly profilu: {{viewKonto.user.username}} {%endblock%}
 
 {%block main_content%}
     {%if msg%}
@@ -13,20 +13,20 @@
             <div id="error">{{msg.content}}<br /><a href="#" class="close">zamknij</a></div>
         {%endifequal%}
     {%endif%}
-    {%ifequal konto.user.username user.username%}
+    {%ifequal requestKonto.user.username viewKonto.user.username%}
     <a href="/accounts/edit/{{konto.user.username}}/">Modyfikuj profil</a>
-    <a href="/friends/{{konto.user.username}}/">Zarzadzaj znajomymi</a>
+    <a href="/friends/index/{{konto.user.username}}/">Zarzadzaj znajomymi</a>
     <a href="/accounts/delete/{{konto.user.username}}/">Usuń profil</a>
     {%else%}
     <!-- TODO: dodaj jesli nie dodany, usun jesli dodany do znajomych //-->
-    <a href="/friends/{{user.username}}/add/{{konto.user.username}}/">Dodaj do znajomych</a>
+    <a href="/friends/add/{{viewKonto.user.username}}/">Dodaj do znajomych</a>
     {%endifequal%}
-    <h1>Konto uzytkownika {{konto.user.username}}</h1>
-    <h2>Login: {{konto.user.username}}</h2>
-    <h2>Dolaczyl: {{konto.user.date_joined.date|date:"d/m/Y"}}</h2>
-    <h2>Ostatnie logowanie: {{konto.user.last_login.date|date:"d/m/Y"}}</h2>
-    <h2>Imie: {{konto.user.first_name}}</h2>
-    <h2>Nazwisko: {{konto.user.last_name}}</h2>
-    <h2>E-mail: {{konto.user.email}}</h2>
-    <h2>Zainteresowania: {{konto.zainteresowania|escape}}</h2>
+    <h1>Konto uzytkownika {{viewKonto.user.username}}</h1>
+    <h2>Login: {{viewKonto.user.username}}</h2>
+    <h2>Dolaczyl: {{viewKonto.user.date_joined.date|date:"d/m/Y"}}</h2>
+    <h2>Ostatnie logowanie: {{viewKonto.user.last_login.date|date:"d/m/Y"}}</h2>
+    <h2>Imie: {{viewKonto.user.first_name}}</h2>
+    <h2>Nazwisko: {{viewKonto.user.last_name}}</h2>
+    <h2>E-mail: {{viewKonto.user.email}}</h2>
+    <h2>Zainteresowania: {{viewKonto.zainteresowania|escape}}</h2>
 {%endblock%}

@@ -11,9 +11,11 @@ class Konto(models.Model):
 
     def __unicode__(self):
         return self.user.username
-        
+
     def save(self, *args, **kwargs):
         self.user.save(*args, **kwargs)
         super(Konto,self).save(**kwargs)
-        
+
+    class Meta:
+        verbose_name_plural = "Konta"
 

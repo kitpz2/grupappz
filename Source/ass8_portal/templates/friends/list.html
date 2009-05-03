@@ -1,0 +1,41 @@
+{%extends "base.html"%}
+{%block title%} {{block.super}} - Lista znajomych: {{viewKonto.user.username}} {%endblock%}
+
+{%block main_content%}    
+    <a href="/friends/followers/{{viewKonto.user.username}}/">Komu udostępniam pliki?</a>
+    <a href="/friends/following/{{viewKonto.user.username}}/">Kto mi udosŧępnia pliki?</a>
+    <a href="/friends/mutual/{{viewKonto.user.username}}/">Znajomości w obie strony</a>
+    
+    {%ifequal list_type "followers"%}
+        {%if friends %}
+        <h1>Użytkownicy którym udostępniam pliki:</h1>
+            {%for u in friends %}
+                <a href="/accounts/details/{{u.user.username}}/">{{u.user.username}}</a>
+            {%endfor%} 
+        {%else%}
+            <h1>Brak uzytkowników. <a href="/accounts/search/">Wyszukaj</a> znajomych którym chcesz udostepniać swoje pliki></h1>
+        {%endif%}
+    {%endifequal%}
+    
+    {%ifequal list_type "following"%}
+        {%if friends %}
+        <h1>10 uzytkowników, którzy mnie ostatnio dodali:</h1>
+            {%for u in friends %}
+                <a href="/accounts/details/{{u.user.username}}/">{{u.user.username}}</a>
+            {%endfor%}
+        {%else%}
+            <h1>Brak uzytkowników.</h1>
+        {%endif%}
+    {%endifequal%}
+    
+    {%ifequal list_type "following"%}
+        {%if friends %}
+        <h1>10 uzytkowników, z którymi nawiązałem znajomość w dwie strony:</h1>
+            {%for u in friends %}
+                <a href="/accounts/details/{{u.user.username}}/">{{u.user.username}}</a>
+            {%endfor%}
+        {%else%}
+            <h1>Brak uzytkowników.</h1>
+        {%endif%}    
+    {%endifequal%}        
+{%endblock%}

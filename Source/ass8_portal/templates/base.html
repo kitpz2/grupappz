@@ -42,15 +42,15 @@
         
         <div class="navbar">
             <ul>
-            {%if user.is_authenticated%}
-            Witaj, {{user.username}}
+            {%if requestKonto.user.is_authenticated%}
+            Witaj, {{requestKonto.user.username}}
             {%endif%}
                 <li><a href="/">Czym jest ASS.8?</a></li>
                 <li><a href="/accounts/latest/">Ostatnio zarejestrowani</a></li>
                 <li><a href="/accounts/search/">Szukaj</a></li>
-                {%if user.is_authenticated%}
+                {%if requestKonto.user.is_authenticated%}
                 <li><a
-                    href="/accounts/details/{{user.username}}/">Profil</a></li>
+                    href="/accounts/details/{{requestKonto.user.username}}/">Profil</a></li>
                 <li><a href="/accounts/logout/">Wyloguj</a></li>
                 {%else%}                
                 <li><a href="/accounts/register/">Dołącz do nas</a></li>

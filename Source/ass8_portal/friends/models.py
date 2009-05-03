@@ -8,9 +8,9 @@ class UserLink(models.Model):
     to_user = models.ForeignKey(Konto, related_name='follower_set')
     date_added = models.DateTimeField(default=datetime.now)
 
-    def __unciode__(self):
-        return "%s udostepnia pliki dla %s" %(self.from_user.user.username,
-                selr.to_user.user.username)
+    def __unicode__(self):
+        return "%s udostepnia pliki dla %s" %(self.from_user,
+                self.to_user)
 
     def save(self, *args, **kwargs):
         if self.from_user== self.to_user:
