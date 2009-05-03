@@ -1,0 +1,130 @@
+logowanie:
+klient wysyla: 
+<?xml version="1.0"?> //To nie jest obowiązkowe
+<logowanie login="login" haslo="haslo"/> // Hasło musi iść jako hash hasła, bo inacze będziemy przesylali nie zaszyforwane haslo a to jest kompeltny brak odpowiedzialnosci z naszej strony ;)
+
+serwer odpowiada:
+<?xml version="1.0"?>
+<xml odpowiedz="kod_odpowiedzi" sesja="ewentualny_numer_sesji"/>
+
+gdzie kod_odpowiedzi moze przyjmowac wartosci:
+ 0 - wszystko ok, nalezy odebrac numer sesji uzytkownika
+ 1 - bledne haslo lub login
+ 2 - nieoczekiwany blad serwera
+ 3 - bledne zapytanie
+
+prosba o liste wszystkich plikow uzytkownika (kropka w przypadku uzytkownika zalogowanego):
+klient wysyla:
+<?xml version="1.0"?>
+<klient idsesji="numer_sesji" operacja="numer_operacji" uzytkownik="nazwa_uzytkownika"/>
+serwer odpowiada:
+<?xml version="1.0"?>
+<serwer odp="kod_odp">
+ <pliki dostep="modyfikator_dostepu">
+  <plik nazwa="nazwa_pliku" data="data" rozmiar="rozmiar">ZAWARTOSC</plik> //Trzeba pomyśleć o dzieleniu pliku bo nie bedziemy przesylali 100Mb w ten sposób bo to by wymagało os serwera/klieta wczytania go całego przed umieszczeniem w XMLu
+  .
+  .
+  .
+  
+ </pliki>
+</serwer>
+
+prosba o liste konkretnych plikow (kropka w przypadku uzytkownika zalogowanego): //A to po co tak właściwie? klient pyta o to czy taki plik istnieje czy coś? Jeżeli wie że plik "nazwa_pliku" jest to czemu nie zna jego rozmiaru ani daty? prędzej powinniśmy zrobić mały rozdział to co było wyżej, wysyłą tylko nazwy, a tu prosimy o przesłanie już konkretnych plików. Ale to trzeba obgadać.
+klient wysyła:
+<klient idsesji="numer_sesji" operacja="numer_operacji" uzytkownik="">
+ <pliki>
+  <nazwa_pliku></nazwa_pliku>
+  .
+  .
+  .
+  
+ </pliki>
+</klient>
+serwer odpowiada:
+<serwer operacja="numer_operacji" odp="kod_odp">
+ <pliki dostep="modyfikator_dostepu">
+  <plik nazwa="nazwa_pliku" rozmiar="rozmiar" data="data"/>
+  .
+  .
+  .
+  
+ </pliki>
+</serwer>
+
+prosba o plik/pliki (kropka w przypadku uzytkownika zalogowanego): //I to by się robiło nie potrzebne wtedy
+klient wysyla:
+<klient idsesji="numer_sesji" operacja="numer_operacji" uzytkownik="">
+ <pliki>
+  <plik nazwa="nazwa_pliku" rozmiar="rozmiar" data="data"/>
+  .
+  .
+  .
+  
+ </pliki>
+</klient>
+serwer odpowiada:
+<serwer operacja="numer operacji" odp="kod_odp">
+ <pliki dostep="modyfikator_dostepu">
+  <plik nazwa="nazwa_pliku" data="data" rozmiar="rozmiar">ZAWARTOSC</plik>
+  .
+  .
+  .
+  
+ </pliki>
+</serwer>
+
+wysylka pliku na serwer:
+<klient idsesji="numer_sesji" operacja="numer_operacji">
+ <pliki dostep="modyfikator_dostepu">
+  <plik nazwa="nazwa_pliku" data="data" rozmiar="rozmiar">ZAWARTOSC</plik>
+  .
+  .
+  .
+  
+ </pliki>
+</klient>
+odpowiedz serwera:
+<serwer operacja="numer_operacji" odp="kod_odp"/>
+
+aktualizacja danych pliku:
+klient wysyla:
+<klient idsesji="numer_sesji" operacja="numer_operacji">
+ <pliki dostep="modyfikator_dostepu">
+  <plik nazwa="nazwa_pliku" data="data" rozmiar="rozmiar">ZAWARTOSC</plik>
+  .
+  .
+  .
+  
+ </pliki>
+</klient>
+serwer odpowiada:
+<serwer operacja="numer_operacji" odp=kod_odp/>
+
+
+usuniecie pliku z serwera:
+klient wysyla:
+<klient idsesji="numer_sesji" operacja="numer_operacji" uzytkownik=""> //Czy tu "użytkownik" jest potrzebny?
+ <pliki>
+  <plik nazwa="nazwa_pliku" data="data" rozmiar="rozmiar"/>//A tu nie wystarczy sama nazwa?
+ </pliki>
+</klient>
+serwer odpowiada
+<serwer operacja="numer_operacji" odp="kod_odp"/>
+
+
+numer_operacji:
+100 - lista wszystkich plikow
+101 - lista jednego lub kilku plikow
+102 - pobieranie pliku/plikow
+103 - wysylanie pliku/plikow
+104 - aktualizacja
+105 - usuniecie pliku
+
+kod_odp:
+400 - bledne zapytanie
+401 - bledny numer sesji
+402 - podany plik istnieje (w przypadku wysylania pliku)
+403 - wewnetrzny blad serwera
+404 - podany plik nie istnieje
+
+W przypadku wyslania zapytania o liste konkretnych plikow, gdy nie bedzie ktoregos z nich na serwerze, serwer wysyla w odpowiedzi wyzerowany rozmiar i date.
