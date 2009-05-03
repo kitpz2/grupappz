@@ -6,7 +6,7 @@ from django.template import RequestContext
 from friends.helpers import *
 from friends.models import UserLink
 from accounts.models import Konto
-from accounts.view import Message
+from accounts.views import Message
 
 FRIEND_FUNCTION_MAP = {
     'followers':get_my_followers,
@@ -46,14 +46,14 @@ def add_friend(request, username):
     requestKonto = Konto.objects.get(user = request.user)
     addUser = get_object_or_404(User, username = username)
     addKonto = Konto.objects.get(user = addUser)
-    lista = get_my_followers(requestUser)
+    lista = get_my_followers(requestKonto)
     if addKonto in lista:
-        msg = Message(2,"Użytkownik jest już dodany do Twoich znajomych")
+        msg = Message(2,"Uzytkownik jest juz dodany do Twoich znajomych")
         return render_to_response("accounts/detail.html", {"requestKonto":requestKonto, "viewKonto":addKonto, "msg":msg })
     else:
-        link = UserLink(from_user=requestKontoto_user=addKonto)
+        link = UserLink(from_user=requestKonto,to_user=addKonto)
         link.save()
-        msg = Message(1,"Użytkownik pomyślnie dodany do znajomych")
+        msg = Message(1,"Uzytkownik pomyslnie dodany do znajomych")
         return render_to_response("accounts/detail.html", {"requestKonto":requestKonto, "viewKonto":addKonto, "msg":msg })
 
 def del_friend(request):

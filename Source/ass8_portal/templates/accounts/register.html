@@ -4,19 +4,23 @@
 {%block main_content%}
     {%if msg%}
         {%ifequal msg.type "Warning" %}
-            <div id="warning">{{msg.content}}<br /><a href="#" class="close">zamknij</a></div>
+            <div id="warning">{{msg.content}}<br /><a class="close">zamknij</a></div>
         {%endifequal%}
         {%ifequal msg.type "Information"%}
-            <div id="info">{{msg.content}}<br /><a href="#" class="close">zamknij</a></div>
+            <div id="info">{{msg.content}}<br /><a class="close">zamknij</a></div>
         {%endifequal%}    
         {%ifequal msg.type "Error"%}
-            <div id="error">{{msg.content}}<br /><a href="#" class="close">zamknij</a></div>
+            <div id="error">{{msg.content}}<br /><a class="close">zamknij</a></div>
         {%endifequal%}
     {%endif%}
+    {%if requestKonto.user.is_authenticated%}
+    <h1>Jestes zalogowany! Jesli chcesz zalozyc nowe konto musisz sie najpierw wylogowac!</h1>
+    {%else%}
     <h1>Zarejestruj nowego uzytkownika</h1>
     <h2>Wypełnij wszystkie pola:</h2>
     <form action="" method="POST">    
         {{form.as_p}}
         <input type="submit" value="Zarejestruj" />    
     </form>
+    {%endif%}
 {%endblock%}

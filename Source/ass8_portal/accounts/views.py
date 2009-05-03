@@ -6,19 +6,22 @@ from django.contrib.auth import login, logout, authenticate
 from django.template import RequestContext
 from accounts.models import Konto
 from accounts.forms import *
-
+ 
 MESSAGE_CODES = ('Warning', 'Information', 'Error')
-
+ 
 class Message(object):
     def __init__(self, type, content):
         self.type = MESSAGE_CODES[type]
         self.content = content
-
+ 
     def __unicode__(self):
         return "%s : %s" % self.type, self.content
-
-def user_login(request):
-    requestKonto = Konto.objects.get(user = request.user)
+ 
+def user_login(request):        
+    requestKonto = None
+    if request.user in User.objects.all():    
+        requestUser = User.objects.get(username = request.user.username)
+        requestKonto = Konto.objects.get(user = requestUser) 
     msg=None
     if request.POST:
         username = request.POST['login']
@@ -35,21 +38,25 @@ def user_login(request):
         "msg": msg,
         "requestKonto":requestKonto,
         })
-
+ 
 def user_logout(request):
     if request.user.is_authenticated:
         logout(request)
     return HttpResponseRedirect("/")
-
-def index(request):
-    requestUser = None
-    if request.user.is_authenticated:
-        requestUser = request.user
-    requestKonto = Konto.objects.get(user = requestUser)
+ 
+def index(request):   
+    requestKonto = None
+    if request.user in User.objects.all():    
+        requestUser = User.objects.get(username = request.user.username)
+        requestKonto = Konto.objects.get(user = requestUser)        
     return render_to_response("index.html",{"requestKonto":requestKonto})
-
-
+ 
+ 
 def register(request):
+    requestKonto = None
+    if request.user in User.objects.all():    
+        requestUser = User.objects.get(username = request.user.username)
+        requestKonto = Konto.objects.get(user = requestUser)         
     if request.method =="POST":
         f = RegisterForm(request.POST)
         if not f.is_valid():
@@ -77,8 +84,8 @@ def register(request):
                 return render_to_response("accounts/detail.html",{"msg":msg, "requestKonto":konto, "viewKonto":konto})                
     f = RegisterForm()
     return render_to_response("accounts/register.html", {"form":f})
-
-
+ 
+ 
 @login_required
 def profile_view(request, username):    
     requestKonto = Konto.objects.get(user = request.user)
@@ -90,7 +97,6 @@ def profile_view(request, username):
     }
     return render_to_response("accounts/detail.html", context)
     
-@login_required
 def latest_users(request):
     requestKonto = Konto.objects.get(user=request.user)    
     tempUsers = User.objects.all().order_by('-date_joined')[:25]
@@ -100,7 +106,7 @@ def latest_users(request):
         latestUsers.append(k)
     return render_to_response("accounts/latestUsers.html",
             {"requestKonto":requestKonto,"latestUsers":latestUsers})
-
+ 
 @login_required
 def search(request):
     requestKonto = Konto.objects.get(user=request.user)    
@@ -122,7 +128,7 @@ def search(request):
                 "form":f,"requestKonto":requestKonto, "users":accounts, "msg":msg})
     f=SearchForm()
     return render_to_response("accounts/search.html",{"form":f, 'requestKonto':requestKonto})
-
+ 
 @login_required
 def profile_edit(request, username):
     requestKonto = Konto.objects.get(user=request.user)    
@@ -134,7 +140,7 @@ def profile_edit(request, username):
     konto = Konto.objects.get(user=request.user)
     return render_to_response("accounts/edit.html",{"form":f,"requestKonto":requestKonto,
         "editKonto":requestKonto})
-
+ 
 @login_required
 def profile_save(request, username):
     requestKonto = Konto.objects.get(user=request.user)   
@@ -162,19 +168,18 @@ def profile_save(request, username):
         msg = Message(1,"Zmiany zostaly pomyslnie zapisane")
         return render_to_response("accounts/edit.html",
                 {"form":f, "requestKonto":requestKonto,"editKonto":requestKonto, "msg":msg})                
-
-
+ 
+ 
 @login_required
 def profile_delete(request, username):
     requestKonto = Konto.objects.get(user=request.user)
     if requestKonto.user.username != username:
         msg = Message(2,"Mozesz usunac tylko swoje konto!")
         return render_to_response("accounts/detail.html",
-                 {"requestKonto":requestKonto,"viewKonto":requestKonto, "msg":msg})    
-    
+                 {"requestKonto":requestKonto,"viewKonto":requestKonto, "msg":msg})        
     logout(request)
     requestKonto.user.delete()
     konto.delete()
     msg = Message(1,"Twoje konto zostalo usuniete")
     return render_to_response("index.html", {"msg":msg})
-
+ 

@@ -4,19 +4,19 @@
 {%block main_content%}
     {%if msg%}
         {%ifequal msg.type "Warning" %}
-            <div id="warning">{{msg.content}}<br /><a href="#" class="close">zamknij</a></div>
+            <div id="warning">{{msg.content}}<br /><a class="close">zamknij</a></div>
         {%endifequal%}
         {%ifequal msg.type "Information"%}
-            <div id="info">{{msg.content}}<br /><a href="#" class="close">zamknij</a></div>
+            <div id="info">{{msg.content}}<br /><a class="close">zamknij</a></div>
         {%endifequal%}    
         {%ifequal msg.type "Error"%}
-            <div id="error">{{msg.content}}<br /><a href="#" class="close">zamknij</a></div>
+            <div id="error">{{msg.content}}<br /><a class="close">zamknij</a></div>
         {%endifequal%}
     {%endif%}
     {%ifequal requestKonto.user.username viewKonto.user.username%}
-    <a href="/accounts/edit/{{konto.user.username}}/">Modyfikuj profil</a>
-    <a href="/friends/index/{{konto.user.username}}/">Zarzadzaj znajomymi</a>
-    <a href="/accounts/delete/{{konto.user.username}}/">Usuń profil</a>
+    <a href="/accounts/edit/{{requestKonto.user.username}}/">Modyfikuj profil</a>
+    <a href="/friends/index/{{requestKonto.user.username}}/">Zarzadzaj znajomymi</a>
+    <a href="/accounts/delete/{{requestKonto.user.username}}/">Usuń profil</a>
     {%else%}
     <!-- TODO: dodaj jesli nie dodany, usun jesli dodany do znajomych //-->
     <a href="/friends/add/{{viewKonto.user.username}}/">Dodaj do znajomych</a>
