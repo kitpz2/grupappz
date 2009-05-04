@@ -1,0 +1,107 @@
+logowanie
+
+LOG  <login> <hash> <wersja_klienta>$
+ANS <kod_odpowiedzi> [id_sesji]$
+
+prosba o liste plikow uzytkownika
+
+LST <id_sesji> [(plik1,plik2,plik3...,plikn)] [uzytkownik]$
+ANS <kod> [liczba_plikow]$
+
+plik1:
+nazwa: <nazwa>
+rozmiar: <rozmiar>
+data: <data>
+dostep: <dostep>$
+.
+.
+.
+plik[liczba_plikow]:
+nazwa: <nazwa>
+rozmiar: <rozmiar>
+data: <data>
+dostep: <dostep>$
+
+download plikow
+DWN <id_sesji> [(plik1,plik2,plik3,...,plikn)] [uzytkownik]$
+ANS <kod> [liczba_plikow]$
+
+plik1:
+nazwa: <nazwa>
+rozmiar: <rozmiar>
+data: <data>
+dostep: <dostep>$
+ZAWARTOSC
+.
+.
+.
+plik[liczba_plikow]:
+nazwa: <nazwa>
+rozmiar: <rozmiar>
+data: <data>
+dostep: <dostep>$
+ZAWARTOSC
+
+upload plikow
+UPL <id_sesji> <liczba_plikow>
+ANS <kod>$
+
+klient wysyla:
+plik1:
+nazwa: <nazwa>
+rozmiar: <rozmiar>
+data: <data>
+dostep: <dostep>$
+ZAWARTOSC
+
+
+ANS <kod>$
+.
+.
+.
+plik[liczba_plikow]:
+nazwa: <nazwa>
+rozmiar: <rozmiar>
+data: <data>
+dostep: <dostep>$
+ZAWARTOSC
+
+ANS <kod>$
+
+
+aktualizacja plikow
+
+ACT <id_sesji> <nazwa_pliku>$
+ANS <KOD>
+
+[nazwa: <nazwa>] //nowa nazwa dla pliku, ew. pominiecie
+[rozmiar: <rozmiar>] //ew. nowy rozmiar
+[data: <data>]
+[dostep: <dostep>]
+[ZAWARTOSC]
+
+usuniecie plikow
+DEL <id_sesji> (plik1,plik2,...,plikn)$
+ANS <kod>$ //dla kazdego kolejno pliku
+
+
+
+
+dostep:
+200 - dla wszystkich
+201 - dla znajomych
+202 - dla mnie
+
+kod:
+400 - bledne zapytanie
+401 - bledny numer sesji
+402 - podany plik istnieje (w przypadku wysylania pliku)
+403 - wewnetrzny blad serwera
+404 - podany plik nie istnieje
+405 - bledne zapytanie
+
+kod_odpowiedzi
+300 - wszystko ok, nalezy odebrac numer sesji uzytkownika
+301 - bledne haslo lub login
+302 - nieoczekiwany blad serwera
+303 - bledne zapytanie
