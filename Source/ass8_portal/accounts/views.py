@@ -98,7 +98,10 @@ def profile_view(request, username):
     return render_to_response("accounts/detail.html", context)
     
 def latest_users(request):
-    requestKonto = Konto.objects.get(user=request.user)    
+    requestKonto = None
+    if request.user in User.objects.all():    
+        requestUser = User.objects.get(username = request.user.username)
+        requestKonto = Konto.objects.get(user = requestUser)         
     tempUsers = User.objects.all().order_by('-date_joined')[:25]
     latestUsers = []
     for u in tempUsers:
