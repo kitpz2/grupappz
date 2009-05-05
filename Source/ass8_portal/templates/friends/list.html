@@ -10,7 +10,7 @@
         {%if friends %}
         <h1>Użytkownicy którym udostępniam pliki:</h1>
             {%for u in friends %}
-                <a href="/accounts/details/{{u.user.username}}/">{{u.user.username}}</a>
+            <a href="/accounts/details/{{u.user.username}}/">{{u.user.username}}</a><br />
             {%endfor%} 
         {%else%}
             <h1>Brak uzytkowników. <a href="/accounts/search/">Wyszukaj</a> znajomych którym chcesz udostepniać swoje pliki></h1>
@@ -19,20 +19,20 @@
     
     {%ifequal list_type "following"%}
         {%if friends %}
-        <h1>10 uzytkowników, którzy mnie ostatnio dodali:</h1>
+        <h1>Uzytkownicy ktorzy dodali mnie do znajomych:</h1>
             {%for u in friends %}
-                <a href="/accounts/details/{{u.user.username}}/">{{u.user.username}}</a>
+            <a href="/accounts/details/{{u.user.username}}/">{{u.user.username}}</a><br />
             {%endfor%}
         {%else%}
             <h1>Brak uzytkowników.</h1>
         {%endif%}
     {%endifequal%}
     
-    {%ifequal list_type "following"%}
+    {%ifequal list_type "mutual"%}
         {%if friends %}
-        <h1>10 uzytkowników, z którymi nawiązałem znajomość w dwie strony:</h1>
+        <h1>Uzytkownicy z  którymi nawiązałem znajomość w dwie strony:</h1>
             {%for u in friends %}
-                <a href="/accounts/details/{{u.user.username}}/">{{u.user.username}}</a>
+            <a href="/accounts/details/{{u.user.username}}/">{{u.user.username}}</a><br />
             {%endfor%}
         {%else%}
             <h1>Brak uzytkowników.</h1>

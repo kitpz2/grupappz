@@ -18,15 +18,18 @@
     <a href="/friends/index/{{requestKonto.user.username}}/">Zarzadzaj znajomymi</a>
     <a href="/accounts/delete/{{requestKonto.user.username}}/">Usuń profil</a>
     {%else%}
-    <!-- TODO: dodaj jesli nie dodany, usun jesli dodany do znajomych //-->
-    <a href="/friends/add/{{viewKonto.user.username}}/">Dodaj do znajomych</a>
+        {%if add%}    
+            <a href="/friends/add/{{viewKonto.user.username}}/">Dodaj do znajomych</a>
+        {%else%}
+            <a href="/friends/delete/{{viewKonto.user.username}}/">Usuń ze znajomych</a>
+        {%endif%}
     {%endifequal%}
     <h1>Konto uzytkownika {{viewKonto.user.username}}</h1>
-    <h2>Login: {{viewKonto.user.username}}</h2>
-    <h2>Dolaczyl: {{viewKonto.user.date_joined.date|date:"d/m/Y"}}</h2>
-    <h2>Ostatnie logowanie: {{viewKonto.user.last_login.date|date:"d/m/Y"}}</h2>
-    <h2>Imie: {{viewKonto.user.first_name}}</h2>
-    <h2>Nazwisko: {{viewKonto.user.last_name}}</h2>
-    <h2>E-mail: {{viewKonto.user.email}}</h2>
-    <h2>Zainteresowania: {{viewKonto.zainteresowania|escape}}</h2>
+    <h2>Login:</h2> <h2 class="value">{{viewKonto.user.username}}</h2>
+    <h2>Dolaczyl:</h2> <h2 class="value">{{viewKonto.user.date_joined.date|date:"d/m/Y"}}</h2>
+    <h2>Ostatnie logowanie:</h2> <h2 class="value">{{viewKonto.user.last_login.date|date:"d/m/Y"}}</h2>
+    <h2>Imie:</h2> <h2 class="value">{{viewKonto.user.first_name}}</h2>
+    <h2>Nazwisko:</h2> <h2 class="value">{{viewKonto.user.last_name}}</h2>
+    <h2>E-mail:</h2> <h2 class="value">{{viewKonto.user.email}}</h2>
+    <h2>Zainteresowania:</h2> <h2 class="value">{{viewKonto.zainteresowania|escape}}</h2>
 {%endblock%}
