@@ -18,20 +18,24 @@ class Message(object):
     def __unicode__(self):
         return "%s : %s" % self.type, self.content
  
-def user_login(request):        
-    requestKonto = None
-    if request.user in User.objects.all():    
+def user_login(request):            
+    msg=None    
+    try:
         requestUser = User.objects.get(username = request.user.username)
         requestKonto = Konto.objects.get(user = requestUser) 
-    msg=None
-    if request.POST:
+    except User.DoesNotExist:
+        requestKonto = None           
+    except Konto.DoesNotExist:
+        requestKonto = Konto(user = requestUser, plec = "M")
+        requestKonto.save()
+    if request.POST:        
         username = request.POST['login']
-        password = request.POST['password']
+        password = request.POST['password']        
         user = authenticate(username=username, password=password)
-        if user:
+        if user:            
             login(request, user)
             return HttpResponseRedirect(request.GET.get("next") or
-                    "/accounts/details/"+username+"/")
+                    "/accounts/details/"+username+"/")        
         msg = Message(2,"Zly login lub haslo")
     f = LoginForm()
     return render_to_response("accounts/logowanie.html", {
@@ -46,18 +50,24 @@ def user_logout(request):
     return HttpResponseRedirect("/")
  
 def index(request):   
-    requestKonto = None
-    if request.user in User.objects.all():    
+    try:
         requestUser = User.objects.get(username = request.user.username)
-        requestKonto = Konto.objects.get(user = requestUser)        
+        requestKonto = Konto.objects.get(user = requestUser) 
+    except User.DoesNotExist:
+        requestKonto = None           
+    except Konto.DoesNotExist:
+        requestKonto = None  
     return render_to_response("index.html",{"requestKonto":requestKonto})
  
  
 def register(request):
-    requestKonto = None
-    if request.user in User.objects.all():    
+    try:
         requestUser = User.objects.get(username = request.user.username)
-        requestKonto = Konto.objects.get(user = requestUser)         
+        requestKonto = Konto.objects.get(user = requestUser) 
+    except User.DoesNotExist:
+        requestKonto = None    
+    except Konto.DoesNotExist:
+        requestKonto = None         
     if request.method =="POST":
         f = RegisterForm(request.POST)
         if not f.is_valid():
@@ -80,8 +90,8 @@ def register(request):
                 user.save()
                 konto = Konto(user = user, plec = request.POST["plec"])
                 konto.save()
-                msg = Message(1,"Rejestracja zakonczona sukcesem")
-                login(request,user)
+                login(request,authenticate(username=request.POST["login"], password=request.POST["haslo"]))                 
+                msg = Message(1,"Rejestracja zakonczona sukcesem")                
                 return render_to_response("accounts/detail.html",{"msg":msg, "requestKonto":konto, "viewKonto":konto})                
     f = RegisterForm()
     return render_to_response("accounts/register.html", {"form":f})
@@ -108,20 +118,26 @@ def profile_view(request, username):
     return render_to_response("accounts/detail.html", context)
     
 def latest_users(request):
-    requestKonto = None
-    if request.user in User.objects.all():    
+    try:
         requestUser = User.objects.get(username = request.user.username)
-        requestKonto = Konto.objects.get(user = requestUser)         
-    tempUsers = User.objects.all().order_by('-date_joined')[:25]
+        requestKonto = Konto.objects.get(user = requestUser) 
+    except User.DoesNotExist:
+        requestKonto = None    
+    except Konto.DoesNotExist:
+        requestKonto = None
     latestUsers = []
-    for u in tempUsers:
-        k = Konto.objects.get(user=u)
-        latestUsers.append(k)
+    tempUsers = User.objects.all().order_by('-date_joined')[:25]        
+    try:        
+        for u in tempUsers:
+            k = Konto.objects.get(user=u)
+            latestUsers.append(k)
+    except Konto.DoesNotExist:
+        pass
     return render_to_response("accounts/latestUsers.html",
             {"requestKonto":requestKonto,"latestUsers":latestUsers})
  
 @login_required
-def search(request):
+def search(request):    
     requestKonto = Konto.objects.get(user=request.user)    
     if request.POST:
         f = SearchForm(request.POST)
@@ -192,7 +208,7 @@ def profile_delete(request, username):
                  {"requestKonto":requestKonto,"viewKonto":requestKonto, "msg":msg})        
     logout(request)
     requestKonto.user.delete()
-    konto.delete()
+    requestKonto.delete()
     msg = Message(1,"Twoje konto zostalo usuniete")
     return render_to_response("index.html", {"msg":msg})
  

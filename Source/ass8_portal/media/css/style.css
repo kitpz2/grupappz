@@ -83,14 +83,21 @@ div.container a:hover
 
 div.header
 {     
-	text-align:center;
+	text-align:right;	
     width:1024px;
-	height:150px;
+	height:50px;
 	margin: 0px;
     padding: 0px;
-    background:#6196A0; 
-    overflow:hidden;    
-	border-bottom:1px solid black;
+    background:#314a2c; 
+    overflow:hidden;    	
+}
+
+div.header h1
+{	
+	font-size:40px;
+	color:white;
+	margin: 0px;
+    padding: 0px;
 }
 
 div.navbar
@@ -152,17 +159,7 @@ div.content h1
 
 div.content h2
 {	
-	color:#66ba00;
-    display:inline;
-	margin:0px;
-	padding-left:10px;	
-	padding-right:10px;	
-}
-
-div.content h2.value
-{
-    display:block;
-    color:white;
+	color:#66ba00;    
 	margin:0px;
 	padding-left:10px;	
 	padding-right:10px;	

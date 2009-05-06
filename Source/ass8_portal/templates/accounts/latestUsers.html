@@ -18,6 +18,7 @@
 
 {%endblock%}
 {%block main_content%}
+    {%if latestUsers%}
     <h1>Ostatnio dodatni uzytkownicy:</h1>
     <table class="userList">
     {% for user in latestUsers %}
@@ -25,4 +26,8 @@
     {%endfor%}
     </table>
     <p></p>
+    {%else%}
+    <h1>Brak ostatnio dodanych użytkowników</h1>
+    {%endif%}
+    
 {%endblock%}
