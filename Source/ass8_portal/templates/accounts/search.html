@@ -10,17 +10,6 @@
 
 {%endblock%}
 {%block main_content%}
-    {%if msg%}
-        {%ifequal msg.type "Warning" %}
-            <div id="warning">{{msg.content}}<br /><a class="close">zamknij</a></div>
-        {%endifequal%}
-        {%ifequal msg.type "Information"%}
-            <div id="info">{{msg.content}}<br /><a class="close">zamknij</a></div>
-        {%endifequal%}    
-        {%ifequal msg.type "Error"%}
-            <div id="error">{{msg.content}}<br /><a class="close">zamknij</a></div>
-        {%endifequal%}
-    {%endif%}
 <h1>Szukaj uzytkownikow</h1>
     <form action="" method="POST">
         {{form.search}}<br />

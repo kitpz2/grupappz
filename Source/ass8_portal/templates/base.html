@@ -36,7 +36,7 @@
     <div class="container">
         <!-- Header -->
         <div class="header">
-            <img src="/gfx/banner.jpg" />
+            <h1>Alternatywny system synchronizacji - ASS.8</h1>
         </div>
         <!-- END Header -->
         
@@ -60,8 +60,19 @@
         </div>
         
         <!-- Content -->
-        <div class="content">             
-                {%block main_content%} {%endblock%}           
+        <div class="content">
+            {%if msg%}
+                {%ifequal msg.type "Warning" %}
+                    <div id="warning">{{msg.content}}<br /><a class="close">zamknij</a></div>
+                {%endifequal%}
+                {%ifequal msg.type "Information"%}
+                    <div id="info">{{msg.content}}<br /><a class="close">zamknij</a></div>
+                {%endifequal%}    
+                {%ifequal msg.type "Error"%}
+                    <div id="error">{{msg.content}}<br /><a class="close">zamknij</a></div>
+                {%endifequal%}
+            {%endif%}        
+            {%block main_content%} {%endblock%}           
         </div>
         <!-- END Content -->
 

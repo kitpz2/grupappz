@@ -84,7 +84,6 @@ def del_friend(request, username):
             'viewKonto':requestKonto
             }
         return render_to_response("friends/index.html", context)
-
     ul.delete()
     msg = Message(1,"Uzytkownik pomyslnie usuniety ze znajomych")
     return HttpResponseRedirect("/friends/index/"+requestKonto.user.username+"/")

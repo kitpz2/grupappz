@@ -27,17 +27,6 @@
 {%endblock%}
 
 {%block main_content%}
-    {%if msg%}
-        {%ifequal msg.type "Warning" %}
-            <div id="warning">{{msg.content}}<br /><a class="close">zamknij</a></div>
-        {%endifequal%}
-        {%ifequal msg.type "Information"%}
-            <div id="info">{{msg.content}}<br /><a class="close">zamknij</a></div>
-        {%endifequal%}    
-        {%ifequal msg.type "Error"%}
-            <div id="error">{{msg.content}}<br /><a class="close">zamknij</a></div>
-        {%endifequal%}
-    {%endif%}
     {% if requestKonto.user.is_authenticated%}
     <h1>Jesteś już zalogowany.</h1>
     <a href="/accounts/details/{{requestKonto.user.username}}/">Strona profilu</a>

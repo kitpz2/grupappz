@@ -1,35 +1,46 @@
 {%extends "base.html"%}
 {%block title%} {{block.super}} - Szczegoly profilu: {{viewKonto.user.username}} {%endblock%}
 
+{%block extra_style%}
+<style type="text/css">
+div.content .attr
+{    
+    color:#66ba00;    
+    margin:0px;    
+	padding-left:10px;	
+	padding-right:10px;	
+}
+
+div.content .value
+{    
+    color:white;
+	margin:0px;
+	padding-left:10px;		
+}
+</style>
+{%endblock%}
+
 {%block main_content%}
-    {%if msg%}
-        {%ifequal msg.type "Warning" %}
-            <div id="warning">{{msg.content}}<br /><a class="close">zamknij</a></div>
-        {%endifequal%}
-        {%ifequal msg.type "Information"%}
-            <div id="info">{{msg.content}}<br /><a class="close">zamknij</a></div>
-        {%endifequal%}    
-        {%ifequal msg.type "Error"%}
-            <div id="error">{{msg.content}}<br /><a class="close">zamknij</a></div>
-        {%endifequal%}
-    {%endif%}
     {%ifequal requestKonto.user.username viewKonto.user.username%}
-    <a href="/accounts/edit/{{requestKonto.user.username}}/">Modyfikuj profil</a>
-    <a href="/friends/index/{{requestKonto.user.username}}/">Zarzadzaj znajomymi</a>
-    <a href="/accounts/delete/{{requestKonto.user.username}}/">Usuń profil</a>
+    <a href="/accounts/edit/{{requestKonto.user.username}}/">Modyfikuj profil</a><br />
+    <a href="/friends/index/{{requestKonto.user.username}}/">Zarzadzaj znajomymi</a><br />
+    <a href="/accounts/delete/{{requestKonto.user.username}}/">Usuń profil</a><br />
+    <br />
     {%else%}
         {%if add%}    
-            <a href="/friends/add/{{viewKonto.user.username}}/">Dodaj do znajomych</a>
+            <a href="/friends/add/{{viewKonto.user.username}}/">Dodaj do znajomych</a><br />
+            <br />
         {%else%}
-            <a href="/friends/delete/{{viewKonto.user.username}}/">Usuń ze znajomych</a>
+            <a href="/friends/delete/{{viewKonto.user.username}}/">Usuń ze znajomych</a><br />
+            <br />
         {%endif%}
     {%endifequal%}
     <h1>Konto uzytkownika {{viewKonto.user.username}}</h1>
-    <h2>Login:</h2> <h2 class="value">{{viewKonto.user.username}}</h2>
-    <h2>Dolaczyl:</h2> <h2 class="value">{{viewKonto.user.date_joined.date|date:"d/m/Y"}}</h2>
-    <h2>Ostatnie logowanie:</h2> <h2 class="value">{{viewKonto.user.last_login.date|date:"d/m/Y"}}</h2>
-    <h2>Imie:</h2> <h2 class="value">{{viewKonto.user.first_name}}</h2>
-    <h2>Nazwisko:</h2> <h2 class="value">{{viewKonto.user.last_name}}</h2>
-    <h2>E-mail:</h2> <h2 class="value">{{viewKonto.user.email}}</h2>
-    <h2>Zainteresowania:</h2> <h2 class="value">{{viewKonto.zainteresowania|escape}}</h2>
+    <span class="attr">Login:</span> <span class="value">{{viewKonto.user.username}}</span><br />
+    <span class="attr">Dolaczyl:</span> <span class="value">{{viewKonto.user.date_joined.date|date:"d/m/Y"}}</span><br />
+    <span class="attr">Ostatnie logowanie:</span> <span class="value">{{viewKonto.user.last_login.date|date:"d/m/Y"}}</span><br />
+    <span class="attr">Imie:</span> <span class="value">{{viewKonto.user.first_name}}</span><br />
+    <span class="attr">Nazwisko:</span> <span class="value">{{viewKonto.user.last_name}}</span><br />
+    <span class="attr">E-mail:</span> <span class="value">{{viewKonto.user.email}}</span><br />
+    <span class="attr">Zainteresowania:</span> <span class="value">{{viewKonto.zainteresowania|escape}}</span><br />
 {%endblock%}

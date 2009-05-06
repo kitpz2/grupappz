@@ -2,41 +2,41 @@
 {%block title%} {{block.super}} - Lista znajomych: {{viewKonto.user.username}} {%endblock%}
 
 {%block main_content%}    
-    <a href="/friends/followers/{{viewKonto.user.username}}/">Komu udostępniam pliki?</a>
-    <a href="/friends/following/{{viewKonto.user.username}}/">Kto mi udosŧępnia pliki?</a>
-    <a href="/friends/mutual/{{viewKonto.user.username}}/">Znajomości w obie strony</a>
-    
+    <a href="/friends/followers/{{viewKonto.user.username}}/">Komu udostępniam pliki?</a><br />
+    <a href="/friends/following/{{viewKonto.user.username}}/">Kto mi udosŧępnia pliki?</a><br />
+    <a href="/friends/mutual/{{viewKonto.user.username}}/">Znajomości w obie strony</a><br />
+    <br />
     {%if followers%}
-    <h1>10 ostatnio dodanych użytkowników:</h1>
+    <h2 class="value">10 ostatnio dodanych użytkowników:</h2>
         <ul>
         {%for u in followers %}
             <li><a href="/accounts/details/{{u.user.username}}/">{{u.user.username}}</a></li>
         {%endfor%}
         </ul>
     {%else%}
-    <h1>Brak uzytkowników. <a href="/accounts/search/">Wyszukaj</a> znajomych którym chcesz udostepniać swoje pliki</h1>
+    <h2 class="value">Brak uzytkowników. <a href="/accounts/search/">Wyszukaj</a> znajomych którym chcesz udostepniać swoje pliki</h2>
     {%endif%}
     
     {%if following%}
-    <h1>10 uzytkowników, którzy mnie ostatnio dodali:</h1>
+    <h2 class="value">10 uzytkowników, którzy mnie ostatnio dodali:</h2>
         <ul>
         {%for u in following %}
             <li><a href="/accounts/details/{{u.user.username}}/">{{u.user.username}}</a></li>
         {%endfor%}
         </ul>
     {%else%}
-    <h1>Brak uzytkowników.</h1>
+    <h2 class="value">Brak uzytkowników którzy mnie ostatnio dodali do znajomych.</h2>
     {%endif%}
     
     {%if mutual%}
-    <h1>10 uzytkowników, z którymi nawiązałem znajomość w dwie strony:</h1>
+    <h2 class="value">10 uzytkowników, z którymi nawiązałem znajomość w dwie strony:</h2>
         <ul>
         {%for u in mutual %}
             <li><a href="/accounts/details/{{u.user.username}}/">{{u.user.username}}</a></li>
         {%endfor%}
         </ul>
     {%else%}
-    <h1>Brak uzytkowników.</h1>
+    <h2 class="value">Brak uzytkowników z którymi nawiązałem znajomość w dwie strony.</h2>
     {%endif%}    
         
 {%endblock%}
