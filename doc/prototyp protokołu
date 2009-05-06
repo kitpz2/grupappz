@@ -1,166 +1,120 @@
 logowanie:
 klient wysyla: 
-<?xml version="1.0"?> //To nie jest obowiązkowe
-<logowanie login="login" haslo="haslo" wersja="wersja_klienta"/> // Hasło musi iść jako hash hasła, bo inacze będziemy przesylali nie zaszyforwane haslo a to jest kompeltny brak odpowiedzialnosci z naszej strony ;)
+<?xml version="1.0"?>
+<logowanie login="login" haslo="haslo" wersja="wersja_klienta"/>
 
 serwer odpowiada:
 <?xml version="1.0"?>
-<xml odpowiedz="kod_odpowiedzi" sesja="ewentualny_numer_sesji" wersja="wersja_servera"/>
+<serwer odpowiedz="kod_odpowiedzi" sesja="ewentualny_numer_sesji" wersja="wersja_servera"/>
 
-gdzie kod_odpowiedzi moze przyjmowac wartosci:
- 0 - wszystko ok, nalezy odebrac numer sesji uzytkownika
- 1 - bledne haslo lub login
- 2 - nieoczekiwany blad serwera
- 3 - bledne zapytanie
 
-prosba o liste wszystkich plikow uzytkownika (kropka w przypadku uzytkownika zalogowanego):
+<?xml version="1.0"?>
+<serwer odpowiedz="" sesja="numer_sesji" wersja="wersja_servera"/>
+
+
+prosba o liste plikow uzytkownika (kropka w przypadku uzytkownika zalogowanego):
 klient wysyla:
 <?xml version="1.0"?>
 <klient idsesji="numer_sesji" operacja="100" uzytkownik="nazwa_uzytkownika"/>
+
 serwer odpowiada:
 <?xml version="1.0"?>
 <serwer odp="kod_odp" operacja="100">
- <pliki dostep="modyfikator_dostepu">
-  <plik nazwa="nazwa_pliku" data="data" rozmiar="rozmiar"/>
-  .
-  .
-  .
-  
- </pliki>
+  <plik nazwa="nazwa_pliku" data="data" rozmiar="rozmiar" dostep="modyfikator_dostepu"/>
 </serwer>
 
-prosba o liste konkretnych plikow (kropka w przypadku uzytkownika zalogowanego): //A to po co tak właściwie? klient pyta o to czy taki plik istnieje czy coś? Jeżeli wie że plik "nazwa_pliku" jest to czemu nie zna jego rozmiaru ani daty? prędzej powinniśmy zrobić mały rozdział to co było wyżej, wysyłą tylko nazwy, a tu prosimy o przesłanie już konkretnych plików. Ale to trzeba obgadać.
-klient wysyła:
-<?xml version="1.0"?>
-<klient idsesji="numer_sesji" operacja="101" uzytkownik="">
- <pliki>
-  <plik="nazwa_pliku"/>
-  .
-  .
-  .
-  
- </pliki>
-</klient>
-serwer odpowiada:
-<?xml version="1.0"?>
-<serwer operacja="101" odp="kod_odp">
- <pliki dostep="modyfikator_dostepu">
-  <plik nazwa="nazwa_pliku" rozmiar="rozmiar" data="data"/>
-  .
-  .
-  .
-  
- </pliki>
-</serwer>
 
-prosba o plik/pliki (kropka w przypadku uzytkownika zalogowanego): //I to by się robiło nie potrzebne wtedy
+
+prosba o plik/pliki (kropka w przypadku uzytkownika zalogowanego):  -- mozna zapytac o kilka plikow
 klient wysyla:
 <?xml version="1.0"?>
-<klient idsesji="numer_sesji" operacja="102" uzytkownik="">
- <pliki>
-  <plik nazwa="nazwa_pliku" rozmiar="rozmiar" data="data"/>
-  .
-  .
-  .
-  
- </pliki>
+<klient idsesji="numer_sesji" operacja="101" uzytkownik="">
+  <plik nazwa="nazwa_pliku"/>
 </klient>
-serwer odpowiada:
+
+
+
+serwer odpowiada
 <?xml version="1.0"?>
-<serwer operacja="numer operacji" odp="kod_odp">
- <pliki dostep="modyfikator_dostepu">
-  <plik nazwa="nazwa_pliku" data="data" rozmiar="rozmiar_w_bajtach"/>
- </pliki>
+<serwer operacja="101" odp="kod_odp">
+<plik nazwa="nazwa_pliku" data="data" rozmiar="rozmiar_w_bajtach" dostep="modyfikator_dostepu"/> // w przypadku braku pliku rozmiar="-1"
 </serwer>
+
+klient wysyla:
+<klient idsesji="numer_sesji" operacja="101" action="ok">
+
+ potem serwer wysyla:
 [DANE_PLIKU]
-<?xml version="1.0"?>//To nie musi być ale przyda sie aby "ładniej wyglądało"
-<serwer operacja="numer operacji" odp="kod_odp">
- <eof_pliki dostep="modyfikator_dostepu">
-  <eof_plik nazwa="nazwa_pliku" data="data" rozmiar="rozmiar_w_bajtach"/>
- </pliki>
-</serwer>
-.
-.tu ewentualnie kolejne pliki
-.
 
-
-wysylka pliku na serwer:
 <?xml version="1.0"?>
-<klient idsesji="numer_sesji" operacja="103">
- <pliki dostep="modyfikator_dostepu">
-  <plik nazwa="nazwa_pliku" data="data" rozmiar="rozmiar"/>
- </pliki>
+<serwer operacja="101" odp="kod_odp" hash="hash" />
+
+
+
+
+wysylka pliku na serwer (mozliwy tylko jeden w xmlu):
+<?xml version="1.0"?>
+<klient idsesji="numer_sesji" operacja="102">
+  <plik nazwa="nazwa_pliku" data="data" rozmiar="rozmiar" dostep="modyfikator_dostepu"/>
 </klient>
 
 odpowiedz serwera gdy plik nie istnieje:
 <?xml version="1.0"?>
-<serwer operacja="103" odp="kod_odp"/>
+<serwer operacja="102" odp="404"/>
 
 Odpowiedź serwera gdy plik istnieje:
 <?xml version="1.0"?>
-<serwer operacja="103" odp="402"/>
+<serwer operacja="102" odp="402"/>
 
 w wypadku odpowiedzi 402 czekiwanie na reakcję klienta:
 <?xml version="1.0"?>
-<klient action="ok"/> //gdy klient zgadza się na zastąpienie istniejącego pliku
+<klient idsesji="" operacja="" action="ok"/> //gdy klient zgadza się na zastąpienie istniejącego pliku
 
 <?xml version="1.0"?>
-<klient action="abort"/>//Gdy klient nie chce zastępować pliku 
+<klient idsesji="" operacja="" action="abort"/>//Gdy klient nie chce zastępować pliku 
 
 po wysłaniu action="ok" serwer odpowiada jak w wypadku gdy plik nie istnieje, w przeciwnym wypdaku odpowiedź serwera to:
 <?xml version="1.0"?>
-<serwer operacja="103" odp="abort"/>
+<serwer operacja="102" odp="405"/>
 
 przesyłanie pliku po odpowiedzi serwera:
-<?xml version="1.0"?>
-<plik nazwa="nazwa_pliku" data="data" rozmiar="rozmiar"/>
+
 [DANE_PLIKU]
+
+
 <?xml version="1.0"?>
-<eof_plik nazwa="nazwa_pliku" data="data" rozmiar="rozmiar"/>
+<klient idsesji="" operacja="102" hash="hash"/>
 
 
-/*aktualizacja danych pliku://Chyba nie potrzebne
-klient wysyla:
-<klient idsesji="numer_sesji" operacja="numer_operacji">
- <pliki dostep="modyfikator_dostepu">
-  <plik nazwa="nazwa_pliku" data="data" rozmiar="rozmiar">ZAWARTOSC</plik>
-  .
-  .
-  .
-  
- </pliki>
-</klient>
-serwer odpowiada:
-<serwer operacja="numer_operacji" odp=kod_odp/>
-*/
 
 usuniecie pliku z serwera:
 klient wysyla:
 <?xml version="1.0"?>
-<klient idsesji="numer_sesji" operacja="numer_operacji" uzytkownik=""> //Czy tu "użytkownik" jest potrzebny?
- <pliki>
-  <plik nazwa="nazwa_pliku" data="data" rozmiar="rozmiar"/>//A tu nie wystarczy sama nazwa?
- </pliki>
+<klient idsesji="numer_sesji" operacja="103">
+  <plik nazwa="nazwa_pliku"/>
 </klient>
-serwer odpowiada
+
+serwer odpowiada (tyle razy ile bylo plikow)
 <?xml version="1.0"?>
 <serwer operacja="numer_operacji" odp="kod_odp"/>
 
 
-numer_operacji:
+kod_odpowiedzi
+0 - wszystko ok, nalezy odebrac numer sesji uzytkownika
+1 - bledne haslo lub login
+2 - nieoczekiwany blad serwera
+3 - bledne zapytanie
+
+operacja:
 100 - lista wszystkich plikow
-101 - lista jednego lub kilku plikow
-102 - pobieranie pliku/plikow
-103 - wysylanie pliku/plikow
-104 - aktualizacja
-105 - usuniecie pliku
+101 - pobieranie pliku/plikow
+102 - wysylanie pliku
+103 - usuniecie pliku
 
-kod_odp:
-400 - bledne zapytanie
-401 - bledny numer sesji
-402 - podany plik istnieje (w przypadku wysylania pliku)
-403 - wewnetrzny blad serwera
-404 - podany plik nie istnieje
-405 - błąd odbierania pliku
-
-W przypadku wyslania zapytania o liste konkretnych plikow, gdy nie bedzie ktoregos z nich na serwerze, serwer wysyla w odpowiedzi wyzerowany rozmiar i date.
+odp: // po opisie podane operacje w ktorych bledy moga wystapic
+400 - bledne zapytanie  // dla: 100,101,102,103
+401 - bledny numer sesji // dla: 100,101,102,103
+402 - podany plik istnieje (w przypadku wysylania pliku) // dla 102
+403 - wewnetrzny blad serwera // dla: 100,101,102,103
+404 - podany plik nie istnieje // dla 102
+405 - błąd odbierania plikow // dla 102
