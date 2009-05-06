@@ -1,6 +1,7 @@
 from django.shortcuts import render_to_response, get_object_or_404
 from django.http import Http404, HttpResponseRedirect
 from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
 from django.template import RequestContext
 
 from friends.helpers import *
@@ -14,6 +15,7 @@ FRIEND_FUNCTION_MAP = {
     'mutual':get_mutual,
 }
 
+@login_required
 def friends_manage(request, username):
     requestKonto = Konto.objects.get(user = request.user)
     viewUser = get_object_or_404(User, username = username)
@@ -29,19 +31,20 @@ def friends_manage(request, username):
             'viewKonto':viewKonto
     }
     return render_to_response("friends/index.html", context)
-
+@login_required
 def friend_list(request, list_type, username):
     requestKonto = Konto.objects.get(user = request.user)
     viewUser = get_object_or_404(User, username = username)
-    viewKonto = Konto.objects.get(user=u)
+    viewKonto = Konto.objects.get(user=viewUser)
     context = {
         'list_type':list_type,
-        'friends':FRIEND_FUNCTION_MAP[list_type](konto),
+        'friends':FRIEND_FUNCTION_MAP[list_type](viewKonto),
         'requestKonto' : requestKonto,
         'viewKonto' : viewKonto,
     }
     return render_to_response("friends/list.html", context)
 
+@login_required
 def add_friend(request, username):
     requestKonto = Konto.objects.get(user = request.user)
     addUser = get_object_or_404(User, username = username)
@@ -54,7 +57,34 @@ def add_friend(request, username):
         link = UserLink(from_user=requestKonto,to_user=addKonto)
         link.save()
         msg = Message(1,"Uzytkownik pomyslnie dodany do znajomych")
-        return render_to_response("accounts/detail.html", {"requestKonto":requestKonto, "viewKonto":addKonto, "msg":msg })
+        return render_to_response("accounts/detail.html", {
+            "requestKonto":requestKonto, 
+            "viewKonto":addKonto, 
+            "msg":msg })
 
-def del_friend(request):
-    pass
+@login_required
+def del_friend(request, username):
+    requestKonto = Konto.objects.get(user = request.user)
+    delUser = get_object_or_404(User, username = username)
+    delKonto = Konto.objects.get(user = delUser)
+    try:
+        ul = UserLink.objects.get(from_user=requestKonto, 
+                to_user=delKonto)
+    except UserLink.DoesNotExist:
+        msg = Message(1,"Nie mozesz usunac tego uzytkownika.")
+        followers = FRIEND_FUNCTION_MAP['followers'](requestKonto)
+        following = FRIEND_FUNCTION_MAP['following'](requestKonto)
+        mutual = FRIEND_FUNCTION_MAP['mutual'](requestKonto)
+        context = {
+            'msg':msg,
+            'followers':followers[:10],
+            'following':following[:10],
+            'mutual':mutual[:10],
+            'requestKonto':requestKonto,
+            'viewKonto':requestKonto
+            }
+        return render_to_response("friends/index.html", context)
+
+    ul.delete()
+    msg = Message(1,"Uzytkownik pomyslnie usuniety ze znajomych")
+    return HttpResponseRedirect("/friends/index/"+requestKonto.user.username+"/")

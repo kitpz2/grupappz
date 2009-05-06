@@ -20,11 +20,11 @@
         <p><label for="id_nowe_haslo">Nowe haslo:</label> <input type="password" name="nowe_haslo" id="id_nowe_haslo" /></p>
         <p><label for="id_re_nowe_haslo">Powtorz haslo:</label> <input type="password" name="re_nowe_haslo" id="id_re_nowe_haslo" /></p>
         <h2>Dodatkowe dane osobowe:</h2>
-        <p><label for="id_imie">Imie:</label> <input type="text" name="imie" id="id_imie" value="{{user.first_name}}"/></p>
-        <p><label for="id_nazwisko">Nazwisko:</label> <input type="text" name="nazwisko" id="id_nazwisko" value="{{user.last_name}}" /></p>
-        <p><label for="id_miasto">Miasto:</label> <input type="text" name="miasto" id="id_miasto" value="{{konto.miasto}}"/></p>
-        <p><label for="id_zainteresowania">Zainteresowania:</label><br /><textarea id="id_zainteresowania" rows="10" cols="40" name="zainteresowania">{{konto.zainteresowania}}</textarea></p>
-        <p><label for="id_e_mail">e-mail:</label> <input type="text" name="e_mail" id="id_e_mail" value="{{user.email}}"/></p>        
+        <p><label for="id_imie">Imie:</label> <input type="text" name="imie" id="id_imie" value="{{editKonto.user.first_name}}"/></p>
+        <p><label for="id_nazwisko">Nazwisko:</label> <input type="text" name="nazwisko" id="id_nazwisko" value="{{editKonto.user.last_name}}" /></p>
+        <p><label for="id_miasto">Miasto:</label> <input type="text" name="miasto" id="id_miasto" value="{{editKonto.miasto}}"/></p>
+        <p><label for="id_zainteresowania">Zainteresowania:</label><br /><textarea id="id_zainteresowania" rows="10" cols="40" name="zainteresowania">{{editKonto.zainteresowania}}</textarea></p>
+        <p><label for="id_e_mail">e-mail:</label> <input type="text" name="e_mail" id="id_e_mail" value="{{editKonto.user.email}}"/></p>        
         <input type="submit" value="Zmien" />    
     </form>
 {%endblock%}

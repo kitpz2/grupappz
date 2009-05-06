@@ -6,7 +6,8 @@ from django.contrib.auth import login, logout, authenticate
 from django.template import RequestContext
 from accounts.models import Konto
 from accounts.forms import *
- 
+from friends.models import UserLink 
+
 MESSAGE_CODES = ('Warning', 'Information', 'Error')
  
 class Message(object):
@@ -87,18 +88,30 @@ def register(request):
  
  
 @login_required
-def profile_view(request, username):    
+def profile_view(request, username):
     requestKonto = Konto.objects.get(user = request.user)
     viewUser = get_object_or_404(User, username=username)
     viewKonto = Konto.objects.get(user=viewUser)
+    add = True
+    if requestKonto.user.username != viewKonto.user.username:
+        try:
+            ul = UserLink.objects.get(from_user=requestKonto,
+                to_user = viewKonto)
+            add = False
+        except UserLink.DoesNotExist:
+            add = True
     context = {
         'requestKonto':requestKonto,
         'viewKonto': viewKonto,
+        'add':add,
     }
     return render_to_response("accounts/detail.html", context)
     
 def latest_users(request):
-    requestKonto = Konto.objects.get(user=request.user)    
+    requestKonto = None
+    if request.user in User.objects.all():    
+        requestUser = User.objects.get(username = request.user.username)
+        requestKonto = Konto.objects.get(user = requestUser)         
     tempUsers = User.objects.all().order_by('-date_joined')[:25]
     latestUsers = []
     for u in tempUsers:

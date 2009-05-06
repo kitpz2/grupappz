@@ -153,6 +153,16 @@ div.content h1
 div.content h2
 {	
 	color:#66ba00;
+    display:inline;
+	margin:0px;
+	padding-left:10px;	
+	padding-right:10px;	
+}
+
+div.content h2.value
+{
+    display:block;
+    color:white;
 	margin:0px;
 	padding-left:10px;	
 	padding-right:10px;	
