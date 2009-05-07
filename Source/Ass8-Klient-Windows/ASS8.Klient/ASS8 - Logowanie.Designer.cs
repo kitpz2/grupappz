@@ -1,6 +1,6 @@
 ﻿namespace ASS8.Klient
 {
-    partial class Form1
+    partial class ASS8___Logowanie
     {
         /// <summary>
         /// Required designer variable.
@@ -58,7 +58,6 @@
             // 
             // txtLogin
             // 
-            this.txtLogin.Enabled = false;
             this.txtLogin.Location = new System.Drawing.Point(45, 13);
             this.txtLogin.Name = "txtLogin";
             this.txtLogin.Size = new System.Drawing.Size(100, 20);
@@ -66,7 +65,6 @@
             // 
             // txtHasło
             // 
-            this.txtHasło.Enabled = false;
             this.txtHasło.Location = new System.Drawing.Point(45, 41);
             this.txtHasło.Name = "txtHasło";
             this.txtHasło.Size = new System.Drawing.Size(100, 20);
@@ -106,14 +104,14 @@
             this.grpLogowanie.TabIndex = 6;
             this.grpLogowanie.TabStop = false;
             // 
-            // Form1
+            // ASS8___Logowanie
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(189, 157);
             this.Controls.Add(this.grpLogowanie);
             this.MaximizeBox = false;
-            this.Name = "Form1";
+            this.Name = "ASS8___Logowanie";
             this.Text = "ASS.8 - Logowanie";
             this.grpLogowanie.ResumeLayout(false);
             this.grpLogowanie.PerformLayout();

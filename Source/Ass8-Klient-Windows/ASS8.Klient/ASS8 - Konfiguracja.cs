@@ -6,17 +6,40 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using System.Net;
+using System.Threading;
 
 namespace ASS8.Klient
 {
     public partial class ASS8___Konfiguracja : Form
     {
-        private bool close=false;
+        komunikacja k;
+        private bool close = false;
         Form loginForm;
-        public ASS8___Konfiguracja(Form log)
+        zarzadca z;
+        private void automatyczneSpr()
+        {
+            while (true)
+            {
+                z.szukajZmian();
+                Thread.Sleep(60000);
+            }
+        }
+        public ASS8___Konfiguracja(Form log, komunikacja kom)
         {
             InitializeComponent();
             loginForm = log;
+            KomClass = kom;
+            z = new zarzadca();
+            z.kom = k;
+            Thread th = new Thread(automatyczneSpr);
+            th.Start();
+        }
+        public komunikacja KomClass
+        {
+            set
+            {
+                k = value;
+            }
         }
         private void btnSciezka_Click(object sender, EventArgs e)
         {
