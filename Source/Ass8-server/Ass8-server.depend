@@ -1,0 +1,457 @@
+# depslib dependency file v1.0
+1241699393 source:/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/main.cpp
+	<iostream>
+	<string>
+	<cstdio>
+	<cstdlib>
+	<sys/types.h>
+	<unistd.h>
+	<sys/wait.h>
+	<boost/asio.hpp>
+	<boost/thread/thread.hpp>
+	<boost/bind.hpp>
+	"version.h"
+	"parser.hpp"
+
+1241717415 /home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/version.h
+
+1241704770 source:/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/parser.cpp
+	<iostream>
+	<string>
+	<cstdlib>
+	<cstdio>
+	<sys/types.h>
+	<unistd.h>
+	<sys/wait.h>
+	"version.h"
+	"parser.hpp"
+	"xml.hpp"
+	"debug.hpp"
+
+1241715058 /home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/parser.hpp
+	<boost/asio.hpp>
+	<string>
+	<fstream>
+	<libxml++/libxml++.h>
+	<libxml++/parsers/textreader.h>
+	<config.h>
+	"baza.hpp"
+	"debug.hpp"
+
+1223570338 /usr/include/libxml++-2.6/libxml++/libxml++.h
+	<libxml++/exceptions/internal_error.h>
+	<libxml++/exceptions/parse_error.h>
+	<libxml++/parsers/domparser.h>
+	<libxml++/parsers/saxparser.h>
+	<libxml++/parsers/textreader.h>
+	<libxml++/nodes/node.h>
+	<libxml++/nodes/commentnode.h>
+	<libxml++/nodes/element.h>
+	<libxml++/nodes/entityreference.h>
+	<libxml++/nodes/textnode.h>
+	<libxml++/attribute.h>
+	<libxml++/document.h>
+	<libxml++/validators/validator.h>
+	<libxml++/validators/dtdvalidator.h>
+	<libxml++/validators/schemavalidator.h>
+
+1223570337 /usr/include/libxml++-2.6/libxml++/exceptions/internal_error.h
+	<libxml++/exceptions/exception.h>
+	<exception>
+	<glibmm/ustring.h>
+
+1223570337 /usr/include/libxml++-2.6/libxml++/exceptions/exception.h
+	<exception>
+	<glibmm/ustring.h>
+	<libxml++config.h>
+
+1237471902 /usr/include/glibmm-2.4/glibmm/ustring.h
+	<glib.h>
+	<glibmm/unicode.h>
+	<iosfwd>
+	<iterator>
+	<sstream>
+	<string>
+	<glibmmconfig.h>
+	<cstddef>
+
+1239380674 /usr/include/glib-2.0/glib.h
+	<glib/galloca.h>
+	<glib/garray.h>
+	<glib/gasyncqueue.h>
+	<glib/gatomic.h>
+	<glib/gbacktrace.h>
+	<glib/gbase64.h>
+	<glib/gbookmarkfile.h>
+	<glib/gcache.h>
+	<glib/gchecksum.h>
+	<glib/gcompletion.h>
+	<glib/gconvert.h>
+	<glib/gdataset.h>
+	<glib/gdate.h>
+	<glib/gdir.h>
+	<glib/gerror.h>
+	<glib/gfileutils.h>
+	<glib/ghash.h>
+	<glib/ghook.h>
+	<glib/giochannel.h>
+	<glib/gkeyfile.h>
+	<glib/glist.h>
+	<glib/gmacros.h>
+	<glib/gmain.h>
+	<glib/gmappedfile.h>
+	<glib/gmarkup.h>
+	<glib/gmem.h>
+	<glib/gmessages.h>
+	<glib/gnode.h>
+	<glib/goption.h>
+	<glib/gpattern.h>
+	<glib/gpoll.h>
+	<glib/gprimes.h>
+	<glib/gqsort.h>
+	<glib/gquark.h>
+	<glib/gqueue.h>
+	<glib/grand.h>
+	<glib/grel.h>
+	<glib/gregex.h>
+	<glib/gscanner.h>
+	<glib/gsequence.h>
+	<glib/gshell.h>
+	<glib/gslice.h>
+	<glib/gslist.h>
+	<glib/gspawn.h>
+	<glib/gstrfuncs.h>
+	<glib/gstring.h>
+	<glib/gtestutils.h>
+	<glib/gthread.h>
+	<glib/gthreadpool.h>
+	<glib/gtimer.h>
+	<glib/gtree.h>
+	<glib/gtypes.h>
+	<glib/gunicode.h>
+	<glib/gurifuncs.h>
+	<glib/gutils.h>
+	<glib/gwin32.h>
+
+1239380674 /usr/include/glib-2.0/glib/galloca.h
+	<glib/gtypes.h>
+	<alloca.h>
+	<malloc.h>
+
+1239380675 /usr/include/glib-2.0/glib/gtypes.h
+	<glibconfig.h>
+	<glib/gmacros.h>
+
+1239380673 /usr/lib/glib-2.0/include/glibconfig.h
+	<glib/gmacros.h>
+	<limits.h>
+	<float.h>
+
+1239380674 /usr/include/glib-2.0/glib/gmacros.h
+	<stddef.h>
+
+1239380674 /usr/include/glib-2.0/glib/garray.h
+	<glib/gtypes.h>
+
+1239380674 /usr/include/glib-2.0/glib/gasyncqueue.h
+	<glib/gthread.h>
+
+1239380675 /usr/include/glib-2.0/glib/gthread.h
+	<glib/gerror.h>
+	<glib/gtypes.h>
+	<glib/gutils.h>
+	<glib/gatomic.h>
+
+1239380674 /usr/include/glib-2.0/glib/gerror.h
+	<glib/gquark.h>
+
+1239380674 /usr/include/glib-2.0/glib/gquark.h
+	<glib/gtypes.h>
+
+1239380675 /usr/include/glib-2.0/glib/gutils.h
+	<glib/gtypes.h>
+	<stdarg.h>
+
+1239380674 /usr/include/glib-2.0/glib/gatomic.h
+	<glib/gtypes.h>
+
+1239380674 /usr/include/glib-2.0/glib/gbacktrace.h
+	<glib/gtypes.h>
+	<signal.h>
+
+1239380674 /usr/include/glib-2.0/glib/gbase64.h
+	<glib/gtypes.h>
+
+1239380674 /usr/include/glib-2.0/glib/gbookmarkfile.h
+	<glib/gerror.h>
+	<time.h>
+
+1239380674 /usr/include/glib-2.0/glib/gcache.h
+	<glib/glist.h>
+
+1239380674 /usr/include/glib-2.0/glib/glist.h
+	<glib/gmem.h>
+
+1239380674 /usr/include/glib-2.0/glib/gmem.h
+	<glib/gslice.h>
+	<glib/gtypes.h>
+
+1239380675 /usr/include/glib-2.0/glib/gslice.h
+	<glib/gtypes.h>
+
+1239380674 /usr/include/glib-2.0/glib/gchecksum.h
+	<glib/gtypes.h>
+
+1239380674 /usr/include/glib-2.0/glib/gcompletion.h
+	<glib/glist.h>
+
+1239380674 /usr/include/glib-2.0/glib/gconvert.h
+	<glib/gerror.h>
+
+1239380674 /usr/include/glib-2.0/glib/gdataset.h
+	<glib/gquark.h>
+
+1239380674 /usr/include/glib-2.0/glib/gdate.h
+	<time.h>
+	<glib/gtypes.h>
+	<glib/gquark.h>
+
+1239380674 /usr/include/glib-2.0/glib/gdir.h
+	<glib/gerror.h>
+
+1239380674 /usr/include/glib-2.0/glib/gfileutils.h
+	<glib/gerror.h>
+
+1239380674 /usr/include/glib-2.0/glib/ghash.h
+	<glib/gtypes.h>
+	<glib/glist.h>
+
+1239380674 /usr/include/glib-2.0/glib/ghook.h
+	<glib/gmem.h>
+
+1239380674 /usr/include/glib-2.0/glib/giochannel.h
+	<glib/gconvert.h>
+	<glib/gmain.h>
+	<glib/gstring.h>
+
+1239380674 /usr/include/glib-2.0/glib/gmain.h
+	<glib/gpoll.h>
+	<glib/gslist.h>
+	<glib/gthread.h>
+
+1239380674 /usr/include/glib-2.0/glib/gpoll.h
+	<glib/gtypes.h>
+
+1239380675 /usr/include/glib-2.0/glib/gslist.h
+	<glib/gmem.h>
+
+1239380675 /usr/include/glib-2.0/glib/gstring.h
+	<glib/gtypes.h>
+	<glib/gunicode.h>
+	<glib/gutils.h>
+
+1239380675 /usr/include/glib-2.0/glib/gunicode.h
+	<glib/gerror.h>
+	<glib/gtypes.h>
+
+1239380674 /usr/include/glib-2.0/glib/gkeyfile.h
+	<glib/gerror.h>
+
+1239380674 /usr/include/glib-2.0/glib/gmappedfile.h
+	<glib/gerror.h>
+
+1239380674 /usr/include/glib-2.0/glib/gmarkup.h
+	<stdarg.h>
+	<glib/gerror.h>
+	<glib/gslist.h>
+
+1239380674 /usr/include/glib-2.0/glib/gmessages.h
+	<stdarg.h>
+	<glib/gtypes.h>
+	<glib/gmacros.h>
+
+1239380674 /usr/include/glib-2.0/glib/gnode.h
+	<glib/gmem.h>
+
+1239380674 /usr/include/glib-2.0/glib/goption.h
+	<glib/gerror.h>
+	<glib/gquark.h>
+
+1239380674 /usr/include/glib-2.0/glib/gpattern.h
+	<glib/gtypes.h>
+
+1239380674 /usr/include/glib-2.0/glib/gprimes.h
+	<glib/gtypes.h>
+
+1239380674 /usr/include/glib-2.0/glib/gqsort.h
+	<glib/gtypes.h>
+
+1239380674 /usr/include/glib-2.0/glib/gqueue.h
+	<glib/glist.h>
+
+1239380674 /usr/include/glib-2.0/glib/grand.h
+	<glib/gtypes.h>
+
+1239380674 /usr/include/glib-2.0/glib/grel.h
+	<glib/gtypes.h>
+
+1239380674 /usr/include/glib-2.0/glib/gregex.h
+	<glib/gerror.h>
+	<glib/gstring.h>
+
+1239380674 /usr/include/glib-2.0/glib/gscanner.h
+	<glib/gdataset.h>
+	<glib/ghash.h>
+
+1239380675 /usr/include/glib-2.0/glib/gsequence.h
+	<glib/gtypes.h>
+
+1239380675 /usr/include/glib-2.0/glib/gshell.h
+	<glib/gerror.h>
+
+1239380675 /usr/include/glib-2.0/glib/gspawn.h
+	<glib/gerror.h>
+
+1239380675 /usr/include/glib-2.0/glib/gstrfuncs.h
+	<stdarg.h>
+	<glib/gtypes.h>
+
+1239380675 /usr/include/glib-2.0/glib/gtestutils.h
+	<glib.h>
+
+1239380675 /usr/include/glib-2.0/glib/gthreadpool.h
+	<glib/gthread.h>
+
+1239380675 /usr/include/glib-2.0/glib/gtimer.h
+	<glib/gtypes.h>
+
+1239380675 /usr/include/glib-2.0/glib/gtree.h
+	<glib/gnode.h>
+
+1239380675 /usr/include/glib-2.0/glib/gurifuncs.h
+	<glib.h>
+
+1239380675 /usr/include/glib-2.0/glib/gwin32.h
+	<glib/gtypes.h>
+
+1237471902 /usr/include/glibmm-2.4/glibmm/unicode.h
+	<glib.h>
+	<cctype>
+
+1237471902 /usr/lib/glibmm-2.4/include/glibmmconfig.h
+
+1223570338 /usr/lib/libxml++-2.6/include/libxml++config.h
+	<glibmmconfig.h>
+
+1223570337 /usr/include/libxml++-2.6/libxml++/exceptions/parse_error.h
+	<libxml++/exceptions/exception.h>
+	<exception>
+	<glibmm/ustring.h>
+
+1223570337 /usr/include/libxml++-2.6/libxml++/parsers/domparser.h
+	<libxml++/parsers/parser.h>
+	<libxml++/dtd.h>
+	<libxml++/document.h>
+
+1223570337 /usr/include/libxml++-2.6/libxml++/parsers/parser.h
+	<libxml++/nodes/element.h>
+	<libxml++/exceptions/validity_error.h>
+	<libxml++/exceptions/internal_error.h>
+	<istream>
+
+1223570337 /usr/include/libxml++-2.6/libxml++/nodes/element.h
+	<libxml++/nodes/node.h>
+	<libxml++/attribute.h>
+	<libxml++/nodes/commentnode.h>
+
+1223570338 /usr/include/libxml++-2.6/libxml++/nodes/node.h
+	<libxml++/noncopyable.h>
+	<libxml++/exceptions/exception.h>
+	<glibmm/ustring.h>
+	<list>
+	<map>
+	<vector>
+
+1223570338 /usr/include/libxml++-2.6/libxml++/noncopyable.h
+
+1223570338 /usr/include/libxml++-2.6/libxml++/attribute.h
+	<glibmm/ustring.h>
+	<libxml++/nodes/node.h>
+
+1223570337 /usr/include/libxml++-2.6/libxml++/nodes/commentnode.h
+	<libxml++/nodes/contentnode.h>
+
+1223570337 /usr/include/libxml++-2.6/libxml++/nodes/contentnode.h
+	<libxml++/nodes/node.h>
+
+1223570337 /usr/include/libxml++-2.6/libxml++/exceptions/validity_error.h
+	<libxml++/exceptions/parse_error.h>
+
+1223570338 /usr/include/libxml++-2.6/libxml++/dtd.h
+	<libxml++/attribute.h>
+	<list>
+	<map>
+
+1223570338 /usr/include/libxml++-2.6/libxml++/document.h
+	<libxml++/exceptions/parse_error.h>
+	<libxml++/exceptions/internal_error.h>
+	<libxml++/nodes/element.h>
+	<libxml++/dtd.h>
+	<ostream>
+
+1223570337 /usr/include/libxml++-2.6/libxml++/parsers/saxparser.h
+	<libxml++/parsers/parser.h>
+	<list>
+	<deque>
+	<memory>
+	"libxml++/document.h"
+
+1223570337 /usr/include/libxml++-2.6/libxml++/parsers/textreader.h
+	<libxml++/noncopyable.h>
+	<libxml++/nodes/node.h>
+	<glibmm/ustring.h>
+	<memory>
+
+1223570337 /usr/include/libxml++-2.6/libxml++/nodes/entityreference.h
+	<libxml++/nodes/node.h>
+
+1223570338 /usr/include/libxml++-2.6/libxml++/nodes/textnode.h
+	<libxml++/nodes/contentnode.h>
+
+1223570338 /usr/include/libxml++-2.6/libxml++/validators/validator.h
+	<libxml++/nodes/element.h>
+	<libxml++/exceptions/validity_error.h>
+	<libxml++/exceptions/internal_error.h>
+
+1223570338 /usr/include/libxml++-2.6/libxml++/validators/dtdvalidator.h
+	<libxml++/validators/validator.h>
+	<libxml++/dtd.h>
+	<libxml++/document.h>
+
+1223570338 /usr/include/libxml++-2.6/libxml++/validators/schemavalidator.h
+	<libxml++/validators/validator.h>
+	<libxml++/schema.h>
+	<libxml++/document.h>
+
+1223570338 /usr/include/libxml++-2.6/libxml++/schema.h
+	<libxml++/attribute.h>
+	<libxml++/document.h>
+	<list>
+	<map>
+
+1241717254 source:/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/baza.cpp
+	"baza.hpp"
+
+1241717224 /home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/baza.hpp
+	<string>
+	<mysql++.h>
+	<iostream>
+	<iomanip>
+	"debug.hpp"
+
+1241533000 /home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/xml.hpp
+
+1241703521 /home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/debug.hpp
+	<cstdio>
+	<cstdlib>
+
