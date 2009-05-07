@@ -44,13 +44,13 @@ private:
     void wyslij_plik(std::string plik,std::string uzytkownik);
     std::vector <std::string> pobieranie_listy_plikow(xmlpp::TextReader &reader);
 public:
-    parser(tcp::iostream &stream, const char* server, const char* user, const char *pass):stream(stream)
+    parser(tcp::iostream &stream, const char* server, const char* user, const char *pass,const char *db):stream(stream)
     {
         info("Parser Konstruktor Początek");
         login.clear();
         haslo.clear();
         id_sesji=0;
-        baza.connect(server,user,pass);
+        baza.connect(server,user,pass,db);
         info("Parser Konstruktor Koniec");
     };
     void start();

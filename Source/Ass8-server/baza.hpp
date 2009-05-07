@@ -12,7 +12,7 @@ class Baza
     public:
         std::string get_passwd(std::string login);
         Baza(){};
-        void connect(const char *server, const char *login, const char *pass);
+        void connect(const char *server, const char *login, const char *pass, const char *db);
         mysqlpp::StoreQueryResult getFilesList(int user_id);
         mysqlpp::StoreQueryResult getFilesList(std::string user);
         mysqlpp::StoreQueryResult getFileInfo(std::string file, std::string user);

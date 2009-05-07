@@ -32,12 +32,12 @@ int main(int argc, char *argv[])
     ///Zmienna przechowująca port na którym serwer nasłucuje
     unsigned int port;
     ///Zmienne przechowujące parametry podłączenia do bazy danych
-    const char *server = 0, *user = 0, *pass = "";
+    const char *server = 0, *user = 0, *pass = 0, *db=0;
     ///Zmienna przechowująca nazwę bazy w bazie danych
-    if (argc<5)///Jeżeli jest mniej niż 5 argumentów
+    if (argc<6)///Jeżeli jest mniej niż 5 argumentów
     {
         std::cout<<"Zła liczba argumentów:\n\
-        serwer <adres_serwera_mysql> <login> <haslo> <port_nasłuchiwania_aserwera_ass8>"<<std::endl;
+        serwer <adres_serwera_mysql> <login> <haslo> <db> <port_nasłuchiwania_aserwera_ass8>"<<std::endl;
         exit(1);///To kończymy program
     }
     else
@@ -45,7 +45,8 @@ int main(int argc, char *argv[])
         server=argv[1];
         user=argv[2];
         pass=argv[3];
-        std::sscanf(argv[4],"%u",&port);
+        db=argv[4];
+        std::sscanf(argv[5],"%u",&port);
     }
     try
     {
@@ -66,7 +67,7 @@ int main(int argc, char *argv[])
             if (fork()==0)
             {
                 ///utworzenie parsera w forku (dla każdego klienta jeden taki jest tworzony);
-                parser p(stream,server,user,pass);
+                parser p(stream,server,user,pass,db);
                 p.start();
             }
         }

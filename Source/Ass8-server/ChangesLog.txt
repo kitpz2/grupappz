@@ -1,4 +1,12 @@
 07 maj 2009
+   released version 0.0.9 of Ass8-server
+
+     Change log:
+        -Added: Wysylanie pliku na serwer
+        -Added: Umieszczanie pliku w bazie
+        -Added: więcej informacji przy debugowaniu
+
+07 maj 2009
    released version 0.0.7 of Ass8-server
 
      Change log:

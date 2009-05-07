@@ -1,8 +1,8 @@
 #include "baza.hpp"
 
-void Baza::connect(const char *server, const char *login, const char *pass)
+void Baza::connect(const char *server, const char *login, const char *pass, const char *db)
 {
-    const char db[]="ass8";
+    //const char db[]="ass8";
     info("Łączenie z Bazą...");
     if (conn.connect(db, server, login, pass))
     {
@@ -18,6 +18,7 @@ void Baza::connect(const char *server, const char *login, const char *pass)
 
 std::string Baza::get_passwd(std::string login)
 {
+    info("pobieranie hasla uzytkownika")
     std::string zapytanie="select password from auth_user where username='";
     zapytanie.append(login);
     zapytanie.append("'");
@@ -37,6 +38,7 @@ std::string Baza::get_passwd(std::string login)
 ///Zapytanie o listę plikow uzytkownika po id uzytkownika z bazy accounts_konto
 mysqlpp::StoreQueryResult Baza::getFilesList(int user_id)
 {
+    info("pobieranie listy plikow usera o ID = 'id'");
     std::string zapytanie="select * from files_plik where konto_id='";
     zapytanie+=user_id;
     zapytanie.append("'");
@@ -58,6 +60,7 @@ mysqlpp::StoreQueryResult Baza::getFilesList(int user_id)
 ///Zapytanie o listę plików uzytkownika o nazwie podanej w zmiennej user
 mysqlpp::StoreQueryResult Baza::getFilesList(std::string user)
 {
+    info("pobieranie listy plikow usera");
     int id=getUserId(user);
     if (id>=0)
     {
@@ -75,6 +78,7 @@ mysqlpp::StoreQueryResult Baza::getFilesList(std::string user)
 ///Zapytanie o ID uzytkownika o loginie 'user' ale nie o id z auth_user tylko o id z accounts_konto
 int Baza::getUserId(std::string user)
 {
+    info("pobranie id usera");
     //Najlpierw zapytanie o ID usera z tabeli auth_user
     std::string zapytanie="select id from auth_user where username='";
     zapytanie.append(user);
@@ -108,6 +112,7 @@ int Baza::getUserId(std::string user)
 
 mysqlpp::StoreQueryResult Baza::getFileInfo(std::string file, std::string user)
 {
+    info("pobranie info o pliku usera");
     int id=getUserId(user);
     if (id>=0)
     {
@@ -123,6 +128,7 @@ mysqlpp::StoreQueryResult Baza::getFileInfo(std::string file, std::string user)
 }
 mysqlpp::StoreQueryResult Baza::getFileInfo(std::string file, int user_id)
 {
+    info("pobranie info o pliku usera o ID = 'id'");
     std::string zapytanie="select * from files_plik where konto_id='";
     zapytanie+=user_id;
     zapytanie.append("' AND sciezka='");
@@ -146,6 +152,7 @@ mysqlpp::StoreQueryResult Baza::getFileInfo(std::string file, int user_id)
 
 void Baza::addFile(std::string nazwa, std::string konto, int wielkosc, int hash, int prawa, int data)
 {
+    info("dodanie pliku do bazy")
     std::string zapytanie="SELECT count(*) from files_plik";
     int ilosc;
     int id=getUserId(konto);

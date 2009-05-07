@@ -266,10 +266,13 @@ std::vector <std::string> parser::pobieranie_listy_plikow(xmlpp::TextReader &rea
 
         if (reader.get_name().compare("plik "))//czy mamy plik?
         {
+            info("mamy <plik ");
             if (reader.has_attributes())//Czy mamy atrybuty
             {
+                info("mamy atrybuty");
                 if (reader.move_to_attribute("nazwa"))//Przejdź do atrybutu "nazwa"
                 {
+                    info("mamy atrybut \"nazwa\"");
                     nazwy_plikow.push_back(reader.get_value());
                 }
                 else//Brak atrybutu "nazwa"
@@ -294,6 +297,7 @@ std::vector <std::string> parser::pobieranie_listy_plikow(xmlpp::TextReader &rea
             //return;
         }
     }
+    info("pobieranie/parsowanie listy plików zakonczone");
     return nazwy_plikow;
 }
 
@@ -314,6 +318,7 @@ void parser::odbieranie_plikow(xmlpp::TextReader &reader, std::string uzytkownik
                 /*mysqlpp::StoreQueryResult res=baza.getFileInfo(reader.get_value(),login);
                 if(res.num_rows()<1)
                 {*/
+
                     std::string odp="<?xml version=\"1.0\"?>\
                     <serwer operacja=\"102\" odp=\"404\"/>";
                     wyslij(odp);
@@ -322,6 +327,7 @@ void parser::odbieranie_plikow(xmlpp::TextReader &reader, std::string uzytkownik
                     FILE *plik=fopen(sciezka.c_str(),"w+");
                     if(!plik)
                     {
+                        Eline("PLIK SIE NIE OTWORZYL!!!!");
                         return;
                     }
                     std::string temp="";
@@ -331,20 +337,26 @@ void parser::odbieranie_plikow(xmlpp::TextReader &reader, std::string uzytkownik
                         fprintf(plik,"%s",temp.c_str());
                         std::getline(stream,temp);
                     }while(!(temp[0]==13 && temp[1]==0));
+                    info("plik odebrany");
+                    //na razie nie sprawdzam hasha itd
+                    std::getline(stream,temp);
+                    std::getline(stream,temp);
+                    std::getline(stream,temp);
+                    info("Odebrano koncowego xmla");
 
                 //}
             }
         }
         else
         {
-            info("brak atrybutów");
+            Eline("brak atrybutów");
             Odpowiedz(400);
         }
 
     }
     else
     {
-        info("niepoprawnie wyslany xml");
+        Eline("niepoprawnie wyslany xml");
         Odpowiedz(400);
         return;
     }
@@ -352,16 +364,19 @@ void parser::odbieranie_plikow(xmlpp::TextReader &reader, std::string uzytkownik
 }
 void parser::wysylanie_plikow(xmlpp::TextReader &reader, std::string uzytkownik)
 {
+    info("Wysylanie plikow");
     std::vector <std::string> pliki=pobieranie_listy_plikow(reader);
     std::vector <std::string>::iterator it;
     for (it=pliki.begin();it<pliki.end();it++)
     {
         wyslij_plik(*it,uzytkownik);
     }
+    info("Wyslano pliki");
 }
 
 void parser::wyslij_plik(std::string plik,std::string uzytkownik)
 {
+    info("Wyslij plik");
     if (uzytkownik.compare(". "))
         uzytkownik=login;
     mysqlpp::StoreQueryResult res=baza.getFileInfo(plik,uzytkownik);
@@ -383,6 +398,7 @@ void parser::wyslij_plik(std::string plik,std::string uzytkownik)
         odp+="\" dostep=\""+res[0]["prawaDostepu"];
         odp+="\"/>\n";
         Odpowiedz(101,406,odp);
+        info("Info o pliku wyslane");
     }
     info("Czekamy na zgode klienta na wysyl pliku");
     std::string od_klienta,temp;
@@ -399,14 +415,19 @@ void parser::wyslij_plik(std::string plik,std::string uzytkownik)
     reader_temp.read();
     if (reader_temp.get_name().compare("klient "))//Sprawdzamy czy odpowiedź nazleży do klienta
     {
+        info("wyslal to napewno klient");
         if (reader_temp.has_attributes())//Sprawdzamy czy odpowiedz ma atrybuty
         {
+            info("Są atrybuty");
             if (reader_temp.move_to_attribute("action"))//Przechodzimy do atrybutu "action"
             {
+                info("mamy atrybut action");
                 if (reader_temp.get_value().compare("ok "))//Jeżeli odpowiedz jest ok to wysylamy plik
                 {
+                    info("action=ok");
                     std::string sciezka=login+"/";
                     sciezka+=plik;
+                    info("Otwieram plik");
                     FILE *plik=std::fopen(sciezka.c_str(),"r");
                     if(plik==NULL)
                     {
@@ -415,12 +436,12 @@ void parser::wyslij_plik(std::string plik,std::string uzytkownik)
                         return;
                     }
                     info("no to wysyłamy");
-                    /*char temp[BUFSIZE2];
-                    while ( (size=fread ( &temp, 1,BUFSIZE2,plik ) )> 0 )
+                    char temp[BUFSIZE2];
+                    while ( (fread ( &temp, 1,BUFSIZE2,plik ) )> 0 )
                     {
                         info("Trwa wysyłanie pliku, proszę czekać...");
                         stream<<temp;
-                    }*/
+                    }
                     /*std::fstream plik(plik,"r");
                     if(plik.is_iopen())
                     {*/
@@ -433,13 +454,13 @@ void parser::wyslij_plik(std::string plik,std::string uzytkownik)
                 }
                 else//Klient nie zgadza sie na przeslanie
                 {
-                    info("Compare != OK")
+                    Eline("Compare != OK")
                     return;
                 }
             }
             else//Brak atrybutu "action"
             {
-                info("Brak atrybutu \"action\"");
+                Eline("Brak atrybutu \"action\"");
                 Odpowiedz(400);
                 return;
             }
@@ -447,20 +468,21 @@ void parser::wyslij_plik(std::string plik,std::string uzytkownik)
         }
         else//Brak atrybutów
         {
-            info("Brak atrybutów");
+            Eline("Brak atrybutów");
             Odpowiedz(400);
             return;
         }
     }
     else//Odpowiedź nie od klienta
     {
-        info("Odpowiedz nie od klienta");
+        Eline("Odpowiedz nie od klienta");
         Odpowiedz(400);
         return;
     }
 }
 void parser::usun_pliki(xmlpp::TextReader &reader,std::string uzytkownik)
 {
+info("NOT IMPLEMENTED YET!!!");
 
 }
 
