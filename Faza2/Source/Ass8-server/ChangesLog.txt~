@@ -1,0 +1,29 @@
+07 maj 2009
+   released version 0.0.7 of Ass8-server
+
+     Change log:
+        -Updated: Parsowanie
+
+07 maj 2009
+   released version 0.0.7 of Ass8-server
+
+     Change log:
+        -Added: Wysylanie plikow
+        -Added: Wysylanie listy plikow
+        -Added: Logowanie
+        -Added: Wiele wiecej
+
+02 maj 2009
+   released version 0.0.6 of Ass8-server
+
+     Change log:
+        -Added: odbieranie, kolejkowanie klientow
+        -Added: fork()
+        -Added: watek usuwający zombie
+
+02 maj 2009
+   released version 0.0.1 of Ass8-server
+
+     Change log:
+        -Added: Zaczątki
+

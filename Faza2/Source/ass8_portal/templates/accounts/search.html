@@ -1,0 +1,25 @@
+{%extends "base.html"%}
+{%block title%} {{block.super}} - Szukaj użytkowników{%endblock%}
+{%block extra_style%}
+<style type="text/css">
+    form
+    {
+        padding-left:20px;
+    }
+</style>
+
+{%endblock%}
+{%block main_content%}
+<h1>Szukaj uzytkownikow</h1>
+    <form action="" method="POST">
+        {{form.search}}<br />
+        <input type="submit" value="Szukaj" />
+    </form>
+    {%if users%}
+        <ul>
+        {%for user in users%}
+            <li><a href="/accounts/details/{{user.user.username}}/">{{user.user.username}}</a></li>    
+        {%endfor%}
+        </ul>
+    {%endif%}
+{%endblock%}

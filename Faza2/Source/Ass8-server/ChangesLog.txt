@@ -1,0 +1,59 @@
+08 maj 2009
+   released version 0.3.17 of Ass8-server
+
+     Change log:
+        -Fixed: wysylanie listy plikow
+        -Fixed: odbieranie plikow
+        -Fixed: dodawanie plikow do bazy (ponownie)
+        -Fixed: wiele pomniejszych
+
+08 maj 2009
+   released version 0.3.16 of Ass8-server
+
+     Change log:
+        -Applied: Proteza na odbieranie pliku (przez telnet działa)
+        -Added: Kolejne informacje uzyteczne przy odrobaczaniu
+        -Fixed: Parę małych poprawek
+
+08 maj 2009
+   released version 0.1.10 of Ass8-server
+
+     Change log:
+        -Fixed: pobieranie listy plikow z bazy
+        -Fixed: pobieranie id z bazy
+        -Fixed: usuwanie socketu gdy klient sie rozlacza
+        -Fixed: wiele pomniejszych bledow
+        -Removed: przywitanie serwera
+
+07 maj 2009
+   released version 0.0.9 of Ass8-server
+
+     Change log:
+        -Added: Wysylanie pliku na serwer
+        -Added: Umieszczanie pliku w bazie
+        -Added: więcej informacji przy debugowaniu
+
+07 maj 2009
+   released version 0.0.7 of Ass8-server
+
+     Change log:
+        -Updated: Parsowanie
+        -Added: Wysylanie plikow
+        -Added: Wysylanie listy plikow
+        -Added: Logowanie
+        -Added: Wiele wiecej
+
+02 maj 2009
+   released version 0.0.6 of Ass8-server
+
+     Change log:
+        -Added: odbieranie, kolejkowanie klientow
+        -Added: fork()
+        -Added: watek usuwający zombie
+
+02 maj 2009
+   released version 0.0.1 of Ass8-server
+
+     Change log:
+        -Added: Zaczątki
+

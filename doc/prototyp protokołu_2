@@ -1,0 +1,112 @@
+logowanie:
+klient wysyla: 
+<?xml version="1.0"?>
+<logowanie login="login" haslo="haslo" wersja="wersja_klienta"/>
+
+serwer odpowiada:
+<?xml version="1.0"?>
+<xml odpowiedz="kod_odpowiedzi" sesja="ewentualny_numer_sesji" wersja="wersja_servera"/>
+
+gdzie kod_odpowiedzi moze przyjmowac wartosci:
+0 - wszystko ok, nalezy odebrac numer sesji uzytkownika
+1 - bledne haslo lub login
+2 - nieoczekiwany blad serwera
+3 - bledne zapytanie
+
+
+
+
+prosba o liste wszystkich plikow uzytkownika (kropka w przypadku uzytkownika zalogowanego):
+klient wysyla:
+<?xml version="1.0"?>
+<klient idsesji="numer_sesji" operacja="100" uzytkownik="nazwa_uzytkownika"/>
+serwer odpowiada:
+<?xml version="1.0"?>
+<serwer odp="kod_odp" operacja="100">
+  <plik nazwa="nazwa_pliku" data="data" rozmiar="rozmiar" dostep="modyfikator_dostepu"/>
+</serwer>
+
+prosba o plik/pliki (kropka w przypadku uzytkownika zalogowanego): //I to by się robiło nie potrzebne wtedy
+klient wysyla:
+<?xml version="1.0"?>
+<klient idsesji="numer_sesji" operacja="101" uzytkownik="">
+  <plik nazwa="nazwa_pliku"/>
+</klient>
+
+serwer odpowiada:
+<?xml version="1.0"?>
+<serwer operacja="101" odp="kod_odp">
+  <plik nazwa="nazwa_pliku" data="data" rozmiar="rozmiar_w_bajtach" dostep="modyfikator_dostepu"/>
+</serwer>
+
+klient wysyla:
+<klient idsesji="numer_sesji" operacja="101" action="ok">
+
+potem serwer wysyla:
+[DANE_PLIKU]
+
+<?xml version="1.0"?>
+<serwer hash="hash" />
+
+
+wysylka pliku na serwer:
+<?xml version="1.0"?>
+<klient idsesji="numer_sesji" operacja="102">
+  <plik nazwa="nazwa_pliku" data="data" rozmiar="rozmiar" dostep="modyfikator_dostepu"/>
+</klient>
+
+odpowiedz serwera gdy plik nie istnieje:
+<?xml version="1.0"?>
+<serwer operacja="102" odp="404"/>
+
+Odpowiedź serwera gdy plik istnieje:
+<?xml version="1.0"?>
+<serwer operacja="102" odp="402"/>
+
+w wypadku odpowiedzi 402 czekiwanie na reakcję klienta:
+<?xml version="1.0"?>
+<klient action="ok"/> //gdy klient zgadza się na zastąpienie istniejącego pliku
+
+<?xml version="1.0"?>
+<klient action="abort"/>//Gdy klient nie chce zastępować pliku 
+
+po wysłaniu action="ok" serwer odpowiada jak w wypadku gdy plik nie istnieje, w przeciwnym wypdaku odpowiedź serwera to:
+<?xml version="1.0"?>
+<serwer operacja="102" odp="abort"/>
+
+przesyłanie pliku po odpowiedzi serwera:
+<?xml version="1.0"?>
+<klient idsesji="numer_sesji" operacja="102">
+  <plik nazwa="nazwa_pliku" data="data" rozmiar="rozmiar"/>
+</klient>
+[DANE_PLIKU]
+<?xml version="1.0"?>
+<klient hash="hash"/>
+
+usuniecie pliku z serwera:
+klient wysyla:
+<?xml version="1.0"?>
+<klient idsesji="numer_sesji" operacja="103">
+  <plik nazwa="nazwa_pliku"/>
+</klient>
+
+serwer odpowiada
+<?xml version="1.0"?>
+<serwer operacja="numer_operacji" odp="kod_odp"/>
+
+
+numer_operacji:
+100 - lista wszystkich plikow
+101 - pobieranie pliku/plikow
+102 - wysylanie pliku/plikow
+103 - usuniecie pliku
+
+kod_odp:
+400 - bledne zapytanie
+401 - bledny numer sesji
+402 - podany plik istnieje (w przypadku wysylania pliku)
+403 - wewnetrzny blad serwera
+404 - podany plik nie istnieje
+405 - błąd odbierania pliku
+
+W przypadku wyslania zapytania o liste konkretnych plikow, gdy nie bedzie ktoregos z nich na serwerze, serwer wysyla w odpowiedzi wyzerowany rozmiar i date.

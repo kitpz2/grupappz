@@ -1,0 +1,410 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>Ass8-server: Dokumentacja klasy Baza</title>
+<link href="tabs.css" rel="stylesheet" type="text/css">
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Wygenerowano przez Doxygen 1.5.8 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="main.html"><span>Strona&nbsp;główna</span></a></li>
+      <li><a href="namespaces.html"><span>Przestrzenie&nbsp;nazw</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Klasy</span></a></li>
+      <li><a href="files.html"><span>Pliki</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="annotated.html"><span>Lista&nbsp;klas</span></a></li>
+      <li><a href="functions.html"><span>Składowe&nbsp;klas</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>Dokumentacja klasy Baza</h1><!-- doxytag: class="Baza" --><code>#include &lt;<a class="el" href="baza_8hpp-source.html">baza.hpp</a>&gt;</code>
+<p>
+
+<p>
+<a href="class_baza-members.html">Lista wszystkich składowych.</a><table border="0" cellpadding="0" cellspacing="0">
+<tr><td></td></tr>
+<tr><td colspan="2"><br><h2>Metody publiczne</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">std::string&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_baza.html#a09b37e4665bd7b2f2b8b54f8120f5be">get_passwd</a> (std::string login)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Pobiera hasło uzytkownika z bazy.  <a href="#a09b37e4665bd7b2f2b8b54f8120f5be"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_baza.html#8edd83a7fa98b203a1ab58157a1660a4">Baza</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Konstruktor pusty.  <a href="#8edd83a7fa98b203a1ab58157a1660a4"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_baza.html#bef61cc396e46d347a47c75e9ef8dfde">connect</a> (const char *server, const char *login, const char *pass, const char *db)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Łaczy się z bazą damych.  <a href="#bef61cc396e46d347a47c75e9ef8dfde"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">mysqlpp::StoreQueryResult&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_baza.html#02db3388d088212bd443ee39998b5cf8">getFilesList</a> (int user_id)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Pobiera listę plików z bazy na podstawie ID uzytkownika.  <a href="#02db3388d088212bd443ee39998b5cf8"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">mysqlpp::StoreQueryResult&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_baza.html#2eace36725672b3a4ce639f91fe7d9bd">getFilesList</a> (std::string user)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Najpierw wywołuje <a class="el" href="class_baza.html#65054f08c8fd7c600f6c2fe2c7f61a43" title="Pobiera id uzytkownika &#39;user&#39;.">getUserId()</a> potem z id otrzymanym z tamtąd wywołuje <a class="el" href="class_baza.html#02db3388d088212bd443ee39998b5cf8" title="Pobiera listę plików z bazy na podstawie ID uzytkownika.">getFilesList(int user_id)</a>;.  <a href="#2eace36725672b3a4ce639f91fe7d9bd"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">mysqlpp::StoreQueryResult&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_baza.html#e4a033a65cb585aa91c15fd8b8fde764">getFileInfo</a> (std::string file, std::string user)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Podobnie jak getFilesList tylko ze pobiera informację o jednym pliku.  <a href="#e4a033a65cb585aa91c15fd8b8fde764"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">mysqlpp::StoreQueryResult&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_baza.html#1d1cfca062ab3117b2b97281df012823">getFileInfo</a> (std::string file, int user_id)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_baza.html#65054f08c8fd7c600f6c2fe2c7f61a43">getUserId</a> (std::string user)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Pobiera id uzytkownika 'user'.  <a href="#65054f08c8fd7c600f6c2fe2c7f61a43"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_baza.html#f1bda4acd20e6fd00a35c43638e48956">addFile</a> (std::string nazwa, std::string konto, int wielkosc, int hash=-1, int prawa=-1, int data=-1)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Dodaje plik do bazy danych.  <a href="#f1bda4acd20e6fd00a35c43638e48956"></a><br></td></tr>
+</table>
+<hr><a name="_details"></a><h2>Opis szczegółowy</h2>
+
+<p>Definicja w linii <a class="el" href="baza_8hpp-source.html#l00008">8</a> pliku <a class="el" href="baza_8hpp-source.html">baza.hpp</a>.</p>
+<hr><h2>Dokumentacja konstruktora i destruktora</h2>
+<a class="anchor" name="8edd83a7fa98b203a1ab58157a1660a4"></a><!-- doxytag: member="Baza::Baza" ref="8edd83a7fa98b203a1ab58157a1660a4" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Baza::Baza           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Konstruktor pusty. 
+<p>
+
+<p>Definicja w linii <a class="el" href="baza_8hpp-source.html#l00017">17</a> pliku <a class="el" href="baza_8hpp-source.html">baza.hpp</a>.</p>
+
+</div>
+</div><p>
+<hr><h2>Dokumentacja funkcji składowych</h2>
+<a class="anchor" name="f1bda4acd20e6fd00a35c43638e48956"></a><!-- doxytag: member="Baza::addFile" ref="f1bda4acd20e6fd00a35c43638e48956" args="(std::string nazwa, std::string konto, int wielkosc, int hash=&#45;1, int prawa=&#45;1, int data=&#45;1)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Baza::addFile           </td>
+          <td>(</td>
+          <td class="paramtype">std::string&nbsp;</td>
+          <td class="paramname"> <em>nazwa</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&nbsp;</td>
+          <td class="paramname"> <em>konto</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>wielkosc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>hash</em> = <code>-1</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>prawa</em> = <code>-1</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>data</em> = <code>-1</code></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Dodaje plik do bazy danych. 
+<p>
+
+<p>Definicja w linii <a class="el" href="baza_8cpp-source.html#l00155">155</a> pliku <a class="el" href="baza_8cpp-source.html">baza.cpp</a>.</p>
+
+<p>
+<div class="dynheader">
+Oto graf wywołań dla tej funkcji:</div>
+<div class="dynsection">
+<p><center><img src="class_baza_f1bda4acd20e6fd00a35c43638e48956_cgraph.png" border="0" usemap="#class_baza_f1bda4acd20e6fd00a35c43638e48956_cgraph_map" alt=""></center>
+<map name="class_baza_f1bda4acd20e6fd00a35c43638e48956_cgraph_map">
+<area shape="rect" href="class_baza.html#65054f08c8fd7c600f6c2fe2c7f61a43" title="Pobiera id uzytkownika &#39;user&#39;." alt="" coords="156,5,271,32"></map>
+</div>
+
+</div>
+</div><p>
+<a class="anchor" name="bef61cc396e46d347a47c75e9ef8dfde"></a><!-- doxytag: member="Baza::connect" ref="bef61cc396e46d347a47c75e9ef8dfde" args="(const char *server, const char *login, const char *pass, const char *db)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Baza::connect           </td>
+          <td>(</td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>server</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>login</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>pass</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>db</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Łaczy się z bazą damych. 
+<p>
+
+<p>Definicja w linii <a class="el" href="baza_8cpp-source.html#l00003">3</a> pliku <a class="el" href="baza_8cpp-source.html">baza.cpp</a>.</p>
+
+<p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dynsection">
+<p><center><img src="class_baza_bef61cc396e46d347a47c75e9ef8dfde_icgraph.png" border="0" usemap="#class_baza_bef61cc396e46d347a47c75e9ef8dfde_icgraph_map" alt=""></center>
+<map name="class_baza_bef61cc396e46d347a47c75e9ef8dfde_icgraph_map">
+<area shape="rect" href="classparser.html#3a237071a3ab764cd61bc53df9dd4f46" title="parser::parser" alt="" coords="160,5,261,32"></map>
+</div>
+
+</div>
+</div><p>
+<a class="anchor" name="a09b37e4665bd7b2f2b8b54f8120f5be"></a><!-- doxytag: member="Baza::get_passwd" ref="a09b37e4665bd7b2f2b8b54f8120f5be" args="(std::string login)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Baza::get_passwd           </td>
+          <td>(</td>
+          <td class="paramtype">std::string&nbsp;</td>
+          <td class="paramname"> <em>login</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Pobiera hasło uzytkownika z bazy. 
+<p>
+
+<p>Definicja w linii <a class="el" href="baza_8cpp-source.html#l00019">19</a> pliku <a class="el" href="baza_8cpp-source.html">baza.cpp</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="1d1cfca062ab3117b2b97281df012823"></a><!-- doxytag: member="Baza::getFileInfo" ref="1d1cfca062ab3117b2b97281df012823" args="(std::string file, int user_id)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">mysqlpp::StoreQueryResult Baza::getFileInfo           </td>
+          <td>(</td>
+          <td class="paramtype">std::string&nbsp;</td>
+          <td class="paramname"> <em>file</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>user_id</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definicja w linii <a class="el" href="baza_8cpp-source.html#l00131">131</a> pliku <a class="el" href="baza_8cpp-source.html">baza.cpp</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="e4a033a65cb585aa91c15fd8b8fde764"></a><!-- doxytag: member="Baza::getFileInfo" ref="e4a033a65cb585aa91c15fd8b8fde764" args="(std::string file, std::string user)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">mysqlpp::StoreQueryResult Baza::getFileInfo           </td>
+          <td>(</td>
+          <td class="paramtype">std::string&nbsp;</td>
+          <td class="paramname"> <em>file</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&nbsp;</td>
+          <td class="paramname"> <em>user</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Podobnie jak getFilesList tylko ze pobiera informację o jednym pliku. 
+<p>
+
+<p>Definicja w linii <a class="el" href="baza_8cpp-source.html#l00115">115</a> pliku <a class="el" href="baza_8cpp-source.html">baza.cpp</a>.</p>
+
+<p>
+<div class="dynheader">
+Oto graf wywołań dla tej funkcji:</div>
+<div class="dynsection">
+<p><center><img src="class_baza_e4a033a65cb585aa91c15fd8b8fde764_cgraph.png" border="0" usemap="#class_baza_e4a033a65cb585aa91c15fd8b8fde764_cgraph_map" alt=""></center>
+<map name="class_baza_e4a033a65cb585aa91c15fd8b8fde764_cgraph_map">
+<area shape="rect" href="class_baza.html#65054f08c8fd7c600f6c2fe2c7f61a43" title="Pobiera id uzytkownika &#39;user&#39;." alt="" coords="175,5,289,32"></map>
+</div>
+
+</div>
+</div><p>
+<a class="anchor" name="2eace36725672b3a4ce639f91fe7d9bd"></a><!-- doxytag: member="Baza::getFilesList" ref="2eace36725672b3a4ce639f91fe7d9bd" args="(std::string user)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">mysqlpp::StoreQueryResult Baza::getFilesList           </td>
+          <td>(</td>
+          <td class="paramtype">std::string&nbsp;</td>
+          <td class="paramname"> <em>user</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Najpierw wywołuje <a class="el" href="class_baza.html#65054f08c8fd7c600f6c2fe2c7f61a43" title="Pobiera id uzytkownika &#39;user&#39;.">getUserId()</a> potem z id otrzymanym z tamtąd wywołuje <a class="el" href="class_baza.html#02db3388d088212bd443ee39998b5cf8" title="Pobiera listę plików z bazy na podstawie ID uzytkownika.">getFilesList(int user_id)</a>;. 
+<p>
+Zapytanie o listę plików uzytkownika o nazwie podanej w zmiennej user. 
+<p>Definicja w linii <a class="el" href="baza_8cpp-source.html#l00061">61</a> pliku <a class="el" href="baza_8cpp-source.html">baza.cpp</a>.</p>
+
+<p>
+<div class="dynheader">
+Oto graf wywołań dla tej funkcji:</div>
+<div class="dynsection">
+<p><center><img src="class_baza_2eace36725672b3a4ce639f91fe7d9bd_cgraph.png" border="0" usemap="#class_baza_2eace36725672b3a4ce639f91fe7d9bd_cgraph_map" alt=""></center>
+<map name="class_baza_2eace36725672b3a4ce639f91fe7d9bd_cgraph_map">
+<area shape="rect" href="class_baza.html#02db3388d088212bd443ee39998b5cf8" title="Pobiera listę plików z bazy na podstawie ID uzytkownika." alt="" coords="183,5,308,32"><area shape="rect" href="class_baza.html#65054f08c8fd7c600f6c2fe2c7f61a43" title="Pobiera id uzytkownika &#39;user&#39;." alt="" coords="188,56,303,83"></map>
+</div>
+
+</div>
+</div><p>
+<a class="anchor" name="02db3388d088212bd443ee39998b5cf8"></a><!-- doxytag: member="Baza::getFilesList" ref="02db3388d088212bd443ee39998b5cf8" args="(int user_id)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">mysqlpp::StoreQueryResult Baza::getFilesList           </td>
+          <td>(</td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>user_id</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Pobiera listę plików z bazy na podstawie ID uzytkownika. 
+<p>
+Zapytanie o listę plikow uzytkownika po id uzytkownika z bazy accounts_konto. 
+<p>Definicja w linii <a class="el" href="baza_8cpp-source.html#l00039">39</a> pliku <a class="el" href="baza_8cpp-source.html">baza.cpp</a>.</p>
+
+<p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dynsection">
+<p><center><img src="class_baza_02db3388d088212bd443ee39998b5cf8_icgraph.png" border="0" usemap="#class_baza_02db3388d088212bd443ee39998b5cf8_icgraph_map" alt=""></center>
+<map name="class_baza_02db3388d088212bd443ee39998b5cf8_icgraph_map">
+<area shape="rect" href="class_baza.html#2eace36725672b3a4ce639f91fe7d9bd" title="Najpierw wywołuje getUserId() potem z id otrzymanym z tamtąd wywołuje getFilesList(int..." alt="" coords="183,5,308,32"></map>
+</div>
+
+</div>
+</div><p>
+<a class="anchor" name="65054f08c8fd7c600f6c2fe2c7f61a43"></a><!-- doxytag: member="Baza::getUserId" ref="65054f08c8fd7c600f6c2fe2c7f61a43" args="(std::string user)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Baza::getUserId           </td>
+          <td>(</td>
+          <td class="paramtype">std::string&nbsp;</td>
+          <td class="paramname"> <em>user</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Pobiera id uzytkownika 'user'. 
+<p>
+Zapytanie o ID uzytkownika o loginie 'user' ale nie o id z auth_user tylko o id z accounts_konto. 
+<p>Definicja w linii <a class="el" href="baza_8cpp-source.html#l00079">79</a> pliku <a class="el" href="baza_8cpp-source.html">baza.cpp</a>.</p>
+
+<p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dynsection">
+<p><center><img src="class_baza_65054f08c8fd7c600f6c2fe2c7f61a43_icgraph.png" border="0" usemap="#class_baza_65054f08c8fd7c600f6c2fe2c7f61a43_icgraph_map" alt=""></center>
+<map name="class_baza_65054f08c8fd7c600f6c2fe2c7f61a43_icgraph_map">
+<area shape="rect" href="class_baza.html#f1bda4acd20e6fd00a35c43638e48956" title="Dodaje plik do bazy danych." alt="" coords="184,5,285,32"><area shape="rect" href="class_baza.html#e4a033a65cb585aa91c15fd8b8fde764" title="Podobnie jak getFilesList tylko ze pobiera informację o jednym pliku." alt="" coords="175,56,295,83"><area shape="rect" href="class_baza.html#2eace36725672b3a4ce639f91fe7d9bd" title="Najpierw wywołuje getUserId() potem z id otrzymanym z tamtąd wywołuje getFilesList(int..." alt="" coords="172,107,297,133"></map>
+</div>
+
+</div>
+</div><p>
+<hr>Dokumentacja dla tej klasy została wygenerowana z plików:<ul>
+<li>/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/<a class="el" href="baza_8hpp-source.html">baza.hpp</a><li>/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/<a class="el" href="baza_8cpp-source.html">baza.cpp</a></ul>
+</div>
+<hr size="1"><address style="text-align: right;"><small>Wygenerowano Fri May 8 11:28:47 2009 dla Ass8-server programem&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
+</body>
+</html>
