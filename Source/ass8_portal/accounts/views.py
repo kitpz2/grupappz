@@ -26,13 +26,17 @@ def user_login(request):
     except User.DoesNotExist:
         requestKonto = None           
     except Konto.DoesNotExist:
-        requestKonto = Konto(user = requestUser, plec = "M")
-        requestKonto.save()
+	requestKonto = None
     if request.POST:        
         username = request.POST['login']
         password = request.POST['password']        
         user = authenticate(username=username, password=password)
-        if user:            
+        if user:           
+	    try:
+		konto = Konto.objects.get(user = user)
+	    except Konto.DoesNotExist:
+		 konto = Konto(user = user, plec ="M")
+		 konto.save()
             login(request, user)
             return HttpResponseRedirect(request.GET.get("next") or
                     "/accounts/details/"+username+"/")        
