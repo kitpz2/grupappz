@@ -163,7 +163,7 @@ void parser::parsuj(std::string do_parsowania)
     }
     catch (const std::exception& e)///Jeżeli wyjątki w LIBXMLCPP są włącozne i wystąpi błąd parsowania
     {
-        info2("BŁAD PARSOWANIA XML",e.what());
+        info2("BŁAD PARSOWANIA ",e.what());
         wyslij("<?xml version=\"1.0\"?>\
         <serwer xml_stream_error=\"true\"/>"); ///To wysyłana jest o tym informacja
         exit(0);///I zamykamy połączenie
@@ -305,13 +305,21 @@ void parser::lista_plikow(std::string uzytkownik)
         //char temp[1024];
         for (unsigned int i=0;i<res.num_rows();++i)
         {
+            line;
             //sprintf(temp,"<plik nazwa=\"%s\" data=\"%d\" rozmiar=\"%d\" dostep=\"%d\"/>\n",res[i]["sciezka"],res[i]["dataDodania"],res[i]["wielkosc"],res[i]["prawaDostepu"]);
-            temp="<plik nazwa=\""+res[i]["sciezka"];
+            char a[1024];
+            sprintf(a,"<plik nazwa=\"%s\" data=\"%d\" rozmiar=\"%d\" dostep=\"%d\"/>\r\n",res[i]["sciezka"].c_str(),atoi(res[i]["dataDodania"].c_str()),atoi(res[i]["wielkosc"].c_str()),atoi(res[i]["prawaDostepu"].c_str()));
+            /*temp="<plik nazwa=\""+res[i]["sciezka"];
+            line;
             temp+="\" data=\""+res[i]["dataDodania"];
+            line;
             temp+="\" rozmiar=\""+res[i]["wielkosc"];
+            line;
             temp+="\" dostep=\""+res[i]["prawaDostepu"];
-            temp+="\r\n";
-            odp.append(temp);
+            line;
+            temp+="\r\n";*/
+            info(a);
+            odp.append(a);
         }
         info("Lista utworzona");
         Odpowiedz(406,100,odp);

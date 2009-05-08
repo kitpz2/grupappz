@@ -39,10 +39,13 @@ std::string Baza::get_passwd(std::string login)
 mysqlpp::StoreQueryResult Baza::getFilesList(int user_id)
 {
     info("pobieranie listy plikow usera o ID = 'id'");
-    std::string zapytanie="select * from files_plik where konto_id='";
-    zapytanie+=user_id;
-    zapytanie.append("'");
-    mysqlpp::Query query = conn.query(zapytanie);
+    char a[1024];
+    sprintf(a,"select * from files_plik where konto_id='%d'",user_id);
+    //std::string zapytanie="select * from files_plik where konto_id='";
+    //zapytanie+=user_id;
+    //zapytanie.append("'");
+    info(a);
+    mysqlpp::Query query = conn.query(a);
     mysqlpp::StoreQueryResult res = query.store();
     if (res)
     {
@@ -92,6 +95,7 @@ int Baza::getUserId(std::string user)
         zapytanie="select id from accounts_konto where user_id='";
         zapytanie.append(res[0]["id"]);
         zapytanie.append("'");
+        info(zapytanie.c_str());
         mysqlpp::Query query2 = conn.query(zapytanie);
         mysqlpp::StoreQueryResult res2 = query2.store();
         if (res)
@@ -154,26 +158,46 @@ mysqlpp::StoreQueryResult Baza::getFileInfo(std::string file, int user_id)
 
 void Baza::addFile(std::string nazwa, std::string konto, int wielkosc, int hash, int prawa, int data)
 {
-    info("dodanie pliku do bazy")
-    std::string zapytanie="SELECT count(*) from files_plik";
+    info("dodanie pliku do bazy");
+    std::string zapytanie="SELECT * from files_plik";
     int ilosc;
+    info("pobieranie id");
     int id=getUserId(konto);
+    info("id pobrane")
+    char a[256];
+    sprintf(a,"user %s o id %d umieszcza plik %s",konto.c_str(),id,nazwa.c_str());
+    info(a);
     mysqlpp::Query query = conn.query(zapytanie);
     mysqlpp::StoreQueryResult res = query.store();
     if (res)
     {
-        ilosc=res[0]["count(*)"];
+        //ilosc=res[0]["count(*)"];
+        ilosc=res.num_rows();
     }
+    else
+        info("!res");
+    info("po");
+    query = conn.query();
     //SELECT count(*) from files_plik;
-    zapytanie="INSERT INTO files_plik VALUES('"+ilosc;
+    char b[1024];
+    sprintf(b,"INSERT INTO files_plik VALUES(%d,%d,'%s',CURRENT_DATE,%d,%d,%d)",ilosc+1,id,nazwa.c_str(),prawa,wielkosc,hash);
+    query<<b;
+    query.execute();
+    /*zapytanie="INSERT INTO files_plik VALUES('"+ilosc;
     zapytanie+="','"+id;
     zapytanie+="','"+nazwa;
     zapytanie+="',CURRENT_DATE";
     zapytanie+="','"+prawa;
     zapytanie+="','"+wielkosc;
     zapytanie+="','"+hash;
-    zapytanie.append("')");
-    conn.query(zapytanie);
-    info("plik dodany do bazy");
+    zapytanie.append("')");*/
+    info2("zapytanie",b);
+    //conn.query(b);
+    info("po2");
+    //res = query.store();
+    //if(res)
+    //    info("plik dodany do bazy")
+    //else
+    //    info("plik nie dodany");
 
 }

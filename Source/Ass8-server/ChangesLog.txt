@@ -1,4 +1,13 @@
 08 maj 2009
+   released version 0.3.17 of Ass8-server
+
+     Change log:
+        -Fixed: wysylanie listy plikow
+        -Fixed: odbieranie plikow
+        -Fixed: dodawanie plikow do bazy (ponownie)
+        -Fixed: wiele pomniejszych
+
+08 maj 2009
    released version 0.3.16 of Ass8-server
 
      Change log:

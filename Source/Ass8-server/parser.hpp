@@ -22,26 +22,50 @@ using boost::asio::ip::tcp;
 class parser
 {
 private:
+    ///Stream uzywany do odbierania i wysyłania informacji
     tcp::iostream & stream;
+    ///Zmienna przechowująca login uzytkownika
     std::string login;
+    ///Zmienna przechowująca haslo (w przyszlosci hash hasla) uzytkownika
     std::string haslo;
+
     //std::string uzytkownik;
+    ///Aktualny ID sesji potrzebny pryz kazdym polaczneiu
     int id_sesji;
+    ///Bufor danych
     char bufor[BUFSIZE];
+    ///Clasa obsługująca bazę danych
     Baza baza;
 
+    ///Parsuje dane pobrane od klienta
     void parsuj(std::string do_parsowania);
+    ///Loguje klienta po przetworzeniu xmla odebranego od niego i sparsownaiu go w void parsuj()
     bool logowanie(std::string login, std::string haslo);
+    ///Wysyła odpowiedź do logowania na podstawie podaneg i gdzie
+    ///0 - Logowanie przebieglo prawidlowo; 1 - błęde hasło lub login; 2 - nieoczekiwany błąd serwera; 3 - błędne zapytanie
     void odpowiedz_login(int i);
+    ///Wysyła odpowiedź jednolinijkową zależnie od podanego i
+    ///400 - bledne zapytanie;  401 - bledny numer sesji;
+    ///402 - podany plik istnieje (w przypadku wysylania pliku);
+    ///403 - wewnetrzny blad serwera; 404 - podany plik nie istnieje;
+    ///405 - błąd odbierania plikow; 406 - wszystko OK;
     void Odpowiedz(int i, int numer_operacji=-1);
+    ///Wysyła odpowiedź wielolinijkową zależnie od podanego i gdzie i jak w void Odpowiedz(int i, int numer_operacji);
     void Odpowiedz(int i,int nr_operacji,std::string odp);
 
+    ///Wysyła dane podane w stringu w dodatkowo wysyłając znak końca linii
     void wyslij(std::string w);
+    ///Wysyła listę plików użytkownika 'uzytkownik'
     void lista_plikow(std::string uzytkownik);
+    ///Odbiera plik od użytkownika i umieszcza na serwerze
     void odbieranie_plikow(xmlpp::TextReader &reader, std::string uzytkownik);
+    ///Odbiera od klienta informację jakie on chce pobrać pliki i przekazuje kazdy plik pojedynczo do wyslij_plik()
     void wysylanie_plikow(xmlpp::TextReader &reader, std::string uzytkownil);
+    ///Usuwa plik z serwera (jeszcze nie zaimplementowane)
     void usun_pliki(xmlpp::TextReader &reader,std::string uzytkownik);
+    ///wysyła plik podany w argumencie
     void wyslij_plik(std::string plik,std::string uzytkownik);
+    ///Przygotowuje listę plikow do wysłania do klienta
     std::vector <std::string> pobieranie_listy_plikow(xmlpp::TextReader &reader);
 public:
     parser(tcp::iostream &stream, const char* server, const char* user, const char *pass,const char *db):stream(stream)
