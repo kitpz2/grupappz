@@ -21,7 +21,7 @@ namespace ASS8.Klient
             while (true)
             {
                 z.szukajZmian();
-                Thread.Sleep(60000);
+                Thread.Sleep(1000);
             }
         }
         public ASS8___Konfiguracja(Form log, komunikacja kom)
@@ -32,6 +32,7 @@ namespace ASS8.Klient
             z = new zarzadca();
             z.kom = k;
             Thread th = new Thread(automatyczneSpr);
+            th.IsBackground = true;
             th.Start();
         }
         public komunikacja KomClass

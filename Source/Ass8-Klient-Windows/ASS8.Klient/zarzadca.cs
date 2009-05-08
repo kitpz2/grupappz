@@ -176,9 +176,13 @@ namespace ASS8.Klient
             List<pojedynczyPlik> roznicaLokSerwer = sprawdzRoznice(plikiLokalnieKat, plikiNaSerwerze);
             List<pojedynczyPlik> roznicaLokKat = sprawdzRoznice(plikiLokalnieZapis, plikiLokalnieKat);
             if (roznicaSerwerLok.Count != 0)
+            {
                 odbierzPliki(roznicaSerwerLok);
+            }
             if (roznicaLokSerwer.Count != 0)
+            {
                 wyslijPlik(roznicaLokSerwer);
+            }
             /*if(roznicaLokKat.Count!=0)
                 usunPliki(roznicaLokKat);*/
             zapiszInfoPlikow();
