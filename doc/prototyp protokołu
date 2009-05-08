@@ -1,4 +1,6 @@
-logowanie:
+///////////////////////////////
+///Logowanie//////////////////
+/////////////////////////////
 klient wysyla: 
 <?xml version="1.0"?>
 <logowanie login="login" haslo="haslo" wersja="wersja_klienta"/>
@@ -8,8 +10,9 @@ serwer odpowiada:
 <serwer odpowiedz="kod_odpowiedzi" sesja="ewentualny_numer_sesji" wersja="wersja_servera"/>
 
 
-<?xml version="1.0"?>
-<serwer odpowiedz="" sesja="numer_sesji" wersja="wersja_servera"/>
+///////////////////////////////
+///PYTANIE O LISTE PLIKOW/////
+/////////////////////////////
 
 
 prosba o liste plikow uzytkownika (kropka w przypadku uzytkownika zalogowanego):
@@ -24,7 +27,9 @@ serwer odpowiada:
 </serwer>
 
 
-
+///////////////////////////////
+///PROSBA O PLIKI/////////////
+/////////////////////////////
 prosba o plik/pliki (kropka w przypadku uzytkownika zalogowanego):  -- mozna zapytac o kilka plikow
 klient wysyla:
 <?xml version="1.0"?>
@@ -51,7 +56,9 @@ klient wysyla:
 
 
 
-
+///////////////////////////////
+///WYSYLKA PLIKU NA SERWER////
+/////////////////////////////
 wysylka pliku na serwer (mozliwy tylko jeden w xmlu):
 <?xml version="1.0"?>
 <klient idsesji="numer_sesji" operacja="102">
@@ -73,6 +80,10 @@ w wypadku odpowiedzi 402 czekiwanie na reakcję klienta:
 <?xml version="1.0"?>
 <klient idsesji="" operacja="" action="abort"/>//Gdy klient nie chce zastępować pliku 
 
+odpowiedz serwera w obu wypadkach:
+<?xml version="1.0"?>
+<serwer operacja="102" odp="406"/>
+
 po wysłaniu action="ok" serwer odpowiada jak w wypadku gdy plik nie istnieje, w przeciwnym wypdaku odpowiedź serwera to:
 <?xml version="1.0"?>
 <serwer operacja="102" odp="405"/>
@@ -86,7 +97,9 @@ przesyłanie pliku po odpowiedzi serwera:
 <klient idsesji="" operacja="102" hash="hash"/>
 
 
-
+///////////////////////////////
+///USUNIECIE PLIKU Z SERWERA//
+/////////////////////////////
 usuniecie pliku z serwera:
 klient wysyla:
 <?xml version="1.0"?>
@@ -116,5 +129,6 @@ odp: // po opisie podane operacje w ktorych bledy moga wystapic
 401 - bledny numer sesji // dla: 100,101,102,103
 402 - podany plik istnieje (w przypadku wysylania pliku) // dla 102
 403 - wewnetrzny blad serwera // dla: 100,101,102,103
-404 - podany plik nie istnieje // dla 102
+404 - podany plik nie istnieje // dla 102,103
 405 - błąd odbierania plikow // dla 102
+406 - wszystko OK
