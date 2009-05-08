@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1241718831 source:/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/main.cpp
+1241766706 source:/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/main.cpp
 	<iostream>
 	<string>
 	<cstdio>
@@ -12,10 +12,11 @@
 	<boost/bind.hpp>
 	"version.h"
 	"parser.hpp"
+	"version.h"
 
-1241717415 /home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/version.h
+1241745423 /home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/version.h
 
-1241718619 source:/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/parser.cpp
+1241746465 source:/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/parser.cpp
 	<iostream>
 	<string>
 	<cstdlib>
@@ -29,7 +30,7 @@
 	"xml.hpp"
 	"debug.hpp"
 
-1241718831 /home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/parser.hpp
+1241739706 /home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/parser.hpp
 	<boost/asio.hpp>
 	<string>
 	<fstream>
@@ -440,7 +441,7 @@
 	<list>
 	<map>
 
-1241717254 source:/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/baza.cpp
+1241766408 source:/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/baza.cpp
 	"baza.hpp"
 
 1241718831 /home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/baza.hpp
@@ -452,7 +453,7 @@
 
 1241533000 /home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/xml.hpp
 
-1241718513 /home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/debug.hpp
+1241740143 /home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/debug.hpp
 	<cstdio>
 	<cstdlib>
 

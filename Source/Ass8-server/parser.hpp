@@ -15,7 +15,7 @@
 
 #include "baza.hpp"
 #include "debug.hpp"
-#define DEBUG
+
 #define BUFSIZE 1024
 #define BUFSIZE2 1024*2
 using boost::asio::ip::tcp;

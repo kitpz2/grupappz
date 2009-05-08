@@ -24,7 +24,7 @@ std::string Baza::get_passwd(std::string login)
     zapytanie.append("'");
     mysqlpp::Query query = conn.query(zapytanie);
     mysqlpp::StoreQueryResult res = query.store();
-    if (res)
+    if (res.num_rows()>=1)
     {
         info("Zapytanie poprawne");
         return std::string(res[0]["password"]);
@@ -32,7 +32,7 @@ std::string Baza::get_passwd(std::string login)
     else
     {
         Eline2("Błąd zapytania do bazy danych: ",query.error());
-        return "ERROR";
+        return std::string("ERROR");
     }
 }
 ///Zapytanie o listę plikow uzytkownika po id uzytkownika z bazy accounts_konto
@@ -83,6 +83,7 @@ int Baza::getUserId(std::string user)
     std::string zapytanie="select id from auth_user where username='";
     zapytanie.append(user);
     zapytanie.append("'");
+    info2("zaytanie: ",zapytanie.c_str());
     mysqlpp::Query query = conn.query(zapytanie);//Wyslanie zapytania do bazy
     mysqlpp::StoreQueryResult res = query.store();//umieszczenie wynikow zapytania w zmiennej res
     //A potem zapytanie o id z tabeli accounts_konto
@@ -90,6 +91,7 @@ int Baza::getUserId(std::string user)
     {
         zapytanie="select id from accounts_konto where user_id='";
         zapytanie.append(res[0]["id"]);
+        zapytanie.append("'");
         mysqlpp::Query query2 = conn.query(zapytanie);
         mysqlpp::StoreQueryResult res2 = query2.store();
         if (res)
@@ -172,5 +174,6 @@ void Baza::addFile(std::string nazwa, std::string konto, int wielkosc, int hash,
     zapytanie+="','"+hash;
     zapytanie.append("')");
     conn.query(zapytanie);
+    info("plik dodany do bazy");
 
 }

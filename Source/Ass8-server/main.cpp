@@ -24,7 +24,7 @@
 
 #include "version.h"
 #include "parser.hpp"
-
+#include "version.h"
 using boost::asio::ip::tcp;
 
 int main(int argc, char *argv[])
@@ -38,10 +38,12 @@ int main(int argc, char *argv[])
     {
         std::cout<<"Zła liczba argumentów:\n\
         serwer <adres_serwera_mysql> <login> <haslo> <db> <port_nasłuchiwania_aserwera_ass8>"<<std::endl;
+        std::cout<<"Ass8 v"<<AutoVersion::FULLVERSION_STRING<<" "<<AutoVersion::STATUS<<std::endl;
         exit(1);///To kończymy program
     }
     else
     {
+        std::cout<<"Ass8 v"<<AutoVersion::FULLVERSION_STRING<<" "<<AutoVersion::STATUS<<std::endl;
         server=argv[1];
         user=argv[2];
         pass=argv[3];
@@ -50,6 +52,7 @@ int main(int argc, char *argv[])
     }
     try
     {
+        info("ustawianie...");
         ///Potrzebne do połączenia z klientem
         boost::asio::io_service io_service;
         ///Potrzebne do połączenia z klientem
@@ -58,14 +61,17 @@ int main(int argc, char *argv[])
         tcp::acceptor acceptor(io_service, endpoint);
         ///Watek ktory bedzie usuwal skonczone forki
         boost::thread w1(&eat_zombie);
+        info("Początek pętli glownej");
         while (true)///Nieskonczona pętla
         {
             ///Wyjście/Wejście socketa
             tcp::iostream stream;
-
+            info("oczekiawnie na klienta");
             acceptor.accept(*stream.rdbuf());
+            line;
             if (fork()==0)
             {
+                info("nowy klient");
                 ///utworzenie parsera w forku (dla każdego klienta jeden taki jest tworzony);
                 parser p(stream,server,user,pass,db);
                 p.start();
