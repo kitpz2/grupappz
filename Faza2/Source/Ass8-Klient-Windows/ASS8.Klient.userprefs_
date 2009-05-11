@@ -1,0 +1,29 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workbench ActiveDocument="ASS8.Klient/ASS8 - Logowanie.Designer.cs" ctype="Workbench">
+    <Files>
+      <File FileName="ASS8.Klient/Program.cs" Line="1" Column="1" />
+      <File FileName="ASS8.Klient/ASS8 - Logowanie.cs" Line="1" Column="1" />
+      <File FileName="ASS8.Klient/ASS8 - Logowanie.resx" Line="1" Column="1" />
+      <File FileName="ASS8.Klient/ASS8 - Logowanie.Designer.cs" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State expanded="True">
+          <Node name="ASS8.Klient" expanded="True">
+            <Node name="ASS8 - Konfiguracja.cs" expanded="True" />
+            <Node name="ASS8 - Logowanie.cs" expanded="True">
+              <Node name="ASS8 - Logowanie.Designer.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="ClassPad">
+        <State expanded="True" selected="True" />
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" ctype="Workspace" />
+</Properties>

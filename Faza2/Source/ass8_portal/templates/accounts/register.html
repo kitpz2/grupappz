@@ -1,0 +1,15 @@
+{%extends "base.html"%}
+{%block title%} {{block.super}} - Rejestracja {%endblock%}
+
+{%block main_content%}
+    {%if requestKonto.user.is_authenticated%}
+    <h1>Jestes zalogowany! Jesli chcesz zalozyc nowe konto musisz sie najpierw wylogowac!</h1>
+    {%else%}
+    <h1>Zarejestruj nowego uzytkownika</h1>
+    <h2>Wypełnij wszystkie pola:</h2>
+    <form action="" method="POST">    
+        {{form.as_p}}
+        <input type="submit" value="Zarejestruj" />    
+    </form>
+    {%endif%}
+{%endblock%}

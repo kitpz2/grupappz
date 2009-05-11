@@ -1,0 +1,46 @@
+{%extends "base.html"%}
+{%block title%} {{block.super}} - Szczegoly profilu: {{viewKonto.user.username}} {%endblock%}
+
+{%block extra_style%}
+<style type="text/css">
+div.content .attr
+{    
+    color:#66ba00;    
+    margin:0px;    
+	padding-left:10px;	
+	padding-right:10px;	
+}
+
+div.content .value
+{    
+    color:white;
+	margin:0px;
+	padding-left:10px;		
+}
+</style>
+{%endblock%}
+
+{%block main_content%}
+    {%ifequal requestKonto.user.username viewKonto.user.username%}
+    <a href="/accounts/edit/{{requestKonto.user.username}}/">Modyfikuj profil</a><br />
+    <a href="/friends/index/{{requestKonto.user.username}}/">Zarzadzaj znajomymi</a><br />
+    <a href="/accounts/delete/{{requestKonto.user.username}}/">Usuń profil</a><br />
+    <br />
+    {%else%}
+        {%if add%}    
+            <a href="/friends/add/{{viewKonto.user.username}}/">Dodaj do znajomych</a><br />
+            <br />
+        {%else%}
+            <a href="/friends/delete/{{viewKonto.user.username}}/">Usuń ze znajomych</a><br />
+            <br />
+        {%endif%}
+    {%endifequal%}
+    <h1>Konto uzytkownika {{viewKonto.user.username}}</h1>
+    <span class="attr">Login:</span> <span class="value">{{viewKonto.user.username}}</span><br />
+    <span class="attr">Dolaczyl:</span> <span class="value">{{viewKonto.user.date_joined.date|date:"d/m/Y"}}</span><br />
+    <span class="attr">Ostatnie logowanie:</span> <span class="value">{{viewKonto.user.last_login.date|date:"d/m/Y"}}</span><br />
+    <span class="attr">Imie:</span> <span class="value">{{viewKonto.user.first_name}}</span><br />
+    <span class="attr">Nazwisko:</span> <span class="value">{{viewKonto.user.last_name}}</span><br />
+    <span class="attr">E-mail:</span> <span class="value">{{viewKonto.user.email}}</span><br />
+    <span class="attr">Zainteresowania:</span> <span class="value">{{viewKonto.zainteresowania|escape}}</span><br />
+{%endblock%}

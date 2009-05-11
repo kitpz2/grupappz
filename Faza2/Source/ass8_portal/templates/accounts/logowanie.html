@@ -1,0 +1,48 @@
+{%extends "base.html"%}
+{%block title%} {{block.super}} - Logowanie {%endblock%}
+{%block extra_style%}
+<style type="text/css">
+    div.login
+    {
+        padding-top:30px;
+        width:300px;
+        margin-left:auto;
+        margin-right:auto;        
+    }
+    div.login_header 
+    {
+        font-size:26px;
+        background:#496e40;
+        color:#fff;
+        margin:0px;
+        text-align: center;
+    }
+    div.login_form
+    {        
+        padding:10px;
+        border:1px solid black;
+        border-top:none;
+    }
+</style>
+{%endblock%}
+
+{%block main_content%}
+    {% if requestKonto.user.is_authenticated%}
+    <h1>Jesteś już zalogowany.</h1>
+    <a href="/accounts/details/{{requestKonto.user.username}}/">Strona profilu</a>
+    {%else%}
+        <div class="login">
+            <div class="login_header">
+                Zaloguj się:
+            </div>   
+            <div class="login_form">    
+                <form action="" method="POST">
+                {{form.as_p}}
+                    <input type="submit" value="Zaloguj" />            
+                </form>            
+            </div>
+            <p>Jesli nie masz konta <a href="/accounts/register/">zarejestruj sie</a>.</p>
+        </div>
+    {%endif%}
+{%endblock%}
+

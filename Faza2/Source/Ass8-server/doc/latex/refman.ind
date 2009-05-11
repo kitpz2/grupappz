@@ -1,0 +1,131 @@
+\begin{theindex}
+
+  \item {/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/baza.cpp}, 
+		\hyperpage{15}
+  \item {/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/baza.hpp}, 
+		\hyperpage{16}
+  \item {/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/debug.hpp}, 
+		\hyperpage{17}
+  \item {/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/main.cpp}, 
+		\hyperpage{19}
+  \item {/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/parser.cpp}, 
+		\hyperpage{21}
+  \item {/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/parser.hpp}, 
+		\hyperpage{22}
+  \item {/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/server.hpp}, 
+		\hyperpage{24}
+  \item {/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/version.h}, 
+		\hyperpage{25}
+  \item {/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/xml.hpp}, 
+		\hyperpage{26}
+
+  \indexspace
+
+  \item {addFile}
+    \subitem {Baza}, \hyperpage{10}
+  \item {AutoVersion}, \hyperpage{7}
+
+  \indexspace
+
+  \item {Baza}, \hyperpage{9}
+    \subitem {addFile}, \hyperpage{10}
+    \subitem {Baza}, \hyperpage{10}
+    \subitem {connect}, \hyperpage{10}
+    \subitem {get\_\discretionary {-}{}{}passwd}, \hyperpage{10}
+    \subitem {getFileInfo}, \hyperpage{10}
+    \subitem {getFilesList}, \hyperpage{11}
+    \subitem {getUserId}, \hyperpage{11}
+  \item {BUFSIZE}
+    \subitem {parser.hpp}, \hyperpage{23}
+  \item {BUFSIZE2}
+    \subitem {parser.hpp}, \hyperpage{23}
+
+  \indexspace
+
+  \item {connect}
+    \subitem {Baza}, \hyperpage{10}
+
+  \indexspace
+
+  \item {deb}
+    \subitem {debug.hpp}, \hyperpage{17}
+  \item {DEBUG}
+    \subitem {debug.hpp}, \hyperpage{17}
+  \item {debug.hpp}
+    \subitem {deb}, \hyperpage{17}
+    \subitem {DEBUG}, \hyperpage{17}
+    \subitem {Eline}, \hyperpage{17}
+    \subitem {Eline2}, \hyperpage{17}
+    \subitem {info}, \hyperpage{18}
+    \subitem {info2}, \hyperpage{18}
+    \subitem {line}, \hyperpage{18}
+
+  \indexspace
+
+  \item {eat\_\discretionary {-}{}{}zombie}
+    \subitem {parser.hpp}, \hyperpage{23}
+  \item {Eline}
+    \subitem {debug.hpp}, \hyperpage{17}
+  \item {Eline2}
+    \subitem {debug.hpp}, \hyperpage{17}
+
+  \indexspace
+
+  \item {get\_\discretionary {-}{}{}passwd}
+    \subitem {Baza}, \hyperpage{10}
+  \item {getFileInfo}
+    \subitem {Baza}, \hyperpage{10}
+  \item {getFilesList}
+    \subitem {Baza}, \hyperpage{11}
+  \item {getUserId}
+    \subitem {Baza}, \hyperpage{11}
+
+  \indexspace
+
+  \item {info}
+    \subitem {debug.hpp}, \hyperpage{18}
+  \item {info2}
+    \subitem {debug.hpp}, \hyperpage{18}
+
+  \indexspace
+
+  \item {line}
+    \subitem {debug.hpp}, \hyperpage{18}
+
+  \indexspace
+
+  \item {main}
+    \subitem {main.cpp}, \hyperpage{19}
+  \item {main.cpp}
+    \subitem {main}, \hyperpage{19}
+
+  \indexspace
+
+  \item {parser}, \hyperpage{13}
+    \subitem {parser}, \hyperpage{13}
+    \subitem {start}, \hyperpage{13}
+  \item {parser.hpp}
+    \subitem {BUFSIZE}, \hyperpage{23}
+    \subitem {BUFSIZE2}, \hyperpage{23}
+    \subitem {eat\_\discretionary {-}{}{}zombie}, \hyperpage{23}
+
+  \indexspace
+
+  \item {RC\_\discretionary {-}{}{}FILEVERSION}
+    \subitem {version.h}, \hyperpage{25}
+  \item {RC\_\discretionary {-}{}{}FILEVERSION\_\discretionary {-}{}{}STRING}
+    \subitem {version.h}, \hyperpage{25}
+
+  \indexspace
+
+  \item {start}
+    \subitem {parser}, \hyperpage{13}
+
+  \indexspace
+
+  \item {version.h}
+    \subitem {RC\_\discretionary {-}{}{}FILEVERSION}, \hyperpage{25}
+    \subitem {RC\_\discretionary {-}{}{}FILEVERSION\_\discretionary {-}{}{}STRING}, 
+		\hyperpage{25}
+
+\end{theindex}

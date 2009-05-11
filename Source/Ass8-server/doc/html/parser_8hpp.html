@@ -1,0 +1,135 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>Ass8-server: Dokumentacja pliku /home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/parser.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css">
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Wygenerowano przez Doxygen 1.5.8 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="main.html"><span>Strona&nbsp;główna</span></a></li>
+      <li><a href="namespaces.html"><span>Przestrzenie&nbsp;nazw</span></a></li>
+      <li><a href="annotated.html"><span>Klasy</span></a></li>
+      <li class="current"><a href="files.html"><span>Pliki</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>Lista&nbsp;plików</span></a></li>
+      <li><a href="globals.html"><span>Składowe&nbsp;plików</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>Dokumentacja pliku /home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/parser.hpp</h1><code>#include &lt;boost/asio.hpp&gt;</code><br>
+<code>#include &lt;string&gt;</code><br>
+<code>#include &lt;fstream&gt;</code><br>
+<code>#include &lt;libxml++/libxml++.h&gt;</code><br>
+<code>#include &lt;libxml++/parsers/textreader.h&gt;</code><br>
+<code>#include &quot;<a class="el" href="baza_8hpp-source.html">baza.hpp</a>&quot;</code><br>
+<code>#include &quot;<a class="el" href="debug_8hpp-source.html">debug.hpp</a>&quot;</code><br>
+
+<p>
+<div class="dynheader">
+Wykres zależności załączania dla parser.hpp:</div>
+<div class="dynsection">
+<p><center><img src="parser_8hpp__incl.png" border="0" usemap="#/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/parser.hpp_map" alt=""></center>
+<map name="/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/parser.hpp_map">
+<area shape="rect" href="baza_8hpp.html" title="baza.hpp" alt="" coords="648,80,723,107"><area shape="rect" href="debug_8hpp.html" title="debug.hpp" alt="" coords="743,155,823,181"></map>
+</div>
+
+<p>
+<div class="dynheader">
+Ten wykres pokazuje, które pliki bezpośrednio lub pośrednio załączają ten plik:</div>
+<div class="dynsection">
+<p><center><img src="parser_8hpp__dep__incl.png" border="0" usemap="#/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/parser.hppdep_map" alt=""></center>
+<map name="/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/parser.hppdep_map">
+<area shape="rect" href="main_8cpp.html" title="/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8&#45;server/main.cpp" alt="" coords="5,80,456,107"><area shape="rect" href="parser_8cpp.html" title="/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8&#45;server/parser.cpp" alt="" coords="480,80,939,107"></map>
+</div>
+
+<p>
+<a href="parser_8hpp-source.html">Idź do kodu źródłowego tego pliku.</a><table border="0" cellpadding="0" cellspacing="0">
+<tr><td></td></tr>
+<tr><td colspan="2"><br><h2>Komponenty</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">class &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classparser.html">parser</a></td></tr>
+
+<tr><td colspan="2"><br><h2>Definicje</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="parser_8hpp.html#eca034f67218340ecb2261a22c2f3dcd">BUFSIZE</a>&nbsp;&nbsp;&nbsp;1024</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="parser_8hpp.html#b46db07bcc5d1bb3dbc73f7be2592ee0">BUFSIZE2</a>&nbsp;&nbsp;&nbsp;1024*2</td></tr>
+
+<tr><td colspan="2"><br><h2>Funkcje</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="parser_8hpp.html#6c724feff242ad0cd599cdd458f73199">eat_zombie</a> ()</td></tr>
+
+</table>
+<hr><h2>Dokumentacja definicji</h2>
+<a class="anchor" name="eca034f67218340ecb2261a22c2f3dcd"></a><!-- doxytag: member="parser.hpp::BUFSIZE" ref="eca034f67218340ecb2261a22c2f3dcd" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BUFSIZE&nbsp;&nbsp;&nbsp;1024          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definicja w linii <a class="el" href="parser_8hpp-source.html#l00019">19</a> pliku <a class="el" href="parser_8hpp-source.html">parser.hpp</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="b46db07bcc5d1bb3dbc73f7be2592ee0"></a><!-- doxytag: member="parser.hpp::BUFSIZE2" ref="b46db07bcc5d1bb3dbc73f7be2592ee0" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BUFSIZE2&nbsp;&nbsp;&nbsp;1024*2          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definicja w linii <a class="el" href="parser_8hpp-source.html#l00020">20</a> pliku <a class="el" href="parser_8hpp-source.html">parser.hpp</a>.</p>
+
+</div>
+</div><p>
+<hr><h2>Dokumentacja funkcji</h2>
+<a class="anchor" name="6c724feff242ad0cd599cdd458f73199"></a><!-- doxytag: member="parser.hpp::eat_zombie" ref="6c724feff242ad0cd599cdd458f73199" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void eat_zombie           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dynsection">
+<p><center><img src="parser_8hpp_6c724feff242ad0cd599cdd458f73199_icgraph.png" border="0" usemap="#parser_8hpp_6c724feff242ad0cd599cdd458f73199_icgraph_map" alt=""></center>
+<map name="parser_8hpp_6c724feff242ad0cd599cdd458f73199_icgraph_map">
+<area shape="rect" href="main_8cpp.html#0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="143,5,191,32"></map>
+</div>
+
+</div>
+</div><p>
+</div>
+<hr size="1"><address style="text-align: right;"><small>Wygenerowano Fri May 8 11:28:41 2009 dla Ass8-server programem&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
+</body>
+</html>
