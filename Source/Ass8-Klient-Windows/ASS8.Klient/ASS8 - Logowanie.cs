@@ -51,7 +51,7 @@ namespace ASS8.Klient
             get
             {
                 if (txtHasło.Text.Length == 0) return "";
-                return "-1";
+                return txtHasło.Text;
                 /*MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider();
                 Byte[] haslo;
                 Byte[] hash;

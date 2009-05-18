@@ -66,4 +66,40 @@ namespace ASS8.Klient
             }
         }
     }
+    [XmlRoot]
+    public class ustawienia
+    {
+        private string pIp;
+        private int pPort;
+        public ustawienia() { }
+        public ustawienia(string i, int p)
+        {
+            ip = i;
+            port = p;
+        }
+        [XmlAttribute]
+        public string ip
+        {
+            get
+            {
+                return pIp;
+            }
+            set
+            {
+                pIp = value;
+            }
+        }
+        [XmlAttribute]
+        public int port
+        {
+            get
+            {
+                return pPort;
+            }
+            set
+            {
+                pPort = value;
+            }
+        }
+    }
 }

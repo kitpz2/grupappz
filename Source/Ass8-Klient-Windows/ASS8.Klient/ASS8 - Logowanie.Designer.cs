@@ -62,6 +62,7 @@
             this.txtLogin.Name = "txtLogin";
             this.txtLogin.Size = new System.Drawing.Size(100, 20);
             this.txtLogin.TabIndex = 2;
+            this.txtLogin.Text = "testowy";
             // 
             // txtHasło
             // 
@@ -69,6 +70,7 @@
             this.txtHasło.Name = "txtHasło";
             this.txtHasło.Size = new System.Drawing.Size(100, 20);
             this.txtHasło.TabIndex = 3;
+            this.txtHasło.Text = "testowe_haslo";
             // 
             // cbZapamietaj
             // 
@@ -108,7 +110,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(189, 157);
+            this.ClientSize = new System.Drawing.Size(189, 151);
             this.Controls.Add(this.grpLogowanie);
             this.MaximizeBox = false;
             this.Name = "ASS8___Logowanie";

@@ -1,0 +1,60 @@
+\indexentry{AutoVersion@{AutoVersion}|hyperpage}{7}
+\indexentry{Baza@{Baza}|hyperpage}{9}
+\indexentry{Baza@{Baza}!Baza@{Baza}|hyperpage}{10}
+\indexentry{Baza@{Baza}!Baza@{Baza}|hyperpage}{10}
+\indexentry{Baza@{Baza}!addFile@{addFile}|hyperpage}{10}
+\indexentry{addFile@{addFile}!Baza@{Baza}|hyperpage}{10}
+\indexentry{Baza@{Baza}!connect@{connect}|hyperpage}{10}
+\indexentry{connect@{connect}!Baza@{Baza}|hyperpage}{10}
+\indexentry{Baza@{Baza}!get\_\discretionary {-}{}{}passwd@{get\_\discretionary {-}{}{}passwd}|hyperpage}{10}
+\indexentry{get\_\discretionary {-}{}{}passwd@{get\_\discretionary {-}{}{}passwd}!Baza@{Baza}|hyperpage}{10}
+\indexentry{Baza@{Baza}!getFileInfo@{getFileInfo}|hyperpage}{10}
+\indexentry{getFileInfo@{getFileInfo}!Baza@{Baza}|hyperpage}{10}
+\indexentry{Baza@{Baza}!getFileInfo@{getFileInfo}|hyperpage}{11}
+\indexentry{getFileInfo@{getFileInfo}!Baza@{Baza}|hyperpage}{11}
+\indexentry{Baza@{Baza}!getFilesList@{getFilesList}|hyperpage}{11}
+\indexentry{getFilesList@{getFilesList}!Baza@{Baza}|hyperpage}{11}
+\indexentry{Baza@{Baza}!getFilesList@{getFilesList}|hyperpage}{11}
+\indexentry{getFilesList@{getFilesList}!Baza@{Baza}|hyperpage}{11}
+\indexentry{Baza@{Baza}!getUserId@{getUserId}|hyperpage}{11}
+\indexentry{getUserId@{getUserId}!Baza@{Baza}|hyperpage}{11}
+\indexentry{parser@{parser}|hyperpage}{13}
+\indexentry{parser@{parser}!parser@{parser}|hyperpage}{13}
+\indexentry{parser@{parser}!parser@{parser}|hyperpage}{13}
+\indexentry{parser@{parser}!start@{start}|hyperpage}{14}
+\indexentry{start@{start}!parser@{parser}|hyperpage}{14}
+\indexentry{/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/baza.cpp@{/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/baza.cpp}|hyperpage}{15}
+\indexentry{/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/baza.hpp@{/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/baza.hpp}|hyperpage}{16}
+\indexentry{/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/debug.hpp@{/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/debug.hpp}|hyperpage}{17}
+\indexentry{debug.hpp@{debug.hpp}!deb@{deb}|hyperpage}{17}
+\indexentry{deb@{deb}!debug.hpp@{debug.hpp}|hyperpage}{17}
+\indexentry{debug.hpp@{debug.hpp}!DEBUG@{DEBUG}|hyperpage}{17}
+\indexentry{DEBUG@{DEBUG}!debug.hpp@{debug.hpp}|hyperpage}{17}
+\indexentry{debug.hpp@{debug.hpp}!Eline@{Eline}|hyperpage}{17}
+\indexentry{Eline@{Eline}!debug.hpp@{debug.hpp}|hyperpage}{17}
+\indexentry{debug.hpp@{debug.hpp}!Eline2@{Eline2}|hyperpage}{18}
+\indexentry{Eline2@{Eline2}!debug.hpp@{debug.hpp}|hyperpage}{18}
+\indexentry{debug.hpp@{debug.hpp}!info@{info}|hyperpage}{18}
+\indexentry{info@{info}!debug.hpp@{debug.hpp}|hyperpage}{18}
+\indexentry{debug.hpp@{debug.hpp}!info2@{info2}|hyperpage}{18}
+\indexentry{info2@{info2}!debug.hpp@{debug.hpp}|hyperpage}{18}
+\indexentry{debug.hpp@{debug.hpp}!line@{line}|hyperpage}{18}
+\indexentry{line@{line}!debug.hpp@{debug.hpp}|hyperpage}{18}
+\indexentry{/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/main.cpp@{/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/main.cpp}|hyperpage}{19}
+\indexentry{main.cpp@{main.cpp}!main@{main}|hyperpage}{19}
+\indexentry{main@{main}!main.cpp@{main.cpp}|hyperpage}{19}
+\indexentry{/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/parser.cpp@{/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/parser.cpp}|hyperpage}{21}
+\indexentry{/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/parser.hpp@{/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/parser.hpp}|hyperpage}{22}
+\indexentry{parser.hpp@{parser.hpp}!BUFSIZE@{BUFSIZE}|hyperpage}{23}
+\indexentry{BUFSIZE@{BUFSIZE}!parser.hpp@{parser.hpp}|hyperpage}{23}
+\indexentry{parser.hpp@{parser.hpp}!BUFSIZE2@{BUFSIZE2}|hyperpage}{23}
+\indexentry{BUFSIZE2@{BUFSIZE2}!parser.hpp@{parser.hpp}|hyperpage}{23}
+\indexentry{parser.hpp@{parser.hpp}!eat\_\discretionary {-}{}{}zombie@{eat\_\discretionary {-}{}{}zombie}|hyperpage}{23}
+\indexentry{eat\_\discretionary {-}{}{}zombie@{eat\_\discretionary {-}{}{}zombie}!parser.hpp@{parser.hpp}|hyperpage}{23}
+\indexentry{/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/server.hpp@{/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/server.hpp}|hyperpage}{24}
+\indexentry{/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/version.h@{/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/version.h}|hyperpage}{25}
+\indexentry{version.h@{version.h}!RC\_\discretionary {-}{}{}FILEVERSION@{RC\_\discretionary {-}{}{}FILEVERSION}|hyperpage}{25}
+\indexentry{RC\_\discretionary {-}{}{}FILEVERSION@{RC\_\discretionary {-}{}{}FILEVERSION}!version.h@{version.h}|hyperpage}{25}
+\indexentry{version.h@{version.h}!RC\_\discretionary {-}{}{}FILEVERSION\_\discretionary {-}{}{}STRING@{RC\_\discretionary {-}{}{}FILEVERSION\_\discretionary {-}{}{}STRING}|hyperpage}{25}
+\indexentry{RC\_\discretionary {-}{}{}FILEVERSION\_\discretionary {-}{}{}STRING@{RC\_\discretionary {-}{}{}FILEVERSION\_\discretionary {-}{}{}STRING}!version.h@{version.h}|hyperpage}{25}
+\indexentry{/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/xml.hpp@{/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/xml.hpp}|hyperpage}{26}

@@ -411,7 +411,7 @@ void parser::odbieranie_plikow(xmlpp::TextReader &reader, std::string uzytkownik
                     std::string temp="";
                     info("plik otwarty do zapisu");
                     int size=0;
-                    int size_old=0;
+                    //int size_old=0;
                     /*do
                     {
                         size_old=size;
