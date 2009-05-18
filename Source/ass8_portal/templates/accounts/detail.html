@@ -24,6 +24,7 @@ div.content .value
     {%ifequal requestKonto.user.username viewKonto.user.username%}
     <a href="/accounts/edit/{{requestKonto.user.username}}/">Modyfikuj profil</a><br />
     <a href="/friends/index/{{requestKonto.user.username}}/">Zarzadzaj znajomymi</a><br />
+    <a href="/files/details/{{requestKonto.user.username}}/">Zarzadzaj plikami</a><br />
     <a href="/accounts/delete/{{requestKonto.user.username}}/">Usuń profil</a><br />
     <br />
     {%else%}
