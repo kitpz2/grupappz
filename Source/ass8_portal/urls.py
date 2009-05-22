@@ -14,5 +14,5 @@ urlpatterns = patterns('',
     (r'^admin/(.*)', admin.site.root),
     (r'^accounts/', include('accounts.urls')),
     (r'^friends/',include('friends.urls')),
-    (r'^files/',include('friends.urls')),
+    (r'^files/',include('files.urls')),
 )
