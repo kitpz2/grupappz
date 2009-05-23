@@ -7,5 +7,4 @@ urlpatterns = patterns('files.views',
     url(r'chmod/(?P<id>[\d]+)/private/$','to_private'),
     url(r'chmod/(?P<id>[\d]+)/public/$','to_public'),
     url(r'delete/(?P<id>[\d]+)/$','delete'),
-    url(r'latest/$','latest'),
 )

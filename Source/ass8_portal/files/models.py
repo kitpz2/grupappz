@@ -12,4 +12,4 @@ class Plik(models.Model):
     hashValue = models.CharField(max_length=50)
 
     def __unicode__(self):
-        return self.sciezka+" - user:"+ self.konto
+        return self.sciezka.split('/')[-1]

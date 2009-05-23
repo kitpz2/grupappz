@@ -30,9 +30,11 @@ div.content .value
     {%else%}
         {%if add%}    
             <a href="/friends/add/{{viewKonto.user.username}}/">Dodaj do znajomych</a><br />
+            <a href="/files/details/{{viewKonto.user.username}}/">Obejrzyj pliki użytkownika</a><br />
             <br />
         {%else%}
             <a href="/friends/delete/{{viewKonto.user.username}}/">Usuń ze znajomych</a><br />
+            <a href="/files/details/{{viewKonto.user.username}}/">Obejrzyj pliki użytkownika</a><br />
             <br />
         {%endif%}
     {%endifequal%}

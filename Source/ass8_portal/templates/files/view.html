@@ -1,0 +1,47 @@
+{%extends "base.html"%}
+{%block title%} {{block.super}} - Lista plików: {{viewKonto.user.username}} {%endblock%}
+
+{%block main_content%}
+    {% ifequal chmod 0%}        
+        <a href="/files/edit/{{viewKonto.user.username}}/">Zmień prawa dostępu plików</a><br />    
+    {%endifequal %}
+    
+    
+    {% ifequal chmod 0%}        
+    {%if own %}
+    <h1>Pliki osobiste:</h1>
+        <ul>
+        {%for p in own%}
+            <li>{{p}}</li>
+        {%endfor%} 
+        </ul>
+    {%else%}
+        <h1>Brak plików osobistych.</h1>
+    {%endif%}
+    {%endifequal%}
+        
+    {% ifequal chmod 1%}        
+        {%if private %}
+        <h1>Pliki prywatne:</h1>
+            <ul>
+            {%for p in private%}
+                <li>{{p}}</li>
+            {%endfor%} 
+            </ul>
+        {%else%}
+            <h1>Brak plików prywatnych.</h1>
+        {%endif%}
+    {%endifequal%}
+    
+    {%if public %}
+    <h1>Pliki publiczne:</h1>
+        <ul>
+        {%for p in public%}
+            <li>{{p}}</li>
+        {%endfor%} 
+        </ul>
+    {%else%}
+        <h1>Brak plików publicznych.</h1>
+    {%endif%}
+    
+{%endblock%}

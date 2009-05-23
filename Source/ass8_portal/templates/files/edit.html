@@ -1,0 +1,49 @@
+{%extends "base.html"%}
+{%block title%} {{block.super}} - Edycja plików: {{viewKonto.user.username}} {%endblock%}
+
+{%block main_content%}
+    {%if public %}
+    <h1>Pliki publiczne:</h1>
+        <ul>
+        {%for p in public%}
+            <li>{{p}} - Zmień na: <br />
+                <a href="/files/chmod/{{p.id}}/own/">osobisty</a><br />
+                <a href="/files/chmod/{{p.id}}/private/">prywatny</a><br />                                  
+                <a href="/files/delete/{{p.id}}/">usuń</a>
+            </li>
+        {%endfor%} 
+        </ul>
+    {%else%}
+        <h1>Brak plików publicznych.</h1>
+    {%endif%}
+    
+    {%if private %}
+    <h1>Pliki prywatne:</h1>
+        <ul>
+        {%for p in private%}
+            <li>{{p}} - Zmień na: <br />
+                <a href="/files/chmod/{{p.id}}/own/">osobisty</a><br />
+                <a href="/files/chmod/{{p.id}}/public/">publiczny</a><br />                                  
+                <a href="/files/delete/{{p.id}}/">usuń</a>                                  
+            </li>
+        {%endfor%} 
+        </ul>
+    {%else%}
+        <h1>Brak plików prywatnych.</h1>
+    {%endif%}
+    
+    {%if own %}
+    <h1>Pliki osobiste:</h1>
+        <ul>
+        {%for p in own%}
+            <li>{{p}} - Zmień na: <br /> 
+                <a href="/files/chmod/{{p.id}}/private/">prywatny</a><br />                                  
+                <a href="/files/chmod/{{p.id}}/public/">publiczny</a><br />                                  
+                <a href="/files/delete/{{p.id}}/">usuń</a>
+            </li>
+        {%endfor%} 
+        </ul>
+    {%else%}
+        <h1>Brak plików osobistych.</h1>
+    {%endif%}
+{%endblock%}
