@@ -1,4 +1,11 @@
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
+"""
+Plik odpowiedzialny za zarządzanie projektem. Udostępnia podstawową funkcjonalność związaną z
+    - generowaniem zapytan SQL na podstawie modeli w bazie
+    - uruchamianie prostego servera na potrzeby testów projektu
+    - generowanie nowych aplikacji w projekcie, oraz nowego projektu.
+"""
 from django.core.management import execute_manager
 try:
     import settings # Assumed to be in the same directory.

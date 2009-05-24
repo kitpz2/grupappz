@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>ass8_portal.friends.views</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="ass8_portal-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="ass8_portal-module.html">Package&nbsp;ass8_portal</a> ::
+        <a href="ass8_portal.friends-module.html">Package&nbsp;friends</a> ::
+        Module&nbsp;views
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="ass8_portal.friends.views-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="ass8_portal.friends.views-module.html">Module ass8_portal.friends.views</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno">  1</tt>  <tt class="py-line"><tt class="py-comment">#!/usr/bin/env python</tt> </tt>
+<a name="L2"></a><tt class="py-lineno">  2</tt>  <tt class="py-line"><tt class="py-comment"># -*- coding: utf-8 -*-</tt> </tt>
+<a name="L3"></a><tt class="py-lineno">  3</tt>  <tt class="py-line"><tt class="py-docstring">"""</tt> </tt>
+<a name="L4"></a><tt class="py-lineno">  4</tt>  <tt class="py-line"><tt class="py-docstring">Plik odpowiedzialny za definicje widok&#243;w aplikacji 'files'. Aplikacja ta z kolei odpowiada </tt> </tt>
+<a name="L5"></a><tt class="py-lineno">  5</tt>  <tt class="py-line"><tt class="py-docstring">za funkcjonalo&#347;&#263; zwi&#261;zan&#261; z zarz&#261;dzaniem plikami u&#380;ytkownika.</tt> </tt>
+<a name="L6"></a><tt class="py-lineno">  6</tt>  <tt class="py-line"><tt class="py-docstring">    -  FRIEND_FUNCTION_MAP - to s&#322;ownik zawieraj&#261;cy funkcje pobieraj&#261;ce odpowienie typy znajomo&#347;ci.</tt> </tt>
+<a name="L7"></a><tt class="py-lineno">  7</tt>  <tt class="py-line"><tt class="py-docstring">"""</tt> </tt>
+<a name="L8"></a><tt class="py-lineno">  8</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">django</tt><tt class="py-op">.</tt><tt class="py-name">shortcuts</tt> <tt class="py-keyword">import</tt> <tt class="py-name">render_to_response</tt><tt class="py-op">,</tt> <tt class="py-name">get_object_or_404</tt> </tt>
+<a name="L9"></a><tt class="py-lineno">  9</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">django</tt><tt class="py-op">.</tt><tt class="py-name">http</tt> <tt class="py-keyword">import</tt> <tt class="py-name">Http404</tt><tt class="py-op">,</tt> <tt class="py-name">HttpResponseRedirect</tt> </tt>
+<a name="L10"></a><tt class="py-lineno"> 10</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">django</tt><tt class="py-op">.</tt><tt class="py-name">contrib</tt><tt class="py-op">.</tt><tt class="py-name">auth</tt><tt class="py-op">.</tt><tt id="link-0" class="py-name" targets="Module ass8_portal.accounts.models=ass8_portal.accounts.models-module.html,Module ass8_portal.files.models=ass8_portal.files.models-module.html,Module ass8_portal.friends.models=ass8_portal.friends.models-module.html"><a title="ass8_portal.accounts.models
+ass8_portal.files.models
+ass8_portal.friends.models" class="py-name" href="#" onclick="return doclink('link-0', 'models', 'link-0');">models</a></tt> <tt class="py-keyword">import</tt> <tt class="py-name">User</tt> </tt>
+<a name="L11"></a><tt class="py-lineno"> 11</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">django</tt><tt class="py-op">.</tt><tt class="py-name">contrib</tt><tt class="py-op">.</tt><tt class="py-name">auth</tt><tt class="py-op">.</tt><tt class="py-name">decorators</tt> <tt class="py-keyword">import</tt> <tt class="py-name">login_required</tt> </tt>
+<a name="L12"></a><tt class="py-lineno"> 12</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">django</tt><tt class="py-op">.</tt><tt class="py-name">template</tt> <tt class="py-keyword">import</tt> <tt class="py-name">RequestContext</tt> </tt>
+<a name="L13"></a><tt class="py-lineno"> 13</tt>  <tt class="py-line"> </tt>
+<a name="L14"></a><tt class="py-lineno"> 14</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-1" class="py-name" targets="Package ass8_portal.friends=ass8_portal.friends-module.html"><a title="ass8_portal.friends" class="py-name" href="#" onclick="return doclink('link-1', 'friends', 'link-1');">friends</a></tt><tt class="py-op">.</tt><tt id="link-2" class="py-name" targets="Module ass8_portal.friends.helpers=ass8_portal.friends.helpers-module.html"><a title="ass8_portal.friends.helpers" class="py-name" href="#" onclick="return doclink('link-2', 'helpers', 'link-2');">helpers</a></tt> <tt class="py-keyword">import</tt> <tt class="py-op">*</tt> </tt>
+<a name="L15"></a><tt class="py-lineno"> 15</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-3" class="py-name"><a title="ass8_portal.friends" class="py-name" href="#" onclick="return doclink('link-3', 'friends', 'link-1');">friends</a></tt><tt class="py-op">.</tt><tt id="link-4" class="py-name"><a title="ass8_portal.accounts.models
+ass8_portal.files.models
+ass8_portal.friends.models" class="py-name" href="#" onclick="return doclink('link-4', 'models', 'link-0');">models</a></tt> <tt class="py-keyword">import</tt> <tt id="link-5" class="py-name" targets="Class ass8_portal.friends.models.UserLink=ass8_portal.friends.models.UserLink-class.html"><a title="ass8_portal.friends.models.UserLink" class="py-name" href="#" onclick="return doclink('link-5', 'UserLink', 'link-5');">UserLink</a></tt> </tt>
+<a name="L16"></a><tt class="py-lineno"> 16</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-6" class="py-name" targets="Package ass8_portal.accounts=ass8_portal.accounts-module.html"><a title="ass8_portal.accounts" class="py-name" href="#" onclick="return doclink('link-6', 'accounts', 'link-6');">accounts</a></tt><tt class="py-op">.</tt><tt id="link-7" class="py-name"><a title="ass8_portal.accounts.models
+ass8_portal.files.models
+ass8_portal.friends.models" class="py-name" href="#" onclick="return doclink('link-7', 'models', 'link-0');">models</a></tt> <tt class="py-keyword">import</tt> <tt id="link-8" class="py-name" targets="Class ass8_portal.accounts.models.Konto=ass8_portal.accounts.models.Konto-class.html"><a title="ass8_portal.accounts.models.Konto" class="py-name" href="#" onclick="return doclink('link-8', 'Konto', 'link-8');">Konto</a></tt> </tt>
+<a name="L17"></a><tt class="py-lineno"> 17</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-9" class="py-name"><a title="ass8_portal.accounts" class="py-name" href="#" onclick="return doclink('link-9', 'accounts', 'link-6');">accounts</a></tt><tt class="py-op">.</tt><tt id="link-10" class="py-name" targets="Module ass8_portal.accounts.views=ass8_portal.accounts.views-module.html,Module ass8_portal.friends.views=ass8_portal.friends.views-module.html"><a title="ass8_portal.accounts.views
+ass8_portal.friends.views" class="py-name" href="#" onclick="return doclink('link-10', 'views', 'link-10');">views</a></tt> <tt class="py-keyword">import</tt> <tt id="link-11" class="py-name" targets="Class ass8_portal.accounts.views.Message=ass8_portal.accounts.views.Message-class.html"><a title="ass8_portal.accounts.views.Message" class="py-name" href="#" onclick="return doclink('link-11', 'Message', 'link-11');">Message</a></tt> </tt>
+<a name="L18"></a><tt class="py-lineno"> 18</tt>  <tt class="py-line"> </tt>
+<a name="L19"></a><tt class="py-lineno"> 19</tt>  <tt class="py-line"><tt id="link-12" class="py-name" targets="Variable ass8_portal.friends.views.FRIEND_FUNCTION_MAP=ass8_portal.friends.views-module.html#FRIEND_FUNCTION_MAP"><a title="ass8_portal.friends.views.FRIEND_FUNCTION_MAP" class="py-name" href="#" onclick="return doclink('link-12', 'FRIEND_FUNCTION_MAP', 'link-12');">FRIEND_FUNCTION_MAP</a></tt> <tt class="py-op">=</tt> <tt class="py-op">{</tt> </tt>
+<a name="L20"></a><tt class="py-lineno"> 20</tt>  <tt class="py-line">    <tt class="py-string">'followers'</tt><tt class="py-op">:</tt><tt id="link-13" class="py-name" targets="Function ass8_portal.friends.helpers.get_my_followers()=ass8_portal.friends.helpers-module.html#get_my_followers"><a title="ass8_portal.friends.helpers.get_my_followers" class="py-name" href="#" onclick="return doclink('link-13', 'get_my_followers', 'link-13');">get_my_followers</a></tt><tt class="py-op">,</tt> </tt>
+<a name="L21"></a><tt class="py-lineno"> 21</tt>  <tt class="py-line">    <tt class="py-string">'following'</tt><tt class="py-op">:</tt><tt id="link-14" class="py-name" targets="Function ass8_portal.friends.helpers.get_my_following()=ass8_portal.friends.helpers-module.html#get_my_following"><a title="ass8_portal.friends.helpers.get_my_following" class="py-name" href="#" onclick="return doclink('link-14', 'get_my_following', 'link-14');">get_my_following</a></tt><tt class="py-op">,</tt> </tt>
+<a name="L22"></a><tt class="py-lineno"> 22</tt>  <tt class="py-line">    <tt class="py-string">'mutual'</tt><tt class="py-op">:</tt><tt id="link-15" class="py-name" targets="Function ass8_portal.friends.helpers.get_mutual()=ass8_portal.friends.helpers-module.html#get_mutual"><a title="ass8_portal.friends.helpers.get_mutual" class="py-name" href="#" onclick="return doclink('link-15', 'get_mutual', 'link-15');">get_mutual</a></tt><tt class="py-op">,</tt> </tt>
+<a name="L23"></a><tt class="py-lineno"> 23</tt>  <tt class="py-line"><tt class="py-op">}</tt> </tt>
+<a name="friends_manage"></a><div id="friends_manage-def"><a name="L24"></a><tt class="py-lineno"> 24</tt>  <tt class="py-line"> </tt>
+<a name="L25"></a><tt class="py-lineno"> 25</tt>  <tt class="py-line"><tt class="py-decorator">@</tt><tt class="py-decorator">login_required</tt> </tt>
+<a name="L26"></a><tt class="py-lineno"> 26</tt> <a class="py-toggle" href="#" id="friends_manage-toggle" onclick="return toggle('friends_manage');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="ass8_portal.friends.views-module.html#friends_manage">friends_manage</a><tt class="py-op">(</tt><tt class="py-param">request</tt><tt class="py-op">,</tt> <tt class="py-param">username</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="friends_manage-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="friends_manage-expanded"><a name="L27"></a><tt class="py-lineno"> 27</tt>  <tt class="py-line">    <tt class="py-docstring">"""</tt> </tt>
+<a name="L28"></a><tt class="py-lineno"> 28</tt>  <tt class="py-line"><tt class="py-docstring">    Widok odpowiedzialny za zarz&#261;dzanie list&#261; znajomych u&#380;ytkownika. Aby funkcja zosta&#322;a wywo&#322;ana </tt> </tt>
+<a name="L29"></a><tt class="py-lineno"> 29</tt>  <tt class="py-line"><tt class="py-docstring">    u&#380;ytkownik musi by&#263; zalogowany. Je&#347;li nie jest - zostanie przekierowany na stron&#281; logowania, </tt> </tt>
+<a name="L30"></a><tt class="py-lineno"> 30</tt>  <tt class="py-line"><tt class="py-docstring">    a po poprawnym logowaniu ponownie na stron&#281; zarz&#261;dzaj&#261;c&#261; list&#261;. </tt> </tt>
+<a name="L31"></a><tt class="py-lineno"> 31</tt>  <tt class="py-line"><tt class="py-docstring">    </tt> </tt>
+<a name="L32"></a><tt class="py-lineno"> 32</tt>  <tt class="py-line"><tt class="py-docstring">    </tt> </tt>
+<a name="L33"></a><tt class="py-lineno"> 33</tt>  <tt class="py-line"><tt class="py-docstring">    @param request: &#380;&#261;danie przegl&#261;darki</tt> </tt>
+<a name="L34"></a><tt class="py-lineno"> 34</tt>  <tt class="py-line"><tt class="py-docstring">    @param username: login u&#380;ytkownika kt&#243;rego list&#261; chcemy zarz&#261;dza&#263;</tt> </tt>
+<a name="L35"></a><tt class="py-lineno"> 35</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L36"></a><tt class="py-lineno"> 36</tt>  <tt class="py-line">    <tt class="py-name">requestKonto</tt> <tt class="py-op">=</tt> <tt id="link-16" class="py-name"><a title="ass8_portal.accounts.models.Konto" class="py-name" href="#" onclick="return doclink('link-16', 'Konto', 'link-8');">Konto</a></tt><tt class="py-op">.</tt><tt class="py-name">objects</tt><tt class="py-op">.</tt><tt class="py-name">get</tt><tt class="py-op">(</tt><tt id="link-17" class="py-name" targets="Variable ass8_portal.accounts.models.Konto.user=ass8_portal.accounts.models.Konto-class.html#user"><a title="ass8_portal.accounts.models.Konto.user" class="py-name" href="#" onclick="return doclink('link-17', 'user', 'link-17');">user</a></tt> <tt class="py-op">=</tt> <tt class="py-name">request</tt><tt class="py-op">.</tt><tt id="link-18" class="py-name"><a title="ass8_portal.accounts.models.Konto.user" class="py-name" href="#" onclick="return doclink('link-18', 'user', 'link-17');">user</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L37"></a><tt class="py-lineno"> 37</tt>  <tt class="py-line">    <tt class="py-name">viewUser</tt> <tt class="py-op">=</tt> <tt class="py-name">get_object_or_404</tt><tt class="py-op">(</tt><tt class="py-name">User</tt><tt class="py-op">,</tt> <tt class="py-name">username</tt> <tt class="py-op">=</tt> <tt class="py-name">username</tt><tt class="py-op">)</tt> </tt>
+<a name="L38"></a><tt class="py-lineno"> 38</tt>  <tt class="py-line">    <tt class="py-name">viewKonto</tt> <tt class="py-op">=</tt> <tt id="link-19" class="py-name"><a title="ass8_portal.accounts.models.Konto" class="py-name" href="#" onclick="return doclink('link-19', 'Konto', 'link-8');">Konto</a></tt><tt class="py-op">.</tt><tt class="py-name">objects</tt><tt class="py-op">.</tt><tt class="py-name">get</tt><tt class="py-op">(</tt><tt id="link-20" class="py-name"><a title="ass8_portal.accounts.models.Konto.user" class="py-name" href="#" onclick="return doclink('link-20', 'user', 'link-17');">user</a></tt> <tt class="py-op">=</tt> <tt class="py-name">viewUser</tt><tt class="py-op">)</tt> </tt>
+<a name="L39"></a><tt class="py-lineno"> 39</tt>  <tt class="py-line">    <tt class="py-name">followers</tt> <tt class="py-op">=</tt> <tt id="link-21" class="py-name"><a title="ass8_portal.friends.views.FRIEND_FUNCTION_MAP" class="py-name" href="#" onclick="return doclink('link-21', 'FRIEND_FUNCTION_MAP', 'link-12');">FRIEND_FUNCTION_MAP</a></tt><tt class="py-op">[</tt><tt class="py-string">'followers'</tt><tt class="py-op">]</tt><tt class="py-op">(</tt><tt class="py-name">viewKonto</tt><tt class="py-op">)</tt> </tt>
+<a name="L40"></a><tt class="py-lineno"> 40</tt>  <tt class="py-line">    <tt class="py-name">following</tt> <tt class="py-op">=</tt> <tt id="link-22" class="py-name"><a title="ass8_portal.friends.views.FRIEND_FUNCTION_MAP" class="py-name" href="#" onclick="return doclink('link-22', 'FRIEND_FUNCTION_MAP', 'link-12');">FRIEND_FUNCTION_MAP</a></tt><tt class="py-op">[</tt><tt class="py-string">'following'</tt><tt class="py-op">]</tt><tt class="py-op">(</tt><tt class="py-name">viewKonto</tt><tt class="py-op">)</tt> </tt>
+<a name="L41"></a><tt class="py-lineno"> 41</tt>  <tt class="py-line">    <tt class="py-name">mutual</tt> <tt class="py-op">=</tt> <tt id="link-23" class="py-name"><a title="ass8_portal.friends.views.FRIEND_FUNCTION_MAP" class="py-name" href="#" onclick="return doclink('link-23', 'FRIEND_FUNCTION_MAP', 'link-12');">FRIEND_FUNCTION_MAP</a></tt><tt class="py-op">[</tt><tt class="py-string">'mutual'</tt><tt class="py-op">]</tt><tt class="py-op">(</tt><tt class="py-name">viewKonto</tt><tt class="py-op">)</tt> </tt>
+<a name="L42"></a><tt class="py-lineno"> 42</tt>  <tt class="py-line">    <tt class="py-name">context</tt> <tt class="py-op">=</tt> <tt class="py-op">{</tt> </tt>
+<a name="L43"></a><tt class="py-lineno"> 43</tt>  <tt class="py-line">            <tt class="py-string">'followers'</tt><tt class="py-op">:</tt><tt class="py-name">followers</tt><tt class="py-op">[</tt><tt class="py-op">:</tt><tt class="py-number">10</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> </tt>
+<a name="L44"></a><tt class="py-lineno"> 44</tt>  <tt class="py-line">            <tt class="py-string">'following'</tt><tt class="py-op">:</tt><tt class="py-name">following</tt><tt class="py-op">[</tt><tt class="py-op">:</tt><tt class="py-number">10</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> </tt>
+<a name="L45"></a><tt class="py-lineno"> 45</tt>  <tt class="py-line">            <tt class="py-string">'mutual'</tt><tt class="py-op">:</tt><tt class="py-name">mutual</tt><tt class="py-op">[</tt><tt class="py-op">:</tt><tt class="py-number">10</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> </tt>
+<a name="L46"></a><tt class="py-lineno"> 46</tt>  <tt class="py-line">            <tt class="py-string">'requestKonto'</tt><tt class="py-op">:</tt><tt class="py-name">requestKonto</tt><tt class="py-op">,</tt> </tt>
+<a name="L47"></a><tt class="py-lineno"> 47</tt>  <tt class="py-line">            <tt class="py-string">'viewKonto'</tt><tt class="py-op">:</tt><tt class="py-name">viewKonto</tt> </tt>
+<a name="L48"></a><tt class="py-lineno"> 48</tt>  <tt class="py-line">    <tt class="py-op">}</tt> </tt>
+<a name="L49"></a><tt class="py-lineno"> 49</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">render_to_response</tt><tt class="py-op">(</tt><tt class="py-string">"friends/index.html"</tt><tt class="py-op">,</tt> <tt class="py-name">context</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L50"></a><tt class="py-lineno"> 50</tt>  <tt class="py-line"><tt class="py-decorator">@</tt><tt class="py-decorator">login_required</tt> </tt>
+<a name="friend_list"></a><div id="friend_list-def"><a name="L51"></a><tt class="py-lineno"> 51</tt> <a class="py-toggle" href="#" id="friend_list-toggle" onclick="return toggle('friend_list');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="ass8_portal.friends.views-module.html#friend_list">friend_list</a><tt class="py-op">(</tt><tt class="py-param">request</tt><tt class="py-op">,</tt> <tt class="py-param">list_type</tt><tt class="py-op">,</tt> <tt class="py-param">username</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="friend_list-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="friend_list-expanded"><a name="L52"></a><tt class="py-lineno"> 52</tt>  <tt class="py-line">    <tt class="py-docstring">"""</tt> </tt>
+<a name="L53"></a><tt class="py-lineno"> 53</tt>  <tt class="py-line"><tt class="py-docstring">    Widok odpowiedzialny za wy&#347;wietlenie znajomo&#347;ci danego typu. Aby funkcja zosta&#322;a wywo&#322;ana </tt> </tt>
+<a name="L54"></a><tt class="py-lineno"> 54</tt>  <tt class="py-line"><tt class="py-docstring">    u&#380;ytkownik musi by&#263; zalogowany. Je&#347;li nie jest - zostanie przekierowany na stron&#281; logowania, </tt> </tt>
+<a name="L55"></a><tt class="py-lineno"> 55</tt>  <tt class="py-line"><tt class="py-docstring">    a po poprawnym logowaniu ponownie na stron&#281; wy&#347;wietlaj&#261;c&#261; list&#281;.     </tt> </tt>
+<a name="L56"></a><tt class="py-lineno"> 56</tt>  <tt class="py-line"><tt class="py-docstring">    </tt> </tt>
+<a name="L57"></a><tt class="py-lineno"> 57</tt>  <tt class="py-line"><tt class="py-docstring">    @param request: &#380;&#261;danie przegl&#261;darki</tt> </tt>
+<a name="L58"></a><tt class="py-lineno"> 58</tt>  <tt class="py-line"><tt class="py-docstring">    @param list_type: typ znajomo&#347;ci kt&#243;re chcemy wy&#347;wietli&#263;</tt> </tt>
+<a name="L59"></a><tt class="py-lineno"> 59</tt>  <tt class="py-line"><tt class="py-docstring">    @param username: login u&#380;ytkownika kt&#243;rego list&#261; chcemy zarz&#261;dza&#263;</tt> </tt>
+<a name="L60"></a><tt class="py-lineno"> 60</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L61"></a><tt class="py-lineno"> 61</tt>  <tt class="py-line">    <tt class="py-name">requestKonto</tt> <tt class="py-op">=</tt> <tt id="link-24" class="py-name"><a title="ass8_portal.accounts.models.Konto" class="py-name" href="#" onclick="return doclink('link-24', 'Konto', 'link-8');">Konto</a></tt><tt class="py-op">.</tt><tt class="py-name">objects</tt><tt class="py-op">.</tt><tt class="py-name">get</tt><tt class="py-op">(</tt><tt id="link-25" class="py-name"><a title="ass8_portal.accounts.models.Konto.user" class="py-name" href="#" onclick="return doclink('link-25', 'user', 'link-17');">user</a></tt> <tt class="py-op">=</tt> <tt class="py-name">request</tt><tt class="py-op">.</tt><tt id="link-26" class="py-name"><a title="ass8_portal.accounts.models.Konto.user" class="py-name" href="#" onclick="return doclink('link-26', 'user', 'link-17');">user</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L62"></a><tt class="py-lineno"> 62</tt>  <tt class="py-line">    <tt class="py-name">viewUser</tt> <tt class="py-op">=</tt> <tt class="py-name">get_object_or_404</tt><tt class="py-op">(</tt><tt class="py-name">User</tt><tt class="py-op">,</tt> <tt class="py-name">username</tt> <tt class="py-op">=</tt> <tt class="py-name">username</tt><tt class="py-op">)</tt> </tt>
+<a name="L63"></a><tt class="py-lineno"> 63</tt>  <tt class="py-line">    <tt class="py-name">viewKonto</tt> <tt class="py-op">=</tt> <tt id="link-27" class="py-name"><a title="ass8_portal.accounts.models.Konto" class="py-name" href="#" onclick="return doclink('link-27', 'Konto', 'link-8');">Konto</a></tt><tt class="py-op">.</tt><tt class="py-name">objects</tt><tt class="py-op">.</tt><tt class="py-name">get</tt><tt class="py-op">(</tt><tt id="link-28" class="py-name"><a title="ass8_portal.accounts.models.Konto.user" class="py-name" href="#" onclick="return doclink('link-28', 'user', 'link-17');">user</a></tt><tt class="py-op">=</tt><tt class="py-name">viewUser</tt><tt class="py-op">)</tt> </tt>
+<a name="L64"></a><tt class="py-lineno"> 64</tt>  <tt class="py-line">    <tt class="py-name">context</tt> <tt class="py-op">=</tt> <tt class="py-op">{</tt> </tt>
+<a name="L65"></a><tt class="py-lineno"> 65</tt>  <tt class="py-line">        <tt class="py-string">'list_type'</tt><tt class="py-op">:</tt><tt class="py-name">list_type</tt><tt class="py-op">,</tt> </tt>
+<a name="L66"></a><tt class="py-lineno"> 66</tt>  <tt class="py-line">        <tt class="py-string">'friends'</tt><tt class="py-op">:</tt><tt id="link-29" class="py-name"><a title="ass8_portal.friends.views.FRIEND_FUNCTION_MAP" class="py-name" href="#" onclick="return doclink('link-29', 'FRIEND_FUNCTION_MAP', 'link-12');">FRIEND_FUNCTION_MAP</a></tt><tt class="py-op">[</tt><tt class="py-name">list_type</tt><tt class="py-op">]</tt><tt class="py-op">(</tt><tt class="py-name">viewKonto</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> </tt>
+<a name="L67"></a><tt class="py-lineno"> 67</tt>  <tt class="py-line">        <tt class="py-string">'requestKonto'</tt> <tt class="py-op">:</tt> <tt class="py-name">requestKonto</tt><tt class="py-op">,</tt> </tt>
+<a name="L68"></a><tt class="py-lineno"> 68</tt>  <tt class="py-line">        <tt class="py-string">'viewKonto'</tt> <tt class="py-op">:</tt> <tt class="py-name">viewKonto</tt><tt class="py-op">,</tt> </tt>
+<a name="L69"></a><tt class="py-lineno"> 69</tt>  <tt class="py-line">    <tt class="py-op">}</tt> </tt>
+<a name="L70"></a><tt class="py-lineno"> 70</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">render_to_response</tt><tt class="py-op">(</tt><tt class="py-string">"friends/list.html"</tt><tt class="py-op">,</tt> <tt class="py-name">context</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L71"></a><tt class="py-lineno"> 71</tt>  <tt class="py-line"> </tt>
+<a name="add_friend"></a><div id="add_friend-def"><a name="L72"></a><tt class="py-lineno"> 72</tt>  <tt class="py-line"><tt class="py-decorator">@</tt><tt class="py-decorator">login_required</tt> </tt>
+<a name="L73"></a><tt class="py-lineno"> 73</tt> <a class="py-toggle" href="#" id="add_friend-toggle" onclick="return toggle('add_friend');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="ass8_portal.friends.views-module.html#add_friend">add_friend</a><tt class="py-op">(</tt><tt class="py-param">request</tt><tt class="py-op">,</tt> <tt class="py-param">username</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="add_friend-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="add_friend-expanded"><a name="L74"></a><tt class="py-lineno"> 74</tt>  <tt class="py-line">    <tt class="py-docstring">"""</tt> </tt>
+<a name="L75"></a><tt class="py-lineno"> 75</tt>  <tt class="py-line"><tt class="py-docstring">    Widok odpowiedzialny za dodanie znajomego do listy. Aby funkcja zosta&#322;a wywo&#322;ana </tt> </tt>
+<a name="L76"></a><tt class="py-lineno"> 76</tt>  <tt class="py-line"><tt class="py-docstring">    u&#380;ytkownik musi by&#263; zalogowany. Je&#347;li nie jest - zostanie przekierowany na stron&#281; logowania, </tt> </tt>
+<a name="L77"></a><tt class="py-lineno"> 77</tt>  <tt class="py-line"><tt class="py-docstring">    a po poprawnym logowaniu ponownie na stron&#281; wy&#347;wietlaj&#261;c&#261; list&#281;. Sprawdzane jest czy dany u&#380;ytkownik</tt> </tt>
+<a name="L78"></a><tt class="py-lineno"> 78</tt>  <tt class="py-line"><tt class="py-docstring">    jest ju&#380; dodany do listy i je&#347;li tak to wy&#347;wietlany jest odpowiedni komunikat. R&#243;wnie&#380; w przypadku pr&#243;by</tt> </tt>
+<a name="L79"></a><tt class="py-lineno"> 79</tt>  <tt class="py-line"><tt class="py-docstring">    dodania siebie do znajomych wy&#347;wietlany jest komunikat o b&#322;&#281;dzie.</tt> </tt>
+<a name="L80"></a><tt class="py-lineno"> 80</tt>  <tt class="py-line"><tt class="py-docstring">    </tt> </tt>
+<a name="L81"></a><tt class="py-lineno"> 81</tt>  <tt class="py-line"><tt class="py-docstring">    @param request: &#380;&#261;danie przegl&#261;darki    </tt> </tt>
+<a name="L82"></a><tt class="py-lineno"> 82</tt>  <tt class="py-line"><tt class="py-docstring">    @param username: login u&#380;ytkownika kt&#243;rego list&#261; chcemy zarz&#261;dza&#263;</tt> </tt>
+<a name="L83"></a><tt class="py-lineno"> 83</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L84"></a><tt class="py-lineno"> 84</tt>  <tt class="py-line">    <tt class="py-name">requestKonto</tt> <tt class="py-op">=</tt> <tt id="link-30" class="py-name"><a title="ass8_portal.accounts.models.Konto" class="py-name" href="#" onclick="return doclink('link-30', 'Konto', 'link-8');">Konto</a></tt><tt class="py-op">.</tt><tt class="py-name">objects</tt><tt class="py-op">.</tt><tt class="py-name">get</tt><tt class="py-op">(</tt><tt id="link-31" class="py-name"><a title="ass8_portal.accounts.models.Konto.user" class="py-name" href="#" onclick="return doclink('link-31', 'user', 'link-17');">user</a></tt> <tt class="py-op">=</tt> <tt class="py-name">request</tt><tt class="py-op">.</tt><tt id="link-32" class="py-name"><a title="ass8_portal.accounts.models.Konto.user" class="py-name" href="#" onclick="return doclink('link-32', 'user', 'link-17');">user</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L85"></a><tt class="py-lineno"> 85</tt>  <tt class="py-line">    <tt class="py-name">addUser</tt> <tt class="py-op">=</tt> <tt class="py-name">get_object_or_404</tt><tt class="py-op">(</tt><tt class="py-name">User</tt><tt class="py-op">,</tt> <tt class="py-name">username</tt> <tt class="py-op">=</tt> <tt class="py-name">username</tt><tt class="py-op">)</tt> </tt>
+<a name="L86"></a><tt class="py-lineno"> 86</tt>  <tt class="py-line">    <tt class="py-name">addKonto</tt> <tt class="py-op">=</tt> <tt id="link-33" class="py-name"><a title="ass8_portal.accounts.models.Konto" class="py-name" href="#" onclick="return doclink('link-33', 'Konto', 'link-8');">Konto</a></tt><tt class="py-op">.</tt><tt class="py-name">objects</tt><tt class="py-op">.</tt><tt class="py-name">get</tt><tt class="py-op">(</tt><tt id="link-34" class="py-name"><a title="ass8_portal.accounts.models.Konto.user" class="py-name" href="#" onclick="return doclink('link-34', 'user', 'link-17');">user</a></tt> <tt class="py-op">=</tt> <tt class="py-name">addUser</tt><tt class="py-op">)</tt> </tt>
+<a name="L87"></a><tt class="py-lineno"> 87</tt>  <tt class="py-line">    <tt class="py-name">lista</tt> <tt class="py-op">=</tt> <tt id="link-35" class="py-name"><a title="ass8_portal.friends.helpers.get_my_followers" class="py-name" href="#" onclick="return doclink('link-35', 'get_my_followers', 'link-13');">get_my_followers</a></tt><tt class="py-op">(</tt><tt class="py-name">requestKonto</tt><tt class="py-op">)</tt> </tt>
+<a name="L88"></a><tt class="py-lineno"> 88</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt class="py-name">addKonto</tt> <tt class="py-keyword">in</tt> <tt class="py-name">lista</tt><tt class="py-op">:</tt> </tt>
+<a name="L89"></a><tt class="py-lineno"> 89</tt>  <tt class="py-line">        <tt class="py-name">msg</tt> <tt class="py-op">=</tt> <tt id="link-36" class="py-name"><a title="ass8_portal.accounts.views.Message" class="py-name" href="#" onclick="return doclink('link-36', 'Message', 'link-11');">Message</a></tt><tt class="py-op">(</tt><tt class="py-number">2</tt><tt class="py-op">,</tt><tt class="py-string">"Uzytkownik jest juz dodany do Twoich znajomych"</tt><tt class="py-op">)</tt> </tt>
+<a name="L90"></a><tt class="py-lineno"> 90</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">render_to_response</tt><tt class="py-op">(</tt><tt class="py-string">"accounts/detail.html"</tt><tt class="py-op">,</tt> <tt class="py-op">{</tt><tt class="py-string">"requestKonto"</tt><tt class="py-op">:</tt><tt class="py-name">requestKonto</tt><tt class="py-op">,</tt> <tt class="py-string">"viewKonto"</tt><tt class="py-op">:</tt><tt class="py-name">addKonto</tt><tt class="py-op">,</tt> <tt class="py-string">"msg"</tt><tt class="py-op">:</tt><tt class="py-name">msg</tt> <tt class="py-op">}</tt><tt class="py-op">)</tt> </tt>
+<a name="L91"></a><tt class="py-lineno"> 91</tt>  <tt class="py-line">    <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L92"></a><tt class="py-lineno"> 92</tt>  <tt class="py-line">        <tt class="py-name">link</tt> <tt class="py-op">=</tt> <tt id="link-37" class="py-name"><a title="ass8_portal.friends.models.UserLink" class="py-name" href="#" onclick="return doclink('link-37', 'UserLink', 'link-5');">UserLink</a></tt><tt class="py-op">(</tt><tt id="link-38" class="py-name" targets="Variable ass8_portal.friends.models.UserLink.from_user=ass8_portal.friends.models.UserLink-class.html#from_user"><a title="ass8_portal.friends.models.UserLink.from_user" class="py-name" href="#" onclick="return doclink('link-38', 'from_user', 'link-38');">from_user</a></tt><tt class="py-op">=</tt><tt class="py-name">requestKonto</tt><tt class="py-op">,</tt><tt id="link-39" class="py-name" targets="Variable ass8_portal.friends.models.UserLink.to_user=ass8_portal.friends.models.UserLink-class.html#to_user"><a title="ass8_portal.friends.models.UserLink.to_user" class="py-name" href="#" onclick="return doclink('link-39', 'to_user', 'link-39');">to_user</a></tt><tt class="py-op">=</tt><tt class="py-name">addKonto</tt><tt class="py-op">)</tt> </tt>
+<a name="L93"></a><tt class="py-lineno"> 93</tt>  <tt class="py-line">        <tt class="py-keyword">try</tt><tt class="py-op">:</tt> </tt>
+<a name="L94"></a><tt class="py-lineno"> 94</tt>  <tt class="py-line">            <tt class="py-name">link</tt><tt class="py-op">.</tt><tt id="link-40" class="py-name" targets="Method ass8_portal.accounts.models.Konto.save()=ass8_portal.accounts.models.Konto-class.html#save,Method ass8_portal.friends.models.UserLink.save()=ass8_portal.friends.models.UserLink-class.html#save"><a title="ass8_portal.accounts.models.Konto.save
+ass8_portal.friends.models.UserLink.save" class="py-name" href="#" onclick="return doclink('link-40', 'save', 'link-40');">save</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L95"></a><tt class="py-lineno"> 95</tt>  <tt class="py-line">        <tt class="py-keyword">except</tt> <tt class="py-name">ValueError</tt><tt class="py-op">:</tt> </tt>
+<a name="L96"></a><tt class="py-lineno"> 96</tt>  <tt class="py-line">            <tt class="py-name">msg</tt> <tt class="py-op">=</tt> <tt id="link-41" class="py-name"><a title="ass8_portal.accounts.views.Message" class="py-name" href="#" onclick="return doclink('link-41', 'Message', 'link-11');">Message</a></tt><tt class="py-op">(</tt><tt class="py-number">2</tt><tt class="py-op">,</tt><tt class="py-string">"Nie mozesz dodac siebie do znajomych"</tt><tt class="py-op">)</tt> </tt>
+<a name="L97"></a><tt class="py-lineno"> 97</tt>  <tt class="py-line">            <tt class="py-keyword">return</tt> <tt class="py-name">render_to_response</tt><tt class="py-op">(</tt><tt class="py-string">"accounts/detail.html"</tt><tt class="py-op">,</tt> <tt class="py-op">{</tt> </tt>
+<a name="L98"></a><tt class="py-lineno"> 98</tt>  <tt class="py-line">            <tt class="py-string">"requestKonto"</tt><tt class="py-op">:</tt><tt class="py-name">requestKonto</tt><tt class="py-op">,</tt>  </tt>
+<a name="L99"></a><tt class="py-lineno"> 99</tt>  <tt class="py-line">            <tt class="py-string">"viewKonto"</tt><tt class="py-op">:</tt><tt class="py-name">addKonto</tt><tt class="py-op">,</tt>  </tt>
+<a name="L100"></a><tt class="py-lineno">100</tt>  <tt class="py-line">            <tt class="py-string">"msg"</tt><tt class="py-op">:</tt><tt class="py-name">msg</tt> <tt class="py-op">}</tt><tt class="py-op">)</tt> </tt>
+<a name="L101"></a><tt class="py-lineno">101</tt>  <tt class="py-line">        <tt class="py-name">msg</tt> <tt class="py-op">=</tt> <tt id="link-42" class="py-name"><a title="ass8_portal.accounts.views.Message" class="py-name" href="#" onclick="return doclink('link-42', 'Message', 'link-11');">Message</a></tt><tt class="py-op">(</tt><tt class="py-number">1</tt><tt class="py-op">,</tt><tt class="py-string">"Uzytkownik pomyslnie dodany do znajomych"</tt><tt class="py-op">)</tt> </tt>
+<a name="L102"></a><tt class="py-lineno">102</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">render_to_response</tt><tt class="py-op">(</tt><tt class="py-string">"accounts/detail.html"</tt><tt class="py-op">,</tt> <tt class="py-op">{</tt> </tt>
+<a name="L103"></a><tt class="py-lineno">103</tt>  <tt class="py-line">            <tt class="py-string">"requestKonto"</tt><tt class="py-op">:</tt><tt class="py-name">requestKonto</tt><tt class="py-op">,</tt>  </tt>
+<a name="L104"></a><tt class="py-lineno">104</tt>  <tt class="py-line">            <tt class="py-string">"viewKonto"</tt><tt class="py-op">:</tt><tt class="py-name">addKonto</tt><tt class="py-op">,</tt>  </tt>
+<a name="L105"></a><tt class="py-lineno">105</tt>  <tt class="py-line">            <tt class="py-string">"msg"</tt><tt class="py-op">:</tt><tt class="py-name">msg</tt> <tt class="py-op">}</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L106"></a><tt class="py-lineno">106</tt>  <tt class="py-line"> </tt>
+<a name="del_friend"></a><div id="del_friend-def"><a name="L107"></a><tt class="py-lineno">107</tt>  <tt class="py-line"><tt class="py-decorator">@</tt><tt class="py-decorator">login_required</tt> </tt>
+<a name="L108"></a><tt class="py-lineno">108</tt> <a class="py-toggle" href="#" id="del_friend-toggle" onclick="return toggle('del_friend');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="ass8_portal.friends.views-module.html#del_friend">del_friend</a><tt class="py-op">(</tt><tt class="py-param">request</tt><tt class="py-op">,</tt> <tt class="py-param">username</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="del_friend-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="del_friend-expanded"><a name="L109"></a><tt class="py-lineno">109</tt>  <tt class="py-line">    <tt class="py-docstring">"""</tt> </tt>
+<a name="L110"></a><tt class="py-lineno">110</tt>  <tt class="py-line"><tt class="py-docstring">    Widok odpowiedzialny za usni&#281;cie znajomego z listy. Aby funkcja zosta&#322;a wywo&#322;ana </tt> </tt>
+<a name="L111"></a><tt class="py-lineno">111</tt>  <tt class="py-line"><tt class="py-docstring">    u&#380;ytkownik musi by&#263; zalogowany. Je&#347;li nie jest - zostanie przekierowany na stron&#281; logowania, </tt> </tt>
+<a name="L112"></a><tt class="py-lineno">112</tt>  <tt class="py-line"><tt class="py-docstring">    a po poprawnym logowaniu ponownie na stron&#281; wy&#347;wietlaj&#261;c&#261; list&#281;. </tt> </tt>
+<a name="L113"></a><tt class="py-lineno">113</tt>  <tt class="py-line"><tt class="py-docstring">    Sprawdzan jest czy dany u&#380;ytkownik jest dodany do listy i je&#347;li nie to wy&#347;wietlany jest </tt> </tt>
+<a name="L114"></a><tt class="py-lineno">114</tt>  <tt class="py-line"><tt class="py-docstring">    odpowiedni komunikat. </tt> </tt>
+<a name="L115"></a><tt class="py-lineno">115</tt>  <tt class="py-line"><tt class="py-docstring">    </tt> </tt>
+<a name="L116"></a><tt class="py-lineno">116</tt>  <tt class="py-line"><tt class="py-docstring">    @param request: &#380;&#261;danie przegl&#261;darki    </tt> </tt>
+<a name="L117"></a><tt class="py-lineno">117</tt>  <tt class="py-line"><tt class="py-docstring">    @param username: login u&#380;ytkownika kt&#243;rego list&#261; chcemy zarz&#261;dza&#263;</tt> </tt>
+<a name="L118"></a><tt class="py-lineno">118</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L119"></a><tt class="py-lineno">119</tt>  <tt class="py-line">    <tt class="py-name">requestKonto</tt> <tt class="py-op">=</tt> <tt id="link-43" class="py-name"><a title="ass8_portal.accounts.models.Konto" class="py-name" href="#" onclick="return doclink('link-43', 'Konto', 'link-8');">Konto</a></tt><tt class="py-op">.</tt><tt class="py-name">objects</tt><tt class="py-op">.</tt><tt class="py-name">get</tt><tt class="py-op">(</tt><tt id="link-44" class="py-name"><a title="ass8_portal.accounts.models.Konto.user" class="py-name" href="#" onclick="return doclink('link-44', 'user', 'link-17');">user</a></tt> <tt class="py-op">=</tt> <tt class="py-name">request</tt><tt class="py-op">.</tt><tt id="link-45" class="py-name"><a title="ass8_portal.accounts.models.Konto.user" class="py-name" href="#" onclick="return doclink('link-45', 'user', 'link-17');">user</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L120"></a><tt class="py-lineno">120</tt>  <tt class="py-line">    <tt class="py-name">delUser</tt> <tt class="py-op">=</tt> <tt class="py-name">get_object_or_404</tt><tt class="py-op">(</tt><tt class="py-name">User</tt><tt class="py-op">,</tt> <tt class="py-name">username</tt> <tt class="py-op">=</tt> <tt class="py-name">username</tt><tt class="py-op">)</tt> </tt>
+<a name="L121"></a><tt class="py-lineno">121</tt>  <tt class="py-line">    <tt class="py-name">delKonto</tt> <tt class="py-op">=</tt> <tt id="link-46" class="py-name"><a title="ass8_portal.accounts.models.Konto" class="py-name" href="#" onclick="return doclink('link-46', 'Konto', 'link-8');">Konto</a></tt><tt class="py-op">.</tt><tt class="py-name">objects</tt><tt class="py-op">.</tt><tt class="py-name">get</tt><tt class="py-op">(</tt><tt id="link-47" class="py-name"><a title="ass8_portal.accounts.models.Konto.user" class="py-name" href="#" onclick="return doclink('link-47', 'user', 'link-17');">user</a></tt> <tt class="py-op">=</tt> <tt class="py-name">delUser</tt><tt class="py-op">)</tt> </tt>
+<a name="L122"></a><tt class="py-lineno">122</tt>  <tt class="py-line">    <tt class="py-keyword">try</tt><tt class="py-op">:</tt> </tt>
+<a name="L123"></a><tt class="py-lineno">123</tt>  <tt class="py-line">        <tt class="py-name">ul</tt> <tt class="py-op">=</tt> <tt id="link-48" class="py-name"><a title="ass8_portal.friends.models.UserLink" class="py-name" href="#" onclick="return doclink('link-48', 'UserLink', 'link-5');">UserLink</a></tt><tt class="py-op">.</tt><tt class="py-name">objects</tt><tt class="py-op">.</tt><tt class="py-name">get</tt><tt class="py-op">(</tt><tt id="link-49" class="py-name"><a title="ass8_portal.friends.models.UserLink.from_user" class="py-name" href="#" onclick="return doclink('link-49', 'from_user', 'link-38');">from_user</a></tt><tt class="py-op">=</tt><tt class="py-name">requestKonto</tt><tt class="py-op">,</tt>  </tt>
+<a name="L124"></a><tt class="py-lineno">124</tt>  <tt class="py-line">                <tt id="link-50" class="py-name"><a title="ass8_portal.friends.models.UserLink.to_user" class="py-name" href="#" onclick="return doclink('link-50', 'to_user', 'link-39');">to_user</a></tt><tt class="py-op">=</tt><tt class="py-name">delKonto</tt><tt class="py-op">)</tt> </tt>
+<a name="L125"></a><tt class="py-lineno">125</tt>  <tt class="py-line">    <tt class="py-keyword">except</tt> <tt id="link-51" class="py-name"><a title="ass8_portal.friends.models.UserLink" class="py-name" href="#" onclick="return doclink('link-51', 'UserLink', 'link-5');">UserLink</a></tt><tt class="py-op">.</tt><tt class="py-name">DoesNotExist</tt><tt class="py-op">:</tt> </tt>
+<a name="L126"></a><tt class="py-lineno">126</tt>  <tt class="py-line">        <tt class="py-name">msg</tt> <tt class="py-op">=</tt> <tt id="link-52" class="py-name"><a title="ass8_portal.accounts.views.Message" class="py-name" href="#" onclick="return doclink('link-52', 'Message', 'link-11');">Message</a></tt><tt class="py-op">(</tt><tt class="py-number">1</tt><tt class="py-op">,</tt><tt class="py-string">"Nie mozesz usunac tego uzytkownika."</tt><tt class="py-op">)</tt> </tt>
+<a name="L127"></a><tt class="py-lineno">127</tt>  <tt class="py-line">        <tt class="py-name">followers</tt> <tt class="py-op">=</tt> <tt id="link-53" class="py-name"><a title="ass8_portal.friends.views.FRIEND_FUNCTION_MAP" class="py-name" href="#" onclick="return doclink('link-53', 'FRIEND_FUNCTION_MAP', 'link-12');">FRIEND_FUNCTION_MAP</a></tt><tt class="py-op">[</tt><tt class="py-string">'followers'</tt><tt class="py-op">]</tt><tt class="py-op">(</tt><tt class="py-name">requestKonto</tt><tt class="py-op">)</tt> </tt>
+<a name="L128"></a><tt class="py-lineno">128</tt>  <tt class="py-line">        <tt class="py-name">following</tt> <tt class="py-op">=</tt> <tt id="link-54" class="py-name"><a title="ass8_portal.friends.views.FRIEND_FUNCTION_MAP" class="py-name" href="#" onclick="return doclink('link-54', 'FRIEND_FUNCTION_MAP', 'link-12');">FRIEND_FUNCTION_MAP</a></tt><tt class="py-op">[</tt><tt class="py-string">'following'</tt><tt class="py-op">]</tt><tt class="py-op">(</tt><tt class="py-name">requestKonto</tt><tt class="py-op">)</tt> </tt>
+<a name="L129"></a><tt class="py-lineno">129</tt>  <tt class="py-line">        <tt class="py-name">mutual</tt> <tt class="py-op">=</tt> <tt id="link-55" class="py-name"><a title="ass8_portal.friends.views.FRIEND_FUNCTION_MAP" class="py-name" href="#" onclick="return doclink('link-55', 'FRIEND_FUNCTION_MAP', 'link-12');">FRIEND_FUNCTION_MAP</a></tt><tt class="py-op">[</tt><tt class="py-string">'mutual'</tt><tt class="py-op">]</tt><tt class="py-op">(</tt><tt class="py-name">requestKonto</tt><tt class="py-op">)</tt> </tt>
+<a name="L130"></a><tt class="py-lineno">130</tt>  <tt class="py-line">        <tt class="py-name">context</tt> <tt class="py-op">=</tt> <tt class="py-op">{</tt> </tt>
+<a name="L131"></a><tt class="py-lineno">131</tt>  <tt class="py-line">            <tt class="py-string">'msg'</tt><tt class="py-op">:</tt><tt class="py-name">msg</tt><tt class="py-op">,</tt> </tt>
+<a name="L132"></a><tt class="py-lineno">132</tt>  <tt class="py-line">            <tt class="py-string">'followers'</tt><tt class="py-op">:</tt><tt class="py-name">followers</tt><tt class="py-op">[</tt><tt class="py-op">:</tt><tt class="py-number">10</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> </tt>
+<a name="L133"></a><tt class="py-lineno">133</tt>  <tt class="py-line">            <tt class="py-string">'following'</tt><tt class="py-op">:</tt><tt class="py-name">following</tt><tt class="py-op">[</tt><tt class="py-op">:</tt><tt class="py-number">10</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> </tt>
+<a name="L134"></a><tt class="py-lineno">134</tt>  <tt class="py-line">            <tt class="py-string">'mutual'</tt><tt class="py-op">:</tt><tt class="py-name">mutual</tt><tt class="py-op">[</tt><tt class="py-op">:</tt><tt class="py-number">10</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> </tt>
+<a name="L135"></a><tt class="py-lineno">135</tt>  <tt class="py-line">            <tt class="py-string">'requestKonto'</tt><tt class="py-op">:</tt><tt class="py-name">requestKonto</tt><tt class="py-op">,</tt> </tt>
+<a name="L136"></a><tt class="py-lineno">136</tt>  <tt class="py-line">            <tt class="py-string">'viewKonto'</tt><tt class="py-op">:</tt><tt class="py-name">requestKonto</tt> </tt>
+<a name="L137"></a><tt class="py-lineno">137</tt>  <tt class="py-line">            <tt class="py-op">}</tt> </tt>
+<a name="L138"></a><tt class="py-lineno">138</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">render_to_response</tt><tt class="py-op">(</tt><tt class="py-string">"friends/index.html"</tt><tt class="py-op">,</tt> <tt class="py-name">context</tt><tt class="py-op">)</tt> </tt>
+<a name="L139"></a><tt class="py-lineno">139</tt>  <tt class="py-line">    <tt class="py-name">ul</tt><tt class="py-op">.</tt><tt class="py-name">delete</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L140"></a><tt class="py-lineno">140</tt>  <tt class="py-line">    <tt class="py-name">msg</tt> <tt class="py-op">=</tt> <tt id="link-56" class="py-name"><a title="ass8_portal.accounts.views.Message" class="py-name" href="#" onclick="return doclink('link-56', 'Message', 'link-11');">Message</a></tt><tt class="py-op">(</tt><tt class="py-number">1</tt><tt class="py-op">,</tt><tt class="py-string">"Uzytkownik pomyslnie usuniety ze znajomych"</tt><tt class="py-op">)</tt> </tt>
+<a name="L141"></a><tt class="py-lineno">141</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">HttpResponseRedirect</tt><tt class="py-op">(</tt><tt class="py-string">"/friends/index/"</tt><tt class="py-op">+</tt><tt class="py-name">requestKonto</tt><tt class="py-op">.</tt><tt id="link-57" class="py-name"><a title="ass8_portal.accounts.models.Konto.user" class="py-name" href="#" onclick="return doclink('link-57', 'user', 'link-17');">user</a></tt><tt class="py-op">.</tt><tt class="py-name">username</tt><tt class="py-op">+</tt><tt class="py-string">"/"</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L142"></a><tt class="py-lineno">142</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="ass8_portal-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0 on Sun May 24 14:35:04 2009
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

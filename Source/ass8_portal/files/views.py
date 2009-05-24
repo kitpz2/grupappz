@@ -1,3 +1,11 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+"""
+Plik odpowiedzialny za definicje widoków aplikacji 'files'.
+    -  MY - jest to zmienna opisująca prawa dostępu jako 'osobiste' przypisana jest jej wartość 0
+    -  PRIVATE - jest to zmienna opisująca prawa dostępu jako 'prywatne' przypisana jest jej wartość 1
+    -  PUBLIC - jest to zmienna opisująca prawa dostępu jako 'publincze' przypisana jest jej wartość 2
+"""
 from django.shortcuts import render_to_response, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.http import Http404, HttpResponseRedirect
@@ -15,6 +23,18 @@ PUBLIC = 2
 
 @login_required
 def view(request, username):
+    """
+    Widok odpowiedzialny za wyświetlanie listy plików użytkownika. Aby funkcja została wywołana 
+    użytkownik musi być zalogowany. Jeśli nie jest - zostanie przekierowany na stronę logowania, 
+    a po poprawnym logowaniu ponownie na stronę z listą. Sprawdzane jest czy istnieje znajomość
+    użytkownika który generuje żądanie z użytkownikiem którego żądanie dotyczy. Jeśli znajomość
+    istnieje użytkownik może przglądać pliki oznaczone jako prywatne. Jeśli takiej znajomości nie ma
+    to może oglądać tylko pliki oznaczone jako 'publiczne'.
+    W sytuacji gdy użytkownik chce obejrzeć swój profil może obejrzeć swoje wsyzstkie pliki.
+    
+    @param request: żądanie przeglądarki
+    @param username: login użytkownika którego listę plików chcemy obejrzeć.
+    """
     requestKonto = Konto.objects.get(user = request.user)
     viewUser = get_object_or_404(User, username=username)
     viewKonto = Konto.objects.get(user = viewUser)
@@ -60,6 +80,15 @@ def view(request, username):
                         
 @login_required
 def edit(request, username):
+    """
+    Widok odpowiedzialny za edycję listy plików użytkownika. Aby funkcja została wywołana 
+    użytkownik musi być zalogowany. Jeśli nie jest - zostanie przekierowany na stronę logowania, 
+    a po poprawnym logowaniu ponownie na stronę z listą. Sprawdzane jest czy użytkownik chce zmieniać
+    swoją listę plików, jeśli nie wyświetlany jest odpowieni komunikat.
+    
+    @param request: żądanie przeglądarki
+    @param username: login użytkownika którego listę plików chcemy zmienić
+    """
     requestKonto = Konto.objects.get(user = request.user)
     viewUser = get_object_or_404(User, username=username)
     viewKonto = Konto.objects.get(user = viewUser)
@@ -84,6 +113,15 @@ def edit(request, username):
    
 @login_required
 def to_public(request, id):
+    """
+    Widok odpowiedzialny za zmianę pliku na 'publiczny'. Aby funkcja została wywołana 
+    użytkownik musi być zalogowany. Jeśli nie jest - zostanie przekierowany na stronę logowania, 
+    a po poprawnym logowaniu ponownie na stronę z listą. Sprawdzane jest czy dany plik istnieje,
+    jeśli nie wyświetlany jest odpowieni komunikat.
+    
+    @param request: żądanie przeglądarki
+    @param id: id pliku który chcemy zmienić
+    """
     requestKonto = Konto.objects.get(user = request.user)    
     try:
         f = Plik.objects.get(id = id, konto = requestKonto)
@@ -109,6 +147,15 @@ def to_public(request, id):
 
 @login_required
 def to_private(request, id):
+    """
+    Widok odpowiedzialny za zmianę pliku na 'prywatny'. Aby funkcja została wywołana 
+    użytkownik musi być zalogowany. Jeśli nie jest - zostanie przekierowany na stronę logowania, 
+    a po poprawnym logowaniu ponownie na stronę z listą. Sprawdzane jest czy dany plik istnieje,
+    jeśli nie wyświetlany jest odpowieni komunikat.
+    
+    @param request: żądanie przeglądarki
+    @param id: id pliku który chcemy zmienić
+    """
     requestKonto = Konto.objects.get(user = request.user)    
     try:
         f = Plik.objects.get(id = id, konto = requestKonto)
@@ -133,6 +180,15 @@ def to_private(request, id):
         
 @login_required
 def to_own(request, id):
+    """
+    Widok odpowiedzialny za zmianę pliku na 'osobisty'. Aby funkcja została wywołana 
+    użytkownik musi być zalogowany. Jeśli nie jest - zostanie przekierowany na stronę logowania, 
+    a po poprawnym logowaniu ponownie na stronę z listą. Sprawdzane jest czy dany plik istnieje,
+    jeśli nie wyświetlany jest odpowieni komunikat.
+    
+    @param request: żądanie przeglądarki
+    @param id: id pliku który chcemy zmienić
+    """
     requestKonto = Konto.objects.get(user = request.user)    
     try:
         f = Plik.objects.get(id = id, konto = requestKonto)
@@ -159,6 +215,15 @@ def to_own(request, id):
 
 @login_required
 def delete(request, id):
+    """
+    Widok odpowiedzialny za usunięcie danego pliku. Aby funkcja została wywołana 
+    użytkownik musi być zalogowany. Jeśli nie jest - zostanie przekierowany na stronę logowania, 
+    a po poprawnym logowaniu ponownie na stronę z listą. Sprawdzane jest czy dany plik istnieje,
+    jeśli nie wyświetlany jest odpowieni komunikat.
+    
+    @param request: żądanie przeglądarki
+    @param id: id pliku który chcemy zmienić
+    """
     requestKonto = Konto.objects.get(user = request.user)        
     try:
         f = Plik.objects.get(id = id, konto = requestKonto)        

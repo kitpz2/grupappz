@@ -1,6 +1,18 @@
-# Django settings for ASS8 project.
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+"""
+Plik zawiera globalne ustawienia całego projektu. Plik nie powinien być udostępniany gdyż zwiera 
+między innymi niezaszyfrowane hasło do bazy danych. Z używanych w ASS.8 ustawień warto wymienić:
+    - DATABASE_ENGINE - nazwa slinika na którym działa baza
+    - DATABASE_NAME - nazwa bazy
+    - DATABASE_USER - login użytkownika z uprawnieniami do modyfikacj bazy
+    - DATABASE_PASSWORD - hasło użytkownika z uprawnieniami do modyfikacj bazy
+    - DATABASE_HOST - host na którym jest baze
+    - DATABASE_PORT - port hosta na którym jest baza
+    - INSTALLED_APPS - lista zainstalowanych aplikacji w naszym projekcie
+"""
 
-DEBUG = True
+DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
 import os.path

@@ -1,3 +1,10 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+"""
+Plik odpowiedzialny za definicje widoków aplikacji 'accounts'. Aplikacja ta z kolei odpowiada 
+za funkcjonalość związaną z zarządzaniem kontem użytkownika.
+    -  MESSAGE_CODES - jest to lista przypisująca kodom 0, 1, 2 odpowiednie wiadomości o błędzie
+"""
 from django.shortcuts import render_to_response, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.http import Http404, HttpResponseRedirect
@@ -11,14 +18,37 @@ from friends.models import UserLink
 MESSAGE_CODES = ('Warning', 'Information', 'Error')
  
 class Message(object):
+    """
+    Klasa która odpowiedzialna jest za przechowywanie typu i treści komunikatów wysylanych do
+    użytkownika. Typem jest wartość z listy MESSAGE_CODES, treścią dowolny komunikat który chcemy 
+    wyświeltlić. W zależności od podanego typu komunikatu wiadomość zostanie wyświetlona w innym 
+    kolorze, aby na pierwszy rzut oka użytkownik wiedział czy dana informacja jest błędem czy
+    potwierdzeniem wykonania danej operacji.
+    """
     def __init__(self, type, content):
+        """Konstruktor wiadomości.
+        
+        @param type: typ wiadomości - liczba z zakresu 0 - 2
+        @param content: treść wiadomości którą chcemy wyświetlić        
+        """
         self.type = MESSAGE_CODES[type]
         self.content = content
  
     def __unicode__(self):
+        """
+        Metoda odpowiedzialna za ewentualne wypisanie wiadomości w postaci innej niż HTML(np. na ekran terminala).        
+        """
         return "%s : %s" % self.type, self.content
  
 def user_login(request):            
+    """
+    Widok odpowiedzialny za logowanie użytkownika. 
+    Sprawdzane jest czy użytkownik nie jest juz zalogowany, jeśli nie to sprawdzane jest jego 
+    login i hasło. W przypadku poprawnych danych użytkownik jest przekierowywany na stronę swojego 
+    profilu, natomiast w przypadku błędu wyświetlany jest odpowiedni komunikat.
+    
+    @param request: żądanie przeglądarki
+    """
     msg=None    
     try:
         requestUser = User.objects.get(username = request.user.username)
@@ -49,11 +79,24 @@ def user_login(request):
         })
  
 def user_logout(request):
+    """
+    Widok odpowiedzialny za wylogowanie użytkownika. 
+    Sprawdzane jest czy użytkownik jest zalogowany, jeśli tak następuje jego wylogowanie i 
+    przekierowanie na stronę główną.
+    
+    @param request: żądanie przeglądarki
+    """
     if request.user.is_authenticated:
         logout(request)
     return HttpResponseRedirect("/")
  
 def index(request):   
+    """
+    Widok odpowiedzialny za wyświetlanie głównej strony portalu. 
+    Przekazywana jest informacja o tym czy użytkownik przeglądający stronę jest zalogowany czy nie.
+    
+    @param request: żądanie przeglądarki
+    """
     try:
         requestUser = User.objects.get(username = request.user.username)
         requestKonto = Konto.objects.get(user = requestUser) 
@@ -65,6 +108,13 @@ def index(request):
  
  
 def register(request):
+    """
+    Widok odpowiedzialny za rejestrację nowego użytkownika. 
+    Generowany jest formularz a przy próbie wysłania sprawdzane są podane w nim dane. 
+    Najważniejszą z nich jest sprawdzenie czy podany przez użytkownika login jest unikalny.
+    
+    @param request: żądanie przeglądarki
+    """
     try:
         requestUser = User.objects.get(username = request.user.username)
         requestKonto = Konto.objects.get(user = requestUser) 
@@ -103,6 +153,15 @@ def register(request):
  
 @login_required
 def profile_view(request, username):
+    """
+    Widok odpowiedzialny za wyświetlanie profliu użytkownika. Aby funkcja została wywołana 
+    użytkownik musi być zalogowany. Jeśli nie jest - zostanie przekierowany na stronę logowania, 
+    a po poprawnym logowaniu na stronę profilu użytkownika którą chciał obejrzeć wcześniej. 
+    W sytuacji gdy użytkownik chce obejrzeć swój profil informacja ta jest odpowienio interpretowana i wpływa na wygląd strony.
+    
+    @param request: żądanie przeglądarki
+    @param username: login użytkownika którego profil chcemy obejrzeć
+    """
     requestKonto = Konto.objects.get(user = request.user)
     viewUser = get_object_or_404(User, username=username)
     viewKonto = Konto.objects.get(user=viewUser)
@@ -122,6 +181,11 @@ def profile_view(request, username):
     return render_to_response("accounts/detail.html", context)
     
 def latest_users(request):
+    """
+    Widok odpowiedzialny za wyświetlanie listy ostatnio zarejestrowanych użytkowników.
+    
+    @param request: żądanie przeglądarki    
+    """
     try:
         requestUser = User.objects.get(username = request.user.username)
         requestKonto = Konto.objects.get(user = requestUser) 
@@ -141,7 +205,15 @@ def latest_users(request):
             {"requestKonto":requestKonto,"latestUsers":latestUsers})
  
 @login_required
-def search(request):    
+def search(request):   
+    """
+    Widok odpowiedzialny za wyszukiwanie użytkowników. Aby funkcja została wywołana 
+    użytkownik musi być zalogowany. Jeśli nie jest - zostanie przekierowany na stronę logowania, 
+    a po poprawnym logowaniu ponownie na stronę wyszukiwarki. Wyszukiwanie odbywa się poprzez 
+    porównanie porównanie tekstu wprowadzonego przez użytkownika z loginami użytkowników w bazie.    
+    
+    @param request: żądanie przeglądarki    
+    """    
     requestKonto = Konto.objects.get(user=request.user)    
     if request.POST:
         f = SearchForm(request.POST)
@@ -164,6 +236,15 @@ def search(request):
  
 @login_required
 def profile_edit(request, username):
+    """
+    Widok odpowiedzialny za edycję profliu użytkownika. Aby funkcja została wywołana 
+    użytkownik musi być zalogowany. Jeśli nie jest - zostanie przekierowany na stronę logowania, 
+    a po poprawnym ponownie na stronę edycji. Sprawdzane jest czy użytkownik chce zmieniać swój profil
+    i jeśli nie to wyświetlana jest informacja o błędzie.
+    
+    @param request: żądanie przeglądarki
+    @param username: login użytkownika którego profil chcemy zmieniać
+    """
     requestKonto = Konto.objects.get(user=request.user)    
     if requestKonto.user.username != username:
         msg = Message(2,"Mozesz zmieniac tylko swoj profil!")
@@ -176,6 +257,16 @@ def profile_edit(request, username):
  
 @login_required
 def profile_save(request, username):
+    """
+    Widok odpowiedzialny za zapis zmian w profliu użytkownika. Aby funkcja została wywołana 
+    użytkownik musi być zalogowany. Jeśli nie jest - zostanie przekierowany na stronę logowania, 
+    a po poprawnym ponownie podjęta zostanie próba zapisu.
+    Sprawdzane jest czy użytkownik chce zpisać swój profil
+    i jeśli nie to wyświetlana jest informacja o błędzie.
+    
+    @param request: żądanie przeglądarki
+    @param username: login użytkownika którego profil chcemy zapisać
+    """
     requestKonto = Konto.objects.get(user=request.user)   
     if requestKonto.user.username != username:
         msg = Message(2,"Mozesz zapisywac tylko swoje konto!")
@@ -205,11 +296,21 @@ def profile_save(request, username):
  
 @login_required
 def profile_delete(request, username):
+    """
+    Widok odpowiedzialny za kasowanie profliu użytkownika. Aby funkcja została wywołana 
+    użytkownik musi być zalogowany. Jeśli nie jest - zostanie przekierowany na stronę logowania, 
+    a po poprawnym logowaniu ponownie wykonywana jest próba kasowania profilu. Sprawdzane jest czy
+    użytkownik chce sksasować swój profil, jeśli nie wyświetlany jest komunikat o błędzie. Kasowanie 
+    profilu usuwa poza profilem wsyzstkie pliki i znajomości użytkownika z bazy.
+    
+    @param request: żądanie przeglądarki
+    @param username: login użytkownika którego profil chcemy skasować
+    """
     requestKonto = Konto.objects.get(user=request.user)
     if requestKonto.user.username != username:
         msg = Message(2,"Mozesz usunac tylko swoje konto!")
         return render_to_response("accounts/detail.html",
-                 {"requestKonto":requestKonto,"viewKonto":requestKonto, "msg":msg})        
+                 {"requestKonto":requestKonto,"viewKonto":requestKonto, "msg":msg})                            
     logout(request)
     requestKonto.user.delete()
     requestKonto.delete()

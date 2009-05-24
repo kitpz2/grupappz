@@ -1,3 +1,12 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+"""
+Plik zawiera ustawienia adresów URL dla aplikacji 'firends', 
+które użytkownik może wpisywać i skojarzone z nimi widoki które zostaną wywołane przy 
+danym adresie URL. Zmienna urlpatterns opisuje 
+adresy i widoki w postaci: 
+    wyrażenie regularne spełniane przez URL, widok, dodatkowe argumenty.
+"""
 from django.conf.urls.defaults import *
 
 urlpatterns = patterns('friends.views',
