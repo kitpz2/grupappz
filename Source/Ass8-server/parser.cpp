@@ -430,7 +430,7 @@ void parser::odbieranie_plikow(xmlpp::TextReader &reader, std::string uzytkownik
                     char t[256];
                     for (int i=0;i<rozmiar;i+=32)
                     {
-                        if(rozmiar-size<32)
+                        if (rozmiar-size<32)
                             ile_czytac=rozmiar-size;
                         stream.read(a,ile_czytac);
                         a[ile_czytac]=0;

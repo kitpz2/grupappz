@@ -13,6 +13,7 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-g" />
+					<Add option="-DDEBUG" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
@@ -44,6 +45,10 @@
 		<Unit filename="baza.cpp" />
 		<Unit filename="baza.hpp" />
 		<Unit filename="debug.hpp" />
+		<Unit filename="include/md5/md5.cpp" />
+		<Unit filename="include/md5/md5.h" />
+		<Unit filename="include/md5/md5wrapper.cpp" />
+		<Unit filename="include/md5/md5wrapper.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="parser.cpp" />
 		<Unit filename="parser.hpp" />

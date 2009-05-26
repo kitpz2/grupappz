@@ -1,3 +1,0 @@
-<area shape="rect" href="$class_baza.html#f1bda4acd20e6fd00a35c43638e48956" title="Dodaje plik do bazy danych." alt="" coords="184,5,285,32">
-<area shape="rect" href="$class_baza.html#e4a033a65cb585aa91c15fd8b8fde764" title="Podobnie jak getFilesList tylko ze pobiera informację o jednym pliku." alt="" coords="175,56,295,83">
-<area shape="rect" href="$class_baza.html#2eace36725672b3a4ce639f91fe7d9bd" title="Najpierw wywołuje getUserId() potem z id otrzymanym z tamtąd wywołuje getFilesList(int..." alt="" coords="172,107,297,133">

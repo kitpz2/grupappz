@@ -2,7 +2,7 @@
 #define DEBUG_HPP
 #include <cstdio>
 #include <cstdlib>
-#define DEBUG
+//#define DEBUG
 #ifdef DEBUG
 #define deb(arg,arg2) fprintf(stderr,(arg),(arg2));
 #define line fprintf(stderr,"I: %s : %d\n",__FILE__,__LINE__);

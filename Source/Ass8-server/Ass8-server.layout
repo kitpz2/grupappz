@@ -1,23 +1,26 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_layout_file>
 	<ActiveTarget name="Debug" />
-	<File name="baza.cpp" open="1" top="0" tabpos="14">
+	<File name="baza.cpp" open="1" top="0" tabpos="7">
 		<Cursor position="1682" topLine="60" />
 	</File>
-	<File name="baza.hpp" open="1" top="0" tabpos="13">
-		<Cursor position="601" topLine="11" />
+	<File name="baza.hpp" open="1" top="0" tabpos="6">
+		<Cursor position="601" topLine="16" />
 	</File>
-	<File name="debug.hpp" open="1" top="0" tabpos="15">
+	<File name="debug.hpp" open="1" top="0" tabpos="8">
 		<Cursor position="99" topLine="0" />
 	</File>
-	<File name="main.cpp" open="1" top="0" tabpos="10">
+	<File name="main.cpp" open="1" top="0" tabpos="3">
 		<Cursor position="2234" topLine="67" />
 	</File>
-	<File name="parser.cpp" open="1" top="1" tabpos="12">
+	<File name="parser.cpp" open="1" top="0" tabpos="5">
 		<Cursor position="11911" topLine="299" />
 	</File>
-	<File name="parser.hpp" open="1" top="0" tabpos="11">
-		<Cursor position="2779" topLine="57" />
+	<File name="parser.hpp" open="1" top="0" tabpos="4">
+		<Cursor position="2779" topLine="67" />
+	</File>
+	<File name="server.hpp" open="1" top="1" tabpos="9">
+		<Cursor position="0" topLine="0" />
 	</File>
 	<File name="version.h" open="0" top="0" tabpos="4">
 		<Cursor position="701" topLine="0" />

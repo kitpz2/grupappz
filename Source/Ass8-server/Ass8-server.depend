@@ -14,9 +14,9 @@
 	"parser.hpp"
 	"version.h"
 
-1241773319 /home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/version.h
+1241786567 /home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/version.h
 
-1241782045 source:/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/parser.cpp
+1241983744 source:/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/parser.cpp
 	<iostream>
 	<string>
 	<cstdlib>
@@ -453,7 +453,7 @@
 
 1241533000 /home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/xml.hpp
 
-1241740143 /home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/debug.hpp
+1243345089 /home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/debug.hpp
 	<cstdio>
 	<cstdlib>
 
