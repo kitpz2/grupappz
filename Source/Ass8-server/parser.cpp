@@ -13,7 +13,7 @@
 #include "xml.hpp"
 #include "debug.hpp"
 
-void parser::parsuj(std::string do_parsowania)
+bool parser::parsuj(std::string &do_parsowania)
 {
     line;
 #ifdef LIBXMLCPP_EXCEPTIONS_ENABLED
@@ -71,19 +71,21 @@ void parser::parsuj(std::string do_parsowania)
             }
             else if (reader.get_name().compare("klient")==0)///Jeżeli polecenie od klienta
             {
-                int operacja;
-                std::string t_uzytkownik;
+                int operacja; //Czy to jest uzywane?
+                std::string t_uzytkownik; //Czy to jest uzywane?
                 if (reader.has_attributes()) ///Sprawdzanie ilosci atrybutów
                 {
                     info("reader.has_attributes==true");
                     if (reader.move_to_attribute("idsesji")) ///Przesun sie do atrybutu "idsesji"
                     {
+#ifdef DEBUG
                         ///Do debugowania
                         char temp[128];
                         std::string uzytkownik;
                         sprintf(temp,"%u",id_sesji);
                         info("Sprawdzanie id_sesji");
                         info2(temp,reader.get_value().c_str());
+#endif
                         if (id_sesji==atoi(reader.get_value().c_str())) ///Sprawdzamy czy zgadza się id_sesji
                         {
                             info("id_sesji POPRAWNE");
@@ -92,10 +94,18 @@ void parser::parsuj(std::string do_parsowania)
                                 info2("operacja",reader.get_value().c_str());
                                 operacja=atoi(reader.get_value().c_str());
                             }
+                            else if (reader.move_to_attribute("action"))
+                            {
+                                if (reader.get_value().compare("ok")==0)
+                                    return true;
+                                else
+                                    return false;
+                            }
                             else
                             {
                                 info("BŁĘDNE ZAPYTANIE");
                                 Odpowiedz(400);///Błędne zapytanie
+                                return false;
                             }
                             if (operacja==100 || operacja==101)
                             {
@@ -108,6 +118,7 @@ void parser::parsuj(std::string do_parsowania)
                                 {
                                     info("BŁĘDNE ZAPYTANIE");
                                     Odpowiedz(400);///Błędne zapytanie
+                                    return false;
                                 }
                             }
                             switch (operacja)
@@ -138,25 +149,28 @@ void parser::parsuj(std::string do_parsowania)
                         {
                             info("ID SESJI JEST NIEZGODNE");
                             Odpowiedz(401);
+                            return false;
                         }
                     }
                     else ///Brak id_sesji
                     {
                         info("BRAK ID_SESJI");
                         Odpowiedz(401);
+                        return false;
                     }
                 }
                 else///Brak atrybutów
                 {
                     info("brak atrybutów");
                     Odpowiedz(400);
+                    return false;
                 }
             }
             else//Jeżeli polecenie nie zaczyna się od <klient
             {
                 info("nierozpoznano");
                 Odpowiedz(400);
-                return;
+                return false;
             }
 #ifdef LIBXMLCPP_EXCEPTIONS_ENABLED
         }
@@ -166,11 +180,12 @@ void parser::parsuj(std::string do_parsowania)
         info2("BŁAD PARSOWANIA ",e.what());
         wyslij("<?xml version=\"1.0\"?>\
         <serwer xml_stream_error=\"true\"/>"); ///To wysyłana jest o tym informacja
-        exit(0);///I zamykamy połączenie
+        //exit(0);///I zamykamy połączenie
+        return false;
     }
 #endif //LIBXMLCPP_EXCEPTIONS_ENABLED
 
-
+    return true;
 }
 void parser::wyslij(std::string w)///Funkcja wysyłająca dane przez SOCKET
 {
@@ -195,18 +210,18 @@ bool parser::logowanie(std::string login, std::string haslo)///Funkcja sprawdzaj
     }
 }
 ///Krotka odpowiedz gdzie i - kod odpowiedzi
-void parser::Odpowiedz(int i,int nr_operacji)
+void parser::Odpowiedz(int nr_odpowiedzi,int nr_operacji)
 {
     sprintf(bufor,"<?xml version=\"1.0\"?>\r\n\
-    <serwer operacja=\"%d\" odp=\"%d\"/>",nr_operacji,i);
+    <serwer operacja=\"%d\" odp=\"%d\"/>",nr_operacji,nr_odpowiedzi);
     wyslij(bufor);
 }
 ///Odpowiedź z dodatkowymi informacjami  gdzie i - kod odpowiedzi
-void parser::Odpowiedz(int i,int nr_operacji,std::string odp)
+void parser::Odpowiedz(int nr_odpowiedzi,int nr_operacji,std::string odp)
 {
     std::string temp;
     sprintf(bufor,"<?xml version=\"1.0\"?>\r\n\
-    <serwer operacja=\"%d\" odp=\"%d\">",nr_operacji,i);
+    <serwer operacja=\"%d\" odp=\"%d\">",nr_operacji,nr_odpowiedzi);
     temp.append(bufor);
     if (!odp.empty())
         temp.append(odp);
@@ -237,58 +252,69 @@ void parser::start () ///Funkcja wywoływana tylko raz, rozpoczyna pobieranie in
         temp="";
         int zabezp=0, zabezp2=0;
         info("PETLA ZBIERAJACA");
-
-        do
-        {
-            boost::system::error_code error;
-            if (error == boost::asio::error::eof)
-            {
-                info("Klient disconnected");
-                exit(0);
-            }
-            //info("OCZEKIWANIE NA PUSTĄ LINIE");
-            std::getline(stream,temp);
-            /*if(zabezp>25)
-            {
-                stream.close();
-            }*/
-
-            /*if(temp.empty() || temp.compare(" ")==0)
-            {
-                info("linia pusta");
-                //stream.clear();
-            }*/
-            if (temp.find_first_of("<")<=temp.size())
-            {
-                zabezp=0;
-            }
-            info2("Otrzymalem: ",temp.c_str());
-            if (zabezp>3 || zabezp2>100)
-                exit(0);
-            ++zabezp;
-            ++zabezp2;
-            char x[256];
-            sprintf(x,"zabezp= %d zabezp2 = %d",zabezp, zabezp2);
-            info(x);
-
-            //std::cout<<(int)temp[0]<<" "<<(int)temp[1]<<std::endl;
-            a.append(temp+"\r\n");
-        }
-        while (!(temp[0]==13 && temp[1]==0));
+        a=czytanie_z_socketa();
         //zabezp=0;
         info("ROZPOCZYNAM PARSOWANIE");
         //std::cout<<a<<std::endl;
-        parsuj(a);
+        if(!parsuj(a))
+            Info("Wystąpił błąd przy parsowaniu");
+
     }
     stream.close();
     exit(0);
 }
 
+std::string &parser::czytanie_z_socketa()
+{
+    std::string a;
+    do
+    {
+        boost::system::error_code error;
+        if (error == boost::asio::error::eof)
+        {
+            info("Klient disconnected");
+            exit(0);
+        }
+        //info("OCZEKIWANIE NA PUSTĄ LINIE");
+        std::getline(stream,temp);
+        /*if(zabezp>25)
+        {
+            stream.close();
+        }*/
+
+        /*if(temp.empty() || temp.compare(" ")==0)
+        {
+            info("linia pusta");
+            //stream.clear();
+        }*/
+        if (temp.find_first_of("<")<=temp.size())
+        {
+            zabezp=0;
+        }
+        info2("Otrzymalem: ",temp.c_str());
+        if (zabezp>3 || zabezp2>100)
+            exit(0);
+        ++zabezp;
+        ++zabezp2;
+        char x[256];
+        sprintf(x,"zabezp= %d zabezp2 = %d",zabezp, zabezp2);
+        info(x);
+
+        //std::cout<<(int)temp[0]<<" "<<(int)temp[1]<<std::endl;
+        a.append(temp+"\r\n");
+    }
+    while (!(temp[0]==13 && temp[1]==0));
+    return a;
+}
+
 void parser::lista_plikow(std::string uzytkownik)
 {
     info("Lista_plikow");
+    /**Jeżeli użytkownik to "." to znaczy ze żadanie jest
+    o liste plików użytkownika zalogowanego*/
     if (uzytkownik.compare(".")==0)
         uzytkownik=login;
+    /**Prośba o listę plików użytkownika uzytkownik*/
     mysqlpp::StoreQueryResult res=baza.getFilesList(uzytkownik);
     if (res.num_rows()<1)
     {
@@ -306,22 +332,16 @@ void parser::lista_plikow(std::string uzytkownik)
         for (unsigned int i=0;i<res.num_rows();++i)
         {
             line;
-            //sprintf(temp,"<plik nazwa=\"%s\" data=\"%d\" rozmiar=\"%d\" dostep=\"%d\"/>\n",res[i]["sciezka"],res[i]["dataDodania"],res[i]["wielkosc"],res[i]["prawaDostepu"]);
             char a[1024];
-            sprintf(a,"<plik nazwa=\"%s\" data=\"%d\" rozmiar=\"%d\" dostep=\"%d\"/>\r\n",res[i]["sciezka"].c_str(),atoi(res[i]["dataDodania"].c_str()),atoi(res[i]["wielkosc"].c_str()),atoi(res[i]["prawaDostepu"].c_str()));
-            /*temp="<plik nazwa=\""+res[i]["sciezka"];
-            line;
-            temp+="\" data=\""+res[i]["dataDodania"];
-            line;
-            temp+="\" rozmiar=\""+res[i]["wielkosc"];
-            line;
-            temp+="\" dostep=\""+res[i]["prawaDostepu"];
-            line;
-            temp+="\r\n";*/
+            sprintf(a,"<plik nazwa=\"%s\" data=\"%d\" rozmiar=\"%d\"\
+                dostep=\"%d\" hash=\"%s\"/>\r\n",res[i]["sciezka"].c_str(),
+                    atoi(res[i]["dataDodania"].c_str()),atoi(res[i]["wielkosc"].c_str()),
+                    atoi(res[i]["prawaDostepu"].c_str()),res[i]["hash"].c_str());
             info(a);
             odp.append(a);
         }
         info("Lista utworzona");
+        //Odpowiedz(406 - Wszystko ok, 100 - operacja "lista wszystkich plików", xml z listą plików)
         Odpowiedz(406,100,odp);
     }
 }
@@ -335,7 +355,7 @@ std::vector <std::string> parser::pobieranie_listy_plikow(xmlpp::TextReader &rea
 
         if (reader.get_name().compare("plik")==0)//czy mamy plik?
         {
-            info("mamy <plik ");
+            info("mamy plik ");
             if (reader.has_attributes())//Czy mamy atrybuty
             {
                 info("mamy atrybuty");
@@ -348,7 +368,7 @@ std::vector <std::string> parser::pobieranie_listy_plikow(xmlpp::TextReader &rea
                 {
                     Eline("Brak Atrybutu 'nazwa'");
                     //Odpowiedz(400);
-                    //return;
+
                 }
 
             }
@@ -383,85 +403,121 @@ void parser::odbieranie_plikow(xmlpp::TextReader &reader, std::string uzytkownik
     if (reader.get_name().compare("plik")==0)
     {
         info("plik jest ok");
+
         if (reader.has_attributes())
         {
             info("ma atrybuty");
+
             if (reader.move_to_attribute("nazwa"))
             {
                 std::string nazwa = reader.get_value();
                 info2("jest nazwa",nazwa.c_str());
+
                 if (reader.move_to_attribute("rozmiar"))
                 {
                     int rozmiar=atoi(reader.get_value().c_str());
-                    /*mysqlpp::StoreQueryResult res=baza.getFileInfo(reader.get_value(),login);
-                    if(res.num_rows()<1)
-                    {*/
+                    info("ma rozmiar");
 
-                    std::string odp="<?xml version=\"1.0\"?>\
-                    <serwer operacja=\"102\" odp=\"404\"/>\r\n";
-                    wyslij(odp);
-                    std::string sciezka=login+"/";
-                    sciezka+=nazwa;
-                    FILE *plik=fopen(sciezka.c_str(),"w+");
-                    if (!plik)
+                    if (reader.move_to_attribute("hash"))
                     {
-                        Eline("PLIK SIE NIE OTWORZYL!!!!");
-                        return;
+                        std::string hash = reader.get_value();
+                        info2("jest hash",nazwa.c_str());
+
+                        std::string sciezka=login+"/";
+                        sciezka+=nazwa;
+
+                        File *plik=fopen(sciezka.c_str(),"r");
+                        if (plik!=NULL)
+                        {
+                            mysqlpp::StoreQueryResult wynik= baza.getFileInfo(nazwa,login);
+                            for (unsigned int i=0;i<res.num_rows();++i)
+                            {
+                                if (wynik[i]["hash"].compare(hash)==0)
+                                {
+                                    Info("Plik juz istnieje, co robic?");
+                                    Odpowiedz(402,102);
+
+                                }
+                            }
+                        }
+                        /*std::string odp="<?xml version=\"1.0\"?>\
+                            <serwer operacja=\"102\" odp=\"404\"/>\r\n";
+                        wyslij(odp);*/
+
+
+
+
+                        plik=fopen(sciezka.c_str(),"w+");
+                        if (!plik)
+                        {
+                            Eline("PLIK SIE NIE OTWORZYL!!!!");
+                            return;
+                        }
+                        std::string temp="";
+                        info("plik otwarty do zapisu");
+                        int size=0;
+                        //int size_old=0;
+                        /*do
+                        {
+                            size_old=size;
+                            info("zapis fragmentu");
+                            std::getline(stream,temp);
+                            fprintf(plik,"%s",temp.c_str());
+                            size+=temp.size();
+                            info2("odebrano",temp.c_str());
+                            if(size_old==size)
+                                break;
+                        }while (size<rozmiar);*/
+                        info("zapis pliku");
+                        //char *a=new char(4);
+                        int ile_czytac=32;
+                        char a[33]={0};
+                        char t[256];
+                        for (int i=0;i<rozmiar;i+=32)
+                        {
+                            if (rozmiar-size<32)
+                                ile_czytac=rozmiar-size;
+                            stream.read(a,ile_czytac);
+                            a[ile_czytac]=0;
+                            info2("odebrano",a);
+                            fprintf(plik,"%s",a);
+                            size+=ile_czytac;
+                            sprintf(t,"Odczytano %d bajtów z %d bajtów, pozostalo do odczytania %d bajtów\nteraz bede czytal %d bajtow",size,rozmiar,rozmiar-size,ile_czytac);
+                            info(t);
+                        }
+                        //char *temp2=new char(rozmiar);
+                        //stream.read(temp2,rozmiar);
+                        //info2("odebrano",temp2);
+                        //fprintf(plik,"%s",temp2);
+                        fclose(plik);
+                        info("plik odebrany");
+                        char tmp[128];
+                        sprintf(tmp,"Pobrano %d z %d",size,rozmiar);
+                        info(tmp);
+                        //na razie nie sprawdzam hasha itd
+                        //std::getline(stream,temp);
+                        //std::getline(stream,temp);
+                        //std::getline(stream,temp);
+                        info("Odebrano koncowego xmla");
+                        baza.addFile(nazwa,uzytkownik,rozmiar,-1,-1,-1);
+                        //}
                     }
-                    std::string temp="";
-                    info("plik otwarty do zapisu");
-                    int size=0;
-                    //int size_old=0;
-                    /*do
+                    else
                     {
-                        size_old=size;
-                        info("zapis fragmentu");
-                        std::getline(stream,temp);
-                        fprintf(plik,"%s",temp.c_str());
-                        size+=temp.size();
-                        info2("odebrano",temp.c_str());
-                        if(size_old==size)
-                            break;
-                    }while (size<rozmiar);*/
-                    info("zapis pliku");
-                    //char *a=new char(4);
-                    int ile_czytac=32;
-                    char a[33]={0};
-                    char t[256];
-                    for (int i=0;i<rozmiar;i+=32)
-                    {
-                        if (rozmiar-size<32)
-                            ile_czytac=rozmiar-size;
-                        stream.read(a,ile_czytac);
-                        a[ile_czytac]=0;
-                        info2("odebrano",a);
-                        fprintf(plik,"%s",a);
-                        size+=ile_czytac;
-                        sprintf(t,"Odczytano %d bajtów z %d bajtów, pozostalo do odczytania %d bajtów\nteraz bede czytal %d bajtow",size,rozmiar,rozmiar-size,ile_czytac);
-                        info(t);
+                        info("brak hasha");
+                        Odpowiedz(400,102);
                     }
-                    //char *temp2=new char(rozmiar);
-                    //stream.read(temp2,rozmiar);
-                    //info2("odebrano",temp2);
-                    //fprintf(plik,"%s",temp2);
-                    fclose(plik);
-                    info("plik odebrany");
-                    char tmp[128];
-                    sprintf(tmp,"Pobrano %d z %d",size,rozmiar);
-                    info(tmp);
-                    //na razie nie sprawdzam hasha itd
-                    //std::getline(stream,temp);
-                    //std::getline(stream,temp);
-                    //std::getline(stream,temp);
-                    info("Odebrano koncowego xmla");
-                    baza.addFile(nazwa,uzytkownik,rozmiar,-1,-1,-1);
-                    //}
                 }
                 else
                 {
                     info("brak rozmiaru pliku");
                     Odpowiedz(400,102);
                 }
+            }
+            else
+            {
+                Eline("brak nazwy");
+                Odpowiedz(400,102);
             }
         }
         else

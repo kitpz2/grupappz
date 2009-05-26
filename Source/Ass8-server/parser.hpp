@@ -38,7 +38,7 @@ private:
     Baza baza;
 
     ///Parsuje dane pobrane od klienta
-    void parsuj(std::string do_parsowania);
+    void parsuj(std::string &do_parsowania);
     ///Loguje klienta po przetworzeniu xmla odebranego od niego i sparsownaiu go w void parsuj()
     bool logowanie(std::string login, std::string haslo);
     ///Wysyła odpowiedź do logowania na podstawie podaneg i gdzie
@@ -49,9 +49,9 @@ private:
     ///402 - podany plik istnieje (w przypadku wysylania pliku);
     ///403 - wewnetrzny blad serwera; 404 - podany plik nie istnieje;
     ///405 - błąd odbierania plikow; 406 - wszystko OK;
-    void Odpowiedz(int i, int numer_operacji=-1);
+    void Odpowiedz(int nr_odpowiedzi, int numer_operacji=-1);
     ///Wysyła odpowiedź wielolinijkową zależnie od podanego i gdzie i jak w void Odpowiedz(int i, int numer_operacji);
-    void Odpowiedz(int i,int nr_operacji,std::string odp);
+    void Odpowiedz(int nr_odpowiedzi,int nr_operacji,std::string odp);
 
     ///Wysyła dane podane w stringu w dodatkowo wysyłając znak końca linii
     void wyslij(std::string w);
@@ -67,6 +67,8 @@ private:
     void wyslij_plik(std::string plik,std::string uzytkownik);
     ///Przygotowuje listę plikow do wysłania do klienta
     std::vector <std::string> pobieranie_listy_plikow(xmlpp::TextReader &reader);
+
+    std::string &czytanie_z_socketa();
 public:
     parser(tcp::iostream &stream, const char* server, const char* user, const char *pass,const char *db):stream(stream)
     {

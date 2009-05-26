@@ -23,7 +23,7 @@ klient wysyla:
 serwer odpowiada:
 <?xml version="1.0"?>
 <serwer odp="kod_odp" operacja="100">
-  <plik nazwa="nazwa_pliku" data="data" rozmiar="rozmiar" dostep="modyfikator_dostepu"/>
+  <plik nazwa="nazwa_pliku" data="data" rozmiar="rozmiar" dostep="modyfikator_dostepu" hash="hash"/>
 </serwer>
 
 
@@ -34,7 +34,7 @@ prosba o plik/pliki (kropka w przypadku uzytkownika zalogowanego):  -- mozna zap
 klient wysyla:
 <?xml version="1.0"?>
 <klient idsesji="numer_sesji" operacja="101" uzytkownik="">
-  <plik nazwa="nazwa_pliku"/>
+  <plik nazwa="nazwa_pliku" />
 </klient>
 
 
@@ -62,7 +62,7 @@ klient wysyla:
 wysylka pliku na serwer (mozliwy tylko jeden w xmlu):
 <?xml version="1.0"?>
 <klient idsesji="numer_sesji" operacja="102">
-  <plik nazwa="nazwa_pliku" data="data" rozmiar="rozmiar" dostep="modyfikator_dostepu"/>
+  <plik nazwa="nazwa_pliku" data="data" rozmiar="rozmiar" dostep="modyfikator_dostepu" hash="hash"/>
 </klient>
 
 odpowiedz serwera gdy plik nie istnieje:
@@ -75,10 +75,10 @@ Odpowiedź serwera gdy plik istnieje:
 
 w wypadku odpowiedzi 402 czekiwanie na reakcję klienta:
 <?xml version="1.0"?>
-<klient idsesji="" operacja="" action="ok"/> //gdy klient zgadza się na zastąpienie istniejącego pliku
+<klient idsesji="nr_sesji" operacja="nr_operacji" action="ok"/> //gdy klient zgadza się na zastąpienie istniejącego pliku
 
 <?xml version="1.0"?>
-<klient idsesji="" operacja="" action="abort"/>//Gdy klient nie chce zastępować pliku 
+<klient idsesji="nr_sesji" operacja="nr_operacji" action="abort"/>//Gdy klient nie chce zastępować pliku 
 
 odpowiedz serwera w obu wypadkach:
 <?xml version="1.0"?>
@@ -104,7 +104,7 @@ usuniecie pliku z serwera:
 klient wysyla:
 <?xml version="1.0"?>
 <klient idsesji="numer_sesji" operacja="103">
-  <plik nazwa="nazwa_pliku"/>
+  <plik nazwa="nazwa_pliku" hash="hash"/>
 </klient>
 
 serwer odpowiada (tyle razy ile bylo plikow)
