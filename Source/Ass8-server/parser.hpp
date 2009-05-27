@@ -2,6 +2,9 @@
 #define PARSER_HPP
 
 #include <boost/asio.hpp>
+#include <boost/filesystem/operations.hpp>
+//#include <boost/filesystem/exception.hpp>
+
 
 #include <string>
 
@@ -9,6 +12,8 @@
 
 #include <libxml++/libxml++.h>
 #include <libxml++/parsers/textreader.h>
+#include <ctime>
+#include "include/md5/md5wrapper.h"
 #ifdef HAVE_CONFIG_H
 #include <config.h>
 #endif
@@ -38,7 +43,7 @@ private:
     Baza baza;
 
     ///Parsuje dane pobrane od klienta
-    void parsuj(std::string &do_parsowania);
+    bool parsuj(std::string &do_parsowania);
     ///Loguje klienta po przetworzeniu xmla odebranego od niego i sparsownaiu go w void parsuj()
     bool logowanie(std::string login, std::string haslo);
     ///Wysyła odpowiedź do logowania na podstawie podaneg i gdzie
@@ -67,8 +72,7 @@ private:
     void wyslij_plik(std::string plik,std::string uzytkownik);
     ///Przygotowuje listę plikow do wysłania do klienta
     std::vector <std::string> pobieranie_listy_plikow(xmlpp::TextReader &reader);
-
-    std::string &czytanie_z_socketa();
+    std::string czytanie_z_socketa();
 public:
     parser(tcp::iostream &stream, const char* server, const char* user, const char *pass,const char *db):stream(stream)
     {

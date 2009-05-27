@@ -20,9 +20,10 @@ void Baza::connect(const char *server, const char *login, const char *pass, cons
     catch (const std::exception& e)//jezeli wystapil wyjatek w SQLu
     {
         info2("BŁAD PARSOWANIA SQL w connect : ",e.what());
-        wyslij("<?xml version=\"1.0\"?>\
-        <serwer odpowiedz=\"403\"/>"); ///To wysyłana jest o tym informacja
+        //wyslij("<?xml version=\"1.0\"?>\
+        //<serwer odpowiedz=\"403\"/>"); ///To wysyłana jest o tym informacja
         exit(0);///I zamykamy połączenie
+
     }
 }
 
@@ -50,9 +51,10 @@ std::string Baza::get_passwd(std::string login)
     catch (const std::exception& e)//jezeli wystapil wyjatek w SQLu
     {
         info2("BŁAD PARSOWANIA SQL w get_passwd : ",e.what());
-        wyslij("<?xml version=\"1.0\"?>\
-        <serwer odpowiedz=\"403\"/>"); ///To wysyłana jest o tym informacja
-        exit(0);///I zamykamy połączenie
+        //wyslij("<?xml version=\"1.0\"?>\
+        //<serwer odpowiedz=\"403\"/>"); ///To wysyłana jest o tym informacja
+        //exit(0);///I zamykamy połączenie
+        return "-1";
     }
 }
 ///Zapytanie o listę plikow uzytkownika po id uzytkownika z bazy accounts_konto
@@ -84,9 +86,10 @@ mysqlpp::StoreQueryResult Baza::getFilesList(int user_id)
     catch (const std::exception& e)//jezeli wystapil wyjatek w SQLu
     {
         info2("BŁAD PARSOWANIA SQL w getFilesList : ",e.what());
-        wyslij("<?xml version=\"1.0\"?>\
-        <serwer odpowiedz=\"403\"/>"); ///To wysyłana jest o tym informacja
-        exit(0);///I zamykamy połączenie
+        //wyslij("<?xml version=\"1.0\"?>\
+        //<serwer odpowiedz=\"403\"/>"); ///To wysyłana jest o tym informacja
+        //exit(0);///I zamykamy połączenie
+        return (mysqlpp::StoreQueryResult());
     }
 
 }
@@ -112,9 +115,10 @@ mysqlpp::StoreQueryResult Baza::getFilesList(std::string user)
     catch (const std::exception& e)//jezeli wystapil wyjatek w SQLu
     {
         info2("BŁAD PARSOWANIA SQL w getFilesList II : ",e.what());
-        wyslij("<?xml version=\"1.0\"?>\
-        <serwer odpowiedz=\"403\"/>"); ///To wysyłana jest o tym informacja
-        exit(0);///I zamykamy połączenie
+        //wyslij("<?xml version=\"1.0\"?>\
+        //<serwer odpowiedz=\"403\"/>"); ///To wysyłana jest o tym informacja
+        //exit(0);///I zamykamy połączenie
+        return (mysqlpp::StoreQueryResult());
     }
 }
 
@@ -160,9 +164,10 @@ int Baza::getUserId(std::string user)
     catch (const std::exception& e)//jezeli wystapil wyjatek w SQLu
     {
         info2("BŁAD PARSOWANIA SQL w getUserId : ",e.what());
-        wyslij("<?xml version=\"1.0\"?>\
-        <serwer odpowiedz=\"403\"/>"); ///To wysyłana jest o tym informacja
-        exit(0);///I zamykamy połączenie
+        //wyslij("<?xml version=\"1.0\"?>\
+        //<serwer odpowiedz=\"403\"/>"); ///To wysyłana jest o tym informacja
+        //exit(0);///I zamykamy połączenie
+        return -1;
     }
 }
 
@@ -187,9 +192,10 @@ mysqlpp::StoreQueryResult Baza::getFileInfo(std::string file, std::string user)
     catch (const std::exception& e)//jezeli wystapil wyjatek w SQLu
     {
         info2("BŁAD PARSOWANIA SQL w getFileInfo : ",e.what());
-        wyslij("<?xml version=\"1.0\"?>\
-        <serwer odpowiedz=\"403\"/>"); ///To wysyłana jest o tym informacja
-        exit(0);///I zamykamy połączenie
+        //wyslij("<?xml version=\"1.0\"?>\
+        //<serwer odpowiedz=\"403\"/>"); ///To wysyłana jest o tym informacja
+        //exit(0);///I zamykamy połączenie
+        return (mysqlpp::StoreQueryResult());
     }
 }
 mysqlpp::StoreQueryResult Baza::getFileInfo(std::string file, int user_id)
@@ -219,14 +225,15 @@ mysqlpp::StoreQueryResult Baza::getFileInfo(std::string file, int user_id)
     catch (const std::exception& e)//jezeli wystapil wyjatek w SQLu
     {
         info2("BŁAD PARSOWANIA SQL w getFileInfo II : ",e.what());
-        wyslij("<?xml version=\"1.0\"?>\
-        <serwer odpowiedz=\"403\"/>"); ///To wysyłana jest o tym informacja
-        exit(0);///I zamykamy połączenie
+        //wyslij("<?xml version=\"1.0\"?>\
+        //<serwer odpowiedz=\"403\"/>"); ///To wysyłana jest o tym informacja
+        //exit(0);///I zamykamy połączenie
+        return (mysqlpp::StoreQueryResult());
     }
 
 }
 
-void Baza::addFile(std::string nazwa, std::string konto, int wielkosc, int hash, int prawa, int data)
+bool Baza::addFile(std::string nazwa, std::string konto, int wielkosc, std::string hash, int prawa, int data)
 {
     try
     {
@@ -252,7 +259,7 @@ void Baza::addFile(std::string nazwa, std::string konto, int wielkosc, int hash,
         query = conn.query();
         //SELECT count(*) from files_plik;
         char b[1024];
-        sprintf(b,"INSERT INTO files_plik VALUES(%d,%d,'%s',CURRENT_DATE,%d,%d,%d)",ilosc+1,id,nazwa.c_str(),prawa,wielkosc,hash);
+        sprintf(b,"INSERT INTO files_plik VALUES(%d,%d,'%s',CURRENT_DATE,%d,%d,%s)",ilosc+1,id,nazwa.c_str(),prawa,wielkosc,hash.c_str());
         query<<b;
         query.execute();
         /*zapytanie="INSERT INTO files_plik VALUES('"+ilosc;
@@ -275,9 +282,9 @@ void Baza::addFile(std::string nazwa, std::string konto, int wielkosc, int hash,
     catch (const std::exception& e)//jezeli wystapil wyjatek w SQLu
     {
         info2("BŁAD PARSOWANIA SQL w addFile : ",e.what());
-        wyslij("<?xml version=\"1.0\"?>\
-        <serwer odpowiedz=\"403\"/>"); ///To wysyłana jest o tym informacja
-        exit(0);///I zamykamy połączenie
+        //wyslij("<?xml version=\"1.0\"?>\
+        //<serwer odpowiedz=\"403\"/>"); ///To wysyłana jest o tym informacja
+        //exit(0);///I zamykamy połączenie
     }
 
 }

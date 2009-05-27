@@ -84,10 +84,6 @@ odpowiedz serwera w obu wypadkach:
 <?xml version="1.0"?>
 <serwer operacja="102" odp="406"/>
 
-po wysłaniu action="ok" serwer odpowiada jak w wypadku gdy plik nie istnieje, w przeciwnym wypdaku odpowiedź serwera to:
-<?xml version="1.0"?>
-<serwer operacja="102" odp="405"/>
-
 przesyłanie pliku po odpowiedzi serwera:
 
 [DANE_PLIKU]

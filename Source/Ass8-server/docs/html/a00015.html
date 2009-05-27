@@ -1,0 +1,50 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>PaCa Klient: Plik źródłowy /home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/debug.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css">
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Wygenerowano przez Doxygen 1.5.8 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="main.html"><span>Strona&nbsp;główna</span></a></li>
+      <li><a href="namespaces.html"><span>Przestrzenie&nbsp;nazw</span></a></li>
+      <li><a href="annotated.html"><span>Klasy</span></a></li>
+      <li class="current"><a href="files.html"><span>Pliki</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="files.html"><span>Lista&nbsp;plików</span></a></li>
+      <li><a href="globals.html"><span>Składowe&nbsp;plików</span></a></li>
+    </ul>
+  </div>
+<h1>/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/debug.hpp</h1><a href="a00005.html">Idź do dokumentacji tego pliku.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#ifndef DEBUG_HPP</span>
+<a name="l00002"></a>00002 <span class="preprocessor"></span><span class="preprocessor">#define DEBUG_HPP</span>
+<a name="l00003"></a>00003 <span class="preprocessor"></span><span class="preprocessor">#include &lt;cstdio&gt;</span>
+<a name="l00004"></a>00004 <span class="preprocessor">#include &lt;cstdlib&gt;</span>
+<a name="l00005"></a><a class="code" href="a00005.html#d72dbcf6d0153db1b8d8a58001feed83">00005</a> <span class="preprocessor">#define DEBUG</span>
+<a name="l00006"></a>00006 <span class="preprocessor"></span><span class="preprocessor">#ifdef DEBUG</span>
+<a name="l00007"></a><a class="code" href="a00005.html#21ad5938437ed6d1865dd14c8d1871bc">00007</a> <span class="preprocessor"></span><span class="preprocessor">#define deb(arg,arg2) fprintf(stderr,(arg),(arg2));</span>
+<a name="l00008"></a><a class="code" href="a00005.html#5bdec07ba0f5f220bcb40d5258725d95">00008</a> <span class="preprocessor"></span><span class="preprocessor">#define line fprintf(stderr,"I: %s : %d\n",__FILE__,__LINE__);</span>
+<a name="l00009"></a><a class="code" href="a00005.html#b3fdd01cf4ecc9316aa5051f88e36af2">00009</a> <span class="preprocessor"></span><span class="preprocessor">#define Eline(arg) fprintf(stderr,"E: %s : %d : %s \n",__FILE__,__LINE__,arg);</span>
+<a name="l00010"></a><a class="code" href="a00005.html#66e7745144eb47a4111a0c2b5f66d6ac">00010</a> <span class="preprocessor"></span><span class="preprocessor">#define Eline2(arg,arg2) fprintf(stderr,"E: %s : %d : %s %s\n",__FILE__,__LINE__,arg,arg2);</span>
+<a name="l00011"></a><a class="code" href="a00005.html#590af51ecfed28223c4e6ce02994241a">00011</a> <span class="preprocessor"></span><span class="preprocessor">#define info(arg) fprintf(stderr,"I: %s : %d : %s\n",__FILE__,__LINE__,arg);</span>
+<a name="l00012"></a><a class="code" href="a00005.html#51633d6d15647d74f756bcf969fc70ae">00012</a> <span class="preprocessor"></span><span class="preprocessor">#define info2(arg,arg2) fprintf(stderr,"I: %s : %d : %s =&gt; %s\n",__FILE__,__LINE__,arg,arg2);</span>
+<a name="l00013"></a>00013 <span class="preprocessor"></span><span class="preprocessor">#else</span>
+<a name="l00014"></a>00014 <span class="preprocessor"></span><span class="preprocessor">#define info(arg)</span>
+<a name="l00015"></a>00015 <span class="preprocessor"></span><span class="preprocessor">#define deb(arg,arg2)</span>
+<a name="l00016"></a>00016 <span class="preprocessor"></span><span class="preprocessor">#define line</span>
+<a name="l00017"></a>00017 <span class="preprocessor"></span><span class="preprocessor">#define Eline</span>
+<a name="l00018"></a>00018 <span class="preprocessor"></span><span class="preprocessor">#define Eline2(arg1,arg2);</span>
+<a name="l00019"></a>00019 <span class="preprocessor"></span><span class="preprocessor">#define info2(arg,arg2)</span>
+<a name="l00020"></a>00020 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
+<a name="l00021"></a>00021 <span class="preprocessor"></span>
+<a name="l00022"></a>00022 <span class="preprocessor">#endif//DEBUG_HPP</span>
+</pre></div></div>
+<hr size="1"><address style="text-align: right;"><small>Wygenerowano Mon May 25 18:05:59 2009 dla PaCa Klient programem&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
+</body>
+</html>

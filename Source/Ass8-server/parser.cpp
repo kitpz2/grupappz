@@ -20,6 +20,7 @@ bool parser::parsuj(std::string &do_parsowania)
     try
     {
 #endif //LIBXMLCPP_EXCEPTIONS_ENABLED
+        info2("Do parsowania:",do_parsowania.c_str());
         xmlpp::TextReader reader((unsigned char*)do_parsowania.c_str(),do_parsowania.size());
         while (reader.read())
         {
@@ -97,9 +98,15 @@ bool parser::parsuj(std::string &do_parsowania)
                             else if (reader.move_to_attribute("action"))
                             {
                                 if (reader.get_value().compare("ok")==0)
+                                {
+                                    info("action=ok");
                                     return true;
+                                }
                                 else
+                                {
+                                    info("action=abort");
                                     return false;
+                                }
                             }
                             else
                             {
@@ -245,48 +252,48 @@ void parser::start () ///Funkcja wywoływana tylko raz, rozpoczyna pobieranie in
 {
     //stream<<"ASS8 Server v numer_wersji"/*<<AutoVersion::FULLVERSION_STRING*/<<"\r\n\r\n";
     std::string a;
-    std::string temp;
+
     while (true)
     {
-        a="";
-        temp="";
-        int zabezp=0, zabezp2=0;
         info("PETLA ZBIERAJACA");
+        line;
         a=czytanie_z_socketa();
+        line;
         //zabezp=0;
         info("ROZPOCZYNAM PARSOWANIE");
+        line;
         //std::cout<<a<<std::endl;
-        if(!parsuj(a))
-            Info("Wystąpił błąd przy parsowaniu");
+        if (!parsuj(a))
+            info("Wystąpił błąd przy parsowaniu");
 
     }
+    line;
     stream.close();
     exit(0);
 }
 
-std::string &parser::czytanie_z_socketa()
+std::string parser::czytanie_z_socketa()
 {
     std::string a;
+    std::string temp;
+    a="";
+    temp="";
+    int zabezp=0, zabezp2=0;
     do
     {
+        line;
         boost::system::error_code error;
+        line;
         if (error == boost::asio::error::eof)
         {
+            line;
             info("Klient disconnected");
             exit(0);
         }
-        //info("OCZEKIWANIE NA PUSTĄ LINIE");
-        std::getline(stream,temp);
-        /*if(zabezp>25)
-        {
-            stream.close();
-        }*/
 
-        /*if(temp.empty() || temp.compare(" ")==0)
-        {
-            info("linia pusta");
-            //stream.clear();
-        }*/
+        std::getline(stream,temp);
+        line;
+
         if (temp.find_first_of("<")<=temp.size())
         {
             zabezp=0;
@@ -300,10 +307,11 @@ std::string &parser::czytanie_z_socketa()
         sprintf(x,"zabezp= %d zabezp2 = %d",zabezp, zabezp2);
         info(x);
 
-        //std::cout<<(int)temp[0]<<" "<<(int)temp[1]<<std::endl;
         a.append(temp+"\r\n");
+        line;
     }
     while (!(temp[0]==13 && temp[1]==0));
+    line;
     return a;
 }
 
@@ -421,86 +429,135 @@ void parser::odbieranie_plikow(xmlpp::TextReader &reader, std::string uzytkownik
                     if (reader.move_to_attribute("hash"))
                     {
                         std::string hash = reader.get_value();
-                        info2("jest hash",nazwa.c_str());
+                        info2("jest hash",hash.c_str());
 
                         std::string sciezka=login+"/";
                         sciezka+=nazwa;
-
-                        File *plik=fopen(sciezka.c_str(),"r");
+                        line;
+                        FILE *plik=fopen(sciezka.c_str(),"r");
+                        line;
                         if (plik!=NULL)
                         {
+                            line;
+                            fclose(plik);
+                            line;
                             mysqlpp::StoreQueryResult wynik= baza.getFileInfo(nazwa,login);
-                            for (unsigned int i=0;i<res.num_rows();++i)
+                            line;
+                            for (unsigned int i=0;i<wynik.num_rows();++i)
                             {
+                                line;
                                 if (wynik[i]["hash"].compare(hash)==0)
                                 {
-                                    Info("Plik juz istnieje, co robic?");
+                                    line;
+                                    info("Plik juz istnieje, co robic?");
+                                    line;
                                     Odpowiedz(402,102);
-
+                                    line;
+                                    std::string a=czytanie_z_socketa();
+                                    line;
+                                    if (!parsuj(a))
+                                    {
+                                        line;
+                                        Odpowiedz(406,102);
+                                        line;
+                                        return;
+                                    }
+                                    else
+                                    {
+                                        line;
+                                        Odpowiedz(406,102);
+                                        line;
+                                        break;
+                                    }
+                                    line;
                                 }
+                                else
+                                {
+                                    line;
+                                    Odpowiedz(404,102);
+                                    line;
+                                    break;
+                                }
+                                line;
                             }
+                            line;
+                            Odpowiedz(404,102);//Ta operacja nie powinna się nigdy wykonać
+                            line;
                         }
-                        /*std::string odp="<?xml version=\"1.0\"?>\
-                            <serwer operacja=\"102\" odp=\"404\"/>\r\n";
-                        wyslij(odp);*/
-
-
-
-
-                        plik=fopen(sciezka.c_str(),"w+");
+                        else
+                        {
+                            Odpowiedz(404,102);
+                            line;
+                        }
+                        //std::string temp_sciezka=login+"/";
+                        //temp+="temp.";
+                        char temp_sciezka[256];
+                        sprintf(temp_sciezka,"%s/temp.%d",login.c_str(),id_sesji);
+                        plik=fopen(temp_sciezka,"w+");
                         if (!plik)
                         {
                             Eline("PLIK SIE NIE OTWORZYL!!!!");
+                            Odpowiedz(403,102);
                             return;
                         }
                         std::string temp="";
                         info("plik otwarty do zapisu");
                         int size=0;
-                        //int size_old=0;
-                        /*do
-                        {
-                            size_old=size;
-                            info("zapis fragmentu");
-                            std::getline(stream,temp);
-                            fprintf(plik,"%s",temp.c_str());
-                            size+=temp.size();
-                            info2("odebrano",temp.c_str());
-                            if(size_old==size)
-                                break;
-                        }while (size<rozmiar);*/
+
                         info("zapis pliku");
-                        //char *a=new char(4);
-                        int ile_czytac=32;
-                        char a[33]={0};
+                        int ile_czytac=128;
+                        if (rozmiar<128)
+                            ile_czytac=1;
+
+                        char a[128]={0};
                         char t[256];
-                        for (int i=0;i<rozmiar;i+=32)
+                        for (int i=0;i<rozmiar;i+=ile_czytac)
                         {
                             if (rozmiar-size<32)
-                                ile_czytac=rozmiar-size;
+                                ile_czytac=1;
                             stream.read(a,ile_czytac);
                             a[ile_czytac]=0;
                             info2("odebrano",a);
                             fprintf(plik,"%s",a);
                             size+=ile_czytac;
                             sprintf(t,"Odczytano %d bajtów z %d bajtów, pozostalo do odczytania %d bajtów\nteraz bede czytal %d bajtow",size,rozmiar,rozmiar-size,ile_czytac);
+                            info(t)
+#ifdef DEBUG
+                            std::string tmpp=a;
+                            sprintf(t,"%s - %d",a,tmpp.size());
                             info(t);
+#endif
+
+
                         }
                         //char *temp2=new char(rozmiar);
                         //stream.read(temp2,rozmiar);
                         //info2("odebrano",temp2);
                         //fprintf(plik,"%s",temp2);
-                        fclose(plik);
-                        info("plik odebrany");
+                        md5wrapper md5;
+                        std::string temp_hash=md5.getHashFromFile(std::string(temp_sciezka));
+                        if (temp_hash.compare(hash)!=0) //sprawdzic jak sie wywoluje
+                        {
+#ifdef DEBUG
+                            char debug[256];
+                            sprintf(debug,"Hash %s nie zgadza się z %s",hash,temp_hash);
+                            info(debug);
+#endif
+                            Odpowiedz(405,102);
+                            return;
+                        }
+                        info("plik odebrany prawidlowo");
                         char tmp[128];
                         sprintf(tmp,"Pobrano %d z %d",size,rozmiar);
                         info(tmp);
-                        //na razie nie sprawdzam hasha itd
-                        //std::getline(stream,temp);
-                        //std::getline(stream,temp);
-                        //std::getline(stream,temp);
+                        fclose(plik);
+                        //FILE *plik2=fopen(sciezka.c_str(),"w+");
+                        //std::copy(plik,plik2); --zrobic kopiowanie
+                        //fclose(plik2);
+                        boost::filesystem::copy_file(temp_sciezka,sciezka);
+
                         info("Odebrano koncowego xmla");
-                        baza.addFile(nazwa,uzytkownik,rozmiar,-1,-1,-1);
-                        //}
+                        baza.addFile(nazwa,uzytkownik,rozmiar,hash,-1,time(NULL));
                     }
                     else
                     {
@@ -558,6 +615,7 @@ void parser::wyslij_plik(std::string plik,std::string uzytkownik)
         info("res.num_rows()<1");
         std::string odp="<plik nazwa=\""+plik;
         odp+="\" data=\"-1\" rozmiar=\"-1\" dostep=\"-1\"/>\r\n";
+
         info("res.num_rows()<1");
         Odpowiedz(101,402,odp);
         return;
@@ -569,93 +627,72 @@ void parser::wyslij_plik(std::string plik,std::string uzytkownik)
         odp+="\" data=\""+res[0]["dataDodania"];
         odp+="\" rozmiar=\""+res[0]["dataDodania"];
         odp+="\" dostep=\""+res[0]["prawaDostepu"];
+        odp+="\" hash=\""+res[0]["hashValue"];
         odp+="\"/>\r\n";
         Odpowiedz(101,406,odp);
+        info2("odp",odp.c_str())
         info("Info o pliku wyslane");
     }
     info("Czekamy na zgode klienta na wysyl pliku");
-    std::string od_klienta,temp;
-    do
+    /*     std::string od_klienta,temp;
+     *     do
+     *     {
+     *         info("OCZEKIWANIE NA PUSTĄ LINIE");
+     *         std::getline(stream,temp);
+     *         //std::cout<<(int)temp[0]<<" "<<(int)temp[1]<<std::endl;
+     *         od_klienta.append(temp+"\r\n");
+     *     }
+     *     while (!(temp[0]==13 && temp[1]==0));
+     *     info("sprawdzamy co wyslal klient");
+     *     xmlpp::TextReader reader_temp((unsigned char*)od_klienta.c_str(),od_klienta.size());
+     *     reader_temp.read();
+     *     if (reader_temp.get_name().compare("klient")==0)//Sprawdzamy czy odpowiedź nazleży do klienta
+     *     {
+     *         info("wyslal to napewno klient");
+     *         if (reader_temp.has_attributes())//Sprawdzamy czy odpowiedz ma atrybuty
+     *         {
+     *             info("Są atrybuty");
+     *             if (reader_temp.move_to_attribute("action"))//Przechodzimy do atrybutu "action"
+     *             {
+     *                 info("mamy atrybut action");
+     *                 if (reader_temp.get_value().compare("ok")==0)//Jeżeli odpowiedz jest ok to wysylamy plik
+     *                 {
+     *                     info("action=ok");
+     *                     std::string sciezka=login+"/";
+     */
+    std::string a=czytanie_z_socketa();
+    if (!parsuj(a))
     {
-        info("OCZEKIWANIE NA PUSTĄ LINIE");
-        std::getline(stream,temp);
-        //std::cout<<(int)temp[0]<<" "<<(int)temp[1]<<std::endl;
-        od_klienta.append(temp+"\r\n");
-    }
-    while (!(temp[0]==13 && temp[1]==0));
-    info("sprawdzamy co wyslal klient");
-    xmlpp::TextReader reader_temp((unsigned char*)od_klienta.c_str(),od_klienta.size());
-    reader_temp.read();
-    if (reader_temp.get_name().compare("klient")==0)//Sprawdzamy czy odpowiedź nazleży do klienta
-    {
-        info("wyslal to napewno klient");
-        if (reader_temp.has_attributes())//Sprawdzamy czy odpowiedz ma atrybuty
-        {
-            info("Są atrybuty");
-            if (reader_temp.move_to_attribute("action"))//Przechodzimy do atrybutu "action"
-            {
-                info("mamy atrybut action");
-                if (reader_temp.get_value().compare("ok")==0)//Jeżeli odpowiedz jest ok to wysylamy plik
-                {
-                    info("action=ok");
-                    std::string sciezka=login+"/";
-                    sciezka+=plik;
-                    info("Otwieram plik");
-                    FILE *plik=std::fopen(sciezka.c_str(),"r");
-                    if (plik==NULL)
-                    {
-                        Eline2("NIE UDALO SIE OTWORZYC PLIKU: ",sciezka.c_str());
-                        Odpowiedz(402);
-                        return;
-                    }
-                    info("no to wysyłamy");
-                    char temp[BUFSIZE2];
-                    while ( (fread ( &temp, 1,BUFSIZE2,plik ) )> 0 )
-                    {
-                        info("Trwa wysyłanie pliku, proszę czekać...");
-                        stream<<temp;
-                    }
-                    /*std::fstream plik(plik,"r");
-                    if(plik.is_iopen())
-                    {*/
-                    stream<<std::endl;
-                    info("Plik został wysłany");
-                    std::string odp="<?xml version=\"1.0\"?>\
-                    <serwer operacja=\"101\" odp=\"kod_odp\" hash=\"-1\" />";
-                    wyslij(odp);
-
-                }
-                else//Klient nie zgadza sie na przeslanie
-                {
-                    Eline("Compare != OK");
-                    return;
-                }
-            }
-            else//Brak atrybutu "action"
-            {
-                Eline("Brak atrybutu \"action\"");
-                Odpowiedz(400);
-                return;
-            }
-
-        }
-        else//Brak atrybutów
-        {
-            Eline("Brak atrybutów");
-            Odpowiedz(400);
-            return;
-        }
-    }
-    else//Odpowiedź nie od klienta
-    {
-        Eline("Odpowiedz nie od klienta");
-        Odpowiedz(400);
+        info("błąd parsowania");
         return;
     }
+    std::string sciezka;
+    sciezka+=plik;
+    info("Otwieram plik");
+    FILE *fplik=std::fopen(sciezka.c_str(),"r");
+    if (fplik==NULL)
+    {
+        Eline2("NIE UDALO SIE OTWORZYC PLIKU: ",sciezka.c_str());
+        Odpowiedz(402);
+        return;
+    }
+    info("no to wysyłamy");
+    char temp[BUFSIZE2];
+    while ( (fread ( &temp, 1,BUFSIZE2,fplik ) )> 0 )
+    {
+        info("Trwa wysyłanie pliku, proszę czekać...");
+        stream<<temp;
+    }
+    stream<<std::endl;
+    info("Plik został wysłany");
+    //dodac odbior potwierdzenia odbioru
+    a=czytanie_z_socketa();
 }
+
 void parser::usun_pliki(xmlpp::TextReader &reader,std::string uzytkownik)
 {
-    info("NOT IMPLEMENTED YET!!!");
+    //info("NOT IMPLEMENTED YET!!!");
+
 
 }
 

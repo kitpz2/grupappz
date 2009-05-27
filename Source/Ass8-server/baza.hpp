@@ -28,8 +28,13 @@ class Baza
         ///Pobiera id uzytkownika 'user'
         int getUserId(std::string user);
         ///Dodaje plik do bazy danych
-        void addFile(std::string nazwa, std::string konto, int wielkosc, int hash=-1, int prawa=-1, int data=-1);
-
+        bool addFile(std::string nazwa, std::string konto, int wielkosc, std::string hash="-1", int prawa=-1, int data=-1);
+        /**Usuwa plik z bazy
+        \param nazwa nazwa pliku do usuniecia
+        \param konto nazwa konta z ktorego sie usuwa
+        \param hash hash pliku (dla sprawdzenia czy napewno dobry plik)
+        \return czy operacja zakończona powodzeniem*/
+        bool rmFile(std::string nazwa, std::string konto, std::string hash);
 };
 
 #endif//BAZA_HPP

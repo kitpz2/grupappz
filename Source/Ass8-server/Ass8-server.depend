@@ -16,7 +16,7 @@
 
 1241786567 /home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/version.h
 
-1241983744 source:/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/parser.cpp
+1243414999 source:/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/parser.cpp
 	<iostream>
 	<string>
 	<cstdlib>
@@ -30,12 +30,15 @@
 	"xml.hpp"
 	"debug.hpp"
 
-1241774467 /home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/parser.hpp
+1243415457 /home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/parser.hpp
 	<boost/asio.hpp>
+	<boost/filesystem/operations.hpp>
 	<string>
 	<fstream>
 	<libxml++/libxml++.h>
 	<libxml++/parsers/textreader.h>
+	<ctime>
+	"include/md5/md5wrapper.h"
 	<config.h>
 	"baza.hpp"
 	"debug.hpp"
@@ -441,10 +444,10 @@
 	<list>
 	<map>
 
-1241785407 source:/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/baza.cpp
+1243414931 source:/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/baza.cpp
 	"baza.hpp"
 
-1241774683 /home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/baza.hpp
+1243414940 /home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/baza.hpp
 	<string>
 	<mysql++.h>
 	<iostream>
