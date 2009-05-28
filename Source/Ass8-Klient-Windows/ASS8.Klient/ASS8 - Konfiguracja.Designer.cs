@@ -1,6 +1,6 @@
 ﻿namespace ASS8.Klient
 {
-    partial class ASS8___Konfiguracja
+    partial class Konfiguracja
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ASS8___Konfiguracja));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Konfiguracja));
             this.grpSynchronizacja = new System.Windows.Forms.GroupBox();
             this.lblSekundy = new System.Windows.Forms.Label();
             this.txtSekundy = new System.Windows.Forms.TextBox();
@@ -49,8 +49,30 @@
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.cmsWyloguj = new System.Windows.Forms.ToolStripMenuItem();
             this.tcmsZakoncz = new System.Windows.Forms.ToolStripMenuItem();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.radioPopup = new System.Windows.Forms.RadioButton();
+            this.radioLog = new System.Windows.Forms.RadioButton();
+            this.tabUstawienia = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.grpProxy = new System.Windows.Forms.GroupBox();
+            this.txtHaslo = new System.Windows.Forms.TextBox();
+            this.txtLogin = new System.Windows.Forms.TextBox();
+            this.lblHaslo = new System.Windows.Forms.Label();
+            this.lblLogin = new System.Windows.Forms.Label();
+            this.chbUwierzytelnienie = new System.Windows.Forms.CheckBox();
+            this.lbPort = new System.Windows.Forms.Label();
+            this.lblSerwer = new System.Windows.Forms.Label();
+            this.txtPort = new System.Windows.Forms.TextBox();
+            this.txtSerwer = new System.Windows.Forms.TextBox();
+            this.chbProxy = new System.Windows.Forms.CheckBox();
             this.grpSynchronizacja.SuspendLayout();
             this.cmsTray.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.tabUstawienia.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            this.grpProxy.SuspendLayout();
             this.SuspendLayout();
             // 
             // grpSynchronizacja
@@ -61,9 +83,9 @@
             this.grpSynchronizacja.Controls.Add(this.btnSciezka);
             this.grpSynchronizacja.Controls.Add(this.txtSciezka);
             this.grpSynchronizacja.Controls.Add(this.lblSciezka);
-            this.grpSynchronizacja.Location = new System.Drawing.Point(12, 12);
+            this.grpSynchronizacja.Location = new System.Drawing.Point(16, 6);
             this.grpSynchronizacja.Name = "grpSynchronizacja";
-            this.grpSynchronizacja.Size = new System.Drawing.Size(247, 101);
+            this.grpSynchronizacja.Size = new System.Drawing.Size(247, 96);
             this.grpSynchronizacja.TabIndex = 0;
             this.grpSynchronizacja.TabStop = false;
             this.grpSynchronizacja.Text = " ";
@@ -83,6 +105,7 @@
             this.txtSekundy.Name = "txtSekundy";
             this.txtSekundy.Size = new System.Drawing.Size(37, 20);
             this.txtSekundy.TabIndex = 4;
+            this.txtSekundy.Text = "30";
             // 
             // lblCzas
             // 
@@ -99,6 +122,7 @@
             this.btnSciezka.Name = "btnSciezka";
             this.btnSciezka.Size = new System.Drawing.Size(24, 22);
             this.btnSciezka.TabIndex = 2;
+            this.btnSciezka.Text = "...";
             this.btnSciezka.UseVisualStyleBackColor = true;
             this.btnSciezka.Click += new System.EventHandler(this.btnSciezka_Click);
             // 
@@ -108,6 +132,7 @@
             this.txtSciezka.Name = "txtSciezka";
             this.txtSciezka.Size = new System.Drawing.Size(175, 20);
             this.txtSciezka.TabIndex = 1;
+            this.txtSciezka.Text = "pliki";
             // 
             // lblSciezka
             // 
@@ -120,12 +145,13 @@
             // 
             // btnZapisz
             // 
-            this.btnZapisz.Location = new System.Drawing.Point(22, 231);
+            this.btnZapisz.Location = new System.Drawing.Point(37, 231);
             this.btnZapisz.Name = "btnZapisz";
             this.btnZapisz.Size = new System.Drawing.Size(75, 23);
             this.btnZapisz.TabIndex = 1;
             this.btnZapisz.Text = "Zapisz";
             this.btnZapisz.UseVisualStyleBackColor = true;
+            this.btnZapisz.Click += new System.EventHandler(this.btnZapisz_Click);
             // 
             // btnAnuluj
             // 
@@ -154,76 +180,256 @@
             this.cmsWyloguj,
             this.tcmsZakoncz});
             this.cmsTray.Name = "cmsTray";
-            this.cmsTray.Size = new System.Drawing.Size(153, 170);
+            this.cmsTray.Size = new System.Drawing.Size(146, 148);
             // 
             // tcmsStart
             // 
             this.tcmsStart.Enabled = false;
             this.tcmsStart.Name = "tcmsStart";
-            this.tcmsStart.Size = new System.Drawing.Size(152, 22);
+            this.tcmsStart.Size = new System.Drawing.Size(145, 22);
             this.tcmsStart.Text = "Start";
             this.tcmsStart.Click += new System.EventHandler(this.tcmsStart_Click);
             // 
             // tcmsStop
             // 
             this.tcmsStop.Name = "tcmsStop";
-            this.tcmsStop.Size = new System.Drawing.Size(152, 22);
+            this.tcmsStop.Size = new System.Drawing.Size(145, 22);
             this.tcmsStop.Text = "Stop";
             this.tcmsStop.Click += new System.EventHandler(this.tcmsStop_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(142, 6);
             // 
             // tcmsKonfiguracja
             // 
             this.tcmsKonfiguracja.Name = "tcmsKonfiguracja";
-            this.tcmsKonfiguracja.Size = new System.Drawing.Size(152, 22);
+            this.tcmsKonfiguracja.Size = new System.Drawing.Size(145, 22);
             this.tcmsKonfiguracja.Text = "Konfiguracja";
             this.tcmsKonfiguracja.Click += new System.EventHandler(this.tcmsKonfiguracja_Click);
             // 
             // tcmsZnajomi
             // 
             this.tcmsZnajomi.Name = "tcmsZnajomi";
-            this.tcmsZnajomi.Size = new System.Drawing.Size(152, 22);
+            this.tcmsZnajomi.Size = new System.Drawing.Size(145, 22);
             this.tcmsZnajomi.Text = "Znajomi";
             this.tcmsZnajomi.Click += new System.EventHandler(this.tcmsZnajomi_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(142, 6);
             // 
             // cmsWyloguj
             // 
             this.cmsWyloguj.Name = "cmsWyloguj";
-            this.cmsWyloguj.Size = new System.Drawing.Size(152, 22);
+            this.cmsWyloguj.Size = new System.Drawing.Size(145, 22);
             this.cmsWyloguj.Text = "Wyloguj";
             this.cmsWyloguj.Click += new System.EventHandler(this.cmsWyloguj_Click);
             // 
             // tcmsZakoncz
             // 
             this.tcmsZakoncz.Name = "tcmsZakoncz";
-            this.tcmsZakoncz.Size = new System.Drawing.Size(152, 22);
+            this.tcmsZakoncz.Size = new System.Drawing.Size(145, 22);
             this.tcmsZakoncz.Text = "Zakończ";
             this.tcmsZakoncz.Click += new System.EventHandler(this.tcmsZakoncz_Click);
             // 
-            // ASS8___Konfiguracja
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.radioPopup);
+            this.groupBox1.Controls.Add(this.radioLog);
+            this.groupBox1.Location = new System.Drawing.Point(16, 108);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(247, 69);
+            this.groupBox1.TabIndex = 3;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Ostrzeżenia";
+            // 
+            // radioPopup
+            // 
+            this.radioPopup.AutoSize = true;
+            this.radioPopup.Location = new System.Drawing.Point(10, 42);
+            this.radioPopup.Name = "radioPopup";
+            this.radioPopup.Size = new System.Drawing.Size(215, 17);
+            this.radioPopup.TabIndex = 1;
+            this.radioPopup.Text = "Bledy i ostrzezenia wyswietlaj na ekranie";
+            this.radioPopup.UseVisualStyleBackColor = true;
+            // 
+            // radioLog
+            // 
+            this.radioLog.AutoSize = true;
+            this.radioLog.Checked = true;
+            this.radioLog.Location = new System.Drawing.Point(10, 19);
+            this.radioLog.Name = "radioLog";
+            this.radioLog.Size = new System.Drawing.Size(177, 17);
+            this.radioLog.TabIndex = 0;
+            this.radioLog.TabStop = true;
+            this.radioLog.Text = "Bledy i ostrzezenia loguj do pliku";
+            this.radioLog.UseVisualStyleBackColor = true;
+            // 
+            // tabUstawienia
+            // 
+            this.tabUstawienia.Controls.Add(this.tabPage1);
+            this.tabUstawienia.Controls.Add(this.tabPage2);
+            this.tabUstawienia.Location = new System.Drawing.Point(4, 7);
+            this.tabUstawienia.Name = "tabUstawienia";
+            this.tabUstawienia.SelectedIndex = 0;
+            this.tabUstawienia.Size = new System.Drawing.Size(282, 218);
+            this.tabUstawienia.TabIndex = 4;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.grpSynchronizacja);
+            this.tabPage1.Controls.Add(this.groupBox1);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(274, 192);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Ogólne";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.grpProxy);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(274, 192);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Proxy";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // grpProxy
+            // 
+            this.grpProxy.Controls.Add(this.txtHaslo);
+            this.grpProxy.Controls.Add(this.txtLogin);
+            this.grpProxy.Controls.Add(this.lblHaslo);
+            this.grpProxy.Controls.Add(this.lblLogin);
+            this.grpProxy.Controls.Add(this.chbUwierzytelnienie);
+            this.grpProxy.Controls.Add(this.lbPort);
+            this.grpProxy.Controls.Add(this.lblSerwer);
+            this.grpProxy.Controls.Add(this.txtPort);
+            this.grpProxy.Controls.Add(this.txtSerwer);
+            this.grpProxy.Controls.Add(this.chbProxy);
+            this.grpProxy.Location = new System.Drawing.Point(6, 6);
+            this.grpProxy.Name = "grpProxy";
+            this.grpProxy.Size = new System.Drawing.Size(262, 171);
+            this.grpProxy.TabIndex = 0;
+            this.grpProxy.TabStop = false;
+            this.grpProxy.Text = "Proxy";
+            // 
+            // txtHaslo
+            // 
+            this.txtHaslo.Location = new System.Drawing.Point(143, 131);
+            this.txtHaslo.Name = "txtHaslo";
+            this.txtHaslo.PasswordChar = '*';
+            this.txtHaslo.Size = new System.Drawing.Size(100, 20);
+            this.txtHaslo.TabIndex = 9;
+            // 
+            // txtLogin
+            // 
+            this.txtLogin.Location = new System.Drawing.Point(8, 131);
+            this.txtLogin.Name = "txtLogin";
+            this.txtLogin.Size = new System.Drawing.Size(100, 20);
+            this.txtLogin.TabIndex = 8;
+            // 
+            // lblHaslo
+            // 
+            this.lblHaslo.AutoSize = true;
+            this.lblHaslo.Location = new System.Drawing.Point(140, 115);
+            this.lblHaslo.Name = "lblHaslo";
+            this.lblHaslo.Size = new System.Drawing.Size(34, 13);
+            this.lblHaslo.TabIndex = 7;
+            this.lblHaslo.Text = "Haslo";
+            this.lblHaslo.Click += new System.EventHandler(this.label4_Click);
+            // 
+            // lblLogin
+            // 
+            this.lblLogin.AutoSize = true;
+            this.lblLogin.Location = new System.Drawing.Point(5, 115);
+            this.lblLogin.Name = "lblLogin";
+            this.lblLogin.Size = new System.Drawing.Size(33, 13);
+            this.lblLogin.TabIndex = 6;
+            this.lblLogin.Text = "Login";
+            // 
+            // chbUwierzytelnienie
+            // 
+            this.chbUwierzytelnienie.AutoSize = true;
+            this.chbUwierzytelnienie.Location = new System.Drawing.Point(8, 94);
+            this.chbUwierzytelnienie.Name = "chbUwierzytelnienie";
+            this.chbUwierzytelnienie.Size = new System.Drawing.Size(123, 17);
+            this.chbUwierzytelnienie.TabIndex = 5;
+            this.chbUwierzytelnienie.Text = "Użyj uwierzytelnienia";
+            this.chbUwierzytelnienie.UseVisualStyleBackColor = true;
+            this.chbUwierzytelnienie.CheckedChanged += new System.EventHandler(this.chbUwierzytelnienie_CheckedChanged);
+            // 
+            // lbPort
+            // 
+            this.lbPort.AutoSize = true;
+            this.lbPort.Location = new System.Drawing.Point(177, 44);
+            this.lbPort.Name = "lbPort";
+            this.lbPort.Size = new System.Drawing.Size(26, 13);
+            this.lbPort.TabIndex = 4;
+            this.lbPort.Text = "Port";
+            // 
+            // lblSerwer
+            // 
+            this.lblSerwer.AutoSize = true;
+            this.lblSerwer.Location = new System.Drawing.Point(5, 44);
+            this.lblSerwer.Name = "lblSerwer";
+            this.lblSerwer.Size = new System.Drawing.Size(40, 13);
+            this.lblSerwer.TabIndex = 3;
+            this.lblSerwer.Text = "Serwer";
+            // 
+            // txtPort
+            // 
+            this.txtPort.Location = new System.Drawing.Point(180, 60);
+            this.txtPort.Name = "txtPort";
+            this.txtPort.Size = new System.Drawing.Size(46, 20);
+            this.txtPort.TabIndex = 2;
+            // 
+            // txtSerwer
+            // 
+            this.txtSerwer.Location = new System.Drawing.Point(8, 60);
+            this.txtSerwer.Name = "txtSerwer";
+            this.txtSerwer.Size = new System.Drawing.Size(156, 20);
+            this.txtSerwer.TabIndex = 1;
+            // 
+            // chbProxy
+            // 
+            this.chbProxy.AutoSize = true;
+            this.chbProxy.Location = new System.Drawing.Point(8, 19);
+            this.chbProxy.Name = "chbProxy";
+            this.chbProxy.Size = new System.Drawing.Size(74, 17);
+            this.chbProxy.TabIndex = 0;
+            this.chbProxy.Text = "Użyj proxy";
+            this.chbProxy.UseVisualStyleBackColor = true;
+            this.chbProxy.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
+            // Konfiguracja
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(273, 266);
+            this.ClientSize = new System.Drawing.Size(289, 263);
+            this.Controls.Add(this.tabUstawienia);
             this.Controls.Add(this.btnAnuluj);
             this.Controls.Add(this.btnZapisz);
-            this.Controls.Add(this.grpSynchronizacja);
             this.MaximizeBox = false;
-            this.Name = "ASS8___Konfiguracja";
+            this.Name = "Konfiguracja";
             this.Text = "ASS.8 - Konfiguracja";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ASS8___Konfiguracja_FormClosing);
             this.grpSynchronizacja.ResumeLayout(false);
             this.grpSynchronizacja.PerformLayout();
             this.cmsTray.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.tabUstawienia.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
+            this.grpProxy.ResumeLayout(false);
+            this.grpProxy.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -249,5 +455,22 @@
         private System.Windows.Forms.ToolStripMenuItem tcmsStop;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.RadioButton radioPopup;
+        private System.Windows.Forms.RadioButton radioLog;
+        private System.Windows.Forms.TabControl tabUstawienia;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.GroupBox grpProxy;
+        private System.Windows.Forms.TextBox txtLogin;
+        private System.Windows.Forms.Label lblHaslo;
+        private System.Windows.Forms.Label lblLogin;
+        private System.Windows.Forms.CheckBox chbUwierzytelnienie;
+        private System.Windows.Forms.Label lbPort;
+        private System.Windows.Forms.Label lblSerwer;
+        private System.Windows.Forms.TextBox txtPort;
+        private System.Windows.Forms.TextBox txtSerwer;
+        private System.Windows.Forms.CheckBox chbProxy;
+        private System.Windows.Forms.TextBox txtHaslo;
     }
 }

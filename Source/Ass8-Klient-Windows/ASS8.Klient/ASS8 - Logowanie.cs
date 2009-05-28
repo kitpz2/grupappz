@@ -13,19 +13,44 @@ namespace ASS8.Klient
     public partial class ASS8___Logowanie : Form
     {
         private komunikacja k;
-        public static string wersja = "0.3.9";
+        public static string wersja = "0.4.1";
         public ASS8___Logowanie()
         {
             InitializeComponent();
             k = new komunikacja();
         }
-
+        private string hashuj(string s)
+        {
+            MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider();
+            StringBuilder sb = new StringBuilder();
+            foreach (byte b in md5.ComputeHash(Encoding.ASCII.GetBytes(s)))
+                sb.Append(b.ToString("x2"));
+            return sb.ToString().ToLower();
+        }
         private void btnLoguj_Click(object sender, EventArgs e)
         {
             k.Haslo = haslo;
             k.Login = login;
-            k.login();
-            ASS8___Konfiguracja konfiguracja = new ASS8___Konfiguracja(this, KomClass);
+            k.pobierzUstawienia();
+            try
+            {
+                k.login();
+            }
+            catch (Wyjatki.BladNieokreslony bn)
+            {
+                MessageBox.Show(bn.ToString());
+            }
+            catch (Wyjatki.BladPolaczenia)
+            {
+                MessageBox.Show("Nie mozna zalogowac do serwera");
+                return;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Wystapil blad aplikacji");
+                return;
+            }
+            Konfiguracja konfiguracja = new Konfiguracja(this, KomClass);
             this.Hide();
             //k.downloadFiles(new string[] { "plik1", "plik2" }, "ja");
             //MessageBox.Show("Aa");
@@ -51,14 +76,14 @@ namespace ASS8.Klient
             get
             {
                 if (txtHasło.Text.Length == 0) return "";
-                return txtHasło.Text;
-                /*MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider();
-                Byte[] haslo;
-                Byte[] hash;
-                haslo = ASCIIEncoding.Default.GetBytes(txtHasło.Text);
-                hash = md5.ComputeHash(haslo);
-                return ASCIIEncoding.Default.GetString(hash);*/
+                return hashuj(txtHasło.Text);
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form2 proxy = new Form2();
+            proxy.ShowDialog();
         }
     }
 }

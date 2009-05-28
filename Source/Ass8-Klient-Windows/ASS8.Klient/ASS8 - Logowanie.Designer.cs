@@ -35,6 +35,7 @@
             this.cbZapamietaj = new System.Windows.Forms.CheckBox();
             this.btnLoguj = new System.Windows.Forms.Button();
             this.grpLogowanie = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.grpLogowanie.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -100,17 +101,28 @@
             this.grpLogowanie.Controls.Add(this.cbZapamietaj);
             this.grpLogowanie.Controls.Add(this.lblHaslo);
             this.grpLogowanie.Controls.Add(this.txtHasło);
-            this.grpLogowanie.Location = new System.Drawing.Point(12, 12);
+            this.grpLogowanie.Location = new System.Drawing.Point(12, 37);
             this.grpLogowanie.Name = "grpLogowanie";
             this.grpLogowanie.Size = new System.Drawing.Size(163, 129);
             this.grpLogowanie.TabIndex = 6;
             this.grpLogowanie.TabStop = false;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(12, 8);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(42, 23);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Proxy";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // ASS8___Logowanie
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(189, 151);
+            this.ClientSize = new System.Drawing.Size(189, 178);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.grpLogowanie);
             this.MaximizeBox = false;
             this.Name = "ASS8___Logowanie";
@@ -130,6 +142,7 @@
         private System.Windows.Forms.CheckBox cbZapamietaj;
         private System.Windows.Forms.Button btnLoguj;
         private System.Windows.Forms.GroupBox grpLogowanie;
+        private System.Windows.Forms.Button button1;
     }
 }
 

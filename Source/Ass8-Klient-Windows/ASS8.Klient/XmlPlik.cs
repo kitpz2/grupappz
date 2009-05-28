@@ -10,12 +10,27 @@ namespace ASS8.Klient
     {
         private string pNazwa;
         private string pHash;
+        long pCzas;
         public pojedynczyPlik() { }
-        public pojedynczyPlik(string p, string h)
+        public pojedynczyPlik(long cz,string p, string h)
         {
+            data = cz;
             nazwa = p;
             hash = h;
         }
+        [XmlAttribute]
+        public long data
+        {
+            get
+            {
+                return pCzas;
+            }
+            set
+            {
+                pCzas = value;
+            }
+        }
+
         [XmlAttribute]
         public string nazwa
         {
@@ -46,7 +61,9 @@ namespace ASS8.Klient
     public class pliki
     {
         private List<pojedynczyPlik> pPliki;
-        public pliki() { }
+        public pliki() {
+            plik = new List<pojedynczyPlik>();
+        }
         public pliki(List<pojedynczyPlik> p)
         {
             plik = new List<pojedynczyPlik>();

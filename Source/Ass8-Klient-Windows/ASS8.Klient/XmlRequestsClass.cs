@@ -67,19 +67,33 @@ namespace ASS8.Klient
     [XmlRoot("plik")]
     public class plikInfo : plikBase
     {
-        private DateTime pData;
+        private long pData;
         private int pRozmiar;
+        private string pHash;
         private int pDostep;
         public plikInfo() { }
-        public plikInfo(string n, DateTime d, int r, int dos)
+        public plikInfo(string n, long d, int r, int dos,string h)
             : base(n)
         {
             pData = d;
             rozmiar = r;
             pDostep = dos;
+            pHash = h;
         }
         [XmlAttribute]
-        public DateTime data
+        public string hash
+        {
+            get
+            {
+                return pHash;
+            }
+            set
+            {
+                pHash = value;
+            }
+        }
+        [XmlAttribute]
+        public long data
         {
             get
             {
@@ -245,10 +259,10 @@ namespace ASS8.Klient
         public klientUpload()
         {
         }
-        public klientUpload(int id, int oper, string n, DateTime d, int r, int dos)
+        public klientUpload(int id, int oper, string n, long d, int r, int dos,string h)
             : base(id, oper)
         {
-            plik = new plikInfo(n, d, r, dos);
+            plik = new plikInfo(n, d, r, dos,h);
         }
         [XmlElement]
         public plikInfo plik
