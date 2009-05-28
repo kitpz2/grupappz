@@ -1,0 +1,9 @@
+C:\Documents and Settings\Ciałek\Moje dokumenty\Visual Studio 2008\Projects\asp_net_nauka\ASS8.Klient\ASS8.Klient\bin\Debug\ASS8.Klient.exe
+C:\Documents and Settings\Ciałek\Moje dokumenty\Visual Studio 2008\Projects\asp_net_nauka\ASS8.Klient\ASS8.Klient\bin\Debug\ASS8.Klient.pdb
+C:\Documents and Settings\Ciałek\Moje dokumenty\Visual Studio 2008\Projects\asp_net_nauka\ASS8.Klient\ASS8.Klient\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Ciałek\Moje dokumenty\Visual Studio 2008\Projects\asp_net_nauka\ASS8.Klient\ASS8.Klient\obj\Debug\ASS8.Klient.ASS8___Konfiguracja.resources
+C:\Documents and Settings\Ciałek\Moje dokumenty\Visual Studio 2008\Projects\asp_net_nauka\ASS8.Klient\ASS8.Klient\obj\Debug\ASS8.Klient.Properties.Resources.resources
+C:\Documents and Settings\Ciałek\Moje dokumenty\Visual Studio 2008\Projects\asp_net_nauka\ASS8.Klient\ASS8.Klient\obj\Debug\ASS8.Klient.csproj.GenerateResource.Cache
+C:\Documents and Settings\Ciałek\Moje dokumenty\Visual Studio 2008\Projects\asp_net_nauka\ASS8.Klient\ASS8.Klient\obj\Debug\ASS8.Klient.exe
+C:\Documents and Settings\Ciałek\Moje dokumenty\Visual Studio 2008\Projects\asp_net_nauka\ASS8.Klient\ASS8.Klient\obj\Debug\ASS8.Klient.pdb
+C:\Documents and Settings\Ciałek\Moje dokumenty\Visual Studio 2008\Projects\asp_net_nauka\ASS8.Klient\ASS8.Klient\obj\Debug\ASS8.Klient.ASS8___Logowanie.resources
