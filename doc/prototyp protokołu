@@ -134,7 +134,7 @@ operacja:
 odp: // po opisie podane operacje w ktorych bledy moga wystapic
 400 - bledne zapytanie  // dla: 100,101,102,103
 401 - bledny numer sesji // dla: 100,101,102,103
-402 - podany plik istnieje (w przypadku wysylania pliku) // dla 102 --Czemu to i 404 to to samo?
+402 - podany plik istnieje (w przypadku wysylania pliku) // dla 102
 403 - wewnetrzny blad serwera // dla: 100,101,102,103
 404 - podany plik nie istnieje // dla 102,103
 405 - błąd odbierania plikow // dla 102

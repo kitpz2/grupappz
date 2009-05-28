@@ -196,7 +196,10 @@ bool parser::parsuj(std::string &do_parsowania)
 }
 void parser::wyslij(std::string w)///Funkcja wysyłająca dane przez SOCKET
 {
-    stream<<w<<std::endl;
+    //w.append(std::endl);
+    info2("Wysylam",w.c_str());
+    stream<<w;//<<std::endl;
+
 }
 bool parser::logowanie(std::string login, std::string haslo)///Funkcja sprawdzająca czy dla podanego loginu hasło jest prawidłowe, jeżeli tak to generuje id_sesji
 {
@@ -212,8 +215,20 @@ bool parser::logowanie(std::string login, std::string haslo)///Funkcja sprawdzaj
     }
     else
     {
-        Eline("Logowanie(): niepoprawne haslo");
-        return false;
+        md5wrapper md5;
+        info2("Haslo z bazy zhaszowane",md5.getHashFromString(baza.get_passwd(login)).c_str());
+        if (md5.getHashFromString(baza.get_passwd(login)).compare(haslo)==0)
+        {
+            info("Generowanie ID sesji");
+            srand(time(NULL));
+            id_sesji=(unsigned int)rand();
+            return true;
+        }
+        else
+        {
+            Eline("Logowanie(): niepoprawne haslo");
+            return false;
+        }
     }
 }
 ///Krotka odpowiedz gdzie i - kod odpowiedzi
@@ -340,6 +355,11 @@ void parser::lista_plikow(std::string uzytkownik)
         for (unsigned int i=0;i<res.num_rows();++i)
         {
             line;
+            if (res[i]["hashValue"].compare("-1")==0)
+            {
+                info2("plik usuniety, pomijam",res[i]["sciezka"].c_str());
+                continue;
+            }
             char a[1024];
             sprintf(a,"<plik nazwa=\"%s\" data=\"%d\" rozmiar=\"%d\"\
                 dostep=\"%d\" hash=\"%s\"/>\r\n",res[i]["sciezka"].c_str(),
@@ -398,10 +418,6 @@ std::vector <std::string> parser::pobieranie_listy_plikow(xmlpp::TextReader &rea
     return nazwy_plikow;
 }
 
-/*void wyslij_plik(xmlpp::TextReader &reader,std::string plik)
-{
-
-}*/
 void parser::odbieranie_plikow(xmlpp::TextReader &reader, std::string uzytkownik)
 {
     info("Odbieranie plikow");
@@ -436,63 +452,76 @@ void parser::odbieranie_plikow(xmlpp::TextReader &reader, std::string uzytkownik
                         line;
                         FILE *plik=fopen(sciezka.c_str(),"r");
                         line;
+                        info("Sprawdzanie czy plik istnieje");
                         if (plik!=NULL)
                         {
-                            line;
+                            info("Plik istnieje");
                             fclose(plik);
-                            line;
                             mysqlpp::StoreQueryResult wynik= baza.getFileInfo(nazwa,login);
-                            line;
-                            for (unsigned int i=0;i<wynik.num_rows();++i)
+                            if (wynik)
                             {
-                                line;
-                                if (wynik[i]["hash"].compare(hash)==0)
+                                if (wynik.num_rows()<1)
                                 {
-                                    line;
-                                    info("Plik juz istnieje, co robic?");
-                                    line;
-                                    Odpowiedz(402,102);
-                                    line;
-                                    std::string a=czytanie_z_socketa();
-                                    line;
-                                    if (!parsuj(a))
-                                    {
-                                        line;
-                                        Odpowiedz(406,102);
-                                        line;
-                                        return;
-                                    }
-                                    else
-                                    {
-                                        line;
-                                        Odpowiedz(406,102);
-                                        line;
-                                        break;
-                                    }
-                                    line;
+                                    info("Plik jest na dysku ale nie ma w bazie, zgadzam sie na zastąpienie");
+                                    Odpowiedz(404,102);//Brak pliku, mozna wysylac
+
                                 }
                                 else
                                 {
-                                    line;
-                                    Odpowiedz(404,102);
-                                    line;
-                                    break;
+                                    for (unsigned int i=0;i<wynik.num_rows();++i)
+                                    {
+                                        info("Sprawdzanie czy jest w bazie");
+                                        if (wynik[i]["hash"].compare(hash)==0)
+                                        {
+                                            line;
+                                            info("Plik juz istnieje, co robic?");
+                                            line;
+                                            Odpowiedz(402,102);
+                                            line;
+                                            std::string a=czytanie_z_socketa();
+                                            line;
+                                            if (!parsuj(a))//Zgadza sie klient na zastapienie?
+                                            {
+                                                info("Klient nie zastepuje pliku");
+                                                Odpowiedz(406,102);//Nie zgadza, kończymy
+                                                return;
+                                            }
+                                            else
+                                            {
+                                                info("Plik zastepuje plik");
+                                                Odpowiedz(406,102);//Zgadza, kontynuujemy
+                                                break;
+                                            }
+                                        }
+                                        else
+                                        {
+                                            info("Plik jest na dysku ale nie ma w bazie, zgadzam sie na zastąpienie");
+                                            Odpowiedz(404,102);//Brak pliku, mozna wysylac
+                                            break;
+                                        }
+                                        info("To nie powinno się nigdy wywołać");
+                                        Odpowiedz(404,103);//Brak pliku, mozna wysylac
+                                    }
+
                                 }
-                                line;
                             }
-                            line;
-                            Odpowiedz(404,102);//Ta operacja nie powinna się nigdy wykonać
-                            line;
+                            else
+                            {
+                                info("Plik jest na dysku ale nie ma w bazie, zgadzam sie na zastąpienie");
+                                Odpowiedz(404,102);//Brak pliku, mozna wysylac
+
+                            }
                         }
                         else
                         {
+                            info("Brak pliku, wysyłam odpowiedź klientowi i przystępuje do odbioru pliku");
                             Odpowiedz(404,102);
-                            line;
+
                         }
-                        //std::string temp_sciezka=login+"/";
-                        //temp+="temp.";
+
                         char temp_sciezka[256];
                         sprintf(temp_sciezka,"%s/temp.%d",login.c_str(),id_sesji);
+                        info2("Tworze plik tymczasowy",temp_sciezka);
                         plik=fopen(temp_sciezka,"w+");
                         if (!plik)
                         {
@@ -509,21 +538,37 @@ void parser::odbieranie_plikow(xmlpp::TextReader &reader, std::string uzytkownik
                         if (rozmiar<128)
                             ile_czytac=1;
 
-                        char a[128]={0};
+                        char a[129]={0};
                         char t[256];
-                        for (int i=0;i<rozmiar;i+=ile_czytac)
+                        //for (int i=0;i<rozmiar;i+=ile_czytac)
+                        int i=0;
+                        while (size<rozmiar)
                         {
+                            if (i>32)
+                            {
+                                info("Blad przy odbieraniu pliku");
+                                Odpowiedz(403,102);
+                                return;
+                            }
                             if (rozmiar-size<32)
                                 ile_czytac=1;
                             stream.read(a,ile_czytac);
-                            a[ile_czytac]=0;
-                            info2("odebrano",a);
-                            fprintf(plik,"%s",a);
-                            size+=ile_czytac;
+                            std::string tmpp=a;
+                            //a[ile_czytac]=0;
+                            if (tmpp.size()==0)
+                            {
+                                ile_czytac=1;
+                                info("odebrano 0!");
+                                ++i;
+                                continue;
+                            }
+                            info2("odebrano",tmpp.c_str());
+                            fprintf(plik,"%s",tmpp.c_str());
+                            size+=tmpp.size();
                             sprintf(t,"Odczytano %d bajtów z %d bajtów, pozostalo do odczytania %d bajtów\nteraz bede czytal %d bajtow",size,rozmiar,rozmiar-size,ile_czytac);
                             info(t)
 #ifdef DEBUG
-                            std::string tmpp=a;
+
                             sprintf(t,"%s - %d",a,tmpp.size());
                             info(t);
 #endif
@@ -617,11 +662,17 @@ void parser::wyslij_plik(std::string plik,std::string uzytkownik)
         odp+="\" data=\"-1\" rozmiar=\"-1\" dostep=\"-1\"/>\r\n";
 
         info("res.num_rows()<1");
-        Odpowiedz(101,402,odp);
+        Odpowiedz(101,404,odp);
         return;
     }
     else
     {
+        if (res[0]["hashValue"].compare("-1")==0)
+        {
+            info2("Plik usuniety, pomijam",res[0]["sciezka"].c_str());
+            Odpowiedz(101,404);
+            return;
+        }
         info("wysylanie info o pliku")
         std::string odp="<plik nazwa=\""+res[0]["sciezka"];
         odp+="\" data=\""+res[0]["dataDodania"];
@@ -694,10 +745,10 @@ void parser::usun_pliki(xmlpp::TextReader &reader,std::string uzytkownik)
     info("Usuwanie plików");
     while (reader.read())
     {
-        info("Usuam Kolejny plik");
         info2("plik",reader.get_name().c_str());
         if (reader.get_name().compare("plik")==0)
         {
+            info("Usuam Kolejny plik");
             info("plik jest ok");
 
             if (reader.has_attributes())
@@ -714,21 +765,21 @@ void parser::usun_pliki(xmlpp::TextReader &reader,std::string uzytkownik)
                         std::string hash=reader.get_value().c_str();
                         info("ma hash");
 
-                        if(baza.rmFile(nazwa,uzytkownik,hash))
+                        if (baza.rmFile(nazwa,uzytkownik,hash))
                         {
-                            #ifdef DEBUG
+#ifdef DEBUG
                             char debug[256];
                             sprintf(debug,"Plik %s o hashu %s usunięty prawidłowo",nazwa.c_str(),hash.c_str());
                             info(debug)
-                            #endif
+#endif
                             Odpowiedz(406,103);
                         }
                         {
-                            #ifdef DEBUG
+#ifdef DEBUG
                             char debug[256];
                             sprintf(debug,"Plik %s o hashu %s NIE usunięty",nazwa.c_str(),hash.c_str());
                             info(debug)
-                            #endif
+#endif
                             Odpowiedz(403,103);
                         }
                     }
