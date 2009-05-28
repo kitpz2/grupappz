@@ -14,9 +14,9 @@
 	"parser.hpp"
 	"version.h"
 
-1241786567 /home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/version.h
+1243523128 /home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/version.h
 
-1243522777 source:/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/parser.cpp
+1243524927 source:/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/parser.cpp
 	<iostream>
 	<string>
 	<cstdlib>
