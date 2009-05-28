@@ -1,23 +1,33 @@
 \begin{theindex}
 
+  \item {$\sim $md5wrapper}
+    \subitem {md5wrapper}, \hyperpage{16}
   \item {/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/baza.cpp}, 
-		\hyperpage{15}
-  \item {/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/baza.hpp}, 
-		\hyperpage{16}
-  \item {/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/debug.hpp}, 
-		\hyperpage{17}
-  \item {/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/main.cpp}, 
-		\hyperpage{19}
-  \item {/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/parser.cpp}, 
 		\hyperpage{21}
-  \item {/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/parser.hpp}, 
+  \item {/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/baza.hpp}, 
 		\hyperpage{22}
-  \item {/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/server.hpp}, 
-		\hyperpage{24}
-  \item {/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/version.h}, 
+  \item {/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/debug.hpp}, 
+		\hyperpage{23}
+  \item {/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/include/md5/md5.cpp}, 
 		\hyperpage{25}
+  \item {/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/include/md5/md5.h}, 
+		\hyperpage{29}
+  \item {/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/include/md5/md5wrapper.cpp}, 
+		\hyperpage{30}
+  \item {/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/include/md5/md5wrapper.h}, 
+		\hyperpage{31}
+  \item {/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/main.cpp}, 
+		\hyperpage{32}
+  \item {/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/parser.cpp}, 
+		\hyperpage{34}
+  \item {/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/parser.hpp}, 
+		\hyperpage{35}
+  \item {/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/server.hpp}, 
+		\hyperpage{37}
+  \item {/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/version.h}, 
+		\hyperpage{38}
   \item {/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/xml.hpp}, 
-		\hyperpage{26}
+		\hyperpage{39}
 
   \indexspace
 
@@ -35,97 +45,213 @@
     \subitem {getFileInfo}, \hyperpage{10}
     \subitem {getFilesList}, \hyperpage{11}
     \subitem {getUserId}, \hyperpage{11}
+    \subitem {rmFile}, \hyperpage{12}
+  \item {buffer}
+    \subitem {MD5\_\discretionary {-}{}{}CTX}, \hyperpage{15}
   \item {BUFSIZE}
-    \subitem {parser.hpp}, \hyperpage{23}
+    \subitem {parser.hpp}, \hyperpage{36}
   \item {BUFSIZE2}
-    \subitem {parser.hpp}, \hyperpage{23}
+    \subitem {parser.hpp}, \hyperpage{36}
 
   \indexspace
 
   \item {connect}
     \subitem {Baza}, \hyperpage{10}
+  \item {count}
+    \subitem {MD5\_\discretionary {-}{}{}CTX}, \hyperpage{15}
 
   \indexspace
 
   \item {deb}
-    \subitem {debug.hpp}, \hyperpage{17}
-  \item {DEBUG}
-    \subitem {debug.hpp}, \hyperpage{17}
+    \subitem {debug.hpp}, \hyperpage{23}
   \item {debug.hpp}
-    \subitem {deb}, \hyperpage{17}
-    \subitem {DEBUG}, \hyperpage{17}
-    \subitem {Eline}, \hyperpage{17}
-    \subitem {Eline2}, \hyperpage{17}
-    \subitem {info}, \hyperpage{18}
-    \subitem {info2}, \hyperpage{18}
-    \subitem {line}, \hyperpage{18}
+    \subitem {deb}, \hyperpage{23}
+    \subitem {Eline}, \hyperpage{23}
+    \subitem {Eline2}, \hyperpage{23}
+    \subitem {info}, \hyperpage{23}
+    \subitem {info2}, \hyperpage{24}
+    \subitem {line}, \hyperpage{24}
 
   \indexspace
 
   \item {eat\_\discretionary {-}{}{}zombie}
-    \subitem {parser.hpp}, \hyperpage{23}
+    \subitem {parser.hpp}, \hyperpage{36}
   \item {Eline}
-    \subitem {debug.hpp}, \hyperpage{17}
+    \subitem {debug.hpp}, \hyperpage{23}
   \item {Eline2}
-    \subitem {debug.hpp}, \hyperpage{17}
+    \subitem {debug.hpp}, \hyperpage{23}
 
   \indexspace
 
+  \item {F}
+    \subitem {md5.cpp}, \hyperpage{25}
+  \item {FF}
+    \subitem {md5.cpp}, \hyperpage{25}
+
+  \indexspace
+
+  \item {G}
+    \subitem {md5.cpp}, \hyperpage{26}
   \item {get\_\discretionary {-}{}{}passwd}
     \subitem {Baza}, \hyperpage{10}
   \item {getFileInfo}
     \subitem {Baza}, \hyperpage{10}
   \item {getFilesList}
     \subitem {Baza}, \hyperpage{11}
+  \item {getHashFromFile}
+    \subitem {md5wrapper}, \hyperpage{16}
+  \item {getHashFromString}
+    \subitem {md5wrapper}, \hyperpage{17}
   \item {getUserId}
     \subitem {Baza}, \hyperpage{11}
+  \item {GG}
+    \subitem {md5.cpp}, \hyperpage{26}
 
   \indexspace
 
+  \item {H}
+    \subitem {md5.cpp}, \hyperpage{26}
+  \item {HH}
+    \subitem {md5.cpp}, \hyperpage{26}
+
+  \indexspace
+
+  \item {I}
+    \subitem {md5.cpp}, \hyperpage{26}
+  \item {II}
+    \subitem {md5.cpp}, \hyperpage{26}
   \item {info}
-    \subitem {debug.hpp}, \hyperpage{18}
+    \subitem {debug.hpp}, \hyperpage{23}
   \item {info2}
-    \subitem {debug.hpp}, \hyperpage{18}
+    \subitem {debug.hpp}, \hyperpage{24}
 
   \indexspace
 
   \item {line}
-    \subitem {debug.hpp}, \hyperpage{18}
+    \subitem {debug.hpp}, \hyperpage{24}
 
   \indexspace
 
   \item {main}
-    \subitem {main.cpp}, \hyperpage{19}
+    \subitem {main.cpp}, \hyperpage{32}
   \item {main.cpp}
-    \subitem {main}, \hyperpage{19}
+    \subitem {main}, \hyperpage{32}
+  \item {MD5}, \hyperpage{13}
+    \subitem {MD5}, \hyperpage{13}
+    \subitem {MD5Final}, \hyperpage{13}
+    \subitem {MD5Init}, \hyperpage{13}
+    \subitem {MD5Update}, \hyperpage{13}
+  \item {md5.cpp}
+    \subitem {F}, \hyperpage{25}
+    \subitem {FF}, \hyperpage{25}
+    \subitem {G}, \hyperpage{26}
+    \subitem {GG}, \hyperpage{26}
+    \subitem {H}, \hyperpage{26}
+    \subitem {HH}, \hyperpage{26}
+    \subitem {I}, \hyperpage{26}
+    \subitem {II}, \hyperpage{26}
+    \subitem {ROTATE\_\discretionary {-}{}{}LEFT}, \hyperpage{27}
+    \subitem {S11}, \hyperpage{27}
+    \subitem {S12}, \hyperpage{27}
+    \subitem {S13}, \hyperpage{27}
+    \subitem {S14}, \hyperpage{27}
+    \subitem {S21}, \hyperpage{27}
+    \subitem {S22}, \hyperpage{27}
+    \subitem {S23}, \hyperpage{27}
+    \subitem {S24}, \hyperpage{27}
+    \subitem {S31}, \hyperpage{27}
+    \subitem {S32}, \hyperpage{28}
+    \subitem {S33}, \hyperpage{28}
+    \subitem {S34}, \hyperpage{28}
+    \subitem {S41}, \hyperpage{28}
+    \subitem {S42}, \hyperpage{28}
+    \subitem {S43}, \hyperpage{28}
+    \subitem {S44}, \hyperpage{28}
+  \item {md5.h}
+    \subitem {POINTER}, \hyperpage{29}
+  \item {MD5\_\discretionary {-}{}{}CTX}, \hyperpage{15}
+    \subitem {buffer}, \hyperpage{15}
+    \subitem {count}, \hyperpage{15}
+    \subitem {state}, \hyperpage{15}
+  \item {MD5Final}
+    \subitem {MD5}, \hyperpage{13}
+  \item {MD5Init}
+    \subitem {MD5}, \hyperpage{13}
+  \item {MD5Update}
+    \subitem {MD5}, \hyperpage{13}
+  \item {md5wrapper}, \hyperpage{16}
+    \subitem {$\sim $md5wrapper}, \hyperpage{16}
+    \subitem {getHashFromFile}, \hyperpage{16}
+    \subitem {getHashFromString}, \hyperpage{17}
+    \subitem {md5wrapper}, \hyperpage{16}
 
   \indexspace
 
-  \item {parser}, \hyperpage{13}
-    \subitem {parser}, \hyperpage{13}
-    \subitem {start}, \hyperpage{13}
+  \item {parser}, \hyperpage{18}
+    \subitem {parser}, \hyperpage{18}
+    \subitem {start}, \hyperpage{18}
   \item {parser.hpp}
-    \subitem {BUFSIZE}, \hyperpage{23}
-    \subitem {BUFSIZE2}, \hyperpage{23}
-    \subitem {eat\_\discretionary {-}{}{}zombie}, \hyperpage{23}
+    \subitem {BUFSIZE}, \hyperpage{36}
+    \subitem {BUFSIZE2}, \hyperpage{36}
+    \subitem {eat\_\discretionary {-}{}{}zombie}, \hyperpage{36}
+  \item {POINTER}
+    \subitem {md5.h}, \hyperpage{29}
 
   \indexspace
 
   \item {RC\_\discretionary {-}{}{}FILEVERSION}
-    \subitem {version.h}, \hyperpage{25}
+    \subitem {version.h}, \hyperpage{38}
   \item {RC\_\discretionary {-}{}{}FILEVERSION\_\discretionary {-}{}{}STRING}
-    \subitem {version.h}, \hyperpage{25}
+    \subitem {version.h}, \hyperpage{38}
+  \item {rmFile}
+    \subitem {Baza}, \hyperpage{12}
+  \item {ROTATE\_\discretionary {-}{}{}LEFT}
+    \subitem {md5.cpp}, \hyperpage{27}
 
   \indexspace
 
+  \item {S11}
+    \subitem {md5.cpp}, \hyperpage{27}
+  \item {S12}
+    \subitem {md5.cpp}, \hyperpage{27}
+  \item {S13}
+    \subitem {md5.cpp}, \hyperpage{27}
+  \item {S14}
+    \subitem {md5.cpp}, \hyperpage{27}
+  \item {S21}
+    \subitem {md5.cpp}, \hyperpage{27}
+  \item {S22}
+    \subitem {md5.cpp}, \hyperpage{27}
+  \item {S23}
+    \subitem {md5.cpp}, \hyperpage{27}
+  \item {S24}
+    \subitem {md5.cpp}, \hyperpage{27}
+  \item {S31}
+    \subitem {md5.cpp}, \hyperpage{27}
+  \item {S32}
+    \subitem {md5.cpp}, \hyperpage{28}
+  \item {S33}
+    \subitem {md5.cpp}, \hyperpage{28}
+  \item {S34}
+    \subitem {md5.cpp}, \hyperpage{28}
+  \item {S41}
+    \subitem {md5.cpp}, \hyperpage{28}
+  \item {S42}
+    \subitem {md5.cpp}, \hyperpage{28}
+  \item {S43}
+    \subitem {md5.cpp}, \hyperpage{28}
+  \item {S44}
+    \subitem {md5.cpp}, \hyperpage{28}
   \item {start}
-    \subitem {parser}, \hyperpage{13}
+    \subitem {parser}, \hyperpage{18}
+  \item {state}
+    \subitem {MD5\_\discretionary {-}{}{}CTX}, \hyperpage{15}
 
   \indexspace
 
   \item {version.h}
-    \subitem {RC\_\discretionary {-}{}{}FILEVERSION}, \hyperpage{25}
+    \subitem {RC\_\discretionary {-}{}{}FILEVERSION}, \hyperpage{38}
     \subitem {RC\_\discretionary {-}{}{}FILEVERSION\_\discretionary {-}{}{}STRING}, 
-		\hyperpage{25}
+		\hyperpage{38}
 
 \end{theindex}

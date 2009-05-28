@@ -23,8 +23,10 @@ mysqlpp::StoreQueryResult \hyperlink{a00001_1d1cfca062ab3117b2b97281df012823}{ge
 \item 
 int \hyperlink{a00001_65054f08c8fd7c600f6c2fe2c7f61a43}{getUserId} (std::string user)
 \begin{CompactList}\small\item\em Pobiera id uzytkownika 'user'. \item\end{CompactList}\item 
-void \hyperlink{a00001_f1bda4acd20e6fd00a35c43638e48956}{addFile} (std::string nazwa, std::string konto, int wielkosc, int hash=-1, int prawa=-1, int data=-1)
-\begin{CompactList}\small\item\em Dodaje plik do bazy danych. \item\end{CompactList}\end{CompactItemize}
+bool \hyperlink{a00001_abbda65be49dfb28b1a578d0383599fa}{addFile} (std::string nazwa, std::string konto, int wielkosc, std::string hash=\char`\"{}-1\char`\"{}, int prawa=-1, int data=-1)
+\begin{CompactList}\small\item\em Dodaje plik do bazy danych. \item\end{CompactList}\item 
+bool \hyperlink{a00001_7161c573401166cc5f7d98ae6f335b44}{rmFile} (std::string nazwa, std::string konto, std::string hash)
+\end{CompactItemize}
 
 
 \subsection{Opis szczegółowy}
@@ -47,24 +49,24 @@ Konstruktor pusty.
 Definicja w linii 17 pliku baza.hpp.
 
 \subsection{Dokumentacja funkcji składowych}
-\hypertarget{a00001_f1bda4acd20e6fd00a35c43638e48956}{
+\hypertarget{a00001_abbda65be49dfb28b1a578d0383599fa}{
 \index{Baza@{Baza}!addFile@{addFile}}
 \index{addFile@{addFile}!Baza@{Baza}}
-\subsubsection[{addFile}]{\setlength{\rightskip}{0pt plus 5cm}void Baza::addFile (std::string {\em nazwa}, \/  std::string {\em konto}, \/  int {\em wielkosc}, \/  int {\em hash} = {\tt -1}, \/  int {\em prawa} = {\tt -1}, \/  int {\em data} = {\tt -1})}}
-\label{a00001_f1bda4acd20e6fd00a35c43638e48956}
+\subsubsection[{addFile}]{\setlength{\rightskip}{0pt plus 5cm}bool Baza::addFile (std::string {\em nazwa}, \/  std::string {\em konto}, \/  int {\em wielkosc}, \/  std::string {\em hash} = {\tt \char`\"{}-1\char`\"{}}, \/  int {\em prawa} = {\tt -1}, \/  int {\em data} = {\tt -1})}}
+\label{a00001_abbda65be49dfb28b1a578d0383599fa}
 
 
 Dodaje plik do bazy danych. 
 
 
 
-Definicja w linii 159 pliku baza.cpp.
+Definicja w linii 236 pliku baza.cpp.
 
 Oto graf wywołań dla tej funkcji:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=122pt]{a00001_f1bda4acd20e6fd00a35c43638e48956_cgraph}
+\includegraphics[width=122pt]{a00001_abbda65be49dfb28b1a578d0383599fa_cgraph}
 \end{center}
 \end{figure}
 \hypertarget{a00001_bef61cc396e46d347a47c75e9ef8dfde}{
@@ -77,6 +79,8 @@ Oto graf wywołań dla tej funkcji:\nopagebreak
 Łaczy się z bazą damych. 
 
 
+
+I zamykamy połączenie 
 
 Definicja w linii 3 pliku baza.cpp.
 
@@ -98,7 +102,7 @@ Pobiera hasło uzytkownika z bazy.
 
 
 
-Definicja w linii 19 pliku baza.cpp.\hypertarget{a00001_1d1cfca062ab3117b2b97281df012823}{
+Definicja w linii 30 pliku baza.cpp.\hypertarget{a00001_1d1cfca062ab3117b2b97281df012823}{
 \index{Baza@{Baza}!getFileInfo@{getFileInfo}}
 \index{getFileInfo@{getFileInfo}!Baza@{Baza}}
 \subsubsection[{getFileInfo}]{\setlength{\rightskip}{0pt plus 5cm}mysqlpp::StoreQueryResult Baza::getFileInfo (std::string {\em file}, \/  int {\em user\_\-id})}}
@@ -107,7 +111,7 @@ Definicja w linii 19 pliku baza.cpp.\hypertarget{a00001_1d1cfca062ab3117b2b97281
 
 
 
-Definicja w linii 135 pliku baza.cpp.\hypertarget{a00001_e4a033a65cb585aa91c15fd8b8fde764}{
+Definicja w linii 201 pliku baza.cpp.\hypertarget{a00001_e4a033a65cb585aa91c15fd8b8fde764}{
 \index{Baza@{Baza}!getFileInfo@{getFileInfo}}
 \index{getFileInfo@{getFileInfo}!Baza@{Baza}}
 \subsubsection[{getFileInfo}]{\setlength{\rightskip}{0pt plus 5cm}mysqlpp::StoreQueryResult Baza::getFileInfo (std::string {\em file}, \/  std::string {\em user})}}
@@ -118,7 +122,7 @@ Podobnie jak getFilesList tylko ze pobiera informację o jednym pliku.
 
 
 
-Definicja w linii 119 pliku baza.cpp.
+Definicja w linii 174 pliku baza.cpp.
 
 Oto graf wywołań dla tej funkcji:\nopagebreak
 \begin{figure}[H]
@@ -138,7 +142,7 @@ Najpierw wywołuje \hyperlink{a00001_65054f08c8fd7c600f6c2fe2c7f61a43}{getUserId
 
 Zapytanie o listę plików uzytkownika o nazwie podanej w zmiennej user. 
 
-Definicja w linii 64 pliku baza.cpp.
+Definicja w linii 97 pliku baza.cpp.
 
 Oto graf wywołań dla tej funkcji:\nopagebreak
 \begin{figure}[H]
@@ -158,7 +162,7 @@ Pobiera listę plików z bazy na podstawie ID uzytkownika.
 
 Zapytanie o listę plikow uzytkownika po id uzytkownika z bazy accounts\_\-konto. 
 
-Definicja w linii 39 pliku baza.cpp.
+Definicja w linii 61 pliku baza.cpp.
 
 Here is the caller graph for this function:\nopagebreak
 \begin{figure}[H]
@@ -178,7 +182,7 @@ Pobiera id uzytkownika 'user'.
 
 Zapytanie o ID uzytkownika o loginie 'user' ale nie o id z auth\_\-user tylko o id z accounts\_\-konto. 
 
-Definicja w linii 82 pliku baza.cpp.
+Definicja w linii 126 pliku baza.cpp.
 
 Here is the caller graph for this function:\nopagebreak
 \begin{figure}[H]
@@ -187,9 +191,23 @@ Here is the caller graph for this function:\nopagebreak
 \includegraphics[width=132pt]{a00001_65054f08c8fd7c600f6c2fe2c7f61a43_icgraph}
 \end{center}
 \end{figure}
+\hypertarget{a00001_7161c573401166cc5f7d98ae6f335b44}{
+\index{Baza@{Baza}!rmFile@{rmFile}}
+\index{rmFile@{rmFile}!Baza@{Baza}}
+\subsubsection[{rmFile}]{\setlength{\rightskip}{0pt plus 5cm}bool Baza::rmFile (std::string {\em nazwa}, \/  std::string {\em konto}, \/  std::string {\em hash})}}
+\label{a00001_7161c573401166cc5f7d98ae6f335b44}
+
+
+Usuwa plik z bazy \begin{Desc}
+\item[Parametry:]
+\begin{description}
+\item[{\em nazwa}]nazwa pliku do usuniecia \item[{\em konto}]nazwa konta z ktorego sie usuwa \item[{\em hash}]hash pliku (dla sprawdzenia czy napewno dobry plik) \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Zwraca:]czy operacja zakończona powodzeniem \end{Desc}
 
 
 Dokumentacja dla tej klasy została wygenerowana z plików:\begin{CompactItemize}
 \item 
-/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/\hyperlink{a00004}{baza.hpp}\item 
-/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/\hyperlink{a00003}{baza.cpp}\end{CompactItemize}
+/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/\hyperlink{a00007}{baza.hpp}\item 
+/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/\hyperlink{a00006}{baza.cpp}\end{CompactItemize}

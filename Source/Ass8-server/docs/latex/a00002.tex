@@ -1,71 +1,106 @@
 \hypertarget{a00002}{
-\section{Dokumentacja klasy parser}
-\label{a00002}\index{parser@{parser}}
+\section{Dokumentacja klasy MD5}
+\label{a00002}\index{MD5@{MD5}}
 }
-{\tt \#include $<$parser.hpp$>$}
+{\tt \#include $<$md5.h$>$}
 
-Diagram współpracy dla parser:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=86pt]{a00035}
-\end{center}
-\end{figure}
 \subsection*{Metody publiczne}
 \begin{CompactItemize}
 \item 
-\hyperlink{a00002_3a237071a3ab764cd61bc53df9dd4f46}{parser} (tcp::iostream \&stream, const char $\ast$server, const char $\ast$user, const char $\ast$pass, const char $\ast$db)
+void \hyperlink{a00002_72b35c041cb6983aaa74e2f1c31d5a29}{MD5Init} (\hyperlink{a00003}{MD5\_\-CTX} $\ast$)
 \item 
-void \hyperlink{a00002_7793913f528921aa22c4b6cc259a0a14}{start} ()
+void \hyperlink{a00002_a59116f0a26354a217fa186a43cd9d28}{MD5Update} (\hyperlink{a00003}{MD5\_\-CTX} $\ast$, unsigned char $\ast$, unsigned int)
+\item 
+void \hyperlink{a00002_98039031d87c1f5b787050e2b487d83f}{MD5Final} (unsigned char\mbox{[}16\mbox{]}, \hyperlink{a00003}{MD5\_\-CTX} $\ast$)
+\item 
+\hyperlink{a00002_fa6155ec36de415ab2dcf5e54b670d13}{MD5} ()
 \end{CompactItemize}
 
 
 \subsection{Opis szczegółowy}
 
 
-Definicja w linii 22 pliku parser.hpp.
+Definicja w linii 60 pliku md5.h.
 
 \subsection{Dokumentacja konstruktora i destruktora}
-\hypertarget{a00002_3a237071a3ab764cd61bc53df9dd4f46}{
-\index{parser@{parser}!parser@{parser}}
-\index{parser@{parser}!parser@{parser}}
-\subsubsection[{parser}]{\setlength{\rightskip}{0pt plus 5cm}parser::parser (tcp::iostream \& {\em stream}, \/  const char $\ast$ {\em server}, \/  const char $\ast$ {\em user}, \/  const char $\ast$ {\em pass}, \/  const char $\ast$ {\em db})\hspace{0.3cm}{\tt  \mbox{[}inline\mbox{]}}}}
-\label{a00002_3a237071a3ab764cd61bc53df9dd4f46}
+\hypertarget{a00002_fa6155ec36de415ab2dcf5e54b670d13}{
+\index{MD5@{MD5}!MD5@{MD5}}
+\index{MD5@{MD5}!MD5@{MD5}}
+\subsubsection[{MD5}]{\setlength{\rightskip}{0pt plus 5cm}MD5::MD5 ()\hspace{0.3cm}{\tt  \mbox{[}inline\mbox{]}}}}
+\label{a00002_fa6155ec36de415ab2dcf5e54b670d13}
 
 
 
 
-Definicja w linii 71 pliku parser.hpp.
+Definicja w linii 77 pliku md5.h.
+
+\subsection{Dokumentacja funkcji składowych}
+\hypertarget{a00002_98039031d87c1f5b787050e2b487d83f}{
+\index{MD5@{MD5}!MD5Final@{MD5Final}}
+\index{MD5Final@{MD5Final}!MD5@{MD5}}
+\subsubsection[{MD5Final}]{\setlength{\rightskip}{0pt plus 5cm}void MD5::MD5Final (unsigned char {\em digest}\mbox{[}16\mbox{]}, \/  {\bf MD5\_\-CTX} $\ast$ {\em context})}}
+\label{a00002_98039031d87c1f5b787050e2b487d83f}
+
+
+
+
+Definicja w linii 153 pliku md5.cpp.
 
 Oto graf wywołań dla tej funkcji:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=118pt]{a00002_3a237071a3ab764cd61bc53df9dd4f46_cgraph}
+\includegraphics[width=129pt]{a00002_98039031d87c1f5b787050e2b487d83f_cgraph}
 \end{center}
 \end{figure}
-
-
-\subsection{Dokumentacja funkcji składowych}
-\hypertarget{a00002_7793913f528921aa22c4b6cc259a0a14}{
-\index{parser@{parser}!start@{start}}
-\index{start@{start}!parser@{parser}}
-\subsubsection[{start}]{\setlength{\rightskip}{0pt plus 5cm}void parser::start ()}}
-\label{a00002_7793913f528921aa22c4b6cc259a0a14}
-
-
 
 
 Here is the caller graph for this function:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=94pt]{a00002_7793913f528921aa22c4b6cc259a0a14_icgraph}
+\includegraphics[width=157pt]{a00002_98039031d87c1f5b787050e2b487d83f_icgraph}
+\end{center}
+\end{figure}
+\hypertarget{a00002_72b35c041cb6983aaa74e2f1c31d5a29}{
+\index{MD5@{MD5}!MD5Init@{MD5Init}}
+\index{MD5Init@{MD5Init}!MD5@{MD5}}
+\subsubsection[{MD5Init}]{\setlength{\rightskip}{0pt plus 5cm}void MD5::MD5Init ({\bf MD5\_\-CTX} $\ast$ {\em context})}}
+\label{a00002_72b35c041cb6983aaa74e2f1c31d5a29}
+
+
+
+
+Definicja w linii 98 pliku md5.cpp.
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=153pt]{a00002_72b35c041cb6983aaa74e2f1c31d5a29_icgraph}
+\end{center}
+\end{figure}
+\hypertarget{a00002_a59116f0a26354a217fa186a43cd9d28}{
+\index{MD5@{MD5}!MD5Update@{MD5Update}}
+\index{MD5Update@{MD5Update}!MD5@{MD5}}
+\subsubsection[{MD5Update}]{\setlength{\rightskip}{0pt plus 5cm}void MD5::MD5Update ({\bf MD5\_\-CTX} $\ast$ {\em context}, \/  unsigned char $\ast$ {\em input}, \/  unsigned int {\em inputLen})}}
+\label{a00002_a59116f0a26354a217fa186a43cd9d28}
+
+
+
+
+Definicja w linii 112 pliku md5.cpp.
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=222pt]{a00002_a59116f0a26354a217fa186a43cd9d28_icgraph}
 \end{center}
 \end{figure}
 
 
 Dokumentacja dla tej klasy została wygenerowana z plików:\begin{CompactItemize}
 \item 
-/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/\hyperlink{a00008}{parser.hpp}\item 
-/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/\hyperlink{a00007}{parser.cpp}\end{CompactItemize}
+/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/include/md5/\hyperlink{a00010}{md5.h}\item 
+/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/include/md5/\hyperlink{a00009}{md5.cpp}\end{CompactItemize}

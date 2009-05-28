@@ -111,8 +111,12 @@ klient wysyla:
 </klient>
 
 serwer odpowiada (tyle razy ile bylo plikow)
+gdy plik został usuniety:
 <?xml version="1.0"?>
-<serwer operacja="numer_operacji" odp="kod_odp"/>
+<serwer operacja="103" odp="406"/>
+gdy były błędy:
+<?xml version="1.0"?>
+<serwer operacja="103" odp="403"/>
 
 
 kod_odpowiedzi

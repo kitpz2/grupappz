@@ -22,11 +22,11 @@
   </div>
 </div>
 <div class="contents">
-<h1>Dokumentacja klasy Baza</h1><!-- doxytag: class="Baza" --><code>#include &lt;<a class="el" href="a00014.html">baza.hpp</a>&gt;</code>
+<h1>Dokumentacja klasy Baza</h1><!-- doxytag: class="Baza" --><code>#include &lt;<a class="el" href="a00021.html">baza.hpp</a>&gt;</code>
 <p>
 
 <p>
-<a href="a00034.html">Lista wszystkich składowych.</a><table border="0" cellpadding="0" cellspacing="0">
+<a href="a00051.html">Lista wszystkich składowych.</a><table border="0" cellpadding="0" cellspacing="0">
 <tr><td></td></tr>
 <tr><td colspan="2"><br><h2>Metody publiczne</h2></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top">std::string&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00001.html#a09b37e4665bd7b2f2b8b54f8120f5be">get_passwd</a> (std::string login)</td></tr>
@@ -52,13 +52,15 @@
 <tr><td class="memItemLeft" nowrap align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00001.html#65054f08c8fd7c600f6c2fe2c7f61a43">getUserId</a> (std::string user)</td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Pobiera id uzytkownika 'user'.  <a href="#65054f08c8fd7c600f6c2fe2c7f61a43"></a><br></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00001.html#f1bda4acd20e6fd00a35c43638e48956">addFile</a> (std::string nazwa, std::string konto, int wielkosc, int hash=-1, int prawa=-1, int data=-1)</td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00001.html#abbda65be49dfb28b1a578d0383599fa">addFile</a> (std::string nazwa, std::string konto, int wielkosc, std::string hash=&quot;-1&quot;, int prawa=-1, int data=-1)</td></tr>
 
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Dodaje plik do bazy danych.  <a href="#f1bda4acd20e6fd00a35c43638e48956"></a><br></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Dodaje plik do bazy danych.  <a href="#abbda65be49dfb28b1a578d0383599fa"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00001.html#7161c573401166cc5f7d98ae6f335b44">rmFile</a> (std::string nazwa, std::string konto, std::string hash)</td></tr>
+
 </table>
 <hr><a name="_details"></a><h2>Opis szczegółowy</h2>
 
-<p>Definicja w linii <a class="el" href="a00014.html#l00008">8</a> pliku <a class="el" href="a00014.html">baza.hpp</a>.</p>
+<p>Definicja w linii <a class="el" href="a00021.html#l00008">8</a> pliku <a class="el" href="a00021.html">baza.hpp</a>.</p>
 <hr><h2>Dokumentacja konstruktora i destruktora</h2>
 <a class="anchor" name="8edd83a7fa98b203a1ab58157a1660a4"></a><!-- doxytag: member="Baza::Baza" ref="8edd83a7fa98b203a1ab58157a1660a4" args="()" -->
 <div class="memitem">
@@ -79,17 +81,17 @@
 Konstruktor pusty. 
 <p>
 
-<p>Definicja w linii <a class="el" href="a00014.html#l00017">17</a> pliku <a class="el" href="a00014.html">baza.hpp</a>.</p>
+<p>Definicja w linii <a class="el" href="a00021.html#l00017">17</a> pliku <a class="el" href="a00021.html">baza.hpp</a>.</p>
 
 </div>
 </div><p>
 <hr><h2>Dokumentacja funkcji składowych</h2>
-<a class="anchor" name="f1bda4acd20e6fd00a35c43638e48956"></a><!-- doxytag: member="Baza::addFile" ref="f1bda4acd20e6fd00a35c43638e48956" args="(std::string nazwa, std::string konto, int wielkosc, int hash=&#45;1, int prawa=&#45;1, int data=&#45;1)" -->
+<a class="anchor" name="abbda65be49dfb28b1a578d0383599fa"></a><!-- doxytag: member="Baza::addFile" ref="abbda65be49dfb28b1a578d0383599fa" args="(std::string nazwa, std::string konto, int wielkosc, std::string hash=&quot;&#45;1&quot;, int prawa=&#45;1, int data=&#45;1)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void Baza::addFile           </td>
+          <td class="memname">bool Baza::addFile           </td>
           <td>(</td>
           <td class="paramtype">std::string&nbsp;</td>
           <td class="paramname"> <em>nazwa</em>, </td>
@@ -109,8 +111,8 @@ Konstruktor pusty.
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&nbsp;</td>
-          <td class="paramname"> <em>hash</em> = <code>-1</code>, </td>
+          <td class="paramtype">std::string&nbsp;</td>
+          <td class="paramname"> <em>hash</em> = <code>&quot;-1&quot;</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -137,14 +139,14 @@ Konstruktor pusty.
 Dodaje plik do bazy danych. 
 <p>
 
-<p>Definicja w linii <a class="el" href="a00013.html#l00159">159</a> pliku <a class="el" href="a00013.html">baza.cpp</a>.</p>
+<p>Definicja w linii <a class="el" href="a00020.html#l00236">236</a> pliku <a class="el" href="a00020.html">baza.cpp</a>.</p>
 
 <p>
 <div class="dynheader">
 Oto graf wywołań dla tej funkcji:</div>
 <div class="dynsection">
-<p><center><img src="a00001_f1bda4acd20e6fd00a35c43638e48956_cgraph.png" border="0" usemap="#a00001_f1bda4acd20e6fd00a35c43638e48956_cgraph_map" alt=""></center>
-<map name="a00001_f1bda4acd20e6fd00a35c43638e48956_cgraph_map">
+<p><center><img src="a00001_abbda65be49dfb28b1a578d0383599fa_cgraph.png" border="0" usemap="#a00001_abbda65be49dfb28b1a578d0383599fa_cgraph_map" alt=""></center>
+<map name="a00001_abbda65be49dfb28b1a578d0383599fa_cgraph_map">
 <area shape="rect" href="a00001.html#65054f08c8fd7c600f6c2fe2c7f61a43" title="Pobiera id uzytkownika &#39;user&#39;." alt="" coords="156,5,271,32"></map>
 </div>
 
@@ -191,7 +193,9 @@ Oto graf wywołań dla tej funkcji:</div>
 Łaczy się z bazą damych. 
 <p>
 
-<p>Definicja w linii <a class="el" href="a00013.html#l00003">3</a> pliku <a class="el" href="a00013.html">baza.cpp</a>.</p>
+<p>
+I zamykamy połączenie 
+<p>Definicja w linii <a class="el" href="a00020.html#l00003">3</a> pliku <a class="el" href="a00020.html">baza.cpp</a>.</p>
 
 <p>
 <div class="dynheader">
@@ -199,7 +203,7 @@ Here is the caller graph for this function:</div>
 <div class="dynsection">
 <p><center><img src="a00001_bef61cc396e46d347a47c75e9ef8dfde_icgraph.png" border="0" usemap="#a00001_bef61cc396e46d347a47c75e9ef8dfde_icgraph_map" alt=""></center>
 <map name="a00001_bef61cc396e46d347a47c75e9ef8dfde_icgraph_map">
-<area shape="rect" href="a00002.html#3a237071a3ab764cd61bc53df9dd4f46" title="parser::parser" alt="" coords="160,5,261,32"></map>
+<area shape="rect" href="a00005.html#3a237071a3ab764cd61bc53df9dd4f46" title="parser::parser" alt="" coords="160,5,261,32"></map>
 </div>
 
 </div>
@@ -224,7 +228,7 @@ Here is the caller graph for this function:</div>
 Pobiera hasło uzytkownika z bazy. 
 <p>
 
-<p>Definicja w linii <a class="el" href="a00013.html#l00019">19</a> pliku <a class="el" href="a00013.html">baza.cpp</a>.</p>
+<p>Definicja w linii <a class="el" href="a00020.html#l00030">30</a> pliku <a class="el" href="a00020.html">baza.cpp</a>.</p>
 
 </div>
 </div><p>
@@ -255,7 +259,7 @@ Pobiera hasło uzytkownika z bazy.
 
 <p>
 
-<p>Definicja w linii <a class="el" href="a00013.html#l00135">135</a> pliku <a class="el" href="a00013.html">baza.cpp</a>.</p>
+<p>Definicja w linii <a class="el" href="a00020.html#l00201">201</a> pliku <a class="el" href="a00020.html">baza.cpp</a>.</p>
 
 </div>
 </div><p>
@@ -288,7 +292,7 @@ Pobiera hasło uzytkownika z bazy.
 Podobnie jak getFilesList tylko ze pobiera informację o jednym pliku. 
 <p>
 
-<p>Definicja w linii <a class="el" href="a00013.html#l00119">119</a> pliku <a class="el" href="a00013.html">baza.cpp</a>.</p>
+<p>Definicja w linii <a class="el" href="a00020.html#l00174">174</a> pliku <a class="el" href="a00020.html">baza.cpp</a>.</p>
 
 <p>
 <div class="dynheader">
@@ -321,7 +325,7 @@ Oto graf wywołań dla tej funkcji:</div>
 Najpierw wywołuje <a class="el" href="a00001.html#65054f08c8fd7c600f6c2fe2c7f61a43" title="Pobiera id uzytkownika &#39;user&#39;.">getUserId()</a> potem z id otrzymanym z tamtąd wywołuje <a class="el" href="a00001.html#02db3388d088212bd443ee39998b5cf8" title="Pobiera listę plików z bazy na podstawie ID uzytkownika.">getFilesList(int user_id)</a>;. 
 <p>
 Zapytanie o listę plików uzytkownika o nazwie podanej w zmiennej user. 
-<p>Definicja w linii <a class="el" href="a00013.html#l00064">64</a> pliku <a class="el" href="a00013.html">baza.cpp</a>.</p>
+<p>Definicja w linii <a class="el" href="a00020.html#l00097">97</a> pliku <a class="el" href="a00020.html">baza.cpp</a>.</p>
 
 <p>
 <div class="dynheader">
@@ -354,7 +358,7 @@ Oto graf wywołań dla tej funkcji:</div>
 Pobiera listę plików z bazy na podstawie ID uzytkownika. 
 <p>
 Zapytanie o listę plikow uzytkownika po id uzytkownika z bazy accounts_konto. 
-<p>Definicja w linii <a class="el" href="a00013.html#l00039">39</a> pliku <a class="el" href="a00013.html">baza.cpp</a>.</p>
+<p>Definicja w linii <a class="el" href="a00020.html#l00061">61</a> pliku <a class="el" href="a00020.html">baza.cpp</a>.</p>
 
 <p>
 <div class="dynheader">
@@ -387,7 +391,7 @@ Here is the caller graph for this function:</div>
 Pobiera id uzytkownika 'user'. 
 <p>
 Zapytanie o ID uzytkownika o loginie 'user' ale nie o id z auth_user tylko o id z accounts_konto. 
-<p>Definicja w linii <a class="el" href="a00013.html#l00082">82</a> pliku <a class="el" href="a00013.html">baza.cpp</a>.</p>
+<p>Definicja w linii <a class="el" href="a00020.html#l00126">126</a> pliku <a class="el" href="a00020.html">baza.cpp</a>.</p>
 
 <p>
 <div class="dynheader">
@@ -395,15 +399,58 @@ Here is the caller graph for this function:</div>
 <div class="dynsection">
 <p><center><img src="a00001_65054f08c8fd7c600f6c2fe2c7f61a43_icgraph.png" border="0" usemap="#a00001_65054f08c8fd7c600f6c2fe2c7f61a43_icgraph_map" alt=""></center>
 <map name="a00001_65054f08c8fd7c600f6c2fe2c7f61a43_icgraph_map">
-<area shape="rect" href="a00001.html#f1bda4acd20e6fd00a35c43638e48956" title="Dodaje plik do bazy danych." alt="" coords="184,5,285,32"><area shape="rect" href="a00001.html#e4a033a65cb585aa91c15fd8b8fde764" title="Podobnie jak getFilesList tylko ze pobiera informację o jednym pliku." alt="" coords="175,56,295,83"><area shape="rect" href="a00001.html#2eace36725672b3a4ce639f91fe7d9bd" title="Najpierw wywołuje getUserId() potem z id otrzymanym z tamtąd wywołuje getFilesList(int..." alt="" coords="172,107,297,133"></map>
+<area shape="rect" href="a00001.html#abbda65be49dfb28b1a578d0383599fa" title="Dodaje plik do bazy danych." alt="" coords="184,5,285,32"><area shape="rect" href="a00001.html#e4a033a65cb585aa91c15fd8b8fde764" title="Podobnie jak getFilesList tylko ze pobiera informację o jednym pliku." alt="" coords="175,56,295,83"><area shape="rect" href="a00001.html#2eace36725672b3a4ce639f91fe7d9bd" title="Najpierw wywołuje getUserId() potem z id otrzymanym z tamtąd wywołuje getFilesList(int..." alt="" coords="172,107,297,133"></map>
 </div>
 
 </div>
 </div><p>
-<hr>Dokumentacja dla tej klasy została wygenerowana z plików:<ul>
-<li>/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/<a class="el" href="a00014.html">baza.hpp</a><li>/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/<a class="el" href="a00013.html">baza.cpp</a></ul>
+<a class="anchor" name="7161c573401166cc5f7d98ae6f335b44"></a><!-- doxytag: member="Baza::rmFile" ref="7161c573401166cc5f7d98ae6f335b44" args="(std::string nazwa, std::string konto, std::string hash)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Baza::rmFile           </td>
+          <td>(</td>
+          <td class="paramtype">std::string&nbsp;</td>
+          <td class="paramname"> <em>nazwa</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&nbsp;</td>
+          <td class="paramname"> <em>konto</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&nbsp;</td>
+          <td class="paramname"> <em>hash</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
 </div>
-<hr size="1"><address style="text-align: right;"><small>Wygenerowano Mon May 25 18:06:13 2009 dla PaCa Klient programem&nbsp;
+<div class="memdoc">
+
+<p>
+Usuwa plik z bazy <dl compact><dt><b>Parametry:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>nazwa</em>&nbsp;</td><td>nazwa pliku do usuniecia </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>konto</em>&nbsp;</td><td>nazwa konta z ktorego sie usuwa </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>hash</em>&nbsp;</td><td>hash pliku (dla sprawdzenia czy napewno dobry plik) </td></tr>
+  </table>
+</dl>
+<dl class="return" compact><dt><b>Zwraca:</b></dt><dd>czy operacja zakończona powodzeniem </dd></dl>
+
+</div>
+</div><p>
+<hr>Dokumentacja dla tej klasy została wygenerowana z plików:<ul>
+<li>/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/<a class="el" href="a00021.html">baza.hpp</a><li>/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/<a class="el" href="a00020.html">baza.cpp</a></ul>
+</div>
+<hr size="1"><address style="text-align: right;"><small>Wygenerowano Wed May 27 15:42:17 2009 dla PaCa Klient programem&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

@@ -42,18 +42,25 @@ klient wysyla:
 serwer odpowiada
 <?xml version="1.0"?>
 <serwer operacja="101" odp="kod_odp">
-<plik nazwa="nazwa_pliku" data="data" rozmiar="rozmiar_w_bajtach" dostep="modyfikator_dostepu"/> // w przypadku braku pliku rozmiar="-1"
+<plik nazwa="nazwa_pliku" data="data" rozmiar="rozmiar_w_bajtach" dostep="modyfikator_dostepu" hash="hash"/> // w przypadku braku pliku rozmiar="-1"
 </serwer>
 
-klient wysyla:
+klient wysyla gdy sie zgadza: 
 <klient idsesji="numer_sesji" operacja="101" action="ok">
 
- potem serwer wysyla:
+klient wysyla gdy anuluje:
+<klient idsesji="numer_sesji" operacja="101" action="abort">
+
+ gdy klient sie zgodzil serwer wysyla:
 [DANE_PLIKU]
 
 <?xml version="1.0"?>
-<serwer operacja="101" odp="kod_odp" hash="hash" />
+<serwer operacja="101" odp="406" hash="hash" />
 
+gdy klient anulowal serwer wysyla:
+
+<?xml version="1.0"?>
+<serwer operacja="101" odp="406"/>
 
 
 ///////////////////////////////
@@ -105,7 +112,7 @@ klient wysyla:
 
 serwer odpowiada (tyle razy ile bylo plikow)
 <?xml version="1.0"?>
-<serwer operacja="numer_operacji" odp="kod_odp"/>
+<serwer operacja="103" odp="406"/>
 
 
 kod_odpowiedzi
@@ -123,7 +130,7 @@ operacja:
 odp: // po opisie podane operacje w ktorych bledy moga wystapic
 400 - bledne zapytanie  // dla: 100,101,102,103
 401 - bledny numer sesji // dla: 100,101,102,103
-402 - podany plik istnieje (w przypadku wysylania pliku) // dla 102
+402 - podany plik istnieje (w przypadku wysylania pliku) // dla 102 --Czemu to i 404 to to samo?
 403 - wewnetrzny blad serwera // dla: 100,101,102,103
 404 - podany plik nie istnieje // dla 102,103
 405 - błąd odbierania plikow // dla 102

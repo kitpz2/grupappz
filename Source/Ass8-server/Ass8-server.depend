@@ -16,7 +16,7 @@
 
 1241786567 /home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/version.h
 
-1243414999 source:/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/parser.cpp
+1243522777 source:/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/parser.cpp
 	<iostream>
 	<string>
 	<cstdlib>
@@ -444,7 +444,7 @@
 	<list>
 	<map>
 
-1243414931 source:/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/baza.cpp
+1243522668 source:/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/baza.cpp
 	"baza.hpp"
 
 1243414940 /home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/baza.hpp

@@ -1,3 +1,14 @@
+28 maj 2009
+   released version 0.3.18 of Ass8-server
+
+     Change log:
+        -Added: Hash przy odbieraniu pliku
+        -Fixed: Odbieranie pliku
+        -Applied: łapanie wyjątków
+        -Added: Usuwanie plików
+        -Fixed: Obsługa bazy
+        -Fixed: Parę pomniejszych błędów
+
 08 maj 2009
    released version 0.3.17 of Ass8-server
 

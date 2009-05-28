@@ -1,21 +1,16 @@
 \hypertarget{a00008}{
-\section{Dokumentacja pliku /home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/parser.hpp}
-\label{a00008}\index{/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/parser.hpp@{/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/parser.hpp}}
+\section{Dokumentacja pliku /home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/debug.hpp}
+\label{a00008}\index{/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/debug.hpp@{/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/debug.hpp}}
 }
-{\tt \#include $<$boost/asio.hpp$>$}\par
-{\tt \#include $<$string$>$}\par
-{\tt \#include $<$fstream$>$}\par
-{\tt \#include $<$libxml++/libxml++.h$>$}\par
-{\tt \#include $<$libxml++/parsers/textreader.h$>$}\par
-{\tt \#include \char`\"{}baza.hpp\char`\"{}}\par
-{\tt \#include \char`\"{}debug.hpp\char`\"{}}\par
+{\tt \#include $<$cstdio$>$}\par
+{\tt \#include $<$cstdlib$>$}\par
 
 
-Wykres zależności załączania dla parser.hpp:\nopagebreak
+Wykres zależności załączania dla debug.hpp:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=339pt]{a00030}
+\includegraphics[width=194pt]{a00036}
 \end{center}
 \end{figure}
 
@@ -24,63 +19,79 @@ Ten wykres pokazuje, które pliki bezpośrednio lub pośrednio załączają ten 
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=372pt]{a00031}
+\includegraphics[width=420pt]{a00037}
 \end{center}
 \end{figure}
-\subsection*{Komponenty}
-\begin{CompactItemize}
-\item 
-class \hyperlink{a00002}{parser}
-\end{CompactItemize}
 \subsection*{Definicje}
 \begin{CompactItemize}
 \item 
-\#define \hyperlink{a00008_eca034f67218340ecb2261a22c2f3dcd}{BUFSIZE}~1024
+\#define \hyperlink{a00008_590af51ecfed28223c4e6ce02994241a}{info}(arg)
 \item 
-\#define \hyperlink{a00008_b46db07bcc5d1bb3dbc73f7be2592ee0}{BUFSIZE2}~1024$\ast$2
-\end{CompactItemize}
-\subsection*{Funkcje}
-\begin{CompactItemize}
+\#define \hyperlink{a00008_21ad5938437ed6d1865dd14c8d1871bc}{deb}(arg, arg2)
 \item 
-void \hyperlink{a00008_6c724feff242ad0cd599cdd458f73199}{eat\_\-zombie} ()
+\#define \hyperlink{a00008_5bdec07ba0f5f220bcb40d5258725d95}{line}
+\item 
+\#define \hyperlink{a00008_9944134306515208e366f3f347ef3653}{Eline}
+\item 
+\#define \hyperlink{a00008_68b6fd999967bd748d50fc2014bc5903}{Eline2}(arg1, arg2)~;
+\item 
+\#define \hyperlink{a00008_51633d6d15647d74f756bcf969fc70ae}{info2}(arg, arg2)
 \end{CompactItemize}
 
 
 \subsection{Dokumentacja definicji}
-\hypertarget{a00008_eca034f67218340ecb2261a22c2f3dcd}{
-\index{parser.hpp@{parser.hpp}!BUFSIZE@{BUFSIZE}}
-\index{BUFSIZE@{BUFSIZE}!parser.hpp@{parser.hpp}}
-\subsubsection[{BUFSIZE}]{\setlength{\rightskip}{0pt plus 5cm}\#define BUFSIZE~1024}}
-\label{a00008_eca034f67218340ecb2261a22c2f3dcd}
+\hypertarget{a00008_21ad5938437ed6d1865dd14c8d1871bc}{
+\index{debug.hpp@{debug.hpp}!deb@{deb}}
+\index{deb@{deb}!debug.hpp@{debug.hpp}}
+\subsubsection[{deb}]{\setlength{\rightskip}{0pt plus 5cm}\#define deb(arg, \/  arg2)}}
+\label{a00008_21ad5938437ed6d1865dd14c8d1871bc}
 
 
 
 
-Definicja w linii 19 pliku parser.hpp.\hypertarget{a00008_b46db07bcc5d1bb3dbc73f7be2592ee0}{
-\index{parser.hpp@{parser.hpp}!BUFSIZE2@{BUFSIZE2}}
-\index{BUFSIZE2@{BUFSIZE2}!parser.hpp@{parser.hpp}}
-\subsubsection[{BUFSIZE2}]{\setlength{\rightskip}{0pt plus 5cm}\#define BUFSIZE2~1024$\ast$2}}
-\label{a00008_b46db07bcc5d1bb3dbc73f7be2592ee0}
+Definicja w linii 15 pliku debug.hpp.\hypertarget{a00008_9944134306515208e366f3f347ef3653}{
+\index{debug.hpp@{debug.hpp}!Eline@{Eline}}
+\index{Eline@{Eline}!debug.hpp@{debug.hpp}}
+\subsubsection[{Eline}]{\setlength{\rightskip}{0pt plus 5cm}\#define Eline}}
+\label{a00008_9944134306515208e366f3f347ef3653}
 
 
 
 
-Definicja w linii 20 pliku parser.hpp.
-
-\subsection{Dokumentacja funkcji}
-\hypertarget{a00008_6c724feff242ad0cd599cdd458f73199}{
-\index{parser.hpp@{parser.hpp}!eat\_\-zombie@{eat\_\-zombie}}
-\index{eat\_\-zombie@{eat\_\-zombie}!parser.hpp@{parser.hpp}}
-\subsubsection[{eat\_\-zombie}]{\setlength{\rightskip}{0pt plus 5cm}void eat\_\-zombie ()}}
-\label{a00008_6c724feff242ad0cd599cdd458f73199}
+Definicja w linii 17 pliku debug.hpp.\hypertarget{a00008_68b6fd999967bd748d50fc2014bc5903}{
+\index{debug.hpp@{debug.hpp}!Eline2@{Eline2}}
+\index{Eline2@{Eline2}!debug.hpp@{debug.hpp}}
+\subsubsection[{Eline2}]{\setlength{\rightskip}{0pt plus 5cm}\#define Eline2(arg1, \/  arg2)~;}}
+\label{a00008_68b6fd999967bd748d50fc2014bc5903}
 
 
 
 
-Here is the caller graph for this function:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=92pt]{a00008_6c724feff242ad0cd599cdd458f73199_icgraph}
-\end{center}
-\end{figure}
+Definicja w linii 18 pliku debug.hpp.\hypertarget{a00008_590af51ecfed28223c4e6ce02994241a}{
+\index{debug.hpp@{debug.hpp}!info@{info}}
+\index{info@{info}!debug.hpp@{debug.hpp}}
+\subsubsection[{info}]{\setlength{\rightskip}{0pt plus 5cm}\#define info(arg)}}
+\label{a00008_590af51ecfed28223c4e6ce02994241a}
+
+
+
+
+Definicja w linii 14 pliku debug.hpp.\hypertarget{a00008_51633d6d15647d74f756bcf969fc70ae}{
+\index{debug.hpp@{debug.hpp}!info2@{info2}}
+\index{info2@{info2}!debug.hpp@{debug.hpp}}
+\subsubsection[{info2}]{\setlength{\rightskip}{0pt plus 5cm}\#define info2(arg, \/  arg2)}}
+\label{a00008_51633d6d15647d74f756bcf969fc70ae}
+
+
+
+
+Definicja w linii 19 pliku debug.hpp.\hypertarget{a00008_5bdec07ba0f5f220bcb40d5258725d95}{
+\index{debug.hpp@{debug.hpp}!line@{line}}
+\index{line@{line}!debug.hpp@{debug.hpp}}
+\subsubsection[{line}]{\setlength{\rightskip}{0pt plus 5cm}\#define line}}
+\label{a00008_5bdec07ba0f5f220bcb40d5258725d95}
+
+
+
+
+Definicja w linii 16 pliku debug.hpp.

@@ -540,7 +540,7 @@ void parser::odbieranie_plikow(xmlpp::TextReader &reader, std::string uzytkownik
                         {
 #ifdef DEBUG
                             char debug[256];
-                            sprintf(debug,"Hash %s nie zgadza się z %s",hash,temp_hash);
+                            sprintf(debug,"Hash %s nie zgadza się z %s",hash.c_str(),temp_hash.c_str());
                             info(debug);
 #endif
                             Odpowiedz(405,102);
@@ -691,8 +691,53 @@ void parser::wyslij_plik(std::string plik,std::string uzytkownik)
 
 void parser::usun_pliki(xmlpp::TextReader &reader,std::string uzytkownik)
 {
-    //info("NOT IMPLEMENTED YET!!!");
+    info("Usuwanie plików");
+    while (reader.read())
+    {
+        info("Usuam Kolejny plik");
+        info2("plik",reader.get_name().c_str());
+        if (reader.get_name().compare("plik")==0)
+        {
+            info("plik jest ok");
 
+            if (reader.has_attributes())
+            {
+                info("ma atrybuty");
+
+                if (reader.move_to_attribute("nazwa"))
+                {
+                    std::string nazwa = reader.get_value();
+                    info2("jest nazwa",nazwa.c_str());
+
+                    if (reader.move_to_attribute("hash"))
+                    {
+                        std::string hash=reader.get_value().c_str();
+                        info("ma hash");
+
+                        if(baza.rmFile(nazwa,uzytkownik,hash))
+                        {
+                            #ifdef DEBUG
+                            char debug[256];
+                            sprintf(debug,"Plik %s o hashu %s usunięty prawidłowo",nazwa.c_str(),hash.c_str());
+                            info(debug)
+                            #endif
+                            Odpowiedz(406,103);
+                        }
+                        {
+                            #ifdef DEBUG
+                            char debug[256];
+                            sprintf(debug,"Plik %s o hashu %s NIE usunięty",nazwa.c_str(),hash.c_str());
+                            info(debug)
+                            #endif
+                            Odpowiedz(403,103);
+                        }
+                    }
+                }
+            }
+        }
+
+
+    }
 
 }
 

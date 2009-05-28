@@ -38,6 +38,7 @@
 		<Linker>
 			<Add option="-lboost_system-mt" />
 			<Add option="-lboost_thread-mt" />
+			<Add option="-lboost_filesystem-mt" />
 			<Add option="`pkg-config libxml++-2.6 --cflags --libs`" />
 			<Add option="-L/usr/lib/mysql" />
 			<Add option="-lmysqlpp" />

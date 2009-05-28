@@ -254,12 +254,15 @@ bool Baza::addFile(std::string nazwa, std::string konto, int wielkosc, std::stri
             ilosc=res.num_rows();
         }
         else
+        {
             info("!res");
+            return false;
+        }
         info("po");
         query = conn.query();
         //SELECT count(*) from files_plik;
         char b[1024];
-        sprintf(b,"INSERT INTO files_plik VALUES(%d,%d,'%s',CURRENT_DATE,%d,%d,%s)",ilosc+1,id,nazwa.c_str(),prawa,wielkosc,hash.c_str());
+        sprintf(b,"INSERT INTO files_plik VALUES(%d,%d,'%s',CURRENT_DATE,%d,%d,'%s')",ilosc+1,id,nazwa.c_str(),prawa,wielkosc,hash.c_str());
         query<<b;
         query.execute();
         /*zapytanie="INSERT INTO files_plik VALUES('"+ilosc;
@@ -278,13 +281,41 @@ bool Baza::addFile(std::string nazwa, std::string konto, int wielkosc, std::stri
         //    info("plik dodany do bazy")
         //else
         //    info("plik nie dodany");
+        return true;
     }
     catch (const std::exception& e)//jezeli wystapil wyjatek w SQLu
     {
         info2("BŁAD PARSOWANIA SQL w addFile : ",e.what());
-        //wyslij("<?xml version=\"1.0\"?>\
-        //<serwer odpowiedz=\"403\"/>"); ///To wysyłana jest o tym informacja
-        //exit(0);///I zamykamy połączenie
+        return false;
     }
 
+}
+
+bool Baza::rmFile(std::string nazwa, std::string konto, std::string hash)
+{
+    try
+    {
+        info("usuwanie pliku z bazy");
+
+        info("pobieranie id");
+        int id=getUserId(konto);
+        info("id pobrane")
+        char a[256];
+        sprintf(a,"user %s o id %d usuwa plik %s - hash %s",konto.c_str(),id,nazwa.c_str(),hash.c_str());
+        info(a);
+
+        mysqlpp::Query  query = conn.query();
+        char b[1024];
+        sprintf(b,"UPDATE files_plik SET hashValue=-1 where hashValue='%s'",hash.c_str());
+        info(b);
+        query<<b;
+        query.execute();
+        info2("wykonano",b);
+        return true;
+    }
+    catch (const std::exception& e)//jezeli wystapil wyjatek w SQLu
+    {
+        info2("BŁAD PARSOWANIA SQL w addFile : ",e.what());
+        return false;
+    }
 }
