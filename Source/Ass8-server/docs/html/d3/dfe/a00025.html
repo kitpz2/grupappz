@@ -1,0 +1,114 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>Ass8: Plik 藕r贸d艂owy /home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/include/md5/md5.h</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css">
+<link href="../../doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Wygenerowano przez Doxygen 1.5.8 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="../../main.html"><span>Strona&nbsp;g艂贸wna</span></a></li>
+      <li><a href="../../namespaces.html"><span>Przestrzenie&nbsp;nazw</span></a></li>
+      <li><a href="../../annotated.html"><span>Klasy</span></a></li>
+      <li class="current"><a href="../../files.html"><span>Pliki</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="../../files.html"><span>Lista&nbsp;plik贸w</span></a></li>
+      <li><a href="../../globals.html"><span>Sk艂adowe&nbsp;plik贸w</span></a></li>
+    </ul>
+  </div>
+<h1>/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/include/md5/md5.h</h1><a href="../../d7/dec/a00010.html">Id藕 do dokumentacji tego pliku.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/*</span>
+<a name="l00002"></a>00002 <span class="comment"> *      This is the C++ implementation of the MD5 Message-Digest</span>
+<a name="l00003"></a>00003 <span class="comment"> *      Algorithm desrcipted in RFC 1321.</span>
+<a name="l00004"></a>00004 <span class="comment"> *      I translated the C code from this RFC to C++.</span>
+<a name="l00005"></a>00005 <span class="comment"> *      There is no warranty.</span>
+<a name="l00006"></a>00006 <span class="comment"> *</span>
+<a name="l00007"></a>00007 <span class="comment"> *      Feb. 12. 2005</span>
+<a name="l00008"></a>00008 <span class="comment"> *      Benjamin Gr黡elbach</span>
+<a name="l00009"></a>00009 <span class="comment"> */</span>
+<a name="l00010"></a>00010 
+<a name="l00011"></a>00011 <span class="comment">/*</span>
+<a name="l00012"></a>00012 <span class="comment"> * Copyright (C) 1991-2, RSA Data Security, Inc. Created 1991. All</span>
+<a name="l00013"></a>00013 <span class="comment"> * rights reserved.</span>
+<a name="l00014"></a>00014 <span class="comment"> * </span>
+<a name="l00015"></a>00015 <span class="comment"> * License to copy and use this software is granted provided that it</span>
+<a name="l00016"></a>00016 <span class="comment"> * is identified as the "RSA Data Security, Inc. MD5 Message-Digest</span>
+<a name="l00017"></a>00017 <span class="comment"> * Algorithm" in all material mentioning or referencing this software</span>
+<a name="l00018"></a>00018 <span class="comment"> * or this function.</span>
+<a name="l00019"></a>00019 <span class="comment"> * </span>
+<a name="l00020"></a>00020 <span class="comment"> * License is also granted to make and use derivative works provided</span>
+<a name="l00021"></a>00021 <span class="comment"> * that such works are identified as "derived from the RSA Data</span>
+<a name="l00022"></a>00022 <span class="comment"> * Security, Inc. MD5 Message-Digest Algorithm" in all material</span>
+<a name="l00023"></a>00023 <span class="comment"> * mentioning or referencing the derived work.</span>
+<a name="l00024"></a>00024 <span class="comment"> * </span>
+<a name="l00025"></a>00025 <span class="comment"> * RSA Data Security, Inc. makes no representations concerning either</span>
+<a name="l00026"></a>00026 <span class="comment"> * the merchantability of this software or the suitability of this</span>
+<a name="l00027"></a>00027 <span class="comment"> * software for any particular purpose. It is provided "as is"</span>
+<a name="l00028"></a>00028 <span class="comment"> * without express or implied warranty of any kind.</span>
+<a name="l00029"></a>00029 <span class="comment"> * </span>
+<a name="l00030"></a>00030 <span class="comment"> * These notices must be retained in any copies of any part of this</span>
+<a name="l00031"></a>00031 <span class="comment"> * documentation and/or software.</span>
+<a name="l00032"></a>00032 <span class="comment"> */</span>
+<a name="l00033"></a>00033 
+<a name="l00034"></a>00034 <span class="comment">//---------------------------------------------------------------------- </span>
+<a name="l00035"></a>00035 <span class="comment">//include protection</span>
+<a name="l00036"></a>00036 <span class="preprocessor">#ifndef MD5_H</span>
+<a name="l00037"></a>00037 <span class="preprocessor"></span><span class="preprocessor">#define MD5_H</span>
+<a name="l00038"></a>00038 <span class="preprocessor"></span>
+<a name="l00039"></a>00039 <span class="comment">//---------------------------------------------------------------------- </span>
+<a name="l00040"></a>00040 <span class="comment">//STL includes</span>
+<a name="l00041"></a>00041 <span class="preprocessor">#include &lt;string&gt;</span>
+<a name="l00042"></a>00042 
+<a name="l00043"></a>00043 <span class="comment">//---------------------------------------------------------------------- </span>
+<a name="l00044"></a>00044 <span class="comment">//typedefs</span>
+<a name="l00045"></a><a class="code" href="../../d7/dec/a00010.html#73204e40637f83518fb695362ea084a4">00045</a> <span class="keyword">typedef</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *<a class="code" href="../../d7/dec/a00010.html#73204e40637f83518fb695362ea084a4">POINTER</a>;
+<a name="l00046"></a>00046 
+<a name="l00047"></a>00047 <span class="comment">/*</span>
+<a name="l00048"></a>00048 <span class="comment"> * MD5 context.</span>
+<a name="l00049"></a>00049 <span class="comment"> */</span>
+<a name="l00050"></a><a class="code" href="../../d1/d7c/a00003.html">00050</a> <span class="keyword">typedef</span> <span class="keyword">struct </span>
+<a name="l00051"></a>00051 {
+<a name="l00052"></a><a class="code" href="../../d1/d7c/a00003.html#2f697997f51de65d08227fdf1d5c44b8">00052</a>         <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">int</span> state[4];           <span class="comment">/* state (ABCD) */</span>
+<a name="l00053"></a><a class="code" href="../../d1/d7c/a00003.html#889cb6e121b82a1e7f4d92120fb8a523">00053</a>         <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">int</span> count[2];           <span class="comment">/* number of bits, modulo 2^64 (lsb first) */</span>
+<a name="l00054"></a><a class="code" href="../../d1/d7c/a00003.html#2da73ecf544745f58211e998719f367f">00054</a>         <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> buffer[64];             <span class="comment">/* input buffer */</span>
+<a name="l00055"></a>00055 } <a class="code" href="../../d1/d7c/a00003.html">MD5_CTX</a>;
+<a name="l00056"></a>00056 
+<a name="l00057"></a>00057 <span class="comment">/*</span>
+<a name="l00058"></a>00058 <span class="comment"> * MD5 class</span>
+<a name="l00059"></a>00059 <span class="comment"> */</span>
+<a name="l00060"></a><a class="code" href="../../d7/d46/a00002.html">00060</a> <span class="keyword">class </span><a class="code" href="../../d7/d46/a00002.html">MD5</a>
+<a name="l00061"></a>00061 {
+<a name="l00062"></a>00062 
+<a name="l00063"></a>00063         <span class="keyword">private</span>:
+<a name="l00064"></a>00064 
+<a name="l00065"></a>00065                 <span class="keywordtype">void</span> <a class="code" href="../../d7/d46/a00002.html#849ad3347bad15a23f3a40452476b1e0">MD5Transform</a> (<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">int</span> state[4], <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> block[64]);
+<a name="l00066"></a>00066                 <span class="keywordtype">void</span> <a class="code" href="../../d7/d46/a00002.html#c3c05716498203127920ba78b3ae8115">Encode</a> (<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>*, <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">int</span>*, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>);
+<a name="l00067"></a>00067                 <span class="keywordtype">void</span> <a class="code" href="../../d7/d46/a00002.html#ef62580b93f2122c62493464787b814a">Decode</a> (<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">int</span>*, <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>*, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>);
+<a name="l00068"></a>00068                 <span class="keywordtype">void</span> <a class="code" href="../../d7/d46/a00002.html#76c181f092e81df65dadf8861272ac80">MD5_memcpy</a> (<a class="code" href="../../d7/dec/a00010.html#73204e40637f83518fb695362ea084a4">POINTER</a>, <a class="code" href="../../d7/dec/a00010.html#73204e40637f83518fb695362ea084a4">POINTER</a>, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>);
+<a name="l00069"></a>00069                 <span class="keywordtype">void</span> <a class="code" href="../../d7/d46/a00002.html#e1a522aab83da49d1bd3f0a6f3edcd11">MD5_memset</a> (<a class="code" href="../../d7/dec/a00010.html#73204e40637f83518fb695362ea084a4">POINTER</a>, <span class="keywordtype">int</span>, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>);
+<a name="l00070"></a>00070 
+<a name="l00071"></a>00071         <span class="keyword">public</span>:
+<a name="l00072"></a>00072         
+<a name="l00073"></a>00073                 <span class="keywordtype">void</span> <a class="code" href="../../d7/d46/a00002.html#72b35c041cb6983aaa74e2f1c31d5a29">MD5Init</a> (<a class="code" href="../../d1/d7c/a00003.html">MD5_CTX</a>*);
+<a name="l00074"></a>00074                 <span class="keywordtype">void</span> <a class="code" href="../../d7/d46/a00002.html#a59116f0a26354a217fa186a43cd9d28">MD5Update</a> (<a class="code" href="../../d1/d7c/a00003.html">MD5_CTX</a>*, <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>*, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>);
+<a name="l00075"></a>00075                 <span class="keywordtype">void</span> <a class="code" href="../../d7/d46/a00002.html#98039031d87c1f5b787050e2b487d83f">MD5Final</a> (<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> [16], <a class="code" href="../../d1/d7c/a00003.html">MD5_CTX</a>*);
+<a name="l00076"></a>00076 
+<a name="l00077"></a><a class="code" href="../../d7/d46/a00002.html#fa6155ec36de415ab2dcf5e54b670d13">00077</a>         <a class="code" href="../../d7/d46/a00002.html#fa6155ec36de415ab2dcf5e54b670d13">MD5</a>(){};
+<a name="l00078"></a>00078 };
+<a name="l00079"></a>00079 
+<a name="l00080"></a>00080 <span class="comment">//---------------------------------------------------------------------- </span>
+<a name="l00081"></a>00081 <span class="comment">//End of include protection</span>
+<a name="l00082"></a>00082 <span class="preprocessor">#endif</span>
+<a name="l00083"></a>00083 <span class="preprocessor"></span>
+<a name="l00084"></a>00084 <span class="comment">/*</span>
+<a name="l00085"></a>00085 <span class="comment"> * EOF</span>
+<a name="l00086"></a>00086 <span class="comment"> */</span>
+</pre></div></div>
+<hr size="1"><address style="text-align: right;"><small>Wygenerowano Mon Jun 1 13:41:51 2009 dla Ass8 programem&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="../../doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
+</body>
+</html>

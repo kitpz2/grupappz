@@ -6,6 +6,20 @@
 \contentsline {section}{\numberline {3.1}Lista plik\IeC {\'o}w}{5}{section.3.1}
 \contentsline {chapter}{\numberline {4}Dokumentacja przestrzeni nazw}{7}{chapter.4}
 \contentsline {section}{\numberline {4.1}Dokumentacja przestrzeni nazw AutoVersion}{7}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Dokumentacja zmiennych}{7}{subsection.4.1.1}
+\contentsline {subsubsection}{\numberline {4.1.1.1}BUILD}{7}{subsubsection.4.1.1.1}
+\contentsline {subsubsection}{\numberline {4.1.1.2}BUILD\_\discretionary {-}{}{}HISTORY}{7}{subsubsection.4.1.1.2}
+\contentsline {subsubsection}{\numberline {4.1.1.3}BUILDS\_\discretionary {-}{}{}COUNT}{7}{subsubsection.4.1.1.3}
+\contentsline {subsubsection}{\numberline {4.1.1.4}DATE}{8}{subsubsection.4.1.1.4}
+\contentsline {subsubsection}{\numberline {4.1.1.5}FULLVERSION\_\discretionary {-}{}{}STRING}{8}{subsubsection.4.1.1.5}
+\contentsline {subsubsection}{\numberline {4.1.1.6}MAJOR}{8}{subsubsection.4.1.1.6}
+\contentsline {subsubsection}{\numberline {4.1.1.7}MINOR}{8}{subsubsection.4.1.1.7}
+\contentsline {subsubsection}{\numberline {4.1.1.8}MONTH}{8}{subsubsection.4.1.1.8}
+\contentsline {subsubsection}{\numberline {4.1.1.9}REVISION}{8}{subsubsection.4.1.1.9}
+\contentsline {subsubsection}{\numberline {4.1.1.10}STATUS}{8}{subsubsection.4.1.1.10}
+\contentsline {subsubsection}{\numberline {4.1.1.11}STATUS\_\discretionary {-}{}{}SHORT}{8}{subsubsection.4.1.1.11}
+\contentsline {subsubsection}{\numberline {4.1.1.12}UBUNTU\_\discretionary {-}{}{}VERSION\_\discretionary {-}{}{}STYLE}{8}{subsubsection.4.1.1.12}
+\contentsline {subsubsection}{\numberline {4.1.1.13}YEAR}{8}{subsubsection.4.1.1.13}
 \contentsline {chapter}{\numberline {5}Dokumentacja klas}{9}{chapter.5}
 \contentsline {section}{\numberline {5.1}Dokumentacja klasy Baza}{9}{section.5.1}
 \contentsline {subsection}{\numberline {5.1.1}Opis szczeg\IeC {\'o}\IeC {\l }owy}{10}{subsection.5.1.1}
@@ -14,97 +28,131 @@
 \contentsline {subsection}{\numberline {5.1.3}Dokumentacja funkcji sk\IeC {\l }adowych}{10}{subsection.5.1.3}
 \contentsline {subsubsection}{\numberline {5.1.3.1}addFile}{10}{subsubsection.5.1.3.1}
 \contentsline {subsubsection}{\numberline {5.1.3.2}connect}{10}{subsubsection.5.1.3.2}
-\contentsline {subsubsection}{\numberline {5.1.3.3}get\_\discretionary {-}{}{}passwd}{10}{subsubsection.5.1.3.3}
-\contentsline {subsubsection}{\numberline {5.1.3.4}getFileInfo}{10}{subsubsection.5.1.3.4}
+\contentsline {subsubsection}{\numberline {5.1.3.3}firends}{10}{subsubsection.5.1.3.3}
+\contentsline {subsubsection}{\numberline {5.1.3.4}get\_\discretionary {-}{}{}passwd}{11}{subsubsection.5.1.3.4}
 \contentsline {subsubsection}{\numberline {5.1.3.5}getFileInfo}{11}{subsubsection.5.1.3.5}
-\contentsline {subsubsection}{\numberline {5.1.3.6}getFilesList}{11}{subsubsection.5.1.3.6}
+\contentsline {subsubsection}{\numberline {5.1.3.6}getFileInfo}{11}{subsubsection.5.1.3.6}
 \contentsline {subsubsection}{\numberline {5.1.3.7}getFilesList}{11}{subsubsection.5.1.3.7}
-\contentsline {subsubsection}{\numberline {5.1.3.8}getUserId}{11}{subsubsection.5.1.3.8}
-\contentsline {subsubsection}{\numberline {5.1.3.9}rmFile}{12}{subsubsection.5.1.3.9}
-\contentsline {section}{\numberline {5.2}Dokumentacja klasy MD5}{13}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}Opis szczeg\IeC {\'o}\IeC {\l }owy}{13}{subsection.5.2.1}
-\contentsline {subsection}{\numberline {5.2.2}Dokumentacja konstruktora i destruktora}{13}{subsection.5.2.2}
-\contentsline {subsubsection}{\numberline {5.2.2.1}MD5}{13}{subsubsection.5.2.2.1}
-\contentsline {subsection}{\numberline {5.2.3}Dokumentacja funkcji sk\IeC {\l }adowych}{13}{subsection.5.2.3}
-\contentsline {subsubsection}{\numberline {5.2.3.1}MD5Final}{13}{subsubsection.5.2.3.1}
-\contentsline {subsubsection}{\numberline {5.2.3.2}MD5Init}{13}{subsubsection.5.2.3.2}
-\contentsline {subsubsection}{\numberline {5.2.3.3}MD5Update}{14}{subsubsection.5.2.3.3}
-\contentsline {section}{\numberline {5.3}Dokumentacja struktury MD5\_\discretionary {-}{}{}CTX}{15}{section.5.3}
-\contentsline {subsection}{\numberline {5.3.1}Opis szczeg\IeC {\'o}\IeC {\l }owy}{15}{subsection.5.3.1}
-\contentsline {subsection}{\numberline {5.3.2}Dokumentacja atrybut\IeC {\'o}w sk\IeC {\l }adowych}{15}{subsection.5.3.2}
-\contentsline {subsubsection}{\numberline {5.3.2.1}buffer}{15}{subsubsection.5.3.2.1}
-\contentsline {subsubsection}{\numberline {5.3.2.2}count}{15}{subsubsection.5.3.2.2}
-\contentsline {subsubsection}{\numberline {5.3.2.3}state}{15}{subsubsection.5.3.2.3}
-\contentsline {section}{\numberline {5.4}Dokumentacja klasy md5wrapper}{16}{section.5.4}
-\contentsline {subsection}{\numberline {5.4.1}Opis szczeg\IeC {\'o}\IeC {\l }owy}{16}{subsection.5.4.1}
-\contentsline {subsection}{\numberline {5.4.2}Dokumentacja konstruktora i destruktora}{16}{subsection.5.4.2}
-\contentsline {subsubsection}{\numberline {5.4.2.1}md5wrapper}{16}{subsubsection.5.4.2.1}
-\contentsline {subsubsection}{\numberline {5.4.2.2}$\sim $md5wrapper}{16}{subsubsection.5.4.2.2}
-\contentsline {subsection}{\numberline {5.4.3}Dokumentacja funkcji sk\IeC {\l }adowych}{16}{subsection.5.4.3}
-\contentsline {subsubsection}{\numberline {5.4.3.1}getHashFromFile}{16}{subsubsection.5.4.3.1}
-\contentsline {subsubsection}{\numberline {5.4.3.2}getHashFromString}{17}{subsubsection.5.4.3.2}
-\contentsline {section}{\numberline {5.5}Dokumentacja klasy parser}{18}{section.5.5}
-\contentsline {subsection}{\numberline {5.5.1}Opis szczeg\IeC {\'o}\IeC {\l }owy}{18}{subsection.5.5.1}
-\contentsline {subsection}{\numberline {5.5.2}Dokumentacja konstruktora i destruktora}{18}{subsection.5.5.2}
-\contentsline {subsubsection}{\numberline {5.5.2.1}parser}{18}{subsubsection.5.5.2.1}
-\contentsline {subsection}{\numberline {5.5.3}Dokumentacja funkcji sk\IeC {\l }adowych}{18}{subsection.5.5.3}
-\contentsline {subsubsection}{\numberline {5.5.3.1}start}{18}{subsubsection.5.5.3.1}
-\contentsline {chapter}{\numberline {6}Dokumentacja plik\IeC {\'o}w}{21}{chapter.6}
-\contentsline {section}{\numberline {6.1}Dokumentacja pliku /home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/baza.cpp}{21}{section.6.1}
-\contentsline {section}{\numberline {6.2}Dokumentacja pliku /home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/baza.hpp}{22}{section.6.2}
-\contentsline {section}{\numberline {6.3}Dokumentacja pliku /home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/debug.hpp}{23}{section.6.3}
-\contentsline {subsection}{\numberline {6.3.1}Dokumentacja definicji}{23}{subsection.6.3.1}
-\contentsline {subsubsection}{\numberline {6.3.1.1}deb}{23}{subsubsection.6.3.1.1}
-\contentsline {subsubsection}{\numberline {6.3.1.2}Eline}{23}{subsubsection.6.3.1.2}
-\contentsline {subsubsection}{\numberline {6.3.1.3}Eline2}{23}{subsubsection.6.3.1.3}
-\contentsline {subsubsection}{\numberline {6.3.1.4}info}{24}{subsubsection.6.3.1.4}
-\contentsline {subsubsection}{\numberline {6.3.1.5}info2}{24}{subsubsection.6.3.1.5}
-\contentsline {subsubsection}{\numberline {6.3.1.6}line}{24}{subsubsection.6.3.1.6}
-\contentsline {section}{\numberline {6.4}Dokumentacja pliku /home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/include/md5/md5.cpp}{25}{section.6.4}
-\contentsline {subsection}{\numberline {6.4.1}Dokumentacja definicji}{25}{subsection.6.4.1}
-\contentsline {subsubsection}{\numberline {6.4.1.1}F}{25}{subsubsection.6.4.1.1}
-\contentsline {subsubsection}{\numberline {6.4.1.2}FF}{26}{subsubsection.6.4.1.2}
-\contentsline {subsubsection}{\numberline {6.4.1.3}G}{26}{subsubsection.6.4.1.3}
-\contentsline {subsubsection}{\numberline {6.4.1.4}GG}{26}{subsubsection.6.4.1.4}
-\contentsline {subsubsection}{\numberline {6.4.1.5}H}{26}{subsubsection.6.4.1.5}
-\contentsline {subsubsection}{\numberline {6.4.1.6}HH}{26}{subsubsection.6.4.1.6}
-\contentsline {subsubsection}{\numberline {6.4.1.7}I}{26}{subsubsection.6.4.1.7}
-\contentsline {subsubsection}{\numberline {6.4.1.8}II}{27}{subsubsection.6.4.1.8}
-\contentsline {subsubsection}{\numberline {6.4.1.9}ROTATE\_\discretionary {-}{}{}LEFT}{27}{subsubsection.6.4.1.9}
-\contentsline {subsubsection}{\numberline {6.4.1.10}S11}{27}{subsubsection.6.4.1.10}
-\contentsline {subsubsection}{\numberline {6.4.1.11}S12}{27}{subsubsection.6.4.1.11}
-\contentsline {subsubsection}{\numberline {6.4.1.12}S13}{27}{subsubsection.6.4.1.12}
-\contentsline {subsubsection}{\numberline {6.4.1.13}S14}{27}{subsubsection.6.4.1.13}
-\contentsline {subsubsection}{\numberline {6.4.1.14}S21}{27}{subsubsection.6.4.1.14}
-\contentsline {subsubsection}{\numberline {6.4.1.15}S22}{27}{subsubsection.6.4.1.15}
-\contentsline {subsubsection}{\numberline {6.4.1.16}S23}{27}{subsubsection.6.4.1.16}
-\contentsline {subsubsection}{\numberline {6.4.1.17}S24}{27}{subsubsection.6.4.1.17}
-\contentsline {subsubsection}{\numberline {6.4.1.18}S31}{28}{subsubsection.6.4.1.18}
-\contentsline {subsubsection}{\numberline {6.4.1.19}S32}{28}{subsubsection.6.4.1.19}
-\contentsline {subsubsection}{\numberline {6.4.1.20}S33}{28}{subsubsection.6.4.1.20}
-\contentsline {subsubsection}{\numberline {6.4.1.21}S34}{28}{subsubsection.6.4.1.21}
-\contentsline {subsubsection}{\numberline {6.4.1.22}S41}{28}{subsubsection.6.4.1.22}
-\contentsline {subsubsection}{\numberline {6.4.1.23}S42}{28}{subsubsection.6.4.1.23}
-\contentsline {subsubsection}{\numberline {6.4.1.24}S43}{28}{subsubsection.6.4.1.24}
-\contentsline {subsubsection}{\numberline {6.4.1.25}S44}{28}{subsubsection.6.4.1.25}
-\contentsline {section}{\numberline {6.5}Dokumentacja pliku /home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/include/md5/md5.h}{29}{section.6.5}
-\contentsline {subsection}{\numberline {6.5.1}Dokumentacja definicji typ\IeC {\'o}w}{29}{subsection.6.5.1}
-\contentsline {subsubsection}{\numberline {6.5.1.1}POINTER}{29}{subsubsection.6.5.1.1}
-\contentsline {section}{\numberline {6.6}Dokumentacja pliku /home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/include/md5/md5wrapper.cpp}{30}{section.6.6}
-\contentsline {section}{\numberline {6.7}Dokumentacja pliku /home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/include/md5/md5wrapper.h}{31}{section.6.7}
-\contentsline {section}{\numberline {6.8}Dokumentacja pliku /home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/main.cpp}{32}{section.6.8}
-\contentsline {subsection}{\numberline {6.8.1}Dokumentacja funkcji}{32}{subsection.6.8.1}
-\contentsline {subsubsection}{\numberline {6.8.1.1}main}{32}{subsubsection.6.8.1.1}
-\contentsline {section}{\numberline {6.9}Dokumentacja pliku /home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/parser.cpp}{34}{section.6.9}
-\contentsline {section}{\numberline {6.10}Dokumentacja pliku /home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/parser.hpp}{35}{section.6.10}
-\contentsline {subsection}{\numberline {6.10.1}Dokumentacja definicji}{36}{subsection.6.10.1}
-\contentsline {subsubsection}{\numberline {6.10.1.1}BUFSIZE}{36}{subsubsection.6.10.1.1}
-\contentsline {subsubsection}{\numberline {6.10.1.2}BUFSIZE2}{36}{subsubsection.6.10.1.2}
-\contentsline {subsection}{\numberline {6.10.2}Dokumentacja funkcji}{36}{subsection.6.10.2}
-\contentsline {subsubsection}{\numberline {6.10.2.1}eat\_\discretionary {-}{}{}zombie}{36}{subsubsection.6.10.2.1}
-\contentsline {section}{\numberline {6.11}Dokumentacja pliku /home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/server.hpp}{37}{section.6.11}
-\contentsline {section}{\numberline {6.12}Dokumentacja pliku /home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/version.h}{38}{section.6.12}
-\contentsline {subsection}{\numberline {6.12.1}Dokumentacja definicji}{38}{subsection.6.12.1}
-\contentsline {subsubsection}{\numberline {6.12.1.1}RC\_\discretionary {-}{}{}FILEVERSION}{38}{subsubsection.6.12.1.1}
-\contentsline {subsubsection}{\numberline {6.12.1.2}RC\_\discretionary {-}{}{}FILEVERSION\_\discretionary {-}{}{}STRING}{38}{subsubsection.6.12.1.2}
-\contentsline {section}{\numberline {6.13}Dokumentacja pliku /home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/xml.hpp}{39}{section.6.13}
+\contentsline {subsubsection}{\numberline {5.1.3.8}getFilesList}{11}{subsubsection.5.1.3.8}
+\contentsline {subsubsection}{\numberline {5.1.3.9}getUserId}{12}{subsubsection.5.1.3.9}
+\contentsline {subsubsection}{\numberline {5.1.3.10}rmFile}{12}{subsubsection.5.1.3.10}
+\contentsline {subsection}{\numberline {5.1.4}Dokumentacja atrybut\IeC {\'o}w sk\IeC {\l }adowych}{12}{subsection.5.1.4}
+\contentsline {subsubsection}{\numberline {5.1.4.1}conn}{12}{subsubsection.5.1.4.1}
+\contentsline {section}{\numberline {5.2}Dokumentacja klasy MD5}{14}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Opis szczeg\IeC {\'o}\IeC {\l }owy}{14}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}Dokumentacja konstruktora i destruktora}{14}{subsection.5.2.2}
+\contentsline {subsubsection}{\numberline {5.2.2.1}MD5}{14}{subsubsection.5.2.2.1}
+\contentsline {subsection}{\numberline {5.2.3}Dokumentacja funkcji sk\IeC {\l }adowych}{14}{subsection.5.2.3}
+\contentsline {subsubsection}{\numberline {5.2.3.1}Decode}{14}{subsubsection.5.2.3.1}
+\contentsline {subsubsection}{\numberline {5.2.3.2}Encode}{15}{subsubsection.5.2.3.2}
+\contentsline {subsubsection}{\numberline {5.2.3.3}MD5\_\discretionary {-}{}{}memcpy}{15}{subsubsection.5.2.3.3}
+\contentsline {subsubsection}{\numberline {5.2.3.4}MD5\_\discretionary {-}{}{}memset}{15}{subsubsection.5.2.3.4}
+\contentsline {subsubsection}{\numberline {5.2.3.5}MD5Final}{15}{subsubsection.5.2.3.5}
+\contentsline {subsubsection}{\numberline {5.2.3.6}MD5Init}{16}{subsubsection.5.2.3.6}
+\contentsline {subsubsection}{\numberline {5.2.3.7}MD5Transform}{16}{subsubsection.5.2.3.7}
+\contentsline {subsubsection}{\numberline {5.2.3.8}MD5Update}{16}{subsubsection.5.2.3.8}
+\contentsline {section}{\numberline {5.3}Dokumentacja struktury MD5\_\discretionary {-}{}{}CTX}{18}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}Opis szczeg\IeC {\'o}\IeC {\l }owy}{18}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.3.2}Dokumentacja atrybut\IeC {\'o}w sk\IeC {\l }adowych}{18}{subsection.5.3.2}
+\contentsline {subsubsection}{\numberline {5.3.2.1}buffer}{18}{subsubsection.5.3.2.1}
+\contentsline {subsubsection}{\numberline {5.3.2.2}count}{18}{subsubsection.5.3.2.2}
+\contentsline {subsubsection}{\numberline {5.3.2.3}state}{18}{subsubsection.5.3.2.3}
+\contentsline {section}{\numberline {5.4}Dokumentacja klasy md5wrapper}{19}{section.5.4}
+\contentsline {subsection}{\numberline {5.4.1}Opis szczeg\IeC {\'o}\IeC {\l }owy}{19}{subsection.5.4.1}
+\contentsline {subsection}{\numberline {5.4.2}Dokumentacja konstruktora i destruktora}{19}{subsection.5.4.2}
+\contentsline {subsubsection}{\numberline {5.4.2.1}md5wrapper}{19}{subsubsection.5.4.2.1}
+\contentsline {subsubsection}{\numberline {5.4.2.2}$\sim $md5wrapper}{19}{subsubsection.5.4.2.2}
+\contentsline {subsection}{\numberline {5.4.3}Dokumentacja funkcji sk\IeC {\l }adowych}{20}{subsection.5.4.3}
+\contentsline {subsubsection}{\numberline {5.4.3.1}convToString}{20}{subsubsection.5.4.3.1}
+\contentsline {subsubsection}{\numberline {5.4.3.2}getHashFromFile}{20}{subsubsection.5.4.3.2}
+\contentsline {subsubsection}{\numberline {5.4.3.3}getHashFromString}{20}{subsubsection.5.4.3.3}
+\contentsline {subsubsection}{\numberline {5.4.3.4}hashit}{20}{subsubsection.5.4.3.4}
+\contentsline {subsection}{\numberline {5.4.4}Dokumentacja atrybut\IeC {\'o}w sk\IeC {\l }adowych}{21}{subsection.5.4.4}
+\contentsline {subsubsection}{\numberline {5.4.4.1}md5}{21}{subsubsection.5.4.4.1}
+\contentsline {section}{\numberline {5.5}Dokumentacja klasy parser}{22}{section.5.5}
+\contentsline {subsection}{\numberline {5.5.1}Opis szczeg\IeC {\'o}\IeC {\l }owy}{23}{subsection.5.5.1}
+\contentsline {subsection}{\numberline {5.5.2}Dokumentacja konstruktora i destruktora}{23}{subsection.5.5.2}
+\contentsline {subsubsection}{\numberline {5.5.2.1}parser}{23}{subsubsection.5.5.2.1}
+\contentsline {subsection}{\numberline {5.5.3}Dokumentacja funkcji sk\IeC {\l }adowych}{24}{subsection.5.5.3}
+\contentsline {subsubsection}{\numberline {5.5.3.1}czytanie\_\discretionary {-}{}{}z\_\discretionary {-}{}{}socketa}{24}{subsubsection.5.5.3.1}
+\contentsline {subsubsection}{\numberline {5.5.3.2}lista\_\discretionary {-}{}{}plikow}{24}{subsubsection.5.5.3.2}
+\contentsline {subsubsection}{\numberline {5.5.3.3}logowanie}{24}{subsubsection.5.5.3.3}
+\contentsline {subsubsection}{\numberline {5.5.3.4}odbieranie\_\discretionary {-}{}{}plikow}{24}{subsubsection.5.5.3.4}
+\contentsline {subsubsection}{\numberline {5.5.3.5}Odpowiedz}{24}{subsubsection.5.5.3.5}
+\contentsline {subsubsection}{\numberline {5.5.3.6}Odpowiedz}{24}{subsubsection.5.5.3.6}
+\contentsline {subsubsection}{\numberline {5.5.3.7}odpowiedz\_\discretionary {-}{}{}login}{25}{subsubsection.5.5.3.7}
+\contentsline {subsubsection}{\numberline {5.5.3.8}parsuj}{25}{subsubsection.5.5.3.8}
+\contentsline {subsubsection}{\numberline {5.5.3.9}pobieranie\_\discretionary {-}{}{}listy\_\discretionary {-}{}{}plikow}{26}{subsubsection.5.5.3.9}
+\contentsline {subsubsection}{\numberline {5.5.3.10}start}{26}{subsubsection.5.5.3.10}
+\contentsline {subsubsection}{\numberline {5.5.3.11}usun\_\discretionary {-}{}{}pliki}{27}{subsubsection.5.5.3.11}
+\contentsline {subsubsection}{\numberline {5.5.3.12}wyslij}{27}{subsubsection.5.5.3.12}
+\contentsline {subsubsection}{\numberline {5.5.3.13}wyslij\_\discretionary {-}{}{}plik}{27}{subsubsection.5.5.3.13}
+\contentsline {subsubsection}{\numberline {5.5.3.14}wysylanie\_\discretionary {-}{}{}plikow}{27}{subsubsection.5.5.3.14}
+\contentsline {subsection}{\numberline {5.5.4}Dokumentacja atrybut\IeC {\'o}w sk\IeC {\l }adowych}{27}{subsection.5.5.4}
+\contentsline {subsubsection}{\numberline {5.5.4.1}baza}{27}{subsubsection.5.5.4.1}
+\contentsline {subsubsection}{\numberline {5.5.4.2}bufor}{27}{subsubsection.5.5.4.2}
+\contentsline {subsubsection}{\numberline {5.5.4.3}haslo}{28}{subsubsection.5.5.4.3}
+\contentsline {subsubsection}{\numberline {5.5.4.4}id\_\discretionary {-}{}{}sesji}{28}{subsubsection.5.5.4.4}
+\contentsline {subsubsection}{\numberline {5.5.4.5}login}{28}{subsubsection.5.5.4.5}
+\contentsline {subsubsection}{\numberline {5.5.4.6}stream}{28}{subsubsection.5.5.4.6}
+\contentsline {chapter}{\numberline {6}Dokumentacja plik\IeC {\'o}w}{29}{chapter.6}
+\contentsline {section}{\numberline {6.1}Dokumentacja pliku /home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/baza.cpp}{29}{section.6.1}
+\contentsline {section}{\numberline {6.2}Dokumentacja pliku /home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/baza.hpp}{30}{section.6.2}
+\contentsline {section}{\numberline {6.3}Dokumentacja pliku /home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/debug.hpp}{31}{section.6.3}
+\contentsline {subsection}{\numberline {6.3.1}Dokumentacja definicji}{31}{subsection.6.3.1}
+\contentsline {subsubsection}{\numberline {6.3.1.1}deb}{31}{subsubsection.6.3.1.1}
+\contentsline {subsubsection}{\numberline {6.3.1.2}Eline}{31}{subsubsection.6.3.1.2}
+\contentsline {subsubsection}{\numberline {6.3.1.3}Eline2}{31}{subsubsection.6.3.1.3}
+\contentsline {subsubsection}{\numberline {6.3.1.4}info}{32}{subsubsection.6.3.1.4}
+\contentsline {subsubsection}{\numberline {6.3.1.5}info2}{32}{subsubsection.6.3.1.5}
+\contentsline {subsubsection}{\numberline {6.3.1.6}line}{32}{subsubsection.6.3.1.6}
+\contentsline {section}{\numberline {6.4}Dokumentacja pliku /home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/include/md5/md5.cpp}{33}{section.6.4}
+\contentsline {subsection}{\numberline {6.4.1}Dokumentacja definicji}{34}{subsection.6.4.1}
+\contentsline {subsubsection}{\numberline {6.4.1.1}F}{34}{subsubsection.6.4.1.1}
+\contentsline {subsubsection}{\numberline {6.4.1.2}FF}{34}{subsubsection.6.4.1.2}
+\contentsline {subsubsection}{\numberline {6.4.1.3}G}{34}{subsubsection.6.4.1.3}
+\contentsline {subsubsection}{\numberline {6.4.1.4}GG}{34}{subsubsection.6.4.1.4}
+\contentsline {subsubsection}{\numberline {6.4.1.5}H}{34}{subsubsection.6.4.1.5}
+\contentsline {subsubsection}{\numberline {6.4.1.6}HH}{34}{subsubsection.6.4.1.6}
+\contentsline {subsubsection}{\numberline {6.4.1.7}I}{35}{subsubsection.6.4.1.7}
+\contentsline {subsubsection}{\numberline {6.4.1.8}II}{35}{subsubsection.6.4.1.8}
+\contentsline {subsubsection}{\numberline {6.4.1.9}ROTATE\_\discretionary {-}{}{}LEFT}{35}{subsubsection.6.4.1.9}
+\contentsline {subsubsection}{\numberline {6.4.1.10}S11}{35}{subsubsection.6.4.1.10}
+\contentsline {subsubsection}{\numberline {6.4.1.11}S12}{35}{subsubsection.6.4.1.11}
+\contentsline {subsubsection}{\numberline {6.4.1.12}S13}{35}{subsubsection.6.4.1.12}
+\contentsline {subsubsection}{\numberline {6.4.1.13}S14}{35}{subsubsection.6.4.1.13}
+\contentsline {subsubsection}{\numberline {6.4.1.14}S21}{35}{subsubsection.6.4.1.14}
+\contentsline {subsubsection}{\numberline {6.4.1.15}S22}{35}{subsubsection.6.4.1.15}
+\contentsline {subsubsection}{\numberline {6.4.1.16}S23}{35}{subsubsection.6.4.1.16}
+\contentsline {subsubsection}{\numberline {6.4.1.17}S24}{36}{subsubsection.6.4.1.17}
+\contentsline {subsubsection}{\numberline {6.4.1.18}S31}{36}{subsubsection.6.4.1.18}
+\contentsline {subsubsection}{\numberline {6.4.1.19}S32}{36}{subsubsection.6.4.1.19}
+\contentsline {subsubsection}{\numberline {6.4.1.20}S33}{36}{subsubsection.6.4.1.20}
+\contentsline {subsubsection}{\numberline {6.4.1.21}S34}{36}{subsubsection.6.4.1.21}
+\contentsline {subsubsection}{\numberline {6.4.1.22}S41}{36}{subsubsection.6.4.1.22}
+\contentsline {subsubsection}{\numberline {6.4.1.23}S42}{36}{subsubsection.6.4.1.23}
+\contentsline {subsubsection}{\numberline {6.4.1.24}S43}{36}{subsubsection.6.4.1.24}
+\contentsline {subsubsection}{\numberline {6.4.1.25}S44}{36}{subsubsection.6.4.1.25}
+\contentsline {subsection}{\numberline {6.4.2}Dokumentacja zmiennych}{36}{subsection.6.4.2}
+\contentsline {subsubsection}{\numberline {6.4.2.1}PADDING}{36}{subsubsection.6.4.2.1}
+\contentsline {section}{\numberline {6.5}Dokumentacja pliku /home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/include/md5/md5.h}{38}{section.6.5}
+\contentsline {subsection}{\numberline {6.5.1}Dokumentacja definicji typ\IeC {\'o}w}{38}{subsection.6.5.1}
+\contentsline {subsubsection}{\numberline {6.5.1.1}POINTER}{38}{subsubsection.6.5.1.1}
+\contentsline {section}{\numberline {6.6}Dokumentacja pliku /home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/include/md5/md5wrapper.cpp}{39}{section.6.6}
+\contentsline {section}{\numberline {6.7}Dokumentacja pliku /home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/include/md5/md5wrapper.h}{40}{section.6.7}
+\contentsline {section}{\numberline {6.8}Dokumentacja pliku /home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/main.cpp}{41}{section.6.8}
+\contentsline {subsection}{\numberline {6.8.1}Dokumentacja funkcji}{41}{subsection.6.8.1}
+\contentsline {subsubsection}{\numberline {6.8.1.1}main}{41}{subsubsection.6.8.1.1}
+\contentsline {section}{\numberline {6.9}Dokumentacja pliku /home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/parser.cpp}{43}{section.6.9}
+\contentsline {section}{\numberline {6.10}Dokumentacja pliku /home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/parser.hpp}{44}{section.6.10}
+\contentsline {subsection}{\numberline {6.10.1}Dokumentacja definicji}{45}{subsection.6.10.1}
+\contentsline {subsubsection}{\numberline {6.10.1.1}BUFSIZE}{45}{subsubsection.6.10.1.1}
+\contentsline {subsubsection}{\numberline {6.10.1.2}BUFSIZE2}{45}{subsubsection.6.10.1.2}
+\contentsline {subsection}{\numberline {6.10.2}Dokumentacja funkcji}{45}{subsection.6.10.2}
+\contentsline {subsubsection}{\numberline {6.10.2.1}eat\_\discretionary {-}{}{}zombie}{45}{subsubsection.6.10.2.1}
+\contentsline {section}{\numberline {6.11}Dokumentacja pliku /home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/server.hpp}{46}{section.6.11}
+\contentsline {section}{\numberline {6.12}Dokumentacja pliku /home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/version.h}{47}{section.6.12}
+\contentsline {subsection}{\numberline {6.12.1}Dokumentacja definicji}{47}{subsection.6.12.1}
+\contentsline {subsubsection}{\numberline {6.12.1.1}RC\_\discretionary {-}{}{}FILEVERSION}{47}{subsubsection.6.12.1.1}
+\contentsline {subsubsection}{\numberline {6.12.1.2}RC\_\discretionary {-}{}{}FILEVERSION\_\discretionary {-}{}{}STRING}{47}{subsubsection.6.12.1.2}
+\contentsline {section}{\numberline {6.13}Dokumentacja pliku /home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/xml.hpp}{48}{section.6.13}

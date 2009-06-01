@@ -1,4 +1,4 @@
-This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2009.5.25)  27 MAY 2009 15:43
+This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2009.5.25)  1 JUN 2009 13:44
 entering extended mode
  %&-line parsing enabled.
 **refman.tex
@@ -647,10 +647,12 @@ LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
 
 
 Writing index file refman.idx
-(./refman.aux (./a00002.aux) (./a00003.aux) (./a00004.aux) (./a00005.aux)
-(./a00007.aux) (./a00008.aux) (./a00009.aux) (./a00010.aux) (./a00011.aux)
-(./a00012.aux) (./a00013.aux) (./a00014.aux) (./a00015.aux) (./a00016.aux)
-(./a00017.aux) (./a00018.aux))
+(./refman.aux (./d7/d46/a00002.aux) (./d1/d7c/a00003.aux) (./d0/d0b/a00004.aux)
+(./dd/dad/a00005.aux) (./de/d5e/a00007.aux) (./d4/dee/a00008.aux)
+(./da/da0/a00009.aux) (./d7/dec/a00010.aux) (./da/d45/a00011.aux)
+(./df/d86/a00012.aux) (./d7/dd4/a00013.aux) (./d2/de7/a00014.aux)
+(./dd/d1b/a00015.aux) (./d7/d7a/a00016.aux) (./d4/d51/a00017.aux)
+(./d1/d2b/a00018.aux))
 \openout1 = `refman.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 36.
@@ -667,8 +669,7 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 36.
 LaTeX Font Info:    ... okay on input line 36.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 36.
 LaTeX Font Info:    Try loading font information for TS1+cmr on input line 36.
-
-(/usr/share/texmf-texlive/tex/latex/base/ts1cmr.fd
+ (/usr/share/texmf-texlive/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 36.
@@ -743,22 +744,8 @@ LaTeX Font Info:    External font `plex10' loaded for size
  [1
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 53--53
- [][] [][][]\T1/ptm/m/n/10 Dokumentacja pli-ku /home/pawel/Dokumenty/Uczelnia/g
-rupappz/Source/Ass8- 
- []
+Underfull \vbox (badness 1389) has occurred while \output is active []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 54--54
- [][] [][][]\T1/ptm/m/n/10 Dokumentacja pli-ku /home/pawel/Dokumenty/Uczelnia/g
-rupappz/Source/Ass8- 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 55--55
- [][] [][][]\T1/ptm/m/n/10 Dokumentacja pli-ku /home/pawel/Dokumenty/Uczelnia/g
-rupappz/Source/Ass8- 
- []
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -767,33 +754,9 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 62.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 64.
 [2]
-Underfull \hbox (badness 10000) in paragraph at lines 63--63
- [][] [][][]\T1/ptm/m/n/10 Dokumentacja pli-ku /home/pawel/Dokumenty/Uczelnia/g
-rupappz/Source/Ass8- 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 90--90
- [][] [][][]\T1/ptm/m/n/10 Dokumentacja pli-ku /home/pawel/Dokumenty/Uczelnia/g
-rupappz/Source/Ass8- 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 93--93
- [][] [][][]\T1/ptm/m/n/10 Dokumentacja pli-ku /home/pawel/Dokumenty/Uczelnia/g
-rupappz/Source/Ass8- 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 94--94
- [][] [][][]\T1/ptm/m/n/10 Dokumentacja pli-ku /home/pawel/Dokumenty/Uczelnia/g
-rupappz/Source/Ass8- 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 95--95
+Underfull \hbox (badness 10000) in paragraph at lines 99--99
  [][] [][][]\T1/ptm/m/n/10 Dokumentacja pli-ku /home/pawel/Dokumenty/Uczelnia/g
 rupappz/Source/Ass8- 
  []
@@ -805,31 +768,79 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [3]
-Underfull \hbox (badness 10000) in paragraph at lines 98--98
+Underfull \hbox (badness 10000) in paragraph at lines 100--100
  [][] [][][]\T1/ptm/m/n/10 Dokumentacja pli-ku /home/pawel/Dokumenty/Uczelnia/g
 rupappz/Source/Ass8- 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 99--99
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
  [][] [][][]\T1/ptm/m/n/10 Dokumentacja pli-ku /home/pawel/Dokumenty/Uczelnia/g
 rupappz/Source/Ass8- 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 105--105
+Underfull \hbox (badness 10000) in paragraph at lines 109--109
  [][] [][][]\T1/ptm/m/n/10 Dokumentacja pli-ku /home/pawel/Dokumenty/Uczelnia/g
 rupappz/Source/Ass8- 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 106--106
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 12.96997pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[4]
+Underfull \hbox (badness 10000) in paragraph at lines 138--138
  [][] [][][]\T1/ptm/m/n/10 Dokumentacja pli-ku /home/pawel/Dokumenty/Uczelnia/g
 rupappz/Source/Ass8- 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 110--110
+Underfull \hbox (badness 10000) in paragraph at lines 141--141
+ [][] [][][]\T1/ptm/m/n/10 Dokumentacja pli-ku /home/pawel/Dokumenty/Uczelnia/g
+rupappz/Source/Ass8- 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 142--142
+ [][] [][][]\T1/ptm/m/n/10 Dokumentacja pli-ku /home/pawel/Dokumenty/Uczelnia/g
+rupappz/Source/Ass8- 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 143--143
+ [][] [][][]\T1/ptm/m/n/10 Dokumentacja pli-ku /home/pawel/Dokumenty/Uczelnia/g
+rupappz/Source/Ass8- 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 146--146
+ [][] [][][]\T1/ptm/m/n/10 Dokumentacja pli-ku /home/pawel/Dokumenty/Uczelnia/g
+rupappz/Source/Ass8- 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--147
+ [][] [][][]\T1/ptm/m/n/10 Dokumentacja pli-ku /home/pawel/Dokumenty/Uczelnia/g
+rupappz/Source/Ass8- 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 153--153
+ [][] [][][]\T1/ptm/m/n/10 Dokumentacja pli-ku /home/pawel/Dokumenty/Uczelnia/g
+rupappz/Source/Ass8- 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 154--154
+ [][] [][][]\T1/ptm/m/n/10 Dokumentacja pli-ku /home/pawel/Dokumenty/Uczelnia/g
+rupappz/Source/Ass8- 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 158--158
  [][] [][][]\T1/ptm/m/n/10 Dokumentacja pli-ku /home/pawel/Dokumenty/Uczelnia/g
 rupappz/Source/Ass8- 
  []
@@ -845,7 +856,9 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[4]
+[5] [6
+
+]
 Rozdzia\PlPrIeC {\l } 1.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <20.74> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 52.
@@ -858,7 +871,6 @@ LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <14.4> not available
                    \relax 
 l.54 \chapter
              {Indeks klas} [1
-
 
 ]pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has
  been already used, duplicate ignored
@@ -877,276 +889,329 @@ Rozdzia\PlPrIeC {\l } 3.
 
 ]
 Rozdzia\PlPrIeC {\l } 4.
-(./a00019.tex) [7] [8
-
-]
-Rozdzia\PlPrIeC {\l } 5.
-(./a00001.tex
-LaTeX Font Info:    Try loading font information for T1+pcr on input line 5.
- (/usr/share/texmf-texlive/tex/latex/psnfss/t1pcr.fd
-File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
-)
+(./dd/da2/a00019.tex
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 7.
-LaTeX Font Info:    Try loading font information for TS1+ptm on input line 10.
-
-(/usr/share/texmf-texlive/tex/latex/psnfss/ts1ptm.fd
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 5.
+LaTeX Font Info:    Try loading font information for TS1+ptm on input line 8.
+ (/usr/share/texmf-texlive/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
-) [9]
+)
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 40.
+
+(/usr/share/texmf-texlive/tex/latex/psnfss/t1pcr.fd
+File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
+) [7]) [8]
+Rozdzia\PlPrIeC {\l } 5.
+(./d8/d84/a00001.tex [9
+
+]
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <10> not available
-(Font)              Font shape `T1/ptm/b/it' tried instead on input line 55.
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 62.
 
-<a00001_abbda65be49dfb28b1a578d0383599fa_cgraph.pdf, id=718, 208.78pt x 28.105p
-t>
-File: a00001_abbda65be49dfb28b1a578d0383599fa_cgraph.pdf Graphic file (type pdf
-)
- <use a00001_abbda65be49dfb28b1a578d0383599fa_cgraph.pdf>
-<a00001_bef61cc396e46d347a47c75e9ef8dfde_icgraph.pdf, id=719, 200.75pt x 28.105
-pt>
-File: a00001_bef61cc396e46d347a47c75e9ef8dfde_icgraph.pdf Graphic file (type pd
-f)
- <use a00001_bef61cc396e46d347a47c75e9ef8dfde_icgraph.pdf> [10 <./a00001_abbda6
-5be49dfb28b1a578d0383599fa_cgraph.pdf> <./a00001_bef61cc396e46d347a47c75e9ef8df
-de_icgraph.pdf>]
-<a00001_e4a033a65cb585aa91c15fd8b8fde764_cgraph.pdf, id=737, 222.8325pt x 28.10
-5pt>
-File: a00001_e4a033a65cb585aa91c15fd8b8fde764_cgraph.pdf Graphic file (type pdf
-)
- <use a00001_e4a033a65cb585aa91c15fd8b8fde764_cgraph.pdf>
-<a00001_2eace36725672b3a4ce639f91fe7d9bd_cgraph.pdf, id=740, 236.885pt x 66.247
-5pt>
-File: a00001_2eace36725672b3a4ce639f91fe7d9bd_cgraph.pdf Graphic file (type pdf
-)
- <use a00001_2eace36725672b3a4ce639f91fe7d9bd_cgraph.pdf>
-<a00001_02db3388d088212bd443ee39998b5cf8_icgraph.pdf, id=741, 236.885pt x 28.10
-5pt>
-File: a00001_02db3388d088212bd443ee39998b5cf8_icgraph.pdf Graphic file (type pd
-f)
- <use a00001_02db3388d088212bd443ee39998b5cf8_icgraph.pdf>
-<a00001_65054f08c8fd7c600f6c2fe2c7f61a43_icgraph.pdf, id=742, 228.855pt x 104.3
-9pt>
-File: a00001_65054f08c8fd7c600f6c2fe2c7f61a43_icgraph.pdf Graphic file (type pd
-f)
- <use a00001_65054f08c8fd7c600f6c2fe2c7f61a43_icgraph.pdf>
-Underfull \vbox (badness 2269) has occurred while \output is active []
+<d8/d84/a00001_abbda65be49dfb28b1a578d0383599fa_cgraph.pdf, id=996, 208.78pt x 
+28.105pt>
+File: d8/d84/a00001_abbda65be49dfb28b1a578d0383599fa_cgraph.pdf Graphic file (t
+ype pdf)
+ <use d8/d84/a00001_abbda65be49dfb28b1a578d0383599fa_cgraph.pdf>
+<d8/d84/a00001_bef61cc396e46d347a47c75e9ef8dfde_icgraph.pdf, id=997, 200.75pt x
+ 28.105pt>
+File: d8/d84/a00001_bef61cc396e46d347a47c75e9ef8dfde_icgraph.pdf Graphic file (
+type pdf)
+ <use d8/d84/a00001_bef61cc396e46d347a47c75e9ef8dfde_icgraph.pdf>
+[10 <./d8/d84/a00001_abbda65be49dfb28b1a578d0383599fa_cgraph.pdf> <./d8/d84/a00
+001_bef61cc396e46d347a47c75e9ef8dfde_icgraph.pdf>]
+<d8/d84/a00001_e4a033a65cb585aa91c15fd8b8fde764_cgraph.pdf, id=1017, 222.8325pt
+ x 28.105pt>
+File: d8/d84/a00001_e4a033a65cb585aa91c15fd8b8fde764_cgraph.pdf Graphic file (t
+ype pdf)
+ <use d8/d84/a00001_e4a033a65cb585aa91c15fd8b8fde764_cgraph.pdf>
+<d8/d84/a00001_2eace36725672b3a4ce639f91fe7d9bd_cgraph.pdf, id=1020, 236.885pt 
+x 66.2475pt>
+File: d8/d84/a00001_2eace36725672b3a4ce639f91fe7d9bd_cgraph.pdf Graphic file (t
+ype pdf)
+ <use d8/d84/a00001_2eace36725672b3a4ce639f91fe7d9bd_cgraph.pdf>
+<d8/d84/a00001_02db3388d088212bd443ee39998b5cf8_icgraph.pdf, id=1021, 236.885pt
+ x 28.105pt>
+File: d8/d84/a00001_02db3388d088212bd443ee39998b5cf8_icgraph.pdf Graphic file (
+type pdf)
+ <use d8/d84/a00001_02db3388d088212bd443ee39998b5cf8_icgraph.pdf>
+[11 <./d8/d84/a00001_e4a033a65cb585aa91c15fd8b8fde764_cgraph.pdf> <./d8/d84/a00
+001_2eace36725672b3a4ce639f91fe7d9bd_cgraph.pdf>]
+<d8/d84/a00001_65054f08c8fd7c600f6c2fe2c7f61a43_icgraph.pdf, id=1039, 228.855pt
+ x 142.5325pt>
+File: d8/d84/a00001_65054f08c8fd7c600f6c2fe2c7f61a43_icgraph.pdf Graphic file (
+type pdf)
 
- [11 <./a00001_e4a033a65cb585aa91c15fd8b8fde764_cgraph.pdf> <./a00001_2eace3672
-5672b3a4ce639f91fe7d9bd_cgraph.pdf> <./a00001_02db3388d088212bd443ee39998b5cf8_
-icgraph.pdf>]) [12 <./a00001_65054f08c8fd7c600f6c2fe2c7f61a43_icgraph.pdf>]
-\openout2 = `a00002.aux'.
+<use d8/d84/a00001_65054f08c8fd7c600f6c2fe2c7f61a43_icgraph.pdf>
+<d8/d84/a00001_7161c573401166cc5f7d98ae6f335b44_cgraph.pdf, id=1040, 204.765pt 
+x 28.105pt>
+File: d8/d84/a00001_7161c573401166cc5f7d98ae6f335b44_cgraph.pdf Graphic file (t
+ype pdf)
+ <use d8/d84/a00001_7161c573401166cc5f7d98ae6f335b44_cgraph.pdf>
+[12 <./d8/d84/a00001_02db3388d088212bd443ee39998b5cf8_icgraph.pdf> <./d8/d84/a0
+0001_65054f08c8fd7c600f6c2fe2c7f61a43_icgraph.pdf> <./d8/d84/a00001_7161c573401
+166cc5f7d98ae6f335b44_cgraph.pdf>]) [13]
+\openout2 = `d7/d46/a00002.aux'.
 
- (./a00002.tex
-<a00002_98039031d87c1f5b787050e2b487d83f_cgraph.pdf, id=784, 222.8325pt x 28.10
-5pt>
-File: a00002_98039031d87c1f5b787050e2b487d83f_cgraph.pdf Graphic file (type pdf
-)
- <use a00002_98039031d87c1f5b787050e2b487d83f_cgraph.pdf>
-<a00002_98039031d87c1f5b787050e2b487d83f_icgraph.pdf, id=785, 279.0425pt x 28.1
-05pt>
-File: a00002_98039031d87c1f5b787050e2b487d83f_icgraph.pdf Graphic file (type pd
-f)
- <use a00002_98039031d87c1f5b787050e2b487d83f_icgraph.pdf>
-<a00002_72b35c041cb6983aaa74e2f1c31d5a29_icgraph.pdf, id=786, 271.0125pt x 28.1
-05pt>
-File: a00002_72b35c041cb6983aaa74e2f1c31d5a29_icgraph.pdf Graphic file (type pd
-f)
- <use a00002_72b35c041cb6983aaa74e2f1c31d5a29_icgraph.pdf> [13
+ (./d7/d46/a00002.tex
+<d7/d46/a00002_ef62580b93f2122c62493464787b814a_icgraph.pdf, id=1084, 861.2175p
+t x 75.28125pt>
+File: d7/d46/a00002_ef62580b93f2122c62493464787b814a_icgraph.pdf Graphic file (
+type pdf)
 
- <./a00002_98039031d87c1f5b787050e2b487d83f_cgraph.pdf> <./a00002_98039031d87c1
-f5b787050e2b487d83f_icgraph.pdf> <./a00002_72b35c041cb6983aaa74e2f1c31d5a29_icg
-raph.pdf>]
-<a00002_a59116f0a26354a217fa186a43cd9d28_icgraph.pdf, id=815, 409.53pt x 47.176
-25pt>
-File: a00002_a59116f0a26354a217fa186a43cd9d28_icgraph.pdf Graphic file (type pd
-f)
- <use a00002_a59116f0a26354a217fa186a43cd9d28_icgraph.pdf>) [14 <./a00002_a5911
-6f0a26354a217fa186a43cd9d28_icgraph.pdf>]
-\openout2 = `a00003.aux'.
+<use d7/d46/a00002_ef62580b93f2122c62493464787b814a_icgraph.pdf>
+<d7/d46/a00002_c3c05716498203127920ba78b3ae8115_icgraph.pdf, id=1085, 588.1975p
+t x 66.2475pt>
+File: d7/d46/a00002_c3c05716498203127920ba78b3ae8115_icgraph.pdf Graphic file (
+type pdf)
 
- (./a00003.tex) [15
+<use d7/d46/a00002_c3c05716498203127920ba78b3ae8115_icgraph.pdf> [14
+
+ <./d7/d46/a00002_ef62580b93f2122c62493464787b814a_icgraph.pdf>]
+<d7/d46/a00002_76c181f092e81df65dadf8861272ac80_icgraph.pdf, id=1108, 748.7975p
+t x 75.28125pt>
+File: d7/d46/a00002_76c181f092e81df65dadf8861272ac80_icgraph.pdf Graphic file (
+type pdf)
+
+<use d7/d46/a00002_76c181f092e81df65dadf8861272ac80_icgraph.pdf>
+<d7/d46/a00002_e1a522aab83da49d1bd3f0a6f3edcd11_icgraph.pdf, id=1109, 889.3225p
+t x 95.35625pt>
+File: d7/d46/a00002_e1a522aab83da49d1bd3f0a6f3edcd11_icgraph.pdf Graphic file (
+type pdf)
+
+<use d7/d46/a00002_e1a522aab83da49d1bd3f0a6f3edcd11_icgraph.pdf>
+<d7/d46/a00002_98039031d87c1f5b787050e2b487d83f_cgraph.pdf, id=1110, 505.89pt x
+ 142.5325pt>
+File: d7/d46/a00002_98039031d87c1f5b787050e2b487d83f_cgraph.pdf Graphic file (t
+ype pdf)
+ <use d7/d46/a00002_98039031d87c1f5b787050e2b487d83f_cgraph.pdf>
+<d7/d46/a00002_98039031d87c1f5b787050e2b487d83f_icgraph.pdf, id=1111, 475.7775p
+t x 66.2475pt>
+File: d7/d46/a00002_98039031d87c1f5b787050e2b487d83f_icgraph.pdf Graphic file (
+type pdf)
+
+<use d7/d46/a00002_98039031d87c1f5b787050e2b487d83f_icgraph.pdf> [15 <./d7/d46/
+a00002_c3c05716498203127920ba78b3ae8115_icgraph.pdf> <./d7/d46/a00002_76c181f09
+2e81df65dadf8861272ac80_icgraph.pdf> <./d7/d46/a00002_e1a522aab83da49d1bd3f0a6f
+3edcd11_icgraph.pdf> <./d7/d46/a00002_98039031d87c1f5b787050e2b487d83f_cgraph.p
+df>]
+<d7/d46/a00002_72b35c041cb6983aaa74e2f1c31d5a29_icgraph.pdf, id=1140, 467.7475p
+t x 66.2475pt>
+File: d7/d46/a00002_72b35c041cb6983aaa74e2f1c31d5a29_icgraph.pdf Graphic file (
+type pdf)
+
+<use d7/d46/a00002_72b35c041cb6983aaa74e2f1c31d5a29_icgraph.pdf>
+<d7/d46/a00002_849ad3347bad15a23f3a40452476b1e0_cgraph.pdf, id=1141, 254.9525pt
+ x 66.2475pt>
+File: d7/d46/a00002_849ad3347bad15a23f3a40452476b1e0_cgraph.pdf Graphic file (t
+ype pdf)
+ <use d7/d46/a00002_849ad3347bad15a23f3a40452476b1e0_cgraph.pdf>
+<d7/d46/a00002_849ad3347bad15a23f3a40452476b1e0_icgraph.pdf, id=1142, 748.7975p
+t x 75.28125pt>
+File: d7/d46/a00002_849ad3347bad15a23f3a40452476b1e0_icgraph.pdf Graphic file (
+type pdf)
+
+<use d7/d46/a00002_849ad3347bad15a23f3a40452476b1e0_icgraph.pdf>
+<d7/d46/a00002_a59116f0a26354a217fa186a43cd9d28_cgraph.pdf, id=1143, 385.44pt x
+ 85.31876pt>
+File: d7/d46/a00002_a59116f0a26354a217fa186a43cd9d28_cgraph.pdf Graphic file (t
+ype pdf)
+ <use d7/d46/a00002_a59116f0a26354a217fa186a43cd9d28_cgraph.pdf>
+<d7/d46/a00002_a59116f0a26354a217fa186a43cd9d28_icgraph.pdf, id=1144, 606.265pt
+ x 75.28125pt>
+File: d7/d46/a00002_a59116f0a26354a217fa186a43cd9d28_icgraph.pdf Graphic file (
+type pdf)
+
+<use d7/d46/a00002_a59116f0a26354a217fa186a43cd9d28_icgraph.pdf> [16 <./d7/d46/
+a00002_98039031d87c1f5b787050e2b487d83f_icgraph.pdf> <./d7/d46/a00002_72b35c041
+cb6983aaa74e2f1c31d5a29_icgraph.pdf> <./d7/d46/a00002_849ad3347bad15a23f3a40452
+476b1e0_cgraph.pdf> <./d7/d46/a00002_849ad3347bad15a23f3a40452476b1e0_icgraph.p
+df> <./d7/d46/a00002_a59116f0a26354a217fa186a43cd9d28_cgraph.pdf>]) [17 <./d7/d
+46/a00002_a59116f0a26354a217fa186a43cd9d28_icgraph.pdf>]
+\openout2 = `d1/d7c/a00003.aux'.
+
+ (./d1/d7c/a00003.tex)
+[18
 
 
 ]
-\openout2 = `a00004.aux'.
+\openout2 = `d0/d0b/a00004.aux'.
 
+ (./d0/d0b/a00004.tex <d4/d6d/a00055.pdf, id=1204, 76.285pt x 96.36pt>
+File: d4/d6d/a00055.pdf Graphic file (type pdf)
 
-(./a00004.tex <a00054.pdf, id=840, 76.285pt x 96.36pt>
-File: a00054.pdf Graphic file (type pdf)
- <use a00054.pdf>
-
-Package hyperref Warning: Token not allowed in a PDFDocEncoded string,
-(hyperref)                removing `math shift' on input line 45.
-
+<use d4/d6d/a00055.pdf>
 
 Package hyperref Warning: Token not allowed in a PDFDocEncoded string,
-(hyperref)                removing `\sim' on input line 45.
+(hyperref)                removing `math shift' on input line 57.
 
 
 Package hyperref Warning: Token not allowed in a PDFDocEncoded string,
-(hyperref)                removing `math shift' on input line 45.
+(hyperref)                removing `\sim' on input line 57.
 
 
-<a00004_e6cd2a7928b997c5d6388ae81a0d841a_cgraph.pdf, id=845, 409.53pt x 104.39p
-t>
-File: a00004_e6cd2a7928b997c5d6388ae81a0d841a_cgraph.pdf Graphic file (type pdf
-)
- <use a00004_e6cd2a7928b997c5d6388ae81a0d841a_cgraph.pdf> [16
+Package hyperref Warning: Token not allowed in a PDFDocEncoded string,
+(hyperref)                removing `math shift' on input line 57.
+
+[19
 
 
- <./a00054.pdf>]) [17 <./a00004_e6cd2a7928b997c5d6388ae81a0d841a_cgraph.pdf>]
-\openout2 = `a00005.aux'.
+ <./d4/d6d/a00055.pdf>]
+<d0/d0b/a00004_74f856c53740d3beb133074baffd21aa_icgraph.pdf, id=1233, 523.9575p
+t x 66.2475pt>
+File: d0/d0b/a00004_74f856c53740d3beb133074baffd21aa_icgraph.pdf Graphic file (
+type pdf)
 
- (./a00005.tex
-<a00057.pdf, id=873, 50.1875pt x 96.36pt>
-File: a00057.pdf Graphic file (type pdf)
- <use a00057.pdf>
-<a00005_3a237071a3ab764cd61bc53df9dd4f46_cgraph.pdf, id=876, 200.75pt x 28.105p
-t>
-File: a00005_3a237071a3ab764cd61bc53df9dd4f46_cgraph.pdf Graphic file (type pdf
-)
- <use a00005_3a237071a3ab764cd61bc53df9dd4f46_cgraph.pdf>
-<a00005_7793913f528921aa22c4b6cc259a0a14_icgraph.pdf, id=877, 152.57pt x 28.105
-pt>
-File: a00005_7793913f528921aa22c4b6cc259a0a14_icgraph.pdf Graphic file (type pd
-f)
- <use a00005_7793913f528921aa22c4b6cc259a0a14_icgraph.pdf> [18
+<use d0/d0b/a00004_74f856c53740d3beb133074baffd21aa_icgraph.pdf>
+<d0/d0b/a00004_e6cd2a7928b997c5d6388ae81a0d841a_cgraph.pdf, id=1234, 740.7675pt
+ x 142.5325pt>
+File: d0/d0b/a00004_e6cd2a7928b997c5d6388ae81a0d841a_cgraph.pdf Graphic file (t
+ype pdf)
+ <use d0/d0b/a00004_e6cd2a7928b997c5d6388ae81a0d841a_cgraph.pdf>
+<d0/d0b/a00004_225ba5a78228b867c3f17fdba959d8e6_cgraph.pdf, id=1235, 889.3225pt
+ x 142.5325pt>
+File: d0/d0b/a00004_225ba5a78228b867c3f17fdba959d8e6_cgraph.pdf Graphic file (t
+ype pdf)
+ <use d0/d0b/a00004_225ba5a78228b867c3f17fdba959d8e6_cgraph.pdf>
+<d0/d0b/a00004_608ecf61c0ecdf2fcb772e9fd6c51d5f_cgraph.pdf, id=1236, 692.5875pt
+ x 142.5325pt>
+File: d0/d0b/a00004_608ecf61c0ecdf2fcb772e9fd6c51d5f_cgraph.pdf Graphic file (t
+ype pdf)
+ <use d0/d0b/a00004_608ecf61c0ecdf2fcb772e9fd6c51d5f_cgraph.pdf>
+Underfull \vbox (badness 1571) has occurred while \output is active []
+
+ [20 <./d0/d0b/a00004_74f856c53740d3beb133074baffd21aa_icgraph.pdf> <./d0/d0b/a
+00004_e6cd2a7928b997c5d6388ae81a0d841a_cgraph.pdf> <./d0/d0b/a00004_225ba5a7822
+8b867c3f17fdba959d8e6_cgraph.pdf>]
+<d0/d0b/a00004_608ecf61c0ecdf2fcb772e9fd6c51d5f_icgraph.pdf, id=1259, 307.1475p
+t x 28.105pt>
+File: d0/d0b/a00004_608ecf61c0ecdf2fcb772e9fd6c51d5f_icgraph.pdf Graphic file (
+type pdf)
+ <use d0/d0b/a00004_608ecf61c0ecdf2fcb772e9fd6c51d5f_icgraph.pdf>) [21 <./d0/d0
+b/a00004_608ecf61c0ecdf2fcb772e9fd6c51d5f_cgraph.pdf> <./d0/d0b/a00004_608ecf61
+c0ecdf2fcb772e9fd6c51d5f_icgraph.pdf>]
+\openout2 = `dd/dad/a00005.aux'.
+
+ (./dd/dad/a00005.tex
+<d9/d73/a00060.pdf, id=1278, 153.57375pt x 166.6225pt>
+File: d9/d73/a00060.pdf Graphic file (type pdf)
+ <use d9/d73/a00060.pdf>
+[22
 
 
- <./a00057.pdf> <./a00005_3a237071a3ab764cd61bc53df9dd4f46_cgraph.pdf> <./a0000
-5_7793913f528921aa22c4b6cc259a0a14_icgraph.pdf>]) [19] [20
-
-
-]
+ <./d9/d73/a00060.pdf>]
+<dd/dad/a00005_3a237071a3ab764cd61bc53df9dd4f46_cgraph.pdf, id=1333, 200.75pt x
+ 28.105pt>
+File: dd/dad/a00005_3a237071a3ab764cd61bc53df9dd4f46_cgraph.pdf Graphic file (t
+ype pdf)
+ <use dd/dad/a00005_3a237071a3ab764cd61bc53df9dd4f46_cgraph.pdf>
+[23]
+<dd/dad/a00005_96f941201d172eeaf2fb4d8429edfc0c_icgraph.pdf, id=1348, 220.825pt
+ x 28.105pt>
+File: dd/dad/a00005_96f941201d172eeaf2fb4d8429edfc0c_icgraph.pdf Graphic file (
+type pdf)
+ <use dd/dad/a00005_96f941201d172eeaf2fb4d8429edfc0c_icgraph.pdf>
+<dd/dad/a00005_71abf468eb72a833dbd6c8a895b66b52_icgraph.pdf, id=1350, 212.795pt
+ x 28.105pt>
+File: dd/dad/a00005_71abf468eb72a833dbd6c8a895b66b52_icgraph.pdf Graphic file (
+type pdf)
+ <use dd/dad/a00005_71abf468eb72a833dbd6c8a895b66b52_icgraph.pdf>
+<dd/dad/a00005_4e084ae10e8498b171c44a0138597d2e_icgraph.pdf, id=1351, 246.9225p
+t x 28.105pt>
+File: dd/dad/a00005_4e084ae10e8498b171c44a0138597d2e_icgraph.pdf Graphic file (
+type pdf)
+ <use dd/dad/a00005_4e084ae10e8498b171c44a0138597d2e_icgraph.pdf>
+[24 <./dd/dad/a00005_3a237071a3ab764cd61bc53df9dd4f46_cgraph.pdf> <./dd/dad/a00
+005_96f941201d172eeaf2fb4d8429edfc0c_icgraph.pdf> <./dd/dad/a00005_71abf468eb72
+a833dbd6c8a895b66b52_icgraph.pdf> <./dd/dad/a00005_4e084ae10e8498b171c44a013859
+7d2e_icgraph.pdf>]
+<dd/dad/a00005_49d270636d2f3d5376c3cba62b5ea839_icgraph.pdf, id=1382, 218.8175p
+t x 28.105pt>
+File: dd/dad/a00005_49d270636d2f3d5376c3cba62b5ea839_icgraph.pdf Graphic file (
+type pdf)
+ <use dd/dad/a00005_49d270636d2f3d5376c3cba62b5ea839_icgraph.pdf>
+<dd/dad/a00005_6a29174f787861caadc6c2e34b99f8c0_icgraph.pdf, id=1383, 240.9pt x
+ 28.105pt>
+File: dd/dad/a00005_6a29174f787861caadc6c2e34b99f8c0_icgraph.pdf Graphic file (
+type pdf)
+ <use dd/dad/a00005_6a29174f787861caadc6c2e34b99f8c0_icgraph.pdf>
+[25 <./dd/dad/a00005_49d270636d2f3d5376c3cba62b5ea839_icgraph.pdf> <./dd/dad/a0
+0005_6a29174f787861caadc6c2e34b99f8c0_icgraph.pdf>]
+<dd/dad/a00005_9ce7290217bd14e4efcbe2cad32ccf95_cgraph.pdf, id=1401, 246.9225pt
+ x 295.1025pt>
+File: dd/dad/a00005_9ce7290217bd14e4efcbe2cad32ccf95_cgraph.pdf Graphic file (t
+ype pdf)
+ <use dd/dad/a00005_9ce7290217bd14e4efcbe2cad32ccf95_cgraph.pdf>
+<dd/dad/a00005_7793913f528921aa22c4b6cc259a0a14_icgraph.pdf, id=1402, 152.57pt 
+x 28.105pt>
+File: dd/dad/a00005_7793913f528921aa22c4b6cc259a0a14_icgraph.pdf Graphic file (
+type pdf)
+ <use dd/dad/a00005_7793913f528921aa22c4b6cc259a0a14_icgraph.pdf>
+[26 <./dd/dad/a00005_9ce7290217bd14e4efcbe2cad32ccf95_cgraph.pdf> <./dd/dad/a00
+005_7793913f528921aa22c4b6cc259a0a14_icgraph.pdf>]
+<dd/dad/a00005_7ef79f818429f70b9cb35c0a33b59a10_icgraph.pdf, id=1419, 214.8025p
+t x 28.105pt>
+File: dd/dad/a00005_7ef79f818429f70b9cb35c0a33b59a10_icgraph.pdf Graphic file (
+type pdf)
+ <use dd/dad/a00005_7ef79f818429f70b9cb35c0a33b59a10_icgraph.pdf>
+<dd/dad/a00005_2f6aceaa94a28fc699e4f824f7622b51_icgraph.pdf, id=1420, 194.7275p
+t x 28.105pt>
+File: dd/dad/a00005_2f6aceaa94a28fc699e4f824f7622b51_icgraph.pdf Graphic file (
+type pdf)
+ <use dd/dad/a00005_2f6aceaa94a28fc699e4f824f7622b51_icgraph.pdf>
+<dd/dad/a00005_cc293df6220f5030fab5a7ee9cf8b1fa_icgraph.pdf, id=1422, 244.915pt
+ x 28.105pt>
+File: dd/dad/a00005_cc293df6220f5030fab5a7ee9cf8b1fa_icgraph.pdf Graphic file (
+type pdf)
+ <use dd/dad/a00005_cc293df6220f5030fab5a7ee9cf8b1fa_icgraph.pdf>
+[27 <./dd/dad/a00005_7ef79f818429f70b9cb35c0a33b59a10_icgraph.pdf> <./dd/dad/a0
+0005_2f6aceaa94a28fc699e4f824f7622b51_icgraph.pdf> <./dd/dad/a00005_cc293df6220
+f5030fab5a7ee9cf8b1fa_icgraph.pdf>]) [28]
 Rozdzia\PlPrIeC {\l } 6.
-(./a00006.tex
+(./de/d21/a00006.tex
 Overfull \hbox (93.04488pt too wide) in paragraph at lines 4--4
 []\T1/ptm/b/n/14.4 Dokumentacja pli-ku /home/pawel/Dokumenty/Uczelnia/grupappz/
 Source/Ass8-
  []
 
-<a00033.pdf, id=914, 373.395pt x 196.735pt>
-File: a00033.pdf Graphic file (type pdf)
- <use a00033.pdf>) [21 <./a00033.pdf>]
-\openout2 = `a00007.aux'.
-
- (./a00007.tex
-Overfull \hbox (93.04488pt too wide) in paragraph at lines 4--4
-[]\T1/ptm/b/n/14.4 Dokumentacja pli-ku /home/pawel/Dokumenty/Uczelnia/grupappz/
-Source/Ass8-
- []
-
-<a00034.pdf, id=925, 373.395pt x 140.525pt>
-File: a00034.pdf Graphic file (type pdf)
- <use a00034.pdf>
-<a00035.pdf, id=926, 890.32625pt x 140.525pt>
-File: a00035.pdf Graphic file (type pdf)
- <use a00035.pdf>) [22
-
- <./a00034.pdf> <./a00035.pdf>]
-\openout2 = `a00008.aux'.
-
- (./a00008.tex
-Overfull \hbox (93.04488pt too wide) in paragraph at lines 4--4
-[]\T1/ptm/b/n/14.4 Dokumentacja pli-ku /home/pawel/Dokumenty/Uczelnia/grupappz/
-Source/Ass8-
- []
-
-<a00036.pdf, id=945, 353.32pt x 84.315pt>
-File: a00036.pdf Graphic file (type pdf)
- <use a00036.pdf>
-<a00037.pdf, id=946, 911.405pt x 196.735pt>
-File: a00037.pdf Graphic file (type pdf)
- <use a00037.pdf>
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 22.48999pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[23
-
-
- <./a00036.pdf> <./a00037.pdf>]) [24]
-\openout2 = `a00009.aux'.
-
- (./a00009.tex
-Overfull \hbox (93.04488pt too wide) in paragraph at lines 4--4
-[]\T1/ptm/b/n/14.4 Dokumentacja pli-ku /home/pawel/Dokumenty/Uczelnia/grupappz/
-Source/Ass8-
- []
-
-<a00038.pdf, id=980, 401.5pt x 140.525pt>
-File: a00038.pdf Graphic file (type pdf)
- <use a00038.pdf>
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 22.48999pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[25
-
-
- <./a00038.pdf>] [26]
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 22.48999pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[27]) [28]
-\openout2 = `a00010.aux'.
-
- (./a00010.tex
-Overfull \hbox (93.04488pt too wide) in paragraph at lines 4--4
-[]\T1/ptm/b/n/14.4 Dokumentacja pli-ku /home/pawel/Dokumenty/Uczelnia/grupappz/
-Source/Ass8-
- []
-
-<a00039.pdf, id=1056, 389.455pt x 84.315pt>
-File: a00039.pdf Graphic file (type pdf)
- <use a00039.pdf>
-<a00040.pdf, id=1057, 845.1575pt x 84.315pt>
-File: a00040.pdf Graphic file (type pdf)
- <use a00040.pdf>)
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 22.48999pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
+<db/df3/a00034.pdf, id=1452, 373.395pt x 196.735pt>
+File: db/df3/a00034.pdf Graphic file (type pdf)
+ <use db/df3/a00034.pdf>)
 [29
 
 
- <./a00039.pdf> <./a00040.pdf>]
-\openout2 = `a00011.aux'.
+ <./db/df3/a00034.pdf>]
+\openout2 = `de/d5e/a00007.aux'.
 
- (./a00011.tex
+ (./de/d5e/a00007.tex
 Overfull \hbox (93.04488pt too wide) in paragraph at lines 4--4
 []\T1/ptm/b/n/14.4 Dokumentacja pli-ku /home/pawel/Dokumenty/Uczelnia/grupappz/
 Source/Ass8-
  []
 
-<a00041.pdf, id=1080, 433.62pt x 140.525pt>
-File: a00041.pdf Graphic file (type pdf)
- <use a00041.pdf>) [30
+<d4/d8c/a00035.pdf, id=1464, 373.395pt x 140.525pt>
+File: d4/d8c/a00035.pdf Graphic file (type pdf)
+ <use d4/d8c/a00035.pdf>
+<de/d8c/a00036.pdf, id=1465, 890.32625pt x 140.525pt>
+File: de/d8c/a00036.pdf Graphic file (type pdf)
+ <use de/d8c/a00036.pdf>)
+[30
 
+ <./d4/d8c/a00035.pdf> <./de/d8c/a00036.pdf>]
+\openout2 = `d4/dee/a00008.aux'.
 
- <./a00041.pdf>]
-\openout2 = `a00012.aux'.
-
- (./a00012.tex
+ (./d4/dee/a00008.tex
 Overfull \hbox (93.04488pt too wide) in paragraph at lines 4--4
 []\T1/ptm/b/n/14.4 Dokumentacja pli-ku /home/pawel/Dokumenty/Uczelnia/grupappz/
 Source/Ass8-
  []
 
-<a00042.pdf, id=1091, 423.5825pt x 84.315pt>
-File: a00042.pdf Graphic file (type pdf)
- <use a00042.pdf>
-<a00043.pdf, id=1092, 976.64874pt x 140.525pt>
-File: a00043.pdf Graphic file (type pdf)
- <use a00043.pdf>)
+<d1/dc6/a00037.pdf, id=1484, 353.32pt x 84.315pt>
+File: d1/dc6/a00037.pdf Graphic file (type pdf)
+ <use d1/dc6/a00037.pdf>
+<d8/d41/a00038.pdf, id=1485, 911.405pt x 196.735pt>
+File: d8/d41/a00038.pdf Graphic file (type pdf)
+ <use d8/d41/a00038.pdf>
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 22.48999pt.
@@ -1156,118 +1221,221 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 [31
 
 
- <./a00042.pdf> <./a00043.pdf>]
-\openout2 = `a00013.aux'.
+ <./d1/dc6/a00037.pdf> <./d8/d41/a00038.pdf>]) [32]
+\openout2 = `da/da0/a00009.aux'.
 
- (./a00013.tex
+ (./da/da0/a00009.tex
 Overfull \hbox (93.04488pt too wide) in paragraph at lines 4--4
 []\T1/ptm/b/n/14.4 Dokumentacja pli-ku /home/pawel/Dokumenty/Uczelnia/grupappz/
 Source/Ass8-
  []
 
-<a00044.pdf, id=1112, 1219.55624pt x 252.945pt>
-File: a00044.pdf Graphic file (type pdf)
- <use a00044.pdf> [32
-
-
- <./a00044.pdf>]
-<a00013_0ddf1224851353fc92bfbff6f499fa97_cgraph.pdf, id=1126, 152.57pt x 66.247
-5pt>
-File: a00013_0ddf1224851353fc92bfbff6f499fa97_cgraph.pdf Graphic file (type pdf
-)
- <use a00013_0ddf1224851353fc92bfbff6f499fa97_cgraph.pdf>) [33 <./a00013_0ddf12
-24851353fc92bfbff6f499fa97_cgraph.pdf>]
-\openout2 = `a00014.aux'.
-
- (./a00014.tex
-Overfull \hbox (93.04488pt too wide) in paragraph at lines 4--4
-[]\T1/ptm/b/n/14.4 Dokumentacja pli-ku /home/pawel/Dokumenty/Uczelnia/grupappz/
-Source/Ass8-
- []
-
-<a00046.pdf, id=1137, 1196.47pt x 252.945pt>
-File: a00046.pdf Graphic file (type pdf)
- <use a00046.pdf>) [34
-
-
- <./a00046.pdf>]
-\openout2 = `a00015.aux'.
-
- (./a00015.tex
-Overfull \hbox (100.24487pt too wide) in paragraph at lines 4--4
-[]\T1/ptm/b/n/14.4 Dokumentacja pli-ku /home/pawel/Dokumenty/Uczelnia/grupappz/
-Source/Ass8-
- []
-
-<a00047.pdf, id=1148, 1061.9675pt x 196.735pt>
-File: a00047.pdf Graphic file (type pdf)
- <use a00047.pdf>
-<a00048.pdf, id=1149, 710.655pt x 84.315pt>
-File: a00048.pdf Graphic file (type pdf)
- <use a00048.pdf>
+<d3/de7/a00039.pdf, id=1519, 401.5pt x 140.525pt>
+File: d3/de7/a00039.pdf Graphic file (type pdf)
+ <use d3/de7/a00039.pdf>
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 22.48999pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[35
+[33
 
 
- <./a00047.pdf> <./a00048.pdf>]
-<a00015_6c724feff242ad0cd599cdd458f73199_icgraph.pdf, id=1176, 148.555pt x 28.1
-05pt>
-File: a00015_6c724feff242ad0cd599cdd458f73199_icgraph.pdf Graphic file (type pd
-f)
- <use a00015_6c724feff242ad0cd599cdd458f73199_icgraph.pdf>) [36 <./a00015_6c724
-feff242ad0cd599cdd458f73199_icgraph.pdf>]
-\openout2 = `a00016.aux'.
-
- (./a00016.tex
-Overfull \hbox (100.24487pt too wide) in paragraph at lines 4--4
-[]\T1/ptm/b/n/14.4 Dokumentacja pli-ku /home/pawel/Dokumenty/Uczelnia/grupappz/
-Source/Ass8-
- []
-
-)
+ <./d3/de7/a00039.pdf>] [34]
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 22.48999pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[37
+[35]) [36]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 22.48999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[37]
+\openout2 = `d7/dec/a00010.aux'.
+
+ (./d7/dec/a00010.tex
+Overfull \hbox (93.04488pt too wide) in paragraph at lines 4--4
+[]\T1/ptm/b/n/14.4 Dokumentacja pli-ku /home/pawel/Dokumenty/Uczelnia/grupappz/
+Source/Ass8-
+ []
+
+<db/d3a/a00040.pdf, id=1602, 389.455pt x 84.315pt>
+File: db/d3a/a00040.pdf Graphic file (type pdf)
+ <use db/d3a/a00040.pdf>
+<dd/d32/a00041.pdf, id=1603, 845.1575pt x 84.315pt>
+File: dd/d32/a00041.pdf Graphic file (type pdf)
+ <use dd/d32/a00041.pdf>)
+[38
+
+
+ <./db/d3a/a00040.pdf> <./dd/d32/a00041.pdf>]
+\openout2 = `da/d45/a00011.aux'.
+
+ (./da/d45/a00011.tex
+Overfull \hbox (93.04488pt too wide) in paragraph at lines 4--4
+[]\T1/ptm/b/n/14.4 Dokumentacja pli-ku /home/pawel/Dokumenty/Uczelnia/grupappz/
+Source/Ass8-
+ []
+
+<d5/db6/a00042.pdf, id=1625, 433.62pt x 140.525pt>
+File: d5/db6/a00042.pdf Graphic file (type pdf)
+ <use d5/db6/a00042.pdf>)
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 22.48999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[39
+
+
+ <./d5/db6/a00042.pdf>]
+\openout2 = `df/d86/a00012.aux'.
+
+ (./df/d86/a00012.tex
+Overfull \hbox (93.04488pt too wide) in paragraph at lines 4--4
+[]\T1/ptm/b/n/14.4 Dokumentacja pli-ku /home/pawel/Dokumenty/Uczelnia/grupappz/
+Source/Ass8-
+ []
+
+<d6/d42/a00043.pdf, id=1636, 423.5825pt x 84.315pt>
+File: d6/d42/a00043.pdf Graphic file (type pdf)
+ <use d6/d42/a00043.pdf>
+<d5/df9/a00044.pdf, id=1637, 976.64874pt x 140.525pt>
+File: d5/df9/a00044.pdf Graphic file (type pdf)
+ <use d5/df9/a00044.pdf>)
+[40
+
+
+ <./d6/d42/a00043.pdf> <./d5/df9/a00044.pdf>]
+\openout2 = `d7/dd4/a00013.aux'.
+
+ (./d7/dd4/a00013.tex
+Overfull \hbox (93.04488pt too wide) in paragraph at lines 4--4
+[]\T1/ptm/b/n/14.4 Dokumentacja pli-ku /home/pawel/Dokumenty/Uczelnia/grupappz/
+Source/Ass8-
+ []
+
+<d6/d97/a00045.pdf, id=1656, 1219.55624pt x 252.945pt>
+File: d6/d97/a00045.pdf Graphic file (type pdf)
+ <use d6/d97/a00045.pdf>
+[41
+
+
+ <./d6/d97/a00045.pdf>]
+<d7/dd4/a00013_0ddf1224851353fc92bfbff6f499fa97_cgraph.pdf, id=1671, 152.57pt x
+ 66.2475pt>
+File: d7/dd4/a00013_0ddf1224851353fc92bfbff6f499fa97_cgraph.pdf Graphic file (t
+ype pdf)
+ <use d7/dd4/a00013_0ddf1224851353fc92bfbff6f499fa97_cgraph.pdf>)
+[42 <./d7/dd4/a00013_0ddf1224851353fc92bfbff6f499fa97_cgraph.pdf>]
+\openout2 = `d2/de7/a00014.aux'.
+
+
+(./d2/de7/a00014.tex
+Overfull \hbox (93.04488pt too wide) in paragraph at lines 4--4
+[]\T1/ptm/b/n/14.4 Dokumentacja pli-ku /home/pawel/Dokumenty/Uczelnia/grupappz/
+Source/Ass8-
+ []
+
+<d6/d2d/a00047.pdf, id=1682, 1196.47pt x 252.945pt>
+File: d6/d2d/a00047.pdf Graphic file (type pdf)
+ <use d6/d2d/a00047.pdf>)
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 22.48999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[43
+
+
+ <./d6/d2d/a00047.pdf>]
+\openout2 = `dd/d1b/a00015.aux'.
+
+ (./dd/d1b/a00015.tex
+Overfull \hbox (100.24487pt too wide) in paragraph at lines 4--4
+[]\T1/ptm/b/n/14.4 Dokumentacja pli-ku /home/pawel/Dokumenty/Uczelnia/grupappz/
+Source/Ass8-
+ []
+
+<d4/dca/a00048.pdf, id=1693, 1061.9675pt x 196.735pt>
+File: d4/dca/a00048.pdf Graphic file (type pdf)
+ <use d4/dca/a00048.pdf>
+<d2/dee/a00049.pdf, id=1694, 710.655pt x 84.315pt>
+File: d2/dee/a00049.pdf Graphic file (type pdf)
+ <use d2/dee/a00049.pdf>
+[44
+
+
+ <./d4/dca/a00048.pdf> <./d2/dee/a00049.pdf>]
+<dd/d1b/a00015_6c724feff242ad0cd599cdd458f73199_icgraph.pdf, id=1721, 148.555pt
+ x 28.105pt>
+File: dd/d1b/a00015_6c724feff242ad0cd599cdd458f73199_icgraph.pdf Graphic file (
+type pdf)
+ <use dd/d1b/a00015_6c724feff242ad0cd599cdd458f73199_icgraph.pdf>)
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 22.48999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[45 <./dd/d1b/a00015_6c724feff242ad0cd599cdd458f73199_icgraph.pdf>]
+\openout2 = `d7/d7a/a00016.aux'.
+
+
+(./d7/d7a/a00016.tex
+Overfull \hbox (100.24487pt too wide) in paragraph at lines 4--4
+[]\T1/ptm/b/n/14.4 Dokumentacja pli-ku /home/pawel/Dokumenty/Uczelnia/grupappz/
+Source/Ass8-
+ []
+
+) [46
 
 
 ]
-\openout2 = `a00017.aux'.
+\openout2 = `d4/d51/a00017.aux'.
 
- (./a00017.tex
+ (./d4/d51/a00017.tex
 Overfull \hbox (100.24487pt too wide) in paragraph at lines 4--4
 []\T1/ptm/b/n/14.4 Dokumentacja pli-ku /home/pawel/Dokumenty/Uczelnia/grupappz/
 Source/Ass8-
  []
 
-<a00049.pdf, id=1192, 710.655pt x 84.315pt>
-File: a00049.pdf Graphic file (type pdf)
- <use a00049.pdf>) [38
+<d5/de0/a00050.pdf, id=1736, 710.655pt x 84.315pt>
+File: d5/de0/a00050.pdf Graphic file (type pdf)
+ <use d5/de0/a00050.pdf>)
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 22.48999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[47
 
 
- <./a00049.pdf>]
-\openout2 = `a00018.aux'.
+ <./d5/de0/a00050.pdf>]
+\openout2 = `d1/d2b/a00018.aux'.
 
- (./a00018.tex
+ (./d1/d2b/a00018.tex
 Overfull \hbox (100.24487pt too wide) in paragraph at lines 4--4
 []\T1/ptm/b/n/14.4 Dokumentacja pli-ku /home/pawel/Dokumenty/Uczelnia/grupappz/
 Source/Ass8-
  []
 
-<a00050.pdf, id=1210, 353.32pt x 84.315pt>
-File: a00050.pdf Graphic file (type pdf)
- <use a00050.pdf>) [39
+<d2/d79/a00051.pdf, id=1769, 353.32pt x 84.315pt>
+File: d2/d79/a00051.pdf Graphic file (type pdf)
+ <use d2/d79/a00051.pdf>)
+[48
 
 
- <./a00050.pdf>] (./refman.ind
+ <./d2/d79/a00051.pdf>] (./refman.ind
 Overfull \hbox (29.18434pt too wide) in paragraph at lines 5--7
 []\T1/ptm/m/n/10 /home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-
  []
@@ -1332,35 +1500,37 @@ Overfull \hbox (29.18434pt too wide) in paragraph at lines 29--31
 []\T1/ptm/m/n/10 /home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-
  []
 
-[40
+[49
 
 
-] [41] [42
+] [50] [51] [52
 
-]) (./refman.aux (./a00002.aux) (./a00003.aux) (./a00004.aux)
-(./a00005.aux) (./a00007.aux) (./a00008.aux) (./a00009.aux) (./a00010.aux)
-(./a00011.aux) (./a00012.aux) (./a00013.aux) (./a00014.aux) (./a00015.aux)
-(./a00016.aux) (./a00017.aux) (./a00018.aux)) ) 
+]) (./refman.aux (./d7/d46/a00002.aux) (./d1/d7c/a00003.aux)
+(./d0/d0b/a00004.aux) (./dd/dad/a00005.aux) (./de/d5e/a00007.aux)
+(./d4/dee/a00008.aux) (./da/da0/a00009.aux) (./d7/dec/a00010.aux)
+(./da/d45/a00011.aux) (./df/d86/a00012.aux) (./d7/dd4/a00013.aux)
+(./d2/de7/a00014.aux) (./dd/d1b/a00015.aux) (./d7/d7a/a00016.aux)
+(./d4/d51/a00017.aux) (./d1/d2b/a00018.aux)) ) 
 Here is how much of TeX's memory you used:
- 5780 strings out of 95045
- 81218 string characters out of 1182560
- 128840 words of memory out of 1500000
- 8421 multiletter control sequences out of 10000+50000
+ 6126 strings out of 95045
+ 96139 string characters out of 1182560
+ 132113 words of memory out of 1500000
+ 8596 multiletter control sequences out of 10000+50000
  47886 words of font info for 57 fonts, out of 1200000 for 2000
  56 hyphenation exceptions out of 8191
- 38i,12n,43p,620b,465s stack positions out of 5000i,500n,6000p,200000b,5000s
-{/usr/share/texmf-texlive/fonts/
-enc/dvips/pl/plms.enc}{/usr/share/texmf-texlive/fonts/enc/dvips/base/8r.enc}{/u
-sr/share/texmf-texlive/fonts/enc/dvips/pl/plmi.enc}</usr/share/texmf-texlive/fo
-nts/type1/public/pl/plmi10.pfb></usr/share/texmf-texlive/fonts/type1/public/pl/
-plsy10.pfb></usr/share/texmf-texlive/fonts/type1/public/pl/plsy7.pfb></usr/shar
-e/texmf-texlive/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texmf-texlive/fo
-nts/type1/urw/times/utmb8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/
-utmbi8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmr8a.pfb></usr/sh
-are/texmf-texlive/fonts/type1/urw/times/utmri8a.pfb>
-Output written on refman.pdf (48 pages, 1288944 bytes).
+ 38i,12n,43p,620b,505s stack positions out of 5000i,500n,6000p,200000b,5000s
+{/usr/share/texmf-texlive/fonts/e
+nc/dvips/pl/plms.enc}{/usr/share/texmf-texlive/fonts/enc/dvips/base/8r.enc}{/us
+r/share/texmf-texlive/fonts/enc/dvips/pl/plmi.enc}</usr/share/texmf-texlive/fon
+ts/type1/public/pl/plmi10.pfb></usr/share/texmf-texlive/fonts/type1/public/pl/p
+lsy10.pfb></usr/share/texmf-texlive/fonts/type1/public/pl/plsy7.pfb></usr/share
+/texmf-texlive/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texmf-texlive/fon
+ts/type1/urw/times/utmb8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/u
+tmbi8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmr8a.pfb></usr/sha
+re/texmf-texlive/fonts/type1/urw/times/utmri8a.pfb>
+Output written on refman.pdf (60 pages, 2001727 bytes).
 PDF statistics:
- 1453 PDF objects out of 1728 (max. 8388607)
- 255 named destinations out of 1000 (max. 131072)
- 1067 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2122 PDF objects out of 2487 (max. 8388607)
+ 367 named destinations out of 1000 (max. 131072)
+ 1556 words of extra memory for PDF output out of 10000 (max. 10000000)
 

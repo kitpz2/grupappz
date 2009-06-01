@@ -203,11 +203,14 @@ mysqlpp::StoreQueryResult Baza::getFileInfo(std::string file, int user_id)
     try
     {
         info("pobranie info o pliku usera o ID = 'id'");
-        std::string zapytanie="select * from files_plik where konto_id='";
+        /*std::string zapytanie="select * from files_plik where konto_id='";
         zapytanie+=user_id;
         zapytanie.append("' AND sciezka='");
         zapytanie+=file;
-        zapytanie.append("'");
+        zapytanie.append("'");*/
+        char zapytanie[256];
+        sprintf(zapytanie,"select * from files_plik where konto_id='%d' AND sciezka='%s'",user_id,file.c_str());
+        info2("zapytanie",zapytanie);
         mysqlpp::Query query = conn.query(zapytanie);
         mysqlpp::StoreQueryResult res = query.store();
         if (res)
@@ -318,4 +321,9 @@ bool Baza::rmFile(std::string nazwa, std::string konto, std::string hash)
         info2("BŁAD PARSOWANIA SQL w addFile : ",e.what());
         return false;
     }
+}
+
+bool Baza::firends(std::string user1, std::string user2)
+{
+
 }

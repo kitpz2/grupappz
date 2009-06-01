@@ -79,10 +79,10 @@ bool parser::parsuj(std::string &do_parsowania)
                     info("reader.has_attributes==true");
                     if (reader.move_to_attribute("idsesji")) ///Przesun sie do atrybutu "idsesji"
                     {
+                        std::string uzytkownik;
 #ifdef DEBUG
                         ///Do debugowania
                         char temp[128];
-                        std::string uzytkownik;
                         sprintf(temp,"%u",id_sesji);
                         info("Sprawdzanie id_sesji");
                         info2(temp,reader.get_value().c_str());
@@ -95,7 +95,7 @@ bool parser::parsuj(std::string &do_parsowania)
                                 info2("operacja",reader.get_value().c_str());
                                 operacja=atoi(reader.get_value().c_str());
                             }
-                            else if (reader.move_to_attribute("action"))
+                            if (reader.move_to_attribute("action"))
                             {
                                 if (reader.get_value().compare("ok")==0)
                                 {
@@ -108,12 +108,12 @@ bool parser::parsuj(std::string &do_parsowania)
                                     return false;
                                 }
                             }
-                            else
+                            /*else
                             {
                                 info("BŁĘDNE ZAPYTANIE");
                                 Odpowiedz(400);///Błędne zapytanie
                                 return false;
-                            }
+                            }*/
                             if (operacja==100 || operacja==101)
                             {
                                 if (reader.move_to_attribute("uzytkownik"))
@@ -176,7 +176,7 @@ bool parser::parsuj(std::string &do_parsowania)
             else//Jeżeli polecenie nie zaczyna się od <klient
             {
                 info("nierozpoznano");
-                Odpowiedz(400);
+                //Odpowiedz(400);
                 return false;
             }
 #ifdef LIBXMLCPP_EXCEPTIONS_ENABLED
@@ -196,7 +196,7 @@ bool parser::parsuj(std::string &do_parsowania)
 }
 void parser::wyslij(std::string w)///Funkcja wysyłająca dane przez SOCKET
 {
-    //w.append(std::endl);
+    //w.append("\r\n");
     info2("Wysylam",w.c_str());
     stream<<w;//<<std::endl;
 
@@ -364,7 +364,7 @@ void parser::lista_plikow(std::string uzytkownik)
             sprintf(a,"<plik nazwa=\"%s\" data=\"%d\" rozmiar=\"%d\"\
                 dostep=\"%d\" hash=\"%s\"/>\r\n",res[i]["sciezka"].c_str(),
                     atoi(res[i]["dataDodania"].c_str()),atoi(res[i]["wielkosc"].c_str()),
-                    atoi(res[i]["prawaDostepu"].c_str()),res[i]["hash"].c_str());
+                    atoi(res[i]["prawaDostepu"].c_str()),res[i]["hashValue"].c_str());
             info(a);
             odp.append(a);
         }
@@ -471,7 +471,7 @@ void parser::odbieranie_plikow(xmlpp::TextReader &reader, std::string uzytkownik
                                     for (unsigned int i=0;i<wynik.num_rows();++i)
                                     {
                                         info("Sprawdzanie czy jest w bazie");
-                                        if (wynik[i]["hash"].compare(hash)==0)
+                                        if (true)//wynik[i]["hashValue"].compare(hash)==0)
                                         {
                                             line;
                                             info("Plik juz istnieje, co robic?");
@@ -580,7 +580,7 @@ void parser::odbieranie_plikow(xmlpp::TextReader &reader, std::string uzytkownik
                         //info2("odebrano",temp2);
                         //fprintf(plik,"%s",temp2);
                         md5wrapper md5;
-                        std::string temp_hash=md5.getHashFromFile(std::string(temp_sciezka));
+                        /*std::string temp_hash=md5.getHashFromFile(std::string(temp_sciezka));
                         if (temp_hash.compare(hash)!=0) //sprawdzic jak sie wywoluje
                         {
 #ifdef DEBUG
@@ -590,7 +590,7 @@ void parser::odbieranie_plikow(xmlpp::TextReader &reader, std::string uzytkownik
 #endif
                             Odpowiedz(405,102);
                             return;
-                        }
+                        }*/
                         info("plik odebrany prawidlowo");
                         char tmp[128];
                         sprintf(tmp,"Pobrano %d z %d",size,rozmiar);
@@ -599,8 +599,13 @@ void parser::odbieranie_plikow(xmlpp::TextReader &reader, std::string uzytkownik
                         //FILE *plik2=fopen(sciezka.c_str(),"w+");
                         //std::copy(plik,plik2); --zrobic kopiowanie
                         //fclose(plik2);
+                        sprintf(tmp,"zamieniam %s na %s",temp_sciezka,sciezka.c_str());
+                        info(tmp);
                         boost::filesystem::copy_file(temp_sciezka,sciezka);
-
+                        sprintf(tmp,"usuwam %s",temp_sciezka);
+                        info(tmp);
+                        boost::filesystem::remove(temp_sciezka);
+                        czytanie_z_socketa();
                         info("Odebrano koncowego xmla");
                         baza.addFile(nazwa,uzytkownik,rozmiar,hash,-1,time(NULL));
                     }
@@ -652,8 +657,11 @@ void parser::wysylanie_plikow(xmlpp::TextReader &reader, std::string uzytkownik)
 void parser::wyslij_plik(std::string plik,std::string uzytkownik)
 {
     info("Wyslij plik");
+    info2("login",login.c_str());
     if (uzytkownik.compare(".")==0)
         uzytkownik=login;
+    info2("uzytkownik",uzytkownik.c_str());
+    info2("plik",plik.c_str());
     mysqlpp::StoreQueryResult res=baza.getFileInfo(plik,uzytkownik);
     if (res.num_rows()<1)
     {
@@ -674,14 +682,21 @@ void parser::wyslij_plik(std::string plik,std::string uzytkownik)
             return;
         }
         info("wysylanie info o pliku")
-        std::string odp="<plik nazwa=\""+res[0]["sciezka"];
+        /*std::string odp="<plik nazwa=\""+res[0]["sciezka"];
         odp+="\" data=\""+res[0]["dataDodania"];
         odp+="\" rozmiar=\""+res[0]["dataDodania"];
         odp+="\" dostep=\""+res[0]["prawaDostepu"];
         odp+="\" hash=\""+res[0]["hashValue"];
-        odp+="\"/>\r\n";
-        Odpowiedz(101,406,odp);
-        info2("odp",odp.c_str())
+        odp+="\"/>\r\n";*/
+        char odp[512];
+        sprintf(odp,"<plik nazwa=\"%s\" data=\"%d\" rozmiar=\"%d\" dostep=\"%d\" hash=\"%s\"/>\r\n",
+        res[0]["sciezka"].c_str(),
+        atoi(res[0]["dataDodania"].c_str()),
+        atoi(res[0]["wielkosc"].c_str()),
+        atoi(res[0]["prawaDostepu"].c_str()),
+        res[0]["hashValue"].c_str());
+        Odpowiedz(406,101,odp);
+        info2("odp",odp)
         info("Info o pliku wyslane");
     }
     info("Czekamy na zgode klienta na wysyl pliku");
@@ -717,7 +732,7 @@ void parser::wyslij_plik(std::string plik,std::string uzytkownik)
         info("błąd parsowania");
         return;
     }
-    std::string sciezka;
+    std::string sciezka=login+"/";
     sciezka+=plik;
     info("Otwieram plik");
     FILE *fplik=std::fopen(sciezka.c_str(),"r");
@@ -732,6 +747,7 @@ void parser::wyslij_plik(std::string plik,std::string uzytkownik)
     while ( (fread ( &temp, 1,BUFSIZE2,fplik ) )> 0 )
     {
         info("Trwa wysyłanie pliku, proszę czekać...");
+        info(temp);
         stream<<temp;
     }
     stream<<std::endl;

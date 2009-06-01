@@ -1,0 +1,4 @@
+<area shape="rect" href="$d8/d84/a00001.html#abbda65be49dfb28b1a578d0383599fa" title="Dodaje plik do bazy danych." alt="" coords="184,5,285,32">
+<area shape="rect" href="$d8/d84/a00001.html#e4a033a65cb585aa91c15fd8b8fde764" title="Podobnie jak getFilesList tylko ze pobiera informację o jednym pliku." alt="" coords="175,56,295,83">
+<area shape="rect" href="$d8/d84/a00001.html#2eace36725672b3a4ce639f91fe7d9bd" title="Najpierw wywołuje getUserId() potem z id otrzymanym z tamtąd wywołuje getFilesList(int..." alt="" coords="172,107,297,133">
+<area shape="rect" href="$d8/d84/a00001.html#7161c573401166cc5f7d98ae6f335b44" title="Baza::rmFile" alt="" coords="187,157,283,184">

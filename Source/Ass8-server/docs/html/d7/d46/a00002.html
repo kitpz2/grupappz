@@ -1,0 +1,453 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>Ass8: Dokumentacja klasy MD5</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css">
+<link href="../../doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Wygenerowano przez Doxygen 1.5.8 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="../../main.html"><span>Strona&nbsp;główna</span></a></li>
+      <li><a href="../../namespaces.html"><span>Przestrzenie&nbsp;nazw</span></a></li>
+      <li class="current"><a href="../../annotated.html"><span>Klasy</span></a></li>
+      <li><a href="../../files.html"><span>Pliki</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="../../annotated.html"><span>Lista&nbsp;klas</span></a></li>
+      <li><a href="../../functions.html"><span>Składowe&nbsp;klas</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>Dokumentacja klasy MD5</h1><!-- doxytag: class="MD5" --><code>#include &lt;<a class="el" href="../../d3/dfe/a00025.html">md5.h</a>&gt;</code>
+<p>
+
+<p>
+<a href="../../dc/dee/a00053.html">Lista wszystkich składowych.</a><table border="0" cellpadding="0" cellspacing="0">
+<tr><td></td></tr>
+<tr><td colspan="2"><br><h2>Metody publiczne</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d46/a00002.html#72b35c041cb6983aaa74e2f1c31d5a29">MD5Init</a> (<a class="el" href="../../d1/d7c/a00003.html">MD5_CTX</a> *)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d46/a00002.html#a59116f0a26354a217fa186a43cd9d28">MD5Update</a> (<a class="el" href="../../d1/d7c/a00003.html">MD5_CTX</a> *, unsigned char *, unsigned int)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d46/a00002.html#98039031d87c1f5b787050e2b487d83f">MD5Final</a> (unsigned char[16], <a class="el" href="../../d1/d7c/a00003.html">MD5_CTX</a> *)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d46/a00002.html#fa6155ec36de415ab2dcf5e54b670d13">MD5</a> ()</td></tr>
+
+<tr><td colspan="2"><br><h2>Metody prywatne</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d46/a00002.html#849ad3347bad15a23f3a40452476b1e0">MD5Transform</a> (unsigned long int state[4], unsigned char block[64])</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d46/a00002.html#c3c05716498203127920ba78b3ae8115">Encode</a> (unsigned char *, unsigned long int *, unsigned int)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d46/a00002.html#ef62580b93f2122c62493464787b814a">Decode</a> (unsigned long int *, unsigned char *, unsigned int)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d46/a00002.html#76c181f092e81df65dadf8861272ac80">MD5_memcpy</a> (<a class="el" href="../../d7/dec/a00010.html#73204e40637f83518fb695362ea084a4">POINTER</a>, <a class="el" href="../../d7/dec/a00010.html#73204e40637f83518fb695362ea084a4">POINTER</a>, unsigned int)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d46/a00002.html#e1a522aab83da49d1bd3f0a6f3edcd11">MD5_memset</a> (<a class="el" href="../../d7/dec/a00010.html#73204e40637f83518fb695362ea084a4">POINTER</a>, int, unsigned int)</td></tr>
+
+</table>
+<hr><a name="_details"></a><h2>Opis szczegółowy</h2>
+
+<p>Definicja w linii <a class="el" href="../../d3/dfe/a00025.html#l00060">60</a> pliku <a class="el" href="../../d3/dfe/a00025.html">md5.h</a>.</p>
+<hr><h2>Dokumentacja konstruktora i destruktora</h2>
+<a class="anchor" name="fa6155ec36de415ab2dcf5e54b670d13"></a><!-- doxytag: member="MD5::MD5" ref="fa6155ec36de415ab2dcf5e54b670d13" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">MD5::MD5           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definicja w linii <a class="el" href="../../d3/dfe/a00025.html#l00077">77</a> pliku <a class="el" href="../../d3/dfe/a00025.html">md5.h</a>.</p>
+
+</div>
+</div><p>
+<hr><h2>Dokumentacja funkcji składowych</h2>
+<a class="anchor" name="ef62580b93f2122c62493464787b814a"></a><!-- doxytag: member="MD5::Decode" ref="ef62580b93f2122c62493464787b814a" args="(unsigned long int *, unsigned char *, unsigned int)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MD5::Decode           </td>
+          <td>(</td>
+          <td class="paramtype">unsigned long int *&nbsp;</td>
+          <td class="paramname"> <em>output</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned char *&nbsp;</td>
+          <td class="paramname"> <em>input</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&nbsp;</td>
+          <td class="paramname"> <em>len</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definicja w linii <a class="el" href="../../dc/de2/a00024.html#l00293">293</a> pliku <a class="el" href="../../dc/de2/a00024.html">md5.cpp</a>.</p>
+
+<p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dynsection">
+<p><center><img src="../../d7/d46/a00002_ef62580b93f2122c62493464787b814a_icgraph.png" border="0" usemap="#d7/d46/a00002_ef62580b93f2122c62493464787b814a_icgraph_map" alt=""></center>
+<map name="d7/d46/a00002_ef62580b93f2122c62493464787b814a_icgraph_map">
+<area shape="rect" href="../../d7/d46/a00002.html#849ad3347bad15a23f3a40452476b1e0" title="MD5::MD5Transform" alt="" coords="155,31,296,57"><area shape="rect" href="../../d7/d46/a00002.html#a59116f0a26354a217fa186a43cd9d28" title="MD5::MD5Update" alt="" coords="345,31,468,57"><area shape="rect" href="../../d0/d0b/a00004.html#e6cd2a7928b997c5d6388ae81a0d841a" title="md5wrapper::getHashFromFile" alt="" coords="679,5,876,32"><area shape="rect" href="../../d0/d0b/a00004.html#608ecf61c0ecdf2fcb772e9fd6c51d5f" title="md5wrapper::hashit" alt="" coords="711,68,844,95"><area shape="rect" href="../../d7/d46/a00002.html#98039031d87c1f5b787050e2b487d83f" title="MD5::MD5Final" alt="" coords="517,31,629,57"><area shape="rect" href="../../d0/d0b/a00004.html#225ba5a78228b867c3f17fdba959d8e6" title="md5wrapper::getHashFromString" alt="" coords="927,68,1137,95"></map>
+</div>
+
+</div>
+</div><p>
+<a class="anchor" name="c3c05716498203127920ba78b3ae8115"></a><!-- doxytag: member="MD5::Encode" ref="c3c05716498203127920ba78b3ae8115" args="(unsigned char *, unsigned long int *, unsigned int)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MD5::Encode           </td>
+          <td>(</td>
+          <td class="paramtype">unsigned char *&nbsp;</td>
+          <td class="paramname"> <em>output</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned long int *&nbsp;</td>
+          <td class="paramname"> <em>input</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&nbsp;</td>
+          <td class="paramname"> <em>len</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definicja w linii <a class="el" href="../../dc/de2/a00024.html#l00277">277</a> pliku <a class="el" href="../../dc/de2/a00024.html">md5.cpp</a>.</p>
+
+<p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dynsection">
+<p><center><img src="../../d7/d46/a00002_c3c05716498203127920ba78b3ae8115_icgraph.png" border="0" usemap="#d7/d46/a00002_c3c05716498203127920ba78b3ae8115_icgraph_map" alt=""></center>
+<map name="d7/d46/a00002_c3c05716498203127920ba78b3ae8115_icgraph_map">
+<area shape="rect" href="../../d7/d46/a00002.html#98039031d87c1f5b787050e2b487d83f" title="MD5::MD5Final" alt="" coords="155,31,267,57"><area shape="rect" href="../../d0/d0b/a00004.html#e6cd2a7928b997c5d6388ae81a0d841a" title="md5wrapper::getHashFromFile" alt="" coords="316,5,513,32"><area shape="rect" href="../../d0/d0b/a00004.html#608ecf61c0ecdf2fcb772e9fd6c51d5f" title="md5wrapper::hashit" alt="" coords="348,56,481,83"><area shape="rect" href="../../d0/d0b/a00004.html#225ba5a78228b867c3f17fdba959d8e6" title="md5wrapper::getHashFromString" alt="" coords="564,56,775,83"></map>
+</div>
+
+</div>
+</div><p>
+<a class="anchor" name="76c181f092e81df65dadf8861272ac80"></a><!-- doxytag: member="MD5::MD5_memcpy" ref="76c181f092e81df65dadf8861272ac80" args="(POINTER, POINTER, unsigned int)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MD5::MD5_memcpy           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d7/dec/a00010.html#73204e40637f83518fb695362ea084a4">POINTER</a>&nbsp;</td>
+          <td class="paramname"> <em>output</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d7/dec/a00010.html#73204e40637f83518fb695362ea084a4">POINTER</a>&nbsp;</td>
+          <td class="paramname"> <em>input</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&nbsp;</td>
+          <td class="paramname"> <em>len</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definicja w linii <a class="el" href="../../dc/de2/a00024.html#l00307">307</a> pliku <a class="el" href="../../dc/de2/a00024.html">md5.cpp</a>.</p>
+
+<p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dynsection">
+<p><center><img src="../../d7/d46/a00002_76c181f092e81df65dadf8861272ac80_icgraph.png" border="0" usemap="#d7/d46/a00002_76c181f092e81df65dadf8861272ac80_icgraph_map" alt=""></center>
+<map name="d7/d46/a00002_76c181f092e81df65dadf8861272ac80_icgraph_map">
+<area shape="rect" href="../../d7/d46/a00002.html#a59116f0a26354a217fa186a43cd9d28" title="MD5::MD5Update" alt="" coords="196,31,319,57"><area shape="rect" href="../../d0/d0b/a00004.html#e6cd2a7928b997c5d6388ae81a0d841a" title="md5wrapper::getHashFromFile" alt="" coords="529,5,727,32"><area shape="rect" href="../../d0/d0b/a00004.html#608ecf61c0ecdf2fcb772e9fd6c51d5f" title="md5wrapper::hashit" alt="" coords="561,68,695,95"><area shape="rect" href="../../d7/d46/a00002.html#98039031d87c1f5b787050e2b487d83f" title="MD5::MD5Final" alt="" coords="368,31,480,57"><area shape="rect" href="../../d0/d0b/a00004.html#225ba5a78228b867c3f17fdba959d8e6" title="md5wrapper::getHashFromString" alt="" coords="777,68,988,95"></map>
+</div>
+
+</div>
+</div><p>
+<a class="anchor" name="e1a522aab83da49d1bd3f0a6f3edcd11"></a><!-- doxytag: member="MD5::MD5_memset" ref="e1a522aab83da49d1bd3f0a6f3edcd11" args="(POINTER, int, unsigned int)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MD5::MD5_memset           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d7/dec/a00010.html#73204e40637f83518fb695362ea084a4">POINTER</a>&nbsp;</td>
+          <td class="paramname"> <em>output</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&nbsp;</td>
+          <td class="paramname"> <em>len</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definicja w linii <a class="el" href="../../dc/de2/a00024.html#l00318">318</a> pliku <a class="el" href="../../dc/de2/a00024.html">md5.cpp</a>.</p>
+
+<p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dynsection">
+<p><center><img src="../../d7/d46/a00002_e1a522aab83da49d1bd3f0a6f3edcd11_icgraph.png" border="0" usemap="#d7/d46/a00002_e1a522aab83da49d1bd3f0a6f3edcd11_icgraph_map" alt=""></center>
+<map name="d7/d46/a00002_e1a522aab83da49d1bd3f0a6f3edcd11_icgraph_map">
+<area shape="rect" href="../../d7/d46/a00002.html#98039031d87c1f5b787050e2b487d83f" title="MD5::MD5Final" alt="" coords="555,5,667,32"><area shape="rect" href="../../d7/d46/a00002.html#849ad3347bad15a23f3a40452476b1e0" title="MD5::MD5Transform" alt="" coords="192,56,333,83"><area shape="rect" href="../../d0/d0b/a00004.html#e6cd2a7928b997c5d6388ae81a0d841a" title="md5wrapper::getHashFromFile" alt="" coords="716,95,913,121"><area shape="rect" href="../../d0/d0b/a00004.html#608ecf61c0ecdf2fcb772e9fd6c51d5f" title="md5wrapper::hashit" alt="" coords="748,19,881,45"><area shape="rect" href="../../d0/d0b/a00004.html#225ba5a78228b867c3f17fdba959d8e6" title="md5wrapper::getHashFromString" alt="" coords="964,19,1175,45"><area shape="rect" href="../../d7/d46/a00002.html#a59116f0a26354a217fa186a43cd9d28" title="MD5::MD5Update" alt="" coords="383,56,505,83"></map>
+</div>
+
+</div>
+</div><p>
+<a class="anchor" name="98039031d87c1f5b787050e2b487d83f"></a><!-- doxytag: member="MD5::MD5Final" ref="98039031d87c1f5b787050e2b487d83f" args="(unsigned char[16], MD5_CTX *)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MD5::MD5Final           </td>
+          <td>(</td>
+          <td class="paramtype">unsigned char&nbsp;</td>
+          <td class="paramname"> <em>digest</em>[16], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d1/d7c/a00003.html">MD5_CTX</a> *&nbsp;</td>
+          <td class="paramname"> <em>context</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definicja w linii <a class="el" href="../../dc/de2/a00024.html#l00153">153</a> pliku <a class="el" href="../../dc/de2/a00024.html">md5.cpp</a>.</p>
+
+<p>
+<div class="dynheader">
+Oto graf wywołań dla tej funkcji:</div>
+<div class="dynsection">
+<p><center><img src="../../d7/d46/a00002_98039031d87c1f5b787050e2b487d83f_cgraph.png" border="0" usemap="#d7/d46/a00002_98039031d87c1f5b787050e2b487d83f_cgraph_map" alt=""></center>
+<map name="d7/d46/a00002_98039031d87c1f5b787050e2b487d83f_cgraph_map">
+<area shape="rect" href="../../d7/d46/a00002.html#c3c05716498203127920ba78b3ae8115" title="MD5::Encode" alt="" coords="179,5,277,32"><area shape="rect" href="../../d7/d46/a00002.html#e1a522aab83da49d1bd3f0a6f3edcd11" title="MD5::MD5_memset" alt="" coords="529,81,665,108"><area shape="rect" href="../../d7/d46/a00002.html#a59116f0a26354a217fa186a43cd9d28" title="MD5::MD5Update" alt="" coords="167,107,289,133"><area shape="rect" href="../../d7/d46/a00002.html#76c181f092e81df65dadf8861272ac80" title="MD5::MD5_memcpy" alt="" coords="340,107,479,133"><area shape="rect" href="../../d7/d46/a00002.html#849ad3347bad15a23f3a40452476b1e0" title="MD5::MD5Transform" alt="" coords="339,157,480,184"><area shape="rect" href="../../d7/d46/a00002.html#ef62580b93f2122c62493464787b814a" title="MD5::Decode" alt="" coords="548,157,647,184"></map>
+</div>
+
+<p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dynsection">
+<p><center><img src="../../d7/d46/a00002_98039031d87c1f5b787050e2b487d83f_icgraph.png" border="0" usemap="#d7/d46/a00002_98039031d87c1f5b787050e2b487d83f_icgraph_map" alt=""></center>
+<map name="d7/d46/a00002_98039031d87c1f5b787050e2b487d83f_icgraph_map">
+<area shape="rect" href="../../d0/d0b/a00004.html#e6cd2a7928b997c5d6388ae81a0d841a" title="md5wrapper::getHashFromFile" alt="" coords="167,5,364,32"><area shape="rect" href="../../d0/d0b/a00004.html#608ecf61c0ecdf2fcb772e9fd6c51d5f" title="md5wrapper::hashit" alt="" coords="199,56,332,83"><area shape="rect" href="../../d0/d0b/a00004.html#225ba5a78228b867c3f17fdba959d8e6" title="md5wrapper::getHashFromString" alt="" coords="415,56,625,83"></map>
+</div>
+
+</div>
+</div><p>
+<a class="anchor" name="72b35c041cb6983aaa74e2f1c31d5a29"></a><!-- doxytag: member="MD5::MD5Init" ref="72b35c041cb6983aaa74e2f1c31d5a29" args="(MD5_CTX *)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MD5::MD5Init           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d1/d7c/a00003.html">MD5_CTX</a> *&nbsp;</td>
+          <td class="paramname"> <em>context</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definicja w linii <a class="el" href="../../dc/de2/a00024.html#l00098">98</a> pliku <a class="el" href="../../dc/de2/a00024.html">md5.cpp</a>.</p>
+
+<p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dynsection">
+<p><center><img src="../../d7/d46/a00002_72b35c041cb6983aaa74e2f1c31d5a29_icgraph.png" border="0" usemap="#d7/d46/a00002_72b35c041cb6983aaa74e2f1c31d5a29_icgraph_map" alt=""></center>
+<map name="d7/d46/a00002_72b35c041cb6983aaa74e2f1c31d5a29_icgraph_map">
+<area shape="rect" href="../../d0/d0b/a00004.html#e6cd2a7928b997c5d6388ae81a0d841a" title="md5wrapper::getHashFromFile" alt="" coords="156,5,353,32"><area shape="rect" href="../../d0/d0b/a00004.html#608ecf61c0ecdf2fcb772e9fd6c51d5f" title="md5wrapper::hashit" alt="" coords="188,56,321,83"><area shape="rect" href="../../d0/d0b/a00004.html#225ba5a78228b867c3f17fdba959d8e6" title="md5wrapper::getHashFromString" alt="" coords="404,56,615,83"></map>
+</div>
+
+</div>
+</div><p>
+<a class="anchor" name="849ad3347bad15a23f3a40452476b1e0"></a><!-- doxytag: member="MD5::MD5Transform" ref="849ad3347bad15a23f3a40452476b1e0" args="(unsigned long int state[4], unsigned char block[64])" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MD5::MD5Transform           </td>
+          <td>(</td>
+          <td class="paramtype">unsigned long int&nbsp;</td>
+          <td class="paramname"> <em>state</em>[4], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned char&nbsp;</td>
+          <td class="paramname"> <em>block</em>[64]</td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definicja w linii <a class="el" href="../../dc/de2/a00024.html#l00183">183</a> pliku <a class="el" href="../../dc/de2/a00024.html">md5.cpp</a>.</p>
+
+<p>
+<div class="dynheader">
+Oto graf wywołań dla tej funkcji:</div>
+<div class="dynsection">
+<p><center><img src="../../d7/d46/a00002_849ad3347bad15a23f3a40452476b1e0_cgraph.png" border="0" usemap="#d7/d46/a00002_849ad3347bad15a23f3a40452476b1e0_cgraph_map" alt=""></center>
+<map name="d7/d46/a00002_849ad3347bad15a23f3a40452476b1e0_cgraph_map">
+<area shape="rect" href="../../d7/d46/a00002.html#ef62580b93f2122c62493464787b814a" title="MD5::Decode" alt="" coords="215,5,313,32"><area shape="rect" href="../../d7/d46/a00002.html#e1a522aab83da49d1bd3f0a6f3edcd11" title="MD5::MD5_memset" alt="" coords="196,56,332,83"></map>
+</div>
+
+<p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dynsection">
+<p><center><img src="../../d7/d46/a00002_849ad3347bad15a23f3a40452476b1e0_icgraph.png" border="0" usemap="#d7/d46/a00002_849ad3347bad15a23f3a40452476b1e0_icgraph_map" alt=""></center>
+<map name="d7/d46/a00002_849ad3347bad15a23f3a40452476b1e0_icgraph_map">
+<area shape="rect" href="../../d7/d46/a00002.html#a59116f0a26354a217fa186a43cd9d28" title="MD5::MD5Update" alt="" coords="196,31,319,57"><area shape="rect" href="../../d0/d0b/a00004.html#e6cd2a7928b997c5d6388ae81a0d841a" title="md5wrapper::getHashFromFile" alt="" coords="529,5,727,32"><area shape="rect" href="../../d0/d0b/a00004.html#608ecf61c0ecdf2fcb772e9fd6c51d5f" title="md5wrapper::hashit" alt="" coords="561,68,695,95"><area shape="rect" href="../../d7/d46/a00002.html#98039031d87c1f5b787050e2b487d83f" title="MD5::MD5Final" alt="" coords="368,31,480,57"><area shape="rect" href="../../d0/d0b/a00004.html#225ba5a78228b867c3f17fdba959d8e6" title="md5wrapper::getHashFromString" alt="" coords="777,68,988,95"></map>
+</div>
+
+</div>
+</div><p>
+<a class="anchor" name="a59116f0a26354a217fa186a43cd9d28"></a><!-- doxytag: member="MD5::MD5Update" ref="a59116f0a26354a217fa186a43cd9d28" args="(MD5_CTX *, unsigned char *, unsigned int)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MD5::MD5Update           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d1/d7c/a00003.html">MD5_CTX</a> *&nbsp;</td>
+          <td class="paramname"> <em>context</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned char *&nbsp;</td>
+          <td class="paramname"> <em>input</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&nbsp;</td>
+          <td class="paramname"> <em>inputLen</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definicja w linii <a class="el" href="../../dc/de2/a00024.html#l00112">112</a> pliku <a class="el" href="../../dc/de2/a00024.html">md5.cpp</a>.</p>
+
+<p>
+<div class="dynheader">
+Oto graf wywołań dla tej funkcji:</div>
+<div class="dynsection">
+<p><center><img src="../../d7/d46/a00002_a59116f0a26354a217fa186a43cd9d28_cgraph.png" border="0" usemap="#d7/d46/a00002_a59116f0a26354a217fa186a43cd9d28_cgraph_map" alt=""></center>
+<map name="d7/d46/a00002_a59116f0a26354a217fa186a43cd9d28_cgraph_map">
+<area shape="rect" href="../../d7/d46/a00002.html#76c181f092e81df65dadf8861272ac80" title="MD5::MD5_memcpy" alt="" coords="180,5,319,32"><area shape="rect" href="../../d7/d46/a00002.html#849ad3347bad15a23f3a40452476b1e0" title="MD5::MD5Transform" alt="" coords="179,56,320,83"><area shape="rect" href="../../d7/d46/a00002.html#ef62580b93f2122c62493464787b814a" title="MD5::Decode" alt="" coords="388,31,487,57"><area shape="rect" href="../../d7/d46/a00002.html#e1a522aab83da49d1bd3f0a6f3edcd11" title="MD5::MD5_memset" alt="" coords="369,81,505,108"></map>
+</div>
+
+<p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dynsection">
+<p><center><img src="../../d7/d46/a00002_a59116f0a26354a217fa186a43cd9d28_icgraph.png" border="0" usemap="#d7/d46/a00002_a59116f0a26354a217fa186a43cd9d28_icgraph_map" alt=""></center>
+<map name="d7/d46/a00002_a59116f0a26354a217fa186a43cd9d28_icgraph_map">
+<area shape="rect" href="../../d0/d0b/a00004.html#e6cd2a7928b997c5d6388ae81a0d841a" title="md5wrapper::getHashFromFile" alt="" coords="340,5,537,32"><area shape="rect" href="../../d0/d0b/a00004.html#608ecf61c0ecdf2fcb772e9fd6c51d5f" title="md5wrapper::hashit" alt="" coords="372,68,505,95"><area shape="rect" href="../../d7/d46/a00002.html#98039031d87c1f5b787050e2b487d83f" title="MD5::MD5Final" alt="" coords="179,31,291,57"><area shape="rect" href="../../d0/d0b/a00004.html#225ba5a78228b867c3f17fdba959d8e6" title="md5wrapper::getHashFromString" alt="" coords="588,68,799,95"></map>
+</div>
+
+</div>
+</div><p>
+<hr>Dokumentacja dla tej klasy została wygenerowana z plików:<ul>
+<li>/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/include/md5/<a class="el" href="../../d3/dfe/a00025.html">md5.h</a><li>/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/include/md5/<a class="el" href="../../dc/de2/a00024.html">md5.cpp</a></ul>
+</div>
+<hr size="1"><address style="text-align: right;"><small>Wygenerowano Mon Jun 1 13:41:52 2009 dla Ass8 programem&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="../../doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
+</body>
+</html>

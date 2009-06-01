@@ -49,11 +49,17 @@ private:
     ///Wysyła odpowiedź do logowania na podstawie podaneg i gdzie
     ///0 - Logowanie przebieglo prawidlowo; 1 - błęde hasło lub login; 2 - nieoczekiwany błąd serwera; 3 - błędne zapytanie
     void odpowiedz_login(int i);
-    ///Wysyła odpowiedź jednolinijkową zależnie od podanego i
-    ///400 - bledne zapytanie;  401 - bledny numer sesji;
-    ///402 - podany plik istnieje (w przypadku wysylania pliku);
-    ///403 - wewnetrzny blad serwera; 404 - podany plik nie istnieje;
-    ///405 - błąd odbierania plikow; 406 - wszystko OK;
+    /**Wysyła odpowiedź jednolinijkową zależnie od podanego i
+    \param nr_odpowiedzi Numer odpowiedzi
+    400 - bledne zapytanie
+    401 - bledny numer sesji
+    402 - podany plik istnieje (w przypadku wysylania pliku)
+    403 - wewnetrzny blad serwera
+    404 - podany plik nie istnieje
+    405 - błąd odbierania plikow
+    406 - wszystko OK
+    \param numer_operacji Numer operacji do której odnosi się podany nuemr odpowiedzi
+    */
     void Odpowiedz(int nr_odpowiedzi, int numer_operacji=-1);
     ///Wysyła odpowiedź wielolinijkową zależnie od podanego i gdzie i jak w void Odpowiedz(int i, int numer_operacji);
     void Odpowiedz(int nr_odpowiedzi,int nr_operacji,std::string odp);

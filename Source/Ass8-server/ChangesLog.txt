@@ -1,3 +1,14 @@
+01 czerwiec 2009
+   released version 0.3.18 of Ass8-server
+
+     Change log:
+        -Fixed: Wysyłanie pliku
+        -Fixed: Odbieranie pliku
+        -Fixed: Usuwanie pliku
+        -Fixed: Funkcje obsługujące bazę
+        -Removed: Sprawdzanie hasha przy odbiorze i wysyłaniu plików. (dopuki nie rozwiążemy problemu niekompatybilnych hashy)
+        -Fixed: Pomniejsze błędy
+
 28 maj 2009
    released version 0.3.18 of Ass8-server
 

@@ -1,0 +1,355 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>Ass8: Plik 藕r贸d艂owy /home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/include/md5/md5.cpp</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css">
+<link href="../../doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Wygenerowano przez Doxygen 1.5.8 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="../../main.html"><span>Strona&nbsp;g艂贸wna</span></a></li>
+      <li><a href="../../namespaces.html"><span>Przestrzenie&nbsp;nazw</span></a></li>
+      <li><a href="../../annotated.html"><span>Klasy</span></a></li>
+      <li class="current"><a href="../../files.html"><span>Pliki</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="../../files.html"><span>Lista&nbsp;plik贸w</span></a></li>
+      <li><a href="../../globals.html"><span>Sk艂adowe&nbsp;plik贸w</span></a></li>
+    </ul>
+  </div>
+<h1>/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/include/md5/md5.cpp</h1><a href="../../da/da0/a00009.html">Id藕 do dokumentacji tego pliku.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/*</span>
+<a name="l00002"></a>00002 <span class="comment"> *      This is the C++ implementation of the MD5 Message-Digest</span>
+<a name="l00003"></a>00003 <span class="comment"> *      Algorithm desrcipted in RFC 1321.</span>
+<a name="l00004"></a>00004 <span class="comment"> *      I translated the C code from this RFC to C++.</span>
+<a name="l00005"></a>00005 <span class="comment"> *      There is no warranty.</span>
+<a name="l00006"></a>00006 <span class="comment"> * </span>
+<a name="l00007"></a>00007 <span class="comment"> *      Feb. 12. 2005</span>
+<a name="l00008"></a>00008 <span class="comment"> *      Benjamin Gr黡elbach</span>
+<a name="l00009"></a>00009 <span class="comment"> */</span>
+<a name="l00010"></a>00010 
+<a name="l00011"></a>00011 <span class="comment">/*</span>
+<a name="l00012"></a>00012 <span class="comment"> *      Copyright (C) 1991-2, RSA Data Security, Inc. Created 1991. All</span>
+<a name="l00013"></a>00013 <span class="comment"> *      rights reserved.</span>
+<a name="l00014"></a>00014 <span class="comment"> *</span>
+<a name="l00015"></a>00015 <span class="comment"> *      License to copy and use this software is granted provided that it</span>
+<a name="l00016"></a>00016 <span class="comment"> *      is identified as the "RSA Data Security, Inc. MD5 Message-Digest</span>
+<a name="l00017"></a>00017 <span class="comment"> *      Algorithm" in all material mentioning or referencing this software</span>
+<a name="l00018"></a>00018 <span class="comment"> *      or this function.</span>
+<a name="l00019"></a>00019 <span class="comment"> *</span>
+<a name="l00020"></a>00020 <span class="comment"> *      License is also granted to make and use derivative works provided</span>
+<a name="l00021"></a>00021 <span class="comment"> *      that such works are identified as "derived from the RSA Data</span>
+<a name="l00022"></a>00022 <span class="comment"> *      Security, Inc. MD5 Message-Digest Algorithm" in all material</span>
+<a name="l00023"></a>00023 <span class="comment"> *      mentioning or referencing the derived work.</span>
+<a name="l00024"></a>00024 <span class="comment"> *</span>
+<a name="l00025"></a>00025 <span class="comment"> *      RSA Data Security, Inc. makes no representations concerning either</span>
+<a name="l00026"></a>00026 <span class="comment"> *      the merchantability of this software or the suitability of this</span>
+<a name="l00027"></a>00027 <span class="comment"> *      software for any particular purpose. It is provided "as is"</span>
+<a name="l00028"></a>00028 <span class="comment"> *      without express or implied warranty of any kind.</span>
+<a name="l00029"></a>00029 <span class="comment"> *</span>
+<a name="l00030"></a>00030 <span class="comment"> *      These notices must be retained in any copies of any part of this</span>
+<a name="l00031"></a>00031 <span class="comment"> *      documentation and/or software.</span>
+<a name="l00032"></a>00032 <span class="comment"> */</span>
+<a name="l00033"></a>00033 
+<a name="l00034"></a>00034 <span class="comment">//md5 class include</span>
+<a name="l00035"></a>00035 <span class="preprocessor">#include "<a class="code" href="../../d7/dec/a00010.html">md5.h</a>"</span>
+<a name="l00036"></a>00036 
+<a name="l00037"></a>00037 <span class="comment">// Constants for MD5Transform routine.</span>
+<a name="l00038"></a><a class="code" href="../../da/da0/a00009.html#51398c0e5541164ad4d6615880073305">00038</a> <span class="preprocessor">#define S11 7</span>
+<a name="l00039"></a><a class="code" href="../../da/da0/a00009.html#1ec499cd0e54ecc28c2ac2afea5b038e">00039</a> <span class="preprocessor"></span><span class="preprocessor">#define S12 12</span>
+<a name="l00040"></a><a class="code" href="../../da/da0/a00009.html#aeec90429105fb54d853dd4fc7027a54">00040</a> <span class="preprocessor"></span><span class="preprocessor">#define S13 17</span>
+<a name="l00041"></a><a class="code" href="../../da/da0/a00009.html#78342b0ccde2ed12fdf19a113cc266cf">00041</a> <span class="preprocessor"></span><span class="preprocessor">#define S14 22</span>
+<a name="l00042"></a><a class="code" href="../../da/da0/a00009.html#b6d5354f647a0e7592a1f051fc8377b2">00042</a> <span class="preprocessor"></span><span class="preprocessor">#define S21 5</span>
+<a name="l00043"></a><a class="code" href="../../da/da0/a00009.html#ddad30455da936bc1879ee9c72b46d59">00043</a> <span class="preprocessor"></span><span class="preprocessor">#define S22 9</span>
+<a name="l00044"></a><a class="code" href="../../da/da0/a00009.html#6321a8b29628936f76e9e78cf5bda95f">00044</a> <span class="preprocessor"></span><span class="preprocessor">#define S23 14</span>
+<a name="l00045"></a><a class="code" href="../../da/da0/a00009.html#0c09eb77d30a0d5f9154914147b86c20">00045</a> <span class="preprocessor"></span><span class="preprocessor">#define S24 20</span>
+<a name="l00046"></a><a class="code" href="../../da/da0/a00009.html#ef26590f8a880ee6f4a158168defcd89">00046</a> <span class="preprocessor"></span><span class="preprocessor">#define S31 4</span>
+<a name="l00047"></a><a class="code" href="../../da/da0/a00009.html#1d512424dd8a91e0a5bcc98563f33914">00047</a> <span class="preprocessor"></span><span class="preprocessor">#define S32 11</span>
+<a name="l00048"></a><a class="code" href="../../da/da0/a00009.html#1c854214533f6220e859b0063196abb3">00048</a> <span class="preprocessor"></span><span class="preprocessor">#define S33 16</span>
+<a name="l00049"></a><a class="code" href="../../da/da0/a00009.html#f6472be1d535970afee8e5266a74aa07">00049</a> <span class="preprocessor"></span><span class="preprocessor">#define S34 23</span>
+<a name="l00050"></a><a class="code" href="../../da/da0/a00009.html#b674ba129e588da55d1d494e1cf3c15e">00050</a> <span class="preprocessor"></span><span class="preprocessor">#define S41 6</span>
+<a name="l00051"></a><a class="code" href="../../da/da0/a00009.html#268ef1a49114a94b931cc6b313e3cd1b">00051</a> <span class="preprocessor"></span><span class="preprocessor">#define S42 10</span>
+<a name="l00052"></a><a class="code" href="../../da/da0/a00009.html#5aaa7121f39650d472746942ca68f959">00052</a> <span class="preprocessor"></span><span class="preprocessor">#define S43 15</span>
+<a name="l00053"></a><a class="code" href="../../da/da0/a00009.html#6a3989af72b55d169bd73a66f8620aae">00053</a> <span class="preprocessor"></span><span class="preprocessor">#define S44 21</span>
+<a name="l00054"></a>00054 <span class="preprocessor"></span>
+<a name="l00055"></a><a class="code" href="../../da/da0/a00009.html#ee6f420120b0fbc0fb096cb61655cec4">00055</a> <span class="keyword">static</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="../../da/da0/a00009.html#ee6f420120b0fbc0fb096cb61655cec4">PADDING</a>[64] = {
+<a name="l00056"></a>00056   0x80, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+<a name="l00057"></a>00057   0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+<a name="l00058"></a>00058   0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+<a name="l00059"></a>00059 };
+<a name="l00060"></a>00060 
+<a name="l00061"></a>00061 <span class="comment">/* F, G, H and I are basic MD5 functions. */</span>
+<a name="l00062"></a><a class="code" href="../../da/da0/a00009.html#96d73bbd7af15cb1fc38c3f4a3bd82e9">00062</a> <span class="preprocessor">#define F(x, y, z) (((x) &amp; (y)) | ((~x) &amp; (z)))</span>
+<a name="l00063"></a><a class="code" href="../../da/da0/a00009.html#d96b7cf3182ce2ba85e5a7a93b12c441">00063</a> <span class="preprocessor"></span><span class="preprocessor">#define G(x, y, z) (((x) &amp; (z)) | ((y) &amp; (~z)))</span>
+<a name="l00064"></a><a class="code" href="../../da/da0/a00009.html#e42219072d798876e6b08e6b78614ff6">00064</a> <span class="preprocessor"></span><span class="preprocessor">#define H(x, y, z) ((x) ^ (y) ^ (z))</span>
+<a name="l00065"></a><a class="code" href="../../da/da0/a00009.html#c0eafdc9ee161b71e7af98af736952fd">00065</a> <span class="preprocessor"></span><span class="preprocessor">#define I(x, y, z) ((y) ^ ((x) | (~z)))</span>
+<a name="l00066"></a>00066 <span class="preprocessor"></span>
+<a name="l00067"></a>00067 <span class="comment">/* ROTATE_LEFT rotates x left n bits. */</span>
+<a name="l00068"></a><a class="code" href="../../da/da0/a00009.html#7417fd4e875360c0533fa5b412cdab49">00068</a> <span class="preprocessor">#define ROTATE_LEFT(x, n) (((x) &lt;&lt; (n)) | ((x) &gt;&gt; (32-(n))))</span>
+<a name="l00069"></a>00069 <span class="preprocessor"></span><span class="comment">//#define ROTATE_LEFT(x, n) (((x) &lt;&lt; (n)) | (( (UINT32) x) &gt;&gt; (32-(n))))</span>
+<a name="l00070"></a>00070 
+<a name="l00071"></a>00071 <span class="comment">/*</span>
+<a name="l00072"></a>00072 <span class="comment">FF, GG, HH, and II transformations for rounds 1, 2, 3, and 4.</span>
+<a name="l00073"></a>00073 <span class="comment">Rotation is separate from addition to prevent recomputation.</span>
+<a name="l00074"></a>00074 <span class="comment">*/</span>
+<a name="l00075"></a><a class="code" href="../../da/da0/a00009.html#0a143972cb6c4fe16f0ffa8a3d41ebf3">00075</a> <span class="preprocessor">#define FF(a, b, c, d, x, s, ac) { \</span>
+<a name="l00076"></a>00076 <span class="preprocessor"> (a) += F ((b), (c), (d)) + (x) + (unsigned long int)(ac); \</span>
+<a name="l00077"></a>00077 <span class="preprocessor"> (a) = ROTATE_LEFT ((a), (s)); \</span>
+<a name="l00078"></a>00078 <span class="preprocessor"> (a) += (b); \</span>
+<a name="l00079"></a>00079 <span class="preprocessor">  }</span>
+<a name="l00080"></a>00080 <span class="preprocessor"></span>
+<a name="l00081"></a><a class="code" href="../../da/da0/a00009.html#685f32faa2a66e743850b990a13b8bfa">00081</a> <span class="preprocessor">#define GG(a, b, c, d, x, s, ac) { \</span>
+<a name="l00082"></a>00082 <span class="preprocessor"> (a) += G ((b), (c), (d)) + (x) + (unsigned long int)(ac); \</span>
+<a name="l00083"></a>00083 <span class="preprocessor"> (a) = ROTATE_LEFT ((a), (s)); \</span>
+<a name="l00084"></a>00084 <span class="preprocessor"> (a) += (b); \</span>
+<a name="l00085"></a>00085 <span class="preprocessor">  }</span>
+<a name="l00086"></a><a class="code" href="../../da/da0/a00009.html#8b9f1c4778df01ef970b87dbe5541dc5">00086</a> <span class="preprocessor"></span><span class="preprocessor">#define HH(a, b, c, d, x, s, ac) { \</span>
+<a name="l00087"></a>00087 <span class="preprocessor"> (a) += H ((b), (c), (d)) + (x) + (unsigned long int)(ac); \</span>
+<a name="l00088"></a>00088 <span class="preprocessor"> (a) = ROTATE_LEFT ((a), (s)); \</span>
+<a name="l00089"></a>00089 <span class="preprocessor"> (a) += (b); \</span>
+<a name="l00090"></a>00090 <span class="preprocessor">  }</span>
+<a name="l00091"></a><a class="code" href="../../da/da0/a00009.html#d26626e5efb37b2dadef4e88e35e4329">00091</a> <span class="preprocessor"></span><span class="preprocessor">#define II(a, b, c, d, x, s, ac) { \</span>
+<a name="l00092"></a>00092 <span class="preprocessor"> (a) += I ((b), (c), (d)) + (x) + (unsigned long int)(ac); \</span>
+<a name="l00093"></a>00093 <span class="preprocessor"> (a) = ROTATE_LEFT ((a), (s)); \</span>
+<a name="l00094"></a>00094 <span class="preprocessor"> (a) += (b); \</span>
+<a name="l00095"></a>00095 <span class="preprocessor">  }</span>
+<a name="l00096"></a>00096 <span class="preprocessor"></span>
+<a name="l00097"></a>00097 <span class="comment">/* MD5 initialization. Begins an MD5 operation, writing a new context. */</span>
+<a name="l00098"></a><a class="code" href="../../d7/d46/a00002.html#72b35c041cb6983aaa74e2f1c31d5a29">00098</a> <span class="keywordtype">void</span> <a class="code" href="../../d7/d46/a00002.html#72b35c041cb6983aaa74e2f1c31d5a29">MD5::MD5Init</a> (<a class="code" href="../../d1/d7c/a00003.html">MD5_CTX</a> *context)
+<a name="l00099"></a>00099 {
+<a name="l00100"></a>00100           context-&gt;<a class="code" href="../../d1/d7c/a00003.html#889cb6e121b82a1e7f4d92120fb8a523">count</a>[0] = context-&gt;<a class="code" href="../../d1/d7c/a00003.html#889cb6e121b82a1e7f4d92120fb8a523">count</a>[1] = 0;
+<a name="l00101"></a>00101           context-&gt;<a class="code" href="../../d1/d7c/a00003.html#2f697997f51de65d08227fdf1d5c44b8">state</a>[0] = 0x67452301;
+<a name="l00102"></a>00102           context-&gt;<a class="code" href="../../d1/d7c/a00003.html#2f697997f51de65d08227fdf1d5c44b8">state</a>[1] = 0xefcdab89;
+<a name="l00103"></a>00103           context-&gt;<a class="code" href="../../d1/d7c/a00003.html#2f697997f51de65d08227fdf1d5c44b8">state</a>[2] = 0x98badcfe;
+<a name="l00104"></a>00104           context-&gt;<a class="code" href="../../d1/d7c/a00003.html#2f697997f51de65d08227fdf1d5c44b8">state</a>[3] = 0x10325476;
+<a name="l00105"></a>00105 }
+<a name="l00106"></a>00106 
+<a name="l00107"></a>00107 <span class="comment">/*</span>
+<a name="l00108"></a>00108 <span class="comment">         MD5 block update operation. Continues an MD5 message-digest</span>
+<a name="l00109"></a>00109 <span class="comment">         operation, processing another message block, and updating the</span>
+<a name="l00110"></a>00110 <span class="comment">         context.</span>
+<a name="l00111"></a>00111 <span class="comment">*/</span>
+<a name="l00112"></a><a class="code" href="../../d7/d46/a00002.html#a59116f0a26354a217fa186a43cd9d28">00112</a> <span class="keywordtype">void</span> <a class="code" href="../../d7/d46/a00002.html#a59116f0a26354a217fa186a43cd9d28">MD5::MD5Update</a> (<a class="code" href="../../d1/d7c/a00003.html">MD5_CTX</a> *context, <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *input, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> inputLen)
+<a name="l00113"></a>00113 {
+<a name="l00114"></a>00114           <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i, index, partLen;
+<a name="l00115"></a>00115 
+<a name="l00116"></a>00116           <span class="comment">/* Compute number of bytes mod 64 */</span>
+<a name="l00117"></a>00117           index = (<span class="keywordtype">unsigned</span> int)((context-&gt;<a class="code" href="../../d1/d7c/a00003.html#889cb6e121b82a1e7f4d92120fb8a523">count</a>[0] &gt;&gt; 3) &amp; 0x3F);
+<a name="l00118"></a>00118 
+<a name="l00119"></a>00119           <span class="comment">/* Update number of bits */</span>
+<a name="l00120"></a>00120           <span class="keywordflow">if</span> ( (context-&gt;<a class="code" href="../../d1/d7c/a00003.html#889cb6e121b82a1e7f4d92120fb8a523">count</a>[0] += ((<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">int</span>)inputLen &lt;&lt; 3))
+<a name="l00121"></a>00121                &lt; ((<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> int)inputLen &lt;&lt; 3))
+<a name="l00122"></a>00122                 context-&gt;<a class="code" href="../../d1/d7c/a00003.html#889cb6e121b82a1e7f4d92120fb8a523">count</a>[1]++;
+<a name="l00123"></a>00123 
+<a name="l00124"></a>00124           context-&gt;<a class="code" href="../../d1/d7c/a00003.html#889cb6e121b82a1e7f4d92120fb8a523">count</a>[1] += ((<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">int</span>)inputLen &gt;&gt; 29);
+<a name="l00125"></a>00125           partLen = 64 - index;
+<a name="l00126"></a>00126 
+<a name="l00127"></a>00127           <span class="comment">/*</span>
+<a name="l00128"></a>00128 <span class="comment">           * Transform as many times as possible.</span>
+<a name="l00129"></a>00129 <span class="comment">           */</span>
+<a name="l00130"></a>00130           <span class="keywordflow">if</span> (inputLen &gt;= partLen) 
+<a name="l00131"></a>00131           {
+<a name="l00132"></a>00132                  <a class="code" href="../../d7/d46/a00002.html#76c181f092e81df65dadf8861272ac80">MD5_memcpy</a> ((<a class="code" href="../../d7/dec/a00010.html#73204e40637f83518fb695362ea084a4">POINTER</a>)&amp;context-&gt;<a class="code" href="../../d1/d7c/a00003.html#2da73ecf544745f58211e998719f367f">buffer</a>[index], (<a class="code" href="../../d7/dec/a00010.html#73204e40637f83518fb695362ea084a4">POINTER</a>)input, partLen);
+<a name="l00133"></a>00133                  <a class="code" href="../../d7/d46/a00002.html#849ad3347bad15a23f3a40452476b1e0">MD5Transform</a> (context-&gt;<a class="code" href="../../d1/d7c/a00003.html#2f697997f51de65d08227fdf1d5c44b8">state</a>, context-&gt;<a class="code" href="../../d1/d7c/a00003.html#2da73ecf544745f58211e998719f367f">buffer</a>);
+<a name="l00134"></a>00134 
+<a name="l00135"></a>00135                  <span class="keywordflow">for</span> (i = partLen; i + 63 &lt; inputLen; i += 64)
+<a name="l00136"></a>00136                    <a class="code" href="../../d7/d46/a00002.html#849ad3347bad15a23f3a40452476b1e0">MD5Transform</a> (context-&gt;<a class="code" href="../../d1/d7c/a00003.html#2f697997f51de65d08227fdf1d5c44b8">state</a>, &amp;input[i]);
+<a name="l00137"></a>00137 
+<a name="l00138"></a>00138                  index = 0;
+<a name="l00139"></a>00139           }
+<a name="l00140"></a>00140           <span class="keywordflow">else</span> 
+<a name="l00141"></a>00141                 i = 0;
+<a name="l00142"></a>00142 
+<a name="l00143"></a>00143           <span class="comment">/* Buffer remaining input */</span>
+<a name="l00144"></a>00144           <a class="code" href="../../d7/d46/a00002.html#76c181f092e81df65dadf8861272ac80">MD5_memcpy</a> ((<a class="code" href="../../d7/dec/a00010.html#73204e40637f83518fb695362ea084a4">POINTER</a>)&amp;context-&gt;<a class="code" href="../../d1/d7c/a00003.html#2da73ecf544745f58211e998719f367f">buffer</a>[index],
+<a name="l00145"></a>00145                       (<a class="code" href="../../d7/dec/a00010.html#73204e40637f83518fb695362ea084a4">POINTER</a>)&amp;input[i],
+<a name="l00146"></a>00146                       inputLen-i);
+<a name="l00147"></a>00147 }
+<a name="l00148"></a>00148 
+<a name="l00149"></a>00149 <span class="comment">/*</span>
+<a name="l00150"></a>00150 <span class="comment"> * MD5 finalization. Ends an MD5 message-digest operation, writing the</span>
+<a name="l00151"></a>00151 <span class="comment"> * the message digest and zeroizing the context.</span>
+<a name="l00152"></a>00152 <span class="comment"> */</span>
+<a name="l00153"></a><a class="code" href="../../d7/d46/a00002.html#98039031d87c1f5b787050e2b487d83f">00153</a> <span class="keywordtype">void</span> <a class="code" href="../../d7/d46/a00002.html#98039031d87c1f5b787050e2b487d83f">MD5::MD5Final</a> (<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> digest[16], <a class="code" href="../../d1/d7c/a00003.html">MD5_CTX</a> *context)
+<a name="l00154"></a>00154 {
+<a name="l00155"></a>00155         <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> bits[8];
+<a name="l00156"></a>00156         <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> index, padLen;
+<a name="l00157"></a>00157 
+<a name="l00158"></a>00158         <span class="comment">/* Save number of bits */</span>
+<a name="l00159"></a>00159         <a class="code" href="../../d7/d46/a00002.html#c3c05716498203127920ba78b3ae8115">Encode</a> (bits, context-&gt;<a class="code" href="../../d1/d7c/a00003.html#889cb6e121b82a1e7f4d92120fb8a523">count</a>, 8);
+<a name="l00160"></a>00160 
+<a name="l00161"></a>00161         <span class="comment">/* </span>
+<a name="l00162"></a>00162 <span class="comment">         * Pad out to 56 mod 64.</span>
+<a name="l00163"></a>00163 <span class="comment">         */</span>
+<a name="l00164"></a>00164         index = (<span class="keywordtype">unsigned</span> int)((context-&gt;<a class="code" href="../../d1/d7c/a00003.html#889cb6e121b82a1e7f4d92120fb8a523">count</a>[0] &gt;&gt; 3) &amp; 0x3f);
+<a name="l00165"></a>00165         padLen = (index &lt; 56) ? (56 - index) : (120 - index);
+<a name="l00166"></a>00166         <a class="code" href="../../d7/d46/a00002.html#a59116f0a26354a217fa186a43cd9d28">MD5Update</a> (context, <a class="code" href="../../da/da0/a00009.html#ee6f420120b0fbc0fb096cb61655cec4">PADDING</a>, padLen);
+<a name="l00167"></a>00167 
+<a name="l00168"></a>00168         <span class="comment">/* Append length (before padding) */</span>
+<a name="l00169"></a>00169         <a class="code" href="../../d7/d46/a00002.html#a59116f0a26354a217fa186a43cd9d28">MD5Update</a> (context, bits, 8);
+<a name="l00170"></a>00170 
+<a name="l00171"></a>00171         <span class="comment">/* Store state in digest */</span>
+<a name="l00172"></a>00172         <a class="code" href="../../d7/d46/a00002.html#c3c05716498203127920ba78b3ae8115">Encode</a> (digest, context-&gt;<a class="code" href="../../d1/d7c/a00003.html#2f697997f51de65d08227fdf1d5c44b8">state</a>, 16);
+<a name="l00173"></a>00173 
+<a name="l00174"></a>00174         <span class="comment">/*</span>
+<a name="l00175"></a>00175 <span class="comment">         * Zeroize sensitive information.</span>
+<a name="l00176"></a>00176 <span class="comment">         */</span>
+<a name="l00177"></a>00177         <a class="code" href="../../d7/d46/a00002.html#e1a522aab83da49d1bd3f0a6f3edcd11">MD5_memset</a> ((<a class="code" href="../../d7/dec/a00010.html#73204e40637f83518fb695362ea084a4">POINTER</a>)context, 0, <span class="keyword">sizeof</span> (*context));
+<a name="l00178"></a>00178 }
+<a name="l00179"></a>00179 
+<a name="l00180"></a>00180 <span class="comment">/*</span>
+<a name="l00181"></a>00181 <span class="comment"> * MD5 basic transformation. Transforms state based on block.</span>
+<a name="l00182"></a>00182 <span class="comment"> */</span>
+<a name="l00183"></a><a class="code" href="../../d7/d46/a00002.html#849ad3347bad15a23f3a40452476b1e0">00183</a> <span class="keywordtype">void</span> <a class="code" href="../../d7/d46/a00002.html#849ad3347bad15a23f3a40452476b1e0">MD5::MD5Transform</a> (<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">int</span> state[4], <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> block[64])
+<a name="l00184"></a>00184 {
+<a name="l00185"></a>00185         <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">int</span> a = state[0], b = state[1], c = state[2], d = state[3], x[16];
+<a name="l00186"></a>00186 
+<a name="l00187"></a>00187         <a class="code" href="../../d7/d46/a00002.html#ef62580b93f2122c62493464787b814a">Decode</a> (x, block, 64);
+<a name="l00188"></a>00188 
+<a name="l00189"></a>00189         <span class="comment">/* Round 1 */</span>
+<a name="l00190"></a>00190         <a class="code" href="../../da/da0/a00009.html#0a143972cb6c4fe16f0ffa8a3d41ebf3">FF</a> (a, b, c, d, x[ 0], <a class="code" href="../../da/da0/a00009.html#51398c0e5541164ad4d6615880073305">S11</a>, 0xd76aa478); <span class="comment">/* 1 */</span>
+<a name="l00191"></a>00191         <a class="code" href="../../da/da0/a00009.html#0a143972cb6c4fe16f0ffa8a3d41ebf3">FF</a> (d, a, b, c, x[ 1], <a class="code" href="../../da/da0/a00009.html#1ec499cd0e54ecc28c2ac2afea5b038e">S12</a>, 0xe8c7b756); <span class="comment">/* 2 */</span>
+<a name="l00192"></a>00192         <a class="code" href="../../da/da0/a00009.html#0a143972cb6c4fe16f0ffa8a3d41ebf3">FF</a> (c, d, a, b, x[ 2], <a class="code" href="../../da/da0/a00009.html#aeec90429105fb54d853dd4fc7027a54">S13</a>, 0x242070db); <span class="comment">/* 3 */</span>
+<a name="l00193"></a>00193         <a class="code" href="../../da/da0/a00009.html#0a143972cb6c4fe16f0ffa8a3d41ebf3">FF</a> (b, c, d, a, x[ 3], <a class="code" href="../../da/da0/a00009.html#78342b0ccde2ed12fdf19a113cc266cf">S14</a>, 0xc1bdceee); <span class="comment">/* 4 */</span>
+<a name="l00194"></a>00194         <a class="code" href="../../da/da0/a00009.html#0a143972cb6c4fe16f0ffa8a3d41ebf3">FF</a> (a, b, c, d, x[ 4], <a class="code" href="../../da/da0/a00009.html#51398c0e5541164ad4d6615880073305">S11</a>, 0xf57c0faf); <span class="comment">/* 5 */</span>
+<a name="l00195"></a>00195         <a class="code" href="../../da/da0/a00009.html#0a143972cb6c4fe16f0ffa8a3d41ebf3">FF</a> (d, a, b, c, x[ 5], <a class="code" href="../../da/da0/a00009.html#1ec499cd0e54ecc28c2ac2afea5b038e">S12</a>, 0x4787c62a); <span class="comment">/* 6 */</span>
+<a name="l00196"></a>00196         <a class="code" href="../../da/da0/a00009.html#0a143972cb6c4fe16f0ffa8a3d41ebf3">FF</a> (c, d, a, b, x[ 6], <a class="code" href="../../da/da0/a00009.html#aeec90429105fb54d853dd4fc7027a54">S13</a>, 0xa8304613); <span class="comment">/* 7 */</span>
+<a name="l00197"></a>00197         <a class="code" href="../../da/da0/a00009.html#0a143972cb6c4fe16f0ffa8a3d41ebf3">FF</a> (b, c, d, a, x[ 7], <a class="code" href="../../da/da0/a00009.html#78342b0ccde2ed12fdf19a113cc266cf">S14</a>, 0xfd469501); <span class="comment">/* 8 */</span>
+<a name="l00198"></a>00198         <a class="code" href="../../da/da0/a00009.html#0a143972cb6c4fe16f0ffa8a3d41ebf3">FF</a> (a, b, c, d, x[ 8], <a class="code" href="../../da/da0/a00009.html#51398c0e5541164ad4d6615880073305">S11</a>, 0x698098d8); <span class="comment">/* 9 */</span>
+<a name="l00199"></a>00199         <a class="code" href="../../da/da0/a00009.html#0a143972cb6c4fe16f0ffa8a3d41ebf3">FF</a> (d, a, b, c, x[ 9], <a class="code" href="../../da/da0/a00009.html#1ec499cd0e54ecc28c2ac2afea5b038e">S12</a>, 0x8b44f7af); <span class="comment">/* 10 */</span>
+<a name="l00200"></a>00200         <a class="code" href="../../da/da0/a00009.html#0a143972cb6c4fe16f0ffa8a3d41ebf3">FF</a> (c, d, a, b, x[10], <a class="code" href="../../da/da0/a00009.html#aeec90429105fb54d853dd4fc7027a54">S13</a>, 0xffff5bb1); <span class="comment">/* 11 */</span>
+<a name="l00201"></a>00201         <a class="code" href="../../da/da0/a00009.html#0a143972cb6c4fe16f0ffa8a3d41ebf3">FF</a> (b, c, d, a, x[11], <a class="code" href="../../da/da0/a00009.html#78342b0ccde2ed12fdf19a113cc266cf">S14</a>, 0x895cd7be); <span class="comment">/* 12 */</span>
+<a name="l00202"></a>00202         <a class="code" href="../../da/da0/a00009.html#0a143972cb6c4fe16f0ffa8a3d41ebf3">FF</a> (a, b, c, d, x[12], <a class="code" href="../../da/da0/a00009.html#51398c0e5541164ad4d6615880073305">S11</a>, 0x6b901122); <span class="comment">/* 13 */</span>
+<a name="l00203"></a>00203         <a class="code" href="../../da/da0/a00009.html#0a143972cb6c4fe16f0ffa8a3d41ebf3">FF</a> (d, a, b, c, x[13], <a class="code" href="../../da/da0/a00009.html#1ec499cd0e54ecc28c2ac2afea5b038e">S12</a>, 0xfd987193); <span class="comment">/* 14 */</span>
+<a name="l00204"></a>00204         <a class="code" href="../../da/da0/a00009.html#0a143972cb6c4fe16f0ffa8a3d41ebf3">FF</a> (c, d, a, b, x[14], <a class="code" href="../../da/da0/a00009.html#aeec90429105fb54d853dd4fc7027a54">S13</a>, 0xa679438e); <span class="comment">/* 15 */</span>
+<a name="l00205"></a>00205         <a class="code" href="../../da/da0/a00009.html#0a143972cb6c4fe16f0ffa8a3d41ebf3">FF</a> (b, c, d, a, x[15], <a class="code" href="../../da/da0/a00009.html#78342b0ccde2ed12fdf19a113cc266cf">S14</a>, 0x49b40821); <span class="comment">/* 16 */</span>
+<a name="l00206"></a>00206 
+<a name="l00207"></a>00207         <span class="comment">/* Round 2 */</span>
+<a name="l00208"></a>00208         <a class="code" href="../../da/da0/a00009.html#685f32faa2a66e743850b990a13b8bfa">GG</a> (a, b, c, d, x[ 1], <a class="code" href="../../da/da0/a00009.html#b6d5354f647a0e7592a1f051fc8377b2">S21</a>, 0xf61e2562); <span class="comment">/* 17 */</span>
+<a name="l00209"></a>00209         <a class="code" href="../../da/da0/a00009.html#685f32faa2a66e743850b990a13b8bfa">GG</a> (d, a, b, c, x[ 6], <a class="code" href="../../da/da0/a00009.html#ddad30455da936bc1879ee9c72b46d59">S22</a>, 0xc040b340); <span class="comment">/* 18 */</span>
+<a name="l00210"></a>00210         <a class="code" href="../../da/da0/a00009.html#685f32faa2a66e743850b990a13b8bfa">GG</a> (c, d, a, b, x[11], <a class="code" href="../../da/da0/a00009.html#6321a8b29628936f76e9e78cf5bda95f">S23</a>, 0x265e5a51); <span class="comment">/* 19 */</span>
+<a name="l00211"></a>00211         <a class="code" href="../../da/da0/a00009.html#685f32faa2a66e743850b990a13b8bfa">GG</a> (b, c, d, a, x[ 0], <a class="code" href="../../da/da0/a00009.html#0c09eb77d30a0d5f9154914147b86c20">S24</a>, 0xe9b6c7aa); <span class="comment">/* 20 */</span>
+<a name="l00212"></a>00212         <a class="code" href="../../da/da0/a00009.html#685f32faa2a66e743850b990a13b8bfa">GG</a> (a, b, c, d, x[ 5], <a class="code" href="../../da/da0/a00009.html#b6d5354f647a0e7592a1f051fc8377b2">S21</a>, 0xd62f105d); <span class="comment">/* 21 */</span>
+<a name="l00213"></a>00213         <a class="code" href="../../da/da0/a00009.html#685f32faa2a66e743850b990a13b8bfa">GG</a> (d, a, b, c, x[10], <a class="code" href="../../da/da0/a00009.html#ddad30455da936bc1879ee9c72b46d59">S22</a>,  0x2441453); <span class="comment">/* 22 */</span>
+<a name="l00214"></a>00214         <a class="code" href="../../da/da0/a00009.html#685f32faa2a66e743850b990a13b8bfa">GG</a> (c, d, a, b, x[15], <a class="code" href="../../da/da0/a00009.html#6321a8b29628936f76e9e78cf5bda95f">S23</a>, 0xd8a1e681); <span class="comment">/* 23 */</span>
+<a name="l00215"></a>00215         <a class="code" href="../../da/da0/a00009.html#685f32faa2a66e743850b990a13b8bfa">GG</a> (b, c, d, a, x[ 4], <a class="code" href="../../da/da0/a00009.html#0c09eb77d30a0d5f9154914147b86c20">S24</a>, 0xe7d3fbc8); <span class="comment">/* 24 */</span>
+<a name="l00216"></a>00216         <a class="code" href="../../da/da0/a00009.html#685f32faa2a66e743850b990a13b8bfa">GG</a> (a, b, c, d, x[ 9], <a class="code" href="../../da/da0/a00009.html#b6d5354f647a0e7592a1f051fc8377b2">S21</a>, 0x21e1cde6); <span class="comment">/* 25 */</span>
+<a name="l00217"></a>00217         <a class="code" href="../../da/da0/a00009.html#685f32faa2a66e743850b990a13b8bfa">GG</a> (d, a, b, c, x[14], <a class="code" href="../../da/da0/a00009.html#ddad30455da936bc1879ee9c72b46d59">S22</a>, 0xc33707d6); <span class="comment">/* 26 */</span>
+<a name="l00218"></a>00218         <a class="code" href="../../da/da0/a00009.html#685f32faa2a66e743850b990a13b8bfa">GG</a> (c, d, a, b, x[ 3], <a class="code" href="../../da/da0/a00009.html#6321a8b29628936f76e9e78cf5bda95f">S23</a>, 0xf4d50d87); <span class="comment">/* 27 */</span>
+<a name="l00219"></a>00219 
+<a name="l00220"></a>00220         <a class="code" href="../../da/da0/a00009.html#685f32faa2a66e743850b990a13b8bfa">GG</a> (b, c, d, a, x[ 8], <a class="code" href="../../da/da0/a00009.html#0c09eb77d30a0d5f9154914147b86c20">S24</a>, 0x455a14ed); <span class="comment">/* 28 */</span>
+<a name="l00221"></a>00221         <a class="code" href="../../da/da0/a00009.html#685f32faa2a66e743850b990a13b8bfa">GG</a> (a, b, c, d, x[13], <a class="code" href="../../da/da0/a00009.html#b6d5354f647a0e7592a1f051fc8377b2">S21</a>, 0xa9e3e905); <span class="comment">/* 29 */</span>
+<a name="l00222"></a>00222         <a class="code" href="../../da/da0/a00009.html#685f32faa2a66e743850b990a13b8bfa">GG</a> (d, a, b, c, x[ 2], <a class="code" href="../../da/da0/a00009.html#ddad30455da936bc1879ee9c72b46d59">S22</a>, 0xfcefa3f8); <span class="comment">/* 30 */</span>
+<a name="l00223"></a>00223         <a class="code" href="../../da/da0/a00009.html#685f32faa2a66e743850b990a13b8bfa">GG</a> (c, d, a, b, x[ 7], <a class="code" href="../../da/da0/a00009.html#6321a8b29628936f76e9e78cf5bda95f">S23</a>, 0x676f02d9); <span class="comment">/* 31 */</span>
+<a name="l00224"></a>00224         <a class="code" href="../../da/da0/a00009.html#685f32faa2a66e743850b990a13b8bfa">GG</a> (b, c, d, a, x[12], <a class="code" href="../../da/da0/a00009.html#0c09eb77d30a0d5f9154914147b86c20">S24</a>, 0x8d2a4c8a); <span class="comment">/* 32 */</span>
+<a name="l00225"></a>00225 
+<a name="l00226"></a>00226         <span class="comment">/* Round 3 */</span>
+<a name="l00227"></a>00227         <a class="code" href="../../da/da0/a00009.html#8b9f1c4778df01ef970b87dbe5541dc5">HH</a> (a, b, c, d, x[ 5], <a class="code" href="../../da/da0/a00009.html#ef26590f8a880ee6f4a158168defcd89">S31</a>, 0xfffa3942); <span class="comment">/* 33 */</span>
+<a name="l00228"></a>00228         <a class="code" href="../../da/da0/a00009.html#8b9f1c4778df01ef970b87dbe5541dc5">HH</a> (d, a, b, c, x[ 8], <a class="code" href="../../da/da0/a00009.html#1d512424dd8a91e0a5bcc98563f33914">S32</a>, 0x8771f681); <span class="comment">/* 34 */</span>
+<a name="l00229"></a>00229         <a class="code" href="../../da/da0/a00009.html#8b9f1c4778df01ef970b87dbe5541dc5">HH</a> (c, d, a, b, x[11], <a class="code" href="../../da/da0/a00009.html#1c854214533f6220e859b0063196abb3">S33</a>, 0x6d9d6122); <span class="comment">/* 35 */</span>
+<a name="l00230"></a>00230         <a class="code" href="../../da/da0/a00009.html#8b9f1c4778df01ef970b87dbe5541dc5">HH</a> (b, c, d, a, x[14], <a class="code" href="../../da/da0/a00009.html#f6472be1d535970afee8e5266a74aa07">S34</a>, 0xfde5380c); <span class="comment">/* 36 */</span>
+<a name="l00231"></a>00231         <a class="code" href="../../da/da0/a00009.html#8b9f1c4778df01ef970b87dbe5541dc5">HH</a> (a, b, c, d, x[ 1], <a class="code" href="../../da/da0/a00009.html#ef26590f8a880ee6f4a158168defcd89">S31</a>, 0xa4beea44); <span class="comment">/* 37 */</span>
+<a name="l00232"></a>00232         <a class="code" href="../../da/da0/a00009.html#8b9f1c4778df01ef970b87dbe5541dc5">HH</a> (d, a, b, c, x[ 4], <a class="code" href="../../da/da0/a00009.html#1d512424dd8a91e0a5bcc98563f33914">S32</a>, 0x4bdecfa9); <span class="comment">/* 38 */</span>
+<a name="l00233"></a>00233         <a class="code" href="../../da/da0/a00009.html#8b9f1c4778df01ef970b87dbe5541dc5">HH</a> (c, d, a, b, x[ 7], <a class="code" href="../../da/da0/a00009.html#1c854214533f6220e859b0063196abb3">S33</a>, 0xf6bb4b60); <span class="comment">/* 39 */</span>
+<a name="l00234"></a>00234         <a class="code" href="../../da/da0/a00009.html#8b9f1c4778df01ef970b87dbe5541dc5">HH</a> (b, c, d, a, x[10], <a class="code" href="../../da/da0/a00009.html#f6472be1d535970afee8e5266a74aa07">S34</a>, 0xbebfbc70); <span class="comment">/* 40 */</span>
+<a name="l00235"></a>00235         <a class="code" href="../../da/da0/a00009.html#8b9f1c4778df01ef970b87dbe5541dc5">HH</a> (a, b, c, d, x[13], <a class="code" href="../../da/da0/a00009.html#ef26590f8a880ee6f4a158168defcd89">S31</a>, 0x289b7ec6); <span class="comment">/* 41 */</span>
+<a name="l00236"></a>00236         <a class="code" href="../../da/da0/a00009.html#8b9f1c4778df01ef970b87dbe5541dc5">HH</a> (d, a, b, c, x[ 0], <a class="code" href="../../da/da0/a00009.html#1d512424dd8a91e0a5bcc98563f33914">S32</a>, 0xeaa127fa); <span class="comment">/* 42 */</span>
+<a name="l00237"></a>00237         <a class="code" href="../../da/da0/a00009.html#8b9f1c4778df01ef970b87dbe5541dc5">HH</a> (c, d, a, b, x[ 3], <a class="code" href="../../da/da0/a00009.html#1c854214533f6220e859b0063196abb3">S33</a>, 0xd4ef3085); <span class="comment">/* 43 */</span>
+<a name="l00238"></a>00238         <a class="code" href="../../da/da0/a00009.html#8b9f1c4778df01ef970b87dbe5541dc5">HH</a> (b, c, d, a, x[ 6], <a class="code" href="../../da/da0/a00009.html#f6472be1d535970afee8e5266a74aa07">S34</a>,  0x4881d05); <span class="comment">/* 44 */</span>
+<a name="l00239"></a>00239         <a class="code" href="../../da/da0/a00009.html#8b9f1c4778df01ef970b87dbe5541dc5">HH</a> (a, b, c, d, x[ 9], <a class="code" href="../../da/da0/a00009.html#ef26590f8a880ee6f4a158168defcd89">S31</a>, 0xd9d4d039); <span class="comment">/* 45 */</span>
+<a name="l00240"></a>00240         <a class="code" href="../../da/da0/a00009.html#8b9f1c4778df01ef970b87dbe5541dc5">HH</a> (d, a, b, c, x[12], <a class="code" href="../../da/da0/a00009.html#1d512424dd8a91e0a5bcc98563f33914">S32</a>, 0xe6db99e5); <span class="comment">/* 46 */</span>
+<a name="l00241"></a>00241         <a class="code" href="../../da/da0/a00009.html#8b9f1c4778df01ef970b87dbe5541dc5">HH</a> (c, d, a, b, x[15], <a class="code" href="../../da/da0/a00009.html#1c854214533f6220e859b0063196abb3">S33</a>, 0x1fa27cf8); <span class="comment">/* 47 */</span>
+<a name="l00242"></a>00242         <a class="code" href="../../da/da0/a00009.html#8b9f1c4778df01ef970b87dbe5541dc5">HH</a> (b, c, d, a, x[ 2], <a class="code" href="../../da/da0/a00009.html#f6472be1d535970afee8e5266a74aa07">S34</a>, 0xc4ac5665); <span class="comment">/* 48 */</span>
+<a name="l00243"></a>00243 
+<a name="l00244"></a>00244         <span class="comment">/* Round 4 */</span>
+<a name="l00245"></a>00245         <a class="code" href="../../da/da0/a00009.html#d26626e5efb37b2dadef4e88e35e4329">II</a> (a, b, c, d, x[ 0], <a class="code" href="../../da/da0/a00009.html#b674ba129e588da55d1d494e1cf3c15e">S41</a>, 0xf4292244); <span class="comment">/* 49 */</span>
+<a name="l00246"></a>00246         <a class="code" href="../../da/da0/a00009.html#d26626e5efb37b2dadef4e88e35e4329">II</a> (d, a, b, c, x[ 7], <a class="code" href="../../da/da0/a00009.html#268ef1a49114a94b931cc6b313e3cd1b">S42</a>, 0x432aff97); <span class="comment">/* 50 */</span>
+<a name="l00247"></a>00247         <a class="code" href="../../da/da0/a00009.html#d26626e5efb37b2dadef4e88e35e4329">II</a> (c, d, a, b, x[14], <a class="code" href="../../da/da0/a00009.html#5aaa7121f39650d472746942ca68f959">S43</a>, 0xab9423a7); <span class="comment">/* 51 */</span>
+<a name="l00248"></a>00248         <a class="code" href="../../da/da0/a00009.html#d26626e5efb37b2dadef4e88e35e4329">II</a> (b, c, d, a, x[ 5], <a class="code" href="../../da/da0/a00009.html#6a3989af72b55d169bd73a66f8620aae">S44</a>, 0xfc93a039); <span class="comment">/* 52 */</span>
+<a name="l00249"></a>00249         <a class="code" href="../../da/da0/a00009.html#d26626e5efb37b2dadef4e88e35e4329">II</a> (a, b, c, d, x[12], <a class="code" href="../../da/da0/a00009.html#b674ba129e588da55d1d494e1cf3c15e">S41</a>, 0x655b59c3); <span class="comment">/* 53 */</span>
+<a name="l00250"></a>00250         <a class="code" href="../../da/da0/a00009.html#d26626e5efb37b2dadef4e88e35e4329">II</a> (d, a, b, c, x[ 3], <a class="code" href="../../da/da0/a00009.html#268ef1a49114a94b931cc6b313e3cd1b">S42</a>, 0x8f0ccc92); <span class="comment">/* 54 */</span>
+<a name="l00251"></a>00251         <a class="code" href="../../da/da0/a00009.html#d26626e5efb37b2dadef4e88e35e4329">II</a> (c, d, a, b, x[10], <a class="code" href="../../da/da0/a00009.html#5aaa7121f39650d472746942ca68f959">S43</a>, 0xffeff47d); <span class="comment">/* 55 */</span>
+<a name="l00252"></a>00252         <a class="code" href="../../da/da0/a00009.html#d26626e5efb37b2dadef4e88e35e4329">II</a> (b, c, d, a, x[ 1], <a class="code" href="../../da/da0/a00009.html#6a3989af72b55d169bd73a66f8620aae">S44</a>, 0x85845dd1); <span class="comment">/* 56 */</span>
+<a name="l00253"></a>00253         <a class="code" href="../../da/da0/a00009.html#d26626e5efb37b2dadef4e88e35e4329">II</a> (a, b, c, d, x[ 8], <a class="code" href="../../da/da0/a00009.html#b674ba129e588da55d1d494e1cf3c15e">S41</a>, 0x6fa87e4f); <span class="comment">/* 57 */</span>
+<a name="l00254"></a>00254         <a class="code" href="../../da/da0/a00009.html#d26626e5efb37b2dadef4e88e35e4329">II</a> (d, a, b, c, x[15], <a class="code" href="../../da/da0/a00009.html#268ef1a49114a94b931cc6b313e3cd1b">S42</a>, 0xfe2ce6e0); <span class="comment">/* 58 */</span>
+<a name="l00255"></a>00255         <a class="code" href="../../da/da0/a00009.html#d26626e5efb37b2dadef4e88e35e4329">II</a> (c, d, a, b, x[ 6], <a class="code" href="../../da/da0/a00009.html#5aaa7121f39650d472746942ca68f959">S43</a>, 0xa3014314); <span class="comment">/* 59 */</span>
+<a name="l00256"></a>00256         <a class="code" href="../../da/da0/a00009.html#d26626e5efb37b2dadef4e88e35e4329">II</a> (b, c, d, a, x[13], <a class="code" href="../../da/da0/a00009.html#6a3989af72b55d169bd73a66f8620aae">S44</a>, 0x4e0811a1); <span class="comment">/* 60 */</span>
+<a name="l00257"></a>00257         <a class="code" href="../../da/da0/a00009.html#d26626e5efb37b2dadef4e88e35e4329">II</a> (a, b, c, d, x[ 4], <a class="code" href="../../da/da0/a00009.html#b674ba129e588da55d1d494e1cf3c15e">S41</a>, 0xf7537e82); <span class="comment">/* 61 */</span>
+<a name="l00258"></a>00258         <a class="code" href="../../da/da0/a00009.html#d26626e5efb37b2dadef4e88e35e4329">II</a> (d, a, b, c, x[11], <a class="code" href="../../da/da0/a00009.html#268ef1a49114a94b931cc6b313e3cd1b">S42</a>, 0xbd3af235); <span class="comment">/* 62 */</span>
+<a name="l00259"></a>00259         <a class="code" href="../../da/da0/a00009.html#d26626e5efb37b2dadef4e88e35e4329">II</a> (c, d, a, b, x[ 2], <a class="code" href="../../da/da0/a00009.html#5aaa7121f39650d472746942ca68f959">S43</a>, 0x2ad7d2bb); <span class="comment">/* 63 */</span>
+<a name="l00260"></a>00260         <a class="code" href="../../da/da0/a00009.html#d26626e5efb37b2dadef4e88e35e4329">II</a> (b, c, d, a, x[ 9], <a class="code" href="../../da/da0/a00009.html#6a3989af72b55d169bd73a66f8620aae">S44</a>, 0xeb86d391); <span class="comment">/* 64 */</span>
+<a name="l00261"></a>00261 
+<a name="l00262"></a>00262         state[0] += a;
+<a name="l00263"></a>00263         state[1] += b;
+<a name="l00264"></a>00264         state[2] += c;
+<a name="l00265"></a>00265         state[3] += d;
+<a name="l00266"></a>00266 
+<a name="l00267"></a>00267         <span class="comment">/* </span>
+<a name="l00268"></a>00268 <span class="comment">         * Zeroize sensitive information.</span>
+<a name="l00269"></a>00269 <span class="comment">         */</span>
+<a name="l00270"></a>00270         <a class="code" href="../../d7/d46/a00002.html#e1a522aab83da49d1bd3f0a6f3edcd11">MD5_memset</a> ((<a class="code" href="../../d7/dec/a00010.html#73204e40637f83518fb695362ea084a4">POINTER</a>)x, 0, <span class="keyword">sizeof</span> (x));
+<a name="l00271"></a>00271 }
+<a name="l00272"></a>00272 
+<a name="l00273"></a>00273 <span class="comment">/* </span>
+<a name="l00274"></a>00274 <span class="comment"> * Encodes input (unsigned long int) into output (unsigned char). Assumes len is</span>
+<a name="l00275"></a>00275 <span class="comment"> * a multiple of 4.</span>
+<a name="l00276"></a>00276 <span class="comment"> */</span>
+<a name="l00277"></a><a class="code" href="../../d7/d46/a00002.html#c3c05716498203127920ba78b3ae8115">00277</a> <span class="keywordtype">void</span> <a class="code" href="../../d7/d46/a00002.html#c3c05716498203127920ba78b3ae8115">MD5::Encode</a> (<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *output, <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">int</span> *input, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> len)
+<a name="l00278"></a>00278 {
+<a name="l00279"></a>00279         <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i, j;
+<a name="l00280"></a>00280 
+<a name="l00281"></a>00281         <span class="keywordflow">for</span> (i = 0, j = 0; j &lt; len; i++, j += 4) {
+<a name="l00282"></a>00282                 output[j] = (<span class="keywordtype">unsigned</span> char)(input[i] &amp; 0xff);
+<a name="l00283"></a>00283                 output[j+1] = (<span class="keywordtype">unsigned</span> char)((input[i] &gt;&gt; 8) &amp; 0xff);
+<a name="l00284"></a>00284                 output[j+2] = (<span class="keywordtype">unsigned</span> char)((input[i] &gt;&gt; 16) &amp; 0xff);
+<a name="l00285"></a>00285                 output[j+3] = (<span class="keywordtype">unsigned</span> char)((input[i] &gt;&gt; 24) &amp; 0xff);
+<a name="l00286"></a>00286         }
+<a name="l00287"></a>00287 }
+<a name="l00288"></a>00288 
+<a name="l00289"></a>00289 <span class="comment">/*</span>
+<a name="l00290"></a>00290 <span class="comment"> * Decodes input (unsigned char) into output (unsigned long int). Assumes len is</span>
+<a name="l00291"></a>00291 <span class="comment"> * a multiple of 4.</span>
+<a name="l00292"></a>00292 <span class="comment"> */</span>
+<a name="l00293"></a><a class="code" href="../../d7/d46/a00002.html#ef62580b93f2122c62493464787b814a">00293</a> <span class="keywordtype">void</span> <a class="code" href="../../d7/d46/a00002.html#ef62580b93f2122c62493464787b814a">MD5::Decode</a> (<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">int</span> *output, <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *input, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> len)
+<a name="l00294"></a>00294 {
+<a name="l00295"></a>00295           <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i, j;
+<a name="l00296"></a>00296 
+<a name="l00297"></a>00297           <span class="keywordflow">for</span> (i = 0, j = 0; j &lt; len; i++, j += 4)
+<a name="l00298"></a>00298                  output[i] = ((<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">int</span>)input[j]) | 
+<a name="l00299"></a>00299                              (((<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> int)input[j+1]) &lt;&lt; 8) |
+<a name="l00300"></a>00300                              (((<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">int</span>)input[j+2]) &lt;&lt; 16) |
+<a name="l00301"></a>00301                              (((<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> int)input[j+3]) &lt;&lt; 24);
+<a name="l00302"></a>00302 }
+<a name="l00303"></a>00303 
+<a name="l00304"></a>00304 <span class="comment">/*</span>
+<a name="l00305"></a>00305 <span class="comment"> * Note: Replace "for loop" with standard memcpy if possible.</span>
+<a name="l00306"></a>00306 <span class="comment"> */</span>
+<a name="l00307"></a><a class="code" href="../../d7/d46/a00002.html#76c181f092e81df65dadf8861272ac80">00307</a> <span class="keywordtype">void</span> <a class="code" href="../../d7/d46/a00002.html#76c181f092e81df65dadf8861272ac80">MD5::MD5_memcpy</a> (<a class="code" href="../../d7/dec/a00010.html#73204e40637f83518fb695362ea084a4">POINTER</a> output, <a class="code" href="../../d7/dec/a00010.html#73204e40637f83518fb695362ea084a4">POINTER</a> input, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> len)
+<a name="l00308"></a>00308 {
+<a name="l00309"></a>00309         <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i;
+<a name="l00310"></a>00310 
+<a name="l00311"></a>00311         <span class="keywordflow">for</span> (i = 0; i &lt; len; i++)
+<a name="l00312"></a>00312                 output[i] = input[i];
+<a name="l00313"></a>00313 }
+<a name="l00314"></a>00314 
+<a name="l00315"></a>00315 <span class="comment">/*</span>
+<a name="l00316"></a>00316 <span class="comment"> * Note: Replace "for loop" with standard memset if possible.</span>
+<a name="l00317"></a>00317 <span class="comment"> */</span>
+<a name="l00318"></a><a class="code" href="../../d7/d46/a00002.html#e1a522aab83da49d1bd3f0a6f3edcd11">00318</a> <span class="keywordtype">void</span> <a class="code" href="../../d7/d46/a00002.html#e1a522aab83da49d1bd3f0a6f3edcd11">MD5::MD5_memset</a> (<a class="code" href="../../d7/dec/a00010.html#73204e40637f83518fb695362ea084a4">POINTER</a> output,<span class="keywordtype">int</span> value,<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> len)
+<a name="l00319"></a>00319 {
+<a name="l00320"></a>00320         <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i;
+<a name="l00321"></a>00321         <span class="keywordflow">for</span> (i = 0; i &lt; len; i++)
+<a name="l00322"></a>00322                 ((<span class="keywordtype">char</span> *)output)[i] = (char)value;
+<a name="l00323"></a>00323 }
+<a name="l00324"></a>00324 
+<a name="l00325"></a>00325 <span class="comment">/*</span>
+<a name="l00326"></a>00326 <span class="comment"> * EOF</span>
+<a name="l00327"></a>00327 <span class="comment"> */</span>
+</pre></div></div>
+<hr size="1"><address style="text-align: right;"><small>Wygenerowano Mon Jun 1 13:41:51 2009 dla Ass8 programem&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="../../doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
+</body>
+</html>

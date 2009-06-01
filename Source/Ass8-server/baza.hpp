@@ -27,6 +27,15 @@ class Baza
         mysqlpp::StoreQueryResult getFileInfo(std::string file, int user_id);
         ///Pobiera id uzytkownika 'user'
         int getUserId(std::string user);
+        /**
+        Funkcja sprawdzająca czy użytkownicy są znajomymi
+        \param user1 Użytkownik pytający
+        \param user2 Użytkownik sprawdzany
+        \return char przedstawiający informację o rodzaju znajomości:
+        true - użytkownik sprawdzany udostępnia pliku użytkownikowi pytającemu
+        false - użytkownik sprawdzany nie udostępnia plików użytkownikowi pytającemu
+        */
+        bool firends(std::string user1, std::string user2);
         ///Dodaje plik do bazy danych
         bool addFile(std::string nazwa, std::string konto, int wielkosc, std::string hash="-1", int prawa=-1, int data=-1);
         /**Usuwa plik z bazy
