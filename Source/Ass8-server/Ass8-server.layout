@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_layout_file>
 	<ActiveTarget name="Debug" />
-	<File name="baza.cpp" open="1" top="0" tabpos="5">
-		<Cursor position="1682" topLine="60" />
+	<File name="baza.cpp" open="1" top="1" tabpos="5">
+		<Cursor position="9043" topLine="310" />
 	</File>
 	<File name="baza.hpp" open="1" top="0" tabpos="4">
-		<Cursor position="601" topLine="16" />
+		<Cursor position="1716" topLine="31" />
 	</File>
 	<File name="debug.hpp" open="1" top="0" tabpos="6">
 		<Cursor position="99" topLine="0" />
@@ -14,10 +14,10 @@
 		<Cursor position="2234" topLine="67" />
 	</File>
 	<File name="parser.cpp" open="1" top="0" tabpos="3">
-		<Cursor position="27799" topLine="734" />
+		<Cursor position="21280" topLine="337" />
 	</File>
-	<File name="parser.hpp" open="1" top="1" tabpos="2">
-		<Cursor position="1707" topLine="75" />
+	<File name="parser.hpp" open="1" top="0" tabpos="2">
+		<Cursor position="2708" topLine="64" />
 	</File>
 	<File name="server.hpp" open="1" top="0" tabpos="7">
 		<Cursor position="1" topLine="0" />

@@ -1,4 +1,13 @@
 01 czerwiec 2009
+   released version 0.6.1 of Ass8-server
+
+     Change log:
+        -Fixed: Wysyłanie pliku (wysyłany był XML)
+        -Added: Podstawowa obsługa znajomych
+        -Added: Obsługa pobierania przez klienta i oglądania plików znajomyc
+        -Fixed: Kolejne błędy poprawione skutecznie (mam nadzieję)
+
+01 czerwiec 2009
    released version 0.3.18 of Ass8-server
 
      Change log:

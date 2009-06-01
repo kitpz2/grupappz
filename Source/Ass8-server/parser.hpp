@@ -71,11 +71,11 @@ private:
     ///Odbiera plik od użytkownika i umieszcza na serwerze
     void odbieranie_plikow(xmlpp::TextReader &reader, std::string uzytkownik);
     ///Odbiera od klienta informację jakie on chce pobrać pliki i przekazuje kazdy plik pojedynczo do wyslij_plik()
-    void wysylanie_plikow(xmlpp::TextReader &reader, std::string uzytkownil);
+    void wysylanie_plikow(xmlpp::TextReader &reader, std::string uzytkownik,char uprawnienia);
     ///Usuwa plik z serwera (jeszcze nie zaimplementowane)
     void usun_pliki(xmlpp::TextReader &reader,std::string uzytkownik);
     ///wysyła plik podany w argumencie
-    void wyslij_plik(std::string plik,std::string uzytkownik);
+    void wyslij_plik(std::string plik,std::string uzytkownik, char uprawnienia);
     ///Przygotowuje listę plikow do wysłania do klienta
     std::vector <std::string> pobieranie_listy_plikow(xmlpp::TextReader &reader);
     std::string czytanie_z_socketa();

@@ -20,8 +20,6 @@ void Baza::connect(const char *server, const char *login, const char *pass, cons
     catch (const std::exception& e)//jezeli wystapil wyjatek w SQLu
     {
         info2("BŁAD PARSOWANIA SQL w connect : ",e.what());
-        //wyslij("<?xml version=\"1.0\"?>\
-        //<serwer odpowiedz=\"403\"/>"); ///To wysyłana jest o tym informacja
         exit(0);///I zamykamy połączenie
 
     }
@@ -51,23 +49,23 @@ std::string Baza::get_passwd(std::string login)
     catch (const std::exception& e)//jezeli wystapil wyjatek w SQLu
     {
         info2("BŁAD PARSOWANIA SQL w get_passwd : ",e.what());
-        //wyslij("<?xml version=\"1.0\"?>\
-        //<serwer odpowiedz=\"403\"/>"); ///To wysyłana jest o tym informacja
-        //exit(0);///I zamykamy połączenie
         return "-1";
     }
 }
 ///Zapytanie o listę plikow uzytkownika po id uzytkownika z bazy accounts_konto
-mysqlpp::StoreQueryResult Baza::getFilesList(int user_id)
+mysqlpp::StoreQueryResult Baza::getFilesList(int user_id, char uprawnienia)
 {
     try
     {
-        info("pobieranie listy plikow usera o ID = 'id'");
+#ifdef DEBUG
+        char debug[1024];
+        sprintf(debug,"pobranie listy plikow usera o ID = '%d'",user_id);
+        info(debug);
+        sprintf(debug,"Uprawnienia usera: %d",(unsigned int)(uprawnienia));
+        info(debug);
+#endif//DEBUG
         char a[1024];
-        sprintf(a,"select * from files_plik where konto_id='%d'",user_id);
-        //std::string zapytanie="select * from files_plik where konto_id='";
-        //zapytanie+=user_id;
-        //zapytanie.append("'");
+        sprintf(a,"select * from files_plik where konto_id='%d' and prawaDostepu>='%d'",user_id,(unsigned int)(uprawnienia));
         info(a);
         mysqlpp::Query query = conn.query(a);
         mysqlpp::StoreQueryResult res = query.store();
@@ -86,15 +84,12 @@ mysqlpp::StoreQueryResult Baza::getFilesList(int user_id)
     catch (const std::exception& e)//jezeli wystapil wyjatek w SQLu
     {
         info2("BŁAD PARSOWANIA SQL w getFilesList : ",e.what());
-        //wyslij("<?xml version=\"1.0\"?>\
-        //<serwer odpowiedz=\"403\"/>"); ///To wysyłana jest o tym informacja
-        //exit(0);///I zamykamy połączenie
         return (mysqlpp::StoreQueryResult());
     }
 
 }
 ///Zapytanie o listę plików uzytkownika o nazwie podanej w zmiennej user
-mysqlpp::StoreQueryResult Baza::getFilesList(std::string user)
+mysqlpp::StoreQueryResult Baza::getFilesList(std::string user, char uprawnienia)
 {
     try
     {
@@ -103,7 +98,7 @@ mysqlpp::StoreQueryResult Baza::getFilesList(std::string user)
         if (id>=0)
         {
             info("id poprawne");
-            return getFilesList(id);
+            return getFilesList(id,uprawnienia);
         }
         else
         {
@@ -115,9 +110,6 @@ mysqlpp::StoreQueryResult Baza::getFilesList(std::string user)
     catch (const std::exception& e)//jezeli wystapil wyjatek w SQLu
     {
         info2("BŁAD PARSOWANIA SQL w getFilesList II : ",e.what());
-        //wyslij("<?xml version=\"1.0\"?>\
-        //<serwer odpowiedz=\"403\"/>"); ///To wysyłana jest o tym informacja
-        //exit(0);///I zamykamy połączenie
         return (mysqlpp::StoreQueryResult());
     }
 }
@@ -164,14 +156,11 @@ int Baza::getUserId(std::string user)
     catch (const std::exception& e)//jezeli wystapil wyjatek w SQLu
     {
         info2("BŁAD PARSOWANIA SQL w getUserId : ",e.what());
-        //wyslij("<?xml version=\"1.0\"?>\
-        //<serwer odpowiedz=\"403\"/>"); ///To wysyłana jest o tym informacja
-        //exit(0);///I zamykamy połączenie
         return -1;
     }
 }
 
-mysqlpp::StoreQueryResult Baza::getFileInfo(std::string file, std::string user)
+mysqlpp::StoreQueryResult Baza::getFileInfo(std::string file, std::string user, char uprawnienia)
 {
     try
     {
@@ -180,7 +169,7 @@ mysqlpp::StoreQueryResult Baza::getFileInfo(std::string file, std::string user)
         if (id>=0)
         {
             info("id poprawne");
-            return getFileInfo(file,id);
+            return getFileInfo(file,id,uprawnienia);
         }
         else
         {
@@ -192,24 +181,24 @@ mysqlpp::StoreQueryResult Baza::getFileInfo(std::string file, std::string user)
     catch (const std::exception& e)//jezeli wystapil wyjatek w SQLu
     {
         info2("BŁAD PARSOWANIA SQL w getFileInfo : ",e.what());
-        //wyslij("<?xml version=\"1.0\"?>\
-        //<serwer odpowiedz=\"403\"/>"); ///To wysyłana jest o tym informacja
-        //exit(0);///I zamykamy połączenie
+
         return (mysqlpp::StoreQueryResult());
     }
 }
-mysqlpp::StoreQueryResult Baza::getFileInfo(std::string file, int user_id)
+mysqlpp::StoreQueryResult Baza::getFileInfo(std::string file, int user_id,char uprawnienia)
 {
     try
     {
-        info("pobranie info o pliku usera o ID = 'id'");
-        /*std::string zapytanie="select * from files_plik where konto_id='";
-        zapytanie+=user_id;
-        zapytanie.append("' AND sciezka='");
-        zapytanie+=file;
-        zapytanie.append("'");*/
+#ifdef DEBUG
+        char debug[1024];
+        sprintf(debug,"pobranie info o pliku usera o ID = '%d'",user_id);
+        info(debug);
+        sprintf(debug,"Uprawnienia usera: %d",(unsigned int)(uprawnienia));
+        info(debug);
+#endif//DEBUG
+
         char zapytanie[256];
-        sprintf(zapytanie,"select * from files_plik where konto_id='%d' AND sciezka='%s'",user_id,file.c_str());
+        sprintf(zapytanie,"select * from files_plik where konto_id='%d' AND sciezka='%s' AND prawaDostepu>='%d'",user_id,file.c_str(),(unsigned int)(uprawnienia));
         info2("zapytanie",zapytanie);
         mysqlpp::Query query = conn.query(zapytanie);
         mysqlpp::StoreQueryResult res = query.store();
@@ -228,9 +217,7 @@ mysqlpp::StoreQueryResult Baza::getFileInfo(std::string file, int user_id)
     catch (const std::exception& e)//jezeli wystapil wyjatek w SQLu
     {
         info2("BŁAD PARSOWANIA SQL w getFileInfo II : ",e.what());
-        //wyslij("<?xml version=\"1.0\"?>\
-        //<serwer odpowiedz=\"403\"/>"); ///To wysyłana jest o tym informacja
-        //exit(0);///I zamykamy połączenie
+
         return (mysqlpp::StoreQueryResult());
     }
 
@@ -253,7 +240,6 @@ bool Baza::addFile(std::string nazwa, std::string konto, int wielkosc, std::stri
         mysqlpp::StoreQueryResult res = query.store();
         if (res)
         {
-            //ilosc=res[0]["count(*)"];
             ilosc=res.num_rows();
         }
         else
@@ -263,27 +249,13 @@ bool Baza::addFile(std::string nazwa, std::string konto, int wielkosc, std::stri
         }
         info("po");
         query = conn.query();
-        //SELECT count(*) from files_plik;
         char b[1024];
         sprintf(b,"INSERT INTO files_plik VALUES(%d,%d,'%s',CURRENT_DATE,%d,%d,'%s')",ilosc+1,id,nazwa.c_str(),prawa,wielkosc,hash.c_str());
         query<<b;
         query.execute();
-        /*zapytanie="INSERT INTO files_plik VALUES('"+ilosc;
-        zapytanie+="','"+id;
-        zapytanie+="','"+nazwa;
-        zapytanie+="',CURRENT_DATE";
-        zapytanie+="','"+prawa;
-        zapytanie+="','"+wielkosc;
-        zapytanie+="','"+hash;
-        zapytanie.append("')");*/
+
         info2("zapytanie",b);
-        //conn.query(b);
         info("po2");
-        //res = query.store();
-        //if(res)
-        //    info("plik dodany do bazy")
-        //else
-        //    info("plik nie dodany");
         return true;
     }
     catch (const std::exception& e)//jezeli wystapil wyjatek w SQLu
@@ -323,7 +295,35 @@ bool Baza::rmFile(std::string nazwa, std::string konto, std::string hash)
     }
 }
 
-bool Baza::firends(std::string user1, std::string user2)
+char Baza::friends(std::string user1, std::string user2)
 {
+    if (user1.compare(user2)==0)
+        return 0;
+    char a[256];
+    int id1=getUserId(user1);
+    int id2=getUserId(user2);
+#ifdef DEBUG
+    sprintf(a,"sprawdzam czy %d może oglądać pliki %d",id1,id2);
+    info(a);
+#endif
+    sprintf(a,"select id from friends_userlink where from_user_id='%d' and to_user_id='%d'",id2,id2);
+    info(a);
+    mysqlpp::Query query = conn.query(a);
+    mysqlpp::StoreQueryResult res = query.store();
+    if (res)
+    {
+        if (res.num_rows()==1)
+        {
+            return 1;
+        }
+        else
+            return 2;
 
+    }
+    else
+    {
+        info("!res");
+        return 2;
+    }
+    return 2;
 }

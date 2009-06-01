@@ -135,7 +135,7 @@ bool parser::parsuj(std::string &do_parsowania)
                                 lista_plikow(uzytkownik);
                                 break;
                             case 101:
-                                wysylanie_plikow(reader,uzytkownik);
+                                wysylanie_plikow(reader,uzytkownik,baza.friends(login,uzytkownik));
                                 info("OPERACJA 101");
                                 break;
                             case 102:
@@ -333,12 +333,20 @@ std::string parser::czytanie_z_socketa()
 void parser::lista_plikow(std::string uzytkownik)
 {
     info("Lista_plikow");
-    /**Jeżeli użytkownik to "." to znaczy ze żadanie jest
+    /**Jeżeli użytkownik to "." to znaczy ze żądanie jest
     o liste plików użytkownika zalogowanego*/
+    char uprawnienia;
     if (uzytkownik.compare(".")==0)
+    {
         uzytkownik=login;
+        uprawnienia=0;
+    }
+    else
+    {
+        uprawnienia=baza.friends(login,uzytkownik);
+    }
     /**Prośba o listę plików użytkownika uzytkownik*/
-    mysqlpp::StoreQueryResult res=baza.getFilesList(uzytkownik);
+    mysqlpp::StoreQueryResult res=baza.getFilesList(uzytkownik,uprawnienia);
     if (res.num_rows()<1)
     {
         info("res.num_rows()<1");
@@ -457,7 +465,7 @@ void parser::odbieranie_plikow(xmlpp::TextReader &reader, std::string uzytkownik
                         {
                             info("Plik istnieje");
                             fclose(plik);
-                            mysqlpp::StoreQueryResult wynik= baza.getFileInfo(nazwa,login);
+                            mysqlpp::StoreQueryResult wynik= baza.getFileInfo(nazwa,login,0);
                             if (wynik)
                             {
                                 if (wynik.num_rows()<1)
@@ -544,21 +552,28 @@ void parser::odbieranie_plikow(xmlpp::TextReader &reader, std::string uzytkownik
                         int i=0;
                         while (size<rozmiar)
                         {
-                            if (i>32)
+                            /*if (i>32)
                             {
                                 info("Blad przy odbieraniu pliku");
                                 Odpowiedz(403,102);
                                 return;
-                            }
+                            }*/
                             if (rozmiar-size<32)
+                            {
+                                #ifdef DEBUG
+                                char debug[1024];
+                                sprintf(debug,"Odebrano %d, pozostało %d, od teraz pobieram po 1 bajcie",size, rozmiar-size);
+                                info(debug);
+                                #endif//DEBUG
                                 ile_czytac=1;
+                            }
                             stream.read(a,ile_czytac);
                             std::string tmpp=a;
                             //a[ile_czytac]=0;
                             if (tmpp.size()==0)
                             {
                                 ile_czytac=1;
-                                info("odebrano 0!");
+                                info("odebranych danych było 0b !");
                                 ++i;
                                 continue;
                             }
@@ -575,11 +590,9 @@ void parser::odbieranie_plikow(xmlpp::TextReader &reader, std::string uzytkownik
 
 
                         }
-                        //char *temp2=new char(rozmiar);
-                        //stream.read(temp2,rozmiar);
-                        //info2("odebrano",temp2);
-                        //fprintf(plik,"%s",temp2);
+
                         md5wrapper md5;
+
                         /*std::string temp_hash=md5.getHashFromFile(std::string(temp_sciezka));
                         if (temp_hash.compare(hash)!=0) //sprawdzic jak sie wywoluje
                         {
@@ -596,9 +609,6 @@ void parser::odbieranie_plikow(xmlpp::TextReader &reader, std::string uzytkownik
                         sprintf(tmp,"Pobrano %d z %d",size,rozmiar);
                         info(tmp);
                         fclose(plik);
-                        //FILE *plik2=fopen(sciezka.c_str(),"w+");
-                        //std::copy(plik,plik2); --zrobic kopiowanie
-                        //fclose(plik2);
                         sprintf(tmp,"zamieniam %s na %s",temp_sciezka,sciezka.c_str());
                         info(tmp);
                         boost::filesystem::copy_file(temp_sciezka,sciezka);
@@ -642,19 +652,19 @@ void parser::odbieranie_plikow(xmlpp::TextReader &reader, std::string uzytkownik
     }
 
 }
-void parser::wysylanie_plikow(xmlpp::TextReader &reader, std::string uzytkownik)
+void parser::wysylanie_plikow(xmlpp::TextReader &reader, std::string uzytkownik, char uprawnienia)
 {
     info("Wysylanie plikow");
     std::vector <std::string> pliki=pobieranie_listy_plikow(reader);
     std::vector <std::string>::iterator it;
     for (it=pliki.begin();it<pliki.end();it++)
     {
-        wyslij_plik(*it,uzytkownik);
+        wyslij_plik(*it,uzytkownik,uprawnienia);
     }
     info("Wyslano pliki");
 }
 
-void parser::wyslij_plik(std::string plik,std::string uzytkownik)
+void parser::wyslij_plik(std::string plik,std::string uzytkownik,char uprawnienia)
 {
     info("Wyslij plik");
     info2("login",login.c_str());
@@ -662,7 +672,7 @@ void parser::wyslij_plik(std::string plik,std::string uzytkownik)
         uzytkownik=login;
     info2("uzytkownik",uzytkownik.c_str());
     info2("plik",plik.c_str());
-    mysqlpp::StoreQueryResult res=baza.getFileInfo(plik,uzytkownik);
+    mysqlpp::StoreQueryResult res=baza.getFileInfo(plik,uzytkownik,uprawnienia);
     if (res.num_rows()<1)
     {
         info("res.num_rows()<1");
@@ -682,12 +692,6 @@ void parser::wyslij_plik(std::string plik,std::string uzytkownik)
             return;
         }
         info("wysylanie info o pliku")
-        /*std::string odp="<plik nazwa=\""+res[0]["sciezka"];
-        odp+="\" data=\""+res[0]["dataDodania"];
-        odp+="\" rozmiar=\""+res[0]["dataDodania"];
-        odp+="\" dostep=\""+res[0]["prawaDostepu"];
-        odp+="\" hash=\""+res[0]["hashValue"];
-        odp+="\"/>\r\n";*/
         char odp[512];
         sprintf(odp,"<plik nazwa=\"%s\" data=\"%d\" rozmiar=\"%d\" dostep=\"%d\" hash=\"%s\"/>\r\n",
         res[0]["sciezka"].c_str(),
@@ -700,32 +704,7 @@ void parser::wyslij_plik(std::string plik,std::string uzytkownik)
         info("Info o pliku wyslane");
     }
     info("Czekamy na zgode klienta na wysyl pliku");
-    /*     std::string od_klienta,temp;
-     *     do
-     *     {
-     *         info("OCZEKIWANIE NA PUSTĄ LINIE");
-     *         std::getline(stream,temp);
-     *         //std::cout<<(int)temp[0]<<" "<<(int)temp[1]<<std::endl;
-     *         od_klienta.append(temp+"\r\n");
-     *     }
-     *     while (!(temp[0]==13 && temp[1]==0));
-     *     info("sprawdzamy co wyslal klient");
-     *     xmlpp::TextReader reader_temp((unsigned char*)od_klienta.c_str(),od_klienta.size());
-     *     reader_temp.read();
-     *     if (reader_temp.get_name().compare("klient")==0)//Sprawdzamy czy odpowiedź nazleży do klienta
-     *     {
-     *         info("wyslal to napewno klient");
-     *         if (reader_temp.has_attributes())//Sprawdzamy czy odpowiedz ma atrybuty
-     *         {
-     *             info("Są atrybuty");
-     *             if (reader_temp.move_to_attribute("action"))//Przechodzimy do atrybutu "action"
-     *             {
-     *                 info("mamy atrybut action");
-     *                 if (reader_temp.get_value().compare("ok")==0)//Jeżeli odpowiedz jest ok to wysylamy plik
-     *                 {
-     *                     info("action=ok");
-     *                     std::string sciezka=login+"/";
-     */
+
     std::string a=czytanie_z_socketa();
     if (!parsuj(a))
     {
