@@ -1,4 +1,12 @@
 01 czerwiec 2009
+   released version 0.7.2 of Ass8-server
+
+     Change log:
+        -Added: Pełna obsługa Znajomych (nie testowana)
+        -Cleaned: Wywalone niepotrzebne komentarze i niektóre pozostałośi po starym kodzie
+        -Updated: Aktualizacjia funkcji aby były zgodne z obsługą znajomości
+
+01 czerwiec 2009
    released version 0.6.1 of Ass8-server
 
      Change log:

@@ -2,14 +2,13 @@
 <BrowseTracker_layout_file>
 	<ActiveTarget name="Debug" />
 	<File name="baza.cpp" open="1" top="1" tabpos="5">
-		<Cursor position="1682" topLine="60" />
+		<Cursor position="9043" topLine="310" />
 		<BrowseMarks positions="" />
 		<Book_Marks positions="" />
 	</File>
 	<File name="baza.hpp" open="1" top="0" tabpos="4">
-		<Cursor position="601" topLine="16" />
+		<Cursor position="1716" topLine="31" />
 		<BrowseMarks positions="1496" />
-		<Book_Marks positions="" />
 	</File>
 	<File name="debug.hpp" open="1" top="0" tabpos="6">
 		<Cursor position="99" topLine="0" />
@@ -19,14 +18,11 @@
 		<BrowseMarks positions="1295" />
 	</File>
 	<File name="parser.cpp" open="1" top="0" tabpos="3">
-		<Cursor position="27799" topLine="734" />
+		<Cursor position="21280" topLine="337" />
 		<BrowseMarks positions="11640,11640,11640,7139" />
-		<Book_Marks positions="" />
 	</File>
 	<File name="parser.hpp" open="1" top="0" tabpos="2">
-		<Cursor position="1707" topLine="75" />
-		<BrowseMarks positions="" />
-		<Book_Marks positions="" />
+		<Cursor position="2708" topLine="64" />
 	</File>
 	<File name="server.hpp" open="1" top="0" tabpos="7">
 		<Cursor position="1" topLine="0" />
