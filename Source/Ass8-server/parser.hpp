@@ -9,6 +9,7 @@
 #include <string>
 
 #include <fstream>
+#include <iostream>
 
 #include <libxml++/libxml++.h>
 #include <libxml++/parsers/textreader.h>
@@ -22,14 +23,14 @@
 #include "debug.hpp"
 
 #define BUFSIZE 1024
-#define BUFFER 128
+#define BUFFER 1024
 #define BUFSIZE2 1024*2
 using boost::asio::ip::tcp;
 class parser
 {
 private:
-    ///Stream uzywany do odbierania i wysyłania informacji
-    tcp::iostream & stream;
+    ///socket uzywany do odbierania i wysyłania informacji
+    tcp::socket & socket;
     ///Zmienna przechowująca login uzytkownika
     std::string login;
     ///Zmienna przechowująca haslo (w przyszlosci hash hasla) uzytkownika
@@ -81,7 +82,7 @@ private:
     std::vector <std::string> pobieranie_listy_plikow(xmlpp::TextReader &reader);
     std::string czytanie_z_socketa();
 public:
-    parser(tcp::iostream &stream, const char* server, const char* user, const char *pass,const char *db):stream(stream)
+    parser(tcp::socket &socket, const char* server, const char* user, const char *pass,const char *db):socket(socket)
     {
         info("Parser Konstruktor Początek");
         login.clear();
@@ -94,6 +95,6 @@ public:
 
 };
 
-//void odbieracz (tcp::iostream &stream);
+//void odbieracz (tcp::iosocket &socket);
 void eat_zombie();
 #endif//PARSER_HPP

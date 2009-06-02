@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1243862628 source:/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/main.cpp
+1243966435 source:/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/main.cpp
 	<iostream>
 	<string>
 	<cstdio>
@@ -16,7 +16,7 @@
 
 1243891941 /home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/version.h
 
-1243952311 source:/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/parser.cpp
+1243958499 source:/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/parser.cpp
 	<iostream>
 	<string>
 	<cstdlib>
@@ -30,11 +30,12 @@
 	"xml.hpp"
 	"debug.hpp"
 
-1243947064 /home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/parser.hpp
+1243970372 /home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/parser.hpp
 	<boost/asio.hpp>
 	<boost/filesystem/operations.hpp>
 	<string>
 	<fstream>
+	<iostream>
 	<libxml++/libxml++.h>
 	<libxml++/parsers/textreader.h>
 	<ctime>

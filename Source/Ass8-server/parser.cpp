@@ -120,7 +120,7 @@ bool parser::parsuj(std::string &do_parsowania)
                                 {
                                     info2("uzytkowik",reader.get_value().c_str());
                                     uzytkownik=reader.get_value();
-                                    if(uzytkownik.compare(".")==0)
+                                    if (uzytkownik.compare(".")==0)
                                         uzytkownik=login;
                                 }
                                 else
@@ -200,7 +200,18 @@ void parser::wyslij(std::string w)///Funkcja wysyłająca dane przez SOCKET
 {
     //w.append("\r\n");
     info2("Wysylam",w.c_str());
-    stream<<w;//<<std::endl;
+
+    try
+    {
+        boost::asio::write(socket,boost::asio::buffer(w),boost::asio::transfer_all());//<<std::endl;
+    }
+    catch (const std::exception &e)
+    {
+        line;
+        fprintf(stderr,"Wystąpił wyjątek przy wysyłaniu do socketa: %s\n",e.what());
+        exit(0);
+
+    }
 
 }
 bool parser::logowanie(std::string login, std::string haslo)///Funkcja sprawdzająca czy dla podanego loginu hasło jest prawidłowe, jeżeli tak to generuje id_sesji
@@ -261,13 +272,13 @@ void parser::odpowiedz_login(int i)///Funkcja wysyłająca odpowiedź po prośbi
     wyslij(bufor);
     if (i!=0)
     {
-        stream.close();
+        socket.close();
         exit(0);
     }
 }
 void parser::start () ///Funkcja wywoływana tylko raz, rozpoczyna pobieranie informacji z SOCKETA i przekazuje je parserowi
 {
-    //stream<<"ASS8 Server v numer_wersji"/*<<AutoVersion::FULLVERSION_STRING*/<<"\r\n\r\n";
+    //socket<<"ASS8 Server v numer_wersji"/*<<AutoVersion::FULLVERSION_STRING*/<<"\r\n\r\n";
     std::string a;
 
     while (true)
@@ -285,18 +296,17 @@ void parser::start () ///Funkcja wywoływana tylko raz, rozpoczyna pobieranie in
 
     }
     line;
-    stream.close();
+    socket.close();
     exit(0);
 }
 
 std::string parser::czytanie_z_socketa()
 {
-    std::string a;
     std::string temp;
-    a="";
-    temp="";
-    int zabezp=0, zabezp2=0;
-    do
+    temp.clear();
+    //char bufor_c[1024];
+    //int zabezp=0, zabezp2=0;
+    /*do
     {
         line;
         boost::system::error_code error;
@@ -308,7 +318,7 @@ std::string parser::czytanie_z_socketa()
             exit(0);
         }
 
-        std::getline(stream,temp);
+        //std::getline(socket,temp);
         line;
 
         if (temp.find_first_of("<")<=temp.size())
@@ -326,10 +336,35 @@ std::string parser::czytanie_z_socketa()
 
         a.append(temp+"\r\n");
         line;
+    }*/
+    boost::asio::streambuf b;
+    int przeczytano;
+    try
+    {
+        przeczytano=boost::asio::read_until(socket, b, "\r\n\r\n");
     }
-    while (!(temp[0]==13 && temp[1]==0));
-    line;
-    return a;
+    catch (const std::exception &e)
+    {
+        fprintf(stderr,"Wystąpił wyjątek przy czytaniu z socketa: %s\n",e.what());
+        exit(0);
+    }
+    std::istream buf(&b);
+    /*buf.seekg (0, std::iostream::end);
+    int length = buf.tellg();
+    buf.seekg (0, std::iostream::beg);*/
+    //std::cout<<buf<<" to były dane o rozmiarze"<<przeczytano<<std::endl;
+
+    char *buf_c=new char[przeczytano+1];
+    buf_c[przeczytano]=0;
+
+    buf.read(buf_c,przeczytano);
+
+
+
+    info2("pobrano",buf_c);
+    temp=buf_c;
+
+    return temp;
 }
 
 void parser::lista_plikow(std::string uzytkownik)
@@ -535,6 +570,7 @@ void parser::odbieranie_plikow(xmlpp::TextReader &reader, std::string uzytkownik
                             }
 
                             char temp_sciezka[256];
+                            std::string tmpp;
                             sprintf(temp_sciezka,"%s/temp.%d",login.c_str(),id_sesji);
                             info2("Tworze plik tymczasowy",temp_sciezka);
                             plik=fopen(temp_sciezka,"wb+");
@@ -551,47 +587,59 @@ void parser::odbieranie_plikow(xmlpp::TextReader &reader, std::string uzytkownik
                             info("zapis pliku");
                             int ile_czytac=BUFFER;
                             if (rozmiar<BUFFER)
-                                ile_czytac=1;
+                                ile_czytac=rozmiar;
 
                             char a[BUFFER+1]={0};
-                            char t[256];
+//                            char t[256];
                             //for (int i=0;i<rozmiar;i+=ile_czytac)
                             int i=0;
                             while (size<rozmiar)
                             {
-                                /*if (i>32)
+                                if ((rozmiar-size)<BUFFER)
                                 {
-                                    info("Blad przy odbieraniu pliku");
-                                    Odpowiedz(403,102);
-                                    return;
-                                }*/
-                                if (rozmiar-size<32)
-                                {
+                                    while ((rozmiar-size)<ile_czytac)
+                                    {
+                                        ile_czytac=rozmiar-size;
+                                    }
 #ifdef DEBUG
                                     char debug[1024];
-                                    sprintf(debug,"Odebrano %d, pozostało %d, od teraz pobieram po 1 bajcie",size, rozmiar-size);
+                                    sprintf(debug,"Odebrano %d, pozostało %d, od teraz pobieram po %d bajtów",size, rozmiar-size,ile_czytac);
                                     info(debug);
 #endif//DEBUG
-                                    ile_czytac=1;
                                 }
-                                stream.read(a,ile_czytac);
-                                std::string tmpp=a;
-                                a[ile_czytac]=0;
-                                if (tmpp.size()==0)
+
+                                //socket.read(a,ile_czytac);
+                                //socket>>a;
+                                //tmpp=a;
+                                int ile_przeczytano;
+                                try
                                 {
-                                    ile_czytac=1;
-                                    info("odebranych danych było 0b !");
+                                    ile_przeczytano=boost::asio::read(socket,boost::asio::buffer(a,ile_czytac));
+                                }
+                                catch (std::exception &e)
+                                {
+                                    fprintf(stderr,"Wyjątek przy pobieraniu pliku: %s\n",e.what());
+                                    exit(0);
+                                }
+                                a[ile_przeczytano]=0;
+                                if (ile_przeczytano==0)
+                                {
+                                    //ile_czytac=1;
                                     ++i;
+                                    char x[128];
+                                    sprintf(x,"odebranych danych było 0b ! - %d",i);
+                                    //info(x);
                                     continue;
                                 }
-                                info2("odebrano",tmpp.c_str());
-                                fprintf(plik,"%s",tmpp.c_str());
-                                size+=tmpp.size();
-                                sprintf(t,"Odczytano %d bajtów z %d bajtów, pozostalo do odczytania %d bajtów\nteraz bede czytal %d bajtow",size,rozmiar,rozmiar-size,ile_czytac);
-                                info(t)
+                                info2("odebrano",a);
+                                //fprintf(plik,"%s",a);
+                                fwrite(a,1,ile_przeczytano,plik);
+                                size+=ile_przeczytano;
+                                //sprintf(t,"Odczytano %d bajtów z %d bajtów, pozostalo do odczytania %d bajtów\nteraz bede czytal %d bajtow",size,rozmiar,rozmiar-size,ile_czytac);
+                                //info(t)
 #ifdef DEBUG
-                                sprintf(t,"%s - %d",a,tmpp.size());
-                                info(t);
+                                //sprintf(t,"%s - %d",a,tmpp.size());
+                                //info(t);
 #endif
 
 
@@ -617,6 +665,7 @@ void parser::odbieranie_plikow(xmlpp::TextReader &reader, std::string uzytkownik
                             fclose(plik);
                             sprintf(tmp,"zamieniam %s na %s",temp_sciezka,sciezka.c_str());
                             info(tmp);
+                            boost::filesystem::remove(sciezka);
                             boost::filesystem::copy_file(temp_sciezka,sciezka);
                             sprintf(tmp,"usuwam %s",temp_sciezka);
                             info(tmp);
@@ -667,7 +716,7 @@ void parser::odbieranie_plikow(xmlpp::TextReader &reader, std::string uzytkownik
 void parser::wysylanie_plikow(xmlpp::TextReader &reader, std::string uzytkownik, char uprawnienia)
 {
     info("Wysylanie plikow");
-    if(uzytkownik.compare(".")==0)
+    if (uzytkownik.compare(".")==0)
         uzytkownik=login;
     std::vector <std::string> pliki=pobieranie_listy_plikow(reader);
     std::vector <std::string>::iterator it;
@@ -680,7 +729,7 @@ void parser::wysylanie_plikow(xmlpp::TextReader &reader, std::string uzytkownik,
 
 void parser::wyslij_plik(std::string plik,std::string uzytkownik,char uprawnienia)
 {
-    info("Wyslij plik");
+    info2("Wysylam plik",plik.c_str());
     info2("login",login.c_str());
     if (uzytkownik.compare(".")==0)
         uzytkownik=login;
@@ -728,7 +777,7 @@ void parser::wyslij_plik(std::string plik,std::string uzytkownik,char uprawnieni
     std::string sciezka=login+"/";
     sciezka+=plik;
     info("Otwieram plik");
-    FILE *fplik=std::fopen(sciezka.c_str(),"r");
+    FILE *fplik=std::fopen(sciezka.c_str(),"rb");
     if (fplik==NULL)
     {
         Eline2("NIE UDALO SIE OTWORZYC PLIKU: ",sciezka.c_str());
@@ -737,16 +786,45 @@ void parser::wyslij_plik(std::string plik,std::string uzytkownik,char uprawnieni
     }
     info("no to wysyłamy");
     char temp[BUFSIZE2];
-    while ( (fread ( &temp, 1,BUFSIZE2,fplik ) )> 0 )
+    char debug_c[256];
+    fseek (fplik, 0, SEEK_END);
+    int rozmiar=ftell (fplik);
+    fseek (fplik, 0, SEEK_SET);
+    int ile_odczytano;
+    int do_pobrania=BUFSIZE2;
+    int wyslano=0;
+    if (rozmiar<BUFSIZE2)
+        do_pobrania=rozmiar;
+
+    while ( (ile_odczytano=fread( &temp, 1,do_pobrania,fplik ) )>0 )
     {
+        temp[ile_odczytano]=0;
+        if ((rozmiar-wyslano)<BUFSIZE2)
+            do_pobrania=rozmiar-wyslano;
         info("Trwa wysyłanie pliku, proszę czekać...");
-        info(temp);
-        stream<<temp;
+#ifdef DEBUG
+        sprintf(debug_c,"Wysłano już %d bajtów, czeka na wysłanie w tej chwili %d bajtów, ogólnie pozostało %d bajtów",wyslano,ile_odczytano,rozmiar-wyslano);
+        info(debug_c);
+        //info(temp);
+#endif//DEBUG
+        //socket<<temp;
+        try
+        {
+            wyslano+=boost::asio::write(socket,boost::asio::buffer(temp,ile_odczytano),boost::asio::transfer_all());
+        }
+        catch (const std::exception &e)
+        {
+            line;
+            fprintf(stderr,"Wystąpił wyjątek przy wysyłaniu do socketa: %s\n",e.what());
+
+        }
+
     }
-    stream<<std::endl;
+    //socket<<std::endl;
+
     info("Plik został wysłany");
     //dodac odbior potwierdzenia odbioru
-    a=czytanie_z_socketa();
+    //a=czytanie_z_socketa();
 }
 
 void parser::usun_pliki(xmlpp::TextReader &reader,std::string uzytkownik)

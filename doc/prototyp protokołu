@@ -72,6 +72,7 @@ wysylka pliku na serwer (mozliwy tylko jeden w xmlu):
   <plik nazwa="nazwa_pliku" data="data" rozmiar="rozmiar" dostep="modyfikator_dostepu" hash="hash"/>
 </klient>
 
+{
 odpowiedz serwera gdy plik nie istnieje:
 <?xml version="1.0"?>
 <serwer operacja="102" odp="404"/>
@@ -94,10 +95,8 @@ odpowiedz serwera w obu wypadkach:
 przesyłanie pliku po odpowiedzi serwera:
 
 [DANE_PLIKU]
-
-
-<?xml version="1.0"?>
-<klient idsesji="" operacja="102" hash="hash"/>
+}
+(i tak w pętli to co w klamerce tyle razy ile plikow bylo zarządanych przez klienta)
 
 
 ///////////////////////////////

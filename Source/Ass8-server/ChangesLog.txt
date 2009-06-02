@@ -1,3 +1,14 @@
+02 czerwiec 2009
+   released version 0.7.2 of Ass8-server
+
+     Change log:
+        -Added: Dodatkowa obsługa znajomości
+        -Fixed: Usuwanie plików
+        -Fixed: Dodawanie plików
+        -Fixed: Operacje na bazie
+        -Updated: Przystosowanie do nowej bazy
+        -Updated: Aktualizacja dodawania i usuwania (nowa baza)
+
 02 czerwca 2009
    released version 0.7.2 of Ass8-server
 
