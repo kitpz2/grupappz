@@ -30,15 +30,17 @@ std::string Baza::get_passwd(std::string login)
     try
     {
         info("pobieranie hasla uzytkownika")
-        std::string zapytanie="select password from auth_user where username='";
-        zapytanie.append(login);
-        zapytanie.append("'");
+        char zapytanie[256];
+        sprintf(zapytanie,"select plain_pass from accounts_konto where user_id='%d'",getUserId(login));
+        //std::string zapytanie="select plain_pass from accounts_konto where userid='";
+        //zapytanie.append(login);
+        //zapytanie.append("'");
         mysqlpp::Query query = conn.query(zapytanie);
         mysqlpp::StoreQueryResult res = query.store();
         if (res.num_rows()>=1)
         {
             info("Zapytanie poprawne");
-            return std::string(res[0]["password"]);
+            return std::string(res[0]["plain_pass"]);
         }
         else
         {
@@ -120,23 +122,31 @@ int Baza::getUserId(std::string user)
     try
     {
         info("pobranie id usera");
+        char zapytanie[256];
+        sprintf(zapytanie,"select id from auth_user where username='%s'",user.c_str());
         //Najlpierw zapytanie o ID usera z tabeli auth_user
-        std::string zapytanie="select id from auth_user where username='";
-        zapytanie.append(user);
-        zapytanie.append("'");
-        info2("zaytanie: ",zapytanie.c_str());
+        //std::string zapytanie="select id from auth_user where username='";
+        //zapytanie.append(user);
+        //zapytanie.append("'");
+        info2("zaytanie: ",zapytanie);
         mysqlpp::Query query = conn.query(zapytanie);//Wyslanie zapytania do bazy
+        info("tick");
         mysqlpp::StoreQueryResult res = query.store();//umieszczenie wynikow zapytania w zmiennej res
+        info("tick2");
         //A potem zapytanie o id z tabeli accounts_konto
         if (res)
         {
-            zapytanie="select id from accounts_konto where user_id='";
-            zapytanie.append(res[0]["id"]);
-            zapytanie.append("'");
-            info(zapytanie.c_str());
+            info("tick3");
+            char zapytanie[256];
+            info("tick4");
+            sprintf(zapytanie,"select id from accounts_konto where user_id='%s'",res[0]["id"].c_str());
+            //zapytanie="select id from accounts_konto where user_id='";
+            //zapytanie.append(res[0]["id"]);
+            //zapytanie.append("'");
+            info(zapytanie);
             mysqlpp::Query query2 = conn.query(zapytanie);
             mysqlpp::StoreQueryResult res2 = query2.store();
-            if (res)
+            if (res2)
             {
                 info("Zapytanie Poprawne");
                 return atoi(res2[0]["id"]);
@@ -228,15 +238,17 @@ bool Baza::addFile(std::string nazwa, std::string konto, int wielkosc, std::stri
     try
     {
         info("dodanie pliku do bazy");
-        std::string zapytanie="SELECT * from files_plik";
-        int ilosc;
+        //std::string zapytanie="SELECT * from files_plik";
+        //int ilosc;
         info("pobieranie id");
         int id=getUserId(konto);
         info("id pobrane")
+        #ifdef DEBUG
         char a[256];
         sprintf(a,"user %s o id %d umieszcza plik %s",konto.c_str(),id,nazwa.c_str());
         info(a);
-        mysqlpp::Query query = conn.query(zapytanie);
+        #endif//DEBUG
+        /*mysqlpp::Query query = conn.query(zapytanie);
         mysqlpp::StoreQueryResult res = query.store();
         if (res)
         {
@@ -247,10 +259,13 @@ bool Baza::addFile(std::string nazwa, std::string konto, int wielkosc, std::stri
             info("!res");
             return false;
         }
-        info("po");
-        query = conn.query();
+        info("po");*/
+        mysqlpp::Query query = conn.query();
         char b[1024];
-        sprintf(b,"INSERT INTO files_plik VALUES(%d,%d,'%s',CURRENT_DATE,%d,%d,'%s')",ilosc+1,id,nazwa.c_str(),prawa,wielkosc,hash.c_str());
+        sprintf(b,"INSERT INTO files_plik\
+         (konto_id,sciezka,dataDodania,prawaDostepu,wielkosc,hashValue)\
+         VALUES(%d,'%s',%d,%d,%d,'%s')",\
+         id,nazwa.c_str(),data,prawa,wielkosc,hash.c_str());
         query<<b;
         query.execute();
 
@@ -281,7 +296,7 @@ bool Baza::rmFile(std::string nazwa, std::string konto, std::string hash)
 
         mysqlpp::Query  query = conn.query();
         char b[1024];
-        sprintf(b,"UPDATE files_plik SET hashValue=-1 where hashValue='%s'",hash.c_str());
+        sprintf(b,"DELETE from files_plik WHERE hashValue='%s' AND konto_id='%d'",hash.c_str(),id);
         info(b);
         query<<b;
         query.execute();

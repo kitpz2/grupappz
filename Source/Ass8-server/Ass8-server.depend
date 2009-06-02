@@ -14,9 +14,9 @@
 	"parser.hpp"
 	"version.h"
 
-1243881652 /home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/version.h
+1243891941 /home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/version.h
 
-1243882153 source:/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/parser.cpp
+1243952311 source:/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/parser.cpp
 	<iostream>
 	<string>
 	<cstdlib>
@@ -30,7 +30,7 @@
 	"xml.hpp"
 	"debug.hpp"
 
-1243881514 /home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/parser.hpp
+1243947064 /home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/parser.hpp
 	<boost/asio.hpp>
 	<boost/filesystem/operations.hpp>
 	<string>
@@ -444,7 +444,7 @@
 	<list>
 	<map>
 
-1243881261 source:/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/baza.cpp
+1243953686 source:/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/baza.cpp
 	"baza.hpp"
 
 1243881261 /home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/baza.hpp

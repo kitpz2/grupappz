@@ -1,13 +1,82 @@
+02 czerwiec 2009
+   released version 0.7.2 of Ass8-server
+
+     Change log:
+        -Added: Pełna obsługa Znajomych (nie testowana)
+        -Cleaned: Wywalone niepotrzebne komentarze i niektóre pozostałośi po starym kodzie
+        -Updated: Aktualizacjia funkcji aby były zgodne z obsługą znajomości
+
+01 czerwiec 2009
+   released version 0.6.1 of Ass8-server
+
+     Change log:
+        -Fixed: Wysyłanie pliku (wysyłany był XML)
+        -Added: Podstawowa obsługa znajomych
+        -Added: Obsługa pobierania przez klienta i oglądania plików znajomyc
+        -Fixed: Kolejne błędy poprawione skutecznie (mam nadzieję)
+
+29 maj 2009
+   released version 0.3.18 of Ass8-server
+
+     Change log:
+        -Fixed: Wysyłanie pliku
+        -Fixed: Odbieranie pliku
+        -Fixed: Usuwanie pliku
+        -Fixed: Funkcje obsługujące bazę
+        -Removed: Sprawdzanie hasha przy odbiorze i wysyłaniu plików. (dopuki nie rozwiążemy problemu niekompatybilnych hashy)
+        -Fixed: Pomniejsze błędy
+
+28 maj 2009
+   released version 0.3.18 of Ass8-server
+
+     Change log:
+        -Added: Hash przy odbieraniu pliku
+        -Fixed: Odbieranie pliku
+        -Applied: łapanie wyjątków
+        -Added: Usuwanie plików
+        -Fixed: Obsługa bazy
+        -Fixed: Parę pomniejszych błędów
+
+08 maj 2009
+   released version 0.3.17 of Ass8-server
+
+     Change log:
+        -Fixed: wysylanie listy plikow
+        -Fixed: odbieranie plikow
+        -Fixed: dodawanie plikow do bazy (ponownie)
+        -Fixed: wiele pomniejszych
+
+08 maj 2009
+   released version 0.3.16 of Ass8-server
+
+     Change log:
+        -Applied: Proteza na odbieranie pliku (przez telnet działa)
+        -Added: Kolejne informacje uzyteczne przy odrobaczaniu
+        -Fixed: Parę małych poprawek
+
+08 maj 2009
+   released version 0.1.10 of Ass8-server
+
+     Change log:
+        -Fixed: pobieranie listy plikow z bazy
+        -Fixed: pobieranie id z bazy
+        -Fixed: usuwanie socketu gdy klient sie rozlacza
+        -Fixed: wiele pomniejszych bledow
+        -Removed: przywitanie serwera
+
+07 maj 2009
+   released version 0.0.9 of Ass8-server
+
+     Change log:
+        -Added: Wysylanie pliku na serwer
+        -Added: Umieszczanie pliku w bazie
+        -Added: więcej informacji przy debugowaniu
+
 07 maj 2009
    released version 0.0.7 of Ass8-server
 
      Change log:
         -Updated: Parsowanie
-
-07 maj 2009
-   released version 0.0.7 of Ass8-server
-
-     Change log:
         -Added: Wysylanie plikow
         -Added: Wysylanie listy plikow
         -Added: Logowanie

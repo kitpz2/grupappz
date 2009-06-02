@@ -120,6 +120,8 @@ bool parser::parsuj(std::string &do_parsowania)
                                 {
                                     info2("uzytkowik",reader.get_value().c_str());
                                     uzytkownik=reader.get_value();
+                                    if(uzytkownik.compare(".")==0)
+                                        uzytkownik=login;
                                 }
                                 else
                                 {
@@ -454,170 +456,180 @@ void parser::odbieranie_plikow(xmlpp::TextReader &reader, std::string uzytkownik
                     {
                         std::string hash = reader.get_value();
                         info2("jest hash",hash.c_str());
-
-                        std::string sciezka=login+"/";
-                        sciezka+=nazwa;
-                        line;
-                        FILE *plik=fopen(sciezka.c_str(),"r");
-                        line;
-                        info("Sprawdzanie czy plik istnieje");
-                        if (plik!=NULL)
+                        if (reader.move_to_attribute("dostep"))
                         {
-                            info("Plik istnieje");
-                            fclose(plik);
-                            mysqlpp::StoreQueryResult wynik= baza.getFileInfo(nazwa,login,0);
-                            if (wynik)
+                            unsigned char dostep=atoi(reader.get_value().c_str());
+                            info("ma prawa dostępu");
+
+                            std::string sciezka=login+"/";
+                            sciezka+=nazwa;
+                            line;
+                            boost::filesystem::create_directory(login);
+                            FILE *plik=fopen(sciezka.c_str(),"r");
+                            line;
+                            info("Sprawdzanie czy plik istnieje");
+                            if (plik!=NULL)
                             {
-                                if (wynik.num_rows()<1)
+                                info("Plik istnieje");
+                                fclose(plik);
+                                mysqlpp::StoreQueryResult wynik= baza.getFileInfo(nazwa,login,0);
+                                if (wynik)
+                                {
+                                    if (wynik.num_rows()<1)
+                                    {
+                                        info("Plik jest na dysku ale nie ma w bazie, zgadzam sie na zastąpienie");
+                                        Odpowiedz(404,102);//Brak pliku, mozna wysylac
+
+                                    }
+                                    else
+                                    {
+                                        for (unsigned int i=0;i<wynik.num_rows();++i)
+                                        {
+                                            info("Sprawdzanie czy jest w bazie");
+                                            if (true)//wynik[i]["hashValue"].compare(hash)==0)
+                                            {
+                                                line;
+                                                info("Plik juz istnieje, co robic?");
+                                                line;
+                                                Odpowiedz(402,102);
+                                                line;
+                                                std::string a=czytanie_z_socketa();
+                                                line;
+                                                if (!parsuj(a))//Zgadza sie klient na zastapienie?
+                                                {
+                                                    info("Klient nie zastepuje pliku");
+                                                    Odpowiedz(406,102);//Nie zgadza, kończymy
+                                                    return;
+                                                }
+                                                else
+                                                {
+                                                    info("Plik zastepuje plik");
+                                                    Odpowiedz(406,102);//Zgadza, kontynuujemy
+                                                    break;
+                                                }
+                                            }
+                                            else
+                                            {
+                                                info("Plik jest na dysku ale nie ma w bazie, zgadzam sie na zastąpienie");
+                                                Odpowiedz(404,102);//Brak pliku, mozna wysylac
+                                                break;
+                                            }
+                                            info("To nie powinno się nigdy wywołać");
+                                            Odpowiedz(404,103);//Brak pliku, mozna wysylac
+                                        }
+
+                                    }
+                                }
+                                else
                                 {
                                     info("Plik jest na dysku ale nie ma w bazie, zgadzam sie na zastąpienie");
                                     Odpowiedz(404,102);//Brak pliku, mozna wysylac
 
                                 }
-                                else
-                                {
-                                    for (unsigned int i=0;i<wynik.num_rows();++i)
-                                    {
-                                        info("Sprawdzanie czy jest w bazie");
-                                        if (true)//wynik[i]["hashValue"].compare(hash)==0)
-                                        {
-                                            line;
-                                            info("Plik juz istnieje, co robic?");
-                                            line;
-                                            Odpowiedz(402,102);
-                                            line;
-                                            std::string a=czytanie_z_socketa();
-                                            line;
-                                            if (!parsuj(a))//Zgadza sie klient na zastapienie?
-                                            {
-                                                info("Klient nie zastepuje pliku");
-                                                Odpowiedz(406,102);//Nie zgadza, kończymy
-                                                return;
-                                            }
-                                            else
-                                            {
-                                                info("Plik zastepuje plik");
-                                                Odpowiedz(406,102);//Zgadza, kontynuujemy
-                                                break;
-                                            }
-                                        }
-                                        else
-                                        {
-                                            info("Plik jest na dysku ale nie ma w bazie, zgadzam sie na zastąpienie");
-                                            Odpowiedz(404,102);//Brak pliku, mozna wysylac
-                                            break;
-                                        }
-                                        info("To nie powinno się nigdy wywołać");
-                                        Odpowiedz(404,103);//Brak pliku, mozna wysylac
-                                    }
-
-                                }
                             }
                             else
                             {
-                                info("Plik jest na dysku ale nie ma w bazie, zgadzam sie na zastąpienie");
-                                Odpowiedz(404,102);//Brak pliku, mozna wysylac
+                                info("Brak pliku, wysyłam odpowiedź klientowi i przystępuje do odbioru pliku");
+                                Odpowiedz(404,102);
 
                             }
+
+                            char temp_sciezka[256];
+                            sprintf(temp_sciezka,"%s/temp.%d",login.c_str(),id_sesji);
+                            info2("Tworze plik tymczasowy",temp_sciezka);
+                            plik=fopen(temp_sciezka,"wb+");
+                            if (!plik)
+                            {
+                                Eline("PLIK SIE NIE OTWORZYL!!!!");
+                                Odpowiedz(403,102);
+                                return;
+                            }
+                            std::string temp="";
+                            info("plik otwarty do zapisu");
+                            int size=0;
+
+                            info("zapis pliku");
+                            int ile_czytac=BUFFER;
+                            if (rozmiar<BUFFER)
+                                ile_czytac=1;
+
+                            char a[BUFFER+1]={0};
+                            char t[256];
+                            //for (int i=0;i<rozmiar;i+=ile_czytac)
+                            int i=0;
+                            while (size<rozmiar)
+                            {
+                                /*if (i>32)
+                                {
+                                    info("Blad przy odbieraniu pliku");
+                                    Odpowiedz(403,102);
+                                    return;
+                                }*/
+                                if (rozmiar-size<32)
+                                {
+#ifdef DEBUG
+                                    char debug[1024];
+                                    sprintf(debug,"Odebrano %d, pozostało %d, od teraz pobieram po 1 bajcie",size, rozmiar-size);
+                                    info(debug);
+#endif//DEBUG
+                                    ile_czytac=1;
+                                }
+                                stream.read(a,ile_czytac);
+                                std::string tmpp=a;
+                                a[ile_czytac]=0;
+                                if (tmpp.size()==0)
+                                {
+                                    ile_czytac=1;
+                                    info("odebranych danych było 0b !");
+                                    ++i;
+                                    continue;
+                                }
+                                info2("odebrano",tmpp.c_str());
+                                fprintf(plik,"%s",tmpp.c_str());
+                                size+=tmpp.size();
+                                sprintf(t,"Odczytano %d bajtów z %d bajtów, pozostalo do odczytania %d bajtów\nteraz bede czytal %d bajtow",size,rozmiar,rozmiar-size,ile_czytac);
+                                info(t)
+#ifdef DEBUG
+                                sprintf(t,"%s - %d",a,tmpp.size());
+                                info(t);
+#endif
+
+
+                            }
+
+                            md5wrapper md5;
+
+                            /*std::string temp_hash=md5.getHashFromFile(std::string(temp_sciezka));
+                            if (temp_hash.compare(hash)!=0) //sprawdzic jak sie wywoluje
+                            {
+                            #ifdef DEBUG
+                                char debug[256];
+                                sprintf(debug,"Hash %s nie zgadza się z %s",hash.c_str(),temp_hash.c_str());
+                                info(debug);
+                            #endif
+                                Odpowiedz(405,102);
+                                return;
+                            }*/
+                            info("plik odebrany prawidlowo");
+                            char tmp[128];
+                            sprintf(tmp,"Pobrano %d z %d",size,rozmiar);
+                            info(tmp);
+                            fclose(plik);
+                            sprintf(tmp,"zamieniam %s na %s",temp_sciezka,sciezka.c_str());
+                            info(tmp);
+                            boost::filesystem::copy_file(temp_sciezka,sciezka);
+                            sprintf(tmp,"usuwam %s",temp_sciezka);
+                            info(tmp);
+                            boost::filesystem::remove(temp_sciezka);
+                            czytanie_z_socketa();
+                            info("Odebrano koncowego xmla");
+                            baza.addFile(nazwa,uzytkownik,rozmiar,hash,dostep,time(NULL));
                         }
                         else
                         {
-                            info("Brak pliku, wysyłam odpowiedź klientowi i przystępuje do odbioru pliku");
-                            Odpowiedz(404,102);
-
+                            info("brak praw dostępu");
+                            Odpowiedz(400,102);
                         }
-
-                        char temp_sciezka[256];
-                        sprintf(temp_sciezka,"%s/temp.%d",login.c_str(),id_sesji);
-                        info2("Tworze plik tymczasowy",temp_sciezka);
-                        plik=fopen(temp_sciezka,"w+");
-                        if (!plik)
-                        {
-                            Eline("PLIK SIE NIE OTWORZYL!!!!");
-                            Odpowiedz(403,102);
-                            return;
-                        }
-                        std::string temp="";
-                        info("plik otwarty do zapisu");
-                        int size=0;
-
-                        info("zapis pliku");
-                        int ile_czytac=128;
-                        if (rozmiar<128)
-                            ile_czytac=1;
-
-                        char a[129]={0};
-                        char t[256];
-                        //for (int i=0;i<rozmiar;i+=ile_czytac)
-                        int i=0;
-                        while (size<rozmiar)
-                        {
-                            /*if (i>32)
-                            {
-                                info("Blad przy odbieraniu pliku");
-                                Odpowiedz(403,102);
-                                return;
-                            }*/
-                            if (rozmiar-size<32)
-                            {
-                                #ifdef DEBUG
-                                char debug[1024];
-                                sprintf(debug,"Odebrano %d, pozostało %d, od teraz pobieram po 1 bajcie",size, rozmiar-size);
-                                info(debug);
-                                #endif//DEBUG
-                                ile_czytac=1;
-                            }
-                            stream.read(a,ile_czytac);
-                            std::string tmpp=a;
-                            //a[ile_czytac]=0;
-                            if (tmpp.size()==0)
-                            {
-                                ile_czytac=1;
-                                info("odebranych danych było 0b !");
-                                ++i;
-                                continue;
-                            }
-                            info2("odebrano",tmpp.c_str());
-                            fprintf(plik,"%s",tmpp.c_str());
-                            size+=tmpp.size();
-                            sprintf(t,"Odczytano %d bajtów z %d bajtów, pozostalo do odczytania %d bajtów\nteraz bede czytal %d bajtow",size,rozmiar,rozmiar-size,ile_czytac);
-                            info(t)
-#ifdef DEBUG
-
-                            sprintf(t,"%s - %d",a,tmpp.size());
-                            info(t);
-#endif
-
-
-                        }
-
-                        md5wrapper md5;
-
-                        /*std::string temp_hash=md5.getHashFromFile(std::string(temp_sciezka));
-                        if (temp_hash.compare(hash)!=0) //sprawdzic jak sie wywoluje
-                        {
-#ifdef DEBUG
-                            char debug[256];
-                            sprintf(debug,"Hash %s nie zgadza się z %s",hash.c_str(),temp_hash.c_str());
-                            info(debug);
-#endif
-                            Odpowiedz(405,102);
-                            return;
-                        }*/
-                        info("plik odebrany prawidlowo");
-                        char tmp[128];
-                        sprintf(tmp,"Pobrano %d z %d",size,rozmiar);
-                        info(tmp);
-                        fclose(plik);
-                        sprintf(tmp,"zamieniam %s na %s",temp_sciezka,sciezka.c_str());
-                        info(tmp);
-                        boost::filesystem::copy_file(temp_sciezka,sciezka);
-                        sprintf(tmp,"usuwam %s",temp_sciezka);
-                        info(tmp);
-                        boost::filesystem::remove(temp_sciezka);
-                        czytanie_z_socketa();
-                        info("Odebrano koncowego xmla");
-                        baza.addFile(nazwa,uzytkownik,rozmiar,hash,-1,time(NULL));
                     }
                     else
                     {
@@ -655,6 +667,8 @@ void parser::odbieranie_plikow(xmlpp::TextReader &reader, std::string uzytkownik
 void parser::wysylanie_plikow(xmlpp::TextReader &reader, std::string uzytkownik, char uprawnienia)
 {
     info("Wysylanie plikow");
+    if(uzytkownik.compare(".")==0)
+        uzytkownik=login;
     std::vector <std::string> pliki=pobieranie_listy_plikow(reader);
     std::vector <std::string>::iterator it;
     for (it=pliki.begin();it<pliki.end();it++)
@@ -685,20 +699,20 @@ void parser::wyslij_plik(std::string plik,std::string uzytkownik,char uprawnieni
     }
     else
     {
-        if (res[0]["hashValue"].compare("-1")==0)
+        /*if (res[0]["hashValue"].compare("-1")==0)
         {
             info2("Plik usuniety, pomijam",res[0]["sciezka"].c_str());
             Odpowiedz(101,404);
             return;
-        }
+        }*/
         info("wysylanie info o pliku")
         char odp[512];
         sprintf(odp,"<plik nazwa=\"%s\" data=\"%d\" rozmiar=\"%d\" dostep=\"%d\" hash=\"%s\"/>\r\n",
-        res[0]["sciezka"].c_str(),
-        atoi(res[0]["dataDodania"].c_str()),
-        atoi(res[0]["wielkosc"].c_str()),
-        atoi(res[0]["prawaDostepu"].c_str()),
-        res[0]["hashValue"].c_str());
+                res[0]["sciezka"].c_str(),
+                atoi(res[0]["dataDodania"].c_str()),
+                atoi(res[0]["wielkosc"].c_str()),
+                atoi(res[0]["prawaDostepu"].c_str()),
+                res[0]["hashValue"].c_str());
         Odpowiedz(406,101,odp);
         info2("odp",odp)
         info("Info o pliku wyslane");
@@ -767,6 +781,16 @@ void parser::usun_pliki(xmlpp::TextReader &reader,std::string uzytkownik)
                             sprintf(debug,"Plik %s o hashu %s usunięty prawidłowo",nazwa.c_str(),hash.c_str());
                             info(debug)
 #endif
+                            char nazwa_temp[256];
+                            sprintf(nazwa_temp,"%s/%s",login.c_str(),nazwa.c_str());
+                            try
+                            {
+                                boost::filesystem::remove(nazwa_temp);
+                            }
+                            catch (...)
+                            {
+                                info("Błąd przy usuwaniu pliku z dysku!");
+                            }
                             Odpowiedz(406,103);
                         }
                         {

@@ -22,6 +22,7 @@
 #include "debug.hpp"
 
 #define BUFSIZE 1024
+#define BUFFER 128
 #define BUFSIZE2 1024*2
 using boost::asio::ip::tcp;
 class parser
