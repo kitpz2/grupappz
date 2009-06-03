@@ -26,7 +26,9 @@ bool parser::parsuj(std::string &do_parsowania)
         {
             info("reader.read()");
             info2("reader.get_name()",reader.get_name().c_str());
-            if (reader.get_name().compare("logowanie")==0) ///Logowanie - Trzeba pamiętać że parser umieszcza dodatkowo spację na końcu sparsowanych stringów
+            if(reader.get_name().compare("#text")==0)
+                continue;
+            else if (reader.get_name().compare("logowanie")==0) ///Logowanie - Trzeba pamiętać że parser umieszcza dodatkowo spację na końcu sparsowanych stringów
             {
                 info("Logowanie...");
                 if (reader.has_attributes()) ///Sprawdzanie ilosci atrybutów
@@ -147,7 +149,13 @@ bool parser::parsuj(std::string &do_parsowania)
                             case 103:
                                 info("OPERACJA 103");
                                 usun_pliki(reader,login);
+                                break;
                             default:
+                                #ifdef DEBUG
+                                    char te[1024];
+                                    sprintf(te,"Odebrano kod operacji: %d",operacja);
+                                    info(te);
+                                #endif//DEBUG
                                 info("Błędny kod operacji");
                                 Odpowiedz(400);
                                 break;
@@ -705,12 +713,12 @@ void parser::odbieranie_plikow(xmlpp::TextReader &reader, std::string uzytkownik
         }
 
     }
-    else
+    /*else
     {
         Eline("niepoprawnie wyslany xml");
         Odpowiedz(400,102);
         return;
-    }
+    }*/
 
 }
 void parser::wysylanie_plikow(xmlpp::TextReader &reader, std::string uzytkownik, char uprawnienia)
@@ -785,7 +793,7 @@ void parser::wyslij_plik(std::string plik,std::string uzytkownik,char uprawnieni
         return;
     }
     info("no to wysyłamy");
-    char temp[BUFSIZE2];
+    char temp[BUFSIZE2+1];
     char debug_c[256];
     fseek (fplik, 0, SEEK_END);
     int rozmiar=ftell (fplik);
@@ -805,7 +813,7 @@ void parser::wyslij_plik(std::string plik,std::string uzytkownik,char uprawnieni
 #ifdef DEBUG
         sprintf(debug_c,"Wysłano już %d bajtów, czeka na wysłanie w tej chwili %d bajtów, ogólnie pozostało %d bajtów",wyslano,ile_odczytano,rozmiar-wyslano);
         info(debug_c);
-        //info(temp);
+        info2("Wysyłam",temp);
 #endif//DEBUG
         //socket<<temp;
         try
@@ -833,7 +841,9 @@ void parser::usun_pliki(xmlpp::TextReader &reader,std::string uzytkownik)
     while (reader.read())
     {
         info2("plik",reader.get_name().c_str());
-        if (reader.get_name().compare("plik")==0)
+        if(reader.get_name().compare("#text")==0)
+            continue;
+        else if (reader.get_name().compare("plik")==0)
         {
             info("Usuam Kolejny plik");
             info("plik jest ok");
