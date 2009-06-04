@@ -1,0 +1,5 @@
+1. miec mysql
+2. miec mysql-python
+3. skopiowac libmysql_cosram_r.so.15 do /usr/lib
+4. skopiowac my.cfg do /etc/
+

@@ -1,0 +1,7 @@
+<area shape="rect" href="$d8/d84/a00001.html#abbda65be49dfb28b1a578d0383599fa" title="Dodaje plik do bazy danych." alt="" coords="184,5,285,32">
+<area shape="rect" href="$d8/d84/a00001.html#170c8dad434281805524834ace0a3109" title="Baza::friends" alt="" coords="185,56,284,83">
+<area shape="rect" href="$d8/d84/a00001.html#a09b37e4665bd7b2f2b8b54f8120f5be" title="Pobiera hasło uzytkownika z bazy." alt="" coords="171,107,299,133">
+<area shape="rect" href="$d8/d84/a00001.html#bc2479ccfcd28a0d2f7f303d202abfde" title="Podobnie jak getFilesList tylko ze pobiera informację o jednym pliku." alt="" coords="175,157,295,184">
+<area shape="rect" href="$d8/d84/a00001.html#a90465dbd3a416904aee22161a96cde2" title="Najpierw wywołuje getUserId() potem z id otrzymanym z tamtąd wywołuje getFilesList(int..." alt="" coords="172,208,297,235">
+<area shape="rect" href="$d8/d84/a00001.html#7161c573401166cc5f7d98ae6f335b44" title="Baza::rmFile" alt="" coords="187,259,283,285">
+<area shape="rect" href="$dd/dad/a00005.html#9ce7290217bd14e4efcbe2cad32ccf95" title="Parsuje dane pobrane od klienta." alt="" coords="348,56,447,83">

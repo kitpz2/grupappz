@@ -1,0 +1,113 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>Ass8: Dokumentacja pliku main.cpp</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css">
+<link href="../../doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Wygenerowano przez Doxygen 1.5.8 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="../../main.html"><span>Strona&nbsp;główna</span></a></li>
+      <li><a href="../../namespaces.html"><span>Przestrzenie&nbsp;nazw</span></a></li>
+      <li><a href="../../annotated.html"><span>Klasy</span></a></li>
+      <li class="current"><a href="../../files.html"><span>Pliki</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="../../files.html"><span>Lista&nbsp;plików</span></a></li>
+      <li><a href="../../globals.html"><span>Składowe&nbsp;plików</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>Dokumentacja pliku main.cpp</h1><code>#include &lt;iostream&gt;</code><br>
+<code>#include &lt;string&gt;</code><br>
+<code>#include &lt;cstdio&gt;</code><br>
+<code>#include &lt;cstdlib&gt;</code><br>
+<code>#include &lt;sys/types.h&gt;</code><br>
+<code>#include &lt;unistd.h&gt;</code><br>
+<code>#include &lt;sys/wait.h&gt;</code><br>
+<code>#include &lt;boost/asio.hpp&gt;</code><br>
+<code>#include &lt;boost/thread/thread.hpp&gt;</code><br>
+<code>#include &lt;boost/bind.hpp&gt;</code><br>
+<code>#include &quot;<a class="el" href="../../dc/d87/a00032.html">version.h</a>&quot;</code><br>
+<code>#include &quot;<a class="el" href="../../d5/d79/a00030.html">parser.hpp</a>&quot;</code><br>
+
+<p>
+<div class="dynheader">
+Wykres zależności załączania dla main.cpp:</div>
+<div class="dynsection">
+<p><center><img src="../../d3/de7/a00039.png" border="0" usemap="#main.cpp_map" alt=""></center>
+<map name="main.cpp_map">
+<area shape="rect" href="../../d4/d51/a00017.html" title="version.h" alt="" coords="2123,80,2197,107"><area shape="rect" href="../../dd/d1b/a00015.html" title="parser.hpp" alt="" coords="655,80,735,107"><area shape="rect" href="../../d7/dd4/a00013.html" title="include/md5/md5wrapper.h" alt="" coords="544,155,720,181"><area shape="rect" href="../../de/d5e/a00007.html" title="baza.hpp" alt="" coords="395,155,469,181"><area shape="rect" href="../../d4/dee/a00008.html" title="debug.hpp" alt="" coords="481,229,561,256"></map>
+</div>
+
+<p>
+<a href="../../dc/de2/a00024.html">Idź do kodu źródłowego tego pliku.</a><table border="0" cellpadding="0" cellspacing="0">
+<tr><td></td></tr>
+<tr><td colspan="2"><br><h2>Funkcje</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/da0/a00009.html#0ddf1224851353fc92bfbff6f499fa97">main</a> (int argc, char *argv[])</td></tr>
+
+</table>
+<hr><h2>Dokumentacja funkcji</h2>
+<a class="anchor" name="0ddf1224851353fc92bfbff6f499fa97"></a><!-- doxytag: member="main.cpp::main" ref="0ddf1224851353fc92bfbff6f499fa97" args="(int argc, char *argv[])" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int main           </td>
+          <td>(</td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>argc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&nbsp;</td>
+          <td class="paramname"> <em>argv</em>[]</td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>
+Zmienna przechowująca port na którym serwer nasłucuje<p>
+Zmienne przechowujące parametry podłączenia do bazy danych<p>
+Zmienna przechowująca nazwę bazy w bazie danych<p>
+Jeżeli jest mniej niż 5 argumentów<p>
+To kończymy program<p>
+Potrzebne do połączenia z klientem<p>
+Potrzebne do połączenia z klientem<p>
+Potrzebne do połączenia z klientem<p>
+Watek ktory bedzie usuwal skonczone forki<p>
+Nieskonczona pętla<p>
+Wyjście/Wejście socketa<p>
+utworzenie parsera w forku (dla każdego klienta jeden taki jest tworzony); 
+<p>Definicja w linii <a class="el" href="../../dc/de2/a00024.html#l00030">30</a> pliku <a class="el" href="../../dc/de2/a00024.html">main.cpp</a>.</p>
+
+<p>
+<div class="dynheader">
+Oto graf wywołań dla tej funkcji:</div>
+<div class="dynsection">
+<p><center><img src="../../da/da0/a00009_0ddf1224851353fc92bfbff6f499fa97_cgraph.png" border="0" usemap="#da/da0/a00009_0ddf1224851353fc92bfbff6f499fa97_cgraph_map" alt=""></center>
+<map name="da/da0/a00009_0ddf1224851353fc92bfbff6f499fa97_cgraph_map">
+<area shape="rect" href="../../dd/d1b/a00015.html#6c724feff242ad0cd599cdd458f73199" title="eat_zombie" alt="" coords="107,5,195,32"><area shape="rect" href="../../dd/dad/a00005.html#7793913f528921aa22c4b6cc259a0a14" title="parser::start" alt="" coords="105,56,196,83"></map>
+</div>
+
+</div>
+</div><p>
+</div>
+<hr size="1"><address style="text-align: right;"><small>Wygenerowano Thu Jun 4 15:29:57 2009 dla Ass8 programem&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="../../doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
+</body>
+</html>

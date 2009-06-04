@@ -65,15 +65,15 @@ int main(int argc, char *argv[])
         while (true)///Nieskonczona pętla
         {
             ///Wyjście/Wejście socketa
-            tcp::iostream stream;
+            tcp::socket socket(io_service);
             info("oczekiawnie na klienta");
-            acceptor.accept(*stream.rdbuf());
+            acceptor.accept(socket);
             line;
             if (fork()==0)
             {
                 info("nowy klient");
                 ///utworzenie parsera w forku (dla każdego klienta jeden taki jest tworzony);
-                parser p(stream,server,user,pass,db);
+                parser p(socket,server,user,pass,db);
                 p.start();
             }
         }

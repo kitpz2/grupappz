@@ -27,8 +27,8 @@ class Plik(models.Model):
         return self.sciezka.split('/')[-1]
 
     class Meta:
-    """
-    Klasa definiująca dodatkowe informacje o modelu.
-    """
-    verbose_name_plural = "Pliki"
+        """
+        Klasa definiująca dodatkowe informacje o modelu.
+        """
+        verbose_name_plural = "Pliki"
         
