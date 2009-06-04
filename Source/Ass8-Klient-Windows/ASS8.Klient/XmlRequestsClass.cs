@@ -6,6 +6,9 @@ using System.Xml.Serialization;
 
 namespace ASS8.Klient
 {
+    /// <summary>
+    /// Klasa zawiera dane do serializacji zapytania do serwera.
+    /// </summary>
     [XmlRoot("klient")]
     public class klientBase
     {
@@ -42,6 +45,9 @@ namespace ASS8.Klient
             }
         }
     }
+    /// <summary>
+    /// Klasa zawiera dane do serializacji informacji o pliku
+    /// </summary>
     [XmlRoot("plik")]
     public class plikBase
     {
@@ -64,6 +70,9 @@ namespace ASS8.Klient
             }
         }
     }
+    /// <summary>
+    /// Klasa zawiera dane do serializacji rozszerzonych informacji o pliku
+    /// </summary>
     [XmlRoot("plik")]
     public class plikInfo : plikBase
     {
@@ -129,6 +138,9 @@ namespace ASS8.Klient
             }
         }
     }
+    /// <summary>
+    /// Klasa zawiera dane do serializacji zapytania o logowanie
+    /// </summary>
     [XmlRoot("logowanie")]
     public class klientLogowanie
     {
@@ -180,6 +192,9 @@ namespace ASS8.Klient
         private string haslo;
         private string vKlienta;
     }
+    /// <summary>
+    /// Klasa zawiera dane do serializacji listy plikow uzytkownika
+    /// </summary>
     [XmlRoot("klient")]
     public class listaPlikow : klientBase
     {
@@ -203,6 +218,9 @@ namespace ASS8.Klient
             }
         }
     }
+    /// <summary>
+    /// Klasa zawiera dane do serializacji zapytania o sciagniecie pliku
+    /// </summary>
     [XmlRoot("klient")]
     public class downloadPliku : listaPlikow
     {
@@ -228,6 +246,9 @@ namespace ASS8.Klient
             }
         }
     }
+    /// <summary>
+    /// Klasa zawiera dane do serializacji odpowiedzi o ściągnięcie pliku
+    /// </summary>
     [XmlRoot("klient")]
     public class klientOdpDownload : klientBase
     {
@@ -252,6 +273,9 @@ namespace ASS8.Klient
         }
 
     }
+    /// <summary>
+    /// Klasa zawiera dane do serializacji zapytania o wysyłanie pliku
+    /// </summary>
     [XmlRoot("klient")]
     public class klientUpload : klientBase
     {
@@ -277,6 +301,9 @@ namespace ASS8.Klient
             }
         }
     }
+    /// <summary>
+    /// Klasa zawiera dane do serializacji wysyłania hasha pliku
+    /// </summary>
     [XmlRoot("klient")]
     public class klientHash : klientBase
     {
@@ -300,20 +327,21 @@ namespace ASS8.Klient
             }
         }
     }
+    /// <summary>
+    /// Klasa zawiera dane do serializacji zapytania o usunięcie pliku
+    /// </summary>
     [XmlRoot("klient")]
     public class klientUsun : klientBase
     {
-        List<plikBase> pPlik;
+        List<plikInfo> pPlik;
         public klientUsun() { }
-        public klientUsun(int id, int oper, string[] n)
+        public klientUsun(int id, int oper, List<plikInfo> pi)
             : base(id, oper)
         {
-            plik = new List<plikBase>();
-            foreach (string s in n)
-                pPlik.Add(new plikBase(s));
+            plik = pi;
         }
         [XmlElement]
-        public List<plikBase> plik
+        public List<plikInfo> plik
         {
             get
             {
@@ -328,7 +356,9 @@ namespace ASS8.Klient
 
 
 
-
+    /// <summary>
+    /// Klasa zawiera dane do serializacji odpowiedzi serwera
+    /// </summary>
     [XmlRoot("serwer")]
     public class serwerBase
     {
@@ -365,7 +395,9 @@ namespace ASS8.Klient
             }
         }
     }
-
+    /// <summary>
+    /// Klasa zawiera dane do serializacji odpowiedzi serwera na zapytanie o logowanie
+    /// </summary>
     [XmlRoot("serwer")]
     public class serwerLogowanie
     {
@@ -416,7 +448,9 @@ namespace ASS8.Klient
             }
         }
     }
-
+    /// <summary>
+    /// Klasa zawiera dane do serializacji odpowiedzi serwera na zapytanie o liste plikow
+    /// </summary>
     [XmlRoot("serwer")]
     public class serwerPliki : serwerBase
     {
@@ -435,6 +469,9 @@ namespace ASS8.Klient
             }
         }
     }
+    /// <summary>
+    /// Klasa zawiera dane do serializacji odpowiedzi serwera na zapytanie o hash pliku
+    /// </summary>
     [XmlRoot("serwer")]
     public class serwerHash : serwerBase
     {

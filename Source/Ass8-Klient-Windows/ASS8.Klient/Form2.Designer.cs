@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.chbProxy = new System.Windows.Forms.CheckBox();
             this.lbPort = new System.Windows.Forms.Label();
@@ -195,6 +196,7 @@
             this.Controls.Add(this.btnZapisz);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form2";
             this.Text = "Proxy";
             this.groupBox1.ResumeLayout(false);

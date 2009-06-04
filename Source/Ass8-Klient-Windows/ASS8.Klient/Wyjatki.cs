@@ -6,6 +6,9 @@ namespace ASS8.Klient
 {
     class Wyjatki
     {
+        /// <summary>
+        /// Klasa reprezentuje wyjątek rzucany podczas błędu połączenia
+        /// </summary>
         public class BladPolaczenia : Exception
         {
             string blad;
@@ -18,7 +21,9 @@ namespace ASS8.Klient
                 return blad;
             }
         }
-
+        /// <summary>
+        /// Klasa reprezentuje wyjątek rzucany podczas błędu parsowania odpowiedzi od serwera
+        /// </summary>
         public class BladParsowania : Exception
         {
             string blad;
@@ -31,6 +36,9 @@ namespace ASS8.Klient
                 return blad;
             }
         }
+        /// <summary>
+        /// Klasa reprezentuje wyjątek rzucany podczas braku pliku
+        /// </summary>
         public class BrakPliku : Exception
         {
             string blad;
@@ -43,7 +51,9 @@ namespace ASS8.Klient
                 return blad;
             }
         }
-
+        /// <summary>
+        /// Klasa reprezentuje wyjątek rzucany podczas błędu odbierania danych od serwera
+        /// </summary>
         public class BladOdbierania : Exception
         {
             string blad;
@@ -60,6 +70,9 @@ namespace ASS8.Klient
                 blad += " " + s;
             }
         }
+        /// <summary>
+        /// Klasa reprezentuje wyjątek rzucany podczas błędu wysyłania danych do serwera
+        /// </summary>
         public class BladWysylania : Exception
         {
             string blad;
@@ -72,6 +85,9 @@ namespace ASS8.Klient
                 return blad;
             }
         }
+        /// <summary>
+        /// Klasa reprezentuje wyjątek rzucany podczas nieokreślonego błędu
+        /// </summary>
         public class BladNieokreslony : Exception
         {
             string blad;

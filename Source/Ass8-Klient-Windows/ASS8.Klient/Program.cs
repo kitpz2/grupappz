@@ -7,7 +7,7 @@ namespace ASS8.Klient
     static class Program
     {
         /// <summary>
-        /// The main entry point for the application.
+        /// Początek programu
         /// </summary>
         [STAThread]
         static void Main()

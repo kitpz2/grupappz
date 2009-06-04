@@ -28,6 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            GlacialComponents.Controls.GLColumn glColumn1 = new GlacialComponents.Controls.GLColumn();
+            GlacialComponents.Controls.GLColumn glColumn2 = new GlacialComponents.Controls.GLColumn();
+            GlacialComponents.Controls.GLColumn glColumn3 = new GlacialComponents.Controls.GLColumn();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Pobierane));
             this.glPliki = new GlacialComponents.Controls.GlacialList();
             this.btnCzysc = new System.Windows.Forms.Button();
             this.btnZamknij = new System.Windows.Forms.Button();
@@ -42,6 +46,34 @@
             this.glPliki.AutoHeight = true;
             this.glPliki.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.glPliki.BackgroundStretchToFit = true;
+            glColumn1.ActivatedEmbeddedType = GlacialComponents.Controls.GLActivatedEmbeddedTypes.None;
+            glColumn1.CheckBoxes = false;
+            glColumn1.ImageIndex = -1;
+            glColumn1.Name = "Nazwa";
+            glColumn1.NumericSort = false;
+            glColumn1.Text = "Nazwa";
+            glColumn1.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            glColumn1.Width = 100;
+            glColumn2.ActivatedEmbeddedType = GlacialComponents.Controls.GLActivatedEmbeddedTypes.None;
+            glColumn2.CheckBoxes = false;
+            glColumn2.ImageIndex = -1;
+            glColumn2.Name = "Postep";
+            glColumn2.NumericSort = false;
+            glColumn2.Text = "Postep";
+            glColumn2.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            glColumn2.Width = 341;
+            glColumn3.ActivatedEmbeddedType = GlacialComponents.Controls.GLActivatedEmbeddedTypes.None;
+            glColumn3.CheckBoxes = false;
+            glColumn3.ImageIndex = -1;
+            glColumn3.Name = "Czas";
+            glColumn3.NumericSort = false;
+            glColumn3.Text = "Czas";
+            glColumn3.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            glColumn3.Width = 100;
+            this.glPliki.Columns.AddRange(new GlacialComponents.Controls.GLColumn[] {
+            glColumn1,
+            glColumn2,
+            glColumn3});
             this.glPliki.ControlStyle = GlacialComponents.Controls.GLControlStyles.Normal;
             this.glPliki.FullRowSelect = true;
             this.glPliki.GridColor = System.Drawing.Color.LightGray;
@@ -57,7 +89,7 @@
             this.glPliki.HoverEvents = false;
             this.glPliki.HoverTime = 1;
             this.glPliki.ImageList = null;
-            this.glPliki.ItemHeight = 18;
+            this.glPliki.ItemHeight = 17;
             this.glPliki.ItemWordWrap = false;
             this.glPliki.Location = new System.Drawing.Point(12, 12);
             this.glPliki.Name = "glPliki";
@@ -100,8 +132,11 @@
             this.Controls.Add(this.btnZamknij);
             this.Controls.Add(this.btnCzysc);
             this.Controls.Add(this.glPliki);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Pobierane";
             this.Text = "Pobierane";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Pobierane_FormClosing);
             this.ResumeLayout(false);
 
         }

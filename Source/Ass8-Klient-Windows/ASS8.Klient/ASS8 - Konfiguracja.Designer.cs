@@ -50,8 +50,9 @@
             this.cmsWyloguj = new System.Windows.Forms.ToolStripMenuItem();
             this.tcmsZakoncz = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.radioPopup = new System.Windows.Forms.RadioButton();
             this.radioLog = new System.Windows.Forms.RadioButton();
+            this.radioPopup = new System.Windows.Forms.RadioButton();
+            this.radioTray = new System.Windows.Forms.RadioButton();
             this.tabUstawienia = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -145,7 +146,7 @@
             // 
             // btnZapisz
             // 
-            this.btnZapisz.Location = new System.Drawing.Point(37, 231);
+            this.btnZapisz.Location = new System.Drawing.Point(35, 245);
             this.btnZapisz.Name = "btnZapisz";
             this.btnZapisz.Size = new System.Drawing.Size(75, 23);
             this.btnZapisz.TabIndex = 1;
@@ -155,12 +156,13 @@
             // 
             // btnAnuluj
             // 
-            this.btnAnuluj.Location = new System.Drawing.Point(178, 231);
+            this.btnAnuluj.Location = new System.Drawing.Point(176, 245);
             this.btnAnuluj.Name = "btnAnuluj";
             this.btnAnuluj.Size = new System.Drawing.Size(75, 23);
             this.btnAnuluj.TabIndex = 2;
-            this.btnAnuluj.Text = "Anuluj";
+            this.btnAnuluj.Text = "Zamknij";
             this.btnAnuluj.UseVisualStyleBackColor = true;
+            this.btnAnuluj.Click += new System.EventHandler(this.btnAnuluj_Click);
             // 
             // niIkona
             // 
@@ -180,93 +182,104 @@
             this.cmsWyloguj,
             this.tcmsZakoncz});
             this.cmsTray.Name = "cmsTray";
-            this.cmsTray.Size = new System.Drawing.Size(146, 148);
+            this.cmsTray.Size = new System.Drawing.Size(135, 148);
             // 
             // tcmsStart
             // 
             this.tcmsStart.Enabled = false;
             this.tcmsStart.Name = "tcmsStart";
-            this.tcmsStart.Size = new System.Drawing.Size(145, 22);
+            this.tcmsStart.Size = new System.Drawing.Size(134, 22);
             this.tcmsStart.Text = "Start";
             this.tcmsStart.Click += new System.EventHandler(this.tcmsStart_Click);
             // 
             // tcmsStop
             // 
             this.tcmsStop.Name = "tcmsStop";
-            this.tcmsStop.Size = new System.Drawing.Size(145, 22);
+            this.tcmsStop.Size = new System.Drawing.Size(134, 22);
             this.tcmsStop.Text = "Stop";
             this.tcmsStop.Click += new System.EventHandler(this.tcmsStop_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(142, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(131, 6);
             // 
             // tcmsKonfiguracja
             // 
             this.tcmsKonfiguracja.Name = "tcmsKonfiguracja";
-            this.tcmsKonfiguracja.Size = new System.Drawing.Size(145, 22);
+            this.tcmsKonfiguracja.Size = new System.Drawing.Size(134, 22);
             this.tcmsKonfiguracja.Text = "Konfiguracja";
             this.tcmsKonfiguracja.Click += new System.EventHandler(this.tcmsKonfiguracja_Click);
             // 
             // tcmsZnajomi
             // 
             this.tcmsZnajomi.Name = "tcmsZnajomi";
-            this.tcmsZnajomi.Size = new System.Drawing.Size(145, 22);
+            this.tcmsZnajomi.Size = new System.Drawing.Size(134, 22);
             this.tcmsZnajomi.Text = "Znajomi";
             this.tcmsZnajomi.Click += new System.EventHandler(this.tcmsZnajomi_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(142, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(131, 6);
             // 
             // cmsWyloguj
             // 
             this.cmsWyloguj.Name = "cmsWyloguj";
-            this.cmsWyloguj.Size = new System.Drawing.Size(145, 22);
+            this.cmsWyloguj.Size = new System.Drawing.Size(134, 22);
             this.cmsWyloguj.Text = "Wyloguj";
             this.cmsWyloguj.Click += new System.EventHandler(this.cmsWyloguj_Click);
             // 
             // tcmsZakoncz
             // 
             this.tcmsZakoncz.Name = "tcmsZakoncz";
-            this.tcmsZakoncz.Size = new System.Drawing.Size(145, 22);
+            this.tcmsZakoncz.Size = new System.Drawing.Size(134, 22);
             this.tcmsZakoncz.Text = "Zakończ";
             this.tcmsZakoncz.Click += new System.EventHandler(this.tcmsZakoncz_Click);
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.radioPopup);
             this.groupBox1.Controls.Add(this.radioLog);
+            this.groupBox1.Controls.Add(this.radioPopup);
+            this.groupBox1.Controls.Add(this.radioTray);
             this.groupBox1.Location = new System.Drawing.Point(16, 108);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(247, 69);
+            this.groupBox1.Size = new System.Drawing.Size(247, 92);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Ostrzeżenia";
             // 
+            // radioLog
+            // 
+            this.radioLog.AutoSize = true;
+            this.radioLog.Location = new System.Drawing.Point(6, 19);
+            this.radioLog.Name = "radioLog";
+            this.radioLog.Size = new System.Drawing.Size(177, 17);
+            this.radioLog.TabIndex = 2;
+            this.radioLog.Text = "Bledy i ostrzezenia loguj do pliku";
+            this.radioLog.UseVisualStyleBackColor = true;
+            // 
             // radioPopup
             // 
             this.radioPopup.AutoSize = true;
-            this.radioPopup.Location = new System.Drawing.Point(10, 42);
+            this.radioPopup.Location = new System.Drawing.Point(6, 65);
             this.radioPopup.Name = "radioPopup";
             this.radioPopup.Size = new System.Drawing.Size(215, 17);
             this.radioPopup.TabIndex = 1;
             this.radioPopup.Text = "Bledy i ostrzezenia wyswietlaj na ekranie";
             this.radioPopup.UseVisualStyleBackColor = true;
             // 
-            // radioLog
+            // radioTray
             // 
-            this.radioLog.AutoSize = true;
-            this.radioLog.Checked = true;
-            this.radioLog.Location = new System.Drawing.Point(10, 19);
-            this.radioLog.Name = "radioLog";
-            this.radioLog.Size = new System.Drawing.Size(177, 17);
-            this.radioLog.TabIndex = 0;
-            this.radioLog.TabStop = true;
-            this.radioLog.Text = "Bledy i ostrzezenia loguj do pliku";
-            this.radioLog.UseVisualStyleBackColor = true;
+            this.radioTray.AutoSize = true;
+            this.radioTray.Checked = true;
+            this.radioTray.Location = new System.Drawing.Point(6, 42);
+            this.radioTray.Name = "radioTray";
+            this.radioTray.Size = new System.Drawing.Size(189, 17);
+            this.radioTray.TabIndex = 0;
+            this.radioTray.TabStop = true;
+            this.radioTray.Text = "Bledy i ostrzezenia pokazuj w trayu";
+            this.radioTray.UseVisualStyleBackColor = true;
             // 
             // tabUstawienia
             // 
@@ -275,7 +288,7 @@
             this.tabUstawienia.Location = new System.Drawing.Point(4, 7);
             this.tabUstawienia.Name = "tabUstawienia";
             this.tabUstawienia.SelectedIndex = 0;
-            this.tabUstawienia.Size = new System.Drawing.Size(282, 218);
+            this.tabUstawienia.Size = new System.Drawing.Size(282, 232);
             this.tabUstawienia.TabIndex = 4;
             // 
             // tabPage1
@@ -285,7 +298,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(274, 192);
+            this.tabPage1.Size = new System.Drawing.Size(274, 206);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Ogólne";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -296,7 +309,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(274, 192);
+            this.tabPage2.Size = new System.Drawing.Size(274, 206);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Proxy";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -322,6 +335,7 @@
             // 
             // txtHaslo
             // 
+            this.txtHaslo.Enabled = false;
             this.txtHaslo.Location = new System.Drawing.Point(143, 131);
             this.txtHaslo.Name = "txtHaslo";
             this.txtHaslo.PasswordChar = '*';
@@ -330,6 +344,7 @@
             // 
             // txtLogin
             // 
+            this.txtLogin.Enabled = false;
             this.txtLogin.Location = new System.Drawing.Point(8, 131);
             this.txtLogin.Name = "txtLogin";
             this.txtLogin.Size = new System.Drawing.Size(100, 20);
@@ -357,6 +372,7 @@
             // chbUwierzytelnienie
             // 
             this.chbUwierzytelnienie.AutoSize = true;
+            this.chbUwierzytelnienie.Enabled = false;
             this.chbUwierzytelnienie.Location = new System.Drawing.Point(8, 94);
             this.chbUwierzytelnienie.Name = "chbUwierzytelnienie";
             this.chbUwierzytelnienie.Size = new System.Drawing.Size(123, 17);
@@ -385,6 +401,7 @@
             // 
             // txtPort
             // 
+            this.txtPort.Enabled = false;
             this.txtPort.Location = new System.Drawing.Point(180, 60);
             this.txtPort.Name = "txtPort";
             this.txtPort.Size = new System.Drawing.Size(46, 20);
@@ -392,6 +409,7 @@
             // 
             // txtSerwer
             // 
+            this.txtSerwer.Enabled = false;
             this.txtSerwer.Location = new System.Drawing.Point(8, 60);
             this.txtSerwer.Name = "txtSerwer";
             this.txtSerwer.Size = new System.Drawing.Size(156, 20);
@@ -412,12 +430,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(289, 263);
+            this.ClientSize = new System.Drawing.Size(289, 280);
             this.Controls.Add(this.tabUstawienia);
             this.Controls.Add(this.btnAnuluj);
             this.Controls.Add(this.btnZapisz);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Konfiguracja";
+            this.ShowInTaskbar = false;
             this.Text = "ASS.8 - Konfiguracja";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ASS8___Konfiguracja_FormClosing);
             this.grpSynchronizacja.ResumeLayout(false);
@@ -457,7 +477,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton radioPopup;
-        private System.Windows.Forms.RadioButton radioLog;
+        private System.Windows.Forms.RadioButton radioTray;
         private System.Windows.Forms.TabControl tabUstawienia;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
@@ -472,5 +492,6 @@
         private System.Windows.Forms.TextBox txtSerwer;
         private System.Windows.Forms.CheckBox chbProxy;
         private System.Windows.Forms.TextBox txtHaslo;
+        private System.Windows.Forms.RadioButton radioLog;
     }
 }

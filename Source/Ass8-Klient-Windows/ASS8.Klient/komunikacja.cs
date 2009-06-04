@@ -13,126 +13,100 @@ namespace ASS8.Klient
 {
     public class komunikacja
     {
+        /// <summary>
+        /// Typ numeryczny reprezentuje wszystkie akcje dostepne w komunikacji z serwerem
+        /// </summary>
         private enum operacje
         {
             lista = 100, pobieranie, wysylanie, usuwanie
         }
         private const string endl = "\r\n\r\n";
-        private const string endlOdp = ">";
-        //NetworkStream stream;
+        private const string endlOdp = "#";
         Socket socket;
+        /// <summary>
+        /// Wysyła wiadomość do serwera
+        /// </summary>
+        /// <param name="wiadomosc">Wiadomość do wysłania</param>
+        /// <param name="dlugosc">Długość wiadomości</param>
         public void wyslij(byte[] wiadomosc, int dlugosc)
         {
 
-            socket.Send(wiadomosc);
-            MessageBox.Show(ASCIIEncoding.ASCII.GetString(wiadomosc));
-        }
-        private byte[] pobierz(int dlugosc)
-        {
-            byte[] bytes = new byte[dlugosc];
-            socket.Receive(bytes, dlugosc, SocketFlags.None);
-            return bytes;
-        }
-        private string pobierz()
-        {/*
-            int dlugoscOdp = 0;
-            NetworkStream streamS = new NetworkStream();
-            StreamReader s = new StreamReader(streamS);
-            StringBuilder strRead = new StringBuilder("");
-            string str;
             try
             {
-                str = s.ReadLine();
-                MessageBox.Show(str);
-     //           MessageBox.Show(str+"|");
-               /* do
-                {
-                    Byte[] bytes = new Byte[256];
-                    int i = stream.Read(bytes, 0, 256);
-                    dlugoscOdp += i;
-
-                    strRead.Append(Encoding.ASCII.GetString(bytes).Substring(0, i));
-                    FileStream fs = new FileStream("plik.txt", FileMode.Append, FileAccess.Write);
-                    fs.Write(Encoding.ASCII.GetBytes(strRead.ToString() + "\r\n"), 0, (strRead.ToString() + "\r\n").Length);
-                    fs.Close();
-                    if (dlugoscOdp == 0) throw new Exception();
-                    if (dlugoscOdp >= 2)
-                        if (strRead.ToString().Substring(strRead.Length - endlOdp.Length, endlOdp.Length).CompareTo(endlOdp) == 0) break;
-                } while (true);
-
+                socket.Send(wiadomosc);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+        /// <summary>
+        /// Pobiera wiadomość od serwera
+        /// </summary>
+        /// <param name="dlugosc">Długość do pobrania</param>
+        /// <param name="bytes">Tablica do zapisania odebranych danych</param>
+        /// <returns>Długość faktycznie pobranych danych</returns>
+        private int pobierz(int dlugosc, out byte[] bytes)
+        {
+            bytes = new byte[dlugosc];
+            int i = 0;
+            try
+            {
+                i = socket.Receive(bytes, 0, dlugosc, SocketFlags.None);
             }
             catch (Exception)
             {
-                throw new Wyjatki.BladOdbierania("Błąd podczas odbierania wiadomosci z serwera");
+                throw new Wyjatki.BladWysylania("Blad podczas odbierania");
             }
-            finally
-            {
-                //s.Close();
-            }
-            //s.Close();*/
-            int dlugoscOdp=0;
-            StringBuilder strRead=new StringBuilder();
+
+            return i;
+        }
+        /// <summary>
+        /// Pobiera dane z serwera
+        /// </summary>
+        /// <returns>Wiadomość pobrana</returns>
+        private string pobierz()
+        {
+            int dlugoscOdp = 0;
+            StringBuilder strRead = new StringBuilder();
             while (true)
             {
                 byte[] buffer = new byte[1024];
-                int rx = socket.Receive(buffer);
+                int rx = socket.Receive(buffer, 0, 1, SocketFlags.None);
                 dlugoscOdp += rx;
                 strRead.Append(Encoding.ASCII.GetString(buffer).Substring(0, rx));
                 if (dlugoscOdp >= 2)
                     if (strRead.ToString().Substring(strRead.Length - endlOdp.Length, endlOdp.Length).CompareTo(endlOdp) == 0) break;
             }
-
-            return strRead.ToString();
+            return strRead.ToString().Substring(0, strRead.Length - endlOdp.Length);
         }
+        /// <summary>
+        /// Typ reprezentuje możliwe odpowiedzi serwera
+        /// </summary>
         private enum odpowiedzi
         {
             bledne_zapytanie = 400, bledny_numer_sesji, plik_istnieje, blad_serwera, plik_nie_istnieje, blad_odbierania_plikow, wszystko_ok
         }
-        string folder = "pliki";
+        public string folder;
         XmlSerializerNamespaces names;
-        private int sessionID;//83.24.57.228
+        private int sessionID;
         private String serverIP;
         private int serverPort;
-        //private TcpClient serwer;
         private string log;
         private string haslo;
-        public void pobierzUstawienia()
+        /// <summary>
+        /// Ustawia serwer i port do połączenia
+        /// </summary>
+        /// <param name="s">Adres serwera</param>
+        /// <param name="p">Port serwera</param>
+        public void ustawUstawienia(string s, int p)
         {
-            XmlSerializer xml = new XmlSerializer(typeof(ustawienia));
-            if (File.Exists(log+@"/"+"ustawienia.ini"))
-            {
-                try
-                {
-                    
-                    TextReader tr = new StreamReader(log+"//ustawienia.ini");
-                    ustawienia set = new ustawienia();
-                    set = (ustawienia)xml.Deserialize(tr);
-                    serverIP = set.ip;
-                    serverPort = set.port;
-                    tr.Close();
-                }
-                catch (Exception)
-                {
-                    throw new Wyjatki.BladParsowania("Blad podczas odczytywania adresu serwera. Sprawdz czy jest on poprawny");
-                }
-            }
-            else
-            {
-                try
-                {
-                    if (!Directory.Exists(log)) 
-                        Directory.CreateDirectory(log);
-                    FileStream fs = new FileStream(log+"//ustawienia.ini", FileMode.Create, FileAccess.Write);
-                    ustawienia set = new ustawienia("127.0.0.1", 2000);
-                    xml.Serialize(fs, set, names);
-                    fs.Close();
-                }
-                catch (Exception)
-                {
-                    throw new Wyjatki.BladParsowania("Blad podczas tworzenia pliku ustawien. Sprawdz czy istnieje i czy nie jest otwarty.");
-                }
-            }
+            serverIP = s;
+            serverPort = p;
         }
+        /// <summary>
+        /// Kontruktor klasy
+        /// </summary>
         public komunikacja()
         {
             names = new XmlSerializerNamespaces();
@@ -140,18 +114,15 @@ namespace ASS8.Klient
             log = "";
             haslo = "";
         }
+        /// <summary>
+        /// Loguje do serwera
+        /// </summary>
+        /// <returns>Zwraca odpowiedz od serwera</returns>
         public int login()
         {
             if (log == "" || haslo == "") return -2;
-            /* IPAddress[] serv = Dns.GetHostAddresses(serverIP);
-             StringBuilder strB=new StringBuilder("");
-             foreach (IPAddress ip in serv)
-                 strB.Append(ip.ToString());
-             MessageBox.Show(strB.ToString());*/
             try
             {
-                //serwer = new TcpClient(serverIP, serverPort);
-               // stream = serwer.GetStream();
                 socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.IP);
                 IPAddress remoteIPAddress = System.Net.IPAddress.Parse(serverIP);
                 IPEndPoint remoteEndPoint = new System.Net.IPEndPoint(remoteIPAddress, serverPort);
@@ -161,28 +132,6 @@ namespace ASS8.Klient
             {
                 throw new Wyjatki.BladPolaczenia("Blad podczas laczenia do serwera. Sprawdz adres oraz port");
             }
-
-            /*int dlug = 0;
-            StringBuilder strR = new StringBuilder("");
-            try
-            {
-                do
-                {
-                    Byte[] bytes = new Byte[256];
-                    int i = stream.Read(bytes, 0, 256);
-                    dlug += i;
-                    strR.Append(Encoding.ASCII.GetString(bytes));
-                    if (dlug >= 2)
-                        if (strR[dlug - 1] == '\n' && strR[dlug - 2] == '\r') break;
-                    MessageBox.Show(dlug.ToString() + strR.ToString().Substring(0, dlug));
-                } while (true);
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Nie mozna ustanowic polaczenia z serwerem");
-            }
-            MessageBox.Show("Aaaa"+dlug.ToString()+strR.ToString().Substring(0,dlug));*/
-            //if (!serwer.Connected) return -1;
             try
             {
                 StringWriter stringWriter = new StringWriter();
@@ -191,8 +140,6 @@ namespace ASS8.Klient
                 xml.Serialize(stringWriter, logowanie, names);
                 string stR = stringWriter.ToString() + endl;
                 wyslij(ASCIIEncoding.ASCII.GetBytes(stR), stR.Length);
-                /*string strToWrite = stringWriter.ToString() + endl;
-                stream.Write(Encoding.ASCII.GetBytes(strToWrite.ToCharArray()), 0, strToWrite.Length);*/
             }
 
             catch (Exception)
@@ -233,11 +180,17 @@ namespace ASS8.Klient
 
             return odpSerwera.odpowiedz;
         }
-
-        public int downloadFiles(string[] nazwyPlikow, string uzytkownik,GLItem gli)
+        /// <summary>
+        /// Ściąga pliki z serwera
+        /// </summary>
+        /// <param name="nazwyPlikow">Lista plików do ściagnięcia</param>
+        /// <param name="uzytkownik">Użytkownik od którego mają być ściągane pliki</param>
+        /// <param name="gli">Zmienna reprezentuje pasek postępu</param>
+        /// <param name="path">Zmienna reprezentuje folder do zapisu pliku</param>
+        /// <returns>Odpowiedź od serwera lub 1 w przypadku gdy wszystko poszło dobrze</returns>
+        public int downloadFiles(string[] nazwyPlikow, string uzytkownik, GLItem gli, string path)
         {
             if (uzytkownik.Length == 0) uzytkownik = ".";
-            //if (!serwer.Connected) return -1;
             try
             {
                 downloadPliku download = new downloadPliku(sessionID, (int)operacje.pobieranie, uzytkownik, nazwyPlikow);
@@ -246,38 +199,68 @@ namespace ASS8.Klient
                 xml.Serialize(stringWriter, download, names);
                 string str = stringWriter.ToString() + endl;
                 wyslij(ASCIIEncoding.ASCII.GetBytes(str), str.Length);
-                /*string strToWrite = stringWriter.ToString() + endl;
-                stream.Write(Encoding.ASCII.GetBytes(strToWrite.ToCharArray()), 0, strToWrite.Length);*/
             }
             catch (Exception)
             {
                 throw new Wyjatki.BladWysylania("Blad podczas wysylania danych na serwer. Sprawdz polaczenie z internetem, oraz ewentualnie ustaw proxy -- zapytanie o sciagniecie plikow");
             }
-            serwerPliki plikiNaSerwerze = new serwerPliki();
-            try
+            foreach (string s in nazwyPlikow)
             {
-                XmlSerializer xml = new XmlSerializer(typeof(serwerPliki));
-                string str = pobierz();
-                StringReader stringReader = new StringReader(str);
-                plikiNaSerwerze = (serwerPliki)xml.Deserialize(stringReader);
-            }
-            catch (Wyjatki.BladOdbierania bo)
-            {
-                bo.add("-- odpowiedz sciaganie plikow");
-                throw bo;
-            }
-            catch (Exception)
-            {
-                throw new Wyjatki.BladParsowania("Dostano bledne dane od serwera lub nastapil blad programu -- odpowiedz sciaganie plikow");
-            }
-            if (plikiNaSerwerze.operacja != (int)operacje.pobieranie) return -3;
-            if (plikiNaSerwerze.odp == (int)odpowiedzi.wszystko_ok)
-            {
-                List<plikInfo> pliki = plikiNaSerwerze.plik;
-                foreach (plikInfo p in pliki)
+                serwerPliki plikiNaSerwerze = new serwerPliki();
+                string[] tab = s.Split("/".ToCharArray());
+                string tmp = (folder[folder.Length-1]=='/'?folder:folder+"/");
+                for (int i = 0; i < tab.Length - 1; i++)
+                {
+                    tmp += tab[i] + "/";
+                    if (!Directory.Exists(tmp))
+                        Directory.CreateDirectory(tmp);
+                }
+                try
+                {
+                    XmlSerializer xml = new XmlSerializer(typeof(serwerPliki));
+                    string str = pobierz();
+
+                    StringReader stringReader = new StringReader(str);
+                    plikiNaSerwerze = (serwerPliki)xml.Deserialize(stringReader);
+                }
+                catch (Wyjatki.BladOdbierania bo)
+                {
+                    bo.add("-- odpowiedz sciaganie plikow");
+                    throw bo;
+                }
+                catch (Exception)
+                {
+                    throw new Wyjatki.BladParsowania("Dostano bledne dane od serwera lub nastapil blad programu -- odpowiedz sciaganie plikow");
+                }
+                if (plikiNaSerwerze.operacja != (int)operacje.pobieranie) return -3;
+                if (plikiNaSerwerze.odp == (int)odpowiedzi.wszystko_ok)
+                {
+                    if (plikiNaSerwerze.plik.Count != 1)
+                    { 
+                        StringWriter stringWriter = new StringWriter();
+                        klientOdpDownload kod = new klientOdpDownload(sessionID, (int)operacje.pobieranie, "ok");
+                        XmlSerializer xml = new XmlSerializer(typeof(klientOdpDownload));
+                        xml.Serialize(stringWriter, kod, names);
+                        string str = stringWriter.ToString() + endl;
+                        wyslij(ASCIIEncoding.ASCII.GetBytes(str), str.Length);
+                        StringReader stringReader = new StringReader("");
+                        str = pobierz();
+                        XmlSerializer xmlO = new XmlSerializer(typeof(serwerBase));
+                        serwerBase odpSerwera = (serwerBase)xmlO.Deserialize(new StringReader(str));
+                        continue;
+                    }
+                    plikInfo p = plikiNaSerwerze.plik[0];
                     if (p.rozmiar >= 0)
                     {
-                        FileStream streamWriter = new FileStream(folder + "//" + p.nazwa, FileMode.OpenOrCreate, FileAccess.Write);
+                        FileStream streamWriter = null;
+                        if (path == null)
+                            streamWriter = new FileStream(folder + "/" + p.nazwa, FileMode.OpenOrCreate, FileAccess.Write);
+                        else
+                        {
+                            if (p.rozmiar == 0)
+                                ((ProgressBar)gli.SubItems[1].Control).PerformStep();
+                            streamWriter = new FileStream(path + "/" + p.nazwa, FileMode.OpenOrCreate, FileAccess.Write);
+                        }
                         try
                         {
                             StringWriter stringWriter = new StringWriter();
@@ -286,32 +269,30 @@ namespace ASS8.Klient
                             xml.Serialize(stringWriter, kod, names);
                             string str = stringWriter.ToString() + endl;
                             wyslij(ASCIIEncoding.ASCII.GetBytes(str), str.Length);
-                            /*string str = stringWriter.ToString() + endl;
-                            stream.Write(Encoding.ASCII.GetBytes(str.ToCharArray()), 0, str.Length);*/
                             int rozmiar = p.rozmiar;
                             int tempRozmiar = rozmiar;
-                            //NetworkStream stream = serwer.GetStream();
                             while (tempRozmiar > 0)
                             {
 
-                                int readSize = 1024;
+                                int readSize = 102400;
                                 if (tempRozmiar < readSize)
                                 {
                                     readSize = tempRozmiar;
                                 }
-                                byte[] bytes = pobierz(readSize);
-                                //stream.Read(bytes, 0, readSize);
-                                tempRozmiar -= readSize;
-                                streamWriter.Write(bytes, 0, readSize);
+                                byte[] bytes;
+                                int odebrane = pobierz(readSize, out bytes);
+                                tempRozmiar -= odebrane;
+                                streamWriter.Write(bytes, 0, odebrane);
                                 if (gli != null)
                                 {
                                     ProgressBar pb = (ProgressBar)gli.SubItems[1].Control;
-                                    pb.PerformStep();
+                                    object[] obj = new object[] { pb, odebrane };
+                                    postep(pb, odebrane);
                                 }
                             }
                             streamWriter.Close();
                         }
-                        catch (Exception)
+                        catch (Exception ex)
                         {
                             throw new Wyjatki.BladOdbierania("Wystapil Blad podczas odbierania pliku z serwera -- odbieranie pliku i zapisywanie");
                         }
@@ -319,42 +300,47 @@ namespace ASS8.Klient
                         {
                             streamWriter.Close();
                         }
-                        try
-                        {
-                            XmlSerializer xmlHash = new XmlSerializer(typeof(serwerHash));
-                            serwerHash shash = new serwerHash();
-                            string str2=pobierz();
-                            shash = (serwerHash)xmlHash.Deserialize(new StringReader(str2));
-                        }
-                        catch (Wyjatki.BladOdbierania bo)
-                        {
-                            bo.add("-- odbieranie hasha pliku");
-                            throw bo;
-                        }
-                        catch (Exception)
-                        {
-                            throw new Wyjatki.BladParsowania("Dostano bledne dane od serwera lub nastapil blad programu -- odbieranie hasha pliku");
-                        }
                     }
+                }
             }
-            return (int)plikiNaSerwerze.odp;
+            return 1;
         }
-
+        private delegate void ProgressBarHandler(ProgressBar bar, int progressValue);
+        /// <summary>
+        /// Aktualizuje postęp pliku w pasku postępu
+        /// </summary>
+        /// <param name="bar">Pasek postępu</param>
+        /// <param name="progressValue">Wartość do zaktualizowania</param>
+        private void postep(ProgressBar bar, int progressValue)
+        {
+            /*if (bar.InvokeRequired)
+            {
+                bar.Invoke(new ProgressBarHandler(postep), new object[] { progressValue });
+            }
+            else
+            {
+                bar.Value = progressValue;
+            }*/
+        }
+        /// <summary>
+        /// Wysyła plik na serwer
+        /// </summary>
+        /// <param name="nazwa">Nazwa pliku</param>
+        /// <param name="data">Data pliku</param>
+        /// <param name="rozmiar">Rozmiar pliku</param>
+        /// <returns>Odpowiedź od serwera</returns>
         public int uploadFile(string nazwa, DateTime data, int rozmiar)
         {
-            string katalog=((folder[folder.Length-1]=='/')?folder:folder+"//");
+            string katalog = ((folder[folder.Length - 1] == '/') ? folder : folder + "/");
             if (!File.Exists(katalog + nazwa)) return -4;
-            //if (!serwer.Connected) return -1;
             try
             {
                 StringWriter stringWriter = new StringWriter();
                 XmlSerializer xml = new XmlSerializer(typeof(klientUpload));
-                klientUpload upload = new klientUpload(sessionID, (int)operacje.wysylanie, nazwa, (long)(data-new DateTime(1970,1,1,0,0,0)).TotalSeconds, rozmiar, 1,hashPliku(katalog+nazwa));
+                klientUpload upload = new klientUpload(sessionID, (int)operacje.wysylanie, nazwa, (long)(data - new DateTime(1970, 1, 1, 0, 0, 0)).TotalSeconds, rozmiar, 0, hashPliku(katalog + nazwa));
                 xml.Serialize(stringWriter, upload, names);
                 string str = stringWriter.ToString() + endl;
                 wyslij(ASCIIEncoding.ASCII.GetBytes(str), str.Length);
-                /*string str = stringWriter.ToString() + endl;
-                stream.Write(Encoding.ASCII.GetBytes(str.ToCharArray()), 0, str.Length);*/
             }
             catch (Exception)
             {
@@ -396,9 +382,7 @@ namespace ASS8.Klient
                     klientOdpDownload kod = new klientOdpDownload(sessionID, (int)operacje.wysylanie, odp);
                     xml.Serialize(stringWriter, kod, names);
                     string str = stringWriter.ToString() + endl;
-                wyslij(ASCIIEncoding.ASCII.GetBytes(str), str.Length);
-                    /*string str = stringWriter.ToString() + endl;
-                    stream.Write(Encoding.ASCII.GetBytes(str.ToCharArray()), 0, str.Length);*/
+                    wyslij(ASCIIEncoding.ASCII.GetBytes(str), str.Length);
                 }
                 catch (Exception)
                 {
@@ -409,38 +393,38 @@ namespace ASS8.Klient
                     StringReader stringReader = new StringReader("");
                     string str2 = pobierz();
                     XmlSerializer x = new XmlSerializer(typeof(serwerBase));
-                    odpSerwera = (serwerBase)x.Deserialize(new StreamReader(str2));
+                    odpSerwera = (serwerBase)x.Deserialize(new StringReader(str2));
                 }
                 catch (Wyjatki.BladOdbierania bo)
                 {
                     bo.add("-- odpowiedz na zapytanie czy zastapic");
                     throw bo;
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
-                    throw new Wyjatki.BladParsowania("Dostano bledne dane od serwera lub nastapil blad programu -- odpowiedz na zapytanie czy zastapic");
+                    throw new Wyjatki.BladParsowania("Dostano bledne dane od serwera lub nastapil blad programu -- odpowiedz na zapytanie czy zastapic" + ex.ToString());
                 }
             }
             if (odpSerwera.operacja != (int)operacje.wysylanie) return -3;
             if (odpSerwera.odp == (int)odpowiedzi.wszystko_ok || odpSerwera.odp == (int)odpowiedzi.plik_nie_istnieje)
             {
-                int rozmiarUp = 10240;
+                int rozmiarUp = 102400;
                 int rozmiarTmp = rozmiar;
-                
                 FileStream fileStream = new FileStream(katalog + nazwa, FileMode.Open, FileAccess.Read);
                 BinaryReader br = new BinaryReader(fileStream);
+                int c = 0;
                 try
                 {
                     while (rozmiarTmp != 0)
                     {
+                        c++;
                         if (rozmiarTmp < rozmiarUp)
                             rozmiarUp = rozmiarTmp;
-                        byte[] bytes = new byte[rozmiarUp];
-                        fileStream.Read(bytes, 0, rozmiarUp);
-                        wyslij(bytes,rozmiarUp);
+                        byte[] bytes = br.ReadBytes(rozmiarUp);
+                        wyslij(bytes, rozmiarUp);
                         rozmiarTmp -= rozmiarUp;
+                        System.Threading.Thread.Sleep(100);
                     }
-                    wyslij(ASCIIEncoding.ASCII.GetBytes(endl), endl.Length);
                 }
                 catch (Exception)
                 {
@@ -454,7 +438,7 @@ namespace ASS8.Klient
                 try
                 {
                     XmlSerializer xml = new XmlSerializer(typeof(klientHash));
-                    klientHash khash = new klientHash(sessionID, (int)operacje.wysylanie, hashPliku(katalog+nazwa));
+                    klientHash khash = new klientHash(sessionID, (int)operacje.wysylanie, hashPliku(katalog + nazwa));
                     StringWriter sw = new StringWriter();
                     xml.Serialize(sw, khash, names);
                     string str = sw.ToString() + endl;
@@ -467,9 +451,14 @@ namespace ASS8.Klient
             }
             return odpSerwera.odp;
         }
+        /// <summary>
+        /// Oblicza hash pliku algorytmem MD5
+        /// </summary>
+        /// <param name="plik">Ścieża do pliku</param>
+        /// <returns>Hash pliku</returns>
         private string hashPliku(string plik)
         {
-            if (!File.Exists(plik)) throw new Wyjatki.BrakPliku("Brak pliku "+plik);
+            if (!File.Exists(plik)) throw new Wyjatki.BrakPliku("Brak pliku " + plik);
             StringBuilder sb = new StringBuilder();
             FileStream fs = new FileStream(plik, FileMode.Open);
             MD5 md5 = new MD5CryptoServiceProvider();
@@ -479,10 +468,13 @@ namespace ASS8.Klient
                 sb.Append(hex.ToString("x2"));
             return sb.ToString();
         }
-
+        /// <summary>
+        /// Ściąga listę plików użytkwonika
+        /// </summary>
+        /// <param name="uzytkownik">Użytkownika którego listę plików chcemy ściągnać</param>
+        /// <returns>Lista plików użytkownika</returns>
         public List<plikInfo> downloadListy(string uzytkownik)
         {
-            //if (!serwer.Connected) return null;
             if (uzytkownik.Length == 0) uzytkownik = ".";
             try
             {
@@ -495,7 +487,7 @@ namespace ASS8.Klient
             }
             catch (Exception)
             {
-                throw new Wyjatki.BladWysylania("Blad podczas pobierania listy plikow -- zapytanie o liste");
+                throw new Wyjatki.BladWysylania("Blad podczas pobierania listy plikow -- zapytanie o download");
             }
             serwerPliki pliki = new serwerPliki();
             try
@@ -516,24 +508,28 @@ namespace ASS8.Klient
             }
             if (pliki.operacja != (int)operacje.lista) return null;
             if (pliki.odp != (int)odpowiedzi.wszystko_ok) return null;
-            return pliki.plik.FindAll(delegate(plikInfo p){return p.hash!="-1";});
+            return pliki.plik;
         }
+        /// <summary>
+        /// Usuwa pliki z serwer
+        /// </summary>
+        /// <param name="plikiDoUsuniecia">Lista plików do usunięcia</param>
+        /// <returns>Odpowiedź od serwera</returns>
         public int usunPliki(List<pojedynczyPlik> plikiDoUsuniecia)
         {
-            //if (!serwer.Connected) return -1;
-            List<string> plikiDoUs = new List<string>();
+            List<plikInfo> plikiDoUs = new List<plikInfo>();
             foreach (pojedynczyPlik p in plikiDoUsuniecia)
-                plikiDoUs.Add(p.nazwa);
+                plikiDoUs.Add(new plikInfo(p.nazwa, -1, -1, -1, p.hash));
             try
             {
-                klientUsun usun = new klientUsun(sessionID, (int)operacje.usuwanie, plikiDoUs.ToArray());
-                XmlSerializer xml = new XmlSerializer(typeof(downloadPliku));
+                klientUsun usun = new klientUsun(sessionID, (int)operacje.usuwanie, plikiDoUs);
+                XmlSerializer xml = new XmlSerializer(typeof(klientUsun));
                 StringWriter stringWriter = new StringWriter();
                 xml.Serialize(stringWriter, usun, names);
                 string strToWrite = stringWriter.ToString() + endl;
                 wyslij(ASCIIEncoding.ASCII.GetBytes(strToWrite), strToWrite.Length);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 throw new Wyjatki.BladWysylania("Blad podczas usuwania plików z serwera -- usuwanie zapytanie");
             }
@@ -559,7 +555,9 @@ namespace ASS8.Klient
             }
             return 1;
         }
-
+        /// <summary>
+        /// Właściwość ustawia lub zwraca login do połączenia z serwerem
+        /// </summary>
         public string Login
         {
             get
@@ -571,11 +569,38 @@ namespace ASS8.Klient
                 log = value;
             }
         }
+        /// <summary>
+        /// Właściwość ustawia lub zwraca adres do połączenia z serwerem
+        /// </summary>
+        public string Serwer
+        {
+            get
+            {
+                return serverIP;
+            }
+        }
+        /// <summary>
+        /// Właściwość ustawia lub zwraca port do połączenia z serwerem
+        /// </summary>
+        public int Port
+        {
+            get
+            {
+                return serverPort;
+            }
+        }
+        /// <summary>
+        /// Właściwość ustawia lub zwraca hasło do połączenia z serwerem
+        /// </summary>
         public string Haslo
         {
             set
             {
                 haslo = value;
+            }
+            get
+            {
+                return haslo;
             }
         }
 

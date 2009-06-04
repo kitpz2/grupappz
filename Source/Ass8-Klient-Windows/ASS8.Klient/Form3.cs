@@ -8,8 +8,14 @@ using System.Windows.Forms;
 using GlacialComponents.Controls;
 namespace ASS8.Klient
 {
+    /// <summary>
+    /// Klasa wyświetlająca okno z pobieranymi zadaniami
+    /// </summary>
     public partial class Pobierane : Form
     {
+        /// <summary>
+        /// Konstruktor klasy
+        /// </summary>
         public Pobierane()
         {
             InitializeComponent();
@@ -18,11 +24,28 @@ namespace ASS8.Klient
             glPliki.Columns.Add(new GLColumn("Czas"));
             
         }
-
+        /// <summary>
+        /// Funkcja obsługi przycisku Zamknij
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnZamknij_Click(object sender, EventArgs e)
         {
             this.Hide();
         }
+        /// <summary>
+        /// Usuwa zadanie z listy
+        /// </summary>
+        /// <param name="g">Zadanie do usuniecia</param>
+        public void usunZadanie(GLItem g)
+        {
+            glPliki.Items.Remove(g);
+        }
+        /// <summary>
+        /// Dodaje zadanie do listy
+        /// </summary>
+        /// <param name="plik"></param>
+        /// <returns></returns>
         public GLItem dodajZadanie(plikInfo plik)
         {
             ProgressBar pb = new ProgressBar();
@@ -33,13 +56,25 @@ namespace ASS8.Klient
             gli.SubItems[1].Control = pb;
             Timer timer = new Timer();
             timer.Interval = 1000;
-            //gli.SubItems[2].Control = (Control)timer;
             return gli;
         }
-
+        /// <summary>
+        /// Czysci wszystkie zadania
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCzysc_Click(object sender, EventArgs e)
         {
             glPliki.Items.Clear();
+        }
+        /// <summary>
+        /// Zamyka okno pobieran
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Pobierane_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Hide();
         }
     }
 }

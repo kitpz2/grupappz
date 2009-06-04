@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.txtUzytkownik = new System.Windows.Forms.TextBox();
             this.grpUzytkownik = new System.Windows.Forms.GroupBox();
             this.btnListuj = new System.Windows.Forms.Button();
@@ -78,11 +79,14 @@
             // 
             // lvPliki
             // 
+            this.lvPliki.FullRowSelect = true;
+            this.lvPliki.GridLines = true;
             this.lvPliki.Location = new System.Drawing.Point(6, 14);
             this.lvPliki.Name = "lvPliki";
             this.lvPliki.Size = new System.Drawing.Size(252, 154);
             this.lvPliki.TabIndex = 0;
             this.lvPliki.UseCompatibleStateImageBehavior = false;
+            this.lvPliki.SelectedIndexChanged += new System.EventHandler(this.lvPliki_SelectedIndexChanged);
             // 
             // button1
             // 
@@ -124,6 +128,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.grpPliki);
             this.Controls.Add(this.grpUzytkownik);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Pliki znajomych";
             this.grpUzytkownik.ResumeLayout(false);
