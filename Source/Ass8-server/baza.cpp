@@ -31,15 +31,17 @@ std::string Baza::get_passwd(std::string login)
     {
         info("pobieranie hasla uzytkownika")
         char zapytanie[256];
-        sprintf(zapytanie,"select plain_pass from accounts_konto where user_id='%d'",getUserId(login));
+        sprintf(zapytanie,"select plain_pass from accounts_konto where user_id='%d'",getUserIdLogin(login));
         //std::string zapytanie="select plain_pass from accounts_konto where userid='";
         //zapytanie.append(login);
         //zapytanie.append("'");
+        info2("Zapytanie do bazy",zapytanie);
         mysqlpp::Query query = conn.query(zapytanie);
         mysqlpp::StoreQueryResult res = query.store();
         if (res.num_rows()>=1)
         {
             info("Zapytanie poprawne");
+            info2("haslo",res[0]["plain_pass"].c_str());
             return std::string(res[0]["plain_pass"]);
         }
         else
@@ -116,6 +118,38 @@ mysqlpp::StoreQueryResult Baza::getFilesList(std::string user, char uprawnienia)
     }
 }
 
+int Baza::getUserIdLogin(std::string user)
+{
+    try
+    {
+        info("pobranie id usera");
+        char zapytanie[256];
+        sprintf(zapytanie,"select id from auth_user where username='%s'",user.c_str());
+        //Najlpierw zapytanie o ID usera z tabeli auth_user
+        //std::string zapytanie="select id from auth_user where username='";
+        //zapytanie.append(user);
+        //zapytanie.append("'");
+        info2("zaytanie: ",zapytanie);
+        mysqlpp::Query query = conn.query(zapytanie);//Wyslanie zapytania do bazy
+        mysqlpp::StoreQueryResult res = query.store();//umieszczenie wynikow zapytania w zmiennej res
+        //A potem zapytanie o id z tabeli accounts_konto
+        if (res)
+        {
+            info(res[0]["id"].c_str());
+            return atoi(res[0]["id"].c_str());
+        }
+        else
+        {
+            Eline2("Błąd zapytania do bazy danych: ",query.error());
+            return -1;
+        }
+    }
+    catch (const std::exception& e)//jezeli wystapil wyjatek w SQLu
+    {
+        info2("BŁAD PARSOWANIA SQL w getUserId : ",e.what());
+        return -1;
+    }
+}
 ///Zapytanie o ID uzytkownika o loginie 'user' ale nie o id z auth_user tylko o id z accounts_konto
 int Baza::getUserId(std::string user)
 {

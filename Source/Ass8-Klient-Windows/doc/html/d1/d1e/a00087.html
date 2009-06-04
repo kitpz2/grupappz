@@ -1,0 +1,78 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>Ass8-Klient: Plik źródłowy Form3.cs</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css">
+<link href="../../doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Wygenerowano przez Doxygen 1.5.8 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="../../main.html"><span>Strona&nbsp;główna</span></a></li>
+      <li><a href="../../namespaces.html"><span>Pakiety</span></a></li>
+      <li><a href="../../annotated.html"><span>Klasy</span></a></li>
+      <li class="current"><a href="../../files.html"><span>Pliki</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="../../files.html"><span>Lista&nbsp;plików</span></a></li>
+      <li><a href="../../globals.html"><span>Składowe&nbsp;plików</span></a></li>
+    </ul>
+  </div>
+<h1>Form3.cs</h1><a href="../../d6/d97/a00045.html">Idź do dokumentacji tego pliku.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a><a class="code" href="../../d6/d97/a00045.html#81a223a02c34d82b47199f08308847f2">00001</a> ﻿using <a class="code" href="../../d8/d41/a00038.html#81a223a02c34d82b47199f08308847f2">System</a>;
+<a name="l00002"></a>00002 <span class="keyword">using</span> <a class="code" href="../../d8/d41/a00038.html#81a223a02c34d82b47199f08308847f2">System</a>.Collections.Generic;
+<a name="l00003"></a>00003 <span class="keyword">using</span> <a class="code" href="../../d8/d41/a00038.html#81a223a02c34d82b47199f08308847f2">System</a>.ComponentModel;
+<a name="l00004"></a>00004 <span class="keyword">using</span> <a class="code" href="../../d8/d41/a00038.html#81a223a02c34d82b47199f08308847f2">System</a>.Data;
+<a name="l00005"></a>00005 <span class="keyword">using</span> <a class="code" href="../../d8/d41/a00038.html#81a223a02c34d82b47199f08308847f2">System</a>.Drawing;
+<a name="l00006"></a>00006 <span class="keyword">using</span> <a class="code" href="../../d8/d41/a00038.html#81a223a02c34d82b47199f08308847f2">System</a>.Text;
+<a name="l00007"></a>00007 <span class="keyword">using</span> <a class="code" href="../../d8/d41/a00038.html#81a223a02c34d82b47199f08308847f2">System</a>.Windows.Forms;
+<a name="l00008"></a>00008 <span class="keyword">using</span> GlacialComponents.Controls;
+<a name="l00009"></a>00009 <span class="keyword">namespace </span>ASS8.<a class="code" href="../../d3/de7/a00039.html#50d8d80fabd02a9a24fb725624e1ad24">Klient</a>
+<a name="l00010"></a>00010 {
+<a name="l00014"></a><a class="code" href="../../dd/da2/a00019.html">00014</a>     <span class="keyword">public</span> <span class="keyword">partial class </span><a class="code" href="../../dd/da2/a00019.html" title="Klasa wyświetlająca okno z pobieranymi zadaniami.">Pobierane</a> : Form
+<a name="l00015"></a>00015     {
+<a name="l00019"></a><a class="code" href="../../dd/da2/a00019.html#60f6f87bc8f96efae8cb13c9b2da15bd">00019</a>         <span class="keyword">public</span> <a class="code" href="../../dd/da2/a00019.html" title="Klasa wyświetlająca okno z pobieranymi zadaniami.">Pobierane</a>()
+<a name="l00020"></a>00020         {
+<a name="l00021"></a>00021             InitializeComponent();
+<a name="l00022"></a>00022             glPliki.Columns.Add(<span class="keyword">new</span> GLColumn(<span class="stringliteral">"Nazwa"</span>));
+<a name="l00023"></a>00023             glPliki.Columns.Add(<span class="keyword">new</span> GLColumn(<span class="stringliteral">"Postęp"</span>));
+<a name="l00024"></a>00024             glPliki.Columns.Add(<span class="keyword">new</span> GLColumn(<span class="stringliteral">"Czas"</span>));
+<a name="l00025"></a>00025             
+<a name="l00026"></a>00026         }
+<a name="l00032"></a><a class="code" href="../../dd/da2/a00019.html#5c793ae5ccd31fe4509468eebfdc76b9">00032</a>         <span class="keyword">private</span> <span class="keywordtype">void</span> btnZamknij_Click(<span class="keywordtype">object</span> sender, EventArgs e)
+<a name="l00033"></a>00033         {
+<a name="l00034"></a>00034             this.Hide();
+<a name="l00035"></a>00035         }
+<a name="l00040"></a><a class="code" href="../../dd/da2/a00019.html#06d8a33e39fdf38fa3955ce5c4a1abc4">00040</a>         <span class="keyword">public</span> <span class="keywordtype">void</span> usunZadanie(GLItem g)
+<a name="l00041"></a>00041         {
+<a name="l00042"></a>00042             glPliki.Items.Remove(g);
+<a name="l00043"></a>00043         }
+<a name="l00049"></a><a class="code" href="../../dd/da2/a00019.html#342268ebdae71abcd09819bba08f0f88">00049</a>         <span class="keyword">public</span> GLItem dodajZadanie(<a class="code" href="../../d1/d2b/a00018.html" title="Klasa zawiera dane do serializacji rozszerzonych informacji o pliku.">plikInfo</a> plik)
+<a name="l00050"></a>00050         {
+<a name="l00051"></a>00051             ProgressBar pb = <span class="keyword">new</span> ProgressBar();
+<a name="l00052"></a>00052             pb.Step = 256;
+<a name="l00053"></a>00053             pb.Maximum = plik.<a class="code" href="../../d1/d2b/a00018.html#e87d445327b832a69930c10f5555bf53">rozmiar</a>;
+<a name="l00054"></a>00054             pb.Minimum = 0;
+<a name="l00055"></a>00055             GLItem gli = glPliki.Items.Add(plik.<a class="code" href="../../d7/d7a/a00016.html#d79d58573126b1cd96f3c6966ae83434">nazwa</a>);
+<a name="l00056"></a>00056             gli.SubItems[1].Control = pb;
+<a name="l00057"></a>00057             Timer timer = <span class="keyword">new</span> Timer();
+<a name="l00058"></a>00058             timer.Interval = 1000;
+<a name="l00059"></a>00059             <span class="keywordflow">return</span> gli;
+<a name="l00060"></a>00060         }
+<a name="l00066"></a><a class="code" href="../../dd/da2/a00019.html#ce1fb8ae1d066f42b327a30a1079765b">00066</a>         <span class="keyword">private</span> <span class="keywordtype">void</span> btnCzysc_Click(<span class="keywordtype">object</span> sender, EventArgs e)
+<a name="l00067"></a>00067         {
+<a name="l00068"></a>00068             glPliki.Items.Clear();
+<a name="l00069"></a>00069         }
+<a name="l00075"></a><a class="code" href="../../dd/da2/a00019.html#03c2ed674c8d50df0614a7f175eed42d">00075</a>         <span class="keyword">private</span> <span class="keywordtype">void</span> Pobierane_FormClosing(<span class="keywordtype">object</span> sender, FormClosingEventArgs e)
+<a name="l00076"></a>00076         {
+<a name="l00077"></a>00077             this.Hide();
+<a name="l00078"></a>00078         }
+<a name="l00079"></a>00079     }
+<a name="l00080"></a>00080 }
+</pre></div></div>
+<hr size="1"><address style="text-align: right;"><small>Wygenerowano Thu Jun 4 19:42:01 2009 dla Ass8-Klient programem&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="../../doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
+</body>
+</html>

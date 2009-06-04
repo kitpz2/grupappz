@@ -1,0 +1,485 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>Ass8-Klient: Plik źródłowy XmlRequestsClass.cs</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css">
+<link href="../../doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Wygenerowano przez Doxygen 1.5.8 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="../../main.html"><span>Strona&nbsp;główna</span></a></li>
+      <li><a href="../../namespaces.html"><span>Pakiety</span></a></li>
+      <li><a href="../../annotated.html"><span>Klasy</span></a></li>
+      <li class="current"><a href="../../files.html"><span>Pliki</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="../../files.html"><span>Lista&nbsp;plików</span></a></li>
+      <li><a href="../../globals.html"><span>Składowe&nbsp;plików</span></a></li>
+    </ul>
+  </div>
+<h1>XmlRequestsClass.cs</h1><a href="../../d4/d6d/a00055.html">Idź do dokumentacji tego pliku.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a><a class="code" href="../../d4/d6d/a00055.html#81a223a02c34d82b47199f08308847f2">00001</a> ﻿using <a class="code" href="../../d8/d41/a00038.html#81a223a02c34d82b47199f08308847f2">System</a>;
+<a name="l00002"></a>00002 <span class="keyword">using</span> <a class="code" href="../../d8/d41/a00038.html#81a223a02c34d82b47199f08308847f2">System</a>.Collections.Generic;
+<a name="l00003"></a>00003 <span class="keyword">using</span> <a class="code" href="../../d8/d41/a00038.html#81a223a02c34d82b47199f08308847f2">System</a>.Text;
+<a name="l00004"></a>00004 <span class="keyword">using</span> <a class="code" href="../../d8/d41/a00038.html#81a223a02c34d82b47199f08308847f2">System</a>.Xml;
+<a name="l00005"></a>00005 <span class="keyword">using</span> <a class="code" href="../../d8/d41/a00038.html#81a223a02c34d82b47199f08308847f2">System</a>.Xml.Serialization;
+<a name="l00006"></a>00006 
+<a name="l00007"></a>00007 <span class="keyword">namespace </span>ASS8.<a class="code" href="../../d3/de7/a00039.html#50d8d80fabd02a9a24fb725624e1ad24">Klient</a>
+<a name="l00008"></a>00008 {
+<a name="l00012"></a>00012     [XmlRoot(<span class="stringliteral">"klient"</span>)]
+<a name="l00013"></a><a class="code" href="../../de/d5e/a00007.html">00013</a>     <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="../../de/d5e/a00007.html" title="Klasa zawiera dane do serializacji zapytania do serwera.">klientBase</a>
+<a name="l00014"></a>00014     {
+<a name="l00015"></a><a class="code" href="../../de/d5e/a00007.html#f34be337f7af90ae43a8a7df4f481a52">00015</a>         <span class="keyword">private</span> <span class="keywordtype">int</span> idSesji;
+<a name="l00016"></a><a class="code" href="../../de/d5e/a00007.html#b11ab72b0ec00711ba94090856560218">00016</a>         <span class="keyword">private</span> <span class="keywordtype">int</span> op;
+<a name="l00017"></a><a class="code" href="../../de/d5e/a00007.html#04276cdf60f7e66500f18bcfb19b67cc">00017</a>         <span class="keyword">public</span> <a class="code" href="../../de/d5e/a00007.html#04276cdf60f7e66500f18bcfb19b67cc">klientBase</a>() { }
+<a name="l00018"></a><a class="code" href="../../de/d5e/a00007.html#32b59b552ea509fedbaa45a54d8b6d4b">00018</a>         <span class="keyword">public</span> <a class="code" href="../../de/d5e/a00007.html" title="Klasa zawiera dane do serializacji zapytania do serwera.">klientBase</a>(<span class="keywordtype">int</span> <span class="keywordtype">id</span>, <span class="keywordtype">int</span> oper)
+<a name="l00019"></a>00019         {
+<a name="l00020"></a>00020             idsesji = id;
+<a name="l00021"></a>00021             operacja = oper;
+<a name="l00022"></a>00022         }
+<a name="l00023"></a>00023         [XmlAttribute]
+<a name="l00024"></a>00024         <span class="keyword">public</span> <span class="keywordtype">int</span> idsesji
+<a name="l00025"></a><a class="code" href="../../de/d5e/a00007.html#10f9e496d18b642305c5b7abf472f355">00025</a>         {
+<a name="l00026"></a>00026             <span class="keyword">get</span>
+<a name="l00027"></a>00027             {
+<a name="l00028"></a>00028                 <span class="keywordflow">return</span> idSesji;
+<a name="l00029"></a>00029             }
+<a name="l00030"></a>00030             <span class="keyword">set</span>
+<a name="l00031"></a>00031             {
+<a name="l00032"></a>00032                 idSesji = value;
+<a name="l00033"></a>00033             }
+<a name="l00034"></a>00034         }
+<a name="l00035"></a>00035         [XmlAttribute]
+<a name="l00036"></a>00036         <span class="keyword">public</span> <span class="keywordtype">int</span> operacja
+<a name="l00037"></a><a class="code" href="../../de/d5e/a00007.html#fe6646ec940736ab25958681a9044b7f">00037</a>         {
+<a name="l00038"></a>00038             <span class="keyword">get</span>
+<a name="l00039"></a>00039             {
+<a name="l00040"></a>00040                 <span class="keywordflow">return</span> op;
+<a name="l00041"></a>00041             }
+<a name="l00042"></a>00042             <span class="keyword">set</span>
+<a name="l00043"></a>00043             {
+<a name="l00044"></a>00044                 op = value;
+<a name="l00045"></a>00045             }
+<a name="l00046"></a>00046         }
+<a name="l00047"></a>00047     }
+<a name="l00051"></a>00051     [XmlRoot(<span class="stringliteral">"plik"</span>)]
+<a name="l00052"></a><a class="code" href="../../d7/d7a/a00016.html">00052</a>     <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="../../d7/d7a/a00016.html" title="Klasa zawiera dane do serializacji informacji o pliku.">plikBase</a>
+<a name="l00053"></a>00053     {
+<a name="l00054"></a><a class="code" href="../../d7/d7a/a00016.html#806525aec3846557cca2c83f4f28bd22">00054</a>         <span class="keyword">private</span> <span class="keywordtype">string</span> pNazwa;
+<a name="l00055"></a><a class="code" href="../../d7/d7a/a00016.html#683a638604733cb067bbc347ce7d18d2">00055</a>         <span class="keyword">public</span> <a class="code" href="../../d7/d7a/a00016.html#683a638604733cb067bbc347ce7d18d2">plikBase</a>() { }
+<a name="l00056"></a><a class="code" href="../../d7/d7a/a00016.html#db9e4e56cb170266f06c629d133fbb35">00056</a>         <span class="keyword">public</span> <a class="code" href="../../d7/d7a/a00016.html" title="Klasa zawiera dane do serializacji informacji o pliku.">plikBase</a>(<span class="keywordtype">string</span> n)
+<a name="l00057"></a>00057         {
+<a name="l00058"></a>00058             nazwa = n;
+<a name="l00059"></a>00059         }
+<a name="l00060"></a>00060         [XmlAttribute]
+<a name="l00061"></a>00061         <span class="keyword">public</span> <span class="keywordtype">string</span> nazwa
+<a name="l00062"></a><a class="code" href="../../d7/d7a/a00016.html#d79d58573126b1cd96f3c6966ae83434">00062</a>         {
+<a name="l00063"></a>00063             <span class="keyword">get</span>
+<a name="l00064"></a>00064             {
+<a name="l00065"></a>00065                 <span class="keywordflow">return</span> pNazwa;
+<a name="l00066"></a>00066             }
+<a name="l00067"></a>00067             <span class="keyword">set</span>
+<a name="l00068"></a>00068             {
+<a name="l00069"></a>00069                 pNazwa = value;
+<a name="l00070"></a>00070             }
+<a name="l00071"></a>00071         }
+<a name="l00072"></a>00072     }
+<a name="l00076"></a>00076     [XmlRoot(<span class="stringliteral">"plik"</span>)]
+<a name="l00077"></a><a class="code" href="../../d1/d2b/a00018.html">00077</a>     <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="../../d1/d2b/a00018.html" title="Klasa zawiera dane do serializacji rozszerzonych informacji o pliku.">plikInfo</a> : <a class="code" href="../../d7/d7a/a00016.html" title="Klasa zawiera dane do serializacji informacji o pliku.">plikBase</a>
+<a name="l00078"></a>00078     {
+<a name="l00079"></a><a class="code" href="../../d1/d2b/a00018.html#c36ffedceffa046ba1bf7e315a6905b8">00079</a>         <span class="keyword">private</span> <span class="keywordtype">long</span> pData;
+<a name="l00080"></a><a class="code" href="../../d1/d2b/a00018.html#e808a0115a1a6ff695d46a2605827efc">00080</a>         <span class="keyword">private</span> <span class="keywordtype">int</span> pRozmiar;
+<a name="l00081"></a><a class="code" href="../../d1/d2b/a00018.html#340847ed2b521b02d46a77a2dbf71201">00081</a>         <span class="keyword">private</span> <span class="keywordtype">string</span> pHash;
+<a name="l00082"></a><a class="code" href="../../d1/d2b/a00018.html#72c17cbc674bf8c89317ac46d02dd758">00082</a>         <span class="keyword">private</span> <span class="keywordtype">int</span> pDostep;
+<a name="l00083"></a><a class="code" href="../../d1/d2b/a00018.html#8c70fa9504ce6f44643d48aa6679ff12">00083</a>         <span class="keyword">public</span> <a class="code" href="../../d1/d2b/a00018.html#8c70fa9504ce6f44643d48aa6679ff12">plikInfo</a>() { }
+<a name="l00084"></a><a class="code" href="../../d1/d2b/a00018.html#c7e3bef27e120693a190cf23af55426b">00084</a>         <span class="keyword">public</span> <a class="code" href="../../d1/d2b/a00018.html" title="Klasa zawiera dane do serializacji rozszerzonych informacji o pliku.">plikInfo</a>(<span class="keywordtype">string</span> n, <span class="keywordtype">long</span> d, <span class="keywordtype">int</span> r, <span class="keywordtype">int</span> dos,<span class="keywordtype">string</span> h)
+<a name="l00085"></a>00085             : base(n)
+<a name="l00086"></a>00086         {
+<a name="l00087"></a>00087             pData = d;
+<a name="l00088"></a>00088             rozmiar = r;
+<a name="l00089"></a>00089             pDostep = dos;
+<a name="l00090"></a>00090             pHash = h;
+<a name="l00091"></a>00091         }
+<a name="l00092"></a>00092         [XmlAttribute]
+<a name="l00093"></a>00093         <span class="keyword">public</span> <span class="keywordtype">string</span> hash
+<a name="l00094"></a><a class="code" href="../../d1/d2b/a00018.html#3e622ab36164671a70caeeee3adb910d">00094</a>         {
+<a name="l00095"></a>00095             <span class="keyword">get</span>
+<a name="l00096"></a>00096             {
+<a name="l00097"></a>00097                 <span class="keywordflow">return</span> pHash;
+<a name="l00098"></a>00098             }
+<a name="l00099"></a>00099             <span class="keyword">set</span>
+<a name="l00100"></a>00100             {
+<a name="l00101"></a>00101                 pHash = value;
+<a name="l00102"></a>00102             }
+<a name="l00103"></a>00103         }
+<a name="l00104"></a>00104         [XmlAttribute]
+<a name="l00105"></a>00105         <span class="keyword">public</span> <span class="keywordtype">long</span> data
+<a name="l00106"></a><a class="code" href="../../d1/d2b/a00018.html#169c26c2a6ea0c035eed3aa84d8c26ba">00106</a>         {
+<a name="l00107"></a>00107             <span class="keyword">get</span>
+<a name="l00108"></a>00108             {
+<a name="l00109"></a>00109                 <span class="keywordflow">return</span> pData;
+<a name="l00110"></a>00110             }
+<a name="l00111"></a>00111             <span class="keyword">set</span>
+<a name="l00112"></a>00112             {
+<a name="l00113"></a>00113                 pData = value;
+<a name="l00114"></a>00114             }
+<a name="l00115"></a>00115         }
+<a name="l00116"></a>00116         [XmlAttribute]
+<a name="l00117"></a>00117         <span class="keyword">public</span> <span class="keywordtype">int</span> rozmiar
+<a name="l00118"></a><a class="code" href="../../d1/d2b/a00018.html#e87d445327b832a69930c10f5555bf53">00118</a>         {
+<a name="l00119"></a>00119             <span class="keyword">get</span>
+<a name="l00120"></a>00120             {
+<a name="l00121"></a>00121                 <span class="keywordflow">return</span> pRozmiar;
+<a name="l00122"></a>00122             }
+<a name="l00123"></a>00123             <span class="keyword">set</span>
+<a name="l00124"></a>00124             {
+<a name="l00125"></a>00125                 pRozmiar = value;
+<a name="l00126"></a>00126             }
+<a name="l00127"></a>00127         }
+<a name="l00128"></a>00128         [XmlAttribute]
+<a name="l00129"></a>00129         <span class="keyword">public</span> <span class="keywordtype">int</span> dostep
+<a name="l00130"></a><a class="code" href="../../d1/d2b/a00018.html#dd38176b1c4fdc58d99da35f4a797e37">00130</a>         {
+<a name="l00131"></a>00131             <span class="keyword">get</span>
+<a name="l00132"></a>00132             {
+<a name="l00133"></a>00133                 <span class="keywordflow">return</span> pDostep;
+<a name="l00134"></a>00134             }
+<a name="l00135"></a>00135             <span class="keyword">set</span>
+<a name="l00136"></a>00136             {
+<a name="l00137"></a>00137                 pDostep = value;
+<a name="l00138"></a>00138             }
+<a name="l00139"></a>00139         }
+<a name="l00140"></a>00140     }
+<a name="l00144"></a>00144     [XmlRoot(<span class="stringliteral">"logowanie"</span>)]
+<a name="l00145"></a><a class="code" href="../../da/da0/a00009.html">00145</a>     <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="../../da/da0/a00009.html" title="Klasa zawiera dane do serializacji zapytania o logowanie.">klientLogowanie</a>
+<a name="l00146"></a>00146     {
+<a name="l00147"></a><a class="code" href="../../da/da0/a00009.html#35b35cead7d9f58a9c114ca328012f32">00147</a>         <span class="keyword">public</span> <a class="code" href="../../da/da0/a00009.html#35b35cead7d9f58a9c114ca328012f32">klientLogowanie</a>() { }
+<a name="l00148"></a><a class="code" href="../../da/da0/a00009.html#be81e6b3b3e980fc92672d677ee97602">00148</a>         <span class="keyword">public</span> <a class="code" href="../../da/da0/a00009.html" title="Klasa zawiera dane do serializacji zapytania o logowanie.">klientLogowanie</a>(<span class="keywordtype">string</span> l, <span class="keywordtype">string</span> h, <span class="keywordtype">string</span> v)
+<a name="l00149"></a>00149         {
+<a name="l00150"></a>00150             Login = l;
+<a name="l00151"></a>00151             Haslo = h;
+<a name="l00152"></a>00152             wersjaKlienta = v;
+<a name="l00153"></a>00153         }
+<a name="l00154"></a>00154         [XmlAttribute(<span class="stringliteral">"login"</span>)]
+<a name="l00155"></a>00155         <span class="keyword">public</span> <span class="keywordtype">string</span> Login
+<a name="l00156"></a><a class="code" href="../../da/da0/a00009.html#bf20831d9b7c79f4c9de90320ff7e250">00156</a>         {
+<a name="l00157"></a>00157             <span class="keyword">get</span>
+<a name="l00158"></a>00158             {
+<a name="l00159"></a>00159                 <span class="keywordflow">return</span> login;
+<a name="l00160"></a>00160             }
+<a name="l00161"></a>00161             <span class="keyword">set</span>
+<a name="l00162"></a>00162             {
+<a name="l00163"></a>00163                 login = value;
+<a name="l00164"></a>00164             }
+<a name="l00165"></a>00165         }
+<a name="l00166"></a>00166         [XmlAttribute(<span class="stringliteral">"haslo"</span>)]
+<a name="l00167"></a>00167         <span class="keyword">public</span> <span class="keywordtype">string</span> Haslo
+<a name="l00168"></a><a class="code" href="../../da/da0/a00009.html#6f3c62f8e9b616f4b214788974fe93cd">00168</a>         {
+<a name="l00169"></a>00169             <span class="keyword">get</span>
+<a name="l00170"></a>00170             {
+<a name="l00171"></a>00171                 <span class="keywordflow">return</span> haslo;
+<a name="l00172"></a>00172             }
+<a name="l00173"></a>00173             <span class="keyword">set</span>
+<a name="l00174"></a>00174             {
+<a name="l00175"></a>00175                 haslo = value;
+<a name="l00176"></a>00176             }
+<a name="l00177"></a>00177         }
+<a name="l00178"></a>00178         [XmlAttribute(<span class="stringliteral">"wersja"</span>)]
+<a name="l00179"></a>00179         <span class="keyword">public</span> <span class="keywordtype">string</span> wersjaKlienta
+<a name="l00180"></a><a class="code" href="../../da/da0/a00009.html#aa3348ed5721633094699e4ab4b43289">00180</a>         {
+<a name="l00181"></a>00181             <span class="keyword">get</span>
+<a name="l00182"></a>00182             {
+<a name="l00183"></a>00183                 <span class="keywordflow">return</span> vKlienta;
+<a name="l00184"></a>00184             }
+<a name="l00185"></a>00185             <span class="keyword">set</span>
+<a name="l00186"></a>00186             {
+<a name="l00187"></a>00187                 vKlienta = value;
+<a name="l00188"></a>00188             }
+<a name="l00189"></a>00189         }
+<a name="l00190"></a>00190 
+<a name="l00191"></a><a class="code" href="../../da/da0/a00009.html#1fa00149f1a375887302be1b66d76f51">00191</a>         <span class="keyword">private</span> <span class="keywordtype">string</span> login;
+<a name="l00192"></a><a class="code" href="../../da/da0/a00009.html#ee8fc634a45d3b1c48c0fda5de62aa8b">00192</a>         <span class="keyword">private</span> <span class="keywordtype">string</span> haslo;
+<a name="l00193"></a><a class="code" href="../../da/da0/a00009.html#4f1ccf1f388e4f7c412a91ceefd11cc8">00193</a>         <span class="keyword">private</span> <span class="keywordtype">string</span> vKlienta;
+<a name="l00194"></a>00194     }
+<a name="l00198"></a>00198     [XmlRoot(<span class="stringliteral">"klient"</span>)]
+<a name="l00199"></a><a class="code" href="../../dd/d1b/a00015.html">00199</a>     <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="../../dd/d1b/a00015.html" title="Klasa zawiera dane do serializacji listy plikow uzytkownika.">listaPlikow</a> : <a class="code" href="../../de/d5e/a00007.html" title="Klasa zawiera dane do serializacji zapytania do serwera.">klientBase</a>
+<a name="l00200"></a>00200     {
+<a name="l00201"></a><a class="code" href="../../dd/d1b/a00015.html#5dbe6847bccf04113c46e7a32e7ccfa0">00201</a>         <span class="keyword">private</span> <span class="keywordtype">string</span> uzyt;
+<a name="l00202"></a><a class="code" href="../../dd/d1b/a00015.html#db427e61ff4a681f4f5c8b14e03ca3f9">00202</a>         <span class="keyword">public</span> <a class="code" href="../../dd/d1b/a00015.html#db427e61ff4a681f4f5c8b14e03ca3f9">listaPlikow</a>() { }
+<a name="l00203"></a><a class="code" href="../../dd/d1b/a00015.html#925a91ea5825c2e2d1e8aa98067a6196">00203</a>         <span class="keyword">public</span> <a class="code" href="../../dd/d1b/a00015.html" title="Klasa zawiera dane do serializacji listy plikow uzytkownika.">listaPlikow</a>(<span class="keywordtype">int</span> <span class="keywordtype">id</span>, <span class="keywordtype">int</span> oper, <span class="keywordtype">string</span> u)
+<a name="l00204"></a>00204             : base(id, oper)
+<a name="l00205"></a>00205         {
+<a name="l00206"></a>00206             uzytkownik = u;
+<a name="l00207"></a>00207         }
+<a name="l00208"></a>00208         [XmlAttribute]
+<a name="l00209"></a>00209         <span class="keyword">public</span> <span class="keywordtype">string</span> uzytkownik
+<a name="l00210"></a><a class="code" href="../../dd/d1b/a00015.html#87d283970184c0a6185983930bd4c6f0">00210</a>         {
+<a name="l00211"></a>00211             <span class="keyword">get</span>
+<a name="l00212"></a>00212             {
+<a name="l00213"></a>00213                 <span class="keywordflow">return</span> uzyt;
+<a name="l00214"></a>00214             }
+<a name="l00215"></a>00215             <span class="keyword">set</span>
+<a name="l00216"></a>00216             {
+<a name="l00217"></a>00217                 uzyt = value;
+<a name="l00218"></a>00218             }
+<a name="l00219"></a>00219         }
+<a name="l00220"></a>00220     }
+<a name="l00224"></a>00224     [XmlRoot(<span class="stringliteral">"klient"</span>)]
+<a name="l00225"></a><a class="code" href="../../d7/d46/a00002.html">00225</a>     <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="../../d7/d46/a00002.html" title="Klasa zawiera dane do serializacji zapytania o sciagniecie pliku.">downloadPliku</a> : <a class="code" href="../../dd/d1b/a00015.html" title="Klasa zawiera dane do serializacji listy plikow uzytkownika.">listaPlikow</a>
+<a name="l00226"></a>00226     {
+<a name="l00227"></a><a class="code" href="../../d7/d46/a00002.html#2b7e420409cf7d906d6db326c9c877e6">00227</a>         <span class="keyword">private</span> List&lt;plikBase&gt; pPlik;
+<a name="l00228"></a><a class="code" href="../../d7/d46/a00002.html#ac619cdb9edb6dd8f1113f6987dbbe35">00228</a>         <span class="keyword">public</span> <a class="code" href="../../d7/d46/a00002.html#ac619cdb9edb6dd8f1113f6987dbbe35">downloadPliku</a>() { }
+<a name="l00229"></a><a class="code" href="../../d7/d46/a00002.html#d4cef9cd224ce0173bf52f3be46e4918">00229</a>         <span class="keyword">public</span> <a class="code" href="../../d7/d46/a00002.html" title="Klasa zawiera dane do serializacji zapytania o sciagniecie pliku.">downloadPliku</a>(<span class="keywordtype">int</span> <span class="keywordtype">id</span>, <span class="keywordtype">int</span> oper, <span class="keywordtype">string</span> u, <span class="keywordtype">string</span>[] nazwa)
+<a name="l00230"></a>00230             : base(id, oper, u)
+<a name="l00231"></a>00231         {
+<a name="l00232"></a>00232             plik = <span class="keyword">new</span> List&lt;plikBase&gt;();
+<a name="l00233"></a>00233             <span class="keywordflow">foreach</span> (<span class="keywordtype">string</span> s <span class="keywordflow">in</span> nazwa)
+<a name="l00234"></a>00234                 plik.Add(<span class="keyword">new</span> <a class="code" href="../../d7/d7a/a00016.html" title="Klasa zawiera dane do serializacji informacji o pliku.">plikBase</a>(s));
+<a name="l00235"></a>00235         }
+<a name="l00236"></a>00236         [XmlElement(<span class="stringliteral">"plik"</span>)]
+<a name="l00237"></a>00237         <span class="keyword">public</span> List&lt;plikBase&gt; plik
+<a name="l00238"></a><a class="code" href="../../d7/d46/a00002.html#afc812455fda8104711ad7f8e2508a6b">00238</a>         {
+<a name="l00239"></a>00239             <span class="keyword">get</span>
+<a name="l00240"></a>00240             {
+<a name="l00241"></a>00241                 <span class="keywordflow">return</span> pPlik;
+<a name="l00242"></a>00242             }
+<a name="l00243"></a>00243             <span class="keyword">set</span>
+<a name="l00244"></a>00244             {
+<a name="l00245"></a>00245                 pPlik = value;
+<a name="l00246"></a>00246             }
+<a name="l00247"></a>00247         }
+<a name="l00248"></a>00248     }
+<a name="l00252"></a>00252     [XmlRoot(<span class="stringliteral">"klient"</span>)]
+<a name="l00253"></a><a class="code" href="../../d7/dec/a00010.html">00253</a>     <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="../../d7/dec/a00010.html" title="Klasa zawiera dane do serializacji odpowiedzi o ściągnięcie pliku.">klientOdpDownload</a> : <a class="code" href="../../de/d5e/a00007.html" title="Klasa zawiera dane do serializacji zapytania do serwera.">klientBase</a>
+<a name="l00254"></a>00254     {
+<a name="l00255"></a><a class="code" href="../../d7/dec/a00010.html#50dcb80ebd84c9929250c659e169fea9">00255</a>         <span class="keyword">private</span> <span class="keywordtype">string</span> pAction;
+<a name="l00256"></a><a class="code" href="../../d7/dec/a00010.html#39b02a7d62f5f5d1fc3f027bc1ab666b">00256</a>         <span class="keyword">public</span> <a class="code" href="../../d7/dec/a00010.html#39b02a7d62f5f5d1fc3f027bc1ab666b">klientOdpDownload</a>() { }
+<a name="l00257"></a><a class="code" href="../../d7/dec/a00010.html#31174bd92b052586e1bb093bf631f330">00257</a>         <span class="keyword">public</span> <a class="code" href="../../d7/dec/a00010.html" title="Klasa zawiera dane do serializacji odpowiedzi o ściągnięcie pliku.">klientOdpDownload</a>(<span class="keywordtype">int</span> <span class="keywordtype">id</span>, <span class="keywordtype">int</span> oper, <span class="keywordtype">string</span> act)
+<a name="l00258"></a>00258             : base(id, oper)
+<a name="l00259"></a>00259         {
+<a name="l00260"></a>00260             action = act;
+<a name="l00261"></a>00261         }
+<a name="l00262"></a>00262         [XmlAttribute]
+<a name="l00263"></a>00263         <span class="keyword">public</span> <span class="keywordtype">string</span> action
+<a name="l00264"></a><a class="code" href="../../d7/dec/a00010.html#f1e41ed2ca8b161225883d79faa35121">00264</a>         {
+<a name="l00265"></a>00265             <span class="keyword">get</span>
+<a name="l00266"></a>00266             {
+<a name="l00267"></a>00267                 <span class="keywordflow">return</span> pAction;
+<a name="l00268"></a>00268             }
+<a name="l00269"></a>00269             <span class="keyword">set</span>
+<a name="l00270"></a>00270             {
+<a name="l00271"></a>00271                 pAction = value;
+<a name="l00272"></a>00272             }
+<a name="l00273"></a>00273         }
+<a name="l00274"></a>00274 
+<a name="l00275"></a>00275     }
+<a name="l00279"></a>00279     [XmlRoot(<span class="stringliteral">"klient"</span>)]
+<a name="l00280"></a><a class="code" href="../../da/d45/a00011.html">00280</a>     <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="../../da/d45/a00011.html" title="Klasa zawiera dane do serializacji zapytania o wysyłanie pliku.">klientUpload</a> : <a class="code" href="../../de/d5e/a00007.html" title="Klasa zawiera dane do serializacji zapytania do serwera.">klientBase</a>
+<a name="l00281"></a>00281     {
+<a name="l00282"></a><a class="code" href="../../da/d45/a00011.html#b6779c02575a79c4964354a61dd9088f">00282</a>         <a class="code" href="../../d1/d2b/a00018.html" title="Klasa zawiera dane do serializacji rozszerzonych informacji o pliku.">plikInfo</a> pPlik;
+<a name="l00283"></a><a class="code" href="../../da/d45/a00011.html#360231a3cc7ad8d86b5245eaeec18711">00283</a>         <span class="keyword">public</span> <a class="code" href="../../da/d45/a00011.html" title="Klasa zawiera dane do serializacji zapytania o wysyłanie pliku.">klientUpload</a>()
+<a name="l00284"></a>00284         {
+<a name="l00285"></a>00285         }
+<a name="l00286"></a><a class="code" href="../../da/d45/a00011.html#8a61f3de65e9fe569185ad9a70c8865f">00286</a>         <span class="keyword">public</span> <a class="code" href="../../da/d45/a00011.html" title="Klasa zawiera dane do serializacji zapytania o wysyłanie pliku.">klientUpload</a>(<span class="keywordtype">int</span> <span class="keywordtype">id</span>, <span class="keywordtype">int</span> oper, <span class="keywordtype">string</span> n, <span class="keywordtype">long</span> d, <span class="keywordtype">int</span> r, <span class="keywordtype">int</span> dos,<span class="keywordtype">string</span> h)
+<a name="l00287"></a>00287             : base(id, oper)
+<a name="l00288"></a>00288         {
+<a name="l00289"></a>00289             plik = <span class="keyword">new</span> <a class="code" href="../../d1/d2b/a00018.html" title="Klasa zawiera dane do serializacji rozszerzonych informacji o pliku.">plikInfo</a>(n, d, r, dos,h);
+<a name="l00290"></a>00290         }
+<a name="l00291"></a>00291         [XmlElement]
+<a name="l00292"></a>00292         <span class="keyword">public</span> <a class="code" href="../../d1/d2b/a00018.html" title="Klasa zawiera dane do serializacji rozszerzonych informacji o pliku.">plikInfo</a> plik
+<a name="l00293"></a><a class="code" href="../../da/d45/a00011.html#768e461c6c80e2703893b7634d00146b">00293</a>         {
+<a name="l00294"></a>00294             <span class="keyword">get</span>
+<a name="l00295"></a>00295             {
+<a name="l00296"></a>00296                 <span class="keywordflow">return</span> pPlik;
+<a name="l00297"></a>00297             }
+<a name="l00298"></a>00298             <span class="keyword">set</span>
+<a name="l00299"></a>00299             {
+<a name="l00300"></a>00300                 pPlik = value;
+<a name="l00301"></a>00301             }
+<a name="l00302"></a>00302         }
+<a name="l00303"></a>00303     }
+<a name="l00307"></a>00307     [XmlRoot(<span class="stringliteral">"klient"</span>)]
+<a name="l00308"></a><a class="code" href="../../d4/dee/a00008.html">00308</a>     <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="../../d4/dee/a00008.html" title="Klasa zawiera dane do serializacji wysyłania hasha pliku.">klientHash</a> : <a class="code" href="../../de/d5e/a00007.html" title="Klasa zawiera dane do serializacji zapytania do serwera.">klientBase</a>
+<a name="l00309"></a>00309     {
+<a name="l00310"></a><a class="code" href="../../d4/dee/a00008.html#0dba6fe0451b6d3b95cea1b021233229">00310</a>         <span class="keyword">private</span> <span class="keywordtype">string</span> pHash;
+<a name="l00311"></a><a class="code" href="../../d4/dee/a00008.html#6c9be19f6d58c4e42d82c298f9cdb3e8">00311</a>         <span class="keyword">public</span> <a class="code" href="../../d4/dee/a00008.html#6c9be19f6d58c4e42d82c298f9cdb3e8">klientHash</a>() { }
+<a name="l00312"></a><a class="code" href="../../d4/dee/a00008.html#41ce9f388ec0f731d80ebec886f7b4b2">00312</a>         <span class="keyword">public</span> <a class="code" href="../../d4/dee/a00008.html" title="Klasa zawiera dane do serializacji wysyłania hasha pliku.">klientHash</a>(<span class="keywordtype">int</span> <span class="keywordtype">id</span>, <span class="keywordtype">int</span> oper, <span class="keywordtype">string</span> h)
+<a name="l00313"></a>00313             : base(id, oper)
+<a name="l00314"></a>00314         {
+<a name="l00315"></a>00315             hash = h;
+<a name="l00316"></a>00316         }
+<a name="l00317"></a>00317         [XmlAttribute]
+<a name="l00318"></a>00318         <span class="keyword">public</span> <span class="keywordtype">string</span> hash
+<a name="l00319"></a><a class="code" href="../../d4/dee/a00008.html#5a3e998f66ab41fb3d9be69da9f6957d">00319</a>         {
+<a name="l00320"></a>00320             <span class="keyword">get</span>
+<a name="l00321"></a>00321             {
+<a name="l00322"></a>00322                 <span class="keywordflow">return</span> pHash;
+<a name="l00323"></a>00323             }
+<a name="l00324"></a>00324             <span class="keyword">set</span>
+<a name="l00325"></a>00325             {
+<a name="l00326"></a>00326                 pHash = value;
+<a name="l00327"></a>00327             }
+<a name="l00328"></a>00328         }
+<a name="l00329"></a>00329     }
+<a name="l00333"></a>00333     [XmlRoot(<span class="stringliteral">"klient"</span>)]
+<a name="l00334"></a><a class="code" href="../../df/d86/a00012.html">00334</a>     <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="../../df/d86/a00012.html" title="Klasa zawiera dane do serializacji zapytania o usunięcie pliku.">klientUsun</a> : <a class="code" href="../../de/d5e/a00007.html" title="Klasa zawiera dane do serializacji zapytania do serwera.">klientBase</a>
+<a name="l00335"></a>00335     {
+<a name="l00336"></a><a class="code" href="../../df/d86/a00012.html#c82991917146a9f234484a6b3e5ad685">00336</a>         List&lt;plikInfo&gt; pPlik;
+<a name="l00337"></a><a class="code" href="../../df/d86/a00012.html#b199284c747db6951ae55f6276bb80f3">00337</a>         <span class="keyword">public</span> <a class="code" href="../../df/d86/a00012.html#b199284c747db6951ae55f6276bb80f3">klientUsun</a>() { }
+<a name="l00338"></a><a class="code" href="../../df/d86/a00012.html#deeafd41f76b7ec30ef021354ea80cb8">00338</a>         <span class="keyword">public</span> <a class="code" href="../../df/d86/a00012.html" title="Klasa zawiera dane do serializacji zapytania o usunięcie pliku.">klientUsun</a>(<span class="keywordtype">int</span> <span class="keywordtype">id</span>, <span class="keywordtype">int</span> oper, List&lt;plikInfo&gt; pi)
+<a name="l00339"></a>00339             : base(id, oper)
+<a name="l00340"></a>00340         {
+<a name="l00341"></a>00341             plik = pi;
+<a name="l00342"></a>00342         }
+<a name="l00343"></a>00343         [XmlElement]
+<a name="l00344"></a>00344         <span class="keyword">public</span> List&lt;plikInfo&gt; plik
+<a name="l00345"></a><a class="code" href="../../df/d86/a00012.html#65f1c0b67462c058fc083489a442d824">00345</a>         {
+<a name="l00346"></a>00346             <span class="keyword">get</span>
+<a name="l00347"></a>00347             {
+<a name="l00348"></a>00348                 <span class="keywordflow">return</span> pPlik;
+<a name="l00349"></a>00349             }
+<a name="l00350"></a>00350             <span class="keyword">set</span>
+<a name="l00351"></a>00351             {
+<a name="l00352"></a>00352                 pPlik = value;
+<a name="l00353"></a>00353             }
+<a name="l00354"></a>00354         }
+<a name="l00355"></a>00355     }
+<a name="l00356"></a>00356 
+<a name="l00357"></a>00357 
+<a name="l00358"></a>00358 
+<a name="l00362"></a>00362     [XmlRoot(<span class="stringliteral">"serwer"</span>)]
+<a name="l00363"></a><a class="code" href="../../d3/d52/a00023.html">00363</a>     <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="../../d3/d52/a00023.html" title="Klasa zawiera dane do serializacji odpowiedzi serwera.">serwerBase</a>
+<a name="l00364"></a>00364     {
+<a name="l00365"></a><a class="code" href="../../d3/d52/a00023.html#78106818c3204874ec7767295f8c664d">00365</a>         <span class="keyword">private</span> <span class="keywordtype">int</span> pOdpowiedz;
+<a name="l00366"></a><a class="code" href="../../d3/d52/a00023.html#548856d9370b6b809f7218ee78af38b7">00366</a>         <span class="keyword">private</span> <span class="keywordtype">int</span> pOp;
+<a name="l00367"></a><a class="code" href="../../d3/d52/a00023.html#03b6c0fe53e451d71bb621b6708ea20a">00367</a>         <span class="keyword">public</span> <a class="code" href="../../d3/d52/a00023.html#03b6c0fe53e451d71bb621b6708ea20a">serwerBase</a>() { }
+<a name="l00368"></a><a class="code" href="../../d3/d52/a00023.html#0e5b05356082c0a469a2cd3ef53db565">00368</a>         <span class="keyword">public</span> <a class="code" href="../../d3/d52/a00023.html" title="Klasa zawiera dane do serializacji odpowiedzi serwera.">serwerBase</a>(<span class="keywordtype">int</span> o, <span class="keywordtype">int</span> op)
+<a name="l00369"></a>00369         {
+<a name="l00370"></a>00370             odp = o;
+<a name="l00371"></a>00371             operacja = op;
+<a name="l00372"></a>00372         }
+<a name="l00373"></a>00373         [XmlAttribute]
+<a name="l00374"></a>00374         <span class="keyword">public</span> <span class="keywordtype">int</span> odp
+<a name="l00375"></a><a class="code" href="../../d3/d52/a00023.html#536a1e136873a8bc73f912bb72ee154a">00375</a>         {
+<a name="l00376"></a>00376             <span class="keyword">get</span>
+<a name="l00377"></a>00377             {
+<a name="l00378"></a>00378                 <span class="keywordflow">return</span> pOdpowiedz;
+<a name="l00379"></a>00379             }
+<a name="l00380"></a>00380             <span class="keyword">set</span>
+<a name="l00381"></a>00381             {
+<a name="l00382"></a>00382                 pOdpowiedz = value;
+<a name="l00383"></a>00383             }
+<a name="l00384"></a>00384         }
+<a name="l00385"></a>00385         [XmlAttribute]
+<a name="l00386"></a>00386         <span class="keyword">public</span> <span class="keywordtype">int</span> operacja
+<a name="l00387"></a><a class="code" href="../../d3/d52/a00023.html#9e0414e76ae1f264010bd1dc1abbaef6">00387</a>         {
+<a name="l00388"></a>00388             <span class="keyword">get</span>
+<a name="l00389"></a>00389             {
+<a name="l00390"></a>00390                 <span class="keywordflow">return</span> pOp;
+<a name="l00391"></a>00391             }
+<a name="l00392"></a>00392             <span class="keyword">set</span>
+<a name="l00393"></a>00393             {
+<a name="l00394"></a>00394                 pOp = value;
+<a name="l00395"></a>00395             }
+<a name="l00396"></a>00396         }
+<a name="l00397"></a>00397     }
+<a name="l00401"></a>00401     [XmlRoot(<span class="stringliteral">"serwer"</span>)]
+<a name="l00402"></a><a class="code" href="../../d3/dfe/a00025.html">00402</a>     <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="../../d3/dfe/a00025.html" title="Klasa zawiera dane do serializacji odpowiedzi serwera na zapytanie o logowanie.">serwerLogowanie</a>
+<a name="l00403"></a>00403     {
+<a name="l00404"></a><a class="code" href="../../d3/dfe/a00025.html#45258daf05e76c2327ba5d5040095c2c">00404</a>         <span class="keyword">private</span> <span class="keywordtype">int</span> pOdpowiedz;
+<a name="l00405"></a><a class="code" href="../../d3/dfe/a00025.html#48bbf2d8e5271942632a35e9cd565c99">00405</a>         <span class="keyword">private</span> <span class="keywordtype">int</span> pSesja;
+<a name="l00406"></a><a class="code" href="../../d3/dfe/a00025.html#413769e602351ad26002d9ce6158629a">00406</a>         <span class="keyword">private</span> <span class="keywordtype">string</span> pWersja;
+<a name="l00407"></a><a class="code" href="../../d3/dfe/a00025.html#87dd9f8f0a4c13f2618f3665e0939990">00407</a>         <span class="keyword">public</span> <a class="code" href="../../d3/dfe/a00025.html#87dd9f8f0a4c13f2618f3665e0939990">serwerLogowanie</a>() { }
+<a name="l00408"></a><a class="code" href="../../d3/dfe/a00025.html#2f95f4b70f385acadc411c05487d9a66">00408</a>         <span class="keyword">public</span> <a class="code" href="../../d3/dfe/a00025.html" title="Klasa zawiera dane do serializacji odpowiedzi serwera na zapytanie o logowanie.">serwerLogowanie</a>(<span class="keywordtype">int</span> odp, <span class="keywordtype">int</span> ses, <span class="keywordtype">string</span> wer)
+<a name="l00409"></a>00409         {
+<a name="l00410"></a>00410             odpowiedz = odp;
+<a name="l00411"></a>00411             sesja = ses;
+<a name="l00412"></a>00412             wersja = wer;
+<a name="l00413"></a>00413         }
+<a name="l00414"></a>00414         [XmlAttribute]
+<a name="l00415"></a>00415         <span class="keyword">public</span> <span class="keywordtype">int</span> odpowiedz
+<a name="l00416"></a><a class="code" href="../../d3/dfe/a00025.html#2db358a96d3e800ffda1100aefd4cb2f">00416</a>         {
+<a name="l00417"></a>00417             <span class="keyword">get</span>
+<a name="l00418"></a>00418             {
+<a name="l00419"></a>00419                 <span class="keywordflow">return</span> pOdpowiedz;
+<a name="l00420"></a>00420             }
+<a name="l00421"></a>00421             <span class="keyword">set</span>
+<a name="l00422"></a>00422             {
+<a name="l00423"></a>00423                 pOdpowiedz = value;
+<a name="l00424"></a>00424             }
+<a name="l00425"></a>00425         }
+<a name="l00426"></a>00426         [XmlAttribute]
+<a name="l00427"></a>00427         <span class="keyword">public</span> <span class="keywordtype">int</span> sesja
+<a name="l00428"></a><a class="code" href="../../d3/dfe/a00025.html#2102ee09e6fb509d2409223a6ce6e019">00428</a>         {
+<a name="l00429"></a>00429             <span class="keyword">get</span>
+<a name="l00430"></a>00430             {
+<a name="l00431"></a>00431                 <span class="keywordflow">return</span> pSesja;
+<a name="l00432"></a>00432             }
+<a name="l00433"></a>00433             <span class="keyword">set</span>
+<a name="l00434"></a>00434             {
+<a name="l00435"></a>00435                 pSesja = value;
+<a name="l00436"></a>00436             }
+<a name="l00437"></a>00437         }
+<a name="l00438"></a>00438         [XmlAttribute]
+<a name="l00439"></a>00439         <span class="keyword">public</span> <span class="keywordtype">string</span> wersja
+<a name="l00440"></a><a class="code" href="../../d3/dfe/a00025.html#4790b4d929cd024c7ab8f983f1e507cd">00440</a>         {
+<a name="l00441"></a>00441             <span class="keyword">get</span>
+<a name="l00442"></a>00442             {
+<a name="l00443"></a>00443                 <span class="keywordflow">return</span> pWersja;
+<a name="l00444"></a>00444             }
+<a name="l00445"></a>00445             <span class="keyword">set</span>
+<a name="l00446"></a>00446             {
+<a name="l00447"></a>00447                 pWersja = value;
+<a name="l00448"></a>00448             }
+<a name="l00449"></a>00449         }
+<a name="l00450"></a>00450     }
+<a name="l00454"></a>00454     [XmlRoot(<span class="stringliteral">"serwer"</span>)]
+<a name="l00455"></a><a class="code" href="../../d6/d5b/a00026.html">00455</a>     <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="../../d6/d5b/a00026.html" title="Klasa zawiera dane do serializacji odpowiedzi serwera na zapytanie o liste plikow...">serwerPliki</a> : <a class="code" href="../../d3/d52/a00023.html" title="Klasa zawiera dane do serializacji odpowiedzi serwera.">serwerBase</a>
+<a name="l00456"></a>00456     {
+<a name="l00457"></a><a class="code" href="../../d6/d5b/a00026.html#8d8e172bb33ce06a586d4790c33a41b4">00457</a>         <span class="keyword">private</span> List&lt;plikInfo&gt; pPlik;
+<a name="l00458"></a><a class="code" href="../../d6/d5b/a00026.html#cd11d0671b4895530877a83a471c81ae">00458</a>         <span class="keyword">public</span> <a class="code" href="../../d6/d5b/a00026.html#cd11d0671b4895530877a83a471c81ae">serwerPliki</a>() { }
+<a name="l00459"></a>00459         [XmlElement]
+<a name="l00460"></a>00460         <span class="keyword">public</span> List&lt;plikInfo&gt; plik
+<a name="l00461"></a><a class="code" href="../../d6/d5b/a00026.html#b6d1b334712037271b25777240056f83">00461</a>         {
+<a name="l00462"></a>00462             <span class="keyword">get</span>
+<a name="l00463"></a>00463             {
+<a name="l00464"></a>00464                 <span class="keywordflow">return</span> pPlik;
+<a name="l00465"></a>00465             }
+<a name="l00466"></a>00466             <span class="keyword">set</span>
+<a name="l00467"></a>00467             {
+<a name="l00468"></a>00468                 pPlik = value;
+<a name="l00469"></a>00469             }
+<a name="l00470"></a>00470         }
+<a name="l00471"></a>00471     }
+<a name="l00475"></a>00475     [XmlRoot(<span class="stringliteral">"serwer"</span>)]
+<a name="l00476"></a><a class="code" href="../../dc/de2/a00024.html">00476</a>     <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="../../dc/de2/a00024.html" title="Klasa zawiera dane do serializacji odpowiedzi serwera na zapytanie o hash pliku.">serwerHash</a> : <a class="code" href="../../d3/d52/a00023.html" title="Klasa zawiera dane do serializacji odpowiedzi serwera.">serwerBase</a>
+<a name="l00477"></a>00477     {
+<a name="l00478"></a><a class="code" href="../../dc/de2/a00024.html#e3111f0da2c2e6180ae82949844b5111">00478</a>         <span class="keyword">private</span> <span class="keywordtype">string</span> pHash;
+<a name="l00479"></a><a class="code" href="../../dc/de2/a00024.html#79c7996d2e3af0a5ccceed0a8571f365">00479</a>         <span class="keyword">public</span> <a class="code" href="../../dc/de2/a00024.html#79c7996d2e3af0a5ccceed0a8571f365">serwerHash</a>() { }
+<a name="l00480"></a><a class="code" href="../../dc/de2/a00024.html#c5d6f7f180298714d66df1b3651de900">00480</a>         <span class="keyword">public</span> <a class="code" href="../../dc/de2/a00024.html" title="Klasa zawiera dane do serializacji odpowiedzi serwera na zapytanie o hash pliku.">serwerHash</a>(<span class="keywordtype">int</span> o, <span class="keywordtype">int</span> op, <span class="keywordtype">string</span> h)
+<a name="l00481"></a>00481             : base(o, op)
+<a name="l00482"></a>00482         {
+<a name="l00483"></a>00483             hash = h;
+<a name="l00484"></a>00484         }
+<a name="l00485"></a>00485         [XmlAttribute]
+<a name="l00486"></a>00486         <span class="keyword">public</span> <span class="keywordtype">string</span> hash
+<a name="l00487"></a><a class="code" href="../../dc/de2/a00024.html#7a7a7837aebfd93a49cc82322210f287">00487</a>         {
+<a name="l00488"></a>00488             <span class="keyword">get</span>
+<a name="l00489"></a>00489             {
+<a name="l00490"></a>00490                 <span class="keywordflow">return</span> pHash;
+<a name="l00491"></a>00491             }
+<a name="l00492"></a>00492             <span class="keyword">set</span>
+<a name="l00493"></a>00493             {
+<a name="l00494"></a>00494                 pHash = value;
+<a name="l00495"></a>00495             }
+<a name="l00496"></a>00496         }
+<a name="l00497"></a>00497     }
+<a name="l00498"></a>00498 
+<a name="l00499"></a>00499 }
+</pre></div></div>
+<hr size="1"><address style="text-align: right;"><small>Wygenerowano Thu Jun 4 19:42:01 2009 dla Ass8-Klient programem&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="../../doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
+</body>
+</html>

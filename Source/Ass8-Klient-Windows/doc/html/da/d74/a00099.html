@@ -1,0 +1,138 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>Ass8-Klient: Plik źródłowy Znajomi.cs</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css">
+<link href="../../doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Wygenerowano przez Doxygen 1.5.8 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="../../main.html"><span>Strona&nbsp;główna</span></a></li>
+      <li><a href="../../namespaces.html"><span>Pakiety</span></a></li>
+      <li><a href="../../annotated.html"><span>Klasy</span></a></li>
+      <li class="current"><a href="../../files.html"><span>Pliki</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="../../files.html"><span>Lista&nbsp;plików</span></a></li>
+      <li><a href="../../globals.html"><span>Składowe&nbsp;plików</span></a></li>
+    </ul>
+  </div>
+<h1>Znajomi.cs</h1><a href="../../d1/d22/a00057.html">Idź do dokumentacji tego pliku.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a><a class="code" href="../../d1/d22/a00057.html#81a223a02c34d82b47199f08308847f2">00001</a> ﻿using <a class="code" href="../../d8/d41/a00038.html#81a223a02c34d82b47199f08308847f2">System</a>;
+<a name="l00002"></a>00002 <span class="keyword">using</span> <a class="code" href="../../d8/d41/a00038.html#81a223a02c34d82b47199f08308847f2">System</a>.Collections.Generic;
+<a name="l00003"></a>00003 <span class="keyword">using</span> <a class="code" href="../../d8/d41/a00038.html#81a223a02c34d82b47199f08308847f2">System</a>.Collections;
+<a name="l00004"></a>00004 <span class="keyword">using</span> <a class="code" href="../../d8/d41/a00038.html#81a223a02c34d82b47199f08308847f2">System</a>.ComponentModel;
+<a name="l00005"></a>00005 <span class="keyword">using</span> <a class="code" href="../../d8/d41/a00038.html#81a223a02c34d82b47199f08308847f2">System</a>.Data;
+<a name="l00006"></a>00006 <span class="keyword">using</span> <a class="code" href="../../d8/d41/a00038.html#81a223a02c34d82b47199f08308847f2">System</a>.Drawing;
+<a name="l00007"></a>00007 <span class="keyword">using</span> <a class="code" href="../../d8/d41/a00038.html#81a223a02c34d82b47199f08308847f2">System</a>.Text;
+<a name="l00008"></a>00008 <span class="keyword">using</span> <a class="code" href="../../d8/d41/a00038.html#81a223a02c34d82b47199f08308847f2">System</a>.Windows.Forms;
+<a name="l00009"></a>00009 <span class="keyword">using</span> <a class="code" href="../../d8/d41/a00038.html#81a223a02c34d82b47199f08308847f2">System</a>.Threading;
+<a name="l00010"></a>00010 <span class="keyword">using</span> GlacialComponents.Controls;
+<a name="l00011"></a>00011 <span class="keyword">namespace </span>ASS8.<a class="code" href="../../d3/de7/a00039.html#50d8d80fabd02a9a24fb725624e1ad24">Klient</a>
+<a name="l00012"></a>00012 {
+<a name="l00016"></a><a class="code" href="../../d1/d7c/a00003.html">00016</a>     <span class="keyword">public</span> <span class="keyword">partial class </span><a class="code" href="../../d1/d7c/a00003.html" title="Klasa odpowiedzialna za wyświetlenie okna z wyszukiwaniem plików znajomych.">Form1</a> : Form
+<a name="l00017"></a>00017     {
+<a name="l00018"></a><a class="code" href="../../d1/d7c/a00003.html#a21006ffcd0ae9b655d6232326c0783e">00018</a>         <a class="code" href="../../dd/da2/a00019.html" title="Klasa wyświetlająca okno z pobieranymi zadaniami.">Pobierane</a> pobieranie = null;
+<a name="l00019"></a><a class="code" href="../../d1/d7c/a00003.html#3a7a9649738431ac4b2dd14fdabb7d1c">00019</a>         <span class="keyword">public</span> <a class="code" href="../../d7/dd4/a00013.html">komunikacja</a> k;
+<a name="l00023"></a><a class="code" href="../../d1/d7c/a00003.html#f4f57fa006228bda67e1478113bbd3bd">00023</a>         <span class="keyword">public</span> <a class="code" href="../../d1/d7c/a00003.html" title="Klasa odpowiedzialna za wyświetlenie okna z wyszukiwaniem plików znajomych.">Form1</a>()
+<a name="l00024"></a>00024         {
+<a name="l00025"></a>00025             InitializeComponent();
+<a name="l00026"></a>00026             lvPliki.View = View.Details;
+<a name="l00027"></a>00027             lvPliki.FullRowSelect = <span class="keyword">true</span>;
+<a name="l00028"></a>00028             lvPliki.GridLines = <span class="keyword">true</span>;
+<a name="l00029"></a>00029             lvPliki.Sorting = SortOrder.Ascending;
+<a name="l00030"></a>00030             lvPliki.Columns.Add(<span class="stringliteral">"Nazwa"</span>,70, HorizontalAlignment.Left);
+<a name="l00031"></a>00031             lvPliki.Columns.Add(<span class="stringliteral">"Sciezka"</span>,120 , HorizontalAlignment.Left);            
+<a name="l00032"></a>00032             lvPliki.Columns.Add(<span class="stringliteral">"Rozmiar"</span>, -2, HorizontalAlignment.Center);
+<a name="l00033"></a>00033         }
+<a name="l00034"></a><a class="code" href="../../d1/d7c/a00003.html#8647bc097f5550069c2ffa260182726e">00034</a>         <span class="keywordtype">string</span> wyswietlonePliki;
+<a name="l00040"></a><a class="code" href="../../d1/d7c/a00003.html#e934f222567288447b30be318da95ba7">00040</a>         <span class="keyword">private</span> <span class="keywordtype">void</span> btnListuj_Click(<span class="keywordtype">object</span> sender, EventArgs e)
+<a name="l00041"></a>00041         {
+<a name="l00042"></a>00042             <span class="keywordflow">if</span> (txtUzytkownik.Text == <span class="stringliteral">""</span>)
+<a name="l00043"></a>00043             {
+<a name="l00044"></a>00044                 MessageBox.Show(<span class="stringliteral">"Wpisz uzytkownika"</span>);
+<a name="l00045"></a>00045                 <span class="keywordflow">return</span>;
+<a name="l00046"></a>00046             }
+<a name="l00047"></a>00047             wyswietlonePliki = txtUzytkownik.Text;
+<a name="l00048"></a>00048             <a class="code" href="../../d7/dd4/a00013.html">komunikacja</a> kk = <span class="keyword">new</span> <a class="code" href="../../d7/dd4/a00013.html">komunikacja</a>();
+<a name="l00049"></a>00049             kk.<a class="code" href="../../d7/dd4/a00013.html#2c321eee82dba3f82cae18a5b4d6d620" title="Właściwość ustawia lub zwraca login do połączenia z serwerem.">Login</a> = k.Login;
+<a name="l00050"></a>00050             kk.<a class="code" href="../../d7/dd4/a00013.html#3c5917b1f8a0fb187d3c48ff22b25ec6" title="Właściwość ustawia lub zwraca hasło do połączenia z serwerem.">Haslo</a> = k.Haslo;
+<a name="l00051"></a>00051             kk.<a class="code" href="../../d7/dd4/a00013.html#da808f405d71a8f5f06659bac3b3fe50" title="Ustawia serwer i port do połączenia.">ustawUstawienia</a>(k.Serwer, k.Port);
+<a name="l00052"></a>00052             kk.<a class="code" href="../../d7/dd4/a00013.html#cdc8379f1139bc25fb24a6c9b6ce1cc1" title="Loguje do serwera.">login</a>();
+<a name="l00053"></a>00053             List&lt;plikInfo&gt; <a class="code" href="../../d4/d51/a00017.html" title="Klasa zawiera liste plikow z ich informacjami.">pliki</a> = kk.<a class="code" href="../../d7/dd4/a00013.html#9ca2f36e9df9288ff32c44e789b0e576" title="Ściąga listę plików użytkwonika.">downloadListy</a>(txtUzytkownik.Text);
+<a name="l00054"></a>00054 
+<a name="l00055"></a>00055             <span class="keywordflow">foreach</span> (<a class="code" href="../../d1/d2b/a00018.html" title="Klasa zawiera dane do serializacji rozszerzonych informacji o pliku.">plikInfo</a> p <span class="keywordflow">in</span> <a class="code" href="../../d4/d51/a00017.html" title="Klasa zawiera liste plikow z ich informacjami.">pliki</a>)
+<a name="l00056"></a>00056             {
+<a name="l00057"></a>00057                 <span class="keywordtype">string</span>[] str = p.<a class="code" href="../../d7/d7a/a00016.html#d79d58573126b1cd96f3c6966ae83434">nazwa</a>.Split(<span class="stringliteral">"/"</span>.ToCharArray());
+<a name="l00058"></a>00058                 ListViewItem item = <span class="keyword">new</span> ListViewItem(str[str.Length-1]);
+<a name="l00059"></a>00059                 item.SubItems.Add(p.<a class="code" href="../../d7/d7a/a00016.html#d79d58573126b1cd96f3c6966ae83434">nazwa</a>.Substring(0, p.<a class="code" href="../../d7/d7a/a00016.html#d79d58573126b1cd96f3c6966ae83434">nazwa</a>.Length - str[str.Length - 1].Length));
+<a name="l00060"></a>00060                 item.SubItems.Add(p.<a class="code" href="../../d1/d2b/a00018.html#e87d445327b832a69930c10f5555bf53">rozmiar</a>.ToString());
+<a name="l00061"></a>00061                 lvPliki.Items.Add(item);
+<a name="l00062"></a>00062             }
+<a name="l00063"></a>00063         }
+<a name="l00069"></a><a class="code" href="../../d1/d7c/a00003.html#3565ea2384b6428312fa310aad4c7e25">00069</a>         <span class="keyword">private</span> <span class="keywordtype">void</span> button1_Click(<span class="keywordtype">object</span> sender, EventArgs e)
+<a name="l00070"></a>00070         {
+<a name="l00071"></a>00071             <span class="keywordflow">if</span> (pobieranie == null)
+<a name="l00072"></a>00072                 pobieranie = <span class="keyword">new</span> <a class="code" href="../../dd/da2/a00019.html" title="Klasa wyświetlająca okno z pobieranymi zadaniami.">Pobierane</a>();
+<a name="l00073"></a>00073             <span class="keywordflow">foreach</span> (ListViewItem lvi <span class="keywordflow">in</span> lvPliki.SelectedItems)
+<a name="l00074"></a>00074             {
+<a name="l00075"></a>00075                 Thread th = <span class="keyword">new</span> Thread(<span class="keyword">new</span> ParameterizedThreadStart(pobieraj));
+<a name="l00076"></a>00076                 <a class="code" href="../../d1/d2b/a00018.html" title="Klasa zawiera dane do serializacji rozszerzonych informacji o pliku.">plikInfo</a> plik = <span class="keyword">new</span> <a class="code" href="../../d1/d2b/a00018.html" title="Klasa zawiera dane do serializacji rozszerzonych informacji o pliku.">plikInfo</a>(lvi.SubItems[0].Text, 0, Int32.Parse(lvi.SubItems[2].Text), 0, <span class="stringliteral">""</span>);
+<a name="l00077"></a>00077                 List&lt;object&gt; obj = <span class="keyword">new</span> List&lt;object&gt;();
+<a name="l00078"></a>00078                 obj.Add(lvi.SubItems[1].Text+lvi.SubItems[0].Text);
+<a name="l00079"></a>00079                 obj.Add(plik);
+<a name="l00080"></a>00080                 obj.Add(wyswietlonePliki);
+<a name="l00081"></a>00081                 th.SetApartmentState(ApartmentState.STA);
+<a name="l00082"></a>00082                 th.IsBackground = <span class="keyword">true</span>;
+<a name="l00083"></a>00083                 th.Start(obj);
+<a name="l00084"></a>00084             }
+<a name="l00085"></a>00085         }
+<a name="l00086"></a><a class="code" href="../../d1/d7c/a00003.html#26249d134376a8c1b9be63c9a2df68a2">00086</a>         Mutex mut = <span class="keyword">new</span> Mutex();
+<a name="l00091"></a><a class="code" href="../../d1/d7c/a00003.html#21b906fd66030071dd1057fe32efeca1">00091</a>         <span class="keyword">private</span> <span class="keywordtype">void</span> <a class="code" href="../../d1/d7c/a00003.html#21b906fd66030071dd1057fe32efeca1" title="Funkcja pobierająca wybrane pliki z serwera.">pobieraj</a>(<span class="keywordtype">object</span> o){
+<a name="l00092"></a>00092             List&lt;object&gt; obj = (List&lt;object&gt;)o;
+<a name="l00093"></a>00093             FolderBrowserDialog fbd = <span class="keyword">new</span> FolderBrowserDialog();
+<a name="l00094"></a>00094             <span class="keywordflow">if</span> (fbd.ShowDialog() == DialogResult.Cancel)
+<a name="l00095"></a>00095             {
+<a name="l00096"></a>00096                 pobieranie.usunZadanie((GLItem)obj[1]);
+<a name="l00097"></a>00097                 <span class="keywordflow">return</span>;
+<a name="l00098"></a>00098             }
+<a name="l00099"></a>00099             <span class="keywordtype">string</span>[] plik = {<span class="stringliteral">""</span>};
+<a name="l00100"></a>00100             plik[0]=(string)obj[0];
+<a name="l00101"></a>00101             <a class="code" href="../../d1/d2b/a00018.html" title="Klasa zawiera dane do serializacji rozszerzonych informacji o pliku.">plikInfo</a> p=(<a class="code" href="../../d1/d2b/a00018.html" title="Klasa zawiera dane do serializacji rozszerzonych informacji o pliku.">plikInfo</a>)obj[1];
+<a name="l00102"></a>00102             GLItem gli = pobieranie.dodajZadanie(p);
+<a name="l00103"></a>00103             <span class="keywordtype">string</span> uzytkownik=(string)obj[2];
+<a name="l00104"></a>00104             mut.WaitOne();
+<a name="l00105"></a>00105             k.downloadFiles(plik, uzytkownik, gli,fbd.SelectedPath);
+<a name="l00106"></a>00106             mut.ReleaseMutex();
+<a name="l00107"></a>00107             
+<a name="l00108"></a>00108         }
+<a name="l00114"></a><a class="code" href="../../d1/d7c/a00003.html#1fb4fa2454ffdf753cce1637657029c8">00114</a>         <span class="keyword">private</span> <span class="keywordtype">void</span> btnPobierane_Click(<span class="keywordtype">object</span> sender, EventArgs e)
+<a name="l00115"></a>00115         {
+<a name="l00116"></a>00116             <span class="keywordflow">if</span> (pobieranie == null)
+<a name="l00117"></a>00117             {
+<a name="l00118"></a>00118                 pobieranie = <span class="keyword">new</span> <a class="code" href="../../dd/da2/a00019.html" title="Klasa wyświetlająca okno z pobieranymi zadaniami.">Pobierane</a>();
+<a name="l00119"></a>00119                 pobieranie.Show();
+<a name="l00120"></a>00120             }
+<a name="l00121"></a>00121             <span class="keywordflow">else</span>
+<a name="l00122"></a>00122                 pobieranie.Show();
+<a name="l00123"></a>00123         }
+<a name="l00129"></a>00129 
+<a name="l00130"></a><a class="code" href="../../d1/d7c/a00003.html#657650d2f810f254f265eb4956810386">00130</a>         <span class="keyword">private</span> <span class="keywordtype">void</span> button2_Click(<span class="keywordtype">object</span> sender, EventArgs e)
+<a name="l00131"></a>00131         {
+<a name="l00132"></a>00132             this.Hide();
+<a name="l00133"></a>00133         }
+<a name="l00134"></a>00134 
+<a name="l00135"></a><a class="code" href="../../d1/d7c/a00003.html#8f11bfa541be459982c72ad615898de7">00135</a>         <span class="keyword">private</span> <span class="keywordtype">void</span> lvPliki_SelectedIndexChanged(<span class="keywordtype">object</span> sender, EventArgs e)
+<a name="l00136"></a>00136         {
+<a name="l00137"></a>00137 
+<a name="l00138"></a>00138         }
+<a name="l00139"></a>00139     }
+<a name="l00140"></a>00140 }
+</pre></div></div>
+<hr size="1"><address style="text-align: right;"><small>Wygenerowano Thu Jun 4 19:42:01 2009 dla Ass8-Klient programem&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="../../doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
+</body>
+</html>

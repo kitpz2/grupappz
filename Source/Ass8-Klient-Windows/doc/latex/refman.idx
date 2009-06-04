@@ -1,0 +1,707 @@
+\indexentry{ASS8@{ASS8}|hyperpage}{9}
+\indexentry{ASS8.Klient@{ASS8.Klient}|hyperpage}{10}
+\indexentry{ASS8.Klient.Properties@{ASS8.Klient.Properties}|hyperpage}{12}
+\indexentry{ASS8::Klient::ASS8\_\discretionary {-}{}{}\_\discretionary {-}{}{}\_\discretionary {-}{}{}Logowanie@{ASS8::Klient::ASS8\_\discretionary {-}{}{}\_\discretionary {-}{}{}\_\discretionary {-}{}{}Logowanie}|hyperpage}{13}
+\indexentry{ASS8::Klient::ASS8\_\discretionary {-}{}{}\_\discretionary {-}{}{}\_\discretionary {-}{}{}Logowanie@{ASS8::Klient::ASS8\_\discretionary {-}{}{}\_\discretionary {-}{}{}\_\discretionary {-}{}{}Logowanie}!ASS8\_\discretionary {-}{}{}\_\discretionary {-}{}{}\_\discretionary {-}{}{}Logowanie@{ASS8\_\discretionary {-}{}{}\_\discretionary {-}{}{}\_\discretionary {-}{}{}Logowanie}|hyperpage}{15}
+\indexentry{ASS8\_\discretionary {-}{}{}\_\discretionary {-}{}{}\_\discretionary {-}{}{}Logowanie@{ASS8\_\discretionary {-}{}{}\_\discretionary {-}{}{}\_\discretionary {-}{}{}Logowanie}!ASS8::Klient::ASS8___Logowanie@{ASS8::Klient::ASS8\_\discretionary {-}{}{}\_\discretionary {-}{}{}\_\discretionary {-}{}{}Logowanie}|hyperpage}{15}
+\indexentry{ASS8::Klient::ASS8\_\discretionary {-}{}{}\_\discretionary {-}{}{}\_\discretionary {-}{}{}Logowanie@{ASS8::Klient::ASS8\_\discretionary {-}{}{}\_\discretionary {-}{}{}\_\discretionary {-}{}{}Logowanie}!btnLoguj\_\discretionary {-}{}{}Click@{btnLoguj\_\discretionary {-}{}{}Click}|hyperpage}{15}
+\indexentry{btnLoguj\_\discretionary {-}{}{}Click@{btnLoguj\_\discretionary {-}{}{}Click}!ASS8::Klient::ASS8___Logowanie@{ASS8::Klient::ASS8\_\discretionary {-}{}{}\_\discretionary {-}{}{}\_\discretionary {-}{}{}Logowanie}|hyperpage}{15}
+\indexentry{ASS8::Klient::ASS8\_\discretionary {-}{}{}\_\discretionary {-}{}{}\_\discretionary {-}{}{}Logowanie@{ASS8::Klient::ASS8\_\discretionary {-}{}{}\_\discretionary {-}{}{}\_\discretionary {-}{}{}Logowanie}!button1\_\discretionary {-}{}{}Click@{button1\_\discretionary {-}{}{}Click}|hyperpage}{15}
+\indexentry{button1\_\discretionary {-}{}{}Click@{button1\_\discretionary {-}{}{}Click}!ASS8::Klient::ASS8___Logowanie@{ASS8::Klient::ASS8\_\discretionary {-}{}{}\_\discretionary {-}{}{}\_\discretionary {-}{}{}Logowanie}|hyperpage}{15}
+\indexentry{ASS8::Klient::ASS8\_\discretionary {-}{}{}\_\discretionary {-}{}{}\_\discretionary {-}{}{}Logowanie@{ASS8::Klient::ASS8\_\discretionary {-}{}{}\_\discretionary {-}{}{}\_\discretionary {-}{}{}Logowanie}!button2\_\discretionary {-}{}{}Click@{button2\_\discretionary {-}{}{}Click}|hyperpage}{15}
+\indexentry{button2\_\discretionary {-}{}{}Click@{button2\_\discretionary {-}{}{}Click}!ASS8::Klient::ASS8___Logowanie@{ASS8::Klient::ASS8\_\discretionary {-}{}{}\_\discretionary {-}{}{}\_\discretionary {-}{}{}Logowanie}|hyperpage}{15}
+\indexentry{ASS8::Klient::ASS8\_\discretionary {-}{}{}\_\discretionary {-}{}{}\_\discretionary {-}{}{}Logowanie@{ASS8::Klient::ASS8\_\discretionary {-}{}{}\_\discretionary {-}{}{}\_\discretionary {-}{}{}Logowanie}!hashuj@{hashuj}|hyperpage}{16}
+\indexentry{hashuj@{hashuj}!ASS8::Klient::ASS8___Logowanie@{ASS8::Klient::ASS8\_\discretionary {-}{}{}\_\discretionary {-}{}{}\_\discretionary {-}{}{}Logowanie}|hyperpage}{16}
+\indexentry{ASS8::Klient::ASS8\_\discretionary {-}{}{}\_\discretionary {-}{}{}\_\discretionary {-}{}{}Logowanie@{ASS8::Klient::ASS8\_\discretionary {-}{}{}\_\discretionary {-}{}{}\_\discretionary {-}{}{}Logowanie}!zmianaProxy@{zmianaProxy}|hyperpage}{16}
+\indexentry{zmianaProxy@{zmianaProxy}!ASS8::Klient::ASS8___Logowanie@{ASS8::Klient::ASS8\_\discretionary {-}{}{}\_\discretionary {-}{}{}\_\discretionary {-}{}{}Logowanie}|hyperpage}{16}
+\indexentry{ASS8::Klient::ASS8\_\discretionary {-}{}{}\_\discretionary {-}{}{}\_\discretionary {-}{}{}Logowanie@{ASS8::Klient::ASS8\_\discretionary {-}{}{}\_\discretionary {-}{}{}\_\discretionary {-}{}{}Logowanie}!zmianaSerwera@{zmianaSerwera}|hyperpage}{16}
+\indexentry{zmianaSerwera@{zmianaSerwera}!ASS8::Klient::ASS8___Logowanie@{ASS8::Klient::ASS8\_\discretionary {-}{}{}\_\discretionary {-}{}{}\_\discretionary {-}{}{}Logowanie}|hyperpage}{16}
+\indexentry{ASS8::Klient::ASS8\_\discretionary {-}{}{}\_\discretionary {-}{}{}\_\discretionary {-}{}{}Logowanie@{ASS8::Klient::ASS8\_\discretionary {-}{}{}\_\discretionary {-}{}{}\_\discretionary {-}{}{}Logowanie}!hasloProxy@{hasloProxy}|hyperpage}{17}
+\indexentry{hasloProxy@{hasloProxy}!ASS8::Klient::ASS8___Logowanie@{ASS8::Klient::ASS8\_\discretionary {-}{}{}\_\discretionary {-}{}{}\_\discretionary {-}{}{}Logowanie}|hyperpage}{17}
+\indexentry{ASS8::Klient::ASS8\_\discretionary {-}{}{}\_\discretionary {-}{}{}\_\discretionary {-}{}{}Logowanie@{ASS8::Klient::ASS8\_\discretionary {-}{}{}\_\discretionary {-}{}{}\_\discretionary {-}{}{}Logowanie}!k@{k}|hyperpage}{17}
+\indexentry{k@{k}!ASS8::Klient::ASS8___Logowanie@{ASS8::Klient::ASS8\_\discretionary {-}{}{}\_\discretionary {-}{}{}\_\discretionary {-}{}{}Logowanie}|hyperpage}{17}
+\indexentry{ASS8::Klient::ASS8\_\discretionary {-}{}{}\_\discretionary {-}{}{}\_\discretionary {-}{}{}Logowanie@{ASS8::Klient::ASS8\_\discretionary {-}{}{}\_\discretionary {-}{}{}\_\discretionary {-}{}{}Logowanie}!loginProxy@{loginProxy}|hyperpage}{17}
+\indexentry{loginProxy@{loginProxy}!ASS8::Klient::ASS8___Logowanie@{ASS8::Klient::ASS8\_\discretionary {-}{}{}\_\discretionary {-}{}{}\_\discretionary {-}{}{}Logowanie}|hyperpage}{17}
+\indexentry{ASS8::Klient::ASS8\_\discretionary {-}{}{}\_\discretionary {-}{}{}\_\discretionary {-}{}{}Logowanie@{ASS8::Klient::ASS8\_\discretionary {-}{}{}\_\discretionary {-}{}{}\_\discretionary {-}{}{}Logowanie}!names@{names}|hyperpage}{17}
+\indexentry{names@{names}!ASS8::Klient::ASS8___Logowanie@{ASS8::Klient::ASS8\_\discretionary {-}{}{}\_\discretionary {-}{}{}\_\discretionary {-}{}{}Logowanie}|hyperpage}{17}
+\indexentry{ASS8::Klient::ASS8\_\discretionary {-}{}{}\_\discretionary {-}{}{}\_\discretionary {-}{}{}Logowanie@{ASS8::Klient::ASS8\_\discretionary {-}{}{}\_\discretionary {-}{}{}\_\discretionary {-}{}{}Logowanie}!port@{port}|hyperpage}{17}
+\indexentry{port@{port}!ASS8::Klient::ASS8___Logowanie@{ASS8::Klient::ASS8\_\discretionary {-}{}{}\_\discretionary {-}{}{}\_\discretionary {-}{}{}Logowanie}|hyperpage}{17}
+\indexentry{ASS8::Klient::ASS8\_\discretionary {-}{}{}\_\discretionary {-}{}{}\_\discretionary {-}{}{}Logowanie@{ASS8::Klient::ASS8\_\discretionary {-}{}{}\_\discretionary {-}{}{}\_\discretionary {-}{}{}Logowanie}!portProxy@{portProxy}|hyperpage}{17}
+\indexentry{portProxy@{portProxy}!ASS8::Klient::ASS8___Logowanie@{ASS8::Klient::ASS8\_\discretionary {-}{}{}\_\discretionary {-}{}{}\_\discretionary {-}{}{}Logowanie}|hyperpage}{17}
+\indexentry{ASS8::Klient::ASS8\_\discretionary {-}{}{}\_\discretionary {-}{}{}\_\discretionary {-}{}{}Logowanie@{ASS8::Klient::ASS8\_\discretionary {-}{}{}\_\discretionary {-}{}{}\_\discretionary {-}{}{}Logowanie}!proxy@{proxy}|hyperpage}{17}
+\indexentry{proxy@{proxy}!ASS8::Klient::ASS8___Logowanie@{ASS8::Klient::ASS8\_\discretionary {-}{}{}\_\discretionary {-}{}{}\_\discretionary {-}{}{}Logowanie}|hyperpage}{17}
+\indexentry{ASS8::Klient::ASS8\_\discretionary {-}{}{}\_\discretionary {-}{}{}\_\discretionary {-}{}{}Logowanie@{ASS8::Klient::ASS8\_\discretionary {-}{}{}\_\discretionary {-}{}{}\_\discretionary {-}{}{}Logowanie}!serwer@{serwer}|hyperpage}{17}
+\indexentry{serwer@{serwer}!ASS8::Klient::ASS8___Logowanie@{ASS8::Klient::ASS8\_\discretionary {-}{}{}\_\discretionary {-}{}{}\_\discretionary {-}{}{}Logowanie}|hyperpage}{17}
+\indexentry{ASS8::Klient::ASS8\_\discretionary {-}{}{}\_\discretionary {-}{}{}\_\discretionary {-}{}{}Logowanie@{ASS8::Klient::ASS8\_\discretionary {-}{}{}\_\discretionary {-}{}{}\_\discretionary {-}{}{}Logowanie}!serwerProxy@{serwerProxy}|hyperpage}{17}
+\indexentry{serwerProxy@{serwerProxy}!ASS8::Klient::ASS8___Logowanie@{ASS8::Klient::ASS8\_\discretionary {-}{}{}\_\discretionary {-}{}{}\_\discretionary {-}{}{}Logowanie}|hyperpage}{17}
+\indexentry{ASS8::Klient::ASS8\_\discretionary {-}{}{}\_\discretionary {-}{}{}\_\discretionary {-}{}{}Logowanie@{ASS8::Klient::ASS8\_\discretionary {-}{}{}\_\discretionary {-}{}{}\_\discretionary {-}{}{}Logowanie}!uwierzytelnienie@{uwierzytelnienie}|hyperpage}{17}
+\indexentry{uwierzytelnienie@{uwierzytelnienie}!ASS8::Klient::ASS8___Logowanie@{ASS8::Klient::ASS8\_\discretionary {-}{}{}\_\discretionary {-}{}{}\_\discretionary {-}{}{}Logowanie}|hyperpage}{17}
+\indexentry{ASS8::Klient::ASS8\_\discretionary {-}{}{}\_\discretionary {-}{}{}\_\discretionary {-}{}{}Logowanie@{ASS8::Klient::ASS8\_\discretionary {-}{}{}\_\discretionary {-}{}{}\_\discretionary {-}{}{}Logowanie}!wersja@{wersja}|hyperpage}{18}
+\indexentry{wersja@{wersja}!ASS8::Klient::ASS8___Logowanie@{ASS8::Klient::ASS8\_\discretionary {-}{}{}\_\discretionary {-}{}{}\_\discretionary {-}{}{}Logowanie}|hyperpage}{18}
+\indexentry{ASS8::Klient::ASS8\_\discretionary {-}{}{}\_\discretionary {-}{}{}\_\discretionary {-}{}{}Logowanie@{ASS8::Klient::ASS8\_\discretionary {-}{}{}\_\discretionary {-}{}{}\_\discretionary {-}{}{}Logowanie}!zapamietaj@{zapamietaj}|hyperpage}{18}
+\indexentry{zapamietaj@{zapamietaj}!ASS8::Klient::ASS8___Logowanie@{ASS8::Klient::ASS8\_\discretionary {-}{}{}\_\discretionary {-}{}{}\_\discretionary {-}{}{}Logowanie}|hyperpage}{18}
+\indexentry{ASS8::Klient::ASS8\_\discretionary {-}{}{}\_\discretionary {-}{}{}\_\discretionary {-}{}{}Logowanie@{ASS8::Klient::ASS8\_\discretionary {-}{}{}\_\discretionary {-}{}{}\_\discretionary {-}{}{}Logowanie}!haslo@{haslo}|hyperpage}{18}
+\indexentry{haslo@{haslo}!ASS8::Klient::ASS8___Logowanie@{ASS8::Klient::ASS8\_\discretionary {-}{}{}\_\discretionary {-}{}{}\_\discretionary {-}{}{}Logowanie}|hyperpage}{18}
+\indexentry{ASS8::Klient::ASS8\_\discretionary {-}{}{}\_\discretionary {-}{}{}\_\discretionary {-}{}{}Logowanie@{ASS8::Klient::ASS8\_\discretionary {-}{}{}\_\discretionary {-}{}{}\_\discretionary {-}{}{}Logowanie}!KomClass@{KomClass}|hyperpage}{18}
+\indexentry{KomClass@{KomClass}!ASS8::Klient::ASS8___Logowanie@{ASS8::Klient::ASS8\_\discretionary {-}{}{}\_\discretionary {-}{}{}\_\discretionary {-}{}{}Logowanie}|hyperpage}{18}
+\indexentry{ASS8::Klient::ASS8\_\discretionary {-}{}{}\_\discretionary {-}{}{}\_\discretionary {-}{}{}Logowanie@{ASS8::Klient::ASS8\_\discretionary {-}{}{}\_\discretionary {-}{}{}\_\discretionary {-}{}{}Logowanie}!login@{login}|hyperpage}{18}
+\indexentry{login@{login}!ASS8::Klient::ASS8___Logowanie@{ASS8::Klient::ASS8\_\discretionary {-}{}{}\_\discretionary {-}{}{}\_\discretionary {-}{}{}Logowanie}|hyperpage}{18}
+\indexentry{ASS8::Klient::downloadPliku@{ASS8::Klient::downloadPliku}|hyperpage}{19}
+\indexentry{ASS8::Klient::downloadPliku@{ASS8::Klient::downloadPliku}!downloadPliku@{downloadPliku}|hyperpage}{19}
+\indexentry{downloadPliku@{downloadPliku}!ASS8::Klient::downloadPliku@{ASS8::Klient::downloadPliku}|hyperpage}{19}
+\indexentry{ASS8::Klient::downloadPliku@{ASS8::Klient::downloadPliku}!downloadPliku@{downloadPliku}|hyperpage}{19}
+\indexentry{downloadPliku@{downloadPliku}!ASS8::Klient::downloadPliku@{ASS8::Klient::downloadPliku}|hyperpage}{19}
+\indexentry{ASS8::Klient::downloadPliku@{ASS8::Klient::downloadPliku}!pPlik@{pPlik}|hyperpage}{20}
+\indexentry{pPlik@{pPlik}!ASS8::Klient::downloadPliku@{ASS8::Klient::downloadPliku}|hyperpage}{20}
+\indexentry{ASS8::Klient::downloadPliku@{ASS8::Klient::downloadPliku}!plik@{plik}|hyperpage}{20}
+\indexentry{plik@{plik}!ASS8::Klient::downloadPliku@{ASS8::Klient::downloadPliku}|hyperpage}{20}
+\indexentry{ASS8::Klient::Form1@{ASS8::Klient::Form1}|hyperpage}{21}
+\indexentry{ASS8::Klient::Form1@{ASS8::Klient::Form1}!Form1@{Form1}|hyperpage}{22}
+\indexentry{Form1@{Form1}!ASS8::Klient::Form1@{ASS8::Klient::Form1}|hyperpage}{22}
+\indexentry{ASS8::Klient::Form1@{ASS8::Klient::Form1}!btnListuj\_\discretionary {-}{}{}Click@{btnListuj\_\discretionary {-}{}{}Click}|hyperpage}{22}
+\indexentry{btnListuj\_\discretionary {-}{}{}Click@{btnListuj\_\discretionary {-}{}{}Click}!ASS8::Klient::Form1@{ASS8::Klient::Form1}|hyperpage}{22}
+\indexentry{ASS8::Klient::Form1@{ASS8::Klient::Form1}!btnPobierane\_\discretionary {-}{}{}Click@{btnPobierane\_\discretionary {-}{}{}Click}|hyperpage}{22}
+\indexentry{btnPobierane\_\discretionary {-}{}{}Click@{btnPobierane\_\discretionary {-}{}{}Click}!ASS8::Klient::Form1@{ASS8::Klient::Form1}|hyperpage}{22}
+\indexentry{ASS8::Klient::Form1@{ASS8::Klient::Form1}!button1\_\discretionary {-}{}{}Click@{button1\_\discretionary {-}{}{}Click}|hyperpage}{22}
+\indexentry{button1\_\discretionary {-}{}{}Click@{button1\_\discretionary {-}{}{}Click}!ASS8::Klient::Form1@{ASS8::Klient::Form1}|hyperpage}{22}
+\indexentry{ASS8::Klient::Form1@{ASS8::Klient::Form1}!button2\_\discretionary {-}{}{}Click@{button2\_\discretionary {-}{}{}Click}|hyperpage}{23}
+\indexentry{button2\_\discretionary {-}{}{}Click@{button2\_\discretionary {-}{}{}Click}!ASS8::Klient::Form1@{ASS8::Klient::Form1}|hyperpage}{23}
+\indexentry{ASS8::Klient::Form1@{ASS8::Klient::Form1}!lvPliki\_\discretionary {-}{}{}SelectedIndexChanged@{lvPliki\_\discretionary {-}{}{}SelectedIndexChanged}|hyperpage}{23}
+\indexentry{lvPliki\_\discretionary {-}{}{}SelectedIndexChanged@{lvPliki\_\discretionary {-}{}{}SelectedIndexChanged}!ASS8::Klient::Form1@{ASS8::Klient::Form1}|hyperpage}{23}
+\indexentry{ASS8::Klient::Form1@{ASS8::Klient::Form1}!pobieraj@{pobieraj}|hyperpage}{23}
+\indexentry{pobieraj@{pobieraj}!ASS8::Klient::Form1@{ASS8::Klient::Form1}|hyperpage}{23}
+\indexentry{ASS8::Klient::Form1@{ASS8::Klient::Form1}!k@{k}|hyperpage}{23}
+\indexentry{k@{k}!ASS8::Klient::Form1@{ASS8::Klient::Form1}|hyperpage}{23}
+\indexentry{ASS8::Klient::Form1@{ASS8::Klient::Form1}!mut@{mut}|hyperpage}{23}
+\indexentry{mut@{mut}!ASS8::Klient::Form1@{ASS8::Klient::Form1}|hyperpage}{23}
+\indexentry{ASS8::Klient::Form1@{ASS8::Klient::Form1}!pobieranie@{pobieranie}|hyperpage}{23}
+\indexentry{pobieranie@{pobieranie}!ASS8::Klient::Form1@{ASS8::Klient::Form1}|hyperpage}{23}
+\indexentry{ASS8::Klient::Form1@{ASS8::Klient::Form1}!wyswietlonePliki@{wyswietlonePliki}|hyperpage}{23}
+\indexentry{wyswietlonePliki@{wyswietlonePliki}!ASS8::Klient::Form1@{ASS8::Klient::Form1}|hyperpage}{23}
+\indexentry{ASS8::Klient::Form2@{ASS8::Klient::Form2}|hyperpage}{25}
+\indexentry{ASS8::Klient::Form2@{ASS8::Klient::Form2}!Form2@{Form2}|hyperpage}{26}
+\indexentry{Form2@{Form2}!ASS8::Klient::Form2@{ASS8::Klient::Form2}|hyperpage}{26}
+\indexentry{ASS8::Klient::Form2@{ASS8::Klient::Form2}!Form2@{Form2}|hyperpage}{26}
+\indexentry{Form2@{Form2}!ASS8::Klient::Form2@{ASS8::Klient::Form2}|hyperpage}{26}
+\indexentry{ASS8::Klient::Form2@{ASS8::Klient::Form2}!btnAnuluj\_\discretionary {-}{}{}Click@{btnAnuluj\_\discretionary {-}{}{}Click}|hyperpage}{26}
+\indexentry{btnAnuluj\_\discretionary {-}{}{}Click@{btnAnuluj\_\discretionary {-}{}{}Click}!ASS8::Klient::Form2@{ASS8::Klient::Form2}|hyperpage}{26}
+\indexentry{ASS8::Klient::Form2@{ASS8::Klient::Form2}!btnZapisz\_\discretionary {-}{}{}Click@{btnZapisz\_\discretionary {-}{}{}Click}|hyperpage}{26}
+\indexentry{btnZapisz\_\discretionary {-}{}{}Click@{btnZapisz\_\discretionary {-}{}{}Click}!ASS8::Klient::Form2@{ASS8::Klient::Form2}|hyperpage}{26}
+\indexentry{ASS8::Klient::Form2@{ASS8::Klient::Form2}!chbProxy\_\discretionary {-}{}{}CheckedChanged@{chbProxy\_\discretionary {-}{}{}CheckedChanged}|hyperpage}{26}
+\indexentry{chbProxy\_\discretionary {-}{}{}CheckedChanged@{chbProxy\_\discretionary {-}{}{}CheckedChanged}!ASS8::Klient::Form2@{ASS8::Klient::Form2}|hyperpage}{26}
+\indexentry{ASS8::Klient::Form2@{ASS8::Klient::Form2}!chbUwierzytelnienie\_\discretionary {-}{}{}CheckedChanged@{chbUwierzytelnienie\_\discretionary {-}{}{}CheckedChanged}|hyperpage}{27}
+\indexentry{chbUwierzytelnienie\_\discretionary {-}{}{}CheckedChanged@{chbUwierzytelnienie\_\discretionary {-}{}{}CheckedChanged}!ASS8::Klient::Form2@{ASS8::Klient::Form2}|hyperpage}{27}
+\indexentry{ASS8::Klient::Form2@{ASS8::Klient::Form2}!chbUwierzytelnienie\_\discretionary {-}{}{}CheckedChanged\_\discretionary {-}{}{}1@{chbUwierzytelnienie\_\discretionary {-}{}{}CheckedChanged\_\discretionary {-}{}{}1}|hyperpage}{27}
+\indexentry{chbUwierzytelnienie\_\discretionary {-}{}{}CheckedChanged\_\discretionary {-}{}{}1@{chbUwierzytelnienie\_\discretionary {-}{}{}CheckedChanged\_\discretionary {-}{}{}1}!ASS8::Klient::Form2@{ASS8::Klient::Form2}|hyperpage}{27}
+\indexentry{ASS8::Klient::Form2@{ASS8::Klient::Form2}!log@{log}|hyperpage}{27}
+\indexentry{log@{log}!ASS8::Klient::Form2@{ASS8::Klient::Form2}|hyperpage}{27}
+\indexentry{ASS8::Klient::Form4@{ASS8::Klient::Form4}|hyperpage}{28}
+\indexentry{ASS8::Klient::Form4@{ASS8::Klient::Form4}!Form4@{Form4}|hyperpage}{29}
+\indexentry{Form4@{Form4}!ASS8::Klient::Form4@{ASS8::Klient::Form4}|hyperpage}{29}
+\indexentry{ASS8::Klient::Form4@{ASS8::Klient::Form4}!button1\_\discretionary {-}{}{}Click@{button1\_\discretionary {-}{}{}Click}|hyperpage}{29}
+\indexentry{button1\_\discretionary {-}{}{}Click@{button1\_\discretionary {-}{}{}Click}!ASS8::Klient::Form4@{ASS8::Klient::Form4}|hyperpage}{29}
+\indexentry{ASS8::Klient::Form4@{ASS8::Klient::Form4}!button2\_\discretionary {-}{}{}Click@{button2\_\discretionary {-}{}{}Click}|hyperpage}{29}
+\indexentry{button2\_\discretionary {-}{}{}Click@{button2\_\discretionary {-}{}{}Click}!ASS8::Klient::Form4@{ASS8::Klient::Form4}|hyperpage}{29}
+\indexentry{ASS8::Klient::Form4@{ASS8::Klient::Form4}!log@{log}|hyperpage}{29}
+\indexentry{log@{log}!ASS8::Klient::Form4@{ASS8::Klient::Form4}|hyperpage}{29}
+\indexentry{ASS8::Klient::globalne\_\discretionary {-}{}{}ustawienia@{ASS8::Klient::globalne\_\discretionary {-}{}{}ustawienia}|hyperpage}{30}
+\indexentry{ASS8::Klient::globalne\_\discretionary {-}{}{}ustawienia@{ASS8::Klient::globalne\_\discretionary {-}{}{}ustawienia}!globalne\_\discretionary {-}{}{}ustawienia@{globalne\_\discretionary {-}{}{}ustawienia}|hyperpage}{30}
+\indexentry{globalne\_\discretionary {-}{}{}ustawienia@{globalne\_\discretionary {-}{}{}ustawienia}!ASS8::Klient::globalne_ustawienia@{ASS8::Klient::globalne\_\discretionary {-}{}{}ustawienia}|hyperpage}{30}
+\indexentry{ASS8::Klient::globalne\_\discretionary {-}{}{}ustawienia@{ASS8::Klient::globalne\_\discretionary {-}{}{}ustawienia}!globalne\_\discretionary {-}{}{}ustawienia@{globalne\_\discretionary {-}{}{}ustawienia}|hyperpage}{30}
+\indexentry{globalne\_\discretionary {-}{}{}ustawienia@{globalne\_\discretionary {-}{}{}ustawienia}!ASS8::Klient::globalne_ustawienia@{ASS8::Klient::globalne\_\discretionary {-}{}{}ustawienia}|hyperpage}{30}
+\indexentry{ASS8::Klient::globalne\_\discretionary {-}{}{}ustawienia@{ASS8::Klient::globalne\_\discretionary {-}{}{}ustawienia}!pHasloProxy@{pHasloProxy}|hyperpage}{31}
+\indexentry{pHasloProxy@{pHasloProxy}!ASS8::Klient::globalne_ustawienia@{ASS8::Klient::globalne\_\discretionary {-}{}{}ustawienia}|hyperpage}{31}
+\indexentry{ASS8::Klient::globalne\_\discretionary {-}{}{}ustawienia@{ASS8::Klient::globalne\_\discretionary {-}{}{}ustawienia}!pLogin@{pLogin}|hyperpage}{31}
+\indexentry{pLogin@{pLogin}!ASS8::Klient::globalne_ustawienia@{ASS8::Klient::globalne\_\discretionary {-}{}{}ustawienia}|hyperpage}{31}
+\indexentry{ASS8::Klient::globalne\_\discretionary {-}{}{}ustawienia@{ASS8::Klient::globalne\_\discretionary {-}{}{}ustawienia}!pLoginProxy@{pLoginProxy}|hyperpage}{31}
+\indexentry{pLoginProxy@{pLoginProxy}!ASS8::Klient::globalne_ustawienia@{ASS8::Klient::globalne\_\discretionary {-}{}{}ustawienia}|hyperpage}{31}
+\indexentry{ASS8::Klient::globalne\_\discretionary {-}{}{}ustawienia@{ASS8::Klient::globalne\_\discretionary {-}{}{}ustawienia}!pPort@{pPort}|hyperpage}{31}
+\indexentry{pPort@{pPort}!ASS8::Klient::globalne_ustawienia@{ASS8::Klient::globalne\_\discretionary {-}{}{}ustawienia}|hyperpage}{31}
+\indexentry{ASS8::Klient::globalne\_\discretionary {-}{}{}ustawienia@{ASS8::Klient::globalne\_\discretionary {-}{}{}ustawienia}!pPortProxy@{pPortProxy}|hyperpage}{31}
+\indexentry{pPortProxy@{pPortProxy}!ASS8::Klient::globalne_ustawienia@{ASS8::Klient::globalne\_\discretionary {-}{}{}ustawienia}|hyperpage}{31}
+\indexentry{ASS8::Klient::globalne\_\discretionary {-}{}{}ustawienia@{ASS8::Klient::globalne\_\discretionary {-}{}{}ustawienia}!pProxy@{pProxy}|hyperpage}{31}
+\indexentry{pProxy@{pProxy}!ASS8::Klient::globalne_ustawienia@{ASS8::Klient::globalne\_\discretionary {-}{}{}ustawienia}|hyperpage}{31}
+\indexentry{ASS8::Klient::globalne\_\discretionary {-}{}{}ustawienia@{ASS8::Klient::globalne\_\discretionary {-}{}{}ustawienia}!pSerwer@{pSerwer}|hyperpage}{31}
+\indexentry{pSerwer@{pSerwer}!ASS8::Klient::globalne_ustawienia@{ASS8::Klient::globalne\_\discretionary {-}{}{}ustawienia}|hyperpage}{31}
+\indexentry{ASS8::Klient::globalne\_\discretionary {-}{}{}ustawienia@{ASS8::Klient::globalne\_\discretionary {-}{}{}ustawienia}!pSerwerProxy@{pSerwerProxy}|hyperpage}{31}
+\indexentry{pSerwerProxy@{pSerwerProxy}!ASS8::Klient::globalne_ustawienia@{ASS8::Klient::globalne\_\discretionary {-}{}{}ustawienia}|hyperpage}{31}
+\indexentry{ASS8::Klient::globalne\_\discretionary {-}{}{}ustawienia@{ASS8::Klient::globalne\_\discretionary {-}{}{}ustawienia}!pUwierzytelnienieProxy@{pUwierzytelnienieProxy}|hyperpage}{31}
+\indexentry{pUwierzytelnienieProxy@{pUwierzytelnienieProxy}!ASS8::Klient::globalne_ustawienia@{ASS8::Klient::globalne\_\discretionary {-}{}{}ustawienia}|hyperpage}{31}
+\indexentry{ASS8::Klient::globalne\_\discretionary {-}{}{}ustawienia@{ASS8::Klient::globalne\_\discretionary {-}{}{}ustawienia}!pZapamietaj@{pZapamietaj}|hyperpage}{31}
+\indexentry{pZapamietaj@{pZapamietaj}!ASS8::Klient::globalne_ustawienia@{ASS8::Klient::globalne\_\discretionary {-}{}{}ustawienia}|hyperpage}{31}
+\indexentry{ASS8::Klient::globalne\_\discretionary {-}{}{}ustawienia@{ASS8::Klient::globalne\_\discretionary {-}{}{}ustawienia}!hasloProxy@{hasloProxy}|hyperpage}{32}
+\indexentry{hasloProxy@{hasloProxy}!ASS8::Klient::globalne_ustawienia@{ASS8::Klient::globalne\_\discretionary {-}{}{}ustawienia}|hyperpage}{32}
+\indexentry{ASS8::Klient::globalne\_\discretionary {-}{}{}ustawienia@{ASS8::Klient::globalne\_\discretionary {-}{}{}ustawienia}!login@{login}|hyperpage}{32}
+\indexentry{login@{login}!ASS8::Klient::globalne_ustawienia@{ASS8::Klient::globalne\_\discretionary {-}{}{}ustawienia}|hyperpage}{32}
+\indexentry{ASS8::Klient::globalne\_\discretionary {-}{}{}ustawienia@{ASS8::Klient::globalne\_\discretionary {-}{}{}ustawienia}!loginProxy@{loginProxy}|hyperpage}{32}
+\indexentry{loginProxy@{loginProxy}!ASS8::Klient::globalne_ustawienia@{ASS8::Klient::globalne\_\discretionary {-}{}{}ustawienia}|hyperpage}{32}
+\indexentry{ASS8::Klient::globalne\_\discretionary {-}{}{}ustawienia@{ASS8::Klient::globalne\_\discretionary {-}{}{}ustawienia}!port@{port}|hyperpage}{32}
+\indexentry{port@{port}!ASS8::Klient::globalne_ustawienia@{ASS8::Klient::globalne\_\discretionary {-}{}{}ustawienia}|hyperpage}{32}
+\indexentry{ASS8::Klient::globalne\_\discretionary {-}{}{}ustawienia@{ASS8::Klient::globalne\_\discretionary {-}{}{}ustawienia}!portProxy@{portProxy}|hyperpage}{32}
+\indexentry{portProxy@{portProxy}!ASS8::Klient::globalne_ustawienia@{ASS8::Klient::globalne\_\discretionary {-}{}{}ustawienia}|hyperpage}{32}
+\indexentry{ASS8::Klient::globalne\_\discretionary {-}{}{}ustawienia@{ASS8::Klient::globalne\_\discretionary {-}{}{}ustawienia}!proxy@{proxy}|hyperpage}{32}
+\indexentry{proxy@{proxy}!ASS8::Klient::globalne_ustawienia@{ASS8::Klient::globalne\_\discretionary {-}{}{}ustawienia}|hyperpage}{32}
+\indexentry{ASS8::Klient::globalne\_\discretionary {-}{}{}ustawienia@{ASS8::Klient::globalne\_\discretionary {-}{}{}ustawienia}!serwer@{serwer}|hyperpage}{32}
+\indexentry{serwer@{serwer}!ASS8::Klient::globalne_ustawienia@{ASS8::Klient::globalne\_\discretionary {-}{}{}ustawienia}|hyperpage}{32}
+\indexentry{ASS8::Klient::globalne\_\discretionary {-}{}{}ustawienia@{ASS8::Klient::globalne\_\discretionary {-}{}{}ustawienia}!serwerProxy@{serwerProxy}|hyperpage}{32}
+\indexentry{serwerProxy@{serwerProxy}!ASS8::Klient::globalne_ustawienia@{ASS8::Klient::globalne\_\discretionary {-}{}{}ustawienia}|hyperpage}{32}
+\indexentry{ASS8::Klient::globalne\_\discretionary {-}{}{}ustawienia@{ASS8::Klient::globalne\_\discretionary {-}{}{}ustawienia}!uwierzytelnienie@{uwierzytelnienie}|hyperpage}{32}
+\indexentry{uwierzytelnienie@{uwierzytelnienie}!ASS8::Klient::globalne_ustawienia@{ASS8::Klient::globalne\_\discretionary {-}{}{}ustawienia}|hyperpage}{32}
+\indexentry{ASS8::Klient::globalne\_\discretionary {-}{}{}ustawienia@{ASS8::Klient::globalne\_\discretionary {-}{}{}ustawienia}!zapamietaj@{zapamietaj}|hyperpage}{32}
+\indexentry{zapamietaj@{zapamietaj}!ASS8::Klient::globalne_ustawienia@{ASS8::Klient::globalne\_\discretionary {-}{}{}ustawienia}|hyperpage}{32}
+\indexentry{ASS8::Klient::klientBase@{ASS8::Klient::klientBase}|hyperpage}{33}
+\indexentry{ASS8::Klient::klientBase@{ASS8::Klient::klientBase}!klientBase@{klientBase}|hyperpage}{33}
+\indexentry{klientBase@{klientBase}!ASS8::Klient::klientBase@{ASS8::Klient::klientBase}|hyperpage}{33}
+\indexentry{ASS8::Klient::klientBase@{ASS8::Klient::klientBase}!klientBase@{klientBase}|hyperpage}{33}
+\indexentry{klientBase@{klientBase}!ASS8::Klient::klientBase@{ASS8::Klient::klientBase}|hyperpage}{33}
+\indexentry{ASS8::Klient::klientBase@{ASS8::Klient::klientBase}!idSesji@{idSesji}|hyperpage}{33}
+\indexentry{idSesji@{idSesji}!ASS8::Klient::klientBase@{ASS8::Klient::klientBase}|hyperpage}{33}
+\indexentry{ASS8::Klient::klientBase@{ASS8::Klient::klientBase}!op@{op}|hyperpage}{33}
+\indexentry{op@{op}!ASS8::Klient::klientBase@{ASS8::Klient::klientBase}|hyperpage}{33}
+\indexentry{ASS8::Klient::klientBase@{ASS8::Klient::klientBase}!idsesji@{idsesji}|hyperpage}{34}
+\indexentry{idsesji@{idsesji}!ASS8::Klient::klientBase@{ASS8::Klient::klientBase}|hyperpage}{34}
+\indexentry{ASS8::Klient::klientBase@{ASS8::Klient::klientBase}!operacja@{operacja}|hyperpage}{34}
+\indexentry{operacja@{operacja}!ASS8::Klient::klientBase@{ASS8::Klient::klientBase}|hyperpage}{34}
+\indexentry{ASS8::Klient::klientHash@{ASS8::Klient::klientHash}|hyperpage}{35}
+\indexentry{ASS8::Klient::klientHash@{ASS8::Klient::klientHash}!klientHash@{klientHash}|hyperpage}{35}
+\indexentry{klientHash@{klientHash}!ASS8::Klient::klientHash@{ASS8::Klient::klientHash}|hyperpage}{35}
+\indexentry{ASS8::Klient::klientHash@{ASS8::Klient::klientHash}!klientHash@{klientHash}|hyperpage}{35}
+\indexentry{klientHash@{klientHash}!ASS8::Klient::klientHash@{ASS8::Klient::klientHash}|hyperpage}{35}
+\indexentry{ASS8::Klient::klientHash@{ASS8::Klient::klientHash}!pHash@{pHash}|hyperpage}{36}
+\indexentry{pHash@{pHash}!ASS8::Klient::klientHash@{ASS8::Klient::klientHash}|hyperpage}{36}
+\indexentry{ASS8::Klient::klientHash@{ASS8::Klient::klientHash}!hash@{hash}|hyperpage}{36}
+\indexentry{hash@{hash}!ASS8::Klient::klientHash@{ASS8::Klient::klientHash}|hyperpage}{36}
+\indexentry{ASS8::Klient::klientLogowanie@{ASS8::Klient::klientLogowanie}|hyperpage}{37}
+\indexentry{ASS8::Klient::klientLogowanie@{ASS8::Klient::klientLogowanie}!klientLogowanie@{klientLogowanie}|hyperpage}{37}
+\indexentry{klientLogowanie@{klientLogowanie}!ASS8::Klient::klientLogowanie@{ASS8::Klient::klientLogowanie}|hyperpage}{37}
+\indexentry{ASS8::Klient::klientLogowanie@{ASS8::Klient::klientLogowanie}!klientLogowanie@{klientLogowanie}|hyperpage}{37}
+\indexentry{klientLogowanie@{klientLogowanie}!ASS8::Klient::klientLogowanie@{ASS8::Klient::klientLogowanie}|hyperpage}{37}
+\indexentry{ASS8::Klient::klientLogowanie@{ASS8::Klient::klientLogowanie}!haslo@{haslo}|hyperpage}{37}
+\indexentry{haslo@{haslo}!ASS8::Klient::klientLogowanie@{ASS8::Klient::klientLogowanie}|hyperpage}{37}
+\indexentry{ASS8::Klient::klientLogowanie@{ASS8::Klient::klientLogowanie}!login@{login}|hyperpage}{37}
+\indexentry{login@{login}!ASS8::Klient::klientLogowanie@{ASS8::Klient::klientLogowanie}|hyperpage}{37}
+\indexentry{ASS8::Klient::klientLogowanie@{ASS8::Klient::klientLogowanie}!vKlienta@{vKlienta}|hyperpage}{37}
+\indexentry{vKlienta@{vKlienta}!ASS8::Klient::klientLogowanie@{ASS8::Klient::klientLogowanie}|hyperpage}{37}
+\indexentry{ASS8::Klient::klientLogowanie@{ASS8::Klient::klientLogowanie}!Haslo@{Haslo}|hyperpage}{38}
+\indexentry{Haslo@{Haslo}!ASS8::Klient::klientLogowanie@{ASS8::Klient::klientLogowanie}|hyperpage}{38}
+\indexentry{ASS8::Klient::klientLogowanie@{ASS8::Klient::klientLogowanie}!Login@{Login}|hyperpage}{38}
+\indexentry{Login@{Login}!ASS8::Klient::klientLogowanie@{ASS8::Klient::klientLogowanie}|hyperpage}{38}
+\indexentry{ASS8::Klient::klientLogowanie@{ASS8::Klient::klientLogowanie}!wersjaKlienta@{wersjaKlienta}|hyperpage}{38}
+\indexentry{wersjaKlienta@{wersjaKlienta}!ASS8::Klient::klientLogowanie@{ASS8::Klient::klientLogowanie}|hyperpage}{38}
+\indexentry{ASS8::Klient::klientOdpDownload@{ASS8::Klient::klientOdpDownload}|hyperpage}{39}
+\indexentry{ASS8::Klient::klientOdpDownload@{ASS8::Klient::klientOdpDownload}!klientOdpDownload@{klientOdpDownload}|hyperpage}{39}
+\indexentry{klientOdpDownload@{klientOdpDownload}!ASS8::Klient::klientOdpDownload@{ASS8::Klient::klientOdpDownload}|hyperpage}{39}
+\indexentry{ASS8::Klient::klientOdpDownload@{ASS8::Klient::klientOdpDownload}!klientOdpDownload@{klientOdpDownload}|hyperpage}{39}
+\indexentry{klientOdpDownload@{klientOdpDownload}!ASS8::Klient::klientOdpDownload@{ASS8::Klient::klientOdpDownload}|hyperpage}{39}
+\indexentry{ASS8::Klient::klientOdpDownload@{ASS8::Klient::klientOdpDownload}!pAction@{pAction}|hyperpage}{40}
+\indexentry{pAction@{pAction}!ASS8::Klient::klientOdpDownload@{ASS8::Klient::klientOdpDownload}|hyperpage}{40}
+\indexentry{ASS8::Klient::klientOdpDownload@{ASS8::Klient::klientOdpDownload}!action@{action}|hyperpage}{40}
+\indexentry{action@{action}!ASS8::Klient::klientOdpDownload@{ASS8::Klient::klientOdpDownload}|hyperpage}{40}
+\indexentry{ASS8::Klient::klientUpload@{ASS8::Klient::klientUpload}|hyperpage}{41}
+\indexentry{ASS8::Klient::klientUpload@{ASS8::Klient::klientUpload}!klientUpload@{klientUpload}|hyperpage}{41}
+\indexentry{klientUpload@{klientUpload}!ASS8::Klient::klientUpload@{ASS8::Klient::klientUpload}|hyperpage}{41}
+\indexentry{ASS8::Klient::klientUpload@{ASS8::Klient::klientUpload}!klientUpload@{klientUpload}|hyperpage}{41}
+\indexentry{klientUpload@{klientUpload}!ASS8::Klient::klientUpload@{ASS8::Klient::klientUpload}|hyperpage}{41}
+\indexentry{ASS8::Klient::klientUpload@{ASS8::Klient::klientUpload}!pPlik@{pPlik}|hyperpage}{42}
+\indexentry{pPlik@{pPlik}!ASS8::Klient::klientUpload@{ASS8::Klient::klientUpload}|hyperpage}{42}
+\indexentry{ASS8::Klient::klientUpload@{ASS8::Klient::klientUpload}!plik@{plik}|hyperpage}{42}
+\indexentry{plik@{plik}!ASS8::Klient::klientUpload@{ASS8::Klient::klientUpload}|hyperpage}{42}
+\indexentry{ASS8::Klient::klientUsun@{ASS8::Klient::klientUsun}|hyperpage}{43}
+\indexentry{ASS8::Klient::klientUsun@{ASS8::Klient::klientUsun}!klientUsun@{klientUsun}|hyperpage}{43}
+\indexentry{klientUsun@{klientUsun}!ASS8::Klient::klientUsun@{ASS8::Klient::klientUsun}|hyperpage}{43}
+\indexentry{ASS8::Klient::klientUsun@{ASS8::Klient::klientUsun}!klientUsun@{klientUsun}|hyperpage}{43}
+\indexentry{klientUsun@{klientUsun}!ASS8::Klient::klientUsun@{ASS8::Klient::klientUsun}|hyperpage}{43}
+\indexentry{ASS8::Klient::klientUsun@{ASS8::Klient::klientUsun}!pPlik@{pPlik}|hyperpage}{44}
+\indexentry{pPlik@{pPlik}!ASS8::Klient::klientUsun@{ASS8::Klient::klientUsun}|hyperpage}{44}
+\indexentry{ASS8::Klient::klientUsun@{ASS8::Klient::klientUsun}!plik@{plik}|hyperpage}{44}
+\indexentry{plik@{plik}!ASS8::Klient::klientUsun@{ASS8::Klient::klientUsun}|hyperpage}{44}
+\indexentry{ASS8::Klient::komunikacja@{ASS8::Klient::komunikacja}|hyperpage}{45}
+\indexentry{ASS8::Klient::komunikacja@{ASS8::Klient::komunikacja}!odpowiedzi@{odpowiedzi}|hyperpage}{47}
+\indexentry{odpowiedzi@{odpowiedzi}!ASS8::Klient::komunikacja@{ASS8::Klient::komunikacja}|hyperpage}{47}
+\indexentry{bledne\_\-zapytanie@{bledne\_\-zapytanie}!ASS8::Klient::komunikacja@{ASS8::Klient::komunikacja}|hyperpage}{47}
+\indexentry{ASS8::Klient::komunikacja@{ASS8::Klient::komunikacja}!bledne\_\-zapytanie@{bledne\_\-zapytanie}|hyperpage}{47}
+\indexentry{bledny\_\-numer\_\-sesji@{bledny\_\-numer\_\-sesji}!ASS8::Klient::komunikacja@{ASS8::Klient::komunikacja}|hyperpage}{47}
+\indexentry{ASS8::Klient::komunikacja@{ASS8::Klient::komunikacja}!bledny\_\-numer\_\-sesji@{bledny\_\-numer\_\-sesji}|hyperpage}{47}
+\indexentry{plik\_\-istnieje@{plik\_\-istnieje}!ASS8::Klient::komunikacja@{ASS8::Klient::komunikacja}|hyperpage}{47}
+\indexentry{ASS8::Klient::komunikacja@{ASS8::Klient::komunikacja}!plik\_\-istnieje@{plik\_\-istnieje}|hyperpage}{47}
+\indexentry{blad\_\-serwera@{blad\_\-serwera}!ASS8::Klient::komunikacja@{ASS8::Klient::komunikacja}|hyperpage}{47}
+\indexentry{ASS8::Klient::komunikacja@{ASS8::Klient::komunikacja}!blad\_\-serwera@{blad\_\-serwera}|hyperpage}{47}
+\indexentry{plik\_\-nie\_\-istnieje@{plik\_\-nie\_\-istnieje}!ASS8::Klient::komunikacja@{ASS8::Klient::komunikacja}|hyperpage}{47}
+\indexentry{ASS8::Klient::komunikacja@{ASS8::Klient::komunikacja}!plik\_\-nie\_\-istnieje@{plik\_\-nie\_\-istnieje}|hyperpage}{47}
+\indexentry{blad\_\-odbierania\_\-plikow@{blad\_\-odbierania\_\-plikow}!ASS8::Klient::komunikacja@{ASS8::Klient::komunikacja}|hyperpage}{47}
+\indexentry{ASS8::Klient::komunikacja@{ASS8::Klient::komunikacja}!blad\_\-odbierania\_\-plikow@{blad\_\-odbierania\_\-plikow}|hyperpage}{47}
+\indexentry{wszystko\_\-ok@{wszystko\_\-ok}!ASS8::Klient::komunikacja@{ASS8::Klient::komunikacja}|hyperpage}{47}
+\indexentry{ASS8::Klient::komunikacja@{ASS8::Klient::komunikacja}!wszystko\_\-ok@{wszystko\_\-ok}|hyperpage}{47}
+\indexentry{ASS8::Klient::komunikacja@{ASS8::Klient::komunikacja}!operacje@{operacje}|hyperpage}{47}
+\indexentry{operacje@{operacje}!ASS8::Klient::komunikacja@{ASS8::Klient::komunikacja}|hyperpage}{47}
+\indexentry{lista@{lista}!ASS8::Klient::komunikacja@{ASS8::Klient::komunikacja}|hyperpage}{47}
+\indexentry{ASS8::Klient::komunikacja@{ASS8::Klient::komunikacja}!lista@{lista}|hyperpage}{47}
+\indexentry{pobieranie@{pobieranie}!ASS8::Klient::komunikacja@{ASS8::Klient::komunikacja}|hyperpage}{47}
+\indexentry{ASS8::Klient::komunikacja@{ASS8::Klient::komunikacja}!pobieranie@{pobieranie}|hyperpage}{47}
+\indexentry{wysylanie@{wysylanie}!ASS8::Klient::komunikacja@{ASS8::Klient::komunikacja}|hyperpage}{47}
+\indexentry{ASS8::Klient::komunikacja@{ASS8::Klient::komunikacja}!wysylanie@{wysylanie}|hyperpage}{47}
+\indexentry{usuwanie@{usuwanie}!ASS8::Klient::komunikacja@{ASS8::Klient::komunikacja}|hyperpage}{47}
+\indexentry{ASS8::Klient::komunikacja@{ASS8::Klient::komunikacja}!usuwanie@{usuwanie}|hyperpage}{47}
+\indexentry{ASS8::Klient::komunikacja@{ASS8::Klient::komunikacja}!komunikacja@{komunikacja}|hyperpage}{47}
+\indexentry{komunikacja@{komunikacja}!ASS8::Klient::komunikacja@{ASS8::Klient::komunikacja}|hyperpage}{47}
+\indexentry{ASS8::Klient::komunikacja@{ASS8::Klient::komunikacja}!downloadFiles@{downloadFiles}|hyperpage}{47}
+\indexentry{downloadFiles@{downloadFiles}!ASS8::Klient::komunikacja@{ASS8::Klient::komunikacja}|hyperpage}{47}
+\indexentry{ASS8::Klient::komunikacja@{ASS8::Klient::komunikacja}!downloadListy@{downloadListy}|hyperpage}{48}
+\indexentry{downloadListy@{downloadListy}!ASS8::Klient::komunikacja@{ASS8::Klient::komunikacja}|hyperpage}{48}
+\indexentry{ASS8::Klient::komunikacja@{ASS8::Klient::komunikacja}!hashPliku@{hashPliku}|hyperpage}{48}
+\indexentry{hashPliku@{hashPliku}!ASS8::Klient::komunikacja@{ASS8::Klient::komunikacja}|hyperpage}{48}
+\indexentry{ASS8::Klient::komunikacja@{ASS8::Klient::komunikacja}!login@{login}|hyperpage}{48}
+\indexentry{login@{login}!ASS8::Klient::komunikacja@{ASS8::Klient::komunikacja}|hyperpage}{48}
+\indexentry{ASS8::Klient::komunikacja@{ASS8::Klient::komunikacja}!pobierz@{pobierz}|hyperpage}{49}
+\indexentry{pobierz@{pobierz}!ASS8::Klient::komunikacja@{ASS8::Klient::komunikacja}|hyperpage}{49}
+\indexentry{ASS8::Klient::komunikacja@{ASS8::Klient::komunikacja}!pobierz@{pobierz}|hyperpage}{49}
+\indexentry{pobierz@{pobierz}!ASS8::Klient::komunikacja@{ASS8::Klient::komunikacja}|hyperpage}{49}
+\indexentry{ASS8::Klient::komunikacja@{ASS8::Klient::komunikacja}!postep@{postep}|hyperpage}{49}
+\indexentry{postep@{postep}!ASS8::Klient::komunikacja@{ASS8::Klient::komunikacja}|hyperpage}{49}
+\indexentry{ASS8::Klient::komunikacja@{ASS8::Klient::komunikacja}!ProgressBarHandler@{ProgressBarHandler}|hyperpage}{49}
+\indexentry{ProgressBarHandler@{ProgressBarHandler}!ASS8::Klient::komunikacja@{ASS8::Klient::komunikacja}|hyperpage}{49}
+\indexentry{ASS8::Klient::komunikacja@{ASS8::Klient::komunikacja}!uploadFile@{uploadFile}|hyperpage}{49}
+\indexentry{uploadFile@{uploadFile}!ASS8::Klient::komunikacja@{ASS8::Klient::komunikacja}|hyperpage}{49}
+\indexentry{ASS8::Klient::komunikacja@{ASS8::Klient::komunikacja}!ustawUstawienia@{ustawUstawienia}|hyperpage}{50}
+\indexentry{ustawUstawienia@{ustawUstawienia}!ASS8::Klient::komunikacja@{ASS8::Klient::komunikacja}|hyperpage}{50}
+\indexentry{ASS8::Klient::komunikacja@{ASS8::Klient::komunikacja}!usunPliki@{usunPliki}|hyperpage}{50}
+\indexentry{usunPliki@{usunPliki}!ASS8::Klient::komunikacja@{ASS8::Klient::komunikacja}|hyperpage}{50}
+\indexentry{ASS8::Klient::komunikacja@{ASS8::Klient::komunikacja}!wyslij@{wyslij}|hyperpage}{50}
+\indexentry{wyslij@{wyslij}!ASS8::Klient::komunikacja@{ASS8::Klient::komunikacja}|hyperpage}{50}
+\indexentry{ASS8::Klient::komunikacja@{ASS8::Klient::komunikacja}!endl@{endl}|hyperpage}{51}
+\indexentry{endl@{endl}!ASS8::Klient::komunikacja@{ASS8::Klient::komunikacja}|hyperpage}{51}
+\indexentry{ASS8::Klient::komunikacja@{ASS8::Klient::komunikacja}!endlOdp@{endlOdp}|hyperpage}{51}
+\indexentry{endlOdp@{endlOdp}!ASS8::Klient::komunikacja@{ASS8::Klient::komunikacja}|hyperpage}{51}
+\indexentry{ASS8::Klient::komunikacja@{ASS8::Klient::komunikacja}!folder@{folder}|hyperpage}{51}
+\indexentry{folder@{folder}!ASS8::Klient::komunikacja@{ASS8::Klient::komunikacja}|hyperpage}{51}
+\indexentry{ASS8::Klient::komunikacja@{ASS8::Klient::komunikacja}!haslo@{haslo}|hyperpage}{51}
+\indexentry{haslo@{haslo}!ASS8::Klient::komunikacja@{ASS8::Klient::komunikacja}|hyperpage}{51}
+\indexentry{ASS8::Klient::komunikacja@{ASS8::Klient::komunikacja}!log@{log}|hyperpage}{51}
+\indexentry{log@{log}!ASS8::Klient::komunikacja@{ASS8::Klient::komunikacja}|hyperpage}{51}
+\indexentry{ASS8::Klient::komunikacja@{ASS8::Klient::komunikacja}!names@{names}|hyperpage}{51}
+\indexentry{names@{names}!ASS8::Klient::komunikacja@{ASS8::Klient::komunikacja}|hyperpage}{51}
+\indexentry{ASS8::Klient::komunikacja@{ASS8::Klient::komunikacja}!serverIP@{serverIP}|hyperpage}{51}
+\indexentry{serverIP@{serverIP}!ASS8::Klient::komunikacja@{ASS8::Klient::komunikacja}|hyperpage}{51}
+\indexentry{ASS8::Klient::komunikacja@{ASS8::Klient::komunikacja}!serverPort@{serverPort}|hyperpage}{51}
+\indexentry{serverPort@{serverPort}!ASS8::Klient::komunikacja@{ASS8::Klient::komunikacja}|hyperpage}{51}
+\indexentry{ASS8::Klient::komunikacja@{ASS8::Klient::komunikacja}!sessionID@{sessionID}|hyperpage}{51}
+\indexentry{sessionID@{sessionID}!ASS8::Klient::komunikacja@{ASS8::Klient::komunikacja}|hyperpage}{51}
+\indexentry{ASS8::Klient::komunikacja@{ASS8::Klient::komunikacja}!socket@{socket}|hyperpage}{51}
+\indexentry{socket@{socket}!ASS8::Klient::komunikacja@{ASS8::Klient::komunikacja}|hyperpage}{51}
+\indexentry{ASS8::Klient::komunikacja@{ASS8::Klient::komunikacja}!Haslo@{Haslo}|hyperpage}{51}
+\indexentry{Haslo@{Haslo}!ASS8::Klient::komunikacja@{ASS8::Klient::komunikacja}|hyperpage}{51}
+\indexentry{ASS8::Klient::komunikacja@{ASS8::Klient::komunikacja}!Login@{Login}|hyperpage}{52}
+\indexentry{Login@{Login}!ASS8::Klient::komunikacja@{ASS8::Klient::komunikacja}|hyperpage}{52}
+\indexentry{ASS8::Klient::komunikacja@{ASS8::Klient::komunikacja}!Port@{Port}|hyperpage}{52}
+\indexentry{Port@{Port}!ASS8::Klient::komunikacja@{ASS8::Klient::komunikacja}|hyperpage}{52}
+\indexentry{ASS8::Klient::komunikacja@{ASS8::Klient::komunikacja}!Serwer@{Serwer}|hyperpage}{52}
+\indexentry{Serwer@{Serwer}!ASS8::Klient::komunikacja@{ASS8::Klient::komunikacja}|hyperpage}{52}
+\indexentry{ASS8::Klient::Konfiguracja@{ASS8::Klient::Konfiguracja}|hyperpage}{53}
+\indexentry{ASS8::Klient::Konfiguracja@{ASS8::Klient::Konfiguracja}!Konfiguracja@{Konfiguracja}|hyperpage}{55}
+\indexentry{Konfiguracja@{Konfiguracja}!ASS8::Klient::Konfiguracja@{ASS8::Klient::Konfiguracja}|hyperpage}{55}
+\indexentry{ASS8::Klient::Konfiguracja@{ASS8::Klient::Konfiguracja}!ASS8\_\discretionary {-}{}{}\_\discretionary {-}{}{}\_\discretionary {-}{}{}Konfiguracja\_\discretionary {-}{}{}FormClosing@{ASS8\_\discretionary {-}{}{}\_\discretionary {-}{}{}\_\discretionary {-}{}{}Konfiguracja\_\discretionary {-}{}{}FormClosing}|hyperpage}{55}
+\indexentry{ASS8\_\discretionary {-}{}{}\_\discretionary {-}{}{}\_\discretionary {-}{}{}Konfiguracja\_\discretionary {-}{}{}FormClosing@{ASS8\_\discretionary {-}{}{}\_\discretionary {-}{}{}\_\discretionary {-}{}{}Konfiguracja\_\discretionary {-}{}{}FormClosing}!ASS8::Klient::Konfiguracja@{ASS8::Klient::Konfiguracja}|hyperpage}{55}
+\indexentry{ASS8::Klient::Konfiguracja@{ASS8::Klient::Konfiguracja}!automatyczneSpr@{automatyczneSpr}|hyperpage}{55}
+\indexentry{automatyczneSpr@{automatyczneSpr}!ASS8::Klient::Konfiguracja@{ASS8::Klient::Konfiguracja}|hyperpage}{55}
+\indexentry{ASS8::Klient::Konfiguracja@{ASS8::Klient::Konfiguracja}!btnAnuluj\_\discretionary {-}{}{}Click@{btnAnuluj\_\discretionary {-}{}{}Click}|hyperpage}{55}
+\indexentry{btnAnuluj\_\discretionary {-}{}{}Click@{btnAnuluj\_\discretionary {-}{}{}Click}!ASS8::Klient::Konfiguracja@{ASS8::Klient::Konfiguracja}|hyperpage}{55}
+\indexentry{ASS8::Klient::Konfiguracja@{ASS8::Klient::Konfiguracja}!btnSciezka\_\discretionary {-}{}{}Click@{btnSciezka\_\discretionary {-}{}{}Click}|hyperpage}{56}
+\indexentry{btnSciezka\_\discretionary {-}{}{}Click@{btnSciezka\_\discretionary {-}{}{}Click}!ASS8::Klient::Konfiguracja@{ASS8::Klient::Konfiguracja}|hyperpage}{56}
+\indexentry{ASS8::Klient::Konfiguracja@{ASS8::Klient::Konfiguracja}!btnZapisz\_\discretionary {-}{}{}Click@{btnZapisz\_\discretionary {-}{}{}Click}|hyperpage}{56}
+\indexentry{btnZapisz\_\discretionary {-}{}{}Click@{btnZapisz\_\discretionary {-}{}{}Click}!ASS8::Klient::Konfiguracja@{ASS8::Klient::Konfiguracja}|hyperpage}{56}
+\indexentry{ASS8::Klient::Konfiguracja@{ASS8::Klient::Konfiguracja}!chbUwierzytelnienie\_\discretionary {-}{}{}CheckedChanged@{chbUwierzytelnienie\_\discretionary {-}{}{}CheckedChanged}|hyperpage}{56}
+\indexentry{chbUwierzytelnienie\_\discretionary {-}{}{}CheckedChanged@{chbUwierzytelnienie\_\discretionary {-}{}{}CheckedChanged}!ASS8::Klient::Konfiguracja@{ASS8::Klient::Konfiguracja}|hyperpage}{56}
+\indexentry{ASS8::Klient::Konfiguracja@{ASS8::Klient::Konfiguracja}!checkBox1\_\discretionary {-}{}{}CheckedChanged@{checkBox1\_\discretionary {-}{}{}CheckedChanged}|hyperpage}{56}
+\indexentry{checkBox1\_\discretionary {-}{}{}CheckedChanged@{checkBox1\_\discretionary {-}{}{}CheckedChanged}!ASS8::Klient::Konfiguracja@{ASS8::Klient::Konfiguracja}|hyperpage}{56}
+\indexentry{ASS8::Klient::Konfiguracja@{ASS8::Klient::Konfiguracja}!cmsWyloguj\_\discretionary {-}{}{}Click@{cmsWyloguj\_\discretionary {-}{}{}Click}|hyperpage}{57}
+\indexentry{cmsWyloguj\_\discretionary {-}{}{}Click@{cmsWyloguj\_\discretionary {-}{}{}Click}!ASS8::Klient::Konfiguracja@{ASS8::Klient::Konfiguracja}|hyperpage}{57}
+\indexentry{ASS8::Klient::Konfiguracja@{ASS8::Klient::Konfiguracja}!label4\_\discretionary {-}{}{}Click@{label4\_\discretionary {-}{}{}Click}|hyperpage}{57}
+\indexentry{label4\_\discretionary {-}{}{}Click@{label4\_\discretionary {-}{}{}Click}!ASS8::Klient::Konfiguracja@{ASS8::Klient::Konfiguracja}|hyperpage}{57}
+\indexentry{ASS8::Klient::Konfiguracja@{ASS8::Klient::Konfiguracja}!tcmsKonfiguracja\_\discretionary {-}{}{}Click@{tcmsKonfiguracja\_\discretionary {-}{}{}Click}|hyperpage}{57}
+\indexentry{tcmsKonfiguracja\_\discretionary {-}{}{}Click@{tcmsKonfiguracja\_\discretionary {-}{}{}Click}!ASS8::Klient::Konfiguracja@{ASS8::Klient::Konfiguracja}|hyperpage}{57}
+\indexentry{ASS8::Klient::Konfiguracja@{ASS8::Klient::Konfiguracja}!tcmsStart\_\discretionary {-}{}{}Click@{tcmsStart\_\discretionary {-}{}{}Click}|hyperpage}{57}
+\indexentry{tcmsStart\_\discretionary {-}{}{}Click@{tcmsStart\_\discretionary {-}{}{}Click}!ASS8::Klient::Konfiguracja@{ASS8::Klient::Konfiguracja}|hyperpage}{57}
+\indexentry{ASS8::Klient::Konfiguracja@{ASS8::Klient::Konfiguracja}!tcmsStop\_\discretionary {-}{}{}Click@{tcmsStop\_\discretionary {-}{}{}Click}|hyperpage}{57}
+\indexentry{tcmsStop\_\discretionary {-}{}{}Click@{tcmsStop\_\discretionary {-}{}{}Click}!ASS8::Klient::Konfiguracja@{ASS8::Klient::Konfiguracja}|hyperpage}{57}
+\indexentry{ASS8::Klient::Konfiguracja@{ASS8::Klient::Konfiguracja}!tcmsZakoncz\_\discretionary {-}{}{}Click@{tcmsZakoncz\_\discretionary {-}{}{}Click}|hyperpage}{58}
+\indexentry{tcmsZakoncz\_\discretionary {-}{}{}Click@{tcmsZakoncz\_\discretionary {-}{}{}Click}!ASS8::Klient::Konfiguracja@{ASS8::Klient::Konfiguracja}|hyperpage}{58}
+\indexentry{ASS8::Klient::Konfiguracja@{ASS8::Klient::Konfiguracja}!tcmsZnajomi\_\discretionary {-}{}{}Click@{tcmsZnajomi\_\discretionary {-}{}{}Click}|hyperpage}{58}
+\indexentry{tcmsZnajomi\_\discretionary {-}{}{}Click@{tcmsZnajomi\_\discretionary {-}{}{}Click}!ASS8::Klient::Konfiguracja@{ASS8::Klient::Konfiguracja}|hyperpage}{58}
+\indexentry{ASS8::Klient::Konfiguracja@{ASS8::Klient::Konfiguracja}!zmianaFolderu@{zmianaFolderu}|hyperpage}{58}
+\indexentry{zmianaFolderu@{zmianaFolderu}!ASS8::Klient::Konfiguracja@{ASS8::Klient::Konfiguracja}|hyperpage}{58}
+\indexentry{ASS8::Klient::Konfiguracja@{ASS8::Klient::Konfiguracja}!bledyKontrola@{bledyKontrola}|hyperpage}{58}
+\indexentry{bledyKontrola@{bledyKontrola}!ASS8::Klient::Konfiguracja@{ASS8::Klient::Konfiguracja}|hyperpage}{58}
+\indexentry{ASS8::Klient::Konfiguracja@{ASS8::Klient::Konfiguracja}!close@{close}|hyperpage}{58}
+\indexentry{close@{close}!ASS8::Klient::Konfiguracja@{ASS8::Klient::Konfiguracja}|hyperpage}{58}
+\indexentry{ASS8::Klient::Konfiguracja@{ASS8::Klient::Konfiguracja}!fol@{fol}|hyperpage}{59}
+\indexentry{fol@{fol}!ASS8::Klient::Konfiguracja@{ASS8::Klient::Konfiguracja}|hyperpage}{59}
+\indexentry{ASS8::Klient::Konfiguracja@{ASS8::Klient::Konfiguracja}!k@{k}|hyperpage}{59}
+\indexentry{k@{k}!ASS8::Klient::Konfiguracja@{ASS8::Klient::Konfiguracja}|hyperpage}{59}
+\indexentry{ASS8::Klient::Konfiguracja@{ASS8::Klient::Konfiguracja}!loginForm@{loginForm}|hyperpage}{59}
+\indexentry{loginForm@{loginForm}!ASS8::Klient::Konfiguracja@{ASS8::Klient::Konfiguracja}|hyperpage}{59}
+\indexentry{ASS8::Klient::Konfiguracja@{ASS8::Klient::Konfiguracja}!names@{names}|hyperpage}{59}
+\indexentry{names@{names}!ASS8::Klient::Konfiguracja@{ASS8::Klient::Konfiguracja}|hyperpage}{59}
+\indexentry{ASS8::Klient::Konfiguracja@{ASS8::Klient::Konfiguracja}!sekundy@{sekundy}|hyperpage}{59}
+\indexentry{sekundy@{sekundy}!ASS8::Klient::Konfiguracja@{ASS8::Klient::Konfiguracja}|hyperpage}{59}
+\indexentry{ASS8::Klient::Konfiguracja@{ASS8::Klient::Konfiguracja}!z@{z}|hyperpage}{59}
+\indexentry{z@{z}!ASS8::Klient::Konfiguracja@{ASS8::Klient::Konfiguracja}|hyperpage}{59}
+\indexentry{ASS8::Klient::Konfiguracja@{ASS8::Klient::Konfiguracja}!KomClass@{KomClass}|hyperpage}{59}
+\indexentry{KomClass@{KomClass}!ASS8::Klient::Konfiguracja@{ASS8::Klient::Konfiguracja}|hyperpage}{59}
+\indexentry{ASS8::Klient::listaPlikow@{ASS8::Klient::listaPlikow}|hyperpage}{60}
+\indexentry{ASS8::Klient::listaPlikow@{ASS8::Klient::listaPlikow}!listaPlikow@{listaPlikow}|hyperpage}{60}
+\indexentry{listaPlikow@{listaPlikow}!ASS8::Klient::listaPlikow@{ASS8::Klient::listaPlikow}|hyperpage}{60}
+\indexentry{ASS8::Klient::listaPlikow@{ASS8::Klient::listaPlikow}!listaPlikow@{listaPlikow}|hyperpage}{60}
+\indexentry{listaPlikow@{listaPlikow}!ASS8::Klient::listaPlikow@{ASS8::Klient::listaPlikow}|hyperpage}{60}
+\indexentry{ASS8::Klient::listaPlikow@{ASS8::Klient::listaPlikow}!uzyt@{uzyt}|hyperpage}{61}
+\indexentry{uzyt@{uzyt}!ASS8::Klient::listaPlikow@{ASS8::Klient::listaPlikow}|hyperpage}{61}
+\indexentry{ASS8::Klient::listaPlikow@{ASS8::Klient::listaPlikow}!uzytkownik@{uzytkownik}|hyperpage}{61}
+\indexentry{uzytkownik@{uzytkownik}!ASS8::Klient::listaPlikow@{ASS8::Klient::listaPlikow}|hyperpage}{61}
+\indexentry{ASS8::Klient::plikBase@{ASS8::Klient::plikBase}|hyperpage}{62}
+\indexentry{ASS8::Klient::plikBase@{ASS8::Klient::plikBase}!plikBase@{plikBase}|hyperpage}{62}
+\indexentry{plikBase@{plikBase}!ASS8::Klient::plikBase@{ASS8::Klient::plikBase}|hyperpage}{62}
+\indexentry{ASS8::Klient::plikBase@{ASS8::Klient::plikBase}!plikBase@{plikBase}|hyperpage}{62}
+\indexentry{plikBase@{plikBase}!ASS8::Klient::plikBase@{ASS8::Klient::plikBase}|hyperpage}{62}
+\indexentry{ASS8::Klient::plikBase@{ASS8::Klient::plikBase}!pNazwa@{pNazwa}|hyperpage}{62}
+\indexentry{pNazwa@{pNazwa}!ASS8::Klient::plikBase@{ASS8::Klient::plikBase}|hyperpage}{62}
+\indexentry{ASS8::Klient::plikBase@{ASS8::Klient::plikBase}!nazwa@{nazwa}|hyperpage}{62}
+\indexentry{nazwa@{nazwa}!ASS8::Klient::plikBase@{ASS8::Klient::plikBase}|hyperpage}{62}
+\indexentry{ASS8::Klient::pliki@{ASS8::Klient::pliki}|hyperpage}{64}
+\indexentry{ASS8::Klient::pliki@{ASS8::Klient::pliki}!pliki@{pliki}|hyperpage}{64}
+\indexentry{pliki@{pliki}!ASS8::Klient::pliki@{ASS8::Klient::pliki}|hyperpage}{64}
+\indexentry{ASS8::Klient::pliki@{ASS8::Klient::pliki}!pliki@{pliki}|hyperpage}{64}
+\indexentry{pliki@{pliki}!ASS8::Klient::pliki@{ASS8::Klient::pliki}|hyperpage}{64}
+\indexentry{ASS8::Klient::pliki@{ASS8::Klient::pliki}!pPliki@{pPliki}|hyperpage}{64}
+\indexentry{pPliki@{pPliki}!ASS8::Klient::pliki@{ASS8::Klient::pliki}|hyperpage}{64}
+\indexentry{ASS8::Klient::pliki@{ASS8::Klient::pliki}!plik@{plik}|hyperpage}{64}
+\indexentry{plik@{plik}!ASS8::Klient::pliki@{ASS8::Klient::pliki}|hyperpage}{64}
+\indexentry{ASS8::Klient::plikInfo@{ASS8::Klient::plikInfo}|hyperpage}{65}
+\indexentry{ASS8::Klient::plikInfo@{ASS8::Klient::plikInfo}!plikInfo@{plikInfo}|hyperpage}{65}
+\indexentry{plikInfo@{plikInfo}!ASS8::Klient::plikInfo@{ASS8::Klient::plikInfo}|hyperpage}{65}
+\indexentry{ASS8::Klient::plikInfo@{ASS8::Klient::plikInfo}!plikInfo@{plikInfo}|hyperpage}{65}
+\indexentry{plikInfo@{plikInfo}!ASS8::Klient::plikInfo@{ASS8::Klient::plikInfo}|hyperpage}{65}
+\indexentry{ASS8::Klient::plikInfo@{ASS8::Klient::plikInfo}!pData@{pData}|hyperpage}{66}
+\indexentry{pData@{pData}!ASS8::Klient::plikInfo@{ASS8::Klient::plikInfo}|hyperpage}{66}
+\indexentry{ASS8::Klient::plikInfo@{ASS8::Klient::plikInfo}!pDostep@{pDostep}|hyperpage}{66}
+\indexentry{pDostep@{pDostep}!ASS8::Klient::plikInfo@{ASS8::Klient::plikInfo}|hyperpage}{66}
+\indexentry{ASS8::Klient::plikInfo@{ASS8::Klient::plikInfo}!pHash@{pHash}|hyperpage}{66}
+\indexentry{pHash@{pHash}!ASS8::Klient::plikInfo@{ASS8::Klient::plikInfo}|hyperpage}{66}
+\indexentry{ASS8::Klient::plikInfo@{ASS8::Klient::plikInfo}!pRozmiar@{pRozmiar}|hyperpage}{66}
+\indexentry{pRozmiar@{pRozmiar}!ASS8::Klient::plikInfo@{ASS8::Klient::plikInfo}|hyperpage}{66}
+\indexentry{ASS8::Klient::plikInfo@{ASS8::Klient::plikInfo}!data@{data}|hyperpage}{66}
+\indexentry{data@{data}!ASS8::Klient::plikInfo@{ASS8::Klient::plikInfo}|hyperpage}{66}
+\indexentry{ASS8::Klient::plikInfo@{ASS8::Klient::plikInfo}!dostep@{dostep}|hyperpage}{66}
+\indexentry{dostep@{dostep}!ASS8::Klient::plikInfo@{ASS8::Klient::plikInfo}|hyperpage}{66}
+\indexentry{ASS8::Klient::plikInfo@{ASS8::Klient::plikInfo}!hash@{hash}|hyperpage}{66}
+\indexentry{hash@{hash}!ASS8::Klient::plikInfo@{ASS8::Klient::plikInfo}|hyperpage}{66}
+\indexentry{ASS8::Klient::plikInfo@{ASS8::Klient::plikInfo}!rozmiar@{rozmiar}|hyperpage}{66}
+\indexentry{rozmiar@{rozmiar}!ASS8::Klient::plikInfo@{ASS8::Klient::plikInfo}|hyperpage}{66}
+\indexentry{ASS8::Klient::Pobierane@{ASS8::Klient::Pobierane}|hyperpage}{67}
+\indexentry{ASS8::Klient::Pobierane@{ASS8::Klient::Pobierane}!Pobierane@{Pobierane}|hyperpage}{67}
+\indexentry{Pobierane@{Pobierane}!ASS8::Klient::Pobierane@{ASS8::Klient::Pobierane}|hyperpage}{67}
+\indexentry{ASS8::Klient::Pobierane@{ASS8::Klient::Pobierane}!btnCzysc\_\discretionary {-}{}{}Click@{btnCzysc\_\discretionary {-}{}{}Click}|hyperpage}{67}
+\indexentry{btnCzysc\_\discretionary {-}{}{}Click@{btnCzysc\_\discretionary {-}{}{}Click}!ASS8::Klient::Pobierane@{ASS8::Klient::Pobierane}|hyperpage}{67}
+\indexentry{ASS8::Klient::Pobierane@{ASS8::Klient::Pobierane}!btnZamknij\_\discretionary {-}{}{}Click@{btnZamknij\_\discretionary {-}{}{}Click}|hyperpage}{68}
+\indexentry{btnZamknij\_\discretionary {-}{}{}Click@{btnZamknij\_\discretionary {-}{}{}Click}!ASS8::Klient::Pobierane@{ASS8::Klient::Pobierane}|hyperpage}{68}
+\indexentry{ASS8::Klient::Pobierane@{ASS8::Klient::Pobierane}!dodajZadanie@{dodajZadanie}|hyperpage}{68}
+\indexentry{dodajZadanie@{dodajZadanie}!ASS8::Klient::Pobierane@{ASS8::Klient::Pobierane}|hyperpage}{68}
+\indexentry{ASS8::Klient::Pobierane@{ASS8::Klient::Pobierane}!Pobierane\_\discretionary {-}{}{}FormClosing@{Pobierane\_\discretionary {-}{}{}FormClosing}|hyperpage}{68}
+\indexentry{Pobierane\_\discretionary {-}{}{}FormClosing@{Pobierane\_\discretionary {-}{}{}FormClosing}!ASS8::Klient::Pobierane@{ASS8::Klient::Pobierane}|hyperpage}{68}
+\indexentry{ASS8::Klient::Pobierane@{ASS8::Klient::Pobierane}!usunZadanie@{usunZadanie}|hyperpage}{68}
+\indexentry{usunZadanie@{usunZadanie}!ASS8::Klient::Pobierane@{ASS8::Klient::Pobierane}|hyperpage}{68}
+\indexentry{ASS8::Klient::pojedynczyPlik@{ASS8::Klient::pojedynczyPlik}|hyperpage}{70}
+\indexentry{ASS8::Klient::pojedynczyPlik@{ASS8::Klient::pojedynczyPlik}!pojedynczyPlik@{pojedynczyPlik}|hyperpage}{70}
+\indexentry{pojedynczyPlik@{pojedynczyPlik}!ASS8::Klient::pojedynczyPlik@{ASS8::Klient::pojedynczyPlik}|hyperpage}{70}
+\indexentry{ASS8::Klient::pojedynczyPlik@{ASS8::Klient::pojedynczyPlik}!pojedynczyPlik@{pojedynczyPlik}|hyperpage}{70}
+\indexentry{pojedynczyPlik@{pojedynczyPlik}!ASS8::Klient::pojedynczyPlik@{ASS8::Klient::pojedynczyPlik}|hyperpage}{70}
+\indexentry{ASS8::Klient::pojedynczyPlik@{ASS8::Klient::pojedynczyPlik}!pCzas@{pCzas}|hyperpage}{70}
+\indexentry{pCzas@{pCzas}!ASS8::Klient::pojedynczyPlik@{ASS8::Klient::pojedynczyPlik}|hyperpage}{70}
+\indexentry{ASS8::Klient::pojedynczyPlik@{ASS8::Klient::pojedynczyPlik}!pHash@{pHash}|hyperpage}{70}
+\indexentry{pHash@{pHash}!ASS8::Klient::pojedynczyPlik@{ASS8::Klient::pojedynczyPlik}|hyperpage}{70}
+\indexentry{ASS8::Klient::pojedynczyPlik@{ASS8::Klient::pojedynczyPlik}!pNazwa@{pNazwa}|hyperpage}{70}
+\indexentry{pNazwa@{pNazwa}!ASS8::Klient::pojedynczyPlik@{ASS8::Klient::pojedynczyPlik}|hyperpage}{70}
+\indexentry{ASS8::Klient::pojedynczyPlik@{ASS8::Klient::pojedynczyPlik}!data@{data}|hyperpage}{71}
+\indexentry{data@{data}!ASS8::Klient::pojedynczyPlik@{ASS8::Klient::pojedynczyPlik}|hyperpage}{71}
+\indexentry{ASS8::Klient::pojedynczyPlik@{ASS8::Klient::pojedynczyPlik}!hash@{hash}|hyperpage}{71}
+\indexentry{hash@{hash}!ASS8::Klient::pojedynczyPlik@{ASS8::Klient::pojedynczyPlik}|hyperpage}{71}
+\indexentry{ASS8::Klient::pojedynczyPlik@{ASS8::Klient::pojedynczyPlik}!nazwa@{nazwa}|hyperpage}{71}
+\indexentry{nazwa@{nazwa}!ASS8::Klient::pojedynczyPlik@{ASS8::Klient::pojedynczyPlik}|hyperpage}{71}
+\indexentry{ASS8::Klient::Program@{ASS8::Klient::Program}|hyperpage}{72}
+\indexentry{ASS8::Klient::Program@{ASS8::Klient::Program}!Main@{Main}|hyperpage}{72}
+\indexentry{Main@{Main}!ASS8::Klient::Program@{ASS8::Klient::Program}|hyperpage}{72}
+\indexentry{ASS8::Klient::Properties::Resources@{ASS8::Klient::Properties::Resources}|hyperpage}{73}
+\indexentry{ASS8::Klient::Properties::Resources@{ASS8::Klient::Properties::Resources}!Resources@{Resources}|hyperpage}{73}
+\indexentry{Resources@{Resources}!ASS8::Klient::Properties::Resources@{ASS8::Klient::Properties::Resources}|hyperpage}{73}
+\indexentry{ASS8::Klient::Properties::Resources@{ASS8::Klient::Properties::Resources}!resourceCulture@{resourceCulture}|hyperpage}{73}
+\indexentry{resourceCulture@{resourceCulture}!ASS8::Klient::Properties::Resources@{ASS8::Klient::Properties::Resources}|hyperpage}{73}
+\indexentry{ASS8::Klient::Properties::Resources@{ASS8::Klient::Properties::Resources}!resourceMan@{resourceMan}|hyperpage}{73}
+\indexentry{resourceMan@{resourceMan}!ASS8::Klient::Properties::Resources@{ASS8::Klient::Properties::Resources}|hyperpage}{73}
+\indexentry{ASS8::Klient::Properties::Resources@{ASS8::Klient::Properties::Resources}!Culture@{Culture}|hyperpage}{74}
+\indexentry{Culture@{Culture}!ASS8::Klient::Properties::Resources@{ASS8::Klient::Properties::Resources}|hyperpage}{74}
+\indexentry{ASS8::Klient::Properties::Resources@{ASS8::Klient::Properties::Resources}!ResourceManager@{ResourceManager}|hyperpage}{74}
+\indexentry{ResourceManager@{ResourceManager}!ASS8::Klient::Properties::Resources@{ASS8::Klient::Properties::Resources}|hyperpage}{74}
+\indexentry{ASS8::Klient::serwerBase@{ASS8::Klient::serwerBase}|hyperpage}{75}
+\indexentry{ASS8::Klient::serwerBase@{ASS8::Klient::serwerBase}!serwerBase@{serwerBase}|hyperpage}{75}
+\indexentry{serwerBase@{serwerBase}!ASS8::Klient::serwerBase@{ASS8::Klient::serwerBase}|hyperpage}{75}
+\indexentry{ASS8::Klient::serwerBase@{ASS8::Klient::serwerBase}!serwerBase@{serwerBase}|hyperpage}{75}
+\indexentry{serwerBase@{serwerBase}!ASS8::Klient::serwerBase@{ASS8::Klient::serwerBase}|hyperpage}{75}
+\indexentry{ASS8::Klient::serwerBase@{ASS8::Klient::serwerBase}!pOdpowiedz@{pOdpowiedz}|hyperpage}{75}
+\indexentry{pOdpowiedz@{pOdpowiedz}!ASS8::Klient::serwerBase@{ASS8::Klient::serwerBase}|hyperpage}{75}
+\indexentry{ASS8::Klient::serwerBase@{ASS8::Klient::serwerBase}!pOp@{pOp}|hyperpage}{75}
+\indexentry{pOp@{pOp}!ASS8::Klient::serwerBase@{ASS8::Klient::serwerBase}|hyperpage}{75}
+\indexentry{ASS8::Klient::serwerBase@{ASS8::Klient::serwerBase}!odp@{odp}|hyperpage}{76}
+\indexentry{odp@{odp}!ASS8::Klient::serwerBase@{ASS8::Klient::serwerBase}|hyperpage}{76}
+\indexentry{ASS8::Klient::serwerBase@{ASS8::Klient::serwerBase}!operacja@{operacja}|hyperpage}{76}
+\indexentry{operacja@{operacja}!ASS8::Klient::serwerBase@{ASS8::Klient::serwerBase}|hyperpage}{76}
+\indexentry{ASS8::Klient::serwerHash@{ASS8::Klient::serwerHash}|hyperpage}{77}
+\indexentry{ASS8::Klient::serwerHash@{ASS8::Klient::serwerHash}!serwerHash@{serwerHash}|hyperpage}{77}
+\indexentry{serwerHash@{serwerHash}!ASS8::Klient::serwerHash@{ASS8::Klient::serwerHash}|hyperpage}{77}
+\indexentry{ASS8::Klient::serwerHash@{ASS8::Klient::serwerHash}!serwerHash@{serwerHash}|hyperpage}{77}
+\indexentry{serwerHash@{serwerHash}!ASS8::Klient::serwerHash@{ASS8::Klient::serwerHash}|hyperpage}{77}
+\indexentry{ASS8::Klient::serwerHash@{ASS8::Klient::serwerHash}!pHash@{pHash}|hyperpage}{78}
+\indexentry{pHash@{pHash}!ASS8::Klient::serwerHash@{ASS8::Klient::serwerHash}|hyperpage}{78}
+\indexentry{ASS8::Klient::serwerHash@{ASS8::Klient::serwerHash}!hash@{hash}|hyperpage}{78}
+\indexentry{hash@{hash}!ASS8::Klient::serwerHash@{ASS8::Klient::serwerHash}|hyperpage}{78}
+\indexentry{ASS8::Klient::serwerLogowanie@{ASS8::Klient::serwerLogowanie}|hyperpage}{79}
+\indexentry{ASS8::Klient::serwerLogowanie@{ASS8::Klient::serwerLogowanie}!serwerLogowanie@{serwerLogowanie}|hyperpage}{79}
+\indexentry{serwerLogowanie@{serwerLogowanie}!ASS8::Klient::serwerLogowanie@{ASS8::Klient::serwerLogowanie}|hyperpage}{79}
+\indexentry{ASS8::Klient::serwerLogowanie@{ASS8::Klient::serwerLogowanie}!serwerLogowanie@{serwerLogowanie}|hyperpage}{79}
+\indexentry{serwerLogowanie@{serwerLogowanie}!ASS8::Klient::serwerLogowanie@{ASS8::Klient::serwerLogowanie}|hyperpage}{79}
+\indexentry{ASS8::Klient::serwerLogowanie@{ASS8::Klient::serwerLogowanie}!pOdpowiedz@{pOdpowiedz}|hyperpage}{79}
+\indexentry{pOdpowiedz@{pOdpowiedz}!ASS8::Klient::serwerLogowanie@{ASS8::Klient::serwerLogowanie}|hyperpage}{79}
+\indexentry{ASS8::Klient::serwerLogowanie@{ASS8::Klient::serwerLogowanie}!pSesja@{pSesja}|hyperpage}{79}
+\indexentry{pSesja@{pSesja}!ASS8::Klient::serwerLogowanie@{ASS8::Klient::serwerLogowanie}|hyperpage}{79}
+\indexentry{ASS8::Klient::serwerLogowanie@{ASS8::Klient::serwerLogowanie}!pWersja@{pWersja}|hyperpage}{79}
+\indexentry{pWersja@{pWersja}!ASS8::Klient::serwerLogowanie@{ASS8::Klient::serwerLogowanie}|hyperpage}{79}
+\indexentry{ASS8::Klient::serwerLogowanie@{ASS8::Klient::serwerLogowanie}!odpowiedz@{odpowiedz}|hyperpage}{80}
+\indexentry{odpowiedz@{odpowiedz}!ASS8::Klient::serwerLogowanie@{ASS8::Klient::serwerLogowanie}|hyperpage}{80}
+\indexentry{ASS8::Klient::serwerLogowanie@{ASS8::Klient::serwerLogowanie}!sesja@{sesja}|hyperpage}{80}
+\indexentry{sesja@{sesja}!ASS8::Klient::serwerLogowanie@{ASS8::Klient::serwerLogowanie}|hyperpage}{80}
+\indexentry{ASS8::Klient::serwerLogowanie@{ASS8::Klient::serwerLogowanie}!wersja@{wersja}|hyperpage}{80}
+\indexentry{wersja@{wersja}!ASS8::Klient::serwerLogowanie@{ASS8::Klient::serwerLogowanie}|hyperpage}{80}
+\indexentry{ASS8::Klient::serwerPliki@{ASS8::Klient::serwerPliki}|hyperpage}{81}
+\indexentry{ASS8::Klient::serwerPliki@{ASS8::Klient::serwerPliki}!serwerPliki@{serwerPliki}|hyperpage}{81}
+\indexentry{serwerPliki@{serwerPliki}!ASS8::Klient::serwerPliki@{ASS8::Klient::serwerPliki}|hyperpage}{81}
+\indexentry{ASS8::Klient::serwerPliki@{ASS8::Klient::serwerPliki}!pPlik@{pPlik}|hyperpage}{81}
+\indexentry{pPlik@{pPlik}!ASS8::Klient::serwerPliki@{ASS8::Klient::serwerPliki}|hyperpage}{81}
+\indexentry{ASS8::Klient::serwerPliki@{ASS8::Klient::serwerPliki}!plik@{plik}|hyperpage}{82}
+\indexentry{plik@{plik}!ASS8::Klient::serwerPliki@{ASS8::Klient::serwerPliki}|hyperpage}{82}
+\indexentry{ASS8::Klient::Properties::Settings@{ASS8::Klient::Properties::Settings}|hyperpage}{83}
+\indexentry{ASS8::Klient::Properties::Settings@{ASS8::Klient::Properties::Settings}!defaultInstance@{defaultInstance}|hyperpage}{83}
+\indexentry{defaultInstance@{defaultInstance}!ASS8::Klient::Properties::Settings@{ASS8::Klient::Properties::Settings}|hyperpage}{83}
+\indexentry{ASS8::Klient::Properties::Settings@{ASS8::Klient::Properties::Settings}!Default@{Default}|hyperpage}{83}
+\indexentry{Default@{Default}!ASS8::Klient::Properties::Settings@{ASS8::Klient::Properties::Settings}|hyperpage}{83}
+\indexentry{ASS8::Klient::ustawienia@{ASS8::Klient::ustawienia}|hyperpage}{84}
+\indexentry{ASS8::Klient::ustawienia@{ASS8::Klient::ustawienia}!ustawienia@{ustawienia}|hyperpage}{84}
+\indexentry{ustawienia@{ustawienia}!ASS8::Klient::ustawienia@{ASS8::Klient::ustawienia}|hyperpage}{84}
+\indexentry{ASS8::Klient::ustawienia@{ASS8::Klient::ustawienia}!ustawienia@{ustawienia}|hyperpage}{84}
+\indexentry{ustawienia@{ustawienia}!ASS8::Klient::ustawienia@{ASS8::Klient::ustawienia}|hyperpage}{84}
+\indexentry{ASS8::Klient::ustawienia@{ASS8::Klient::ustawienia}!pIp@{pIp}|hyperpage}{84}
+\indexentry{pIp@{pIp}!ASS8::Klient::ustawienia@{ASS8::Klient::ustawienia}|hyperpage}{84}
+\indexentry{ASS8::Klient::ustawienia@{ASS8::Klient::ustawienia}!pPort@{pPort}|hyperpage}{84}
+\indexentry{pPort@{pPort}!ASS8::Klient::ustawienia@{ASS8::Klient::ustawienia}|hyperpage}{84}
+\indexentry{ASS8::Klient::ustawienia@{ASS8::Klient::ustawienia}!ip@{ip}|hyperpage}{85}
+\indexentry{ip@{ip}!ASS8::Klient::ustawienia@{ASS8::Klient::ustawienia}|hyperpage}{85}
+\indexentry{ASS8::Klient::ustawienia@{ASS8::Klient::ustawienia}!port@{port}|hyperpage}{85}
+\indexentry{port@{port}!ASS8::Klient::ustawienia@{ASS8::Klient::ustawienia}|hyperpage}{85}
+\indexentry{ASS8::Klient::ustawienia\_\discretionary {-}{}{}uzytkownika@{ASS8::Klient::ustawienia\_\discretionary {-}{}{}uzytkownika}|hyperpage}{86}
+\indexentry{ASS8::Klient::ustawienia\_\discretionary {-}{}{}uzytkownika@{ASS8::Klient::ustawienia\_\discretionary {-}{}{}uzytkownika}!ustawienia\_\discretionary {-}{}{}uzytkownika@{ustawienia\_\discretionary {-}{}{}uzytkownika}|hyperpage}{86}
+\indexentry{ustawienia\_\discretionary {-}{}{}uzytkownika@{ustawienia\_\discretionary {-}{}{}uzytkownika}!ASS8::Klient::ustawienia_uzytkownika@{ASS8::Klient::ustawienia\_\discretionary {-}{}{}uzytkownika}|hyperpage}{86}
+\indexentry{ASS8::Klient::ustawienia\_\discretionary {-}{}{}uzytkownika@{ASS8::Klient::ustawienia\_\discretionary {-}{}{}uzytkownika}!ustawienia\_\discretionary {-}{}{}uzytkownika@{ustawienia\_\discretionary {-}{}{}uzytkownika}|hyperpage}{86}
+\indexentry{ustawienia\_\discretionary {-}{}{}uzytkownika@{ustawienia\_\discretionary {-}{}{}uzytkownika}!ASS8::Klient::ustawienia_uzytkownika@{ASS8::Klient::ustawienia\_\discretionary {-}{}{}uzytkownika}|hyperpage}{86}
+\indexentry{ASS8::Klient::ustawienia\_\discretionary {-}{}{}uzytkownika@{ASS8::Klient::ustawienia\_\discretionary {-}{}{}uzytkownika}!pBledy@{pBledy}|hyperpage}{87}
+\indexentry{pBledy@{pBledy}!ASS8::Klient::ustawienia_uzytkownika@{ASS8::Klient::ustawienia\_\discretionary {-}{}{}uzytkownika}|hyperpage}{87}
+\indexentry{ASS8::Klient::ustawienia\_\discretionary {-}{}{}uzytkownika@{ASS8::Klient::ustawienia\_\discretionary {-}{}{}uzytkownika}!pHasloProxy@{pHasloProxy}|hyperpage}{87}
+\indexentry{pHasloProxy@{pHasloProxy}!ASS8::Klient::ustawienia_uzytkownika@{ASS8::Klient::ustawienia\_\discretionary {-}{}{}uzytkownika}|hyperpage}{87}
+\indexentry{ASS8::Klient::ustawienia\_\discretionary {-}{}{}uzytkownika@{ASS8::Klient::ustawienia\_\discretionary {-}{}{}uzytkownika}!pLoginProxy@{pLoginProxy}|hyperpage}{87}
+\indexentry{pLoginProxy@{pLoginProxy}!ASS8::Klient::ustawienia_uzytkownika@{ASS8::Klient::ustawienia\_\discretionary {-}{}{}uzytkownika}|hyperpage}{87}
+\indexentry{ASS8::Klient::ustawienia\_\discretionary {-}{}{}uzytkownika@{ASS8::Klient::ustawienia\_\discretionary {-}{}{}uzytkownika}!pPortProxy@{pPortProxy}|hyperpage}{87}
+\indexentry{pPortProxy@{pPortProxy}!ASS8::Klient::ustawienia_uzytkownika@{ASS8::Klient::ustawienia\_\discretionary {-}{}{}uzytkownika}|hyperpage}{87}
+\indexentry{ASS8::Klient::ustawienia\_\discretionary {-}{}{}uzytkownika@{ASS8::Klient::ustawienia\_\discretionary {-}{}{}uzytkownika}!pProxy@{pProxy}|hyperpage}{87}
+\indexentry{pProxy@{pProxy}!ASS8::Klient::ustawienia_uzytkownika@{ASS8::Klient::ustawienia\_\discretionary {-}{}{}uzytkownika}|hyperpage}{87}
+\indexentry{ASS8::Klient::ustawienia\_\discretionary {-}{}{}uzytkownika@{ASS8::Klient::ustawienia\_\discretionary {-}{}{}uzytkownika}!pSciezka@{pSciezka}|hyperpage}{87}
+\indexentry{pSciezka@{pSciezka}!ASS8::Klient::ustawienia_uzytkownika@{ASS8::Klient::ustawienia\_\discretionary {-}{}{}uzytkownika}|hyperpage}{87}
+\indexentry{ASS8::Klient::ustawienia\_\discretionary {-}{}{}uzytkownika@{ASS8::Klient::ustawienia\_\discretionary {-}{}{}uzytkownika}!pSekundy@{pSekundy}|hyperpage}{87}
+\indexentry{pSekundy@{pSekundy}!ASS8::Klient::ustawienia_uzytkownika@{ASS8::Klient::ustawienia\_\discretionary {-}{}{}uzytkownika}|hyperpage}{87}
+\indexentry{ASS8::Klient::ustawienia\_\discretionary {-}{}{}uzytkownika@{ASS8::Klient::ustawienia\_\discretionary {-}{}{}uzytkownika}!pSerwerProxy@{pSerwerProxy}|hyperpage}{87}
+\indexentry{pSerwerProxy@{pSerwerProxy}!ASS8::Klient::ustawienia_uzytkownika@{ASS8::Klient::ustawienia\_\discretionary {-}{}{}uzytkownika}|hyperpage}{87}
+\indexentry{ASS8::Klient::ustawienia\_\discretionary {-}{}{}uzytkownika@{ASS8::Klient::ustawienia\_\discretionary {-}{}{}uzytkownika}!pUwierzytelnienieProxy@{pUwierzytelnienieProxy}|hyperpage}{87}
+\indexentry{pUwierzytelnienieProxy@{pUwierzytelnienieProxy}!ASS8::Klient::ustawienia_uzytkownika@{ASS8::Klient::ustawienia\_\discretionary {-}{}{}uzytkownika}|hyperpage}{87}
+\indexentry{ASS8::Klient::ustawienia\_\discretionary {-}{}{}uzytkownika@{ASS8::Klient::ustawienia\_\discretionary {-}{}{}uzytkownika}!bledy@{bledy}|hyperpage}{88}
+\indexentry{bledy@{bledy}!ASS8::Klient::ustawienia_uzytkownika@{ASS8::Klient::ustawienia\_\discretionary {-}{}{}uzytkownika}|hyperpage}{88}
+\indexentry{ASS8::Klient::ustawienia\_\discretionary {-}{}{}uzytkownika@{ASS8::Klient::ustawienia\_\discretionary {-}{}{}uzytkownika}!hasloProxy@{hasloProxy}|hyperpage}{88}
+\indexentry{hasloProxy@{hasloProxy}!ASS8::Klient::ustawienia_uzytkownika@{ASS8::Klient::ustawienia\_\discretionary {-}{}{}uzytkownika}|hyperpage}{88}
+\indexentry{ASS8::Klient::ustawienia\_\discretionary {-}{}{}uzytkownika@{ASS8::Klient::ustawienia\_\discretionary {-}{}{}uzytkownika}!loginProxy@{loginProxy}|hyperpage}{88}
+\indexentry{loginProxy@{loginProxy}!ASS8::Klient::ustawienia_uzytkownika@{ASS8::Klient::ustawienia\_\discretionary {-}{}{}uzytkownika}|hyperpage}{88}
+\indexentry{ASS8::Klient::ustawienia\_\discretionary {-}{}{}uzytkownika@{ASS8::Klient::ustawienia\_\discretionary {-}{}{}uzytkownika}!portProxy@{portProxy}|hyperpage}{88}
+\indexentry{portProxy@{portProxy}!ASS8::Klient::ustawienia_uzytkownika@{ASS8::Klient::ustawienia\_\discretionary {-}{}{}uzytkownika}|hyperpage}{88}
+\indexentry{ASS8::Klient::ustawienia\_\discretionary {-}{}{}uzytkownika@{ASS8::Klient::ustawienia\_\discretionary {-}{}{}uzytkownika}!proxy@{proxy}|hyperpage}{88}
+\indexentry{proxy@{proxy}!ASS8::Klient::ustawienia_uzytkownika@{ASS8::Klient::ustawienia\_\discretionary {-}{}{}uzytkownika}|hyperpage}{88}
+\indexentry{ASS8::Klient::ustawienia\_\discretionary {-}{}{}uzytkownika@{ASS8::Klient::ustawienia\_\discretionary {-}{}{}uzytkownika}!sciezka@{sciezka}|hyperpage}{88}
+\indexentry{sciezka@{sciezka}!ASS8::Klient::ustawienia_uzytkownika@{ASS8::Klient::ustawienia\_\discretionary {-}{}{}uzytkownika}|hyperpage}{88}
+\indexentry{ASS8::Klient::ustawienia\_\discretionary {-}{}{}uzytkownika@{ASS8::Klient::ustawienia\_\discretionary {-}{}{}uzytkownika}!sekundy@{sekundy}|hyperpage}{88}
+\indexentry{sekundy@{sekundy}!ASS8::Klient::ustawienia_uzytkownika@{ASS8::Klient::ustawienia\_\discretionary {-}{}{}uzytkownika}|hyperpage}{88}
+\indexentry{ASS8::Klient::ustawienia\_\discretionary {-}{}{}uzytkownika@{ASS8::Klient::ustawienia\_\discretionary {-}{}{}uzytkownika}!serwerProxy@{serwerProxy}|hyperpage}{88}
+\indexentry{serwerProxy@{serwerProxy}!ASS8::Klient::ustawienia_uzytkownika@{ASS8::Klient::ustawienia\_\discretionary {-}{}{}uzytkownika}|hyperpage}{88}
+\indexentry{ASS8::Klient::ustawienia\_\discretionary {-}{}{}uzytkownika@{ASS8::Klient::ustawienia\_\discretionary {-}{}{}uzytkownika}!uwierzytelnienie@{uwierzytelnienie}|hyperpage}{88}
+\indexentry{uwierzytelnienie@{uwierzytelnienie}!ASS8::Klient::ustawienia_uzytkownika@{ASS8::Klient::ustawienia\_\discretionary {-}{}{}uzytkownika}|hyperpage}{88}
+\indexentry{ASS8::Klient::Wyjatki@{ASS8::Klient::Wyjatki}|hyperpage}{89}
+\indexentry{ASS8::Klient::Wyjatki::BladNieokreslony@{ASS8::Klient::Wyjatki::BladNieokreslony}|hyperpage}{90}
+\indexentry{ASS8::Klient::Wyjatki::BladNieokreslony@{ASS8::Klient::Wyjatki::BladNieokreslony}!BladNieokreslony@{BladNieokreslony}|hyperpage}{90}
+\indexentry{BladNieokreslony@{BladNieokreslony}!ASS8::Klient::Wyjatki::BladNieokreslony@{ASS8::Klient::Wyjatki::BladNieokreslony}|hyperpage}{90}
+\indexentry{ASS8::Klient::Wyjatki::BladNieokreslony@{ASS8::Klient::Wyjatki::BladNieokreslony}!ToString@{ToString}|hyperpage}{90}
+\indexentry{ToString@{ToString}!ASS8::Klient::Wyjatki::BladNieokreslony@{ASS8::Klient::Wyjatki::BladNieokreslony}|hyperpage}{90}
+\indexentry{ASS8::Klient::Wyjatki::BladNieokreslony@{ASS8::Klient::Wyjatki::BladNieokreslony}!blad@{blad}|hyperpage}{90}
+\indexentry{blad@{blad}!ASS8::Klient::Wyjatki::BladNieokreslony@{ASS8::Klient::Wyjatki::BladNieokreslony}|hyperpage}{90}
+\indexentry{ASS8::Klient::Wyjatki::BladOdbierania@{ASS8::Klient::Wyjatki::BladOdbierania}|hyperpage}{91}
+\indexentry{ASS8::Klient::Wyjatki::BladOdbierania@{ASS8::Klient::Wyjatki::BladOdbierania}!BladOdbierania@{BladOdbierania}|hyperpage}{91}
+\indexentry{BladOdbierania@{BladOdbierania}!ASS8::Klient::Wyjatki::BladOdbierania@{ASS8::Klient::Wyjatki::BladOdbierania}|hyperpage}{91}
+\indexentry{ASS8::Klient::Wyjatki::BladOdbierania@{ASS8::Klient::Wyjatki::BladOdbierania}!add@{add}|hyperpage}{91}
+\indexentry{add@{add}!ASS8::Klient::Wyjatki::BladOdbierania@{ASS8::Klient::Wyjatki::BladOdbierania}|hyperpage}{91}
+\indexentry{ASS8::Klient::Wyjatki::BladOdbierania@{ASS8::Klient::Wyjatki::BladOdbierania}!ToString@{ToString}|hyperpage}{91}
+\indexentry{ToString@{ToString}!ASS8::Klient::Wyjatki::BladOdbierania@{ASS8::Klient::Wyjatki::BladOdbierania}|hyperpage}{91}
+\indexentry{ASS8::Klient::Wyjatki::BladOdbierania@{ASS8::Klient::Wyjatki::BladOdbierania}!blad@{blad}|hyperpage}{91}
+\indexentry{blad@{blad}!ASS8::Klient::Wyjatki::BladOdbierania@{ASS8::Klient::Wyjatki::BladOdbierania}|hyperpage}{91}
+\indexentry{ASS8::Klient::Wyjatki::BladParsowania@{ASS8::Klient::Wyjatki::BladParsowania}|hyperpage}{92}
+\indexentry{ASS8::Klient::Wyjatki::BladParsowania@{ASS8::Klient::Wyjatki::BladParsowania}!BladParsowania@{BladParsowania}|hyperpage}{92}
+\indexentry{BladParsowania@{BladParsowania}!ASS8::Klient::Wyjatki::BladParsowania@{ASS8::Klient::Wyjatki::BladParsowania}|hyperpage}{92}
+\indexentry{ASS8::Klient::Wyjatki::BladParsowania@{ASS8::Klient::Wyjatki::BladParsowania}!ToString@{ToString}|hyperpage}{92}
+\indexentry{ToString@{ToString}!ASS8::Klient::Wyjatki::BladParsowania@{ASS8::Klient::Wyjatki::BladParsowania}|hyperpage}{92}
+\indexentry{ASS8::Klient::Wyjatki::BladParsowania@{ASS8::Klient::Wyjatki::BladParsowania}!blad@{blad}|hyperpage}{92}
+\indexentry{blad@{blad}!ASS8::Klient::Wyjatki::BladParsowania@{ASS8::Klient::Wyjatki::BladParsowania}|hyperpage}{92}
+\indexentry{ASS8::Klient::Wyjatki::BladPolaczenia@{ASS8::Klient::Wyjatki::BladPolaczenia}|hyperpage}{93}
+\indexentry{ASS8::Klient::Wyjatki::BladPolaczenia@{ASS8::Klient::Wyjatki::BladPolaczenia}!BladPolaczenia@{BladPolaczenia}|hyperpage}{93}
+\indexentry{BladPolaczenia@{BladPolaczenia}!ASS8::Klient::Wyjatki::BladPolaczenia@{ASS8::Klient::Wyjatki::BladPolaczenia}|hyperpage}{93}
+\indexentry{ASS8::Klient::Wyjatki::BladPolaczenia@{ASS8::Klient::Wyjatki::BladPolaczenia}!ToString@{ToString}|hyperpage}{93}
+\indexentry{ToString@{ToString}!ASS8::Klient::Wyjatki::BladPolaczenia@{ASS8::Klient::Wyjatki::BladPolaczenia}|hyperpage}{93}
+\indexentry{ASS8::Klient::Wyjatki::BladPolaczenia@{ASS8::Klient::Wyjatki::BladPolaczenia}!blad@{blad}|hyperpage}{93}
+\indexentry{blad@{blad}!ASS8::Klient::Wyjatki::BladPolaczenia@{ASS8::Klient::Wyjatki::BladPolaczenia}|hyperpage}{93}
+\indexentry{ASS8::Klient::Wyjatki::BladWysylania@{ASS8::Klient::Wyjatki::BladWysylania}|hyperpage}{94}
+\indexentry{ASS8::Klient::Wyjatki::BladWysylania@{ASS8::Klient::Wyjatki::BladWysylania}!BladWysylania@{BladWysylania}|hyperpage}{94}
+\indexentry{BladWysylania@{BladWysylania}!ASS8::Klient::Wyjatki::BladWysylania@{ASS8::Klient::Wyjatki::BladWysylania}|hyperpage}{94}
+\indexentry{ASS8::Klient::Wyjatki::BladWysylania@{ASS8::Klient::Wyjatki::BladWysylania}!ToString@{ToString}|hyperpage}{94}
+\indexentry{ToString@{ToString}!ASS8::Klient::Wyjatki::BladWysylania@{ASS8::Klient::Wyjatki::BladWysylania}|hyperpage}{94}
+\indexentry{ASS8::Klient::Wyjatki::BladWysylania@{ASS8::Klient::Wyjatki::BladWysylania}!blad@{blad}|hyperpage}{94}
+\indexentry{blad@{blad}!ASS8::Klient::Wyjatki::BladWysylania@{ASS8::Klient::Wyjatki::BladWysylania}|hyperpage}{94}
+\indexentry{ASS8::Klient::Wyjatki::BrakPliku@{ASS8::Klient::Wyjatki::BrakPliku}|hyperpage}{95}
+\indexentry{ASS8::Klient::Wyjatki::BrakPliku@{ASS8::Klient::Wyjatki::BrakPliku}!BrakPliku@{BrakPliku}|hyperpage}{95}
+\indexentry{BrakPliku@{BrakPliku}!ASS8::Klient::Wyjatki::BrakPliku@{ASS8::Klient::Wyjatki::BrakPliku}|hyperpage}{95}
+\indexentry{ASS8::Klient::Wyjatki::BrakPliku@{ASS8::Klient::Wyjatki::BrakPliku}!ToString@{ToString}|hyperpage}{95}
+\indexentry{ToString@{ToString}!ASS8::Klient::Wyjatki::BrakPliku@{ASS8::Klient::Wyjatki::BrakPliku}|hyperpage}{95}
+\indexentry{ASS8::Klient::Wyjatki::BrakPliku@{ASS8::Klient::Wyjatki::BrakPliku}!blad@{blad}|hyperpage}{95}
+\indexentry{blad@{blad}!ASS8::Klient::Wyjatki::BrakPliku@{ASS8::Klient::Wyjatki::BrakPliku}|hyperpage}{95}
+\indexentry{ASS8::Klient::zarzadca@{ASS8::Klient::zarzadca}|hyperpage}{96}
+\indexentry{ASS8::Klient::zarzadca@{ASS8::Klient::zarzadca}!zarzadca@{zarzadca}|hyperpage}{98}
+\indexentry{zarzadca@{zarzadca}!ASS8::Klient::zarzadca@{ASS8::Klient::zarzadca}|hyperpage}{98}
+\indexentry{ASS8::Klient::zarzadca@{ASS8::Klient::zarzadca}!hashPliku@{hashPliku}|hyperpage}{98}
+\indexentry{hashPliku@{hashPliku}!ASS8::Klient::zarzadca@{ASS8::Klient::zarzadca}|hyperpage}{98}
+\indexentry{ASS8::Klient::zarzadca@{ASS8::Klient::zarzadca}!odbierzPliki@{odbierzPliki}|hyperpage}{98}
+\indexentry{odbierzPliki@{odbierzPliki}!ASS8::Klient::zarzadca@{ASS8::Klient::zarzadca}|hyperpage}{98}
+\indexentry{ASS8::Klient::zarzadca@{ASS8::Klient::zarzadca}!plikiKatalog@{plikiKatalog}|hyperpage}{99}
+\indexentry{plikiKatalog@{plikiKatalog}!ASS8::Klient::zarzadca@{ASS8::Klient::zarzadca}|hyperpage}{99}
+\indexentry{ASS8::Klient::zarzadca@{ASS8::Klient::zarzadca}!plikiZapisane@{plikiZapisane}|hyperpage}{99}
+\indexentry{plikiZapisane@{plikiZapisane}!ASS8::Klient::zarzadca@{ASS8::Klient::zarzadca}|hyperpage}{99}
+\indexentry{ASS8::Klient::zarzadca@{ASS8::Klient::zarzadca}!sprawdzAktualizacje@{sprawdzAktualizacje}|hyperpage}{99}
+\indexentry{sprawdzAktualizacje@{sprawdzAktualizacje}!ASS8::Klient::zarzadca@{ASS8::Klient::zarzadca}|hyperpage}{99}
+\indexentry{ASS8::Klient::zarzadca@{ASS8::Klient::zarzadca}!sprawdzAktualizacje@{sprawdzAktualizacje}|hyperpage}{99}
+\indexentry{sprawdzAktualizacje@{sprawdzAktualizacje}!ASS8::Klient::zarzadca@{ASS8::Klient::zarzadca}|hyperpage}{99}
+\indexentry{ASS8::Klient::zarzadca@{ASS8::Klient::zarzadca}!sprawdzRoznicaDownload@{sprawdzRoznicaDownload}|hyperpage}{100}
+\indexentry{sprawdzRoznicaDownload@{sprawdzRoznicaDownload}!ASS8::Klient::zarzadca@{ASS8::Klient::zarzadca}|hyperpage}{100}
+\indexentry{ASS8::Klient::zarzadca@{ASS8::Klient::zarzadca}!sprawdzRoznicaUpload@{sprawdzRoznicaUpload}|hyperpage}{100}
+\indexentry{sprawdzRoznicaUpload@{sprawdzRoznicaUpload}!ASS8::Klient::zarzadca@{ASS8::Klient::zarzadca}|hyperpage}{100}
+\indexentry{ASS8::Klient::zarzadca@{ASS8::Klient::zarzadca}!sprawdzRoznicaUsunKatalog@{sprawdzRoznicaUsunKatalog}|hyperpage}{100}
+\indexentry{sprawdzRoznicaUsunKatalog@{sprawdzRoznicaUsunKatalog}!ASS8::Klient::zarzadca@{ASS8::Klient::zarzadca}|hyperpage}{100}
+\indexentry{ASS8::Klient::zarzadca@{ASS8::Klient::zarzadca}!sprawdzRoznicaUsunSerwer@{sprawdzRoznicaUsunSerwer}|hyperpage}{101}
+\indexentry{sprawdzRoznicaUsunSerwer@{sprawdzRoznicaUsunSerwer}!ASS8::Klient::zarzadca@{ASS8::Klient::zarzadca}|hyperpage}{101}
+\indexentry{ASS8::Klient::zarzadca@{ASS8::Klient::zarzadca}!szukajZmian@{szukajZmian}|hyperpage}{101}
+\indexentry{szukajZmian@{szukajZmian}!ASS8::Klient::zarzadca@{ASS8::Klient::zarzadca}|hyperpage}{101}
+\indexentry{ASS8::Klient::zarzadca@{ASS8::Klient::zarzadca}!usunPliki@{usunPliki}|hyperpage}{101}
+\indexentry{usunPliki@{usunPliki}!ASS8::Klient::zarzadca@{ASS8::Klient::zarzadca}|hyperpage}{101}
+\indexentry{ASS8::Klient::zarzadca@{ASS8::Klient::zarzadca}!wykasujPlik@{wykasujPlik}|hyperpage}{102}
+\indexentry{wykasujPlik@{wykasujPlik}!ASS8::Klient::zarzadca@{ASS8::Klient::zarzadca}|hyperpage}{102}
+\indexentry{ASS8::Klient::zarzadca@{ASS8::Klient::zarzadca}!wyslijPlik@{wyslijPlik}|hyperpage}{102}
+\indexentry{wyslijPlik@{wyslijPlik}!ASS8::Klient::zarzadca@{ASS8::Klient::zarzadca}|hyperpage}{102}
+\indexentry{ASS8::Klient::zarzadca@{ASS8::Klient::zarzadca}!wyswietlBlad@{wyswietlBlad}|hyperpage}{102}
+\indexentry{wyswietlBlad@{wyswietlBlad}!ASS8::Klient::zarzadca@{ASS8::Klient::zarzadca}|hyperpage}{102}
+\indexentry{ASS8::Klient::zarzadca@{ASS8::Klient::zarzadca}!zapiszBlad@{zapiszBlad}|hyperpage}{102}
+\indexentry{zapiszBlad@{zapiszBlad}!ASS8::Klient::zarzadca@{ASS8::Klient::zarzadca}|hyperpage}{102}
+\indexentry{ASS8::Klient::zarzadca@{ASS8::Klient::zarzadca}!zapiszInfoPlikow@{zapiszInfoPlikow}|hyperpage}{102}
+\indexentry{zapiszInfoPlikow@{zapiszInfoPlikow}!ASS8::Klient::zarzadca@{ASS8::Klient::zarzadca}|hyperpage}{102}
+\indexentry{ASS8::Klient::zarzadca@{ASS8::Klient::zarzadca}!zmianaKontroli@{zmianaKontroli}|hyperpage}{103}
+\indexentry{zmianaKontroli@{zmianaKontroli}!ASS8::Klient::zarzadca@{ASS8::Klient::zarzadca}|hyperpage}{103}
+\indexentry{ASS8::Klient::zarzadca@{ASS8::Klient::zarzadca}!folder@{folder}|hyperpage}{103}
+\indexentry{folder@{folder}!ASS8::Klient::zarzadca@{ASS8::Klient::zarzadca}|hyperpage}{103}
+\indexentry{ASS8::Klient::zarzadca@{ASS8::Klient::zarzadca}!folderMutex@{folderMutex}|hyperpage}{103}
+\indexentry{folderMutex@{folderMutex}!ASS8::Klient::zarzadca@{ASS8::Klient::zarzadca}|hyperpage}{103}
+\indexentry{ASS8::Klient::zarzadca@{ASS8::Klient::zarzadca}!k@{k}|hyperpage}{103}
+\indexentry{k@{k}!ASS8::Klient::zarzadca@{ASS8::Klient::zarzadca}|hyperpage}{103}
+\indexentry{ASS8::Klient::zarzadca@{ASS8::Klient::zarzadca}!kontrolaBledow@{kontrolaBledow}|hyperpage}{103}
+\indexentry{kontrolaBledow@{kontrolaBledow}!ASS8::Klient::zarzadca@{ASS8::Klient::zarzadca}|hyperpage}{103}
+\indexentry{ASS8::Klient::zarzadca@{ASS8::Klient::zarzadca}!login@{login}|hyperpage}{103}
+\indexentry{login@{login}!ASS8::Klient::zarzadca@{ASS8::Klient::zarzadca}|hyperpage}{103}
+\indexentry{ASS8::Klient::zarzadca@{ASS8::Klient::zarzadca}!mutex@{mutex}|hyperpage}{103}
+\indexentry{mutex@{mutex}!ASS8::Klient::zarzadca@{ASS8::Klient::zarzadca}|hyperpage}{103}
+\indexentry{ASS8::Klient::zarzadca@{ASS8::Klient::zarzadca}!names@{names}|hyperpage}{103}
+\indexentry{names@{names}!ASS8::Klient::zarzadca@{ASS8::Klient::zarzadca}|hyperpage}{103}
+\indexentry{ASS8::Klient::zarzadca@{ASS8::Klient::zarzadca}!notify@{notify}|hyperpage}{104}
+\indexentry{notify@{notify}!ASS8::Klient::zarzadca@{ASS8::Klient::zarzadca}|hyperpage}{104}
+\indexentry{ASS8::Klient::zarzadca@{ASS8::Klient::zarzadca}!kom@{kom}|hyperpage}{104}
+\indexentry{kom@{kom}!ASS8::Klient::zarzadca@{ASS8::Klient::zarzadca}|hyperpage}{104}
+\indexentry{ASS8 - Konfiguracja.cs@{ASS8 - Konfiguracja.cs}|hyperpage}{105}
+\indexentry{ASS8 - Konfiguracja.cs@{ASS8 - Konfiguracja.cs}!System@{System}|hyperpage}{105}
+\indexentry{System@{System}!ASS8 - Konfiguracja.cs@{ASS8 - Konfiguracja.cs}|hyperpage}{105}
+\indexentry{ASS8 - Konfiguracja.Designer.cs@{ASS8 - Konfiguracja.Designer.cs}|hyperpage}{106}
+\indexentry{ASS8 - Konfiguracja.Designer.cs@{ASS8 - Konfiguracja.Designer.cs}!Klient@{Klient}|hyperpage}{106}
+\indexentry{Klient@{Klient}!ASS8 - Konfiguracja.Designer.cs@{ASS8 - Konfiguracja.Designer.cs}|hyperpage}{106}
+\indexentry{ASS8 - Logowanie.cs@{ASS8 - Logowanie.cs}|hyperpage}{107}
+\indexentry{ASS8 - Logowanie.cs@{ASS8 - Logowanie.cs}!System@{System}|hyperpage}{107}
+\indexentry{System@{System}!ASS8 - Logowanie.cs@{ASS8 - Logowanie.cs}|hyperpage}{107}
+\indexentry{ASS8 - Logowanie.Designer.cs@{ASS8 - Logowanie.Designer.cs}|hyperpage}{108}
+\indexentry{ASS8 - Logowanie.Designer.cs@{ASS8 - Logowanie.Designer.cs}!Klient@{Klient}|hyperpage}{108}
+\indexentry{Klient@{Klient}!ASS8 - Logowanie.Designer.cs@{ASS8 - Logowanie.Designer.cs}|hyperpage}{108}
+\indexentry{AssemblyInfo.cs@{AssemblyInfo.cs}|hyperpage}{109}
+\indexentry{AssemblyInfo.cs@{AssemblyInfo.cs}!Reflection@{Reflection}|hyperpage}{109}
+\indexentry{Reflection@{Reflection}!AssemblyInfo.cs@{AssemblyInfo.cs}|hyperpage}{109}
+\indexentry{Form2.cs@{Form2.cs}|hyperpage}{110}
+\indexentry{Form2.cs@{Form2.cs}!System@{System}|hyperpage}{110}
+\indexentry{System@{System}!Form2.cs@{Form2.cs}|hyperpage}{110}
+\indexentry{Form2.Designer.cs@{Form2.Designer.cs}|hyperpage}{111}
+\indexentry{Form2.Designer.cs@{Form2.Designer.cs}!Klient@{Klient}|hyperpage}{111}
+\indexentry{Klient@{Klient}!Form2.Designer.cs@{Form2.Designer.cs}|hyperpage}{111}
+\indexentry{Form3.cs@{Form3.cs}|hyperpage}{112}
+\indexentry{Form3.cs@{Form3.cs}!System@{System}|hyperpage}{112}
+\indexentry{System@{System}!Form3.cs@{Form3.cs}|hyperpage}{112}
+\indexentry{Form3.Designer.cs@{Form3.Designer.cs}|hyperpage}{113}
+\indexentry{Form3.Designer.cs@{Form3.Designer.cs}!Klient@{Klient}|hyperpage}{113}
+\indexentry{Klient@{Klient}!Form3.Designer.cs@{Form3.Designer.cs}|hyperpage}{113}
+\indexentry{Form4.cs@{Form4.cs}|hyperpage}{114}
+\indexentry{Form4.cs@{Form4.cs}!System@{System}|hyperpage}{114}
+\indexentry{System@{System}!Form4.cs@{Form4.cs}|hyperpage}{114}
+\indexentry{Form4.Designer.cs@{Form4.Designer.cs}|hyperpage}{115}
+\indexentry{Form4.Designer.cs@{Form4.Designer.cs}!Klient@{Klient}|hyperpage}{115}
+\indexentry{Klient@{Klient}!Form4.Designer.cs@{Form4.Designer.cs}|hyperpage}{115}
+\indexentry{komunikacja.cs@{komunikacja.cs}|hyperpage}{116}
+\indexentry{komunikacja.cs@{komunikacja.cs}!System@{System}|hyperpage}{116}
+\indexentry{System@{System}!komunikacja.cs@{komunikacja.cs}|hyperpage}{116}
+\indexentry{Program.cs@{Program.cs}|hyperpage}{117}
+\indexentry{Program.cs@{Program.cs}!System@{System}|hyperpage}{117}
+\indexentry{System@{System}!Program.cs@{Program.cs}|hyperpage}{117}
+\indexentry{Resources.Designer.cs@{Resources.Designer.cs}|hyperpage}{118}
+\indexentry{Settings.Designer.cs@{Settings.Designer.cs}|hyperpage}{119}
+\indexentry{Wyjatki.cs@{Wyjatki.cs}|hyperpage}{120}
+\indexentry{Wyjatki.cs@{Wyjatki.cs}!System@{System}|hyperpage}{120}
+\indexentry{System@{System}!Wyjatki.cs@{Wyjatki.cs}|hyperpage}{120}
+\indexentry{XmlPlik.cs@{XmlPlik.cs}|hyperpage}{121}
+\indexentry{XmlPlik.cs@{XmlPlik.cs}!System@{System}|hyperpage}{121}
+\indexentry{System@{System}!XmlPlik.cs@{XmlPlik.cs}|hyperpage}{121}
+\indexentry{XmlRequestsClass.cs@{XmlRequestsClass.cs}|hyperpage}{122}
+\indexentry{XmlRequestsClass.cs@{XmlRequestsClass.cs}!System@{System}|hyperpage}{123}
+\indexentry{System@{System}!XmlRequestsClass.cs@{XmlRequestsClass.cs}|hyperpage}{123}
+\indexentry{zarzadca.cs@{zarzadca.cs}|hyperpage}{124}
+\indexentry{zarzadca.cs@{zarzadca.cs}!System@{System}|hyperpage}{124}
+\indexentry{System@{System}!zarzadca.cs@{zarzadca.cs}|hyperpage}{124}
+\indexentry{Znajomi.cs@{Znajomi.cs}|hyperpage}{125}
+\indexentry{Znajomi.cs@{Znajomi.cs}!System@{System}|hyperpage}{125}
+\indexentry{System@{System}!Znajomi.cs@{Znajomi.cs}|hyperpage}{125}
+\indexentry{Znajomi.Designer.cs@{Znajomi.Designer.cs}|hyperpage}{126}
+\indexentry{Znajomi.Designer.cs@{Znajomi.Designer.cs}!Klient@{Klient}|hyperpage}{126}
+\indexentry{Klient@{Klient}!Znajomi.Designer.cs@{Znajomi.Designer.cs}|hyperpage}{126}

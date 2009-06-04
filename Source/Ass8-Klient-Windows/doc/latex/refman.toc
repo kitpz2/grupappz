@@ -1,0 +1,549 @@
+\contentsline {chapter}{\numberline {1}Indeks przestrzeni nazw}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}Lista Pakiet\IeC {\'o}w}{1}{section.1.1}
+\contentsline {chapter}{\numberline {2}Indeks klas}{3}{chapter.2}
+\contentsline {section}{\numberline {2.1}Hierarchia klas}{3}{section.2.1}
+\contentsline {chapter}{\numberline {3}Indeks klas}{5}{chapter.3}
+\contentsline {section}{\numberline {3.1}Lista klas}{5}{section.3.1}
+\contentsline {chapter}{\numberline {4}Indeks plik\IeC {\'o}w}{7}{chapter.4}
+\contentsline {section}{\numberline {4.1}Lista plik\IeC {\'o}w}{7}{section.4.1}
+\contentsline {chapter}{\numberline {5}Dokumentacja przestrzeni nazw}{9}{chapter.5}
+\contentsline {section}{\numberline {5.1}Pakiet ASS8}{9}{section.5.1}
+\contentsline {section}{\numberline {5.2}Pakiet ASS8.Klient}{10}{section.5.2}
+\contentsline {section}{\numberline {5.3}Pakiet ASS8.Klient.Properties}{12}{section.5.3}
+\contentsline {chapter}{\numberline {6}Dokumentacja klas}{13}{chapter.6}
+\contentsline {section}{\numberline {6.1}Dokumentacja klasy ASS8.Klient.ASS8\_\discretionary {-}{}{}\_\discretionary {-}{}{}\_\discretionary {-}{}{}Logowanie}{13}{section.6.1}
+\contentsline {subsection}{\numberline {6.1.1}Opis szczeg\IeC {\'o}\IeC {\l }owy}{15}{subsection.6.1.1}
+\contentsline {subsection}{\numberline {6.1.2}Dokumentacja konstruktora i destruktora}{15}{subsection.6.1.2}
+\contentsline {subsubsection}{\numberline {6.1.2.1}ASS8\_\discretionary {-}{}{}\_\discretionary {-}{}{}\_\discretionary {-}{}{}Logowanie}{15}{subsubsection.6.1.2.1}
+\contentsline {subsection}{\numberline {6.1.3}Dokumentacja funkcji sk\IeC {\l }adowych}{15}{subsection.6.1.3}
+\contentsline {subsubsection}{\numberline {6.1.3.1}btnLoguj\_\discretionary {-}{}{}Click}{15}{subsubsection.6.1.3.1}
+\contentsline {subsubsection}{\numberline {6.1.3.2}button1\_\discretionary {-}{}{}Click}{15}{subsubsection.6.1.3.2}
+\contentsline {subsubsection}{\numberline {6.1.3.3}button2\_\discretionary {-}{}{}Click}{15}{subsubsection.6.1.3.3}
+\contentsline {subsubsection}{\numberline {6.1.3.4}hashuj}{16}{subsubsection.6.1.3.4}
+\contentsline {subsubsection}{\numberline {6.1.3.5}zmianaProxy}{16}{subsubsection.6.1.3.5}
+\contentsline {subsubsection}{\numberline {6.1.3.6}zmianaSerwera}{16}{subsubsection.6.1.3.6}
+\contentsline {subsection}{\numberline {6.1.4}Dokumentacja atrybut\IeC {\'o}w sk\IeC {\l }adowych}{17}{subsection.6.1.4}
+\contentsline {subsubsection}{\numberline {6.1.4.1}hasloProxy}{17}{subsubsection.6.1.4.1}
+\contentsline {subsubsection}{\numberline {6.1.4.2}k}{17}{subsubsection.6.1.4.2}
+\contentsline {subsubsection}{\numberline {6.1.4.3}loginProxy}{17}{subsubsection.6.1.4.3}
+\contentsline {subsubsection}{\numberline {6.1.4.4}names}{17}{subsubsection.6.1.4.4}
+\contentsline {subsubsection}{\numberline {6.1.4.5}port}{17}{subsubsection.6.1.4.5}
+\contentsline {subsubsection}{\numberline {6.1.4.6}portProxy}{17}{subsubsection.6.1.4.6}
+\contentsline {subsubsection}{\numberline {6.1.4.7}proxy}{17}{subsubsection.6.1.4.7}
+\contentsline {subsubsection}{\numberline {6.1.4.8}serwer}{17}{subsubsection.6.1.4.8}
+\contentsline {subsubsection}{\numberline {6.1.4.9}serwerProxy}{17}{subsubsection.6.1.4.9}
+\contentsline {subsubsection}{\numberline {6.1.4.10}uwierzytelnienie}{18}{subsubsection.6.1.4.10}
+\contentsline {subsubsection}{\numberline {6.1.4.11}wersja}{18}{subsubsection.6.1.4.11}
+\contentsline {subsubsection}{\numberline {6.1.4.12}zapamietaj}{18}{subsubsection.6.1.4.12}
+\contentsline {subsection}{\numberline {6.1.5}Dokumentacja w\IeC {\l }a\IeC {\'s}ciwo\IeC {\'s}ci}{18}{subsection.6.1.5}
+\contentsline {subsubsection}{\numberline {6.1.5.1}haslo}{18}{subsubsection.6.1.5.1}
+\contentsline {subsubsection}{\numberline {6.1.5.2}KomClass}{18}{subsubsection.6.1.5.2}
+\contentsline {subsubsection}{\numberline {6.1.5.3}login}{18}{subsubsection.6.1.5.3}
+\contentsline {section}{\numberline {6.2}Dokumentacja klasy ASS8.Klient.downloadPliku}{19}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1}Opis szczeg\IeC {\'o}\IeC {\l }owy}{19}{subsection.6.2.1}
+\contentsline {subsection}{\numberline {6.2.2}Dokumentacja konstruktora i destruktora}{19}{subsection.6.2.2}
+\contentsline {subsubsection}{\numberline {6.2.2.1}downloadPliku}{19}{subsubsection.6.2.2.1}
+\contentsline {subsubsection}{\numberline {6.2.2.2}downloadPliku}{20}{subsubsection.6.2.2.2}
+\contentsline {subsection}{\numberline {6.2.3}Dokumentacja atrybut\IeC {\'o}w sk\IeC {\l }adowych}{20}{subsection.6.2.3}
+\contentsline {subsubsection}{\numberline {6.2.3.1}pPlik}{20}{subsubsection.6.2.3.1}
+\contentsline {subsection}{\numberline {6.2.4}Dokumentacja w\IeC {\l }a\IeC {\'s}ciwo\IeC {\'s}ci}{20}{subsection.6.2.4}
+\contentsline {subsubsection}{\numberline {6.2.4.1}plik}{20}{subsubsection.6.2.4.1}
+\contentsline {section}{\numberline {6.3}Dokumentacja klasy ASS8.Klient.Form1}{21}{section.6.3}
+\contentsline {subsection}{\numberline {6.3.1}Opis szczeg\IeC {\'o}\IeC {\l }owy}{22}{subsection.6.3.1}
+\contentsline {subsection}{\numberline {6.3.2}Dokumentacja konstruktora i destruktora}{22}{subsection.6.3.2}
+\contentsline {subsubsection}{\numberline {6.3.2.1}Form1}{22}{subsubsection.6.3.2.1}
+\contentsline {subsection}{\numberline {6.3.3}Dokumentacja funkcji sk\IeC {\l }adowych}{22}{subsection.6.3.3}
+\contentsline {subsubsection}{\numberline {6.3.3.1}btnListuj\_\discretionary {-}{}{}Click}{22}{subsubsection.6.3.3.1}
+\contentsline {subsubsection}{\numberline {6.3.3.2}btnPobierane\_\discretionary {-}{}{}Click}{22}{subsubsection.6.3.3.2}
+\contentsline {subsubsection}{\numberline {6.3.3.3}button1\_\discretionary {-}{}{}Click}{22}{subsubsection.6.3.3.3}
+\contentsline {subsubsection}{\numberline {6.3.3.4}button2\_\discretionary {-}{}{}Click}{23}{subsubsection.6.3.3.4}
+\contentsline {subsubsection}{\numberline {6.3.3.5}lvPliki\_\discretionary {-}{}{}SelectedIndexChanged}{23}{subsubsection.6.3.3.5}
+\contentsline {subsubsection}{\numberline {6.3.3.6}pobieraj}{23}{subsubsection.6.3.3.6}
+\contentsline {subsection}{\numberline {6.3.4}Dokumentacja atrybut\IeC {\'o}w sk\IeC {\l }adowych}{23}{subsection.6.3.4}
+\contentsline {subsubsection}{\numberline {6.3.4.1}k}{23}{subsubsection.6.3.4.1}
+\contentsline {subsubsection}{\numberline {6.3.4.2}mut}{23}{subsubsection.6.3.4.2}
+\contentsline {subsubsection}{\numberline {6.3.4.3}pobieranie}{23}{subsubsection.6.3.4.3}
+\contentsline {subsubsection}{\numberline {6.3.4.4}wyswietlonePliki}{24}{subsubsection.6.3.4.4}
+\contentsline {section}{\numberline {6.4}Dokumentacja klasy ASS8.Klient.Form2}{25}{section.6.4}
+\contentsline {subsection}{\numberline {6.4.1}Opis szczeg\IeC {\'o}\IeC {\l }owy}{26}{subsection.6.4.1}
+\contentsline {subsection}{\numberline {6.4.2}Dokumentacja konstruktora i destruktora}{26}{subsection.6.4.2}
+\contentsline {subsubsection}{\numberline {6.4.2.1}Form2}{26}{subsubsection.6.4.2.1}
+\contentsline {subsubsection}{\numberline {6.4.2.2}Form2}{26}{subsubsection.6.4.2.2}
+\contentsline {subsection}{\numberline {6.4.3}Dokumentacja funkcji sk\IeC {\l }adowych}{26}{subsection.6.4.3}
+\contentsline {subsubsection}{\numberline {6.4.3.1}btnAnuluj\_\discretionary {-}{}{}Click}{26}{subsubsection.6.4.3.1}
+\contentsline {subsubsection}{\numberline {6.4.3.2}btnZapisz\_\discretionary {-}{}{}Click}{26}{subsubsection.6.4.3.2}
+\contentsline {subsubsection}{\numberline {6.4.3.3}chbProxy\_\discretionary {-}{}{}CheckedChanged}{27}{subsubsection.6.4.3.3}
+\contentsline {subsubsection}{\numberline {6.4.3.4}chbUwierzytelnienie\_\discretionary {-}{}{}CheckedChanged}{27}{subsubsection.6.4.3.4}
+\contentsline {subsubsection}{\numberline {6.4.3.5}chbUwierzytelnienie\_\discretionary {-}{}{}CheckedChanged\_\discretionary {-}{}{}1}{27}{subsubsection.6.4.3.5}
+\contentsline {subsection}{\numberline {6.4.4}Dokumentacja atrybut\IeC {\'o}w sk\IeC {\l }adowych}{27}{subsection.6.4.4}
+\contentsline {subsubsection}{\numberline {6.4.4.1}log}{27}{subsubsection.6.4.4.1}
+\contentsline {section}{\numberline {6.5}Dokumentacja klasy ASS8.Klient.Form4}{28}{section.6.5}
+\contentsline {subsection}{\numberline {6.5.1}Opis szczeg\IeC {\'o}\IeC {\l }owy}{28}{subsection.6.5.1}
+\contentsline {subsection}{\numberline {6.5.2}Dokumentacja konstruktora i destruktora}{29}{subsection.6.5.2}
+\contentsline {subsubsection}{\numberline {6.5.2.1}Form4}{29}{subsubsection.6.5.2.1}
+\contentsline {subsection}{\numberline {6.5.3}Dokumentacja funkcji sk\IeC {\l }adowych}{29}{subsection.6.5.3}
+\contentsline {subsubsection}{\numberline {6.5.3.1}button1\_\discretionary {-}{}{}Click}{29}{subsubsection.6.5.3.1}
+\contentsline {subsubsection}{\numberline {6.5.3.2}button2\_\discretionary {-}{}{}Click}{29}{subsubsection.6.5.3.2}
+\contentsline {subsection}{\numberline {6.5.4}Dokumentacja atrybut\IeC {\'o}w sk\IeC {\l }adowych}{29}{subsection.6.5.4}
+\contentsline {subsubsection}{\numberline {6.5.4.1}log}{29}{subsubsection.6.5.4.1}
+\contentsline {section}{\numberline {6.6}Dokumentacja klasy ASS8.Klient.globalne\_\discretionary {-}{}{}ustawienia}{30}{section.6.6}
+\contentsline {subsection}{\numberline {6.6.1}Opis szczeg\IeC {\'o}\IeC {\l }owy}{30}{subsection.6.6.1}
+\contentsline {subsection}{\numberline {6.6.2}Dokumentacja konstruktora i destruktora}{30}{subsection.6.6.2}
+\contentsline {subsubsection}{\numberline {6.6.2.1}globalne\_\discretionary {-}{}{}ustawienia}{30}{subsubsection.6.6.2.1}
+\contentsline {subsubsection}{\numberline {6.6.2.2}globalne\_\discretionary {-}{}{}ustawienia}{31}{subsubsection.6.6.2.2}
+\contentsline {subsection}{\numberline {6.6.3}Dokumentacja atrybut\IeC {\'o}w sk\IeC {\l }adowych}{31}{subsection.6.6.3}
+\contentsline {subsubsection}{\numberline {6.6.3.1}pHasloProxy}{31}{subsubsection.6.6.3.1}
+\contentsline {subsubsection}{\numberline {6.6.3.2}pLogin}{31}{subsubsection.6.6.3.2}
+\contentsline {subsubsection}{\numberline {6.6.3.3}pLoginProxy}{31}{subsubsection.6.6.3.3}
+\contentsline {subsubsection}{\numberline {6.6.3.4}pPort}{31}{subsubsection.6.6.3.4}
+\contentsline {subsubsection}{\numberline {6.6.3.5}pPortProxy}{31}{subsubsection.6.6.3.5}
+\contentsline {subsubsection}{\numberline {6.6.3.6}pProxy}{31}{subsubsection.6.6.3.6}
+\contentsline {subsubsection}{\numberline {6.6.3.7}pSerwer}{31}{subsubsection.6.6.3.7}
+\contentsline {subsubsection}{\numberline {6.6.3.8}pSerwerProxy}{31}{subsubsection.6.6.3.8}
+\contentsline {subsubsection}{\numberline {6.6.3.9}pUwierzytelnienieProxy}{31}{subsubsection.6.6.3.9}
+\contentsline {subsubsection}{\numberline {6.6.3.10}pZapamietaj}{31}{subsubsection.6.6.3.10}
+\contentsline {subsection}{\numberline {6.6.4}Dokumentacja w\IeC {\l }a\IeC {\'s}ciwo\IeC {\'s}ci}{32}{subsection.6.6.4}
+\contentsline {subsubsection}{\numberline {6.6.4.1}hasloProxy}{32}{subsubsection.6.6.4.1}
+\contentsline {subsubsection}{\numberline {6.6.4.2}login}{32}{subsubsection.6.6.4.2}
+\contentsline {subsubsection}{\numberline {6.6.4.3}loginProxy}{32}{subsubsection.6.6.4.3}
+\contentsline {subsubsection}{\numberline {6.6.4.4}port}{32}{subsubsection.6.6.4.4}
+\contentsline {subsubsection}{\numberline {6.6.4.5}portProxy}{32}{subsubsection.6.6.4.5}
+\contentsline {subsubsection}{\numberline {6.6.4.6}proxy}{32}{subsubsection.6.6.4.6}
+\contentsline {subsubsection}{\numberline {6.6.4.7}serwer}{32}{subsubsection.6.6.4.7}
+\contentsline {subsubsection}{\numberline {6.6.4.8}serwerProxy}{32}{subsubsection.6.6.4.8}
+\contentsline {subsubsection}{\numberline {6.6.4.9}uwierzytelnienie}{32}{subsubsection.6.6.4.9}
+\contentsline {subsubsection}{\numberline {6.6.4.10}zapamietaj}{32}{subsubsection.6.6.4.10}
+\contentsline {section}{\numberline {6.7}Dokumentacja klasy ASS8.Klient.klientBase}{33}{section.6.7}
+\contentsline {subsection}{\numberline {6.7.1}Opis szczeg\IeC {\'o}\IeC {\l }owy}{33}{subsection.6.7.1}
+\contentsline {subsection}{\numberline {6.7.2}Dokumentacja konstruktora i destruktora}{33}{subsection.6.7.2}
+\contentsline {subsubsection}{\numberline {6.7.2.1}klientBase}{33}{subsubsection.6.7.2.1}
+\contentsline {subsubsection}{\numberline {6.7.2.2}klientBase}{33}{subsubsection.6.7.2.2}
+\contentsline {subsection}{\numberline {6.7.3}Dokumentacja atrybut\IeC {\'o}w sk\IeC {\l }adowych}{33}{subsection.6.7.3}
+\contentsline {subsubsection}{\numberline {6.7.3.1}idSesji}{33}{subsubsection.6.7.3.1}
+\contentsline {subsubsection}{\numberline {6.7.3.2}op}{33}{subsubsection.6.7.3.2}
+\contentsline {subsection}{\numberline {6.7.4}Dokumentacja w\IeC {\l }a\IeC {\'s}ciwo\IeC {\'s}ci}{34}{subsection.6.7.4}
+\contentsline {subsubsection}{\numberline {6.7.4.1}idsesji}{34}{subsubsection.6.7.4.1}
+\contentsline {subsubsection}{\numberline {6.7.4.2}operacja}{34}{subsubsection.6.7.4.2}
+\contentsline {section}{\numberline {6.8}Dokumentacja klasy ASS8.Klient.klientHash}{35}{section.6.8}
+\contentsline {subsection}{\numberline {6.8.1}Opis szczeg\IeC {\'o}\IeC {\l }owy}{35}{subsection.6.8.1}
+\contentsline {subsection}{\numberline {6.8.2}Dokumentacja konstruktora i destruktora}{35}{subsection.6.8.2}
+\contentsline {subsubsection}{\numberline {6.8.2.1}klientHash}{35}{subsubsection.6.8.2.1}
+\contentsline {subsubsection}{\numberline {6.8.2.2}klientHash}{35}{subsubsection.6.8.2.2}
+\contentsline {subsection}{\numberline {6.8.3}Dokumentacja atrybut\IeC {\'o}w sk\IeC {\l }adowych}{36}{subsection.6.8.3}
+\contentsline {subsubsection}{\numberline {6.8.3.1}pHash}{36}{subsubsection.6.8.3.1}
+\contentsline {subsection}{\numberline {6.8.4}Dokumentacja w\IeC {\l }a\IeC {\'s}ciwo\IeC {\'s}ci}{36}{subsection.6.8.4}
+\contentsline {subsubsection}{\numberline {6.8.4.1}hash}{36}{subsubsection.6.8.4.1}
+\contentsline {section}{\numberline {6.9}Dokumentacja klasy ASS8.Klient.klientLogowanie}{37}{section.6.9}
+\contentsline {subsection}{\numberline {6.9.1}Opis szczeg\IeC {\'o}\IeC {\l }owy}{37}{subsection.6.9.1}
+\contentsline {subsection}{\numberline {6.9.2}Dokumentacja konstruktora i destruktora}{37}{subsection.6.9.2}
+\contentsline {subsubsection}{\numberline {6.9.2.1}klientLogowanie}{37}{subsubsection.6.9.2.1}
+\contentsline {subsubsection}{\numberline {6.9.2.2}klientLogowanie}{37}{subsubsection.6.9.2.2}
+\contentsline {subsection}{\numberline {6.9.3}Dokumentacja atrybut\IeC {\'o}w sk\IeC {\l }adowych}{37}{subsection.6.9.3}
+\contentsline {subsubsection}{\numberline {6.9.3.1}haslo}{37}{subsubsection.6.9.3.1}
+\contentsline {subsubsection}{\numberline {6.9.3.2}login}{37}{subsubsection.6.9.3.2}
+\contentsline {subsubsection}{\numberline {6.9.3.3}vKlienta}{38}{subsubsection.6.9.3.3}
+\contentsline {subsection}{\numberline {6.9.4}Dokumentacja w\IeC {\l }a\IeC {\'s}ciwo\IeC {\'s}ci}{38}{subsection.6.9.4}
+\contentsline {subsubsection}{\numberline {6.9.4.1}Haslo}{38}{subsubsection.6.9.4.1}
+\contentsline {subsubsection}{\numberline {6.9.4.2}Login}{38}{subsubsection.6.9.4.2}
+\contentsline {subsubsection}{\numberline {6.9.4.3}wersjaKlienta}{38}{subsubsection.6.9.4.3}
+\contentsline {section}{\numberline {6.10}Dokumentacja klasy ASS8.Klient.klientOdpDownload}{39}{section.6.10}
+\contentsline {subsection}{\numberline {6.10.1}Opis szczeg\IeC {\'o}\IeC {\l }owy}{39}{subsection.6.10.1}
+\contentsline {subsection}{\numberline {6.10.2}Dokumentacja konstruktora i destruktora}{39}{subsection.6.10.2}
+\contentsline {subsubsection}{\numberline {6.10.2.1}klientOdpDownload}{39}{subsubsection.6.10.2.1}
+\contentsline {subsubsection}{\numberline {6.10.2.2}klientOdpDownload}{39}{subsubsection.6.10.2.2}
+\contentsline {subsection}{\numberline {6.10.3}Dokumentacja atrybut\IeC {\'o}w sk\IeC {\l }adowych}{40}{subsection.6.10.3}
+\contentsline {subsubsection}{\numberline {6.10.3.1}pAction}{40}{subsubsection.6.10.3.1}
+\contentsline {subsection}{\numberline {6.10.4}Dokumentacja w\IeC {\l }a\IeC {\'s}ciwo\IeC {\'s}ci}{40}{subsection.6.10.4}
+\contentsline {subsubsection}{\numberline {6.10.4.1}action}{40}{subsubsection.6.10.4.1}
+\contentsline {section}{\numberline {6.11}Dokumentacja klasy ASS8.Klient.klientUpload}{41}{section.6.11}
+\contentsline {subsection}{\numberline {6.11.1}Opis szczeg\IeC {\'o}\IeC {\l }owy}{41}{subsection.6.11.1}
+\contentsline {subsection}{\numberline {6.11.2}Dokumentacja konstruktora i destruktora}{41}{subsection.6.11.2}
+\contentsline {subsubsection}{\numberline {6.11.2.1}klientUpload}{41}{subsubsection.6.11.2.1}
+\contentsline {subsubsection}{\numberline {6.11.2.2}klientUpload}{42}{subsubsection.6.11.2.2}
+\contentsline {subsection}{\numberline {6.11.3}Dokumentacja atrybut\IeC {\'o}w sk\IeC {\l }adowych}{42}{subsection.6.11.3}
+\contentsline {subsubsection}{\numberline {6.11.3.1}pPlik}{42}{subsubsection.6.11.3.1}
+\contentsline {subsection}{\numberline {6.11.4}Dokumentacja w\IeC {\l }a\IeC {\'s}ciwo\IeC {\'s}ci}{42}{subsection.6.11.4}
+\contentsline {subsubsection}{\numberline {6.11.4.1}plik}{42}{subsubsection.6.11.4.1}
+\contentsline {section}{\numberline {6.12}Dokumentacja klasy ASS8.Klient.klientUsun}{43}{section.6.12}
+\contentsline {subsection}{\numberline {6.12.1}Opis szczeg\IeC {\'o}\IeC {\l }owy}{43}{subsection.6.12.1}
+\contentsline {subsection}{\numberline {6.12.2}Dokumentacja konstruktora i destruktora}{43}{subsection.6.12.2}
+\contentsline {subsubsection}{\numberline {6.12.2.1}klientUsun}{43}{subsubsection.6.12.2.1}
+\contentsline {subsubsection}{\numberline {6.12.2.2}klientUsun}{43}{subsubsection.6.12.2.2}
+\contentsline {subsection}{\numberline {6.12.3}Dokumentacja atrybut\IeC {\'o}w sk\IeC {\l }adowych}{44}{subsection.6.12.3}
+\contentsline {subsubsection}{\numberline {6.12.3.1}pPlik}{44}{subsubsection.6.12.3.1}
+\contentsline {subsection}{\numberline {6.12.4}Dokumentacja w\IeC {\l }a\IeC {\'s}ciwo\IeC {\'s}ci}{44}{subsection.6.12.4}
+\contentsline {subsubsection}{\numberline {6.12.4.1}plik}{44}{subsubsection.6.12.4.1}
+\contentsline {section}{\numberline {6.13}Dokumentacja klasy ASS8.Klient.komunikacja}{45}{section.6.13}
+\contentsline {subsection}{\numberline {6.13.1}Opis szczeg\IeC {\'o}\IeC {\l }owy}{46}{subsection.6.13.1}
+\contentsline {subsection}{\numberline {6.13.2}Dokumentacja sk\IeC {\l }adowych wyliczanych}{47}{subsection.6.13.2}
+\contentsline {subsubsection}{\numberline {6.13.2.1}odpowiedzi}{47}{subsubsection.6.13.2.1}
+\contentsline {subsubsection}{\numberline {6.13.2.2}operacje}{47}{subsubsection.6.13.2.2}
+\contentsline {subsection}{\numberline {6.13.3}Dokumentacja konstruktora i destruktora}{47}{subsection.6.13.3}
+\contentsline {subsubsection}{\numberline {6.13.3.1}komunikacja}{47}{subsubsection.6.13.3.1}
+\contentsline {subsection}{\numberline {6.13.4}Dokumentacja funkcji sk\IeC {\l }adowych}{47}{subsection.6.13.4}
+\contentsline {subsubsection}{\numberline {6.13.4.1}downloadFiles}{47}{subsubsection.6.13.4.1}
+\contentsline {subsubsection}{\numberline {6.13.4.2}downloadListy}{48}{subsubsection.6.13.4.2}
+\contentsline {subsubsection}{\numberline {6.13.4.3}hashPliku}{48}{subsubsection.6.13.4.3}
+\contentsline {subsubsection}{\numberline {6.13.4.4}login}{48}{subsubsection.6.13.4.4}
+\contentsline {subsubsection}{\numberline {6.13.4.5}pobierz}{49}{subsubsection.6.13.4.5}
+\contentsline {subsubsection}{\numberline {6.13.4.6}pobierz}{49}{subsubsection.6.13.4.6}
+\contentsline {subsubsection}{\numberline {6.13.4.7}postep}{49}{subsubsection.6.13.4.7}
+\contentsline {subsubsection}{\numberline {6.13.4.8}ProgressBarHandler}{49}{subsubsection.6.13.4.8}
+\contentsline {subsubsection}{\numberline {6.13.4.9}uploadFile}{49}{subsubsection.6.13.4.9}
+\contentsline {subsubsection}{\numberline {6.13.4.10}ustawUstawienia}{50}{subsubsection.6.13.4.10}
+\contentsline {subsubsection}{\numberline {6.13.4.11}usunPliki}{50}{subsubsection.6.13.4.11}
+\contentsline {subsubsection}{\numberline {6.13.4.12}wyslij}{50}{subsubsection.6.13.4.12}
+\contentsline {subsection}{\numberline {6.13.5}Dokumentacja atrybut\IeC {\'o}w sk\IeC {\l }adowych}{51}{subsection.6.13.5}
+\contentsline {subsubsection}{\numberline {6.13.5.1}endl}{51}{subsubsection.6.13.5.1}
+\contentsline {subsubsection}{\numberline {6.13.5.2}endlOdp}{51}{subsubsection.6.13.5.2}
+\contentsline {subsubsection}{\numberline {6.13.5.3}folder}{51}{subsubsection.6.13.5.3}
+\contentsline {subsubsection}{\numberline {6.13.5.4}haslo}{51}{subsubsection.6.13.5.4}
+\contentsline {subsubsection}{\numberline {6.13.5.5}log}{51}{subsubsection.6.13.5.5}
+\contentsline {subsubsection}{\numberline {6.13.5.6}names}{51}{subsubsection.6.13.5.6}
+\contentsline {subsubsection}{\numberline {6.13.5.7}serverIP}{51}{subsubsection.6.13.5.7}
+\contentsline {subsubsection}{\numberline {6.13.5.8}serverPort}{51}{subsubsection.6.13.5.8}
+\contentsline {subsubsection}{\numberline {6.13.5.9}sessionID}{51}{subsubsection.6.13.5.9}
+\contentsline {subsubsection}{\numberline {6.13.5.10}socket}{51}{subsubsection.6.13.5.10}
+\contentsline {subsection}{\numberline {6.13.6}Dokumentacja w\IeC {\l }a\IeC {\'s}ciwo\IeC {\'s}ci}{51}{subsection.6.13.6}
+\contentsline {subsubsection}{\numberline {6.13.6.1}Haslo}{51}{subsubsection.6.13.6.1}
+\contentsline {subsubsection}{\numberline {6.13.6.2}Login}{52}{subsubsection.6.13.6.2}
+\contentsline {subsubsection}{\numberline {6.13.6.3}Port}{52}{subsubsection.6.13.6.3}
+\contentsline {subsubsection}{\numberline {6.13.6.4}Serwer}{52}{subsubsection.6.13.6.4}
+\contentsline {section}{\numberline {6.14}Dokumentacja klasy ASS8.Klient.Konfiguracja}{53}{section.6.14}
+\contentsline {subsection}{\numberline {6.14.1}Opis szczeg\IeC {\'o}\IeC {\l }owy}{54}{subsection.6.14.1}
+\contentsline {subsection}{\numberline {6.14.2}Dokumentacja konstruktora i destruktora}{55}{subsection.6.14.2}
+\contentsline {subsubsection}{\numberline {6.14.2.1}Konfiguracja}{55}{subsubsection.6.14.2.1}
+\contentsline {subsection}{\numberline {6.14.3}Dokumentacja funkcji sk\IeC {\l }adowych}{55}{subsection.6.14.3}
+\contentsline {subsubsection}{\numberline {6.14.3.1}ASS8\_\discretionary {-}{}{}\_\discretionary {-}{}{}\_\discretionary {-}{}{}Konfiguracja\_\discretionary {-}{}{}FormClosing}{55}{subsubsection.6.14.3.1}
+\contentsline {subsubsection}{\numberline {6.14.3.2}automatyczneSpr}{55}{subsubsection.6.14.3.2}
+\contentsline {subsubsection}{\numberline {6.14.3.3}btnAnuluj\_\discretionary {-}{}{}Click}{56}{subsubsection.6.14.3.3}
+\contentsline {subsubsection}{\numberline {6.14.3.4}btnSciezka\_\discretionary {-}{}{}Click}{56}{subsubsection.6.14.3.4}
+\contentsline {subsubsection}{\numberline {6.14.3.5}btnZapisz\_\discretionary {-}{}{}Click}{56}{subsubsection.6.14.3.5}
+\contentsline {subsubsection}{\numberline {6.14.3.6}chbUwierzytelnienie\_\discretionary {-}{}{}CheckedChanged}{56}{subsubsection.6.14.3.6}
+\contentsline {subsubsection}{\numberline {6.14.3.7}checkBox1\_\discretionary {-}{}{}CheckedChanged}{57}{subsubsection.6.14.3.7}
+\contentsline {subsubsection}{\numberline {6.14.3.8}cmsWyloguj\_\discretionary {-}{}{}Click}{57}{subsubsection.6.14.3.8}
+\contentsline {subsubsection}{\numberline {6.14.3.9}label4\_\discretionary {-}{}{}Click}{57}{subsubsection.6.14.3.9}
+\contentsline {subsubsection}{\numberline {6.14.3.10}tcmsKonfiguracja\_\discretionary {-}{}{}Click}{57}{subsubsection.6.14.3.10}
+\contentsline {subsubsection}{\numberline {6.14.3.11}tcmsStart\_\discretionary {-}{}{}Click}{57}{subsubsection.6.14.3.11}
+\contentsline {subsubsection}{\numberline {6.14.3.12}tcmsStop\_\discretionary {-}{}{}Click}{58}{subsubsection.6.14.3.12}
+\contentsline {subsubsection}{\numberline {6.14.3.13}tcmsZakoncz\_\discretionary {-}{}{}Click}{58}{subsubsection.6.14.3.13}
+\contentsline {subsubsection}{\numberline {6.14.3.14}tcmsZnajomi\_\discretionary {-}{}{}Click}{58}{subsubsection.6.14.3.14}
+\contentsline {subsubsection}{\numberline {6.14.3.15}zmianaFolderu}{58}{subsubsection.6.14.3.15}
+\contentsline {subsection}{\numberline {6.14.4}Dokumentacja atrybut\IeC {\'o}w sk\IeC {\l }adowych}{58}{subsection.6.14.4}
+\contentsline {subsubsection}{\numberline {6.14.4.1}bledyKontrola}{58}{subsubsection.6.14.4.1}
+\contentsline {subsubsection}{\numberline {6.14.4.2}close}{59}{subsubsection.6.14.4.2}
+\contentsline {subsubsection}{\numberline {6.14.4.3}fol}{59}{subsubsection.6.14.4.3}
+\contentsline {subsubsection}{\numberline {6.14.4.4}k}{59}{subsubsection.6.14.4.4}
+\contentsline {subsubsection}{\numberline {6.14.4.5}loginForm}{59}{subsubsection.6.14.4.5}
+\contentsline {subsubsection}{\numberline {6.14.4.6}names}{59}{subsubsection.6.14.4.6}
+\contentsline {subsubsection}{\numberline {6.14.4.7}sekundy}{59}{subsubsection.6.14.4.7}
+\contentsline {subsubsection}{\numberline {6.14.4.8}z}{59}{subsubsection.6.14.4.8}
+\contentsline {subsection}{\numberline {6.14.5}Dokumentacja w\IeC {\l }a\IeC {\'s}ciwo\IeC {\'s}ci}{59}{subsection.6.14.5}
+\contentsline {subsubsection}{\numberline {6.14.5.1}KomClass}{59}{subsubsection.6.14.5.1}
+\contentsline {section}{\numberline {6.15}Dokumentacja klasy ASS8.Klient.listaPlikow}{60}{section.6.15}
+\contentsline {subsection}{\numberline {6.15.1}Opis szczeg\IeC {\'o}\IeC {\l }owy}{60}{subsection.6.15.1}
+\contentsline {subsection}{\numberline {6.15.2}Dokumentacja konstruktora i destruktora}{60}{subsection.6.15.2}
+\contentsline {subsubsection}{\numberline {6.15.2.1}listaPlikow}{60}{subsubsection.6.15.2.1}
+\contentsline {subsubsection}{\numberline {6.15.2.2}listaPlikow}{60}{subsubsection.6.15.2.2}
+\contentsline {subsection}{\numberline {6.15.3}Dokumentacja atrybut\IeC {\'o}w sk\IeC {\l }adowych}{61}{subsection.6.15.3}
+\contentsline {subsubsection}{\numberline {6.15.3.1}uzyt}{61}{subsubsection.6.15.3.1}
+\contentsline {subsection}{\numberline {6.15.4}Dokumentacja w\IeC {\l }a\IeC {\'s}ciwo\IeC {\'s}ci}{61}{subsection.6.15.4}
+\contentsline {subsubsection}{\numberline {6.15.4.1}uzytkownik}{61}{subsubsection.6.15.4.1}
+\contentsline {section}{\numberline {6.16}Dokumentacja klasy ASS8.Klient.plikBase}{62}{section.6.16}
+\contentsline {subsection}{\numberline {6.16.1}Opis szczeg\IeC {\'o}\IeC {\l }owy}{62}{subsection.6.16.1}
+\contentsline {subsection}{\numberline {6.16.2}Dokumentacja konstruktora i destruktora}{62}{subsection.6.16.2}
+\contentsline {subsubsection}{\numberline {6.16.2.1}plikBase}{62}{subsubsection.6.16.2.1}
+\contentsline {subsubsection}{\numberline {6.16.2.2}plikBase}{62}{subsubsection.6.16.2.2}
+\contentsline {subsection}{\numberline {6.16.3}Dokumentacja atrybut\IeC {\'o}w sk\IeC {\l }adowych}{62}{subsection.6.16.3}
+\contentsline {subsubsection}{\numberline {6.16.3.1}pNazwa}{62}{subsubsection.6.16.3.1}
+\contentsline {subsection}{\numberline {6.16.4}Dokumentacja w\IeC {\l }a\IeC {\'s}ciwo\IeC {\'s}ci}{62}{subsection.6.16.4}
+\contentsline {subsubsection}{\numberline {6.16.4.1}nazwa}{62}{subsubsection.6.16.4.1}
+\contentsline {section}{\numberline {6.17}Dokumentacja klasy ASS8.Klient.pliki}{64}{section.6.17}
+\contentsline {subsection}{\numberline {6.17.1}Opis szczeg\IeC {\'o}\IeC {\l }owy}{64}{subsection.6.17.1}
+\contentsline {subsection}{\numberline {6.17.2}Dokumentacja konstruktora i destruktora}{64}{subsection.6.17.2}
+\contentsline {subsubsection}{\numberline {6.17.2.1}pliki}{64}{subsubsection.6.17.2.1}
+\contentsline {subsubsection}{\numberline {6.17.2.2}pliki}{64}{subsubsection.6.17.2.2}
+\contentsline {subsection}{\numberline {6.17.3}Dokumentacja atrybut\IeC {\'o}w sk\IeC {\l }adowych}{64}{subsection.6.17.3}
+\contentsline {subsubsection}{\numberline {6.17.3.1}pPliki}{64}{subsubsection.6.17.3.1}
+\contentsline {subsection}{\numberline {6.17.4}Dokumentacja w\IeC {\l }a\IeC {\'s}ciwo\IeC {\'s}ci}{64}{subsection.6.17.4}
+\contentsline {subsubsection}{\numberline {6.17.4.1}plik}{64}{subsubsection.6.17.4.1}
+\contentsline {section}{\numberline {6.18}Dokumentacja klasy ASS8.Klient.plikInfo}{65}{section.6.18}
+\contentsline {subsection}{\numberline {6.18.1}Opis szczeg\IeC {\'o}\IeC {\l }owy}{65}{subsection.6.18.1}
+\contentsline {subsection}{\numberline {6.18.2}Dokumentacja konstruktora i destruktora}{65}{subsection.6.18.2}
+\contentsline {subsubsection}{\numberline {6.18.2.1}plikInfo}{65}{subsubsection.6.18.2.1}
+\contentsline {subsubsection}{\numberline {6.18.2.2}plikInfo}{66}{subsubsection.6.18.2.2}
+\contentsline {subsection}{\numberline {6.18.3}Dokumentacja atrybut\IeC {\'o}w sk\IeC {\l }adowych}{66}{subsection.6.18.3}
+\contentsline {subsubsection}{\numberline {6.18.3.1}pData}{66}{subsubsection.6.18.3.1}
+\contentsline {subsubsection}{\numberline {6.18.3.2}pDostep}{66}{subsubsection.6.18.3.2}
+\contentsline {subsubsection}{\numberline {6.18.3.3}pHash}{66}{subsubsection.6.18.3.3}
+\contentsline {subsubsection}{\numberline {6.18.3.4}pRozmiar}{66}{subsubsection.6.18.3.4}
+\contentsline {subsection}{\numberline {6.18.4}Dokumentacja w\IeC {\l }a\IeC {\'s}ciwo\IeC {\'s}ci}{66}{subsection.6.18.4}
+\contentsline {subsubsection}{\numberline {6.18.4.1}data}{66}{subsubsection.6.18.4.1}
+\contentsline {subsubsection}{\numberline {6.18.4.2}dostep}{66}{subsubsection.6.18.4.2}
+\contentsline {subsubsection}{\numberline {6.18.4.3}hash}{66}{subsubsection.6.18.4.3}
+\contentsline {subsubsection}{\numberline {6.18.4.4}rozmiar}{66}{subsubsection.6.18.4.4}
+\contentsline {section}{\numberline {6.19}Dokumentacja klasy ASS8.Klient.Pobierane}{67}{section.6.19}
+\contentsline {subsection}{\numberline {6.19.1}Opis szczeg\IeC {\'o}\IeC {\l }owy}{67}{subsection.6.19.1}
+\contentsline {subsection}{\numberline {6.19.2}Dokumentacja konstruktora i destruktora}{67}{subsection.6.19.2}
+\contentsline {subsubsection}{\numberline {6.19.2.1}Pobierane}{67}{subsubsection.6.19.2.1}
+\contentsline {subsection}{\numberline {6.19.3}Dokumentacja funkcji sk\IeC {\l }adowych}{67}{subsection.6.19.3}
+\contentsline {subsubsection}{\numberline {6.19.3.1}btnCzysc\_\discretionary {-}{}{}Click}{67}{subsubsection.6.19.3.1}
+\contentsline {subsubsection}{\numberline {6.19.3.2}btnZamknij\_\discretionary {-}{}{}Click}{68}{subsubsection.6.19.3.2}
+\contentsline {subsubsection}{\numberline {6.19.3.3}dodajZadanie}{68}{subsubsection.6.19.3.3}
+\contentsline {subsubsection}{\numberline {6.19.3.4}Pobierane\_\discretionary {-}{}{}FormClosing}{68}{subsubsection.6.19.3.4}
+\contentsline {subsubsection}{\numberline {6.19.3.5}usunZadanie}{68}{subsubsection.6.19.3.5}
+\contentsline {section}{\numberline {6.20}Dokumentacja klasy ASS8.Klient.pojedynczyPlik}{70}{section.6.20}
+\contentsline {subsection}{\numberline {6.20.1}Opis szczeg\IeC {\'o}\IeC {\l }owy}{70}{subsection.6.20.1}
+\contentsline {subsection}{\numberline {6.20.2}Dokumentacja konstruktora i destruktora}{70}{subsection.6.20.2}
+\contentsline {subsubsection}{\numberline {6.20.2.1}pojedynczyPlik}{70}{subsubsection.6.20.2.1}
+\contentsline {subsubsection}{\numberline {6.20.2.2}pojedynczyPlik}{70}{subsubsection.6.20.2.2}
+\contentsline {subsection}{\numberline {6.20.3}Dokumentacja atrybut\IeC {\'o}w sk\IeC {\l }adowych}{70}{subsection.6.20.3}
+\contentsline {subsubsection}{\numberline {6.20.3.1}pCzas}{70}{subsubsection.6.20.3.1}
+\contentsline {subsubsection}{\numberline {6.20.3.2}pHash}{70}{subsubsection.6.20.3.2}
+\contentsline {subsubsection}{\numberline {6.20.3.3}pNazwa}{71}{subsubsection.6.20.3.3}
+\contentsline {subsection}{\numberline {6.20.4}Dokumentacja w\IeC {\l }a\IeC {\'s}ciwo\IeC {\'s}ci}{71}{subsection.6.20.4}
+\contentsline {subsubsection}{\numberline {6.20.4.1}data}{71}{subsubsection.6.20.4.1}
+\contentsline {subsubsection}{\numberline {6.20.4.2}hash}{71}{subsubsection.6.20.4.2}
+\contentsline {subsubsection}{\numberline {6.20.4.3}nazwa}{71}{subsubsection.6.20.4.3}
+\contentsline {section}{\numberline {6.21}Dokumentacja klasy ASS8.Klient.Program}{72}{section.6.21}
+\contentsline {subsection}{\numberline {6.21.1}Opis szczeg\IeC {\'o}\IeC {\l }owy}{72}{subsection.6.21.1}
+\contentsline {subsection}{\numberline {6.21.2}Dokumentacja funkcji sk\IeC {\l }adowych}{72}{subsection.6.21.2}
+\contentsline {subsubsection}{\numberline {6.21.2.1}Main}{72}{subsubsection.6.21.2.1}
+\contentsline {section}{\numberline {6.22}Dokumentacja klasy ASS8.Klient.Properties.Resources}{73}{section.6.22}
+\contentsline {subsection}{\numberline {6.22.1}Opis szczeg\IeC {\'o}\IeC {\l }owy}{73}{subsection.6.22.1}
+\contentsline {subsection}{\numberline {6.22.2}Dokumentacja konstruktora i destruktora}{73}{subsection.6.22.2}
+\contentsline {subsubsection}{\numberline {6.22.2.1}Resources}{73}{subsubsection.6.22.2.1}
+\contentsline {subsection}{\numberline {6.22.3}Dokumentacja atrybut\IeC {\'o}w sk\IeC {\l }adowych}{73}{subsection.6.22.3}
+\contentsline {subsubsection}{\numberline {6.22.3.1}resourceCulture}{73}{subsubsection.6.22.3.1}
+\contentsline {subsubsection}{\numberline {6.22.3.2}resourceMan}{74}{subsubsection.6.22.3.2}
+\contentsline {subsection}{\numberline {6.22.4}Dokumentacja w\IeC {\l }a\IeC {\'s}ciwo\IeC {\'s}ci}{74}{subsection.6.22.4}
+\contentsline {subsubsection}{\numberline {6.22.4.1}Culture}{74}{subsubsection.6.22.4.1}
+\contentsline {subsubsection}{\numberline {6.22.4.2}ResourceManager}{74}{subsubsection.6.22.4.2}
+\contentsline {section}{\numberline {6.23}Dokumentacja klasy ASS8.Klient.serwerBase}{75}{section.6.23}
+\contentsline {subsection}{\numberline {6.23.1}Opis szczeg\IeC {\'o}\IeC {\l }owy}{75}{subsection.6.23.1}
+\contentsline {subsection}{\numberline {6.23.2}Dokumentacja konstruktora i destruktora}{75}{subsection.6.23.2}
+\contentsline {subsubsection}{\numberline {6.23.2.1}serwerBase}{75}{subsubsection.6.23.2.1}
+\contentsline {subsubsection}{\numberline {6.23.2.2}serwerBase}{75}{subsubsection.6.23.2.2}
+\contentsline {subsection}{\numberline {6.23.3}Dokumentacja atrybut\IeC {\'o}w sk\IeC {\l }adowych}{75}{subsection.6.23.3}
+\contentsline {subsubsection}{\numberline {6.23.3.1}pOdpowiedz}{75}{subsubsection.6.23.3.1}
+\contentsline {subsubsection}{\numberline {6.23.3.2}pOp}{75}{subsubsection.6.23.3.2}
+\contentsline {subsection}{\numberline {6.23.4}Dokumentacja w\IeC {\l }a\IeC {\'s}ciwo\IeC {\'s}ci}{76}{subsection.6.23.4}
+\contentsline {subsubsection}{\numberline {6.23.4.1}odp}{76}{subsubsection.6.23.4.1}
+\contentsline {subsubsection}{\numberline {6.23.4.2}operacja}{76}{subsubsection.6.23.4.2}
+\contentsline {section}{\numberline {6.24}Dokumentacja klasy ASS8.Klient.serwerHash}{77}{section.6.24}
+\contentsline {subsection}{\numberline {6.24.1}Opis szczeg\IeC {\'o}\IeC {\l }owy}{77}{subsection.6.24.1}
+\contentsline {subsection}{\numberline {6.24.2}Dokumentacja konstruktora i destruktora}{77}{subsection.6.24.2}
+\contentsline {subsubsection}{\numberline {6.24.2.1}serwerHash}{77}{subsubsection.6.24.2.1}
+\contentsline {subsubsection}{\numberline {6.24.2.2}serwerHash}{77}{subsubsection.6.24.2.2}
+\contentsline {subsection}{\numberline {6.24.3}Dokumentacja atrybut\IeC {\'o}w sk\IeC {\l }adowych}{78}{subsection.6.24.3}
+\contentsline {subsubsection}{\numberline {6.24.3.1}pHash}{78}{subsubsection.6.24.3.1}
+\contentsline {subsection}{\numberline {6.24.4}Dokumentacja w\IeC {\l }a\IeC {\'s}ciwo\IeC {\'s}ci}{78}{subsection.6.24.4}
+\contentsline {subsubsection}{\numberline {6.24.4.1}hash}{78}{subsubsection.6.24.4.1}
+\contentsline {section}{\numberline {6.25}Dokumentacja klasy ASS8.Klient.serwerLogowanie}{79}{section.6.25}
+\contentsline {subsection}{\numberline {6.25.1}Opis szczeg\IeC {\'o}\IeC {\l }owy}{79}{subsection.6.25.1}
+\contentsline {subsection}{\numberline {6.25.2}Dokumentacja konstruktora i destruktora}{79}{subsection.6.25.2}
+\contentsline {subsubsection}{\numberline {6.25.2.1}serwerLogowanie}{79}{subsubsection.6.25.2.1}
+\contentsline {subsubsection}{\numberline {6.25.2.2}serwerLogowanie}{79}{subsubsection.6.25.2.2}
+\contentsline {subsection}{\numberline {6.25.3}Dokumentacja atrybut\IeC {\'o}w sk\IeC {\l }adowych}{79}{subsection.6.25.3}
+\contentsline {subsubsection}{\numberline {6.25.3.1}pOdpowiedz}{79}{subsubsection.6.25.3.1}
+\contentsline {subsubsection}{\numberline {6.25.3.2}pSesja}{79}{subsubsection.6.25.3.2}
+\contentsline {subsubsection}{\numberline {6.25.3.3}pWersja}{80}{subsubsection.6.25.3.3}
+\contentsline {subsection}{\numberline {6.25.4}Dokumentacja w\IeC {\l }a\IeC {\'s}ciwo\IeC {\'s}ci}{80}{subsection.6.25.4}
+\contentsline {subsubsection}{\numberline {6.25.4.1}odpowiedz}{80}{subsubsection.6.25.4.1}
+\contentsline {subsubsection}{\numberline {6.25.4.2}sesja}{80}{subsubsection.6.25.4.2}
+\contentsline {subsubsection}{\numberline {6.25.4.3}wersja}{80}{subsubsection.6.25.4.3}
+\contentsline {section}{\numberline {6.26}Dokumentacja klasy ASS8.Klient.serwerPliki}{81}{section.6.26}
+\contentsline {subsection}{\numberline {6.26.1}Opis szczeg\IeC {\'o}\IeC {\l }owy}{81}{subsection.6.26.1}
+\contentsline {subsection}{\numberline {6.26.2}Dokumentacja konstruktora i destruktora}{81}{subsection.6.26.2}
+\contentsline {subsubsection}{\numberline {6.26.2.1}serwerPliki}{81}{subsubsection.6.26.2.1}
+\contentsline {subsection}{\numberline {6.26.3}Dokumentacja atrybut\IeC {\'o}w sk\IeC {\l }adowych}{81}{subsection.6.26.3}
+\contentsline {subsubsection}{\numberline {6.26.3.1}pPlik}{81}{subsubsection.6.26.3.1}
+\contentsline {subsection}{\numberline {6.26.4}Dokumentacja w\IeC {\l }a\IeC {\'s}ciwo\IeC {\'s}ci}{82}{subsection.6.26.4}
+\contentsline {subsubsection}{\numberline {6.26.4.1}plik}{82}{subsubsection.6.26.4.1}
+\contentsline {section}{\numberline {6.27}Dokumentacja klasy ASS8.Klient.Properties.Settings}{83}{section.6.27}
+\contentsline {subsection}{\numberline {6.27.1}Opis szczeg\IeC {\'o}\IeC {\l }owy}{83}{subsection.6.27.1}
+\contentsline {subsection}{\numberline {6.27.2}Dokumentacja atrybut\IeC {\'o}w sk\IeC {\l }adowych}{83}{subsection.6.27.2}
+\contentsline {subsubsection}{\numberline {6.27.2.1}defaultInstance}{83}{subsubsection.6.27.2.1}
+\contentsline {subsection}{\numberline {6.27.3}Dokumentacja w\IeC {\l }a\IeC {\'s}ciwo\IeC {\'s}ci}{83}{subsection.6.27.3}
+\contentsline {subsubsection}{\numberline {6.27.3.1}Default}{83}{subsubsection.6.27.3.1}
+\contentsline {section}{\numberline {6.28}Dokumentacja klasy ASS8.Klient.ustawienia}{84}{section.6.28}
+\contentsline {subsection}{\numberline {6.28.1}Opis szczeg\IeC {\'o}\IeC {\l }owy}{84}{subsection.6.28.1}
+\contentsline {subsection}{\numberline {6.28.2}Dokumentacja konstruktora i destruktora}{84}{subsection.6.28.2}
+\contentsline {subsubsection}{\numberline {6.28.2.1}ustawienia}{84}{subsubsection.6.28.2.1}
+\contentsline {subsubsection}{\numberline {6.28.2.2}ustawienia}{84}{subsubsection.6.28.2.2}
+\contentsline {subsection}{\numberline {6.28.3}Dokumentacja atrybut\IeC {\'o}w sk\IeC {\l }adowych}{84}{subsection.6.28.3}
+\contentsline {subsubsection}{\numberline {6.28.3.1}pIp}{84}{subsubsection.6.28.3.1}
+\contentsline {subsubsection}{\numberline {6.28.3.2}pPort}{84}{subsubsection.6.28.3.2}
+\contentsline {subsection}{\numberline {6.28.4}Dokumentacja w\IeC {\l }a\IeC {\'s}ciwo\IeC {\'s}ci}{85}{subsection.6.28.4}
+\contentsline {subsubsection}{\numberline {6.28.4.1}ip}{85}{subsubsection.6.28.4.1}
+\contentsline {subsubsection}{\numberline {6.28.4.2}port}{85}{subsubsection.6.28.4.2}
+\contentsline {section}{\numberline {6.29}Dokumentacja klasy ASS8.Klient.ustawienia\_\discretionary {-}{}{}uzytkownika}{86}{section.6.29}
+\contentsline {subsection}{\numberline {6.29.1}Opis szczeg\IeC {\'o}\IeC {\l }owy}{86}{subsection.6.29.1}
+\contentsline {subsection}{\numberline {6.29.2}Dokumentacja konstruktora i destruktora}{86}{subsection.6.29.2}
+\contentsline {subsubsection}{\numberline {6.29.2.1}ustawienia\_\discretionary {-}{}{}uzytkownika}{86}{subsubsection.6.29.2.1}
+\contentsline {subsubsection}{\numberline {6.29.2.2}ustawienia\_\discretionary {-}{}{}uzytkownika}{87}{subsubsection.6.29.2.2}
+\contentsline {subsection}{\numberline {6.29.3}Dokumentacja atrybut\IeC {\'o}w sk\IeC {\l }adowych}{87}{subsection.6.29.3}
+\contentsline {subsubsection}{\numberline {6.29.3.1}pBledy}{87}{subsubsection.6.29.3.1}
+\contentsline {subsubsection}{\numberline {6.29.3.2}pHasloProxy}{87}{subsubsection.6.29.3.2}
+\contentsline {subsubsection}{\numberline {6.29.3.3}pLoginProxy}{87}{subsubsection.6.29.3.3}
+\contentsline {subsubsection}{\numberline {6.29.3.4}pPortProxy}{87}{subsubsection.6.29.3.4}
+\contentsline {subsubsection}{\numberline {6.29.3.5}pProxy}{87}{subsubsection.6.29.3.5}
+\contentsline {subsubsection}{\numberline {6.29.3.6}pSciezka}{87}{subsubsection.6.29.3.6}
+\contentsline {subsubsection}{\numberline {6.29.3.7}pSekundy}{87}{subsubsection.6.29.3.7}
+\contentsline {subsubsection}{\numberline {6.29.3.8}pSerwerProxy}{87}{subsubsection.6.29.3.8}
+\contentsline {subsubsection}{\numberline {6.29.3.9}pUwierzytelnienieProxy}{87}{subsubsection.6.29.3.9}
+\contentsline {subsection}{\numberline {6.29.4}Dokumentacja w\IeC {\l }a\IeC {\'s}ciwo\IeC {\'s}ci}{88}{subsection.6.29.4}
+\contentsline {subsubsection}{\numberline {6.29.4.1}bledy}{88}{subsubsection.6.29.4.1}
+\contentsline {subsubsection}{\numberline {6.29.4.2}hasloProxy}{88}{subsubsection.6.29.4.2}
+\contentsline {subsubsection}{\numberline {6.29.4.3}loginProxy}{88}{subsubsection.6.29.4.3}
+\contentsline {subsubsection}{\numberline {6.29.4.4}portProxy}{88}{subsubsection.6.29.4.4}
+\contentsline {subsubsection}{\numberline {6.29.4.5}proxy}{88}{subsubsection.6.29.4.5}
+\contentsline {subsubsection}{\numberline {6.29.4.6}sciezka}{88}{subsubsection.6.29.4.6}
+\contentsline {subsubsection}{\numberline {6.29.4.7}sekundy}{88}{subsubsection.6.29.4.7}
+\contentsline {subsubsection}{\numberline {6.29.4.8}serwerProxy}{88}{subsubsection.6.29.4.8}
+\contentsline {subsubsection}{\numberline {6.29.4.9}uwierzytelnienie}{88}{subsubsection.6.29.4.9}
+\contentsline {section}{\numberline {6.30}Dokumentacja klasy ASS8.Klient.Wyjatki}{89}{section.6.30}
+\contentsline {subsection}{\numberline {6.30.1}Opis szczeg\IeC {\'o}\IeC {\l }owy}{89}{subsection.6.30.1}
+\contentsline {section}{\numberline {6.31}Dokumentacja klasy ASS8.Klient.Wyjatki.Wyjatki.BladNieokreslony}{90}{section.6.31}
+\contentsline {subsection}{\numberline {6.31.1}Opis szczeg\IeC {\'o}\IeC {\l }owy}{90}{subsection.6.31.1}
+\contentsline {subsection}{\numberline {6.31.2}Dokumentacja konstruktora i destruktora}{90}{subsection.6.31.2}
+\contentsline {subsubsection}{\numberline {6.31.2.1}BladNieokreslony}{90}{subsubsection.6.31.2.1}
+\contentsline {subsection}{\numberline {6.31.3}Dokumentacja funkcji sk\IeC {\l }adowych}{90}{subsection.6.31.3}
+\contentsline {subsubsection}{\numberline {6.31.3.1}ToString}{90}{subsubsection.6.31.3.1}
+\contentsline {subsection}{\numberline {6.31.4}Dokumentacja atrybut\IeC {\'o}w sk\IeC {\l }adowych}{90}{subsection.6.31.4}
+\contentsline {subsubsection}{\numberline {6.31.4.1}blad}{90}{subsubsection.6.31.4.1}
+\contentsline {section}{\numberline {6.32}Dokumentacja klasy ASS8.Klient.Wyjatki.Wyjatki.BladOdbierania}{91}{section.6.32}
+\contentsline {subsection}{\numberline {6.32.1}Opis szczeg\IeC {\'o}\IeC {\l }owy}{91}{subsection.6.32.1}
+\contentsline {subsection}{\numberline {6.32.2}Dokumentacja konstruktora i destruktora}{91}{subsection.6.32.2}
+\contentsline {subsubsection}{\numberline {6.32.2.1}BladOdbierania}{91}{subsubsection.6.32.2.1}
+\contentsline {subsection}{\numberline {6.32.3}Dokumentacja funkcji sk\IeC {\l }adowych}{91}{subsection.6.32.3}
+\contentsline {subsubsection}{\numberline {6.32.3.1}add}{91}{subsubsection.6.32.3.1}
+\contentsline {subsubsection}{\numberline {6.32.3.2}ToString}{91}{subsubsection.6.32.3.2}
+\contentsline {subsection}{\numberline {6.32.4}Dokumentacja atrybut\IeC {\'o}w sk\IeC {\l }adowych}{91}{subsection.6.32.4}
+\contentsline {subsubsection}{\numberline {6.32.4.1}blad}{91}{subsubsection.6.32.4.1}
+\contentsline {section}{\numberline {6.33}Dokumentacja klasy ASS8.Klient.Wyjatki.Wyjatki.BladParsowania}{92}{section.6.33}
+\contentsline {subsection}{\numberline {6.33.1}Opis szczeg\IeC {\'o}\IeC {\l }owy}{92}{subsection.6.33.1}
+\contentsline {subsection}{\numberline {6.33.2}Dokumentacja konstruktora i destruktora}{92}{subsection.6.33.2}
+\contentsline {subsubsection}{\numberline {6.33.2.1}BladParsowania}{92}{subsubsection.6.33.2.1}
+\contentsline {subsection}{\numberline {6.33.3}Dokumentacja funkcji sk\IeC {\l }adowych}{92}{subsection.6.33.3}
+\contentsline {subsubsection}{\numberline {6.33.3.1}ToString}{92}{subsubsection.6.33.3.1}
+\contentsline {subsection}{\numberline {6.33.4}Dokumentacja atrybut\IeC {\'o}w sk\IeC {\l }adowych}{92}{subsection.6.33.4}
+\contentsline {subsubsection}{\numberline {6.33.4.1}blad}{92}{subsubsection.6.33.4.1}
+\contentsline {section}{\numberline {6.34}Dokumentacja klasy ASS8.Klient.Wyjatki.Wyjatki.BladPolaczenia}{93}{section.6.34}
+\contentsline {subsection}{\numberline {6.34.1}Opis szczeg\IeC {\'o}\IeC {\l }owy}{93}{subsection.6.34.1}
+\contentsline {subsection}{\numberline {6.34.2}Dokumentacja konstruktora i destruktora}{93}{subsection.6.34.2}
+\contentsline {subsubsection}{\numberline {6.34.2.1}BladPolaczenia}{93}{subsubsection.6.34.2.1}
+\contentsline {subsection}{\numberline {6.34.3}Dokumentacja funkcji sk\IeC {\l }adowych}{93}{subsection.6.34.3}
+\contentsline {subsubsection}{\numberline {6.34.3.1}ToString}{93}{subsubsection.6.34.3.1}
+\contentsline {subsection}{\numberline {6.34.4}Dokumentacja atrybut\IeC {\'o}w sk\IeC {\l }adowych}{93}{subsection.6.34.4}
+\contentsline {subsubsection}{\numberline {6.34.4.1}blad}{93}{subsubsection.6.34.4.1}
+\contentsline {section}{\numberline {6.35}Dokumentacja klasy ASS8.Klient.Wyjatki.Wyjatki.BladWysylania}{94}{section.6.35}
+\contentsline {subsection}{\numberline {6.35.1}Opis szczeg\IeC {\'o}\IeC {\l }owy}{94}{subsection.6.35.1}
+\contentsline {subsection}{\numberline {6.35.2}Dokumentacja konstruktora i destruktora}{94}{subsection.6.35.2}
+\contentsline {subsubsection}{\numberline {6.35.2.1}BladWysylania}{94}{subsubsection.6.35.2.1}
+\contentsline {subsection}{\numberline {6.35.3}Dokumentacja funkcji sk\IeC {\l }adowych}{94}{subsection.6.35.3}
+\contentsline {subsubsection}{\numberline {6.35.3.1}ToString}{94}{subsubsection.6.35.3.1}
+\contentsline {subsection}{\numberline {6.35.4}Dokumentacja atrybut\IeC {\'o}w sk\IeC {\l }adowych}{94}{subsection.6.35.4}
+\contentsline {subsubsection}{\numberline {6.35.4.1}blad}{94}{subsubsection.6.35.4.1}
+\contentsline {section}{\numberline {6.36}Dokumentacja klasy ASS8.Klient.Wyjatki.Wyjatki.BrakPliku}{95}{section.6.36}
+\contentsline {subsection}{\numberline {6.36.1}Opis szczeg\IeC {\'o}\IeC {\l }owy}{95}{subsection.6.36.1}
+\contentsline {subsection}{\numberline {6.36.2}Dokumentacja konstruktora i destruktora}{95}{subsection.6.36.2}
+\contentsline {subsubsection}{\numberline {6.36.2.1}BrakPliku}{95}{subsubsection.6.36.2.1}
+\contentsline {subsection}{\numberline {6.36.3}Dokumentacja funkcji sk\IeC {\l }adowych}{95}{subsection.6.36.3}
+\contentsline {subsubsection}{\numberline {6.36.3.1}ToString}{95}{subsubsection.6.36.3.1}
+\contentsline {subsection}{\numberline {6.36.4}Dokumentacja atrybut\IeC {\'o}w sk\IeC {\l }adowych}{95}{subsection.6.36.4}
+\contentsline {subsubsection}{\numberline {6.36.4.1}blad}{95}{subsubsection.6.36.4.1}
+\contentsline {section}{\numberline {6.37}Dokumentacja klasy ASS8.Klient.zarzadca}{96}{section.6.37}
+\contentsline {subsection}{\numberline {6.37.1}Opis szczeg\IeC {\'o}\IeC {\l }owy}{98}{subsection.6.37.1}
+\contentsline {subsection}{\numberline {6.37.2}Dokumentacja konstruktora i destruktora}{98}{subsection.6.37.2}
+\contentsline {subsubsection}{\numberline {6.37.2.1}zarzadca}{98}{subsubsection.6.37.2.1}
+\contentsline {subsection}{\numberline {6.37.3}Dokumentacja funkcji sk\IeC {\l }adowych}{98}{subsection.6.37.3}
+\contentsline {subsubsection}{\numberline {6.37.3.1}hashPliku}{98}{subsubsection.6.37.3.1}
+\contentsline {subsubsection}{\numberline {6.37.3.2}odbierzPliki}{99}{subsubsection.6.37.3.2}
+\contentsline {subsubsection}{\numberline {6.37.3.3}plikiKatalog}{99}{subsubsection.6.37.3.3}
+\contentsline {subsubsection}{\numberline {6.37.3.4}plikiZapisane}{99}{subsubsection.6.37.3.4}
+\contentsline {subsubsection}{\numberline {6.37.3.5}sprawdzAktualizacje}{99}{subsubsection.6.37.3.5}
+\contentsline {subsubsection}{\numberline {6.37.3.6}sprawdzAktualizacje}{100}{subsubsection.6.37.3.6}
+\contentsline {subsubsection}{\numberline {6.37.3.7}sprawdzRoznicaDownload}{100}{subsubsection.6.37.3.7}
+\contentsline {subsubsection}{\numberline {6.37.3.8}sprawdzRoznicaUpload}{100}{subsubsection.6.37.3.8}
+\contentsline {subsubsection}{\numberline {6.37.3.9}sprawdzRoznicaUsunKatalog}{101}{subsubsection.6.37.3.9}
+\contentsline {subsubsection}{\numberline {6.37.3.10}sprawdzRoznicaUsunSerwer}{101}{subsubsection.6.37.3.10}
+\contentsline {subsubsection}{\numberline {6.37.3.11}szukajZmian}{101}{subsubsection.6.37.3.11}
+\contentsline {subsubsection}{\numberline {6.37.3.12}usunPliki}{101}{subsubsection.6.37.3.12}
+\contentsline {subsubsection}{\numberline {6.37.3.13}wykasujPlik}{102}{subsubsection.6.37.3.13}
+\contentsline {subsubsection}{\numberline {6.37.3.14}wyslijPlik}{102}{subsubsection.6.37.3.14}
+\contentsline {subsubsection}{\numberline {6.37.3.15}wyswietlBlad}{102}{subsubsection.6.37.3.15}
+\contentsline {subsubsection}{\numberline {6.37.3.16}zapiszBlad}{102}{subsubsection.6.37.3.16}
+\contentsline {subsubsection}{\numberline {6.37.3.17}zapiszInfoPlikow}{103}{subsubsection.6.37.3.17}
+\contentsline {subsubsection}{\numberline {6.37.3.18}zmianaKontroli}{103}{subsubsection.6.37.3.18}
+\contentsline {subsection}{\numberline {6.37.4}Dokumentacja atrybut\IeC {\'o}w sk\IeC {\l }adowych}{103}{subsection.6.37.4}
+\contentsline {subsubsection}{\numberline {6.37.4.1}folder}{103}{subsubsection.6.37.4.1}
+\contentsline {subsubsection}{\numberline {6.37.4.2}folderMutex}{103}{subsubsection.6.37.4.2}
+\contentsline {subsubsection}{\numberline {6.37.4.3}k}{103}{subsubsection.6.37.4.3}
+\contentsline {subsubsection}{\numberline {6.37.4.4}kontrolaBledow}{103}{subsubsection.6.37.4.4}
+\contentsline {subsubsection}{\numberline {6.37.4.5}login}{103}{subsubsection.6.37.4.5}
+\contentsline {subsubsection}{\numberline {6.37.4.6}mutex}{103}{subsubsection.6.37.4.6}
+\contentsline {subsubsection}{\numberline {6.37.4.7}names}{104}{subsubsection.6.37.4.7}
+\contentsline {subsubsection}{\numberline {6.37.4.8}notify}{104}{subsubsection.6.37.4.8}
+\contentsline {subsection}{\numberline {6.37.5}Dokumentacja w\IeC {\l }a\IeC {\'s}ciwo\IeC {\'s}ci}{104}{subsection.6.37.5}
+\contentsline {subsubsection}{\numberline {6.37.5.1}kom}{104}{subsubsection.6.37.5.1}
+\contentsline {chapter}{\numberline {7}Dokumentacja plik\IeC {\'o}w}{105}{chapter.7}
+\contentsline {section}{\numberline {7.1}Dokumentacja pliku ASS8 - Konfiguracja.cs}{105}{section.7.1}
+\contentsline {subsection}{\numberline {7.1.1}Dokumentacja zmiennych}{105}{subsection.7.1.1}
+\contentsline {subsubsection}{\numberline {7.1.1.1}System}{105}{subsubsection.7.1.1.1}
+\contentsline {section}{\numberline {7.2}Dokumentacja pliku ASS8 - Konfiguracja.Designer.cs}{106}{section.7.2}
+\contentsline {subsection}{\numberline {7.2.1}Dokumentacja zmiennych}{106}{subsection.7.2.1}
+\contentsline {subsubsection}{\numberline {7.2.1.1}Klient}{106}{subsubsection.7.2.1.1}
+\contentsline {section}{\numberline {7.3}Dokumentacja pliku ASS8 - Logowanie.cs}{107}{section.7.3}
+\contentsline {subsection}{\numberline {7.3.1}Dokumentacja zmiennych}{107}{subsection.7.3.1}
+\contentsline {subsubsection}{\numberline {7.3.1.1}System}{107}{subsubsection.7.3.1.1}
+\contentsline {section}{\numberline {7.4}Dokumentacja pliku ASS8 - Logowanie.Designer.cs}{108}{section.7.4}
+\contentsline {subsection}{\numberline {7.4.1}Dokumentacja zmiennych}{108}{subsection.7.4.1}
+\contentsline {subsubsection}{\numberline {7.4.1.1}Klient}{108}{subsubsection.7.4.1.1}
+\contentsline {section}{\numberline {7.5}Dokumentacja pliku AssemblyInfo.cs}{109}{section.7.5}
+\contentsline {subsection}{\numberline {7.5.1}Dokumentacja zmiennych}{109}{subsection.7.5.1}
+\contentsline {subsubsection}{\numberline {7.5.1.1}Reflection}{109}{subsubsection.7.5.1.1}
+\contentsline {section}{\numberline {7.6}Dokumentacja pliku Form2.cs}{110}{section.7.6}
+\contentsline {subsection}{\numberline {7.6.1}Dokumentacja zmiennych}{110}{subsection.7.6.1}
+\contentsline {subsubsection}{\numberline {7.6.1.1}System}{110}{subsubsection.7.6.1.1}
+\contentsline {section}{\numberline {7.7}Dokumentacja pliku Form2.Designer.cs}{111}{section.7.7}
+\contentsline {subsection}{\numberline {7.7.1}Dokumentacja zmiennych}{111}{subsection.7.7.1}
+\contentsline {subsubsection}{\numberline {7.7.1.1}Klient}{111}{subsubsection.7.7.1.1}
+\contentsline {section}{\numberline {7.8}Dokumentacja pliku Form3.cs}{112}{section.7.8}
+\contentsline {subsection}{\numberline {7.8.1}Dokumentacja zmiennych}{112}{subsection.7.8.1}
+\contentsline {subsubsection}{\numberline {7.8.1.1}System}{112}{subsubsection.7.8.1.1}
+\contentsline {section}{\numberline {7.9}Dokumentacja pliku Form3.Designer.cs}{113}{section.7.9}
+\contentsline {subsection}{\numberline {7.9.1}Dokumentacja zmiennych}{113}{subsection.7.9.1}
+\contentsline {subsubsection}{\numberline {7.9.1.1}Klient}{113}{subsubsection.7.9.1.1}
+\contentsline {section}{\numberline {7.10}Dokumentacja pliku Form4.cs}{114}{section.7.10}
+\contentsline {subsection}{\numberline {7.10.1}Dokumentacja zmiennych}{114}{subsection.7.10.1}
+\contentsline {subsubsection}{\numberline {7.10.1.1}System}{114}{subsubsection.7.10.1.1}
+\contentsline {section}{\numberline {7.11}Dokumentacja pliku Form4.Designer.cs}{115}{section.7.11}
+\contentsline {subsection}{\numberline {7.11.1}Dokumentacja zmiennych}{115}{subsection.7.11.1}
+\contentsline {subsubsection}{\numberline {7.11.1.1}Klient}{115}{subsubsection.7.11.1.1}
+\contentsline {section}{\numberline {7.12}Dokumentacja pliku komunikacja.cs}{116}{section.7.12}
+\contentsline {subsection}{\numberline {7.12.1}Dokumentacja zmiennych}{116}{subsection.7.12.1}
+\contentsline {subsubsection}{\numberline {7.12.1.1}System}{116}{subsubsection.7.12.1.1}
+\contentsline {section}{\numberline {7.13}Dokumentacja pliku Program.cs}{117}{section.7.13}
+\contentsline {subsection}{\numberline {7.13.1}Dokumentacja zmiennych}{117}{subsection.7.13.1}
+\contentsline {subsubsection}{\numberline {7.13.1.1}System}{117}{subsubsection.7.13.1.1}
+\contentsline {section}{\numberline {7.14}Dokumentacja pliku Resources.Designer.cs}{118}{section.7.14}
+\contentsline {section}{\numberline {7.15}Dokumentacja pliku Settings.Designer.cs}{119}{section.7.15}
+\contentsline {section}{\numberline {7.16}Dokumentacja pliku Wyjatki.cs}{120}{section.7.16}
+\contentsline {subsection}{\numberline {7.16.1}Dokumentacja zmiennych}{120}{subsection.7.16.1}
+\contentsline {subsubsection}{\numberline {7.16.1.1}System}{120}{subsubsection.7.16.1.1}
+\contentsline {section}{\numberline {7.17}Dokumentacja pliku XmlPlik.cs}{121}{section.7.17}
+\contentsline {subsection}{\numberline {7.17.1}Dokumentacja zmiennych}{121}{subsection.7.17.1}
+\contentsline {subsubsection}{\numberline {7.17.1.1}System}{121}{subsubsection.7.17.1.1}
+\contentsline {section}{\numberline {7.18}Dokumentacja pliku XmlRequestsClass.cs}{122}{section.7.18}
+\contentsline {subsection}{\numberline {7.18.1}Dokumentacja zmiennych}{123}{subsection.7.18.1}
+\contentsline {subsubsection}{\numberline {7.18.1.1}System}{123}{subsubsection.7.18.1.1}
+\contentsline {section}{\numberline {7.19}Dokumentacja pliku zarzadca.cs}{124}{section.7.19}
+\contentsline {subsection}{\numberline {7.19.1}Dokumentacja zmiennych}{124}{subsection.7.19.1}
+\contentsline {subsubsection}{\numberline {7.19.1.1}System}{124}{subsubsection.7.19.1.1}
+\contentsline {section}{\numberline {7.20}Dokumentacja pliku Znajomi.cs}{125}{section.7.20}
+\contentsline {subsection}{\numberline {7.20.1}Dokumentacja zmiennych}{125}{subsection.7.20.1}
+\contentsline {subsubsection}{\numberline {7.20.1.1}System}{125}{subsubsection.7.20.1.1}
+\contentsline {section}{\numberline {7.21}Dokumentacja pliku Znajomi.Designer.cs}{126}{section.7.21}
+\contentsline {subsection}{\numberline {7.21.1}Dokumentacja zmiennych}{126}{subsection.7.21.1}
+\contentsline {subsubsection}{\numberline {7.21.1.1}Klient}{126}{subsubsection.7.21.1.1}

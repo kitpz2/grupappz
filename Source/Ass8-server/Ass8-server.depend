@@ -14,7 +14,7 @@
 	"parser.hpp"
 	"version.h"
 
-1244054333 /home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/version.h
+1244122406 /home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/version.h
 
 1244059778 source:/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/parser.cpp
 	<iostream>
@@ -448,7 +448,7 @@
 1243953686 source:/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/baza.cpp
 	"baza.hpp"
 
-1243881261 /home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/baza.hpp
+1244124179 /home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/baza.hpp
 	<string>
 	<mysql++.h>
 	<iostream>

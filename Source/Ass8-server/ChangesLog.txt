@@ -1,3 +1,9 @@
+04 czerwiec 2009
+   released version 0.9.0 of Ass8-server
+
+     Change log:
+        -Fixed: Końcowe poprawki błędów
+
 03 czerwiec 2009
    released version 0.7.5 of Ass8-server
 

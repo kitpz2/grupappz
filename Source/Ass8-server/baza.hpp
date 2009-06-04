@@ -27,6 +27,8 @@ class Baza
         mysqlpp::StoreQueryResult getFileInfo(std::string file, int user_id, char uprawnienia);
         ///Pobiera id uzytkownika 'user'
         int getUserId(std::string user);
+        ///Pobiera id uzytwkonika 'user' przy logowaniu (z auth_user)
+        int getUserIdLogin(std::string user);
         /**
         Funkcja sprawdzająca czy użytkownicy są znajomymi
         \param user1 Użytkownik pytający

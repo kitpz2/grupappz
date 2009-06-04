@@ -1,0 +1,296 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>Ass8-Klient: Plik źródłowy ASS8 - Konfiguracja.cs</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css">
+<link href="../../doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Wygenerowano przez Doxygen 1.5.8 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="../../main.html"><span>Strona&nbsp;główna</span></a></li>
+      <li><a href="../../namespaces.html"><span>Pakiety</span></a></li>
+      <li><a href="../../annotated.html"><span>Klasy</span></a></li>
+      <li class="current"><a href="../../files.html"><span>Pliki</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="../../files.html"><span>Lista&nbsp;plików</span></a></li>
+      <li><a href="../../globals.html"><span>Składowe&nbsp;plików</span></a></li>
+    </ul>
+  </div>
+<h1>ASS8 - Konfiguracja.cs</h1><a href="../../d8/d41/a00038.html">Idź do dokumentacji tego pliku.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a><a class="code" href="../../d8/d41/a00038.html#81a223a02c34d82b47199f08308847f2">00001</a> ﻿using <a class="code" href="../../d8/d41/a00038.html#81a223a02c34d82b47199f08308847f2">System</a>;
+<a name="l00002"></a>00002 <span class="keyword">using</span> <a class="code" href="../../d8/d41/a00038.html#81a223a02c34d82b47199f08308847f2">System</a>.Collections.Generic;
+<a name="l00003"></a>00003 <span class="keyword">using</span> <a class="code" href="../../d8/d41/a00038.html#81a223a02c34d82b47199f08308847f2">System</a>.ComponentModel;
+<a name="l00004"></a>00004 <span class="keyword">using</span> <a class="code" href="../../d8/d41/a00038.html#81a223a02c34d82b47199f08308847f2">System</a>.Data;
+<a name="l00005"></a>00005 <span class="keyword">using</span> <a class="code" href="../../d8/d41/a00038.html#81a223a02c34d82b47199f08308847f2">System</a>.Drawing;
+<a name="l00006"></a>00006 <span class="keyword">using</span> <a class="code" href="../../d8/d41/a00038.html#81a223a02c34d82b47199f08308847f2">System</a>.Text;
+<a name="l00007"></a>00007 <span class="keyword">using</span> <a class="code" href="../../d8/d41/a00038.html#81a223a02c34d82b47199f08308847f2">System</a>.Windows.Forms;
+<a name="l00008"></a>00008 <span class="keyword">using</span> <a class="code" href="../../d8/d41/a00038.html#81a223a02c34d82b47199f08308847f2">System</a>.Net;
+<a name="l00009"></a>00009 <span class="keyword">using</span> <a class="code" href="../../d8/d41/a00038.html#81a223a02c34d82b47199f08308847f2">System</a>.Threading;
+<a name="l00010"></a>00010 <span class="keyword">using</span> <a class="code" href="../../d8/d41/a00038.html#81a223a02c34d82b47199f08308847f2">System</a>.Security.Cryptography;
+<a name="l00011"></a>00011 <span class="keyword">using</span> <a class="code" href="../../d8/d41/a00038.html#81a223a02c34d82b47199f08308847f2">System</a>.IO;
+<a name="l00012"></a>00012 <span class="keyword">using</span> <a class="code" href="../../d8/d41/a00038.html#81a223a02c34d82b47199f08308847f2">System</a>.Xml;
+<a name="l00013"></a>00013 <span class="keyword">using</span> <a class="code" href="../../d8/d41/a00038.html#81a223a02c34d82b47199f08308847f2">System</a>.Xml.Serialization;
+<a name="l00014"></a><a class="code" href="../../d9/d73/a00060.html">00014</a> <span class="keyword">namespace </span>ASS8.<a class="code" href="../../d3/de7/a00039.html#50d8d80fabd02a9a24fb725624e1ad24">Klient</a>
+<a name="l00015"></a>00015 {
+<a name="l00019"></a><a class="code" href="../../d2/de7/a00014.html">00019</a>     <span class="keyword">public</span> <span class="keyword">partial class </span><a class="code" href="../../d2/de7/a00014.html" title="Klasa wyświetlająca okno do zmiany konfiguracji.">Konfiguracja</a> : Form
+<a name="l00020"></a>00020     {
+<a name="l00021"></a><a class="code" href="../../d2/de7/a00014.html#a9ee3b6dc3dc3b9960e784cd32f1cf60">00021</a>         XmlSerializerNamespaces names;
+<a name="l00022"></a><a class="code" href="../../d2/de7/a00014.html#092fa470ee5f9059cdfda4533edff021">00022</a>         <a class="code" href="../../d7/dd4/a00013.html">komunikacja</a> k;
+<a name="l00023"></a><a class="code" href="../../d2/de7/a00014.html#38ea713cadc6819701e3313479fbd000">00023</a>         <span class="keyword">private</span> <span class="keywordtype">bool</span> close = <span class="keyword">false</span>;
+<a name="l00024"></a><a class="code" href="../../d2/de7/a00014.html#59cabf8f3e48082c0ffa5f7da06fc270">00024</a>         Form loginForm;
+<a name="l00025"></a><a class="code" href="../../d2/de7/a00014.html#4a874d85030babce8df85e2dadf9577e">00025</a>         <a class="code" href="../../d1/dc6/a00037.html" title="Klasa zarządzająca połączeniem i wszystkimi operacjami z plikami.">zarzadca</a> z;
+<a name="l00026"></a><a class="code" href="../../d2/de7/a00014.html#b484254239ce03aa12ad870b9c5454fb">00026</a>         <span class="keyword">public</span> <span class="keywordtype">int</span> sekundy;
+<a name="l00027"></a><a class="code" href="../../d2/de7/a00014.html#3817bb57be51df140314a2da2aa5ba7e">00027</a>         <span class="keywordtype">int</span> bledyKontrola;
+<a name="l00028"></a><a class="code" href="../../d2/de7/a00014.html#e7c5ada1eda848babdd60e4e8c79b819">00028</a>         <span class="keywordtype">string</span> fol;
+<a name="l00033"></a><a class="code" href="../../d2/de7/a00014.html#49a6172f91f2b718c2838960918afba7">00033</a>         <span class="keyword">private</span> <span class="keywordtype">void</span> automatyczneSpr(<span class="keywordtype">object</span> o)
+<a name="l00034"></a>00034         {
+<a name="l00035"></a>00035             List&lt;object&gt; obj=(List&lt;object&gt;)o;
+<a name="l00036"></a>00036             NotifyIcon ni=(NotifyIcon)obj[0];
+<a name="l00037"></a>00037             <span class="keywordtype">int</span> bledy=(int)obj[1];
+<a name="l00038"></a>00038             <span class="keywordtype">string</span> folder=(string)obj[2];
+<a name="l00039"></a>00039             <a class="code" href="../../d7/dd4/a00013.html">komunikacja</a> kom = <span class="keyword">new</span> <a class="code" href="../../d7/dd4/a00013.html">komunikacja</a>();
+<a name="l00040"></a>00040             kom.<a class="code" href="../../d7/dd4/a00013.html#1a50c04cee4acf979e3be6b7eeb41843">folder</a> = k.folder;
+<a name="l00041"></a>00041             kom.<a class="code" href="../../d7/dd4/a00013.html#2c321eee82dba3f82cae18a5b4d6d620" title="Właściwość ustawia lub zwraca login do połączenia z serwerem.">Login</a> = k.Login;
+<a name="l00042"></a>00042             kom.<a class="code" href="../../d7/dd4/a00013.html#3c5917b1f8a0fb187d3c48ff22b25ec6" title="Właściwość ustawia lub zwraca hasło do połączenia z serwerem.">Haslo</a> = k.Haslo;
+<a name="l00043"></a>00043             kom.<a class="code" href="../../d7/dd4/a00013.html#da808f405d71a8f5f06659bac3b3fe50" title="Ustawia serwer i port do połączenia.">ustawUstawienia</a>(k.Serwer, k.Port);
+<a name="l00044"></a>00044             kom.<a class="code" href="../../d7/dd4/a00013.html#cdc8379f1139bc25fb24a6c9b6ce1cc1" title="Loguje do serwera.">login</a>();
+<a name="l00045"></a>00045             <span class="keywordflow">while</span> (<span class="keyword">true</span>)
+<a name="l00046"></a>00046             {
+<a name="l00047"></a>00047                 <a class="code" href="../../d1/dc6/a00037.html" title="Klasa zarządzająca połączeniem i wszystkimi operacjami z plikami.">zarzadca</a> zz = <span class="keyword">new</span> <a class="code" href="../../d1/dc6/a00037.html" title="Klasa zarządzająca połączeniem i wszystkimi operacjami z plikami.">zarzadca</a>(kom, ni, bledy, folder);
+<a name="l00048"></a>00048                 zz.<a class="code" href="../../d1/dc6/a00037.html#facd9f376d18bedf9eb790ea68e23cf2" title="Zmienia kontroli błędów (gdzie ma być wypisywany komunikat o bledach).">zmianaKontroli</a>(bledyKontrola);
+<a name="l00049"></a>00049                 zz.<a class="code" href="../../d1/dc6/a00037.html#e91fc8825b76e32fee5742c3454aaee0" title="Zmienna przechowuje folder użytkownika.">folder</a> = fol;
+<a name="l00050"></a>00050                 zz.<a class="code" href="../../d1/dc6/a00037.html#23c6a981e5d8340c7207a7cbbd5d710e" title="Funkcja sprawdza jakie zmieny nastąpiły na dysku lub serwerze i w zależności...">szukajZmian</a>();
+<a name="l00051"></a>00051                 Thread.Sleep(sekundy * 1000);
+<a name="l00052"></a>00052             }
+<a name="l00053"></a>00053         }
+<a name="l00059"></a><a class="code" href="../../d2/de7/a00014.html#b298e3bc6d95ff4bb409a69a84598ea6">00059</a>         <span class="keyword">public</span> <a class="code" href="../../d2/de7/a00014.html" title="Klasa wyświetlająca okno do zmiany konfiguracji.">Konfiguracja</a>(Form log, <a class="code" href="../../d7/dd4/a00013.html">komunikacja</a> kom)
+<a name="l00060"></a>00060         {
+<a name="l00061"></a>00061             names = <span class="keyword">new</span> XmlSerializerNamespaces();
+<a name="l00062"></a>00062             names.Add(<span class="stringliteral">""</span>, <span class="stringliteral">""</span>);
+<a name="l00063"></a>00063             InitializeComponent();
+<a name="l00064"></a>00064             loginForm = log;
+<a name="l00065"></a>00065             KomClass = kom;
+<a name="l00066"></a>00066             <a class="code" href="../../d5/d16/a00029.html" title="Klasa zawiera ustawienia uzytkownika.">ustawienia_uzytkownika</a> <span class="keyword">set</span> = <span class="keyword">new</span> <a class="code" href="../../d5/d16/a00029.html" title="Klasa zawiera ustawienia uzytkownika.">ustawienia_uzytkownika</a>();
+<a name="l00067"></a>00067             <span class="keywordflow">try</span>
+<a name="l00068"></a>00068             {
+<a name="l00069"></a>00069                 XmlSerializer xml = <span class="keyword">new</span> XmlSerializer(typeof(<a class="code" href="../../d5/d16/a00029.html" title="Klasa zawiera ustawienia uzytkownika.">ustawienia_uzytkownika</a>));
+<a name="l00070"></a>00070                 TextReader tr = <span class="keyword">new</span> StreamReader(KomClass.Login + <span class="stringliteral">"/ustawienia.ini"</span>);
+<a name="l00071"></a>00071                 <span class="keyword">set</span> = (<a class="code" href="../../d5/d16/a00029.html" title="Klasa zawiera ustawienia uzytkownika.">ustawienia_uzytkownika</a>)xml.Deserialize(tr);
+<a name="l00072"></a>00072                 tr.Close();
+<a name="l00073"></a>00073                 <span class="keywordflow">if</span> (<span class="keyword">set</span>.sekundy &lt; 10)
+<a name="l00074"></a>00074                     <span class="keyword">set</span>.sekundy = 30;
+<a name="l00075"></a>00075             }
+<a name="l00076"></a>00076             <span class="keywordflow">catch</span>
+<a name="l00077"></a>00077             {
+<a name="l00078"></a>00078                 <span class="keyword">set</span>.sciezka = KomClass.Login + <span class="stringliteral">"/pliki"</span>;
+<a name="l00079"></a>00079                 <span class="keyword">set</span>.sekundy = 30;
+<a name="l00080"></a>00080                 <span class="keyword">set</span>.bledy = 0;
+<a name="l00081"></a>00081                 <span class="keyword">set</span>.proxy = 0;
+<a name="l00082"></a>00082             }
+<a name="l00083"></a>00083             <span class="keywordflow">try</span>
+<a name="l00084"></a>00084             {
+<a name="l00085"></a>00085                 <span class="keywordflow">if</span> (!Directory.Exists(<span class="keyword">set</span>.sciezka))
+<a name="l00086"></a>00086                     Directory.CreateDirectory(<span class="keyword">set</span>.sciezka);
+<a name="l00087"></a>00087             }
+<a name="l00088"></a>00088             <span class="keywordflow">catch</span>(Exception ex)
+<a name="l00089"></a>00089             {
+<a name="l00090"></a>00090                 <span class="keyword">set</span>.sciezka = KomClass.Login + <span class="stringliteral">"/pliki"</span>;
+<a name="l00091"></a>00091                 <span class="keywordflow">if</span> (!Directory.Exists(<span class="keyword">set</span>.sciezka))
+<a name="l00092"></a>00092                     Directory.CreateDirectory(<span class="keyword">set</span>.sciezka);
+<a name="l00093"></a>00093             }
+<a name="l00094"></a>00094             txtSciezka.Text = <span class="keyword">set</span>.sciezka;
+<a name="l00095"></a>00095             fol = <span class="keyword">set</span>.sciezka;
+<a name="l00096"></a>00096             txtSekundy.Text = <span class="keyword">set</span>.sekundy.ToString();
+<a name="l00097"></a>00097             radioTray.Checked = <span class="keyword">set</span>.bledy == 0;
+<a name="l00098"></a>00098             radioPopup.Checked = <span class="keyword">set</span>.bledy == 1;
+<a name="l00099"></a>00099             chbProxy.Checked = <span class="keyword">set</span>.proxy == 1;
+<a name="l00100"></a>00100             <span class="keywordflow">if</span> (chbProxy.Checked)
+<a name="l00101"></a>00101             {
+<a name="l00102"></a>00102                 txtSerwer.Text = <span class="keyword">set</span>.serwerProxy;
+<a name="l00103"></a>00103                 txtPort.Text = <span class="keyword">set</span>.portProxy.ToString();
+<a name="l00104"></a>00104                 chbUwierzytelnienie.Checked = <span class="keyword">set</span>.uwierzytelnienie == 1;
+<a name="l00105"></a>00105                 <span class="keywordflow">if</span> (chbUwierzytelnienie.Checked)
+<a name="l00106"></a>00106                 {
+<a name="l00107"></a>00107                     txtLogin.Text = <span class="keyword">set</span>.loginProxy;
+<a name="l00108"></a>00108                     txtHaslo.Text = <span class="keyword">set</span>.hasloProxy;
+<a name="l00109"></a>00109                 }
+<a name="l00110"></a>00110                 WebProxy wp = <span class="keyword">new</span> WebProxy(txtSerwer.Text + <span class="stringliteral">":"</span> + txtPort.Text, chbUwierzytelnienie.Checked);
+<a name="l00111"></a>00111                 <span class="keywordflow">if</span> (chbUwierzytelnienie.Checked)
+<a name="l00112"></a>00112                     wp.Credentials = <span class="keyword">new</span> NetworkCredential(txtLogin.Text, txtHaslo.Text);
+<a name="l00113"></a>00113                 WebRequest.DefaultWebProxy = wp;
+<a name="l00114"></a>00114             }
+<a name="l00115"></a>00115             sekundy = <span class="keyword">set</span>.sekundy;
+<a name="l00116"></a>00116             z = <span class="keyword">new</span> <a class="code" href="../../d1/dc6/a00037.html" title="Klasa zarządzająca połączeniem i wszystkimi operacjami z plikami.">zarzadca</a>(KomClass, niIkona, <span class="keyword">set</span>.bledy,<span class="keyword">set</span>.sciezka);
+<a name="l00117"></a>00117             bledyKontrola = <span class="keyword">set</span>.bledy;
+<a name="l00118"></a>00118             Thread th = <span class="keyword">new</span> Thread(<span class="keyword">new</span> ParameterizedThreadStart(automatyczneSpr));
+<a name="l00119"></a>00119             Thread zmianaF = <span class="keyword">new</span> Thread(<span class="keyword">new</span> ParameterizedThreadStart(zmianaFolderu));
+<a name="l00120"></a>00120             th.IsBackground = <span class="keyword">true</span>;
+<a name="l00121"></a>00121             List&lt;object&gt; obj = <span class="keyword">new</span> List&lt;object&gt;();
+<a name="l00122"></a>00122             obj.Add(niIkona);
+<a name="l00123"></a>00123             obj.Add(<span class="keyword">set</span>.bledy);
+<a name="l00124"></a>00124             obj.Add(<span class="keyword">set</span>.sciezka);
+<a name="l00125"></a>00125             th.Start(obj);
+<a name="l00126"></a>00126         }
+<a name="l00127"></a>00127         <span class="keyword">public</span> <a class="code" href="../../d7/dd4/a00013.html">komunikacja</a> KomClass
+<a name="l00128"></a><a class="code" href="../../d2/de7/a00014.html#ebc21fd88f797ade28feaaa274769fa8">00128</a>         {
+<a name="l00129"></a>00129             <span class="keyword">get</span>
+<a name="l00130"></a>00130             {
+<a name="l00131"></a>00131                 <span class="keywordflow">return</span> k;
+<a name="l00132"></a>00132             }
+<a name="l00133"></a>00133             <span class="keyword">set</span>
+<a name="l00134"></a>00134             {
+<a name="l00135"></a>00135                 k = value;
+<a name="l00136"></a>00136             }
+<a name="l00137"></a>00137         }
+<a name="l00143"></a><a class="code" href="../../d2/de7/a00014.html#43e125d87ba2497d29d9ad6ea456c62d">00143</a>         <span class="keyword">private</span> <span class="keywordtype">void</span> btnSciezka_Click(<span class="keywordtype">object</span> sender, EventArgs e)
+<a name="l00144"></a>00144         {
+<a name="l00145"></a>00145             FolderBrowserDialog fbd = <span class="keyword">new</span> FolderBrowserDialog();
+<a name="l00146"></a>00146             <span class="keywordflow">if</span> (fbd.ShowDialog() == DialogResult.OK)
+<a name="l00147"></a>00147             {
+<a name="l00148"></a>00148                 txtSciezka.Text = fbd.SelectedPath;
+<a name="l00149"></a>00149             }
+<a name="l00150"></a>00150         }
+<a name="l00156"></a><a class="code" href="../../d2/de7/a00014.html#f679b61007ce606b466155103b678d40">00156</a>         <span class="keyword">private</span> <span class="keywordtype">void</span> ASS8___Konfiguracja_FormClosing(<span class="keywordtype">object</span> sender, FormClosingEventArgs e)
+<a name="l00157"></a>00157         {
+<a name="l00158"></a>00158             <span class="keywordflow">if</span> (!close)
+<a name="l00159"></a>00159             {
+<a name="l00160"></a>00160                 this.Visible = <span class="keyword">false</span>;
+<a name="l00161"></a>00161                 e.Cancel = <span class="keyword">true</span>;
+<a name="l00162"></a>00162             }
+<a name="l00163"></a>00163         }
+<a name="l00169"></a><a class="code" href="../../d2/de7/a00014.html#321774e21dbe196e41840825cbe7c915">00169</a>         <span class="keyword">private</span> <span class="keywordtype">void</span> tcmsKonfiguracja_Click(<span class="keywordtype">object</span> sender, EventArgs e)
+<a name="l00170"></a>00170         {
+<a name="l00171"></a>00171             this.Visible = <span class="keyword">true</span>;
+<a name="l00172"></a>00172         }
+<a name="l00178"></a><a class="code" href="../../d2/de7/a00014.html#e273925aef74f02490b3a4ac6af6b779">00178</a>         <span class="keyword">private</span> <span class="keywordtype">void</span> tcmsZnajomi_Click(<span class="keywordtype">object</span> sender, EventArgs e)
+<a name="l00179"></a>00179         {
+<a name="l00180"></a>00180             <a class="code" href="../../d1/d7c/a00003.html" title="Klasa odpowiedzialna za wyświetlenie okna z wyszukiwaniem plików znajomych.">Form1</a> frm = <span class="keyword">new</span> <a class="code" href="../../d1/d7c/a00003.html" title="Klasa odpowiedzialna za wyświetlenie okna z wyszukiwaniem plików znajomych.">Form1</a>();
+<a name="l00181"></a>00181             frm.<a class="code" href="../../d1/d7c/a00003.html#3a7a9649738431ac4b2dd14fdabb7d1c">k</a> = k;
+<a name="l00182"></a>00182             frm.Show();
+<a name="l00183"></a>00183         }
+<a name="l00189"></a><a class="code" href="../../d2/de7/a00014.html#320235785478082ecc1aa03461bf2784">00189</a>         <span class="keyword">private</span> <span class="keywordtype">void</span> cmsWyloguj_Click(<span class="keywordtype">object</span> sender, EventArgs e)
+<a name="l00190"></a>00190         {
+<a name="l00191"></a>00191             close = <span class="keyword">true</span>;
+<a name="l00192"></a>00192             
+<a name="l00193"></a>00193             loginForm.Show();
+<a name="l00194"></a>00194             this.Close();
+<a name="l00195"></a>00195         }
+<a name="l00201"></a><a class="code" href="../../d2/de7/a00014.html#2f9d0525ac9851488072e040aaf7651c">00201</a>         <span class="keyword">private</span> <span class="keywordtype">void</span> tcmsZakoncz_Click(<span class="keywordtype">object</span> sender, EventArgs e)
+<a name="l00202"></a>00202         {
+<a name="l00203"></a>00203             Application.Exit();
+<a name="l00204"></a>00204         }
+<a name="l00210"></a><a class="code" href="../../d2/de7/a00014.html#91afe239346bf7e48bbe5472a7c77dee">00210</a>         <span class="keyword">private</span> <span class="keywordtype">void</span> tcmsStop_Click(<span class="keywordtype">object</span> sender, EventArgs e)
+<a name="l00211"></a>00211         {
+<a name="l00212"></a>00212             tcmsStart.Enabled = <span class="keyword">true</span>;
+<a name="l00213"></a>00213             z.mutex.WaitOne();
+<a name="l00214"></a>00214             tcmsStop.Enabled = <span class="keyword">false</span>;
+<a name="l00215"></a>00215         }
+<a name="l00221"></a><a class="code" href="../../d2/de7/a00014.html#6b5fcbc389c958d850ae624c7c202372">00221</a>         <span class="keyword">private</span> <span class="keywordtype">void</span> tcmsStart_Click(<span class="keywordtype">object</span> sender, EventArgs e)
+<a name="l00222"></a>00222         {
+<a name="l00223"></a>00223             tcmsStart.Enabled = <span class="keyword">false</span>;
+<a name="l00224"></a>00224             z.mutex.ReleaseMutex();
+<a name="l00225"></a>00225             tcmsStop.Enabled = <span class="keyword">true</span>;
+<a name="l00226"></a>00226         }
+<a name="l00227"></a>00227 
+<a name="l00228"></a><a class="code" href="../../d2/de7/a00014.html#c585e179ba2eae275bc72800350139ed">00228</a>         <span class="keyword">private</span> <span class="keywordtype">void</span> label4_Click(<span class="keywordtype">object</span> sender, EventArgs e)
+<a name="l00229"></a>00229         {
+<a name="l00230"></a>00230 
+<a name="l00231"></a>00231         }
+<a name="l00237"></a><a class="code" href="../../d2/de7/a00014.html#9fae1354592491cc868938a644d08225">00237</a>         <span class="keyword">private</span> <span class="keywordtype">void</span> checkBox1_CheckedChanged(<span class="keywordtype">object</span> sender, EventArgs e)
+<a name="l00238"></a>00238         {
+<a name="l00239"></a>00239             lblSerwer.Enabled = chbProxy.Checked;
+<a name="l00240"></a>00240             lbPort.Enabled = chbProxy.Checked;
+<a name="l00241"></a>00241             txtLogin.Enabled = chbProxy.Checked;
+<a name="l00242"></a>00242             txtHaslo.Enabled = chbProxy.Checked;
+<a name="l00243"></a>00243             chbUwierzytelnienie.Enabled = chbProxy.Checked;
+<a name="l00244"></a>00244 
+<a name="l00245"></a>00245         }
+<a name="l00251"></a><a class="code" href="../../d2/de7/a00014.html#4d234b74e7e673575fb90c7b41cdd79c">00251</a>         <span class="keyword">private</span> <span class="keywordtype">void</span> chbUwierzytelnienie_CheckedChanged(<span class="keywordtype">object</span> sender, EventArgs e)
+<a name="l00252"></a>00252         {
+<a name="l00253"></a>00253             lblLogin.Enabled = chbProxy.Checked &amp;&amp; chbUwierzytelnienie.Checked;
+<a name="l00254"></a>00254             lblHaslo.Enabled = chbProxy.Checked &amp;&amp; chbUwierzytelnienie.Checked;
+<a name="l00255"></a>00255             txtLogin.Enabled = chbProxy.Checked &amp;&amp; chbUwierzytelnienie.Checked;
+<a name="l00256"></a>00256             txtHaslo.Enabled = chbProxy.Checked &amp;&amp; chbUwierzytelnienie.Checked;
+<a name="l00257"></a>00257         }
+<a name="l00263"></a><a class="code" href="../../d2/de7/a00014.html#12f013346e6d02fe69877467ca551ef3">00263</a>         <span class="keyword">private</span> <span class="keywordtype">void</span> btnZapisz_Click(<span class="keywordtype">object</span> sender, EventArgs e)
+<a name="l00264"></a>00264         {
+<a name="l00265"></a>00265 
+<a name="l00266"></a>00266             <span class="keywordflow">if</span> (sekundy &lt; 10)
+<a name="l00267"></a>00267             {
+<a name="l00268"></a>00268                 MessageBox.Show(<span class="stringliteral">"Liczba sekund nie moze byc mniejsza niz 10"</span>);
+<a name="l00269"></a>00269                 <span class="keywordflow">return</span>;
+<a name="l00270"></a>00270             }
+<a name="l00271"></a>00271             sekundy = Int32.Parse(txtSekundy.Text);
+<a name="l00272"></a>00272             <span class="keywordflow">if</span> (!Directory.Exists(txtSciezka.Text))
+<a name="l00273"></a>00273                 Directory.CreateDirectory(txtSciezka.Text);
+<a name="l00274"></a>00274             <span class="keywordtype">int</span> tmp;
+<a name="l00275"></a>00275             <span class="keywordflow">if</span> (chbProxy.Checked &amp;&amp; (txtSerwer.Text == <span class="stringliteral">""</span> || txtPort.Text == <span class="stringliteral">""</span> || !Int32.TryParse(txtPort.Text, out tmp)))
+<a name="l00276"></a>00276             {
+<a name="l00277"></a>00277                 MessageBox.Show(<span class="stringliteral">"Ustaw poprawnie proxy"</span>);
+<a name="l00278"></a>00278                 <span class="keywordflow">return</span>;
+<a name="l00279"></a>00279             }
+<a name="l00280"></a>00280             <span class="keywordflow">if</span> (chbProxy.Checked &amp;&amp; chbUwierzytelnienie.Checked &amp;&amp; (txtLogin.Text == <span class="stringliteral">""</span> || txtHaslo.Text == <span class="stringliteral">""</span>))
+<a name="l00281"></a>00281             {
+<a name="l00282"></a>00282                 MessageBox.Show(<span class="stringliteral">"Ustaw poprawnie proxy"</span>);
+<a name="l00283"></a>00283                 <span class="keywordflow">return</span>;
+<a name="l00284"></a>00284             }
+<a name="l00285"></a>00285 
+<a name="l00286"></a>00286             <span class="keywordflow">if</span> (chbProxy.Checked)
+<a name="l00287"></a>00287             {
+<a name="l00288"></a>00288                 WebProxy wp = <span class="keyword">new</span> WebProxy(txtSerwer.Text + <span class="stringliteral">":"</span> + txtPort.Text, chbUwierzytelnienie.Checked);
+<a name="l00289"></a>00289                 <span class="keywordflow">if</span> (chbUwierzytelnienie.Checked)
+<a name="l00290"></a>00290                     wp.Credentials = <span class="keyword">new</span> NetworkCredential(txtLogin.Text, txtHaslo.Text);
+<a name="l00291"></a>00291                 WebRequest.DefaultWebProxy = wp;
+<a name="l00292"></a>00292             }
+<a name="l00293"></a>00293             <span class="keywordflow">else</span>
+<a name="l00294"></a>00294             {
+<a name="l00295"></a>00295                 WebRequest.DefaultWebProxy = null;
+<a name="l00296"></a>00296             }
+<a name="l00297"></a>00297             <span class="keywordflow">try</span>
+<a name="l00298"></a>00298             {
+<a name="l00299"></a>00299                 XmlSerializer xml = <span class="keyword">new</span> XmlSerializer(typeof(<a class="code" href="../../d5/d16/a00029.html" title="Klasa zawiera ustawienia uzytkownika.">ustawienia_uzytkownika</a>));
+<a name="l00300"></a>00300                 <a class="code" href="../../d5/d16/a00029.html" title="Klasa zawiera ustawienia uzytkownika.">ustawienia_uzytkownika</a> gu = <span class="keyword">new</span> <a class="code" href="../../d5/d16/a00029.html" title="Klasa zawiera ustawienia uzytkownika.">ustawienia_uzytkownika</a>(chbProxy.Checked ? 1 : 0, txtSerwer.Text, txtPort.Text==<span class="stringliteral">""</span>?-1:Int32.Parse(txtPort.Text), chbUwierzytelnienie.Checked ? 1 : 0, txtLogin.Text, txtHaslo.Text, txtSciezka.Text, sekundy, radioLog.Checked ? 1 : radioPopup.Checked ? 2 : radioTray.Checked ? 0 : -1);
+<a name="l00301"></a>00301                 TextWriter tw = <span class="keyword">new</span> StreamWriter(KomClass.Login + <span class="stringliteral">"/ustawienia.ini"</span>);
+<a name="l00302"></a>00302                 xml.Serialize(tw, gu, names);
+<a name="l00303"></a>00303                 tw.Close();
+<a name="l00304"></a>00304             }
+<a name="l00305"></a>00305             <span class="keywordflow">catch</span> (Exception ex)
+<a name="l00306"></a>00306             {
+<a name="l00307"></a>00307                 MessageBox.Show(<span class="stringliteral">"Nie mozna bylo zapisac ustawien"</span>+ex.ToString());
+<a name="l00308"></a>00308             }
+<a name="l00309"></a>00309             z.zmianaKontroli(radioLog.Checked ? 1 : radioPopup.Checked ? 2 : radioTray.Checked ? 0 : -1);
+<a name="l00310"></a>00310             Thread zmianaF = <span class="keyword">new</span> Thread(<span class="keyword">new</span> ParameterizedThreadStart(zmianaFolderu));
+<a name="l00311"></a>00311             bledyKontrola = radioLog.Checked ? 1 : radioPopup.Checked ? 2 : radioTray.Checked ? 0 : -1;
+<a name="l00312"></a>00312             <span class="keywordflow">if</span> (fol != txtSciezka.Text)
+<a name="l00313"></a>00313             {
+<a name="l00314"></a>00314                 <a class="code" href="../../d4/d51/a00017.html" title="Klasa zawiera liste plikow z ich informacjami.">pliki</a> p = <span class="keyword">new</span> <a class="code" href="../../d4/d51/a00017.html" title="Klasa zawiera liste plikow z ich informacjami.">pliki</a>();
+<a name="l00315"></a>00315                 TextWriter sw = <span class="keyword">new</span> StreamWriter(KomClass.Login + <span class="stringliteral">"/pliki.xml"</span>, <span class="keyword">false</span>);
+<a name="l00316"></a>00316                 XmlSerializer xml = <span class="keyword">new</span> XmlSerializer(typeof(<a class="code" href="../../d4/d51/a00017.html" title="Klasa zawiera liste plikow z ich informacjami.">pliki</a>));
+<a name="l00317"></a>00317                 xml.Serialize(sw, p, names);
+<a name="l00318"></a>00318                 sw.Close();
+<a name="l00319"></a>00319             }
+<a name="l00320"></a>00320             fol = txtSciezka.Text;
+<a name="l00321"></a>00321             zmianaF.Start(txtSciezka.Text);
+<a name="l00322"></a>00322         }
+<a name="l00327"></a><a class="code" href="../../d2/de7/a00014.html#9d2b40a270afe4ddbcc6059e2e6d940b">00327</a>         <span class="keyword">private</span> <span class="keywordtype">void</span> zmianaFolderu(<span class="keywordtype">object</span> o)
+<a name="l00328"></a>00328         {
+<a name="l00329"></a>00329             z.folderMutex.WaitOne();
+<a name="l00330"></a>00330             z.folder = (string)o;
+<a name="l00331"></a>00331             k.folder = (string)o;
+<a name="l00332"></a>00332             z.folderMutex.ReleaseMutex();
+<a name="l00333"></a>00333         }
+<a name="l00339"></a><a class="code" href="../../d2/de7/a00014.html#f95affc14a6ee755996b87db35881a75">00339</a>         <span class="keyword">private</span> <span class="keywordtype">void</span> btnAnuluj_Click(<span class="keywordtype">object</span> sender, EventArgs e)
+<a name="l00340"></a>00340         {
+<a name="l00341"></a>00341             this.Hide();
+<a name="l00342"></a>00342         }
+<a name="l00343"></a>00343     }
+<a name="l00344"></a>00344 }
+</pre></div></div>
+<hr size="1"><address style="text-align: right;"><small>Wygenerowano Thu Jun 4 19:42:01 2009 dla Ass8-Klient programem&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="../../doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>Ass8-Klient: Plik źródłowy Form2.cs</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css">
+<link href="../../doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Wygenerowano przez Doxygen 1.5.8 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="../../main.html"><span>Strona&nbsp;główna</span></a></li>
+      <li><a href="../../namespaces.html"><span>Pakiety</span></a></li>
+      <li><a href="../../annotated.html"><span>Klasy</span></a></li>
+      <li class="current"><a href="../../files.html"><span>Pliki</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="../../files.html"><span>Lista&nbsp;plików</span></a></li>
+      <li><a href="../../globals.html"><span>Składowe&nbsp;plików</span></a></li>
+    </ul>
+  </div>
+<h1>Form2.cs</h1><a href="../../d6/d42/a00043.html">Idź do dokumentacji tego pliku.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a><a class="code" href="../../d6/d42/a00043.html#81a223a02c34d82b47199f08308847f2">00001</a> ﻿using <a class="code" href="../../d8/d41/a00038.html#81a223a02c34d82b47199f08308847f2">System</a>;
+<a name="l00002"></a>00002 <span class="keyword">using</span> <a class="code" href="../../d8/d41/a00038.html#81a223a02c34d82b47199f08308847f2">System</a>.Collections.Generic;
+<a name="l00003"></a>00003 <span class="keyword">using</span> <a class="code" href="../../d8/d41/a00038.html#81a223a02c34d82b47199f08308847f2">System</a>.ComponentModel;
+<a name="l00004"></a>00004 <span class="keyword">using</span> <a class="code" href="../../d8/d41/a00038.html#81a223a02c34d82b47199f08308847f2">System</a>.Data;
+<a name="l00005"></a>00005 <span class="keyword">using</span> <a class="code" href="../../d8/d41/a00038.html#81a223a02c34d82b47199f08308847f2">System</a>.Drawing;
+<a name="l00006"></a>00006 <span class="keyword">using</span> <a class="code" href="../../d8/d41/a00038.html#81a223a02c34d82b47199f08308847f2">System</a>.Text;
+<a name="l00007"></a>00007 <span class="keyword">using</span> <a class="code" href="../../d8/d41/a00038.html#81a223a02c34d82b47199f08308847f2">System</a>.Windows.Forms;
+<a name="l00008"></a>00008 <span class="keyword">using</span> <a class="code" href="../../d8/d41/a00038.html#81a223a02c34d82b47199f08308847f2">System</a>.Net;
+<a name="l00009"></a>00009 <span class="keyword">namespace </span>ASS8.<a class="code" href="../../d3/de7/a00039.html#50d8d80fabd02a9a24fb725624e1ad24">Klient</a>
+<a name="l00010"></a>00010 {
+<a name="l00014"></a><a class="code" href="../../d0/d0b/a00004.html">00014</a>     <span class="keyword">public</span> <span class="keyword">partial class </span><a class="code" href="../../d0/d0b/a00004.html" title="Klasa obsługująca zmiane serwera proxy.">Form2</a> : Form
+<a name="l00015"></a>00015     {
+<a name="l00016"></a><a class="code" href="../../d0/d0b/a00004.html#ae4349aa452f0c374938f4ad57b3fb04">00016</a>         <span class="keyword">public</span> <a class="code" href="../../d0/d0b/a00004.html" title="Klasa obsługująca zmiane serwera proxy.">Form2</a>()
+<a name="l00017"></a>00017         {
+<a name="l00018"></a>00018             InitializeComponent();
+<a name="l00019"></a>00019         }
+<a name="l00020"></a><a class="code" href="../../d0/d0b/a00004.html#e630ae8595038e00daa6a1f42b134b59">00020</a>         <a class="code" href="../../d8/d84/a00001.html" title="Kalsa odpowiedzialna za wyswietlenie okna i zalogowanie uzytkownika.">ASS8___Logowanie</a> log;
+<a name="l00025"></a><a class="code" href="../../d0/d0b/a00004.html#329107a1724971156a30d347492950dd">00025</a>         <span class="keyword">public</span> <a class="code" href="../../d0/d0b/a00004.html" title="Klasa obsługująca zmiane serwera proxy.">Form2</a>(<a class="code" href="../../d8/d84/a00001.html" title="Kalsa odpowiedzialna za wyswietlenie okna i zalogowanie uzytkownika.">ASS8___Logowanie</a> form)
+<a name="l00026"></a>00026         {
+<a name="l00027"></a>00027             log = form;
+<a name="l00028"></a>00028             InitializeComponent();
+<a name="l00029"></a>00029             chbProxy.Checked = form.<a class="code" href="../../d8/d84/a00001.html#2be9fdb760f0ef82c0bfd65a6867c1fb">proxy</a> == 1;
+<a name="l00030"></a>00030             <span class="keywordflow">if</span> (chbProxy.Checked)
+<a name="l00031"></a>00031             {
+<a name="l00032"></a>00032                 txtSerwer.Text = form.<a class="code" href="../../d8/d84/a00001.html#acbba17189469119f7fdc4b0581604f3" title="Zmienna przechowuje adres serwera.">serwer</a>;
+<a name="l00033"></a>00033                 txtPort.Text = form.<a class="code" href="../../d8/d84/a00001.html#48becc1fc376804e26b24d008e8eb146">port</a>.ToString();
+<a name="l00034"></a>00034                 chbUwierzytelnienie.Checked = form.<a class="code" href="../../d8/d84/a00001.html#4b253df312924aa3a59d44df86116f92">uwierzytelnienie</a> == 1;
+<a name="l00035"></a>00035                 <span class="keywordflow">if</span> (chbUwierzytelnienie.Checked)
+<a name="l00036"></a>00036                 {
+<a name="l00037"></a>00037                     txtLogin.Text = form.<a class="code" href="../../d8/d84/a00001.html#b2688b12edce0a3bd21274587bfe39e5" title="Właściwość zwraca wpisany login.">login</a>;
+<a name="l00038"></a>00038                     txtHaslo.Text = form.<a class="code" href="../../d8/d84/a00001.html#7bd096b1661801146b6ae700f5e11786" title="Właściwość zwraca wpisane hasło.">haslo</a>;
+<a name="l00039"></a>00039                 }
+<a name="l00040"></a>00040                 WebProxy wp = <span class="keyword">new</span> WebProxy(txtSerwer.Text + <span class="stringliteral">":"</span> + txtPort.Text, chbUwierzytelnienie.Checked);
+<a name="l00041"></a>00041                 <span class="keywordflow">if</span> (chbUwierzytelnienie.Checked)
+<a name="l00042"></a>00042                     wp.Credentials = <span class="keyword">new</span> NetworkCredential(txtLogin.Text, txtHaslo.Text);
+<a name="l00043"></a>00043                 WebRequest.DefaultWebProxy = wp;
+<a name="l00044"></a>00044             }
+<a name="l00045"></a>00045         }
+<a name="l00051"></a><a class="code" href="../../d0/d0b/a00004.html#7e564cde1dca7d07ae2e0fd2ed7de14f">00051</a>         <span class="keyword">private</span> <span class="keywordtype">void</span> btnZapisz_Click(<span class="keywordtype">object</span> sender, EventArgs e)
+<a name="l00052"></a>00052         {
+<a name="l00053"></a>00053            <span class="keywordflow">if</span>(!chbProxy.Checked)
+<a name="l00054"></a>00054                WebRequest.DefaultWebProxy = null;
+<a name="l00055"></a>00055             <span class="keywordtype">int</span> tmp;
+<a name="l00056"></a>00056             <span class="keywordflow">if</span> (chbProxy.Checked &amp;&amp; (txtSerwer.Text == <span class="stringliteral">""</span> || txtPort.Text == <span class="stringliteral">""</span> || !Int32.TryParse(txtPort.Text, out tmp)))
+<a name="l00057"></a>00057             {
+<a name="l00058"></a>00058                 MessageBox.Show(<span class="stringliteral">"Ustaw poprawnie proxy"</span>);
+<a name="l00059"></a>00059                 <span class="keywordflow">return</span>;
+<a name="l00060"></a>00060             }
+<a name="l00061"></a>00061             <span class="keywordflow">if</span> (chbProxy.Checked &amp;&amp; chbUwierzytelnienie.Checked &amp;&amp; (txtLogin.Text == <span class="stringliteral">""</span> || txtHaslo.Text == <span class="stringliteral">""</span>))
+<a name="l00062"></a>00062             {
+<a name="l00063"></a>00063                 MessageBox.Show(<span class="stringliteral">"Ustaw poprawnie proxy"</span>);
+<a name="l00064"></a>00064                 <span class="keywordflow">return</span>;
+<a name="l00065"></a>00065             }
+<a name="l00066"></a>00066 
+<a name="l00067"></a>00067             <span class="keywordflow">if</span> (chbProxy.Checked)
+<a name="l00068"></a>00068             {
+<a name="l00069"></a>00069                 WebProxy wp = <span class="keyword">new</span> WebProxy(txtSerwer.Text + <span class="stringliteral">":"</span> + txtPort.Text, chbUwierzytelnienie.Checked);
+<a name="l00070"></a>00070                 <span class="keywordflow">if</span> (chbUwierzytelnienie.Checked)
+<a name="l00071"></a>00071                     wp.Credentials = <span class="keyword">new</span> NetworkCredential(txtLogin.Text, txtHaslo.Text);
+<a name="l00072"></a>00072                 WebRequest.DefaultWebProxy = wp;
+<a name="l00073"></a>00073             }
+<a name="l00074"></a>00074             <span class="keywordflow">else</span>
+<a name="l00075"></a>00075             {
+<a name="l00076"></a>00076                 WebRequest.DefaultWebProxy = null;
+<a name="l00077"></a>00077             }
+<a name="l00078"></a>00078             log.zmianaProxy(chbProxy.Checked ? 1 : 0, txtSerwer.Text, Int32.Parse(txtPort.Text), chbUwierzytelnienie.Checked ? 1 : 0, txtLogin.Text, txtHaslo.Text);
+<a name="l00079"></a>00079             this.Close();
+<a name="l00080"></a>00080         }
+<a name="l00081"></a>00081 
+<a name="l00087"></a><a class="code" href="../../d0/d0b/a00004.html#783009da735c7b89fe61f2dd123af5b4">00087</a>         <span class="keyword">private</span> <span class="keywordtype">void</span> chbProxy_CheckedChanged(<span class="keywordtype">object</span> sender, EventArgs e)
+<a name="l00088"></a>00088         {
+<a name="l00089"></a>00089             txtSerwer.Enabled = chbProxy.Checked;
+<a name="l00090"></a>00090             txtPort.Enabled = chbProxy.Checked;
+<a name="l00091"></a>00091             chbUwierzytelnienie.Enabled = chbProxy.Checked;
+<a name="l00092"></a>00092         }
+<a name="l00098"></a><a class="code" href="../../d0/d0b/a00004.html#c4c4b631a751d956ebda200dfd7ad1bc">00098</a>         <span class="keyword">private</span> <span class="keywordtype">void</span> chbUwierzytelnienie_CheckedChanged(<span class="keywordtype">object</span> sender, EventArgs e)
+<a name="l00099"></a>00099         {
+<a name="l00100"></a>00100             txtHaslo.Enabled = chbUwierzytelnienie.Checked;
+<a name="l00101"></a>00101             txtLogin.Enabled = chbUwierzytelnienie.Checked;
+<a name="l00102"></a>00102         }
+<a name="l00108"></a><a class="code" href="../../d0/d0b/a00004.html#74d326c91a9c46b770f8cf028efb3507">00108</a>         <span class="keyword">private</span> <span class="keywordtype">void</span> chbUwierzytelnienie_CheckedChanged_1(<span class="keywordtype">object</span> sender, EventArgs e)
+<a name="l00109"></a>00109         {
+<a name="l00110"></a>00110             txtHaslo.Enabled = chbUwierzytelnienie.Checked;
+<a name="l00111"></a>00111             txtLogin.Enabled = chbUwierzytelnienie.Checked;
+<a name="l00112"></a>00112         }
+<a name="l00118"></a><a class="code" href="../../d0/d0b/a00004.html#c05c96bb15c5fcffef1fa55f7078750e">00118</a>         <span class="keyword">private</span> <span class="keywordtype">void</span> btnAnuluj_Click(<span class="keywordtype">object</span> sender, EventArgs e)
+<a name="l00119"></a>00119         {
+<a name="l00120"></a>00120             this.Close();
+<a name="l00121"></a>00121         }
+<a name="l00122"></a>00122     }
+<a name="l00123"></a>00123 }
+</pre></div></div>
+<hr size="1"><address style="text-align: right;"><small>Wygenerowano Thu Jun 4 19:42:01 2009 dla Ass8-Klient programem&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="../../doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
+</body>
+</html>

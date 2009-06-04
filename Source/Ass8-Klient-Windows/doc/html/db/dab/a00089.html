@@ -1,0 +1,77 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>Ass8-Klient: Plik źródłowy Form4.cs</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css">
+<link href="../../doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Wygenerowano przez Doxygen 1.5.8 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="../../main.html"><span>Strona&nbsp;główna</span></a></li>
+      <li><a href="../../namespaces.html"><span>Pakiety</span></a></li>
+      <li><a href="../../annotated.html"><span>Klasy</span></a></li>
+      <li class="current"><a href="../../files.html"><span>Pliki</span></a></li>
+    </ul>
+  </div>
+  <div class="tabs">
+    <ul>
+      <li><a href="../../files.html"><span>Lista&nbsp;plików</span></a></li>
+      <li><a href="../../globals.html"><span>Składowe&nbsp;plików</span></a></li>
+    </ul>
+  </div>
+<h1>Form4.cs</h1><a href="../../d6/d2d/a00047.html">Idź do dokumentacji tego pliku.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a><a class="code" href="../../d6/d2d/a00047.html#81a223a02c34d82b47199f08308847f2">00001</a> ﻿using <a class="code" href="../../d8/d41/a00038.html#81a223a02c34d82b47199f08308847f2">System</a>;
+<a name="l00002"></a>00002 <span class="keyword">using</span> <a class="code" href="../../d8/d41/a00038.html#81a223a02c34d82b47199f08308847f2">System</a>.Collections.Generic;
+<a name="l00003"></a>00003 <span class="keyword">using</span> <a class="code" href="../../d8/d41/a00038.html#81a223a02c34d82b47199f08308847f2">System</a>.ComponentModel;
+<a name="l00004"></a>00004 <span class="keyword">using</span> <a class="code" href="../../d8/d41/a00038.html#81a223a02c34d82b47199f08308847f2">System</a>.Data;
+<a name="l00005"></a>00005 <span class="keyword">using</span> <a class="code" href="../../d8/d41/a00038.html#81a223a02c34d82b47199f08308847f2">System</a>.Drawing;
+<a name="l00006"></a>00006 <span class="keyword">using</span> <a class="code" href="../../d8/d41/a00038.html#81a223a02c34d82b47199f08308847f2">System</a>.Text;
+<a name="l00007"></a>00007 <span class="keyword">using</span> <a class="code" href="../../d8/d41/a00038.html#81a223a02c34d82b47199f08308847f2">System</a>.Windows.Forms;
+<a name="l00008"></a>00008 <span class="keyword">using</span> <a class="code" href="../../d8/d41/a00038.html#81a223a02c34d82b47199f08308847f2">System</a>.Net;
+<a name="l00009"></a>00009 <span class="keyword">namespace </span>ASS8.<a class="code" href="../../d3/de7/a00039.html#50d8d80fabd02a9a24fb725624e1ad24">Klient</a>
+<a name="l00010"></a>00010 {
+<a name="l00014"></a><a class="code" href="../../dd/dad/a00005.html">00014</a>     <span class="keyword">public</span> <span class="keyword">partial class </span><a class="code" href="../../dd/dad/a00005.html" title="Klasa wyświetlająca okno do zmiany serwera.">Form4</a> : Form
+<a name="l00015"></a>00015     {
+<a name="l00016"></a><a class="code" href="../../dd/dad/a00005.html#182469cf0d560d301c293d4961b44550">00016</a>         <a class="code" href="../../d8/d84/a00001.html" title="Kalsa odpowiedzialna za wyswietlenie okna i zalogowanie uzytkownika.">ASS8___Logowanie</a> log;
+<a name="l00021"></a><a class="code" href="../../dd/dad/a00005.html#c9962a9d1b3f147eefe50994127df5d7">00021</a>         <span class="keyword">public</span> <a class="code" href="../../dd/dad/a00005.html" title="Klasa wyświetlająca okno do zmiany serwera.">Form4</a>(<a class="code" href="../../d8/d84/a00001.html" title="Kalsa odpowiedzialna za wyswietlenie okna i zalogowanie uzytkownika.">ASS8___Logowanie</a> form)
+<a name="l00022"></a>00022         {
+<a name="l00023"></a>00023             log = form;
+<a name="l00024"></a>00024             InitializeComponent();
+<a name="l00025"></a>00025             textBox1.Text = form.<a class="code" href="../../d8/d84/a00001.html#acbba17189469119f7fdc4b0581604f3" title="Zmienna przechowuje adres serwera.">serwer</a>;
+<a name="l00026"></a>00026             textBox2.Text = form.<a class="code" href="../../d8/d84/a00001.html#48becc1fc376804e26b24d008e8eb146">port</a>.ToString();
+<a name="l00027"></a>00027         }
+<a name="l00033"></a><a class="code" href="../../dd/dad/a00005.html#6683aa1b2eba62015b3a0abf81058a9c">00033</a>         <span class="keyword">private</span> <span class="keywordtype">void</span> button1_Click(<span class="keywordtype">object</span> sender, EventArgs e)
+<a name="l00034"></a>00034         {
+<a name="l00035"></a>00035             <span class="keywordflow">try</span>
+<a name="l00036"></a>00036             {
+<a name="l00037"></a>00037 
+<a name="l00038"></a>00038                 IPAddress.Parse(textBox1.Text);
+<a name="l00039"></a>00039             }
+<a name="l00040"></a>00040             <span class="keywordflow">catch</span>
+<a name="l00041"></a>00041             {
+<a name="l00042"></a>00042                 MessageBox.Show(<span class="stringliteral">"Wpisz poprawny adres"</span>);
+<a name="l00043"></a>00043                 <span class="keywordflow">return</span>;
+<a name="l00044"></a>00044             }
+<a name="l00045"></a>00045             <span class="keywordflow">try</span>
+<a name="l00046"></a>00046             {
+<a name="l00047"></a>00047                 Int32.Parse(textBox2.Text);
+<a name="l00048"></a>00048             }
+<a name="l00049"></a>00049             <span class="keywordflow">catch</span>
+<a name="l00050"></a>00050             {
+<a name="l00051"></a>00051                 MessageBox.Show(<span class="stringliteral">"Wpisz poprawny port"</span>);
+<a name="l00052"></a>00052             }
+<a name="l00053"></a>00053             log.zmianaSerwera(textBox1.Text, Int32.Parse(textBox2.Text));
+<a name="l00054"></a>00054             this.Close();
+<a name="l00055"></a>00055         }
+<a name="l00061"></a><a class="code" href="../../dd/dad/a00005.html#a3ef6122bae46a2c4f90562b75b060b5">00061</a>         <span class="keyword">private</span> <span class="keywordtype">void</span> button2_Click(<span class="keywordtype">object</span> sender, EventArgs e)
+<a name="l00062"></a>00062         {
+<a name="l00063"></a>00063             this.Close();
+<a name="l00064"></a>00064         }
+<a name="l00065"></a>00065     }
+<a name="l00066"></a>00066 }
+</pre></div></div>
+<hr size="1"><address style="text-align: right;"><small>Wygenerowano Thu Jun 4 19:42:01 2009 dla Ass8-Klient programem&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="../../doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
+</body>
+</html>
