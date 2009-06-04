@@ -1,6 +1,6 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-<title>Ass8: Plik źródłowy /home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/baza.hpp</title>
+<title>Ass8: Plik źródłowy baza.hpp</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css">
 <link href="../../doxygen.css" rel="stylesheet" type="text/css">
 </head><body>
@@ -20,7 +20,7 @@
       <li><a href="../../globals.html"><span>Składowe&nbsp;plików</span></a></li>
     </ul>
   </div>
-<h1>/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/baza.hpp</h1><a href="../../de/d5e/a00007.html">Idź do dokumentacji tego pliku.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#ifndef BAZA_HPP</span>
+<h1>baza.hpp</h1><a href="../../de/d5e/a00007.html">Idź do dokumentacji tego pliku.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#ifndef BAZA_HPP</span>
 <a name="l00002"></a>00002 <span class="preprocessor"></span><span class="preprocessor">#define BAZA_HPP</span>
 <a name="l00003"></a>00003 <span class="preprocessor"></span><span class="preprocessor">#include &lt;string&gt;</span>
 <a name="l00004"></a>00004 <span class="preprocessor">#include &lt;mysql++.h&gt;</span>
@@ -35,19 +35,19 @@
 <a name="l00015"></a>00015         std::string <a class="code" href="../../d8/d84/a00001.html#a09b37e4665bd7b2f2b8b54f8120f5be" title="Pobiera hasło uzytkownika z bazy.">get_passwd</a>(std::string login);
 <a name="l00017"></a><a class="code" href="../../d8/d84/a00001.html#8edd83a7fa98b203a1ab58157a1660a4">00017</a>         <a class="code" href="../../d8/d84/a00001.html#8edd83a7fa98b203a1ab58157a1660a4" title="Konstruktor pusty.">Baza</a>(){};
 <a name="l00019"></a>00019         <span class="keywordtype">void</span> <a class="code" href="../../d8/d84/a00001.html#bef61cc396e46d347a47c75e9ef8dfde" title="Łaczy się z bazą damych.">connect</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *server, <span class="keyword">const</span> <span class="keywordtype">char</span> *login, <span class="keyword">const</span> <span class="keywordtype">char</span> *pass, <span class="keyword">const</span> <span class="keywordtype">char</span> *db);
-<a name="l00021"></a>00021         mysqlpp::StoreQueryResult <a class="code" href="../../d8/d84/a00001.html#02db3388d088212bd443ee39998b5cf8" title="Pobiera listę plików z bazy na podstawie ID uzytkownika.">getFilesList</a>(<span class="keywordtype">int</span> user_id);
-<a name="l00023"></a>00023         mysqlpp::StoreQueryResult <a class="code" href="../../d8/d84/a00001.html#02db3388d088212bd443ee39998b5cf8" title="Pobiera listę plików z bazy na podstawie ID uzytkownika.">getFilesList</a>(std::string user);
-<a name="l00025"></a>00025         mysqlpp::StoreQueryResult <a class="code" href="../../d8/d84/a00001.html#e4a033a65cb585aa91c15fd8b8fde764" title="Podobnie jak getFilesList tylko ze pobiera informację o jednym pliku.">getFileInfo</a>(std::string file, std::string user);
-<a name="l00027"></a>00027         mysqlpp::StoreQueryResult <a class="code" href="../../d8/d84/a00001.html#e4a033a65cb585aa91c15fd8b8fde764" title="Podobnie jak getFilesList tylko ze pobiera informację o jednym pliku.">getFileInfo</a>(std::string file, <span class="keywordtype">int</span> user_id);
+<a name="l00021"></a>00021         mysqlpp::StoreQueryResult <a class="code" href="../../d8/d84/a00001.html#a391c1fd3cb3f0b178ceeed9e4d8652e" title="Pobiera listę plików z bazy na podstawie ID uzytkownika.">getFilesList</a>(<span class="keywordtype">int</span> user_id, <span class="keywordtype">char</span> uprawnienia);
+<a name="l00023"></a>00023         mysqlpp::StoreQueryResult <a class="code" href="../../d8/d84/a00001.html#a391c1fd3cb3f0b178ceeed9e4d8652e" title="Pobiera listę plików z bazy na podstawie ID uzytkownika.">getFilesList</a>(std::string user, <span class="keywordtype">char</span> uprawnienia);
+<a name="l00025"></a>00025         mysqlpp::StoreQueryResult <a class="code" href="../../d8/d84/a00001.html#bc2479ccfcd28a0d2f7f303d202abfde" title="Podobnie jak getFilesList tylko ze pobiera informację o jednym pliku.">getFileInfo</a>(std::string file, std::string user, <span class="keywordtype">char</span> uprawnienia);
+<a name="l00027"></a>00027         mysqlpp::StoreQueryResult <a class="code" href="../../d8/d84/a00001.html#bc2479ccfcd28a0d2f7f303d202abfde" title="Podobnie jak getFilesList tylko ze pobiera informację o jednym pliku.">getFileInfo</a>(std::string file, <span class="keywordtype">int</span> user_id, <span class="keywordtype">char</span> uprawnienia);
 <a name="l00029"></a>00029         <span class="keywordtype">int</span> <a class="code" href="../../d8/d84/a00001.html#65054f08c8fd7c600f6c2fe2c7f61a43" title="Pobiera id uzytkownika &amp;#39;user&amp;#39;.">getUserId</a>(std::string user);
-<a name="l00037"></a>00037         <span class="keywordtype">char</span> <a class="code" href="../../d8/d84/a00001.html#71ac41633bfb8e4b854aaa8281aac24c">firends</a>(std::string user1, std::string user2);
-<a name="l00039"></a>00039         <span class="keywordtype">bool</span> <a class="code" href="../../d8/d84/a00001.html#abbda65be49dfb28b1a578d0383599fa" title="Dodaje plik do bazy danych.">addFile</a>(std::string nazwa, std::string konto, <span class="keywordtype">int</span> wielkosc, std::string hash=<span class="stringliteral">"-1"</span>, <span class="keywordtype">int</span> prawa=-1, <span class="keywordtype">int</span> data=-1);
-<a name="l00045"></a>00045         <span class="keywordtype">bool</span> <a class="code" href="../../d8/d84/a00001.html#7161c573401166cc5f7d98ae6f335b44">rmFile</a>(std::string nazwa, std::string konto, std::string hash);
-<a name="l00046"></a>00046 };
-<a name="l00047"></a>00047 
-<a name="l00048"></a>00048 <span class="preprocessor">#endif//BAZA_HPP</span>
+<a name="l00039"></a>00039         <span class="keywordtype">char</span> <a class="code" href="../../d8/d84/a00001.html#170c8dad434281805524834ace0a3109">friends</a>(std::string user1, std::string user2);
+<a name="l00041"></a>00041         <span class="keywordtype">bool</span> <a class="code" href="../../d8/d84/a00001.html#abbda65be49dfb28b1a578d0383599fa" title="Dodaje plik do bazy danych.">addFile</a>(std::string nazwa, std::string konto, <span class="keywordtype">int</span> wielkosc, std::string hash=<span class="stringliteral">"-1"</span>, <span class="keywordtype">int</span> prawa=-1, <span class="keywordtype">int</span> data=-1);
+<a name="l00047"></a>00047         <span class="keywordtype">bool</span> <a class="code" href="../../d8/d84/a00001.html#7161c573401166cc5f7d98ae6f335b44">rmFile</a>(std::string nazwa, std::string konto, std::string hash);
+<a name="l00048"></a>00048 };
+<a name="l00049"></a>00049 
+<a name="l00050"></a>00050 <span class="preprocessor">#endif//BAZA_HPP</span>
 </pre></div></div>
-<hr size="1"><address style="text-align: right;"><small>Wygenerowano Mon Jun 1 13:41:51 2009 dla Ass8 programem&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Wygenerowano Thu Jun 4 15:29:41 2009 dla Ass8 programem&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="../../doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

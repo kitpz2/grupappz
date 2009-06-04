@@ -13,17 +13,17 @@ std::string \hyperlink{a00001_a09b37e4665bd7b2f2b8b54f8120f5be}{get\_\-passwd} (
 \begin{CompactList}\small\item\em Konstruktor pusty. \item\end{CompactList}\item 
 void \hyperlink{a00001_bef61cc396e46d347a47c75e9ef8dfde}{connect} (const char $\ast$server, const char $\ast$login, const char $\ast$pass, const char $\ast$db)
 \begin{CompactList}\small\item\em Łaczy się z bazą damych. \item\end{CompactList}\item 
-mysqlpp::StoreQueryResult \hyperlink{a00001_02db3388d088212bd443ee39998b5cf8}{getFilesList} (int user\_\-id)
+mysqlpp::StoreQueryResult \hyperlink{a00001_a391c1fd3cb3f0b178ceeed9e4d8652e}{getFilesList} (int user\_\-id, char uprawnienia)
 \begin{CompactList}\small\item\em Pobiera listę plików z bazy na podstawie ID uzytkownika. \item\end{CompactList}\item 
-mysqlpp::StoreQueryResult \hyperlink{a00001_2eace36725672b3a4ce639f91fe7d9bd}{getFilesList} (std::string user)
-\begin{CompactList}\small\item\em Najpierw wywołuje \hyperlink{a00001_65054f08c8fd7c600f6c2fe2c7f61a43}{getUserId()} potem z id otrzymanym z tamtąd wywołuje \hyperlink{a00001_02db3388d088212bd443ee39998b5cf8}{getFilesList(int user\_\-id)};. \item\end{CompactList}\item 
-mysqlpp::StoreQueryResult \hyperlink{a00001_e4a033a65cb585aa91c15fd8b8fde764}{getFileInfo} (std::string file, std::string user)
+mysqlpp::StoreQueryResult \hyperlink{a00001_a90465dbd3a416904aee22161a96cde2}{getFilesList} (std::string user, char uprawnienia)
+\begin{CompactList}\small\item\em Najpierw wywołuje \hyperlink{a00001_65054f08c8fd7c600f6c2fe2c7f61a43}{getUserId()} potem z id otrzymanym z tamtąd wywołuje getFilesList(int user\_\-id);. \item\end{CompactList}\item 
+mysqlpp::StoreQueryResult \hyperlink{a00001_bc2479ccfcd28a0d2f7f303d202abfde}{getFileInfo} (std::string file, std::string user, char uprawnienia)
 \begin{CompactList}\small\item\em Podobnie jak getFilesList tylko ze pobiera informację o jednym pliku. \item\end{CompactList}\item 
-mysqlpp::StoreQueryResult \hyperlink{a00001_1d1cfca062ab3117b2b97281df012823}{getFileInfo} (std::string file, int user\_\-id)
+mysqlpp::StoreQueryResult \hyperlink{a00001_77b0a90456f585f9b21e7b42c9869047}{getFileInfo} (std::string file, int user\_\-id, char uprawnienia)
 \item 
 int \hyperlink{a00001_65054f08c8fd7c600f6c2fe2c7f61a43}{getUserId} (std::string user)
 \begin{CompactList}\small\item\em Pobiera id uzytkownika 'user'. \item\end{CompactList}\item 
-char \hyperlink{a00001_71ac41633bfb8e4b854aaa8281aac24c}{firends} (std::string user1, std::string user2)
+char \hyperlink{a00001_170c8dad434281805524834ace0a3109}{friends} (std::string user1, std::string user2)
 \item 
 bool \hyperlink{a00001_abbda65be49dfb28b1a578d0383599fa}{addFile} (std::string nazwa, std::string konto, int wielkosc, std::string hash=\char`\"{}-1\char`\"{}, int prawa=-1, int data=-1)
 \begin{CompactList}\small\item\em Dodaje plik do bazy danych. \item\end{CompactList}\item 
@@ -67,7 +67,7 @@ Dodaje plik do bazy danych.
 
 
 
-Definicja w linii 239 pliku baza.cpp.
+Definicja w linii 236 pliku baza.cpp.
 
 Oto graf wywołań dla tej funkcji:\nopagebreak
 \begin{figure}[H]
@@ -98,11 +98,11 @@ Here is the caller graph for this function:\nopagebreak
 \includegraphics[width=118pt]{d8/d84/a00001_bef61cc396e46d347a47c75e9ef8dfde_icgraph}
 \end{center}
 \end{figure}
-\hypertarget{a00001_71ac41633bfb8e4b854aaa8281aac24c}{
-\index{Baza@{Baza}!firends@{firends}}
-\index{firends@{firends}!Baza@{Baza}}
-\subsubsection[{firends}]{\setlength{\rightskip}{0pt plus 5cm}char Baza::firends (std::string {\em user1}, \/  std::string {\em user2})}}
-\label{d8/d84/a00001_71ac41633bfb8e4b854aaa8281aac24c}
+\hypertarget{a00001_170c8dad434281805524834ace0a3109}{
+\index{Baza@{Baza}!friends@{friends}}
+\index{friends@{friends}!Baza@{Baza}}
+\subsubsection[{friends}]{\setlength{\rightskip}{0pt plus 5cm}char Baza::friends (std::string {\em user1}, \/  std::string {\em user2})}}
+\label{d8/d84/a00001_170c8dad434281805524834ace0a3109}
 
 
 Funkcja sprawdzająca czy użytkownicy są znajomymi \begin{Desc}
@@ -111,7 +111,27 @@ Funkcja sprawdzająca czy użytkownicy są znajomymi \begin{Desc}
 \item[{\em user1}]Użytkownik pytający \item[{\em user2}]Użytkownik sprawdzany \end{description}
 \end{Desc}
 \begin{Desc}
-\item[Zwraca:]char przedstawiający informację o rodzaju znajomości:$\backslash$ \end{Desc}
+\item[Zwraca:]char przedstawiający informację o rodzaju znajomości: 1 - użytkownik sprawdzany udostępnia pliku użytkownikowi pytającemu 2 - użytkownik sprawdzany nie udostępnia plików użytkownikowi pytającemu 0 - to są pliki tego użytkownika \end{Desc}
+
+
+Definicja w linii 313 pliku baza.cpp.
+
+Oto graf wywołań dla tej funkcji:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=121pt]{d8/d84/a00001_170c8dad434281805524834ace0a3109_cgraph}
+\end{center}
+\end{figure}
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=115pt]{d8/d84/a00001_170c8dad434281805524834ace0a3109_icgraph}
+\end{center}
+\end{figure}
 \hypertarget{a00001_a09b37e4665bd7b2f2b8b54f8120f5be}{
 \index{Baza@{Baza}!get\_\-passwd@{get\_\-passwd}}
 \index{get\_\-passwd@{get\_\-passwd}!Baza@{Baza}}
@@ -123,73 +143,82 @@ Pobiera hasło uzytkownika z bazy.
 
 
 
-Definicja w linii 30 pliku baza.cpp.\hypertarget{a00001_1d1cfca062ab3117b2b97281df012823}{
+Definicja w linii 28 pliku baza.cpp.
+
+Oto graf wywołań dla tej funkcji:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=132pt]{d8/d84/a00001_a09b37e4665bd7b2f2b8b54f8120f5be_cgraph}
+\end{center}
+\end{figure}
+\hypertarget{a00001_77b0a90456f585f9b21e7b42c9869047}{
 \index{Baza@{Baza}!getFileInfo@{getFileInfo}}
 \index{getFileInfo@{getFileInfo}!Baza@{Baza}}
-\subsubsection[{getFileInfo}]{\setlength{\rightskip}{0pt plus 5cm}mysqlpp::StoreQueryResult Baza::getFileInfo (std::string {\em file}, \/  int {\em user\_\-id})}}
-\label{d8/d84/a00001_1d1cfca062ab3117b2b97281df012823}
+\subsubsection[{getFileInfo}]{\setlength{\rightskip}{0pt plus 5cm}mysqlpp::StoreQueryResult Baza::getFileInfo (std::string {\em file}, \/  int {\em user\_\-id}, \/  char {\em uprawnienia})}}
+\label{d8/d84/a00001_77b0a90456f585f9b21e7b42c9869047}
 
 
 
 
-Definicja w linii 201 pliku baza.cpp.\hypertarget{a00001_e4a033a65cb585aa91c15fd8b8fde764}{
+Definicja w linii 198 pliku baza.cpp.\hypertarget{a00001_bc2479ccfcd28a0d2f7f303d202abfde}{
 \index{Baza@{Baza}!getFileInfo@{getFileInfo}}
 \index{getFileInfo@{getFileInfo}!Baza@{Baza}}
-\subsubsection[{getFileInfo}]{\setlength{\rightskip}{0pt plus 5cm}mysqlpp::StoreQueryResult Baza::getFileInfo (std::string {\em file}, \/  std::string {\em user})}}
-\label{d8/d84/a00001_e4a033a65cb585aa91c15fd8b8fde764}
+\subsubsection[{getFileInfo}]{\setlength{\rightskip}{0pt plus 5cm}mysqlpp::StoreQueryResult Baza::getFileInfo (std::string {\em file}, \/  std::string {\em user}, \/  char {\em uprawnienia})}}
+\label{d8/d84/a00001_bc2479ccfcd28a0d2f7f303d202abfde}
 
 
 Podobnie jak getFilesList tylko ze pobiera informację o jednym pliku. 
 
 
 
-Definicja w linii 174 pliku baza.cpp.
+Definicja w linii 173 pliku baza.cpp.
 
 Oto graf wywołań dla tej funkcji:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=129pt]{d8/d84/a00001_e4a033a65cb585aa91c15fd8b8fde764_cgraph}
+\includegraphics[width=129pt]{d8/d84/a00001_bc2479ccfcd28a0d2f7f303d202abfde_cgraph}
 \end{center}
 \end{figure}
-\hypertarget{a00001_2eace36725672b3a4ce639f91fe7d9bd}{
+\hypertarget{a00001_a90465dbd3a416904aee22161a96cde2}{
 \index{Baza@{Baza}!getFilesList@{getFilesList}}
 \index{getFilesList@{getFilesList}!Baza@{Baza}}
-\subsubsection[{getFilesList}]{\setlength{\rightskip}{0pt plus 5cm}mysqlpp::StoreQueryResult Baza::getFilesList (std::string {\em user})}}
-\label{d8/d84/a00001_2eace36725672b3a4ce639f91fe7d9bd}
+\subsubsection[{getFilesList}]{\setlength{\rightskip}{0pt plus 5cm}mysqlpp::StoreQueryResult Baza::getFilesList (std::string {\em user}, \/  char {\em uprawnienia})}}
+\label{d8/d84/a00001_a90465dbd3a416904aee22161a96cde2}
 
 
-Najpierw wywołuje \hyperlink{a00001_65054f08c8fd7c600f6c2fe2c7f61a43}{getUserId()} potem z id otrzymanym z tamtąd wywołuje \hyperlink{a00001_02db3388d088212bd443ee39998b5cf8}{getFilesList(int user\_\-id)};. 
+Najpierw wywołuje \hyperlink{a00001_65054f08c8fd7c600f6c2fe2c7f61a43}{getUserId()} potem z id otrzymanym z tamtąd wywołuje getFilesList(int user\_\-id);. 
 
 Zapytanie o listę plików uzytkownika o nazwie podanej w zmiennej user. 
 
-Definicja w linii 97 pliku baza.cpp.
+Definicja w linii 94 pliku baza.cpp.
 
 Oto graf wywołań dla tej funkcji:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=136pt]{d8/d84/a00001_2eace36725672b3a4ce639f91fe7d9bd_cgraph}
+\includegraphics[width=136pt]{d8/d84/a00001_a90465dbd3a416904aee22161a96cde2_cgraph}
 \end{center}
 \end{figure}
-\hypertarget{a00001_02db3388d088212bd443ee39998b5cf8}{
+\hypertarget{a00001_a391c1fd3cb3f0b178ceeed9e4d8652e}{
 \index{Baza@{Baza}!getFilesList@{getFilesList}}
 \index{getFilesList@{getFilesList}!Baza@{Baza}}
-\subsubsection[{getFilesList}]{\setlength{\rightskip}{0pt plus 5cm}mysqlpp::StoreQueryResult Baza::getFilesList (int {\em user\_\-id})}}
-\label{d8/d84/a00001_02db3388d088212bd443ee39998b5cf8}
+\subsubsection[{getFilesList}]{\setlength{\rightskip}{0pt plus 5cm}mysqlpp::StoreQueryResult Baza::getFilesList (int {\em user\_\-id}, \/  char {\em uprawnienia})}}
+\label{d8/d84/a00001_a391c1fd3cb3f0b178ceeed9e4d8652e}
 
 
 Pobiera listę plików z bazy na podstawie ID uzytkownika. 
 
 Zapytanie o listę plikow uzytkownika po id uzytkownika z bazy accounts\_\-konto. 
 
-Definicja w linii 61 pliku baza.cpp.
+Definicja w linii 58 pliku baza.cpp.
 
 Here is the caller graph for this function:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=136pt]{d8/d84/a00001_02db3388d088212bd443ee39998b5cf8_icgraph}
+\includegraphics[width=136pt]{d8/d84/a00001_a391c1fd3cb3f0b178ceeed9e4d8652e_icgraph}
 \end{center}
 \end{figure}
 \hypertarget{a00001_65054f08c8fd7c600f6c2fe2c7f61a43}{
@@ -203,13 +232,13 @@ Pobiera id uzytkownika 'user'.
 
 Zapytanie o ID uzytkownika o loginie 'user' ale nie o id z auth\_\-user tylko o id z accounts\_\-konto. 
 
-Definicja w linii 126 pliku baza.cpp.
+Definicja w linii 120 pliku baza.cpp.
 
 Here is the caller graph for this function:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=132pt]{d8/d84/a00001_65054f08c8fd7c600f6c2fe2c7f61a43_icgraph}
+\includegraphics[width=188pt]{d8/d84/a00001_65054f08c8fd7c600f6c2fe2c7f61a43_icgraph}
 \end{center}
 \end{figure}
 \hypertarget{a00001_7161c573401166cc5f7d98ae6f335b44}{
@@ -228,7 +257,7 @@ Usuwa plik z bazy \begin{Desc}
 \item[Zwraca:]czy operacja zakończona powodzeniem \end{Desc}
 
 
-Definicja w linii 297 pliku baza.cpp.
+Definicja w linii 284 pliku baza.cpp.
 
 Oto graf wywołań dla tej funkcji:\nopagebreak
 \begin{figure}[H]
@@ -255,5 +284,5 @@ Definicja w linii 12 pliku baza.hpp.
 
 Dokumentacja dla tej klasy została wygenerowana z plików:\begin{CompactItemize}
 \item 
-/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/\hyperlink{a00007}{baza.hpp}\item 
-/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/\hyperlink{a00006}{baza.cpp}\end{CompactItemize}
+\hyperlink{a00007}{baza.hpp}\item 
+\hyperlink{a00006}{baza.cpp}\end{CompactItemize}

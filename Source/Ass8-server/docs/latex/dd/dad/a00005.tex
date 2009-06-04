@@ -14,7 +14,7 @@ Diagram współpracy dla parser:\nopagebreak
 \subsection*{Metody publiczne}
 \begin{CompactItemize}
 \item 
-\hyperlink{a00005_3a237071a3ab764cd61bc53df9dd4f46}{parser} (tcp::iostream \&\hyperlink{a00005_f95fb0cac229181329fa61f7bc72c65b}{stream}, const char $\ast$server, const char $\ast$user, const char $\ast$pass, const char $\ast$db)
+\hyperlink{a00005_9f881c43df7d37da2d6dee1e89ee5f1f}{parser} (tcp::socket \&\hyperlink{a00005_835f5d6b548278a3e00d2c423336e903}{socket}, const char $\ast$server, const char $\ast$user, const char $\ast$pass, const char $\ast$db)
 \item 
 void \hyperlink{a00005_7793913f528921aa22c4b6cc259a0a14}{start} ()
 \end{CompactItemize}
@@ -37,11 +37,11 @@ void \hyperlink{a00005_96f941201d172eeaf2fb4d8429edfc0c}{lista\_\-plikow} (std::
 \begin{CompactList}\small\item\em Wysyła listę plików użytkownika 'uzytkownik'. \item\end{CompactList}\item 
 void \hyperlink{a00005_4e084ae10e8498b171c44a0138597d2e}{odbieranie\_\-plikow} (xmlpp::TextReader \&reader, std::string uzytkownik)
 \begin{CompactList}\small\item\em Odbiera plik od użytkownika i umieszcza na serwerze. \item\end{CompactList}\item 
-void \hyperlink{a00005_cc293df6220f5030fab5a7ee9cf8b1fa}{wysylanie\_\-plikow} (xmlpp::TextReader \&reader, std::string uzytkownil)
-\begin{CompactList}\small\item\em Odbiera od klienta informację jakie on chce pobrać pliki i przekazuje kazdy plik pojedynczo do \hyperlink{a00005_771537f72f9e6a9cdb1d2961828eb66b}{wyslij\_\-plik()}. \item\end{CompactList}\item 
+void \hyperlink{a00005_0315a358465b40be344fddc7926c1316}{wysylanie\_\-plikow} (xmlpp::TextReader \&reader, std::string uzytkownik, char uprawnienia)
+\begin{CompactList}\small\item\em Odbiera od klienta informację jakie on chce pobrać pliki i przekazuje kazdy plik pojedynczo do \hyperlink{a00005_e726284253cddec4b4b547a9d0254380}{wyslij\_\-plik()}. \item\end{CompactList}\item 
 void \hyperlink{a00005_7ef79f818429f70b9cb35c0a33b59a10}{usun\_\-pliki} (xmlpp::TextReader \&reader, std::string uzytkownik)
 \begin{CompactList}\small\item\em Usuwa plik z serwera (jeszcze nie zaimplementowane). \item\end{CompactList}\item 
-void \hyperlink{a00005_771537f72f9e6a9cdb1d2961828eb66b}{wyslij\_\-plik} (std::string plik, std::string uzytkownik)
+void \hyperlink{a00005_e726284253cddec4b4b547a9d0254380}{wyslij\_\-plik} (std::string plik, std::string uzytkownik, char uprawnienia)
 \begin{CompactList}\small\item\em wysyła plik podany w argumencie \item\end{CompactList}\item 
 std::vector$<$ std::string $>$ \hyperlink{a00005_05500b74ebdcc1578ead4c31fca73a5b}{pobieranie\_\-listy\_\-plikow} (xmlpp::TextReader \&reader)
 \begin{CompactList}\small\item\em Przygotowuje listę plikow do wysłania do klienta. \item\end{CompactList}\item 
@@ -50,8 +50,8 @@ std::string \hyperlink{a00005_272ecc740702b4f48efdb8469b414b24}{czytanie\_\-z\_\
 \subsection*{Atrybuty prywatne}
 \begin{CompactItemize}
 \item 
-tcp::iostream \& \hyperlink{a00005_f95fb0cac229181329fa61f7bc72c65b}{stream}
-\begin{CompactList}\small\item\em Stream uzywany do odbierania i wysyłania informacji. \item\end{CompactList}\item 
+tcp::socket \& \hyperlink{a00005_835f5d6b548278a3e00d2c423336e903}{socket}
+\begin{CompactList}\small\item\em socket uzywany do odbierania i wysyłania informacji \item\end{CompactList}\item 
 std::string \hyperlink{a00005_8bb124a2f285074773d1b0ee62cf0cc0}{login}
 \begin{CompactList}\small\item\em Zmienna przechowująca login uzytkownika. \item\end{CompactList}\item 
 std::string \hyperlink{a00005_2fc04d16e2ba688c5b306a2ad6770039}{haslo}
@@ -67,25 +67,25 @@ char \hyperlink{a00005_2e7575bebca6d0fd9f5a8bfe6fc652d0}{bufor} \mbox{[}BUFSIZE\
 \subsection{Opis szczegółowy}
 
 
-Definicja w linii 27 pliku parser.hpp.
+Definicja w linii 29 pliku parser.hpp.
 
 \subsection{Dokumentacja konstruktora i destruktora}
-\hypertarget{a00005_3a237071a3ab764cd61bc53df9dd4f46}{
+\hypertarget{a00005_9f881c43df7d37da2d6dee1e89ee5f1f}{
 \index{parser@{parser}!parser@{parser}}
 \index{parser@{parser}!parser@{parser}}
-\subsubsection[{parser}]{\setlength{\rightskip}{0pt plus 5cm}parser::parser (tcp::iostream \& {\em stream}, \/  const char $\ast$ {\em server}, \/  const char $\ast$ {\em user}, \/  const char $\ast$ {\em pass}, \/  const char $\ast$ {\em db})\hspace{0.3cm}{\tt  \mbox{[}inline\mbox{]}}}}
-\label{dd/dad/a00005_3a237071a3ab764cd61bc53df9dd4f46}
+\subsubsection[{parser}]{\setlength{\rightskip}{0pt plus 5cm}parser::parser (tcp::socket \& {\em socket}, \/  const char $\ast$ {\em server}, \/  const char $\ast$ {\em user}, \/  const char $\ast$ {\em pass}, \/  const char $\ast$ {\em db})\hspace{0.3cm}{\tt  \mbox{[}inline\mbox{]}}}}
+\label{dd/dad/a00005_9f881c43df7d37da2d6dee1e89ee5f1f}
 
 
 
 
-Definicja w linii 83 pliku parser.hpp.
+Definicja w linii 85 pliku parser.hpp.
 
 Oto graf wywołań dla tej funkcji:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=118pt]{dd/dad/a00005_3a237071a3ab764cd61bc53df9dd4f46_cgraph}
+\includegraphics[width=118pt]{dd/dad/a00005_9f881c43df7d37da2d6dee1e89ee5f1f_cgraph}
 \end{center}
 \end{figure}
 
@@ -263,7 +263,7 @@ Funkcja wysyłająca odpowiedź po prośbie o zalogowanie
 
 Funkcja wywoływana tylko raz, rozpoczyna pobieranie informacji z SOCKETA i przekazuje je parserowi
 
-Jeżeli użytkownik to \char`\"{}.\char`\"{} to znaczy ze żadanie jest o liste plików użytkownika zalogowanego
+Jeżeli użytkownik to \char`\"{}.\char`\"{} to znaczy ze żądanie jest o liste plików użytkownika zalogowanego
 
 Prośba o listę plików użytkownika uzytkownik 
 
@@ -273,7 +273,7 @@ Oto graf wywołań dla tej funkcji:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=141pt]{dd/dad/a00005_9ce7290217bd14e4efcbe2cad32ccf95_cgraph}
+\includegraphics[width=203pt]{dd/dad/a00005_9ce7290217bd14e4efcbe2cad32ccf95_cgraph}
 \end{center}
 \end{figure}
 \hypertarget{a00005_05500b74ebdcc1578ead4c31fca73a5b}{
@@ -337,23 +337,23 @@ Here is the caller graph for this function:\nopagebreak
 \includegraphics[width=115pt]{dd/dad/a00005_2f6aceaa94a28fc699e4f824f7622b51_icgraph}
 \end{center}
 \end{figure}
-\hypertarget{a00005_771537f72f9e6a9cdb1d2961828eb66b}{
+\hypertarget{a00005_e726284253cddec4b4b547a9d0254380}{
 \index{parser@{parser}!wyslij\_\-plik@{wyslij\_\-plik}}
 \index{wyslij\_\-plik@{wyslij\_\-plik}!parser@{parser}}
-\subsubsection[{wyslij\_\-plik}]{\setlength{\rightskip}{0pt plus 5cm}void parser::wyslij\_\-plik (std::string {\em plik}, \/  std::string {\em uzytkownik})\hspace{0.3cm}{\tt  \mbox{[}private\mbox{]}}}}
-\label{dd/dad/a00005_771537f72f9e6a9cdb1d2961828eb66b}
+\subsubsection[{wyslij\_\-plik}]{\setlength{\rightskip}{0pt plus 5cm}void parser::wyslij\_\-plik (std::string {\em plik}, \/  std::string {\em uzytkownik}, \/  char {\em uprawnienia})\hspace{0.3cm}{\tt  \mbox{[}private\mbox{]}}}}
+\label{dd/dad/a00005_e726284253cddec4b4b547a9d0254380}
 
 
 wysyła plik podany w argumencie 
 
-\hypertarget{a00005_cc293df6220f5030fab5a7ee9cf8b1fa}{
+\hypertarget{a00005_0315a358465b40be344fddc7926c1316}{
 \index{parser@{parser}!wysylanie\_\-plikow@{wysylanie\_\-plikow}}
 \index{wysylanie\_\-plikow@{wysylanie\_\-plikow}!parser@{parser}}
-\subsubsection[{wysylanie\_\-plikow}]{\setlength{\rightskip}{0pt plus 5cm}void parser::wysylanie\_\-plikow (xmlpp::TextReader \& {\em reader}, \/  std::string {\em uzytkownil})\hspace{0.3cm}{\tt  \mbox{[}private\mbox{]}}}}
-\label{dd/dad/a00005_cc293df6220f5030fab5a7ee9cf8b1fa}
+\subsubsection[{wysylanie\_\-plikow}]{\setlength{\rightskip}{0pt plus 5cm}void parser::wysylanie\_\-plikow (xmlpp::TextReader \& {\em reader}, \/  std::string {\em uzytkownik}, \/  char {\em uprawnienia})\hspace{0.3cm}{\tt  \mbox{[}private\mbox{]}}}}
+\label{dd/dad/a00005_0315a358465b40be344fddc7926c1316}
 
 
-Odbiera od klienta informację jakie on chce pobrać pliki i przekazuje kazdy plik pojedynczo do \hyperlink{a00005_771537f72f9e6a9cdb1d2961828eb66b}{wyslij\_\-plik()}. 
+Odbiera od klienta informację jakie on chce pobrać pliki i przekazuje kazdy plik pojedynczo do \hyperlink{a00005_e726284253cddec4b4b547a9d0254380}{wyslij\_\-plik()}. 
 
 
 
@@ -361,7 +361,7 @@ Here is the caller graph for this function:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=140pt]{dd/dad/a00005_cc293df6220f5030fab5a7ee9cf8b1fa_icgraph}
+\includegraphics[width=140pt]{dd/dad/a00005_0315a358465b40be344fddc7926c1316_icgraph}
 \end{center}
 \end{figure}
 
@@ -378,7 +378,7 @@ Clasa obsługująca bazę danych.
 
 
 
-Definicja w linii 43 pliku parser.hpp.\hypertarget{a00005_2e7575bebca6d0fd9f5a8bfe6fc652d0}{
+Definicja w linii 45 pliku parser.hpp.\hypertarget{a00005_2e7575bebca6d0fd9f5a8bfe6fc652d0}{
 \index{parser@{parser}!bufor@{bufor}}
 \index{bufor@{bufor}!parser@{parser}}
 \subsubsection[{bufor}]{\setlength{\rightskip}{0pt plus 5cm}char {\bf parser::bufor}\mbox{[}BUFSIZE\mbox{]}\hspace{0.3cm}{\tt  \mbox{[}private\mbox{]}}}}
@@ -389,7 +389,7 @@ Bufor danych.
 
 
 
-Definicja w linii 41 pliku parser.hpp.\hypertarget{a00005_2fc04d16e2ba688c5b306a2ad6770039}{
+Definicja w linii 43 pliku parser.hpp.\hypertarget{a00005_2fc04d16e2ba688c5b306a2ad6770039}{
 \index{parser@{parser}!haslo@{haslo}}
 \index{haslo@{haslo}!parser@{parser}}
 \subsubsection[{haslo}]{\setlength{\rightskip}{0pt plus 5cm}std::string {\bf parser::haslo}\hspace{0.3cm}{\tt  \mbox{[}private\mbox{]}}}}
@@ -400,7 +400,7 @@ Zmienna przechowująca haslo (w przyszlosci hash hasla) uzytkownika.
 
 
 
-Definicja w linii 35 pliku parser.hpp.\hypertarget{a00005_aa8407d10d299b524fa2f74532e537ac}{
+Definicja w linii 37 pliku parser.hpp.\hypertarget{a00005_aa8407d10d299b524fa2f74532e537ac}{
 \index{parser@{parser}!id\_\-sesji@{id\_\-sesji}}
 \index{id\_\-sesji@{id\_\-sesji}!parser@{parser}}
 \subsubsection[{id\_\-sesji}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf parser::id\_\-sesji}\hspace{0.3cm}{\tt  \mbox{[}private\mbox{]}}}}
@@ -411,7 +411,7 @@ Aktualny ID sesji potrzebny pryz kazdym polaczneiu.
 
 
 
-Definicja w linii 39 pliku parser.hpp.\hypertarget{a00005_8bb124a2f285074773d1b0ee62cf0cc0}{
+Definicja w linii 41 pliku parser.hpp.\hypertarget{a00005_8bb124a2f285074773d1b0ee62cf0cc0}{
 \index{parser@{parser}!login@{login}}
 \index{login@{login}!parser@{parser}}
 \subsubsection[{login}]{\setlength{\rightskip}{0pt plus 5cm}std::string {\bf parser::login}\hspace{0.3cm}{\tt  \mbox{[}private\mbox{]}}}}
@@ -422,20 +422,20 @@ Zmienna przechowująca login uzytkownika.
 
 
 
-Definicja w linii 33 pliku parser.hpp.\hypertarget{a00005_f95fb0cac229181329fa61f7bc72c65b}{
-\index{parser@{parser}!stream@{stream}}
-\index{stream@{stream}!parser@{parser}}
-\subsubsection[{stream}]{\setlength{\rightskip}{0pt plus 5cm}tcp::iostream\& {\bf parser::stream}\hspace{0.3cm}{\tt  \mbox{[}private\mbox{]}}}}
-\label{dd/dad/a00005_f95fb0cac229181329fa61f7bc72c65b}
+Definicja w linii 35 pliku parser.hpp.\hypertarget{a00005_835f5d6b548278a3e00d2c423336e903}{
+\index{parser@{parser}!socket@{socket}}
+\index{socket@{socket}!parser@{parser}}
+\subsubsection[{socket}]{\setlength{\rightskip}{0pt plus 5cm}tcp::socket\& {\bf parser::socket}\hspace{0.3cm}{\tt  \mbox{[}private\mbox{]}}}}
+\label{dd/dad/a00005_835f5d6b548278a3e00d2c423336e903}
 
 
-Stream uzywany do odbierania i wysyłania informacji. 
+socket uzywany do odbierania i wysyłania informacji 
 
 
 
-Definicja w linii 31 pliku parser.hpp.
+Definicja w linii 33 pliku parser.hpp.
 
 Dokumentacja dla tej klasy została wygenerowana z plików:\begin{CompactItemize}
 \item 
-/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/\hyperlink{a00015}{parser.hpp}\item 
-/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/\hyperlink{a00014}{parser.cpp}\end{CompactItemize}
+\hyperlink{a00015}{parser.hpp}\item 
+\hyperlink{a00014}{parser.cpp}\end{CompactItemize}

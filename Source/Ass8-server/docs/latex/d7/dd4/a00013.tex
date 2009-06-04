@@ -1,75 +1,28 @@
 \hypertarget{a00013}{
-\section{Dokumentacja pliku /home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/main.cpp}
-\label{d7/dd4/a00013}\index{/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/main.cpp@{/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/main.cpp}}
+\section{Dokumentacja pliku md5wrapper.h}
+\label{d7/dd4/a00013}\index{md5wrapper.h@{md5wrapper.h}}
 }
-{\tt \#include $<$iostream$>$}\par
 {\tt \#include $<$string$>$}\par
-{\tt \#include $<$cstdio$>$}\par
-{\tt \#include $<$cstdlib$>$}\par
-{\tt \#include $<$sys/types.h$>$}\par
-{\tt \#include $<$unistd.h$>$}\par
-{\tt \#include $<$sys/wait.h$>$}\par
-{\tt \#include $<$boost/asio.hpp$>$}\par
-{\tt \#include $<$boost/thread/thread.hpp$>$}\par
-{\tt \#include $<$boost/bind.hpp$>$}\par
-{\tt \#include \char`\"{}version.h\char`\"{}}\par
-{\tt \#include \char`\"{}parser.hpp\char`\"{}}\par
 
 
-Wykres zależności załączania dla main.cpp:\nopagebreak
+Wykres zależności załączania dla md5wrapper.h:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=420pt]{d6/d97/a00045}
+\includegraphics[width=60pt]{d6/d97/a00045}
 \end{center}
 \end{figure}
-\subsection*{Funkcje}
+
+
+Ten wykres pokazuje, które pliki bezpośrednio lub pośrednio załączają ten plik:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=123pt]{d3/dea/a00046}
+\end{center}
+\end{figure}
+\subsection*{Komponenty}
 \begin{CompactItemize}
 \item 
-int \hyperlink{a00013_0ddf1224851353fc92bfbff6f499fa97}{main} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+class \hyperlink{a00004}{md5wrapper}
 \end{CompactItemize}
-
-
-\subsection{Dokumentacja funkcji}
-\hypertarget{a00013_0ddf1224851353fc92bfbff6f499fa97}{
-\index{main.cpp@{main.cpp}!main@{main}}
-\index{main@{main}!main.cpp@{main.cpp}}
-\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}int main (int {\em argc}, \/  char $\ast$ {\em argv}\mbox{[}$\,$\mbox{]})}}
-\label{d7/dd4/a00013_0ddf1224851353fc92bfbff6f499fa97}
-
-
-
-
-Zmienna przechowująca port na którym serwer nasłucuje
-
-Zmienne przechowujące parametry podłączenia do bazy danych
-
-Zmienna przechowująca nazwę bazy w bazie danych
-
-Jeżeli jest mniej niż 5 argumentów
-
-To kończymy program
-
-Potrzebne do połączenia z klientem
-
-Potrzebne do połączenia z klientem
-
-Potrzebne do połączenia z klientem
-
-Watek ktory bedzie usuwal skonczone forki
-
-Nieskonczona pętla
-
-Wyjście/Wejście socketa
-
-utworzenie parsera w forku (dla każdego klienta jeden taki jest tworzony); 
-
-Definicja w linii 30 pliku main.cpp.
-
-Oto graf wywołań dla tej funkcji:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=94pt]{d7/dd4/a00013_0ddf1224851353fc92bfbff6f499fa97_cgraph}
-\end{center}
-\end{figure}

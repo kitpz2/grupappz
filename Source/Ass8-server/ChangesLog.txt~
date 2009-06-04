@@ -1,4 +1,26 @@
+03 czerwiec 2009
+   released version 0.7.2 of Ass8-server
+
+     Change log:
+        -Removed: sieciowe stream'y
+        -Added: sockety
+        -Fixed: Wysyłanie pliku
+        -Fixed: Dodawnaie pliku
+        -Fixed: Parsownaie XML
+        -Fixed: Usuwanie z bazy danych
+
 02 czerwiec 2009
+   released version 0.7.2 of Ass8-server
+
+     Change log:
+        -Added: Dodatkowa obsługa znajomości
+        -Fixed: Usuwanie plików
+        -Fixed: Dodawanie plików
+        -Fixed: Operacje na bazie
+        -Updated: Przystosowanie do nowej bazy
+        -Updated: Aktualizacja dodawania i usuwania (nowa baza)
+
+02 czerwca 2009
    released version 0.7.2 of Ass8-server
 
      Change log:
@@ -6,7 +28,7 @@
         -Cleaned: Wywalone niepotrzebne komentarze i niektóre pozostałośi po starym kodzie
         -Updated: Aktualizacjia funkcji aby były zgodne z obsługą znajomości
 
-01 czerwiec 2009
+01 czerwca 2009
    released version 0.6.1 of Ass8-server
 
      Change log:
@@ -15,7 +37,7 @@
         -Added: Obsługa pobierania przez klienta i oglądania plików znajomyc
         -Fixed: Kolejne błędy poprawione skutecznie (mam nadzieję)
 
-29 maj 2009
+29 maja 2009
    released version 0.3.18 of Ass8-server
 
      Change log:
@@ -26,7 +48,7 @@
         -Removed: Sprawdzanie hasha przy odbiorze i wysyłaniu plików. (dopuki nie rozwiążemy problemu niekompatybilnych hashy)
         -Fixed: Pomniejsze błędy
 
-28 maj 2009
+28 maja 2009
    released version 0.3.18 of Ass8-server
 
      Change log:
@@ -37,7 +59,7 @@
         -Fixed: Obsługa bazy
         -Fixed: Parę pomniejszych błędów
 
-08 maj 2009
+08 maja 2009
    released version 0.3.17 of Ass8-server
 
      Change log:
@@ -46,7 +68,7 @@
         -Fixed: dodawanie plikow do bazy (ponownie)
         -Fixed: wiele pomniejszych
 
-08 maj 2009
+08 maja 2009
    released version 0.3.16 of Ass8-server
 
      Change log:
@@ -54,7 +76,7 @@
         -Added: Kolejne informacje uzyteczne przy odrobaczaniu
         -Fixed: Parę małych poprawek
 
-08 maj 2009
+08 maja 2009
    released version 0.1.10 of Ass8-server
 
      Change log:
@@ -64,7 +86,7 @@
         -Fixed: wiele pomniejszych bledow
         -Removed: przywitanie serwera
 
-07 maj 2009
+07 maja 2009
    released version 0.0.9 of Ass8-server
 
      Change log:
@@ -72,7 +94,7 @@
         -Added: Umieszczanie pliku w bazie
         -Added: więcej informacji przy debugowaniu
 
-07 maj 2009
+07 maja 2009
    released version 0.0.7 of Ass8-server
 
      Change log:
@@ -82,7 +104,7 @@
         -Added: Logowanie
         -Added: Wiele wiecej
 
-02 maj 2009
+02 maja 2009
    released version 0.0.6 of Ass8-server
 
      Change log:
@@ -90,7 +112,7 @@
         -Added: fork()
         -Added: watek usuwający zombie
 
-02 maj 2009
+02 maja 2009
    released version 0.0.1 of Ass8-server
 
      Change log:

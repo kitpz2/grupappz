@@ -26,7 +26,7 @@ bool parser::parsuj(std::string &do_parsowania)
         {
             info("reader.read()");
             info2("reader.get_name()",reader.get_name().c_str());
-            if(reader.get_name().compare("#text")==0)
+            if (reader.get_name().compare("#text")==0)
                 continue;
             else if (reader.get_name().compare("logowanie")==0) ///Logowanie - Trzeba pamiętać że parser umieszcza dodatkowo spację na końcu sparsowanych stringów
             {
@@ -151,11 +151,11 @@ bool parser::parsuj(std::string &do_parsowania)
                                 usun_pliki(reader,login);
                                 break;
                             default:
-                                #ifdef DEBUG
-                                    char te[1024];
-                                    sprintf(te,"Odebrano kod operacji: %d",operacja);
-                                    info(te);
-                                #endif//DEBUG
+#ifdef DEBUG
+                                char te[1024];
+                                sprintf(te,"Odebrano kod operacji: %d",operacja);
+                                info(te);
+#endif//DEBUG
                                 info("Błędny kod operacji");
                                 Odpowiedz(400);
                                 break;
@@ -207,6 +207,7 @@ bool parser::parsuj(std::string &do_parsowania)
 void parser::wyslij(std::string w)///Funkcja wysyłająca dane przez SOCKET
 {
     //w.append("\r\n");
+    w.append("#");
     info2("Wysylam",w.c_str());
 
     try
@@ -276,7 +277,7 @@ void parser::Odpowiedz(int nr_odpowiedzi,int nr_operacji,std::string odp)
 void parser::odpowiedz_login(int i)///Funkcja wysyłająca odpowiedź po prośbie o zalogowanie
 {
     sprintf(bufor,"<?xml version=\"1.0\"?>\r\n\
-        <serwer odpowiedz=\"%d\" sesja=\"%u\" wersja=\"%s %s\"/>",i,id_sesji,"-1","aa");//AutoVersion::FULLVERSION_STRING,AutoVersion::STATUS_SHORT);
+        <serwer odpowiedz=\"%d\" sesja=\"%u\" wersja=\"%s %s\"/>",i,id_sesji,AutoVersion::FULLVERSION_STRING,AutoVersion::STATUS_SHORT);//AutoVersion::FULLVERSION_STRING,AutoVersion::STATUS_SHORT);
     wyslij(bufor);
     if (i!=0)
     {
@@ -572,6 +573,32 @@ void parser::odbieranie_plikow(xmlpp::TextReader &reader, std::string uzytkownik
                             }
                             else
                             {
+                                try
+                                {
+                                    size_t found;
+
+                                    found=sciezka.find_first_of("\\");
+                                    while (found!=std::string::npos)
+                                    {
+                                        sciezka[found]='/';
+                                        found=sciezka.find_first_of("\\",found+1);
+                                    }
+                                    info2("Struktura katalogow do dodania",sciezka.c_str());
+                                    found=sciezka.find_first_of("/");
+                                    while (found!=std::string::npos)
+                                    {
+                                        boost::filesystem::create_directory(sciezka.substr(0,found));
+                                        info2("tworzenie katalogu",sciezka.substr(0,found).c_str());
+                                        found=sciezka.find_first_of("/",found+1);
+                                    }
+
+
+                                }
+                                catch (std::exception &e)
+                                {
+                                    fprintf(stderr,"Error przy tworzeniu katalogów %s\n",e.what());
+                                    Odpowiedz(403,102);
+                                }
                                 info("Brak pliku, wysyłam odpowiedź klientowi i przystępuje do odbioru pliku");
                                 Odpowiedz(404,102);
 
@@ -751,7 +778,7 @@ void parser::wyslij_plik(std::string plik,std::string uzytkownik,char uprawnieni
         odp+="\" data=\"-1\" rozmiar=\"-1\" dostep=\"-1\"/>\r\n";
 
         info("res.num_rows()<1");
-        Odpowiedz(101,404,odp);
+        Odpowiedz(404,101,odp);
         return;
     }
     else
@@ -782,7 +809,7 @@ void parser::wyslij_plik(std::string plik,std::string uzytkownik,char uprawnieni
         info("błąd parsowania");
         return;
     }
-    std::string sciezka=login+"/";
+    std::string sciezka=uzytkownik+"/";
     sciezka+=plik;
     info("Otwieram plik");
     FILE *fplik=std::fopen(sciezka.c_str(),"rb");
@@ -794,7 +821,9 @@ void parser::wyslij_plik(std::string plik,std::string uzytkownik,char uprawnieni
     }
     info("no to wysyłamy");
     char temp[BUFSIZE2+1];
+#ifdef DEBUG
     char debug_c[256];
+#endif
     fseek (fplik, 0, SEEK_END);
     int rozmiar=ftell (fplik);
     fseek (fplik, 0, SEEK_SET);
@@ -841,11 +870,11 @@ void parser::usun_pliki(xmlpp::TextReader &reader,std::string uzytkownik)
     while (reader.read())
     {
         info2("plik",reader.get_name().c_str());
-        if(reader.get_name().compare("#text")==0)
+        if (reader.get_name().compare("#text")==0)
             continue;
         else if (reader.get_name().compare("plik")==0)
         {
-            info("Usuam Kolejny plik");
+            info("Usuwam Kolejny plik");
             info("plik jest ok");
 
             if (reader.has_attributes())
@@ -881,6 +910,7 @@ void parser::usun_pliki(xmlpp::TextReader &reader,std::string uzytkownik)
                             }
                             Odpowiedz(406,103);
                         }
+                        else
                         {
 #ifdef DEBUG
                             char debug[256];

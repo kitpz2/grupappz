@@ -1,8 +1,10 @@
-<area shape="rect" href="$dd/dad/a00005.html#96f941201d172eeaf2fb4d8429edfc0c" title="Wysyła listę plików użytkownika &#39;uzytkownik&#39;." alt="" coords="173,5,304,32">
-<area shape="rect" href="$dd/dad/a00005.html#71abf468eb72a833dbd6c8a895b66b52" title="Loguje klienta po przetworzeniu xmla odebranego od niego i sparsownaiu go w void..." alt="" coords="177,56,300,83">
-<area shape="rect" href="$dd/dad/a00005.html#4e084ae10e8498b171c44a0138597d2e" title="Odbiera plik od użytkownika i umieszcza na serwerze." alt="" coords="155,107,323,133">
-<area shape="rect" href="$dd/dad/a00005.html#49d270636d2f3d5376c3cba62b5ea839" title="parser::Odpowiedz" alt="" coords="175,157,303,184">
-<area shape="rect" href="$dd/dad/a00005.html#6a29174f787861caadc6c2e34b99f8c0" title="parser::odpowiedz_login" alt="" coords="159,208,319,235">
-<area shape="rect" href="$dd/dad/a00005.html#7ef79f818429f70b9cb35c0a33b59a10" title="Usuwa plik z serwera (jeszcze nie zaimplementowane)." alt="" coords="177,259,300,285">
-<area shape="rect" href="$dd/dad/a00005.html#2f6aceaa94a28fc699e4f824f7622b51" title="Wysyła dane podane w stringu w dodatkowo wysyłając znak końca linii." alt="" coords="191,309,287,336">
-<area shape="rect" href="$dd/dad/a00005.html#cc293df6220f5030fab5a7ee9cf8b1fa" title="Odbiera od klienta informację jakie on chce pobrać pliki i przekazuje kazdy plik..." alt="" coords="156,360,321,387">
+<area shape="rect" href="$d8/d84/a00001.html#170c8dad434281805524834ace0a3109" title="Baza::friends" alt="" coords="189,5,288,32">
+<area shape="rect" href="$dd/dad/a00005.html#96f941201d172eeaf2fb4d8429edfc0c" title="Wysyła listę plików użytkownika &#39;uzytkownik&#39;." alt="" coords="173,56,304,83">
+<area shape="rect" href="$dd/dad/a00005.html#71abf468eb72a833dbd6c8a895b66b52" title="Loguje klienta po przetworzeniu xmla odebranego od niego i sparsownaiu go w void..." alt="" coords="177,107,300,133">
+<area shape="rect" href="$dd/dad/a00005.html#4e084ae10e8498b171c44a0138597d2e" title="Odbiera plik od użytkownika i umieszcza na serwerze." alt="" coords="155,157,323,184">
+<area shape="rect" href="$dd/dad/a00005.html#49d270636d2f3d5376c3cba62b5ea839" title="parser::Odpowiedz" alt="" coords="175,208,303,235">
+<area shape="rect" href="$dd/dad/a00005.html#6a29174f787861caadc6c2e34b99f8c0" title="parser::odpowiedz_login" alt="" coords="159,259,319,285">
+<area shape="rect" href="$dd/dad/a00005.html#7ef79f818429f70b9cb35c0a33b59a10" title="Usuwa plik z serwera (jeszcze nie zaimplementowane)." alt="" coords="177,309,300,336">
+<area shape="rect" href="$dd/dad/a00005.html#2f6aceaa94a28fc699e4f824f7622b51" title="Wysyła dane podane w stringu w dodatkowo wysyłając znak końca linii." alt="" coords="191,360,287,387">
+<area shape="rect" href="$dd/dad/a00005.html#0315a358465b40be344fddc7926c1316" title="Odbiera od klienta informację jakie on chce pobrać pliki i przekazuje kazdy plik..." alt="" coords="156,411,321,437">
+<area shape="rect" href="$d8/d84/a00001.html#65054f08c8fd7c600f6c2fe2c7f61a43" title="Pobiera id uzytkownika &#39;user&#39;." alt="" coords="372,5,487,32">

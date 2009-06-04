@@ -1,3 +1,24 @@
+03 czerwiec 2009
+   released version 0.7.5 of Ass8-server
+
+     Change log:
+        -Added: Umieszczanie plikow w drzwie katalogow
+        -Added: Tworzenie drzewa katalogów
+        -Cleaned: rozpoczęcie czyszczneia kodu
+        -Updated: Niektóre polecenia do bazy danych
+        -Fixed: Wiele małych błędów
+
+03 czerwiec 2009
+   released version 0.7.3 of Ass8-server
+
+     Change log:
+        -Removed: sieciowe stream'y
+        -Added: sockety
+        -Fixed: Wysyłanie pliku
+        -Fixed: Dodawnaie pliku
+        -Fixed: Parsownaie XML
+        -Fixed: Usuwanie z bazy danych
+
 02 czerwiec 2009
    released version 0.7.2 of Ass8-server
 
@@ -10,7 +31,7 @@
         -Updated: Aktualizacja dodawania i usuwania (nowa baza)
 
 02 czerwca 2009
-   released version 0.7.2 of Ass8-server
+   released version 0.7.1 of Ass8-server
 
      Change log:
         -Added: Pełna obsługa Znajomych (nie testowana)

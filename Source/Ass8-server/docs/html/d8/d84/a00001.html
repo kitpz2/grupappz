@@ -38,21 +38,21 @@
 <tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d84/a00001.html#bef61cc396e46d347a47c75e9ef8dfde">connect</a> (const char *server, const char *login, const char *pass, const char *db)</td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Łaczy się z bazą damych.  <a href="#bef61cc396e46d347a47c75e9ef8dfde"></a><br></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top">mysqlpp::StoreQueryResult&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d84/a00001.html#02db3388d088212bd443ee39998b5cf8">getFilesList</a> (int user_id)</td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">mysqlpp::StoreQueryResult&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d84/a00001.html#a391c1fd3cb3f0b178ceeed9e4d8652e">getFilesList</a> (int user_id, char uprawnienia)</td></tr>
 
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Pobiera listę plików z bazy na podstawie ID uzytkownika.  <a href="#02db3388d088212bd443ee39998b5cf8"></a><br></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top">mysqlpp::StoreQueryResult&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d84/a00001.html#2eace36725672b3a4ce639f91fe7d9bd">getFilesList</a> (std::string user)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Pobiera listę plików z bazy na podstawie ID uzytkownika.  <a href="#a391c1fd3cb3f0b178ceeed9e4d8652e"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">mysqlpp::StoreQueryResult&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d84/a00001.html#a90465dbd3a416904aee22161a96cde2">getFilesList</a> (std::string user, char uprawnienia)</td></tr>
 
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Najpierw wywołuje <a class="el" href="../../d8/d84/a00001.html#65054f08c8fd7c600f6c2fe2c7f61a43" title="Pobiera id uzytkownika &#39;user&#39;.">getUserId()</a> potem z id otrzymanym z tamtąd wywołuje <a class="el" href="../../d8/d84/a00001.html#02db3388d088212bd443ee39998b5cf8" title="Pobiera listę plików z bazy na podstawie ID uzytkownika.">getFilesList(int user_id)</a>;.  <a href="#2eace36725672b3a4ce639f91fe7d9bd"></a><br></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top">mysqlpp::StoreQueryResult&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d84/a00001.html#e4a033a65cb585aa91c15fd8b8fde764">getFileInfo</a> (std::string file, std::string user)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Najpierw wywołuje <a class="el" href="../../d8/d84/a00001.html#65054f08c8fd7c600f6c2fe2c7f61a43" title="Pobiera id uzytkownika &#39;user&#39;.">getUserId()</a> potem z id otrzymanym z tamtąd wywołuje getFilesList(int user_id);.  <a href="#a90465dbd3a416904aee22161a96cde2"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">mysqlpp::StoreQueryResult&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d84/a00001.html#bc2479ccfcd28a0d2f7f303d202abfde">getFileInfo</a> (std::string file, std::string user, char uprawnienia)</td></tr>
 
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Podobnie jak getFilesList tylko ze pobiera informację o jednym pliku.  <a href="#e4a033a65cb585aa91c15fd8b8fde764"></a><br></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top">mysqlpp::StoreQueryResult&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d84/a00001.html#1d1cfca062ab3117b2b97281df012823">getFileInfo</a> (std::string file, int user_id)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Podobnie jak getFilesList tylko ze pobiera informację o jednym pliku.  <a href="#bc2479ccfcd28a0d2f7f303d202abfde"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">mysqlpp::StoreQueryResult&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d84/a00001.html#77b0a90456f585f9b21e7b42c9869047">getFileInfo</a> (std::string file, int user_id, char uprawnienia)</td></tr>
 
 <tr><td class="memItemLeft" nowrap align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d84/a00001.html#65054f08c8fd7c600f6c2fe2c7f61a43">getUserId</a> (std::string user)</td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Pobiera id uzytkownika 'user'.  <a href="#65054f08c8fd7c600f6c2fe2c7f61a43"></a><br></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top">char&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d84/a00001.html#71ac41633bfb8e4b854aaa8281aac24c">firends</a> (std::string user1, std::string user2)</td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">char&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d84/a00001.html#170c8dad434281805524834ace0a3109">friends</a> (std::string user1, std::string user2)</td></tr>
 
 <tr><td class="memItemLeft" nowrap align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d84/a00001.html#abbda65be49dfb28b1a578d0383599fa">addFile</a> (std::string nazwa, std::string konto, int wielkosc, std::string hash=&quot;-1&quot;, int prawa=-1, int data=-1)</td></tr>
 
@@ -145,7 +145,7 @@ Konstruktor pusty.
 Dodaje plik do bazy danych. 
 <p>
 
-<p>Definicja w linii <a class="el" href="../../de/d11/a00021.html#l00239">239</a> pliku <a class="el" href="../../de/d11/a00021.html">baza.cpp</a>.</p>
+<p>Definicja w linii <a class="el" href="../../de/d11/a00021.html#l00236">236</a> pliku <a class="el" href="../../de/d11/a00021.html">baza.cpp</a>.</p>
 
 <p>
 <div class="dynheader">
@@ -209,17 +209,17 @@ Here is the caller graph for this function:</div>
 <div class="dynsection">
 <p><center><img src="../../d8/d84/a00001_bef61cc396e46d347a47c75e9ef8dfde_icgraph.png" border="0" usemap="#d8/d84/a00001_bef61cc396e46d347a47c75e9ef8dfde_icgraph_map" alt=""></center>
 <map name="d8/d84/a00001_bef61cc396e46d347a47c75e9ef8dfde_icgraph_map">
-<area shape="rect" href="../../dd/dad/a00005.html#3a237071a3ab764cd61bc53df9dd4f46" title="parser::parser" alt="" coords="160,5,261,32"></map>
+<area shape="rect" href="../../dd/dad/a00005.html#9f881c43df7d37da2d6dee1e89ee5f1f" title="parser::parser" alt="" coords="160,5,261,32"></map>
 </div>
 
 </div>
 </div><p>
-<a class="anchor" name="71ac41633bfb8e4b854aaa8281aac24c"></a><!-- doxytag: member="Baza::firends" ref="71ac41633bfb8e4b854aaa8281aac24c" args="(std::string user1, std::string user2)" -->
+<a class="anchor" name="170c8dad434281805524834ace0a3109"></a><!-- doxytag: member="Baza::friends" ref="170c8dad434281805524834ace0a3109" args="(std::string user1, std::string user2)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">char Baza::firends           </td>
+          <td class="memname">char Baza::friends           </td>
           <td>(</td>
           <td class="paramtype">std::string&nbsp;</td>
           <td class="paramname"> <em>user1</em>, </td>
@@ -246,7 +246,27 @@ Funkcja sprawdzająca czy użytkownicy są znajomymi <dl compact><dt><b>Parametr
     <tr><td valign="top"></td><td valign="top"><em>user2</em>&nbsp;</td><td>Użytkownik sprawdzany </td></tr>
   </table>
 </dl>
-<dl class="return" compact><dt><b>Zwraca:</b></dt><dd>char przedstawiający informację o rodzaju znajomości:\ </dd></dl>
+<dl class="return" compact><dt><b>Zwraca:</b></dt><dd>char przedstawiający informację o rodzaju znajomości: 1 - użytkownik sprawdzany udostępnia pliku użytkownikowi pytającemu 2 - użytkownik sprawdzany nie udostępnia plików użytkownikowi pytającemu 0 - to są pliki tego użytkownika </dd></dl>
+
+<p>Definicja w linii <a class="el" href="../../de/d11/a00021.html#l00313">313</a> pliku <a class="el" href="../../de/d11/a00021.html">baza.cpp</a>.</p>
+
+<p>
+<div class="dynheader">
+Oto graf wywołań dla tej funkcji:</div>
+<div class="dynsection">
+<p><center><img src="../../d8/d84/a00001_170c8dad434281805524834ace0a3109_cgraph.png" border="0" usemap="#d8/d84/a00001_170c8dad434281805524834ace0a3109_cgraph_map" alt=""></center>
+<map name="d8/d84/a00001_170c8dad434281805524834ace0a3109_cgraph_map">
+<area shape="rect" href="../../d8/d84/a00001.html#65054f08c8fd7c600f6c2fe2c7f61a43" title="Pobiera id uzytkownika &#39;user&#39;." alt="" coords="153,5,268,32"></map>
+</div>
+
+<p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dynsection">
+<p><center><img src="../../d8/d84/a00001_170c8dad434281805524834ace0a3109_icgraph.png" border="0" usemap="#d8/d84/a00001_170c8dad434281805524834ace0a3109_icgraph_map" alt=""></center>
+<map name="d8/d84/a00001_170c8dad434281805524834ace0a3109_icgraph_map">
+<area shape="rect" href="../../dd/dad/a00005.html#9ce7290217bd14e4efcbe2cad32ccf95" title="Parsuje dane pobrane od klienta." alt="" coords="153,5,252,32"></map>
+</div>
 
 </div>
 </div><p>
@@ -270,11 +290,20 @@ Funkcja sprawdzająca czy użytkownicy są znajomymi <dl compact><dt><b>Parametr
 Pobiera hasło uzytkownika z bazy. 
 <p>
 
-<p>Definicja w linii <a class="el" href="../../de/d11/a00021.html#l00030">30</a> pliku <a class="el" href="../../de/d11/a00021.html">baza.cpp</a>.</p>
+<p>Definicja w linii <a class="el" href="../../de/d11/a00021.html#l00028">28</a> pliku <a class="el" href="../../de/d11/a00021.html">baza.cpp</a>.</p>
+
+<p>
+<div class="dynheader">
+Oto graf wywołań dla tej funkcji:</div>
+<div class="dynsection">
+<p><center><img src="../../d8/d84/a00001_a09b37e4665bd7b2f2b8b54f8120f5be_cgraph.png" border="0" usemap="#d8/d84/a00001_a09b37e4665bd7b2f2b8b54f8120f5be_cgraph_map" alt=""></center>
+<map name="d8/d84/a00001_a09b37e4665bd7b2f2b8b54f8120f5be_cgraph_map">
+<area shape="rect" href="../../d8/d84/a00001.html#65054f08c8fd7c600f6c2fe2c7f61a43" title="Pobiera id uzytkownika &#39;user&#39;." alt="" coords="183,5,297,32"></map>
+</div>
 
 </div>
 </div><p>
-<a class="anchor" name="1d1cfca062ab3117b2b97281df012823"></a><!-- doxytag: member="Baza::getFileInfo" ref="1d1cfca062ab3117b2b97281df012823" args="(std::string file, int user_id)" -->
+<a class="anchor" name="77b0a90456f585f9b21e7b42c9869047"></a><!-- doxytag: member="Baza::getFileInfo" ref="77b0a90456f585f9b21e7b42c9869047" args="(std::string file, int user_id, char uprawnienia)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -288,7 +317,13 @@ Pobiera hasło uzytkownika z bazy.
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int&nbsp;</td>
-          <td class="paramname"> <em>user_id</em></td><td>&nbsp;</td>
+          <td class="paramname"> <em>user_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char&nbsp;</td>
+          <td class="paramname"> <em>uprawnienia</em></td><td>&nbsp;</td>
         </tr>
         <tr>
           <td></td>
@@ -301,11 +336,11 @@ Pobiera hasło uzytkownika z bazy.
 
 <p>
 
-<p>Definicja w linii <a class="el" href="../../de/d11/a00021.html#l00201">201</a> pliku <a class="el" href="../../de/d11/a00021.html">baza.cpp</a>.</p>
+<p>Definicja w linii <a class="el" href="../../de/d11/a00021.html#l00198">198</a> pliku <a class="el" href="../../de/d11/a00021.html">baza.cpp</a>.</p>
 
 </div>
 </div><p>
-<a class="anchor" name="e4a033a65cb585aa91c15fd8b8fde764"></a><!-- doxytag: member="Baza::getFileInfo" ref="e4a033a65cb585aa91c15fd8b8fde764" args="(std::string file, std::string user)" -->
+<a class="anchor" name="bc2479ccfcd28a0d2f7f303d202abfde"></a><!-- doxytag: member="Baza::getFileInfo" ref="bc2479ccfcd28a0d2f7f303d202abfde" args="(std::string file, std::string user, char uprawnienia)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -319,7 +354,13 @@ Pobiera hasło uzytkownika z bazy.
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">std::string&nbsp;</td>
-          <td class="paramname"> <em>user</em></td><td>&nbsp;</td>
+          <td class="paramname"> <em>user</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char&nbsp;</td>
+          <td class="paramname"> <em>uprawnienia</em></td><td>&nbsp;</td>
         </tr>
         <tr>
           <td></td>
@@ -334,20 +375,20 @@ Pobiera hasło uzytkownika z bazy.
 Podobnie jak getFilesList tylko ze pobiera informację o jednym pliku. 
 <p>
 
-<p>Definicja w linii <a class="el" href="../../de/d11/a00021.html#l00174">174</a> pliku <a class="el" href="../../de/d11/a00021.html">baza.cpp</a>.</p>
+<p>Definicja w linii <a class="el" href="../../de/d11/a00021.html#l00173">173</a> pliku <a class="el" href="../../de/d11/a00021.html">baza.cpp</a>.</p>
 
 <p>
 <div class="dynheader">
 Oto graf wywołań dla tej funkcji:</div>
 <div class="dynsection">
-<p><center><img src="../../d8/d84/a00001_e4a033a65cb585aa91c15fd8b8fde764_cgraph.png" border="0" usemap="#d8/d84/a00001_e4a033a65cb585aa91c15fd8b8fde764_cgraph_map" alt=""></center>
-<map name="d8/d84/a00001_e4a033a65cb585aa91c15fd8b8fde764_cgraph_map">
+<p><center><img src="../../d8/d84/a00001_bc2479ccfcd28a0d2f7f303d202abfde_cgraph.png" border="0" usemap="#d8/d84/a00001_bc2479ccfcd28a0d2f7f303d202abfde_cgraph_map" alt=""></center>
+<map name="d8/d84/a00001_bc2479ccfcd28a0d2f7f303d202abfde_cgraph_map">
 <area shape="rect" href="../../d8/d84/a00001.html#65054f08c8fd7c600f6c2fe2c7f61a43" title="Pobiera id uzytkownika &#39;user&#39;." alt="" coords="175,5,289,32"></map>
 </div>
 
 </div>
 </div><p>
-<a class="anchor" name="2eace36725672b3a4ce639f91fe7d9bd"></a><!-- doxytag: member="Baza::getFilesList" ref="2eace36725672b3a4ce639f91fe7d9bd" args="(std::string user)" -->
+<a class="anchor" name="a90465dbd3a416904aee22161a96cde2"></a><!-- doxytag: member="Baza::getFilesList" ref="a90465dbd3a416904aee22161a96cde2" args="(std::string user, char uprawnienia)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -355,32 +396,41 @@ Oto graf wywołań dla tej funkcji:</div>
           <td class="memname">mysqlpp::StoreQueryResult Baza::getFilesList           </td>
           <td>(</td>
           <td class="paramtype">std::string&nbsp;</td>
-          <td class="paramname"> <em>user</em>          </td>
-          <td>&nbsp;)&nbsp;</td>
+          <td class="paramname"> <em>user</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">char&nbsp;</td>
+          <td class="paramname"> <em>uprawnienia</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
 <p>
-Najpierw wywołuje <a class="el" href="../../d8/d84/a00001.html#65054f08c8fd7c600f6c2fe2c7f61a43" title="Pobiera id uzytkownika &#39;user&#39;.">getUserId()</a> potem z id otrzymanym z tamtąd wywołuje <a class="el" href="../../d8/d84/a00001.html#02db3388d088212bd443ee39998b5cf8" title="Pobiera listę plików z bazy na podstawie ID uzytkownika.">getFilesList(int user_id)</a>;. 
+Najpierw wywołuje <a class="el" href="../../d8/d84/a00001.html#65054f08c8fd7c600f6c2fe2c7f61a43" title="Pobiera id uzytkownika &#39;user&#39;.">getUserId()</a> potem z id otrzymanym z tamtąd wywołuje getFilesList(int user_id);. 
 <p>
 Zapytanie o listę plików uzytkownika o nazwie podanej w zmiennej user. 
-<p>Definicja w linii <a class="el" href="../../de/d11/a00021.html#l00097">97</a> pliku <a class="el" href="../../de/d11/a00021.html">baza.cpp</a>.</p>
+<p>Definicja w linii <a class="el" href="../../de/d11/a00021.html#l00094">94</a> pliku <a class="el" href="../../de/d11/a00021.html">baza.cpp</a>.</p>
 
 <p>
 <div class="dynheader">
 Oto graf wywołań dla tej funkcji:</div>
 <div class="dynsection">
-<p><center><img src="../../d8/d84/a00001_2eace36725672b3a4ce639f91fe7d9bd_cgraph.png" border="0" usemap="#d8/d84/a00001_2eace36725672b3a4ce639f91fe7d9bd_cgraph_map" alt=""></center>
-<map name="d8/d84/a00001_2eace36725672b3a4ce639f91fe7d9bd_cgraph_map">
-<area shape="rect" href="../../d8/d84/a00001.html#02db3388d088212bd443ee39998b5cf8" title="Pobiera listę plików z bazy na podstawie ID uzytkownika." alt="" coords="183,5,308,32"><area shape="rect" href="../../d8/d84/a00001.html#65054f08c8fd7c600f6c2fe2c7f61a43" title="Pobiera id uzytkownika &#39;user&#39;." alt="" coords="188,56,303,83"></map>
+<p><center><img src="../../d8/d84/a00001_a90465dbd3a416904aee22161a96cde2_cgraph.png" border="0" usemap="#d8/d84/a00001_a90465dbd3a416904aee22161a96cde2_cgraph_map" alt=""></center>
+<map name="d8/d84/a00001_a90465dbd3a416904aee22161a96cde2_cgraph_map">
+<area shape="rect" href="../../d8/d84/a00001.html#a391c1fd3cb3f0b178ceeed9e4d8652e" title="Pobiera listę plików z bazy na podstawie ID uzytkownika." alt="" coords="183,5,308,32"><area shape="rect" href="../../d8/d84/a00001.html#65054f08c8fd7c600f6c2fe2c7f61a43" title="Pobiera id uzytkownika &#39;user&#39;." alt="" coords="188,56,303,83"></map>
 </div>
 
 </div>
 </div><p>
-<a class="anchor" name="02db3388d088212bd443ee39998b5cf8"></a><!-- doxytag: member="Baza::getFilesList" ref="02db3388d088212bd443ee39998b5cf8" args="(int user_id)" -->
+<a class="anchor" name="a391c1fd3cb3f0b178ceeed9e4d8652e"></a><!-- doxytag: member="Baza::getFilesList" ref="a391c1fd3cb3f0b178ceeed9e4d8652e" args="(int user_id, char uprawnienia)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -388,9 +438,18 @@ Oto graf wywołań dla tej funkcji:</div>
           <td class="memname">mysqlpp::StoreQueryResult Baza::getFilesList           </td>
           <td>(</td>
           <td class="paramtype">int&nbsp;</td>
-          <td class="paramname"> <em>user_id</em>          </td>
-          <td>&nbsp;)&nbsp;</td>
+          <td class="paramname"> <em>user_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">char&nbsp;</td>
+          <td class="paramname"> <em>uprawnienia</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td></td>
         </tr>
       </table>
 </div>
@@ -400,15 +459,15 @@ Oto graf wywołań dla tej funkcji:</div>
 Pobiera listę plików z bazy na podstawie ID uzytkownika. 
 <p>
 Zapytanie o listę plikow uzytkownika po id uzytkownika z bazy accounts_konto. 
-<p>Definicja w linii <a class="el" href="../../de/d11/a00021.html#l00061">61</a> pliku <a class="el" href="../../de/d11/a00021.html">baza.cpp</a>.</p>
+<p>Definicja w linii <a class="el" href="../../de/d11/a00021.html#l00058">58</a> pliku <a class="el" href="../../de/d11/a00021.html">baza.cpp</a>.</p>
 
 <p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dynsection">
-<p><center><img src="../../d8/d84/a00001_02db3388d088212bd443ee39998b5cf8_icgraph.png" border="0" usemap="#d8/d84/a00001_02db3388d088212bd443ee39998b5cf8_icgraph_map" alt=""></center>
-<map name="d8/d84/a00001_02db3388d088212bd443ee39998b5cf8_icgraph_map">
-<area shape="rect" href="../../d8/d84/a00001.html#2eace36725672b3a4ce639f91fe7d9bd" title="Najpierw wywołuje getUserId() potem z id otrzymanym z tamtąd wywołuje getFilesList(int..." alt="" coords="183,5,308,32"></map>
+<p><center><img src="../../d8/d84/a00001_a391c1fd3cb3f0b178ceeed9e4d8652e_icgraph.png" border="0" usemap="#d8/d84/a00001_a391c1fd3cb3f0b178ceeed9e4d8652e_icgraph_map" alt=""></center>
+<map name="d8/d84/a00001_a391c1fd3cb3f0b178ceeed9e4d8652e_icgraph_map">
+<area shape="rect" href="../../d8/d84/a00001.html#a90465dbd3a416904aee22161a96cde2" title="Najpierw wywołuje getUserId() potem z id otrzymanym z tamtąd wywołuje getFilesList(int..." alt="" coords="183,5,308,32"></map>
 </div>
 
 </div>
@@ -433,7 +492,7 @@ Here is the caller graph for this function:</div>
 Pobiera id uzytkownika 'user'. 
 <p>
 Zapytanie o ID uzytkownika o loginie 'user' ale nie o id z auth_user tylko o id z accounts_konto. 
-<p>Definicja w linii <a class="el" href="../../de/d11/a00021.html#l00126">126</a> pliku <a class="el" href="../../de/d11/a00021.html">baza.cpp</a>.</p>
+<p>Definicja w linii <a class="el" href="../../de/d11/a00021.html#l00120">120</a> pliku <a class="el" href="../../de/d11/a00021.html">baza.cpp</a>.</p>
 
 <p>
 <div class="dynheader">
@@ -441,7 +500,7 @@ Here is the caller graph for this function:</div>
 <div class="dynsection">
 <p><center><img src="../../d8/d84/a00001_65054f08c8fd7c600f6c2fe2c7f61a43_icgraph.png" border="0" usemap="#d8/d84/a00001_65054f08c8fd7c600f6c2fe2c7f61a43_icgraph_map" alt=""></center>
 <map name="d8/d84/a00001_65054f08c8fd7c600f6c2fe2c7f61a43_icgraph_map">
-<area shape="rect" href="../../d8/d84/a00001.html#abbda65be49dfb28b1a578d0383599fa" title="Dodaje plik do bazy danych." alt="" coords="184,5,285,32"><area shape="rect" href="../../d8/d84/a00001.html#e4a033a65cb585aa91c15fd8b8fde764" title="Podobnie jak getFilesList tylko ze pobiera informację o jednym pliku." alt="" coords="175,56,295,83"><area shape="rect" href="../../d8/d84/a00001.html#2eace36725672b3a4ce639f91fe7d9bd" title="Najpierw wywołuje getUserId() potem z id otrzymanym z tamtąd wywołuje getFilesList(int..." alt="" coords="172,107,297,133"><area shape="rect" href="../../d8/d84/a00001.html#7161c573401166cc5f7d98ae6f335b44" title="Baza::rmFile" alt="" coords="187,157,283,184"></map>
+<area shape="rect" href="../../d8/d84/a00001.html#abbda65be49dfb28b1a578d0383599fa" title="Dodaje plik do bazy danych." alt="" coords="184,5,285,32"><area shape="rect" href="../../d8/d84/a00001.html#170c8dad434281805524834ace0a3109" title="Baza::friends" alt="" coords="185,56,284,83"><area shape="rect" href="../../d8/d84/a00001.html#a09b37e4665bd7b2f2b8b54f8120f5be" title="Pobiera hasło uzytkownika z bazy." alt="" coords="171,107,299,133"><area shape="rect" href="../../d8/d84/a00001.html#bc2479ccfcd28a0d2f7f303d202abfde" title="Podobnie jak getFilesList tylko ze pobiera informację o jednym pliku." alt="" coords="175,157,295,184"><area shape="rect" href="../../d8/d84/a00001.html#a90465dbd3a416904aee22161a96cde2" title="Najpierw wywołuje getUserId() potem z id otrzymanym z tamtąd wywołuje getFilesList(int..." alt="" coords="172,208,297,235"><area shape="rect" href="../../d8/d84/a00001.html#7161c573401166cc5f7d98ae6f335b44" title="Baza::rmFile" alt="" coords="187,259,283,285"><area shape="rect" href="../../dd/dad/a00005.html#9ce7290217bd14e4efcbe2cad32ccf95" title="Parsuje dane pobrane od klienta." alt="" coords="348,56,447,83"></map>
 </div>
 
 </div>
@@ -487,7 +546,7 @@ Usuwa plik z bazy <dl compact><dt><b>Parametry:</b></dt><dd>
 </dl>
 <dl class="return" compact><dt><b>Zwraca:</b></dt><dd>czy operacja zakończona powodzeniem </dd></dl>
 
-<p>Definicja w linii <a class="el" href="../../de/d11/a00021.html#l00297">297</a> pliku <a class="el" href="../../de/d11/a00021.html">baza.cpp</a>.</p>
+<p>Definicja w linii <a class="el" href="../../de/d11/a00021.html#l00284">284</a> pliku <a class="el" href="../../de/d11/a00021.html">baza.cpp</a>.</p>
 
 <p>
 <div class="dynheader">
@@ -521,9 +580,9 @@ Klasa do łączenia się z bazą danych.
 </div>
 </div><p>
 <hr>Dokumentacja dla tej klasy została wygenerowana z plików:<ul>
-<li>/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/<a class="el" href="../../d7/de0/a00022.html">baza.hpp</a><li>/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/<a class="el" href="../../de/d11/a00021.html">baza.cpp</a></ul>
+<li><a class="el" href="../../d7/de0/a00022.html">baza.hpp</a><li><a class="el" href="../../de/d11/a00021.html">baza.cpp</a></ul>
 </div>
-<hr size="1"><address style="text-align: right;"><small>Wygenerowano Mon Jun 1 13:41:52 2009 dla Ass8 programem&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Wygenerowano Thu Jun 4 15:30:12 2009 dla Ass8 programem&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="../../doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>

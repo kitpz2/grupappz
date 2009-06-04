@@ -36,7 +36,7 @@ Diagram współpracy dla parser:</div>
 <a href="../../df/d03/a00062.html">Lista wszystkich składowych.</a><table border="0" cellpadding="0" cellspacing="0">
 <tr><td></td></tr>
 <tr><td colspan="2"><br><h2>Metody publiczne</h2></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dad/a00005.html#3a237071a3ab764cd61bc53df9dd4f46">parser</a> (tcp::iostream &amp;<a class="el" href="../../dd/dad/a00005.html#f95fb0cac229181329fa61f7bc72c65b">stream</a>, const char *server, const char *user, const char *pass, const char *db)</td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dad/a00005.html#9f881c43df7d37da2d6dee1e89ee5f1f">parser</a> (tcp::socket &amp;<a class="el" href="../../dd/dad/a00005.html#835f5d6b548278a3e00d2c423336e903">socket</a>, const char *server, const char *user, const char *pass, const char *db)</td></tr>
 
 <tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dad/a00005.html#7793913f528921aa22c4b6cc259a0a14">start</a> ()</td></tr>
 
@@ -63,24 +63,24 @@ Diagram współpracy dla parser:</div>
 <tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dad/a00005.html#4e084ae10e8498b171c44a0138597d2e">odbieranie_plikow</a> (xmlpp::TextReader &amp;reader, std::string uzytkownik)</td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Odbiera plik od użytkownika i umieszcza na serwerze.  <a href="#4e084ae10e8498b171c44a0138597d2e"></a><br></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dad/a00005.html#cc293df6220f5030fab5a7ee9cf8b1fa">wysylanie_plikow</a> (xmlpp::TextReader &amp;reader, std::string uzytkownil)</td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dad/a00005.html#0315a358465b40be344fddc7926c1316">wysylanie_plikow</a> (xmlpp::TextReader &amp;reader, std::string uzytkownik, char uprawnienia)</td></tr>
 
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Odbiera od klienta informację jakie on chce pobrać pliki i przekazuje kazdy plik pojedynczo do <a class="el" href="../../dd/dad/a00005.html#771537f72f9e6a9cdb1d2961828eb66b" title="wysyła plik podany w argumencie">wyslij_plik()</a>.  <a href="#cc293df6220f5030fab5a7ee9cf8b1fa"></a><br></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Odbiera od klienta informację jakie on chce pobrać pliki i przekazuje kazdy plik pojedynczo do <a class="el" href="../../dd/dad/a00005.html#e726284253cddec4b4b547a9d0254380" title="wysyła plik podany w argumencie">wyslij_plik()</a>.  <a href="#0315a358465b40be344fddc7926c1316"></a><br></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dad/a00005.html#7ef79f818429f70b9cb35c0a33b59a10">usun_pliki</a> (xmlpp::TextReader &amp;reader, std::string uzytkownik)</td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Usuwa plik z serwera (jeszcze nie zaimplementowane).  <a href="#7ef79f818429f70b9cb35c0a33b59a10"></a><br></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dad/a00005.html#771537f72f9e6a9cdb1d2961828eb66b">wyslij_plik</a> (std::string plik, std::string uzytkownik)</td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dad/a00005.html#e726284253cddec4b4b547a9d0254380">wyslij_plik</a> (std::string plik, std::string uzytkownik, char uprawnienia)</td></tr>
 
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">wysyła plik podany w argumencie  <a href="#771537f72f9e6a9cdb1d2961828eb66b"></a><br></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">wysyła plik podany w argumencie  <a href="#e726284253cddec4b4b547a9d0254380"></a><br></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top">std::vector&lt; std::string &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dad/a00005.html#05500b74ebdcc1578ead4c31fca73a5b">pobieranie_listy_plikow</a> (xmlpp::TextReader &amp;reader)</td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Przygotowuje listę plikow do wysłania do klienta.  <a href="#05500b74ebdcc1578ead4c31fca73a5b"></a><br></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top">std::string&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dad/a00005.html#272ecc740702b4f48efdb8469b414b24">czytanie_z_socketa</a> ()</td></tr>
 
 <tr><td colspan="2"><br><h2>Atrybuty prywatne</h2></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top">tcp::iostream &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dad/a00005.html#f95fb0cac229181329fa61f7bc72c65b">stream</a></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">tcp::socket &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dad/a00005.html#835f5d6b548278a3e00d2c423336e903">socket</a></td></tr>
 
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Stream uzywany do odbierania i wysyłania informacji.  <a href="#f95fb0cac229181329fa61f7bc72c65b"></a><br></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">socket uzywany do odbierania i wysyłania informacji  <a href="#835f5d6b548278a3e00d2c423336e903"></a><br></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top">std::string&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dad/a00005.html#8bb124a2f285074773d1b0ee62cf0cc0">login</a></td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Zmienna przechowująca login uzytkownika.  <a href="#8bb124a2f285074773d1b0ee62cf0cc0"></a><br></td></tr>
@@ -99,17 +99,17 @@ Diagram współpracy dla parser:</div>
 </table>
 <hr><a name="_details"></a><h2>Opis szczegółowy</h2>
 
-<p>Definicja w linii <a class="el" href="../../d5/d79/a00030.html#l00027">27</a> pliku <a class="el" href="../../d5/d79/a00030.html">parser.hpp</a>.</p>
+<p>Definicja w linii <a class="el" href="../../d5/d79/a00030.html#l00029">29</a> pliku <a class="el" href="../../d5/d79/a00030.html">parser.hpp</a>.</p>
 <hr><h2>Dokumentacja konstruktora i destruktora</h2>
-<a class="anchor" name="3a237071a3ab764cd61bc53df9dd4f46"></a><!-- doxytag: member="parser::parser" ref="3a237071a3ab764cd61bc53df9dd4f46" args="(tcp::iostream &amp;stream, const char *server, const char *user, const char *pass, const char *db)" -->
+<a class="anchor" name="9f881c43df7d37da2d6dee1e89ee5f1f"></a><!-- doxytag: member="parser::parser" ref="9f881c43df7d37da2d6dee1e89ee5f1f" args="(tcp::socket &amp;socket, const char *server, const char *user, const char *pass, const char *db)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">parser::parser           </td>
           <td>(</td>
-          <td class="paramtype">tcp::iostream &amp;&nbsp;</td>
-          <td class="paramname"> <em>stream</em>, </td>
+          <td class="paramtype">tcp::socket &amp;&nbsp;</td>
+          <td class="paramname"> <em>socket</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -146,14 +146,14 @@ Diagram współpracy dla parser:</div>
 
 <p>
 
-<p>Definicja w linii <a class="el" href="../../d5/d79/a00030.html#l00083">83</a> pliku <a class="el" href="../../d5/d79/a00030.html">parser.hpp</a>.</p>
+<p>Definicja w linii <a class="el" href="../../d5/d79/a00030.html#l00085">85</a> pliku <a class="el" href="../../d5/d79/a00030.html">parser.hpp</a>.</p>
 
 <p>
 <div class="dynheader">
 Oto graf wywołań dla tej funkcji:</div>
 <div class="dynsection">
-<p><center><img src="../../dd/dad/a00005_3a237071a3ab764cd61bc53df9dd4f46_cgraph.png" border="0" usemap="#dd/dad/a00005_3a237071a3ab764cd61bc53df9dd4f46_cgraph_map" alt=""></center>
-<map name="dd/dad/a00005_3a237071a3ab764cd61bc53df9dd4f46_cgraph_map">
+<p><center><img src="../../dd/dad/a00005_9f881c43df7d37da2d6dee1e89ee5f1f_cgraph.png" border="0" usemap="#dd/dad/a00005_9f881c43df7d37da2d6dee1e89ee5f1f_cgraph_map" alt=""></center>
+<map name="dd/dad/a00005_9f881c43df7d37da2d6dee1e89ee5f1f_cgraph_map">
 <area shape="rect" href="../../d8/d84/a00001.html#bef61cc396e46d347a47c75e9ef8dfde" title="Łaczy się z bazą damych." alt="" coords="156,5,260,32"></map>
 </div>
 
@@ -448,7 +448,7 @@ Krotka odpowiedz gdzie i - kod odpowiedzi<p>
 Odpowiedź z dodatkowymi informacjami gdzie i - kod odpowiedzi<p>
 Funkcja wysyłająca odpowiedź po prośbie o zalogowanie<p>
 Funkcja wywoływana tylko raz, rozpoczyna pobieranie informacji z SOCKETA i przekazuje je parserowi<p>
-Jeżeli użytkownik to "." to znaczy ze żadanie jest o liste plików użytkownika zalogowanego<p>
+Jeżeli użytkownik to "." to znaczy ze żądanie jest o liste plików użytkownika zalogowanego<p>
 Prośba o listę plików użytkownika uzytkownik 
 <p>Definicja w linii <a class="el" href="../../d5/d16/a00029.html#l00016">16</a> pliku <a class="el" href="../../d5/d16/a00029.html">parser.cpp</a>.</p>
 
@@ -458,7 +458,7 @@ Oto graf wywołań dla tej funkcji:</div>
 <div class="dynsection">
 <p><center><img src="../../dd/dad/a00005_9ce7290217bd14e4efcbe2cad32ccf95_cgraph.png" border="0" usemap="#dd/dad/a00005_9ce7290217bd14e4efcbe2cad32ccf95_cgraph_map" alt=""></center>
 <map name="dd/dad/a00005_9ce7290217bd14e4efcbe2cad32ccf95_cgraph_map">
-<area shape="rect" href="../../dd/dad/a00005.html#96f941201d172eeaf2fb4d8429edfc0c" title="Wysyła listę plików użytkownika &#39;uzytkownik&#39;." alt="" coords="173,5,304,32"><area shape="rect" href="../../dd/dad/a00005.html#71abf468eb72a833dbd6c8a895b66b52" title="Loguje klienta po przetworzeniu xmla odebranego od niego i sparsownaiu go w void..." alt="" coords="177,56,300,83"><area shape="rect" href="../../dd/dad/a00005.html#4e084ae10e8498b171c44a0138597d2e" title="Odbiera plik od użytkownika i umieszcza na serwerze." alt="" coords="155,107,323,133"><area shape="rect" href="../../dd/dad/a00005.html#49d270636d2f3d5376c3cba62b5ea839" title="parser::Odpowiedz" alt="" coords="175,157,303,184"><area shape="rect" href="../../dd/dad/a00005.html#6a29174f787861caadc6c2e34b99f8c0" title="parser::odpowiedz_login" alt="" coords="159,208,319,235"><area shape="rect" href="../../dd/dad/a00005.html#7ef79f818429f70b9cb35c0a33b59a10" title="Usuwa plik z serwera (jeszcze nie zaimplementowane)." alt="" coords="177,259,300,285"><area shape="rect" href="../../dd/dad/a00005.html#2f6aceaa94a28fc699e4f824f7622b51" title="Wysyła dane podane w stringu w dodatkowo wysyłając znak końca linii." alt="" coords="191,309,287,336"><area shape="rect" href="../../dd/dad/a00005.html#cc293df6220f5030fab5a7ee9cf8b1fa" title="Odbiera od klienta informację jakie on chce pobrać pliki i przekazuje kazdy plik..." alt="" coords="156,360,321,387"></map>
+<area shape="rect" href="../../d8/d84/a00001.html#170c8dad434281805524834ace0a3109" title="Baza::friends" alt="" coords="189,5,288,32"><area shape="rect" href="../../dd/dad/a00005.html#96f941201d172eeaf2fb4d8429edfc0c" title="Wysyła listę plików użytkownika &#39;uzytkownik&#39;." alt="" coords="173,56,304,83"><area shape="rect" href="../../dd/dad/a00005.html#71abf468eb72a833dbd6c8a895b66b52" title="Loguje klienta po przetworzeniu xmla odebranego od niego i sparsownaiu go w void..." alt="" coords="177,107,300,133"><area shape="rect" href="../../dd/dad/a00005.html#4e084ae10e8498b171c44a0138597d2e" title="Odbiera plik od użytkownika i umieszcza na serwerze." alt="" coords="155,157,323,184"><area shape="rect" href="../../dd/dad/a00005.html#49d270636d2f3d5376c3cba62b5ea839" title="parser::Odpowiedz" alt="" coords="175,208,303,235"><area shape="rect" href="../../dd/dad/a00005.html#6a29174f787861caadc6c2e34b99f8c0" title="parser::odpowiedz_login" alt="" coords="159,259,319,285"><area shape="rect" href="../../dd/dad/a00005.html#7ef79f818429f70b9cb35c0a33b59a10" title="Usuwa plik z serwera (jeszcze nie zaimplementowane)." alt="" coords="177,309,300,336"><area shape="rect" href="../../dd/dad/a00005.html#2f6aceaa94a28fc699e4f824f7622b51" title="Wysyła dane podane w stringu w dodatkowo wysyłając znak końca linii." alt="" coords="191,360,287,387"><area shape="rect" href="../../dd/dad/a00005.html#0315a358465b40be344fddc7926c1316" title="Odbiera od klienta informację jakie on chce pobrać pliki i przekazuje kazdy plik..." alt="" coords="156,411,321,437"><area shape="rect" href="../../d8/d84/a00001.html#65054f08c8fd7c600f6c2fe2c7f61a43" title="Pobiera id uzytkownika &#39;user&#39;." alt="" coords="372,5,487,32"></map>
 </div>
 
 </div>
@@ -508,7 +508,7 @@ Here is the caller graph for this function:</div>
 <div class="dynsection">
 <p><center><img src="../../dd/dad/a00005_7793913f528921aa22c4b6cc259a0a14_icgraph.png" border="0" usemap="#dd/dad/a00005_7793913f528921aa22c4b6cc259a0a14_icgraph_map" alt=""></center>
 <map name="dd/dad/a00005_7793913f528921aa22c4b6cc259a0a14_icgraph_map">
-<area shape="rect" href="../../d7/dd4/a00013.html#0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="148,5,196,32"></map>
+<area shape="rect" href="../../da/da0/a00009.html#0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="148,5,196,32"></map>
 </div>
 
 </div>
@@ -584,7 +584,7 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div><p>
-<a class="anchor" name="771537f72f9e6a9cdb1d2961828eb66b"></a><!-- doxytag: member="parser::wyslij_plik" ref="771537f72f9e6a9cdb1d2961828eb66b" args="(std::string plik, std::string uzytkownik)" -->
+<a class="anchor" name="e726284253cddec4b4b547a9d0254380"></a><!-- doxytag: member="parser::wyslij_plik" ref="e726284253cddec4b4b547a9d0254380" args="(std::string plik, std::string uzytkownik, char uprawnienia)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -598,7 +598,13 @@ Here is the caller graph for this function:</div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">std::string&nbsp;</td>
-          <td class="paramname"> <em>uzytkownik</em></td><td>&nbsp;</td>
+          <td class="paramname"> <em>uzytkownik</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char&nbsp;</td>
+          <td class="paramname"> <em>uprawnienia</em></td><td>&nbsp;</td>
         </tr>
         <tr>
           <td></td>
@@ -615,7 +621,7 @@ wysyła plik podany w argumencie
 
 </div>
 </div><p>
-<a class="anchor" name="cc293df6220f5030fab5a7ee9cf8b1fa"></a><!-- doxytag: member="parser::wysylanie_plikow" ref="cc293df6220f5030fab5a7ee9cf8b1fa" args="(xmlpp::TextReader &amp;reader, std::string uzytkownil)" -->
+<a class="anchor" name="0315a358465b40be344fddc7926c1316"></a><!-- doxytag: member="parser::wysylanie_plikow" ref="0315a358465b40be344fddc7926c1316" args="(xmlpp::TextReader &amp;reader, std::string uzytkownik, char uprawnienia)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -629,7 +635,13 @@ wysyła plik podany w argumencie
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">std::string&nbsp;</td>
-          <td class="paramname"> <em>uzytkownil</em></td><td>&nbsp;</td>
+          <td class="paramname"> <em>uzytkownik</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char&nbsp;</td>
+          <td class="paramname"> <em>uprawnienia</em></td><td>&nbsp;</td>
         </tr>
         <tr>
           <td></td>
@@ -641,15 +653,15 @@ wysyła plik podany w argumencie
 <div class="memdoc">
 
 <p>
-Odbiera od klienta informację jakie on chce pobrać pliki i przekazuje kazdy plik pojedynczo do <a class="el" href="../../dd/dad/a00005.html#771537f72f9e6a9cdb1d2961828eb66b" title="wysyła plik podany w argumencie">wyslij_plik()</a>. 
+Odbiera od klienta informację jakie on chce pobrać pliki i przekazuje kazdy plik pojedynczo do <a class="el" href="../../dd/dad/a00005.html#e726284253cddec4b4b547a9d0254380" title="wysyła plik podany w argumencie">wyslij_plik()</a>. 
 <p>
 
 <p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dynsection">
-<p><center><img src="../../dd/dad/a00005_cc293df6220f5030fab5a7ee9cf8b1fa_icgraph.png" border="0" usemap="#dd/dad/a00005_cc293df6220f5030fab5a7ee9cf8b1fa_icgraph_map" alt=""></center>
-<map name="dd/dad/a00005_cc293df6220f5030fab5a7ee9cf8b1fa_icgraph_map">
+<p><center><img src="../../dd/dad/a00005_0315a358465b40be344fddc7926c1316_icgraph.png" border="0" usemap="#dd/dad/a00005_0315a358465b40be344fddc7926c1316_icgraph_map" alt=""></center>
+<map name="dd/dad/a00005_0315a358465b40be344fddc7926c1316_icgraph_map">
 <area shape="rect" href="../../dd/dad/a00005.html#9ce7290217bd14e4efcbe2cad32ccf95" title="Parsuje dane pobrane od klienta." alt="" coords="220,5,319,32"></map>
 </div>
 
@@ -671,7 +683,7 @@ Here is the caller graph for this function:</div>
 Clasa obsługująca bazę danych. 
 <p>
 
-<p>Definicja w linii <a class="el" href="../../d5/d79/a00030.html#l00043">43</a> pliku <a class="el" href="../../d5/d79/a00030.html">parser.hpp</a>.</p>
+<p>Definicja w linii <a class="el" href="../../d5/d79/a00030.html#l00045">45</a> pliku <a class="el" href="../../d5/d79/a00030.html">parser.hpp</a>.</p>
 
 </div>
 </div><p>
@@ -690,7 +702,7 @@ Clasa obsługująca bazę danych.
 Bufor danych. 
 <p>
 
-<p>Definicja w linii <a class="el" href="../../d5/d79/a00030.html#l00041">41</a> pliku <a class="el" href="../../d5/d79/a00030.html">parser.hpp</a>.</p>
+<p>Definicja w linii <a class="el" href="../../d5/d79/a00030.html#l00043">43</a> pliku <a class="el" href="../../d5/d79/a00030.html">parser.hpp</a>.</p>
 
 </div>
 </div><p>
@@ -709,7 +721,7 @@ Bufor danych.
 Zmienna przechowująca haslo (w przyszlosci hash hasla) uzytkownika. 
 <p>
 
-<p>Definicja w linii <a class="el" href="../../d5/d79/a00030.html#l00035">35</a> pliku <a class="el" href="../../d5/d79/a00030.html">parser.hpp</a>.</p>
+<p>Definicja w linii <a class="el" href="../../d5/d79/a00030.html#l00037">37</a> pliku <a class="el" href="../../d5/d79/a00030.html">parser.hpp</a>.</p>
 
 </div>
 </div><p>
@@ -728,7 +740,7 @@ Zmienna przechowująca haslo (w przyszlosci hash hasla) uzytkownika.
 Aktualny ID sesji potrzebny pryz kazdym polaczneiu. 
 <p>
 
-<p>Definicja w linii <a class="el" href="../../d5/d79/a00030.html#l00039">39</a> pliku <a class="el" href="../../d5/d79/a00030.html">parser.hpp</a>.</p>
+<p>Definicja w linii <a class="el" href="../../d5/d79/a00030.html#l00041">41</a> pliku <a class="el" href="../../d5/d79/a00030.html">parser.hpp</a>.</p>
 
 </div>
 </div><p>
@@ -747,33 +759,33 @@ Aktualny ID sesji potrzebny pryz kazdym polaczneiu.
 Zmienna przechowująca login uzytkownika. 
 <p>
 
-<p>Definicja w linii <a class="el" href="../../d5/d79/a00030.html#l00033">33</a> pliku <a class="el" href="../../d5/d79/a00030.html">parser.hpp</a>.</p>
+<p>Definicja w linii <a class="el" href="../../d5/d79/a00030.html#l00035">35</a> pliku <a class="el" href="../../d5/d79/a00030.html">parser.hpp</a>.</p>
 
 </div>
 </div><p>
-<a class="anchor" name="f95fb0cac229181329fa61f7bc72c65b"></a><!-- doxytag: member="parser::stream" ref="f95fb0cac229181329fa61f7bc72c65b" args="" -->
+<a class="anchor" name="835f5d6b548278a3e00d2c423336e903"></a><!-- doxytag: member="parser::socket" ref="835f5d6b548278a3e00d2c423336e903" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">tcp::iostream&amp; <a class="el" href="../../dd/dad/a00005.html#f95fb0cac229181329fa61f7bc72c65b">parser::stream</a><code> [private]</code>          </td>
+          <td class="memname">tcp::socket&amp; <a class="el" href="../../dd/dad/a00005.html#835f5d6b548278a3e00d2c423336e903">parser::socket</a><code> [private]</code>          </td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
 <p>
-Stream uzywany do odbierania i wysyłania informacji. 
+socket uzywany do odbierania i wysyłania informacji 
 <p>
 
-<p>Definicja w linii <a class="el" href="../../d5/d79/a00030.html#l00031">31</a> pliku <a class="el" href="../../d5/d79/a00030.html">parser.hpp</a>.</p>
+<p>Definicja w linii <a class="el" href="../../d5/d79/a00030.html#l00033">33</a> pliku <a class="el" href="../../d5/d79/a00030.html">parser.hpp</a>.</p>
 
 </div>
 </div><p>
 <hr>Dokumentacja dla tej klasy została wygenerowana z plików:<ul>
-<li>/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/<a class="el" href="../../d5/d79/a00030.html">parser.hpp</a><li>/home/pawel/Dokumenty/Uczelnia/grupappz/Source/Ass8-server/<a class="el" href="../../d5/d16/a00029.html">parser.cpp</a></ul>
+<li><a class="el" href="../../d5/d79/a00030.html">parser.hpp</a><li><a class="el" href="../../d5/d16/a00029.html">parser.cpp</a></ul>
 </div>
-<hr size="1"><address style="text-align: right;"><small>Wygenerowano Mon Jun 1 13:41:52 2009 dla Ass8 programem&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Wygenerowano Thu Jun 4 15:30:34 2009 dla Ass8 programem&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="../../doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.8 </small></address>
 </body>
