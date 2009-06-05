@@ -9,7 +9,7 @@
     
     {% ifequal chmod 0%}        
     {%if own %}
-    <h1>Pliki osobiste:</h1>
+	<h1>Pliki osobiste:</h1>
         <ul>
         {%for p in own%}
             <li>{{p}}</li>
@@ -17,6 +17,16 @@
         </ul>
     {%else%}
         <h1>Brak plików osobistych.</h1>
+    {%endif%}
+    {%if private %}
+        <h1>Pliki prywatne:</h1>
+	<ul>
+	{%for p in private%}
+   	    <li>{{p}}</li>
+        {%endfor%} 
+        </ul>
+    {%else%}
+	<h1>Brak plików prywatnych.</h1>
     {%endif%}
     {%endifequal%}
         

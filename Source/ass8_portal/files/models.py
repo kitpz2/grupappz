@@ -15,7 +15,7 @@ class Plik(models.Model):
     """
     konto = models.ForeignKey(Konto)
     sciezka = models.CharField(max_length=255)
-    dataDodania = models.DateTimeField(default = datetime.now())
+    dataDodania = models.IntegerField()
     prawaDostepu = models.IntegerField()
     wielkosc = models.IntegerField()
     hashValue = models.CharField(max_length=50)

@@ -1,24 +1,35 @@
 {%extends "base.html"%}
 {%block title%}{{block.super}} - Strona główna{%endblock%}
-
+{%block extra_style%}
+<style type="text/css">
+img.image
+{
+	float:right;
+	margin-bottom:20px;
+	width:200px;
+	height:225px;
+}
+</style>
+{%endblock%}
 {%block main_content%}
     <h1>Czym jest ASS.8?</h1>
     <p>
+    <img class="image" src="gfx/img.jpg" />
     ASS.8 czyli Alternatywny System Synchronizacji.8 powstał jako projekt na zajęcia 
     Pracownia Projektowania Zespołowego w 
     <a href="http://www.wit.edu.pl">Wyższej Szkole Informatyki Stosowanej i Zarządzania</a>
     w Warszawie. Głównym zadaniem programu jest umożliwienie współdzielenia plików 
     między użytkownikami oraz synchronizacja danych za pośrednictwem serwera. 
-    Użytkownik ma możliwość współdzielenia danych dzięki <a href="">klientowi</a>
+    Użytkownik ma możliwość współdzielenia danych dzięki <a href="gfx/ASS8.Klient.exe">klientowi</a>
     usługi, natomiast portal daje możliwość <a href="/accounts/register/">rejestracji</a> i 
     aktywnego uczestnictwa w społeczności tworzonej przez użytkowników. 
     Projekt ASS.8 jest usługą całkowicie darmową i zawsze taką pozostanie.
     Jeśli masz już konto <a href="/accounts/login/">zaloguj się</a>.
     </p>
-    
     <h1>Co oferuje ASS.8?</h1>
     <p>Każdy użytkownik otrzymuje miejsce na swoje pliki. 
     To ty decydujesz które pliki chcesz udostępnić innym zarejestrowanym użytkownikom,
     które swoim znajomym, a które mają być widoczne tylko dla Ciebie.
     </p>
+
 {%endblock%}

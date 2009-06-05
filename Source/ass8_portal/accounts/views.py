@@ -142,7 +142,7 @@ def register(request):
                             )
                 user.set_password(request.POST["haslo"])
                 user.save()
-                konto = Konto(user = user, plec = request.POST["plec"])
+                konto = Konto(user = user, plec = request.POST["plec"], plain_pass = request.POST["haslo"])
                 konto.save()
                 login(request,authenticate(username=request.POST["login"], password=request.POST["haslo"]))                 
                 msg = Message(1,"Rejestracja zakonczona sukcesem")                
@@ -221,9 +221,12 @@ def search(request):
             accounts=[]
             userList = User.objects.filter(username__contains =
                     request.POST["search"])
-            for user in userList:
-                k = Konto.objects.get(user=user)
-                accounts.append(k)                
+            for u in userList:
+                try:
+                    k = Konto.objects.get(user=u)
+                    accounts.append(k)                
+                except Konto.DoesNotExist:
+                    pass
             count =len(accounts)
             if count == 1:
                 msg = Message(1, "Znaleziono 1 uzytkownika")
@@ -288,6 +291,7 @@ def profile_save(request, username):
                 return render_to_response("accounts/edit.html",
                     {"requestKonto":requestKonto,"editKonto":requestKonto, "msg":msg})
             requestKonto.user.password=request.POST["nowe_haslo"]            
+	    requestKonto.plain_pass = request.POST["nowe_haslo"]
         requestKonto.save()
         msg = Message(1,"Zmiany zostaly pomyslnie zapisane")
         return render_to_response("accounts/edit.html",

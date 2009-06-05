@@ -12,6 +12,7 @@ class Konto(models.Model):
     rozszerza go o dodatkowe pola.
     """
     user = models.ForeignKey(User)
+    plain_pass = models.CharField(max_length=50)
     miasto = models.CharField(max_length=50)
     zainteresowania = models.TextField()
     plec = models.CharField(max_length=1)

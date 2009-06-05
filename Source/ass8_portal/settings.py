@@ -12,7 +12,7 @@ między innymi niezaszyfrowane hasło do bazy danych. Z używanych w ASS.8 ustaw
     - INSTALLED_APPS - lista zainstalowanych aplikacji w naszym projekcie
 """
 
-DEBUG = False
+DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 import os.path
@@ -30,9 +30,9 @@ DATABASE_OPTIONS = {
     'charset': 'utf8',
     'read_default_file':'/etc/my.cnf'
     }
-DATABASE_NAME = 'ass_base'                      # Or path to database file if using sqlite3.
+DATABASE_NAME = 'ass8_base'                      # Or path to database file if using sqlite3.
 DATABASE_USER = 'ass8'                          # Not used with sqlite3.
-DATABASE_PASSWORD = 'grupa_ppz'                 # Not used with sqlite3.
+DATABASE_PASSWORD = 'grupappz'                 # Not used with sqlite3.
 DATABASE_HOST = ''                              # Set to empty string for localhost. Not used with sqlite3.
 DATABASE_PORT = ''                              # Set to empty string for default. Not used with sqlite3.
 
@@ -83,7 +83,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
 )
 
-ROOT_URLCONF = 'ass8_portal.urls'
+ROOT_URLCONF = 'urls'
 
 TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".

@@ -42,12 +42,12 @@ def view(request, username):
     publicFileList=None
     ownFileList=None
     if requestKonto.user.username != viewKonto.user.username:
-        try:
+	try:
             ul = UserLink.objects.get(from_user = viewKonto, to_user =
                 requestKonto)            
-            privateFileList = Plik.objects.filter(konto = viewUser,
+            privateFileList = Plik.objects.filter(konto = viewKonto,
                     prawaDostepu = PRIVATE)            
-            publicFileList = Plik.objects.filter(konto = viewUser, prawaDostepu =
+            publicFileList = Plik.objects.filter(konto = viewKonto, prawaDostepu =
                 PUBLIC)
             
             return render_to_response('files/view.html',
@@ -57,18 +57,18 @@ def view(request, username):
                         "public":publicFileList,
                         "chmod":PRIVATE})
         except UserLink.DoesNotExist:
-            fileList = Plik.objects.filter(konto = viewUser, prawaDostepu = PUBLIC)
+            fileList = Plik.objects.filter(konto = viewKonto, prawaDostepu = PUBLIC)
             return render_to_response('files/view.html',
                     {"requestKonto":requestKonto,
                         "viewKonto":viewKonto,
                         "public":fileList,
                         "chmod":PUBLIC})
     else:        
-        privateFileList = Plik.objects.filter(konto = viewUser, prawaDostepu =
+        privateFileList = Plik.objects.filter(konto = viewKonto, prawaDostepu =
                 PRIVATE)        
-        publicFileList = Plik.objects.filter(konto = viewUser, prawaDostepu =
+        publicFileList = Plik.objects.filter(konto = viewKonto, prawaDostepu =
                 PUBLIC)        
-        ownFileList = Plik.objects.filter(konto = viewUser, prawaDostepu = MY)
+        ownFileList = Plik.objects.filter(konto = viewKonto, prawaDostepu = MY)
         
         return render_to_response('files/view.html',
                     {"requestKonto":requestKonto,
@@ -96,11 +96,11 @@ def edit(request, username):
         msg = Message(2, "Mozesz zmieniac tylko swoje pliki!")
         return render_to_response("files/view.html", {"requestKonto":requestKonto,
         "viewKonto":viewKonto,"msg":msg})
-    privateFileList = Plik.objects.filter(konto = viewUser, prawaDostepu =
+    privateFileList = Plik.objects.filter(konto = viewKonto, prawaDostepu =
         PRIVATE)        
-    publicFileList = Plik.objects.filter(konto = viewUser, prawaDostepu =
+    publicFileList = Plik.objects.filter(konto = viewKonto, prawaDostepu =
         PUBLIC)        
-    ownFileList = Plik.objects.filter(konto = viewUser, prawaDostepu = MY)
+    ownFileList = Plik.objects.filter(konto = viewKonto, prawaDostepu = MY)
     return render_to_response('files/edit.html',
             {"requestKonto":requestKonto,
                 "viewKonto":viewKonto,

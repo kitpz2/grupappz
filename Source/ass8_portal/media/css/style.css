@@ -1,19 +1,19 @@
 /* PAGE STRUCTURE */
 body
 {
-	background:#496f40; 		
-	color:#fff; 
+	background:#FFFFFF:; 		
+	color:#000000; 
 }
 
 a, a:active, a:visited
 {
-	color:#66ba00;
+	color:#496f40;
 	text-decoration:none;
 }
 
 a:hover
 {
-	color:#66ba00;
+	color:#496f40;
 	text-decoration:underline;
 }
 
@@ -65,8 +65,7 @@ div.container
 	position:relative;     
     min-width:760px; 
     padding:0px;
-    border: 1px solid black;	
-	background:#314a2c; 
+	background:#FFFFFF; 
     margin-left:auto;
     margin-right:auto;
 }
@@ -83,19 +82,19 @@ div.container a:hover
 
 div.header
 {     
-	text-align:right;	
+	text-align:center;	
     width:1024px;
-	height:50px;
+	height:160px;
 	margin: 0px;
     padding: 0px;
-    background:#314a2c; 
+    background:#FFFFFF; 
     overflow:hidden;    	
 }
 
 div.header h1
 {	
-	font-size:40px;
-	color:white;
+	font-size:60px;
+	color:#496F40;
 	margin: 0px;
     padding: 0px;
 }
@@ -107,9 +106,9 @@ div.navbar
     height:30px;
 	margin:0px;
 	padding:0px;	
-	background: #496e40;
-    background-image: url('/gfx/headers.jpg');
+	background: #ffffff;
     background-repeat: repeat;
+	border-bottom:10px solid #496f40;
 }
 
 div.navbar ul 
@@ -129,15 +128,14 @@ div.navbar ul li
 
 div.navbar ul li a,div.navbar ul li a:visited, div.navbar ul li a:active
 {
-	color:#fff;
+	color:#496f40;
 	padding-left:10px;
 	text-decoration:none;
 }
 
 div.navbar ul li a:hover
 {
-	color:#66ba00;
-	text-decoration:none;
+	text-decoration:underline;
 }
 
 div.content
@@ -145,29 +143,33 @@ div.content
     min-height:200px; 
 	margin:0px;		
 	padding:0px;	
-    background:#314a2c;
+    background:#FFFFFF;
 	border:none;
 }
 
 div.content h1
 {	
-	color:#66ba00;
+	color:#496f40;
 	margin:0px;
-	padding-left:10px;	
-	padding-right:10px;	
+	padding-left:10px;		
+	padding-right:10px;
+	padding-bottom:20px;	
+	padding-top:20px;
 }
 
 div.content h2
 {	
-	color:#66ba00;    
+	color:#496f40;    
 	margin:0px;
+	padding-top:10px;
 	padding-left:10px;	
 	padding-right:10px;	
+	padding-bottom:10px;
 }
 
 div.content h3
 {	
-	color:#66ba00;
+	color:#496f40;
 	margin:0px;
 	margin-bottom:5px;
 	font-size:12px;
@@ -188,8 +190,7 @@ div.footer
 { 
 	text-align:center;	
 	height:30px;
-    background-image: url('/gfx/headers.jpg');
-    background-repeat:repeat;
+	background-color:#496f40;
     color:#fff; 
     padding:0px;   
 }
